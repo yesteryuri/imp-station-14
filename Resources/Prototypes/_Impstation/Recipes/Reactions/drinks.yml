@@ -417,3 +417,15 @@
       amount: 1
   products:
     FeverDream: 5
+
+- type: reaction
+  id: Soju
+  requiredMixerCategories:
+  - Stir
+  reactants:
+  Ethanol:
+  	amount: 1
+  WatermelonJuice:
+  	amount: 1
+  products:
+  Soju: 2
