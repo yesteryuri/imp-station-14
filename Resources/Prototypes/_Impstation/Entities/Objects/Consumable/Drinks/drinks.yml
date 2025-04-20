@@ -285,7 +285,7 @@
         maxVol: 30
         reagents:
         - ReagentId: Soju
-        Quantity: 30
+          Quantity: 30
   - type: Icon
     sprite: _Impstation/Objects/Consumable/Drinks/soju.rsi
     state: icon

@@ -598,16 +598,17 @@
   flavor: soju
   color: "#d1d1d155"
   metamorphicSprite:
-  sprite: _Impstation/Objects/Consumable/Drinks/soju.rsi
-  state: icon_empty
+    sprite: _Impstation/Objects/Consumable/Drinks/soju.rsi
+    state: icon_empty
   metamorphicMaxFillLevels: 4
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-  Drink:
-  	effects:
-    - !type:SatiateThirst
-      factor: 2
-    - !type:AdjustReagent
-      reagent: Ethanol
-      amount: 0.2
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.2
+        
