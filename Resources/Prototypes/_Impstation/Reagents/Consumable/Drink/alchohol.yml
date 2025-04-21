@@ -596,7 +596,7 @@
   desc: reagent-desc-soju
   physicalDesc: reagent-physical-desc-strong-smelling
   flavor: soju
-  color: "#d1d1d155"
+  color: "#DDDDDD"
   metamorphicSprite:
     sprite: _Impstation/Objects/Consumable/Drinks/soju.rsi
     state: icon_empty
