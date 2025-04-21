@@ -425,7 +425,7 @@
   reactants:
     Ethanol:
       amount: 1
-    WatermelonJuice:
+    JuiceWatermelon:
       amount: 1
   products:
     Soju: 2
