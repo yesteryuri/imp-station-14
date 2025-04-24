@@ -39,3 +39,18 @@
           - "foreverweed-effect-centcomm"
           - "foreverweed-effect-centcomm-paranoia"
         probability: 0.01
+
+- type: reagent
+  id: Obscurium
+  name: reagent-name-obscurium
+  desc: reagent-desc-obscurium
+  group: Narcotics
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: bitter
+  color: "#404040"
+  metabolisms:
+    Narcotic:
+      effects:
+      - !type:ChemHealEyeDamage
+        amount: 1
+        probability: 0.05

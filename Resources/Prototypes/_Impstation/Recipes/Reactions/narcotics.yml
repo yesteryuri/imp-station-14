@@ -1,0 +1,11 @@
+- type: reaction
+  id: Obscurium
+  reactants:
+    Phenol:
+      amount: 1
+    Plasma:
+      amount: 1
+    Oculine:
+      amount: 1
+  products:
+    Obscurium: 2
