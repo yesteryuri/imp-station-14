@@ -9,3 +9,15 @@
       amount: 1
   products:
     Obscurium: 2
+
+- type: reaction
+  id: Draculine
+  reactants:
+    Synaptizine:
+      amount: 2
+    ChloralHydrate:
+      amount: 2
+    Vestine:
+      amount: 1
+  products:
+    Draculine: 5

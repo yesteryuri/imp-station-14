@@ -18,3 +18,6 @@ reagent-desc-brutoxidone = A cryogenics chemical. Used to treat severe brute dam
 
 reagent-name-clarified-phalanximine = clarified phalanximine
 reagent-desc-clarified-phalanximine = Phalanximine, refined through a dubiously legal and morally questionable technique. Reverses cellular damage at the same effectiveness as Phalanximine, with substantially lowered downsides.
+
+reagent-name-chlorpromazine = chlorpromazine
+reagent-desc-chlorpromazine = An antipsychotic used to treat, but not cure paracusia.

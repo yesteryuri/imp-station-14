@@ -6,3 +6,6 @@ reagent-desc-methadone = An opioid administered to treat heroin addiction. There
 
 reagent-name-obscurium = obscurium
 reagent-desc-obscurium = A stinging substance that blurs one's vision. Or maybe it's all that time staring at a screen. Who could say.
+
+reagent-name-draculine = draculine
+reagent-desc-draculine = they movin different

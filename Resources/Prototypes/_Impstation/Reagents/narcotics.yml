@@ -48,9 +48,61 @@
   physicalDesc: reagent-physical-desc-translucent
   flavor: bitter
   color: "#404040"
+  contraband: Minor
   metabolisms:
     Narcotic:
       effects:
       - !type:ChemHealEyeDamage
         amount: 1
-        probability: 0.05
+        probability: 0.1
+      - !type:GenericStatusEffect
+        key: Adrenaline
+        component: IgnoreSlowOnDamage
+        time: 5 # same as epinephrine! there is a beating heart tell-tale style
+  plantMetabolism:
+  - !type:PlantAdjustToxins
+   amount: 1
+    
+- type: reagent
+  id: Draculine
+  name: reagent-name-draculine
+  desc: reagent-desc-draculine
+  group: Narcotics
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: bitter
+  color: "#a01010"
+  metabolisms:
+    Narcotic:
+      effects:
+      - !type:Emote
+        emote: Flip #this one goes out to laura
+        probability: 0.5
+      - !type:Emote
+        emote: Jump
+        probability: 0.15
+      - !type:GenericStatusEffect
+        key: SeeingRainbows
+        component: SeeingRainbows
+        type: Add
+        time: 3
+        refresh: false
+      - !type:MovespeedModifier
+        walkSpeedModifier: 0.65
+        sprintSpeedModifier: 0.75
+        probability: 0.15
+      - !type:MovespeedModifier
+        walkSpeedModifier: 1.25
+        sprintSpeedModifier: 1.35
+        probability: 0.15
+      - !type:GenericStatusEffect
+        key: StaminaModifier
+        component: StaminaModifier
+        time: 3
+        type: Add
+        probability: 0.15
+      - !type:GenericStatusEffect
+        key: Stun
+        time: 4.0
+        type: Add
+        probability: 0.2
+      - !type:Jitter

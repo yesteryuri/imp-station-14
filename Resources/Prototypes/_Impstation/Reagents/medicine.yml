@@ -133,6 +133,35 @@
             Brute: -4
 
 - type: reagent
+  id: Chlorpromazine
+  name: reagent-name-chlorpromazine
+  desc: reagent-desc-chlorpromazine
+  group: Medicine
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: bitter
+  color: "#6d8b7d"
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:ResetParacusia
+        conditions:
+        - !type:ReagentThreshold
+          min: 15
+      - !type:Emote 
+        emote: Yawn
+        showInChat: true
+        probability: 0.05
+      - !type:MovespeedModifier
+        walkSpeedModifier: 0.75
+        sprintSpeedModifier: 0.85
+      - !type:GenericStatusEffect
+        key: Drowsiness
+        component: Drowsiness
+        time: 2
+        type: Add
+        refresh: false
+
+- type: reagent
   id: ClarifiedPhalanximine
   name: reagent-name-clarified-phalanximine
   group: Medicine
