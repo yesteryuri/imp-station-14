@@ -17,7 +17,15 @@
       amount: 2
     ChloralHydrate:
       amount: 2
-    Vestine:
+    Bleach:
       amount: 1
+  effects:
+  - !type:ExplosionReactionEffect # shatters beakers, not offensively strong
+    explosionType: Default
+    maxIntensity: 5
+    intensityPerUnit: 1
+    intensitySlope: 2
+    maxTotalIntensity: 10
+    tileBreakScale: 0.00001
   products:
     Draculine: 5

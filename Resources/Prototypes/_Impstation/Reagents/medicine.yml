@@ -146,7 +146,7 @@
       - !type:ResetParacusia
         conditions:
         - !type:ReagentThreshold
-          min: 15
+          min: 10
       - !type:Emote 
         emote: Yawn
         showInChat: true

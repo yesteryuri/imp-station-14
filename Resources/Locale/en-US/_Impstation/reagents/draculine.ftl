@@ -1,0 +1,9 @@
+draculine-effect-1 = They must have amnesia, they forgot that I'm him
+draculine-effect-2 = We smokin' shit in a glass pipe, blowin' the Lord's bubbles
+draculine-effect-3 = I don't give a fuck if I go blind, I don't need to see the price tag anyways
+draculine-effect-4 = I'll fuckin' kill you
+draculine-effect-5 = This shit ain't nothin' to me, man
+draculine-effect-6 = Ask me if I care about this shit, cause I don't give a shit
+draculine-effect-7 = How can I be homophobic? I blew his fucking brains out
+draculine-effect-8 = The fentanyl got me moving like a claymation figure
+draculine-effect-9 = Call that pussy The Matrix because I'm in this bitch and I can't get out

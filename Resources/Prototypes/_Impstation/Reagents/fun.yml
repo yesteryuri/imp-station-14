@@ -1,4 +1,21 @@
 - type: reagent
+  id: Baldium # i should be shot
+  name: reagent-name-baldium
+  desc: reagent-desc-baldium
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: bitter
+  color: "#e7b3c4"
+  contraband: Minor
+  reactiveEffects:
+    Acidic:
+      methods: [ Touch ]
+      effects:
+      - !type:ChangeHair
+        conditions:
+        - !type:ReagentThreshold
+          min: 20
+
+- type: reagent
   id: BrosochloricBros
   name: reagent-name-brosochloric-bros
   group: Toxins

@@ -56,9 +56,9 @@
         amount: 1
         probability: 0.1
       - !type:GenericStatusEffect
-        key: Adrenaline
+        key: Adrenaline # there is a beating heart tell-tale style
         component: IgnoreSlowOnDamage
-        time: 5 # same as epinephrine! there is a beating heart tell-tale style
+        time: 5
   plantMetabolism:
   - !type:PlantAdjustToxins
    amount: 1
@@ -71,11 +71,12 @@
   physicalDesc: reagent-physical-desc-translucent
   flavor: bitter
   color: "#a01010"
+  contraband: Minor
   metabolisms:
     Narcotic:
       effects:
       - !type:Emote
-        emote: Flip #this one goes out to laura
+        emote: Flip
         probability: 0.5
       - !type:Emote
         emote: Jump
@@ -106,3 +107,16 @@
         type: Add
         probability: 0.2
       - !type:Jitter
+      - !type:PopupMessage
+        type: Local
+        messages:
+          - "draculine-effect-1"
+          - "draculine-effect-2"
+          - "draculine-effect-3"
+          - "draculine-effect-4"
+          - "draculine-effect-5"
+          - "draculine-effect-6"
+          - "draculine-effect-7"
+          - "draculine-effect-8"
+          - "draculine-effect-9" 
+        probability: 0.1

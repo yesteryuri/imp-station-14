@@ -1,3 +1,6 @@
+reagent-name-baldium = baldium
+reagent-desc-baldium = Causes you to go bald! 
+
 reagent-name-brosochloric-bros = BROSochloric BROS
 reagent-desc-brosochloric-bros = Liquid BROS. UNGH
 

@@ -1,33 +1,31 @@
 using Content.Server.Traits.Assorted;
 using Content.Shared.Chemistry.Reagent;
+using Robust.Shared.Random;
 using Content.Shared.EntityEffects;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.TypeSerializers.Implementations;
 
 namespace Content.Server.EntityEffects.Effects;
-
+/// <summary>
+/// adds time to the minimum and maximum duration between hallucinations from paracusia
+/// </summary>
 [UsedImplicitly]
 public sealed partial class ResetParacusia : EntityEffect
 {
     /// <summary>
-    /// im kinda stupid so rn this sets paracusia min timer to 10 minutes and max to 20
-    /// i copied resetnarcolepsy for this
-    /// i wish that this would run the calculation for next hallucination time immediately with the new timers set but idk how to access client/para sys
+    /// # of seconds that gets added to min and max time between hallucination. default min is 30, reagent takes a random between 500-700
     /// </summary>
     [DataField("TimerReset")]
-    public int TimerMinReset = 600;
-    public int TimerMaxReset = 1200;
+    public float TimerReset = Random.Shared.NextFloat(500, 700);
 
     protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
-        => Loc.GetString("reagent-effect-guidebook-reset-paracusia", ("chance", Probability)); 
+        => Loc.GetString("reagent-effect-guidebook-reset-paracusia", ("chance", Probability));
 
     public override void Effect(EntityEffectBaseArgs args)
     {
         if (args is EntityEffectReagentArgs reagentArgs)
             if (reagentArgs.Scale != 1f)
                 return;
-
-        args.EntityManager.EntitySysManager.GetEntitySystem<ParacusiaSystem>().SetTime(args.TargetEntity, TimerMinReset, TimerMaxReset);
+        args.EntityManager.EntitySysManager.GetEntitySystem<ParacusiaSystem>().SetTime(args.TargetEntity, 30 + TimerReset, 60 + TimerReset);
     }
 }
