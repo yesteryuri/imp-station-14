@@ -11,6 +11,19 @@
     revertOnCrit: true
     duration: 20
 
+# Polymorph for diona cryox
+- type: polymorph
+  id: PolymorphNymph
+  configuration:
+    entity: MobDionaNymph
+    forced: true
+    transferName: true
+    transferHumanoidAppearance: true
+    inventory: None
+    revertOnDeath: true
+    revertOnCrit: true
+    duration: 20
+
 # Artifact polymorphs
 - type: polymorph
   id: ArtifactBee

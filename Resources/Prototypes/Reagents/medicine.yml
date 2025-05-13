@@ -205,6 +205,21 @@
               Brute: -4
               Burn: -6
               Toxin: -4
+    Poison: # start imp, diona effects to match plant metabolism
+      effects:
+      - !type:Polymorph
+        prototype: PolymorphNymph
+        conditions:
+        - !type:ReagentThreshold
+          min: 30
+        - !type:OrganType
+          type: Plant
+      - !type:AdjustReagent
+        reagent: Cryoxadone
+        amount: -15
+        conditions:
+        - !type:ReagentThreshold
+          min: 30 #end imp
 
 - type: reagent
   id: Doxarubixadone

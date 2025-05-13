@@ -7,3 +7,29 @@
       amount: 1
   products:
     AquaAvari: 1
+
+- type: reaction
+  id: Baldium
+  minTemp: 374
+  reactants:
+    Radium: 
+      amount: 1
+    SulfuricAcid: 
+      amount: 1
+    Vestine: 
+      amount: 1
+  products:
+    Baldium: 3
+
+- type: reaction
+  id: GiveParaPlaceholder
+  minTemp: 374
+  reactants:
+    Ethanol: 
+      amount: 1
+    SulfuricAcid: 
+      amount: 1
+    Vestine: 
+      amount: 1
+  products:
+    GiveParaPlaceholder: 3

@@ -64,16 +64,14 @@
   metabolisms:
     Medicine:
       effects:
-      - !type:HealthChange
+      - !type:HealthChange # start imp, gastropoid
         conditions:
-        - !type:ReagentThreshold
-          min: 1
         - !type:OrganType
           type: Snail
           shouldHave: true
         damage:
           types:
-            Poison: 4
+            Poison: 4 # end imp
       - !type:HealthChange
         damage:
           types:
@@ -172,6 +170,7 @@
   desc: reagent-desc-sedin
   flavor: bitter
   color: "#3CB371"
+  worksOnTheDead: true #imp, diona effects to match plant metabolism
   physicalDesc: reagent-physical-desc-sickly
   plantMetabolism:
     - !type:PlantAdjustHealth
@@ -180,6 +179,21 @@
       probability: 0.20
     - !type:PlantAdjustPotency
       amount: -3 # Match this with current rate of Robust Harvest potency increase
+  metabolisms: #start imp, diona effects to match plant metabolism
+    Medicine:
+      effects:
+      - !type:HealthChange
+          conditions:
+          - !type:Temperature
+            max: 213.0
+          - !type:OrganType
+            type: Plant
+          damage:
+            groups:
+              Brute: -2
+              Burn: -2.5
+            types:
+              Poison: -1 # end imp
 
 - type: reagent
   id: WeedKiller
@@ -224,9 +238,29 @@
     Poison:
       effects:
       - !type:HealthChange
+        conditions: #start imp, diona effects to match plant metabolism
+        - !type:OrganType
+          type: Plant
+          shouldHave: false #end imp
         damage:
           types:
             Caustic: 1
+    Medicine: #start imp, diona effects to match plant metabolism
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Plant
+        damage:
+          types:
+            Heat: -0.33
+            Shock: -0.33
+            Cold: -0.33
+      - !type:SatiateHunger
+        conditions:
+        - !type:OrganType
+          type: Plant
+        factor: 3.5 # end imp
     Gas:
       effects:
       - !type:HealthChange
@@ -323,6 +357,30 @@
     Poison:
       effects:
       - !type:HealthChange
+        conditions: #start imp, diona effects to match plant metabolism
+        - !type:OrganType
+          type: Plant
+          shouldHave: false #end imp
         damage:
           types:
             Caustic: 1
+    Medicine: #start imp, diona effects to match plant metabolism
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Plant
+        damage:
+          groups:
+            Brute: -1
+      - !type:SatiateHunger
+        conditions:
+        - !type:OrganType
+          type: Plant
+        factor: 1
+      - !type:MovespeedModifier
+        conditions:
+        - !type:OrganType
+          type: Plant
+        walkSpeedModifier: 1.1
+        sprintSpeedModifier: 1.2 #end imp

@@ -1,17 +1,4 @@
 - type: reaction
-  id: Baldium
-  minTemp: 374
-  reactants:
-    Radium: 
-      amount: 1
-    SulfuricAcid: 
-      amount: 1
-    Vestine: 
-      amount: 1
-  products:
-    Baldium: 3
-
-- type: reaction
   id: JuiceThatMakesYouUngh
   reactants:
     VentCrud:
