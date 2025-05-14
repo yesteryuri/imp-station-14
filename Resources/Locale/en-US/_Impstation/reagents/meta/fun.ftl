@@ -1,5 +1,5 @@
-reagent-name-baldium = baldium
-reagent-desc-baldium = Causes you to go bald! 
+reagent-name-barbers-aid = barber's aid
+reagent-desc-barbers-aid = Changes your hair style randomly. Worse than a mirror!
 
 reagent-name-brosochloric-bros = BROSochloric BROS
 reagent-desc-brosochloric-bros = Liquid BROS. UNGH

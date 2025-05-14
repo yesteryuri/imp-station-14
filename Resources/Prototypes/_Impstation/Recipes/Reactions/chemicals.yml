@@ -41,6 +41,32 @@
       amount: 100
   products:
     PhilosophersJuice: 1
+
+- type: reaction
+  id: Polyethylene
+  impact: Low
+  maxTemp: 250
+  reactants:
+    Oil:
+      amount: 3
+    Benzene:
+      amount: 3
+    SulfuricAcid:
+      amount: 3
+  products:
+    Polyethylene: 3
+
+- type: reaction
+  id: PolyethyleneBreakdown
+  requiredMixerCategories:
+  - Centrifuge
+  reactants:
+    Polyethylene:
+      amount: 10
+  products:
+    Oil: 4
+    SulfuricAcid: 4
+    Hydrogen: 1
     
 - type: reaction
   id: Holium

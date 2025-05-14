@@ -45,7 +45,7 @@
   name: reagent-name-obscurium
   desc: reagent-desc-obscurium
   group: Narcotics
-  physicalDesc: reagent-physical-desc-translucent
+  physicalDesc: reagent-physical-desc-opaque
   flavor: bitter
   color: "#404040"
   contraband: Minor
@@ -59,16 +59,13 @@
         key: Adrenaline # there is a beating heart tell-tale style
         component: IgnoreSlowOnDamage
         time: 5
-  plantMetabolism:
-  - !type:PlantAdjustToxins
-   amount: 1
     
 - type: reagent
   id: Draculine
   name: reagent-name-draculine
   desc: reagent-desc-draculine
   group: Narcotics
-  physicalDesc: reagent-physical-desc-translucent
+  physicalDesc: reagent-physical-desc-necrotic
   flavor: bitter
   color: "#a01010"
   contraband: Minor

@@ -9,7 +9,7 @@ namespace Content.Server._Impstation.EntityEffects.Effects;
 public sealed partial class Paracusize : EntityEffect
 {
     /// <summary>
-    ///     Gives the entity paracusia.
+    ///     Gives the entity paracusia
     /// </summary>
     protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
     {

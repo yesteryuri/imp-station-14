@@ -17,7 +17,7 @@
       amount: 2
     ChloralHydrate:
       amount: 2
-    Bleach:
+    Polyethylene:
       amount: 1
   effects:
   - !type:ExplosionReactionEffect # shatters beakers, not offensively strong

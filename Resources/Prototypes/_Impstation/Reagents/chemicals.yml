@@ -7,3 +7,11 @@
   color: "#7e009e"
   boilingPoint: -127.3 # Same as plasma
   meltingPoint: -186.4
+
+- type: reagent
+  id: Polyethylene
+  name: reagent-name-polyethylene
+  desc: reagent-desc-polyethylene
+  physicalDesc: reagent-physical-desc-thick
+  flavor: plastic
+  color: "#a19a8a"

@@ -4,8 +4,14 @@ reagent-effect-guidebook-reset-paracusia =
         *[other] permanently extend
     } the duration between hallucinations from paracusia
 
+reagent-effect-guidebook-lose-hair =
+    { $chance ->
+        [1] Causes
+        *[other] cause
+    } baldness
+
 reagent-effect-guidebook-change-hair =
     { $chance ->
-        [1] Change the metabolizer's hair to
-        *[other] changes the metabolizer's hair to
-    } bald
+        [1] Causes
+        *[other] cause
+    } hairstyles to change

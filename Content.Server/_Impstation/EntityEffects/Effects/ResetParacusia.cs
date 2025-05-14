@@ -4,11 +4,10 @@ using Content.Shared.EntityEffects;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Content.Shared.Traits.Assorted;
-using Robust.Shared.Timing;
 
 namespace Content.Server.EntityEffects.Effects;
 /// <summary>
-/// adds time to the minimum and maximum duration between hallucinations from paracusia
+/// Adds time to the minimum and maximum duration between hallucinations from paracusia
 /// </summary>
 [UsedImplicitly]
 public sealed partial class ResetParacusia : EntityEffect
@@ -17,7 +16,7 @@ public sealed partial class ResetParacusia : EntityEffect
     /// The # of seconds that gets added to min and max time between hallucinations.
     /// </summary>
     [DataField("TimerReset")]
-    public float TimerReset = Random.Shared.NextFloat(200, 700);
+    public float TimerReset = Random.Shared.NextFloat(200, 600);
 
     protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
         => Loc.GetString("reagent-effect-guidebook-reset-paracusia", ("chance", Probability));

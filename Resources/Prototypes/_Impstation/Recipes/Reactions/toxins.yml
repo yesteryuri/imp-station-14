@@ -22,14 +22,12 @@
     Baldium: 3
 
 - type: reaction
-  id: GiveParaPlaceholder
-  minTemp: 374
+  id: Psilocybin
+  minTemp: 365
   reactants:
-    Ethanol: 
+    Amatoxin: 
       amount: 1
-    SulfuricAcid: 
-      amount: 1
-    Vestine: 
-      amount: 1
+    Tea: 
+      amount: 3
   products:
-    GiveParaPlaceholder: 3
+    Psilocybin: 2

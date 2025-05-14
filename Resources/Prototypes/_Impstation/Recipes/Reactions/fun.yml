@@ -1,4 +1,16 @@
 - type: reaction
+  id: BarbersAid #insp yogstation ss13
+  reactants:
+    Carpetium:
+      amount: 1
+    SpaceDrugs:
+      amount: 1
+    Radium:
+      amount: 1
+  products:
+    BarbersAid: 5
+
+- type: reaction
   id: JuiceThatMakesYouUngh
   reactants:
     VentCrud:

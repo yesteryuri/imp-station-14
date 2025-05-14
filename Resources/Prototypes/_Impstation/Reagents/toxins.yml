@@ -34,30 +34,29 @@
   - !type:ExtinguishTileReaction { }
 
 - type: reagent
-  id: Baldium # i should be shot
+  id: Baldium # insp yogstation ss13
   name: reagent-name-baldium
   desc: reagent-desc-baldium
   physicalDesc: reagent-physical-desc-translucent
   flavor: bitter
   color: "#e7b3c4"
-  contraband: Minor
-  reactiveEffects:
-    Acidic:
-      methods: [ Touch ]
+  contraband: Tier2Contraband
+  metabolisms:
+    Poison:
       effects:
-      - !type:ChangeHair
+      - !type:LoseHair
         conditions:
         - !type:ReagentThreshold
           min: 20
 
 - type: reagent
-  id: GiveParaPlaceholder
-  name: reagent-name-placeholder
-  desc: reagent-desc-placeholder
-  physicalDesc: reagent-physical-desc-translucent
+  id: Psilocybin
+  name: reagent-name-psilocybin
+  desc: reagent-desc-psilocybin
+  physicalDesc: reagent-physical-desc-grainy
   flavor: bitter
-  color: "#e7b3c4"
-  contraband: Minor
+  color: "#574a2d"
+  contraband: Major
   metabolisms:
     Poison:
       effects:
@@ -65,3 +64,11 @@
         conditions:
         - !type:ReagentThreshold
           min: 20
+      - !type:ChemVomit
+        probability: 0.03
+      - !type:GenericStatusEffect
+        key: SeeingRainbows
+        component: SeeingRainbows
+        type: Add
+        time: 6
+        refresh: false

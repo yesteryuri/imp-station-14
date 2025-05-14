@@ -185,7 +185,7 @@
       - !type:HealthChange
           conditions:
           - !type:Temperature
-            max: 213.0
+            max: 150.0
           - !type:OrganType
             type: Plant
           damage:
@@ -382,5 +382,5 @@
         conditions:
         - !type:OrganType
           type: Plant
-        walkSpeedModifier: 1.1
-        sprintSpeedModifier: 1.2 #end imp
+        walkSpeedModifier: 1.0
+        sprintSpeedModifier: 1.1 #end imp
