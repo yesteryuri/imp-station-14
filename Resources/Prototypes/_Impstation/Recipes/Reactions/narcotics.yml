@@ -17,7 +17,7 @@
       amount: 2
     ChloralHydrate:
       amount: 2
-    Polyethylene:
+    LowDensityPolyethylene:
       amount: 1
   effects:
   - !type:ExplosionReactionEffect # shatters beakers, not offensively strong
@@ -26,6 +26,5 @@
     intensityPerUnit: 1
     intensitySlope: 2
     maxTotalIntensity: 10
-    tileBreakScale: 0.00001
   products:
     Draculine: 5

@@ -4,6 +4,8 @@ using Content.Shared.EntityEffects;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Content.Shared.Traits.Assorted;
+using Robust.Shared.Audio;
+using Content.Server.Administration.Commands;
 
 namespace Content.Server.EntityEffects.Effects;
 /// <summary>
@@ -26,11 +28,20 @@ public sealed partial class ResetParacusia : EntityEffect
         var entMan = args.EntityManager;
         var target = args.TargetEntity;
         var entSys = entMan.EntitySysManager;
-        if (!entMan.TryGetComponent(target, out ParacusiaComponent? paracusia)) //resetnarcolepsy doesnt do this so it's not required i think???
-            return;
+        var paraSys = entSys.GetEntitySystem<ParacusiaSystem>();
+        var paracusiaSounds = new SoundCollectionSpecifier("Paracusia");
         if (args is EntityEffectReagentArgs reagentArgs)
             if (reagentArgs.Scale != 1f)
                 return;
-        entSys.GetEntitySystem<ParacusiaSystem>().SetTime(target, 0.1f + TimerReset, 300f + TimerReset); //player paracusia min is 0.1 and max 300
+        if (!entMan.TryGetComponent(target, out ParacusiaComponent? paracusia)) //if dont have paracusia, return
+            return;
+        else if (paracusia.MinTimeBetweenIncidents > 0.1f) //if paracusia min time is already above default, return
+            return;
+        else
+        {
+            paraSys.SetTime(target, 0.1f + TimerReset, 300f + TimerReset); //default paracusia min is 0.1 and max 300
+            paraSys.SetSounds(target, paracusiaSounds, paracusia);
+            paraSys.SetDistance(target, 7f, paracusia);
+        }
     }
 }

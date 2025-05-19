@@ -20,6 +20,34 @@
     Brutoxidone: 1
 
 - type: reaction
+  id: Chlorpromazine
+  minTemp: 350
+  reactants: 
+    Aluminium:
+      amount: 1
+    Mercury: 
+      amount: 1
+    Potassium:
+      amount: 1
+    TableSalt:
+      amount: 1
+    ChloralHydrate:
+      amount: 1
+  products:
+    Chlorpromazine: 5
+
+- type: reaction
+  id: ClarifiedPhalanximine
+  minTemp: 300
+  reactants:
+    Phalanximine:
+      amount: 1
+    BloodKodepiia:
+      amount: 1
+  products:
+    ClarifiedPhalanximine: 1
+
+- type: reaction
   id: Subjuzine-Activation-GrayBlood #imp, so greys can use it
   preserveDNA: true
   reactants:
@@ -40,31 +68,3 @@
       amount: 1
   products:
     ActivatedSubjuzine: 5
-
-- type: reaction
-  id: ClarifiedPhalanximine
-  minTemp: 300
-  reactants:
-    Phalanximine:
-      amount: 1
-    BloodKodepiia:
-      amount: 1
-  products:
-    ClarifiedPhalanximine: 1
-
-- type: reaction
-  id: Chlorpromazine
-  minTemp: 350
-  reactants: 
-    Aluminium:
-      amount: 1
-    Mercury: 
-      amount: 1
-    Potassium:
-      amount: 1
-    TableSalt:
-      amount: 1
-    ChloralHydrate:
-      amount: 1
-  products:
-    Chlorpromazine: 5

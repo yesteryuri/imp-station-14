@@ -13,7 +13,7 @@ public sealed partial class Paracusize : EntityEffect
     /// </summary>
     protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
     {
-        return "Gives the metabolizer paracusia.";
+        return "Causes long-term paracusia";
     }
 
     public override void Effect(EntityEffectBaseArgs args)
@@ -22,13 +22,14 @@ public sealed partial class Paracusize : EntityEffect
         var uid = args.TargetEntity;
         var paraSys = entityManager.System<ParacusiaSystem>();
         var paracusiaSounds = new SoundCollectionSpecifier("Paracusia");
-        if (!entityManager.EnsureComponent<ParacusiaComponent>(uid, out var paracusia))
+        if (args is EntityEffectReagentArgs reagentArgs)
+            if (reagentArgs.Scale != 1f)
+                return;
+        if (!entityManager.EnsureComponent<ParacusiaComponent>(uid, out var paracusia)) //make sure they have paracusia, populate it with sounds and a timer if they didnt have it before
         {
             paraSys.SetSounds(uid, paracusiaSounds, paracusia);
             paraSys.SetTime(uid, 0.1f, 300f, paracusia);
             paraSys.SetDistance(uid, 7f, paracusia);
         }
-        else
-            return;
     }
 }

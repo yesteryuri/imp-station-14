@@ -5,6 +5,7 @@ using Content.Server.Humanoid;
 using Content.Shared.Humanoid;
 
 namespace Content.Server.EntityEffects.Effects;
+
 public sealed partial class LoseHair : EntityEffect
 {
     /// <summary>

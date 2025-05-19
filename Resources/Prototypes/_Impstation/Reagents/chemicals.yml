@@ -9,9 +9,17 @@
   meltingPoint: -186.4
 
 - type: reagent
-  id: Polyethylene
-  name: reagent-name-polyethylene
-  desc: reagent-desc-polyethylene
+  id: HighDensityPolyethylene
+  name: reagent-name-highdensitypolyethylene
+  desc: reagent-desc-highdensitypolyethylene
+  physicalDesc: reagent-physical-desc-thick
+  flavor: plastic
+  color: "#a19a8a"
+
+- type: reagent
+  id: LowDensityPolyethylene
+  name: reagent-name-lowdensitypolyethylene
+  desc: reagent-desc-lowdensitypolyethylene
   physicalDesc: reagent-physical-desc-thick
   flavor: plastic
   color: "#a19a8a"

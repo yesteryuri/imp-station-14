@@ -43,9 +43,9 @@
     PhilosophersJuice: 1
 
 - type: reaction
-  id: Polyethylene
+  id: LowDensityPolyethylene
   impact: Low
-  maxTemp: 250
+  maxTemp: 294
   reactants:
     Oil:
       amount: 3
@@ -54,14 +54,28 @@
     SulfuricAcid:
       amount: 3
   products:
-    Polyethylene: 3
+    LowDensityPolyethylene: 3
 
 - type: reaction
-  id: PolyethyleneBreakdown
+  id: HighDensityPolyethylene
+  impact: Low
+  minTemp: 295
+  reactants:
+    Oil:
+      amount: 3
+    Benzene:
+      amount: 3
+    SulfuricAcid:
+      amount: 3
+  products:
+    HighDensityPolyethylene: 3
+
+- type: reaction
+  id: HDPolyethyleneBreakdown
   requiredMixerCategories:
   - Centrifuge
   reactants:
-    Polyethylene:
+    HighDensityPolyethylene:
       amount: 10
   products:
     Oil: 4

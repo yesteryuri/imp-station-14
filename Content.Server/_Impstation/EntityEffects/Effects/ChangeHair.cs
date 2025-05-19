@@ -7,6 +7,7 @@ using Robust.Shared.Random;
 using System.Linq;
 
 namespace Content.Server.EntityEffects.Effects;
+
 public sealed partial class ChangeHair : EntityEffect
 {
     /// <summary>

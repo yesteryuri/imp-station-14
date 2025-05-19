@@ -1,5 +1,5 @@
 - type: reagent
-  id: BarbersAid #insp yogstation ss13
+  id: BarbersAid #inspo yogstation ss13
   name: reagent-name-barbers-aid
   desc: reagent-desc-barbers-aid
   physicalDesc: reagent-physical-desc-thick
@@ -13,7 +13,7 @@
           min: 20
       - !type:AdjustReagent # this is a really stupid way to stop it from constantly changing your hair
         reagent: BarbersAid
-        amount: -20
+        amount: -300
         conditions:
         - !type:ReagentThreshold
           min: 20
@@ -202,6 +202,7 @@
   metabolisms:
     Medicine:
       effects:
-      # its just a weaker tranex with no od
       - !type:ModifyBleedAmount
-        amount: -0.5
+        amount: -0.75
+      - !type:ModifyBloodLevel
+        amount: 1

@@ -78,6 +78,9 @@
       - !type:Emote
         emote: Jump
         probability: 0.15
+      - !type:Emote
+        emote: Spin
+        probability: 0.15
       - !type:GenericStatusEffect
         key: SeeingRainbows
         component: SeeingRainbows

@@ -152,8 +152,8 @@
         showInChat: true
         probability: 0.05
       - !type:MovespeedModifier
-        walkSpeedModifier: 0.75
-        sprintSpeedModifier: 0.85
+        walkSpeedModifier: 0.85
+        sprintSpeedModifier: 0.95
       - !type:GenericStatusEffect
         key: Drowsiness
         component: Drowsiness
