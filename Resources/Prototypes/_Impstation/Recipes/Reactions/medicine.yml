@@ -68,3 +68,15 @@
       amount: 1
   products:
     ActivatedSubjuzine: 5
+
+- type: reaction
+  id: Subjuzine-Activation-BloodKodepiia #imp, so kode can use it
+  preserveDNA: true
+  reactants:
+    Subjuzine:
+      amount: 4
+    BloodKodepiia:
+      amount: 1
+  products:
+    ActivatedSubjuzine: 5
+

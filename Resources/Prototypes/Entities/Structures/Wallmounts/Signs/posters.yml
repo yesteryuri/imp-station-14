@@ -468,7 +468,7 @@
   parent: PosterBase
   id: PosterContrabandTheBigGasTruth
   name: "The Big Gas Giant Truth"
-  description: "Don't believe everything you see on a poster, patriots. All the lizards at central command don't want to answer this SIMPLE QUESTION: WHERE IS THE GAS MINER MINING FROM, CENTCOMM?"
+  description: "Don't believe everything you see on a poster, patriots. All the lizards at Central Command don't want to answer this SIMPLE QUESTION: WHERE IS THE GAS MINER MINING FROM, CENTCOMM?" # imp caps fix...
   components:
   - type: Sprite
     state: poster48_contraband
@@ -901,10 +901,11 @@
 - type: entity
   parent: PosterBase
   id: PosterLegitNoERP
-  name: "No ERP"
-  description: "This poster reminds the crew that Eroticism and Pornography are banned on Nanotrasen stations."
+  name: "Yes ERP"
+  description: "This poster reminds the crew that Eroticism and Pornography are banned on Nanotrasen stations, but also we are supportive of gay rights, so you get an exception for just this month." # imp
   components:
   - type: Sprite
+    sprite: _Floof/Structures/Wallmounts/posters.rsi # IMP YOU HAVE TO DELETE THIS AFTER JUNE
     state: poster34_legit
 
 - type: entity
@@ -1037,9 +1038,10 @@
   parent: PosterBase
   id: PosterLegitPeriodicTable
   name: "Periodic Table of the Elements"
-  description: "A periodic table of the elements, from Hydrogen to Oganesson, and everything inbetween."
+  description: "A periodic table of the elements, from Hydrogen to Unhexennium, and everything inbetween." #Imp
   components:
     - type: Sprite
+      sprite: _Impstation/Structures/Wallmounts/posters.rsi #Imp
       state: poster49_legit
 
 - type: entity

@@ -17,6 +17,8 @@
   - MagazineLPistol
   - MagazineLPistolEmpty
   - SpeedLoaderMagnumStun
+  - SpeedLoaderSturm
+  - SpeedLoaderSturmEmpty
   - MagazineBoxMagnumStun
   - MagazinePistolFreelancerEmpty
   - MagazinePistolFreelancer
@@ -47,6 +49,8 @@
   - MagazineDMRUranium
   - MagazineLPistolIncendiary
   - MagazineLPistolUranium
+  - MagazinePistolP2Extended
+  - MagazinePistolP2ExtendedEmpty
   - MagazinePistolP2Incendiary
   - MagazinePistolP2Uranium
 
@@ -64,3 +68,12 @@
   recipes:
   - WeaponShotgunEnforcerBeanbag
   - WeaponShotgunKammererBeanbag
+  - WeaponRifleTranq
+  - TranqDart
+  - IrwizineDart
+
+# Emagged
+
+# - type: latheRecipePack
+#   id: ImpSecEmagged
+#   recipes:

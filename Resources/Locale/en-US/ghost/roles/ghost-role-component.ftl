@@ -135,6 +135,7 @@ ghost-role-information-ifrit-description = Listen to your owner. Don't tank dama
 
 ghost-role-information-space-dragon-name = Space Dragon
 ghost-role-information-space-dragon-description = Call in 3 carp rifts and take over this quadrant! You have only 5 minutes in between each rift before you will disappear.
+ghost-role-information-space-dragon-rules = You are a [color=red][bold]Team Antagonist[/bold][/color] with all your summoned carp.
                                             You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
 ghost-role-information-space-dragon-summoned-carp-rules = You are a [color=red][bold]Team Antagonist[/bold][/color] with your dragon and its allies.
                                                           You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
@@ -282,8 +283,9 @@ ghost-role-information-science-description = You are part of a science team, but
 
 ghost-role-information-civilian-name = Civilian
 ghost-role-information-civilian-description = You were just hanging out, but seem to have found yourself in a strange situation...
-ghost-role-information-civilian-centcom-lawyer-name = Centcom Lawyer
-ghost-role-information-civilian-centcom-lawyer-description = A lawyer direct from the Central Legal Division.
+# imp caps fix, and style on the description
+ghost-role-information-civilian-centcom-lawyer-name = CentComm Lawyer
+ghost-role-information-civilian-centcom-lawyer-description = You are a lawyer, commissioned directly from the Central Command Legal team.
 
 ghost-role-information-command-name = Commander
 ghost-role-information-command-description = You are a member of command, but seem to have found yourself in a strange situation...

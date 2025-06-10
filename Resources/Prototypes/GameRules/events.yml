@@ -40,6 +40,8 @@
     - id: ChangelingAwakening
     - id: GoblinStowawaysEvent # imp
     - id: GoblinCastawaysEvent # imp
+    - id: BountyHunterSpawn # imp
+    - id: ReplicatorSpawn # imp
 
 - type: entityTable
   id: SleeperlessAntagEventsTable
@@ -59,6 +61,8 @@
     - id: ChangelingAwakening
     - id: GoblinStowawaysEvent # imp
     - id: GoblinCastawaysEvent # imp
+    - id: BountyHunterSpawn # imp
+    - id: ReplicatorSpawn # imp
 
 - type: entity
   id: BaseStationEvent
@@ -484,7 +488,7 @@
         factions:
         - Syndicate
       mindRoles:
-      - MindRoleNukeops
+      - MindRoleNukeopsLone #imp edit to separate playtime tracking from regular nukies
 
 - type: entity
   parent: BaseTraitorRule
@@ -554,7 +558,7 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-    weight: 2 #imp. tf you mean this was weight 5
+    weight: 5
     minimumPlayers: 25
     reoccurrenceDelay: 20
   - type: GreytideVirusRule
