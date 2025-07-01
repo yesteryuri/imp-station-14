@@ -27,6 +27,8 @@
     solution: absorbed
     allowMeleeDamage: true #imp edit
     spillWhenThrown: false #imp edit
+  - type: DrainableSolution
+    solution: absorbed
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:
@@ -92,6 +94,8 @@
       solution: absorbed
       allowMeleeDamage: true #imp edit
       spillWhenThrown: false #imp edit
+    - type: DrainableSolution
+      solution: absorbed
     - type: Wieldable
     - type: IncreaseDamageOnWield
       damage:
@@ -332,6 +336,9 @@
       maxFillLevels: 3
       fillBaseName: fill-
     - type: Spillable
+      solution: absorbed
+      spillWhenThrown: false
+    - type: DrainableSolution
       solution: absorbed
     - type: MeleeWeapon
       soundNoDamage:
