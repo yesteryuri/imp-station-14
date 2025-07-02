@@ -1,13 +1,4 @@
 ﻿Entries:
-- author: TheGrimbeeper
-  changes:
-  - message: Kodes can now use inherent stores (ling & heretic)
-    type: Fix
-  - message: Kodes can now check their moods, if they have them
-    type: Fix
-  id: 1465
-  time: '2025-04-03T14:04:39.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2190
 - author: eviltori
   changes:
   - message: 'huge maintsdiver buff: you can now accessorize with a machete! open
@@ -4244,3 +4235,10 @@
   id: 1964
   time: '2025-07-02T07:14:02.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/2943
+- author: Stonylogray
+  changes:
+  - message: Increased the time total time between round to 15 minutes.
+    type: Tweak
+  id: 1965
+  time: '2025-07-02T07:15:29.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/2942
