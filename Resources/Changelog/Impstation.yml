@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: TheGrimbeeper
-  changes:
-  - message: random event - one singular basic critter can now crawl unannounced from
-      a vent.
-    type: Add
-  id: 1460
-  time: '2025-04-02T13:07:58.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2147
 - author: widgetbeck
   changes:
   - message: Echolalia has been moved to the Disabilities category and had its point
@@ -4241,3 +4233,11 @@
   id: 1959
   time: '2025-07-02T01:46:43.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/2944
+- author: Ecramox
+  changes:
+  - message: You can no longer speak into Greencomms through a headset. Intercoms
+      still work!
+    type: Tweak
+  id: 1960
+  time: '2025-07-02T06:37:06.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/2931
