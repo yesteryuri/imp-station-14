@@ -1,23 +1,4 @@
 ﻿Entries:
-- author: jtfg-dev, hivehum
-  changes:
-  - message: Made the guidebook page for Space Law more reasonable for first-time
-      lawyers and nervous security cadets.
-    type: Tweak
-  id: 1467
-  time: '2025-04-05T02:26:42.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2200
-- author: hivehum
-  changes:
-  - message: Added a new reagent, found by bloodletting your local squids.
-    type: Add
-  - message: Kodepiiae walk like normal people. No more squelching.
-    type: Remove
-  - message: Kodepiiae should be a bit stronger.
-    type: Tweak
-  id: 1468
-  time: '2025-04-05T03:41:41.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2196
 - author: hivehum
   changes:
   - message: Some sprites are back to normal. Report if anything else looks off.
@@ -4241,3 +4222,18 @@
   id: 1966
   time: '2025-07-02T07:17:55.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/2936
+- author: starlighthowls
+  changes:
+  - message: CentComms entire stock of odd plushies were lost in a tragic explosion
+      related accident. Any survivors are now considered rare collectors items!
+    type: Remove
+  id: 1967
+  time: '2025-07-03T19:46:08.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/2955
+- author: crocodilecarousel
+  changes:
+  - message: renamed the skinhead hairstyle
+    type: Tweak
+  id: 1968
+  time: '2025-07-03T19:45:36.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/2962
