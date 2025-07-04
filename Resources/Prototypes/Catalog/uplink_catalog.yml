@@ -557,7 +557,7 @@
   id: UplinkMagazineShotgunPellet
   name: uplink-magazine-bulldog-pellet-name
   description: uplink-magazine-bulldog-pellet-desc
-  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Shotgun/m12.rsi, state: pellets }
+  icon: { sprite: /Textures/_Impstation/Objects/Weapons/Guns/Ammunition/Magazine/Shotgun/m12.rsi, state: pellets } # imp
   productEntity: MagazineShotgun
   cost:
     Telecrystal: 2
@@ -568,7 +568,7 @@
   id: UplinkMagazineShotgunSlug
   name: uplink-magazine-bulldog-slug-name
   description: uplink-magazine-bulldog-slug-desc
-  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Shotgun/m12.rsi, state: slug }
+  icon: { sprite: /Textures/_Impstation/Objects/Weapons/Guns/Ammunition/Magazine/Shotgun/m12.rsi, state: slug } # imp
   productEntity: MagazineShotgunSlug
   cost:
     Telecrystal: 3

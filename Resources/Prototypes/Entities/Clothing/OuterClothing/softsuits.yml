@@ -12,7 +12,7 @@
   - type: Tag
     tags:
     - SuitEVA
-    - MonkeyWearable
+    # - MonkeyWearable # imp
     - CorgiWearable
     - WhitelistChameleon
 
@@ -62,7 +62,7 @@
   - type: Tag
     tags:
     - CorgiWearable
-    - MonkeyWearable
+    # - MonkeyWearable # imp
     - WhitelistChameleon
 
 #Prisoner EVA

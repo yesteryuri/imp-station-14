@@ -42,7 +42,7 @@
     proto: CartridgeRifle
   - type: Sprite
     layers:
-    - state: base
+    - state: red # imp
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
@@ -87,14 +87,14 @@
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeRifleIncendiary
-  - type: Sprite
-    layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-    - state: stripe
-      color: "#ff6e52"
+  # - type: Sprite # imp
+  #   layers:
+  #   - state: base
+  #     map: ["enum.GunVisualLayers.Base"]
+  #   - state: mag-1
+  #     map: ["enum.GunVisualLayers.Mag"]
+  #   - state: stripe
+  #     color: "#ff6e52"
   - type: Item
     inhandVisuals:
       left:
@@ -116,12 +116,12 @@
     proto: CartridgeRiflePractice
   - type: Sprite
     layers:
-    - state: base
+    - state: practice # imp
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
-    - state: stripe
-      color: "#dbdbdb"
+    # - state: stripe # imp remove
+    #   color: "#dbdbdb"
   - type: Item
     inhandVisuals:
       left:
@@ -143,12 +143,12 @@
     proto: CartridgeRifleUranium
   - type: Sprite
     layers:
-    - state: base
+    - state: uranium # imp
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
-    - state: stripe
-      color: "#00cd42"
+    # - state: stripe # imp remove
+    #   color: "#00cd42"
   - type: Item
     inhandVisuals:
       left:

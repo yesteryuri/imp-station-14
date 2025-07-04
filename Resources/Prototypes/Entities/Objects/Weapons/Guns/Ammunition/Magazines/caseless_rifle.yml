@@ -112,7 +112,7 @@
     capacity: 10
   - type: Sprite
     slayers:
-    - state: base
+    - state: red # imp
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
@@ -127,7 +127,7 @@
       - state: inhand-left-mag
       right:
       - state: inhand-right-mag
-      - state: inhand-right-stripe
+      # - state: inhand-right-stripe # imp remove
 
 - type: entity
   id: MagazinePistolCaselessRiflePractice
@@ -140,12 +140,12 @@
     capacity: 10
   - type: Sprite
     layers:
-    - state: base
+    - state: practice # imp
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
-    - state: stripe
-      color: "#dbdbdb"
+    # - state: stripe # imp remove
+    #   color: "#dbdbdb"
   - type: MagazineVisuals
     magState: mag
     steps: 6

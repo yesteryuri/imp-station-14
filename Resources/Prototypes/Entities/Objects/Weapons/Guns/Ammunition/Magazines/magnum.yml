@@ -81,7 +81,7 @@
     proto: CartridgeMagnum
   - type: Sprite
     layers:
-    - state: base
+    - state: red # imp
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
@@ -106,12 +106,12 @@
     proto: CartridgeMagnumPractice
   - type: Sprite
     layers:
-    - state: base
+    - state: practice # imp
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
-    - state: stripe
-      color: "#dbdbdb"
+    # - state: stripe # imp remove
+    #   color: "#dbdbdb"
   - type: Item
     inhandVisuals:
       left:
@@ -133,12 +133,12 @@
     proto: CartridgeMagnumUranium
   - type: Sprite
     layers:
-    - state: base
+    - state: uranium # imp
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
-    - state: stripe
-      color: "#00cd42"
+    # - state: stripe # imp remove
+    #   color: "#00cd42"
   - type: Item
     inhandVisuals:
       left:
@@ -160,12 +160,12 @@
     proto: CartridgeMagnumAP
   - type: Sprite
     layers:
-    - state: base
+    - state: piercing # imp
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
-    - state: stripe
-      color: "#540000"
+    # - state: stripe # imp remove
+    #   color: "#540000"
   - type: Item
     inhandVisuals:
       left:

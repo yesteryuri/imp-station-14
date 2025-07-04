@@ -10,9 +10,6 @@
     sprite: Clothing/Belt/utility.rsi
   - type: Clothing
     sprite: Clothing/Belt/utility.rsi
-  - type: Tag # Imp
-    tags:
-    - BeltUtility
   - type: Storage
     maxItemSize: Normal
     # TODO: Fill this out more.
@@ -88,6 +85,7 @@
     tags:
     - UtilityBelt
     - WhitelistChameleon
+    - BeltUtility # imp (?)
 
 - type: entity
   parent: ClothingBeltStorageBase
