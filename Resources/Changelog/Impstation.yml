@@ -1,13 +1,6 @@
 ﻿Entries:
 - author: Darkmajia
   changes:
-  - message: Dwarven names no longer generate incorrectly.
-    type: Fix
-  id: 1470
-  time: '2025-04-05T03:46:43.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2195
-- author: Darkmajia
-  changes:
   - message: Cards merge properly into hands.
     type: Fix
   id: 1471
@@ -4238,3 +4231,11 @@
   id: 1969
   time: '2025-07-04T16:29:25.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/2966
+- author: youtubevideo3
+  changes:
+  - message: Anti-vulgarity technology has made a handful of leaps and bounds. Big
+      news for censorship fans.
+    type: Tweak
+  id: 1970
+  time: '2025-07-05T14:09:56.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/2986
