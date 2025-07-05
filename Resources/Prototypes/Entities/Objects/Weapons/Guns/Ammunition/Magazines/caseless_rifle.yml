@@ -125,9 +125,12 @@
     inhandVisuals:
       left:
       - state: inhand-left-mag
+      - state: inhand-left-stripe
+        color: "#820a16" #imp
       right:
       - state: inhand-right-mag
-      # - state: inhand-right-stripe # imp remove
+      - state: inhand-right-stripe
+        color: "#820a16" #imp
 
 - type: entity
   id: MagazinePistolCaselessRiflePractice
@@ -202,7 +205,7 @@
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
     - state: stripe
-      color: "#dbdbdb"
+      color: "#d63b28" #imp
   - type: Item
     inhandVisuals:
       left:
@@ -256,7 +259,7 @@
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
     - state: stripe
-      color: "#dbdbdb"
+      color: "#d63b28" #imp
   - type: Item
     inhandVisuals:
       left:

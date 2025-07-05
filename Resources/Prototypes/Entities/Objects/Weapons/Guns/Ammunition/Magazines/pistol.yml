@@ -197,24 +197,24 @@
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistolIncendiary
-  # - type: Sprite # imp lol
-  #   layers:
-  #   - state: base
-  #     map: ["enum.GunVisualLayers.Base"]
-  #   - state: mag-1
-  #     map: ["enum.GunVisualLayers.Mag"]
-  #   - state: stripe
-  #     color: "#ff6e52"
-  # - type: Item
-  #   inhandVisuals:
-  #     left:
-  #     - state: inhand-left-mag
-  #     - state: inhand-left-stripe
-  #       color: "#ff6e52"
-  #     right:
-  #     - state: inhand-right-mag
-  #     - state: inhand-right-stripe
-  #       color: "#ff6e52"
+  - type: Sprite # imp lol
+    layers:
+    - state: red #imp
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    # - state: stripe #imp remove
+    #   color: "#ff6e52"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left-mag
+      - state: inhand-left-stripe
+        color: "#820a16" #imp
+      right:
+      - state: inhand-right-mag
+      - state: inhand-right-stripe
+        color: "#820a16" #imp
 
 - type: entity
   id: MagazinePistolPractice
@@ -332,7 +332,7 @@
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
     - state: stripe
-      color: "#dbdbdb"
+      color: "#d63b28" #imp
   - type: Item
     inhandVisuals:
       left:
@@ -374,7 +374,7 @@
       path: /Audio/Weapons/Guns/MagIn/bullet_insert.ogg
   - type: Sprite
     layers:
-    - state: red # imp remove
+    - state: red #imp
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
@@ -473,22 +473,21 @@
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistolIncendiary
-  # - type: Sprite # imp remove
-  #   layers:
-  #   - state: base
-  #     map: ["enum.GunVisualLayers.Base"]
-  #   - state: mag-1
-  #     map: ["enum.GunVisualLayers.Mag"]
-  #   - state: stripe
+  - type: Sprite
+    layers:
+    - state: red #imp
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  #   - state: stripe #imp remove
   #     color: "#ff6e52"
   - type: Item
     inhandVisuals:
       left:
       - state: inhand-left-mag
       - state: inhand-left-stripe
-        color: "#ff6e52"
+        color: "#820a16" #imp
       right:
       - state: inhand-right-mag
       - state: inhand-right-stripe
-        color: "#ff6e52"
-
+        color: "#820a16"
