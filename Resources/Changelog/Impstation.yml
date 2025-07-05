@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: DVDPlayerOfDiscordFame
-  changes:
-  - message: Cargo shop now uses the correct sprites for guns and medkits.
-    type: Fix
-  id: 1476
-  time: '2025-04-06T01:14:57.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2202
 - author: Sha-Seng
   changes:
   - message: Polished and combined all of our and upstream's underwear (RE-ADD YOUR
@@ -4250,3 +4243,11 @@
   id: 1975
   time: '2025-07-05T14:28:02.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/2959
+- author: DinnerCalzone
+  changes:
+  - message: Tck'Tck along with a number of other entities' toggleable lights should
+      work now.
+    type: Fix
+  id: 1976
+  time: '2025-07-05T14:29:17.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/2958
