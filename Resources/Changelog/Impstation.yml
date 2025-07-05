@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: SixValentine
-  changes:
-  - message: General Luna Maintenance and some Engie love, Check PR.
-    type: Fix
-  id: 1474
-  time: '2025-04-05T23:38:12.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2198
 - author: jtfg-dev
   changes:
   - message: A goblin legend is also (now more obviously) a _queer_ legend.
@@ -4247,3 +4240,10 @@
   id: 1973
   time: '2025-07-05T14:16:11.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/2960
+- author: crocodilecarousel
+  changes:
+  - message: the shape of crystals twists before your eyes
+    type: Tweak
+  id: 1974
+  time: '2025-07-05T14:24:20.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/2978
