@@ -181,6 +181,9 @@
   name: prisoner wall closet
   description: It's a secure locker for an inmate's personal belongings during their time in prison.
   suffix: 1
+  components: # imp edit until we get new sprites
+  - type: Sprite
+    sprite: Structures/Storage/wall_locker.rsi
 
 - type: entity
   parent: LockerWallBasePrisoner
