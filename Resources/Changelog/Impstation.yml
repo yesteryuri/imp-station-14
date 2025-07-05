@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: jtfg-dev
-  changes:
-  - message: A goblin legend is also (now more obviously) a _queer_ legend.
-    type: Fix
-  id: 1475
-  time: '2025-04-05T23:48:11.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2187
 - author: DVDPlayerOfDiscordFame
   changes:
   - message: Cargo shop now uses the correct sprites for guns and medkits.
@@ -4247,3 +4240,13 @@
   id: 1974
   time: '2025-07-05T14:24:20.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/2978
+- author: yesteryuri
+  changes:
+  - message: Gastropoid allergies are functional and species guidebook consistent.
+      Salt bad! Copper good!
+    type: Tweak
+  - message: Ambuzol no longer cares about which zombie's blood it came from
+    type: Fix
+  id: 1975
+  time: '2025-07-05T14:28:02.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/2959
