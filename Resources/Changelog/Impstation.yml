@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: Darkmajia
-  changes:
-  - message: Cards merge properly into hands.
-    type: Fix
-  id: 1471
-  time: '2025-04-05T03:50:57.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2185
 - author: rainyatrium
   changes:
   - message: A weaker (shuttle wall equivalent) interior mining wall variant. Add
@@ -4239,3 +4232,11 @@
   id: 1970
   time: '2025-07-05T14:09:56.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/2986
+- author: sev7ves
+  changes:
+  - message: pleebnars have honed their telepathic abilities and now other cannot
+      see the vision selection popup
+    type: Fix
+  id: 1971
+  time: '2025-07-05T14:12:10.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/2920
