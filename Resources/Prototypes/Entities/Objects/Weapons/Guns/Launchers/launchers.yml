@@ -307,7 +307,7 @@
   - BaseItem
   - PowerCellSlotMediumItem
   id: WeaponTetherGun
-  description: Manipulates gravity around objects to fling them at high velocities.
+  description: You can call it the Zero-Point Energy Field Manipulator if you really want to. # imp; this thing isn't for flinging
   components:
     - type: Item
       storedRotation: -90
@@ -369,7 +369,7 @@
     - BaseItem
     - PowerCellSlotMediumItem
   id: WeaponForceGun
-  description: Manipulates gravity around objects to fling them at high velocities.
+  description: Pulls stuff, then throws stuff, probably hitting someone. # imp
   components:
     - type: Item
       storedRotation: -90
@@ -435,6 +435,7 @@
   name: grappling gun
   parent: BaseItem
   id: WeaponGrapplingGun
+  description: A gun that pulls its user towards its target. Useful for getting around while off-grid, or doing some anime shit. # imp; it seriously didn't have a description before
   components:
     - type: AmmoCounter
     - type: GrapplingGun
@@ -469,7 +470,7 @@
   parent: BaseItem
   id: WeaponTetherGunAdmin
   suffix: Admeme
-  description: Manipulates gravity around objects to fling them at high velocities.
+  description: Counter-resonant singularity device. # imp edit
   components:
     - type: TetherGun
       canTetherAlive: true
@@ -531,7 +532,7 @@
   parent: BaseItem
   id: WeaponForceGunAdmin
   suffix: Admeme
-  description: Manipulates gravity around objects to fling them at high velocities.
+  description: A gun for the admin who'll ban you forever. # imp edit
   components:
     - type: ForceGun
       canTetherAlive: true
