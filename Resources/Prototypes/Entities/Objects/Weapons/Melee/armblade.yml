@@ -19,8 +19,6 @@
       types: # Same as energy sword, but slash/pierce instead of slash/heat
         Slash: 15
         Piercing: 15
-      soundHit:
-        path: /Audio/Weapons/bladeslice.ogg
   - type: Item
     size: Normal
     sprite: Objects/Weapons/Melee/armblade.rsi
