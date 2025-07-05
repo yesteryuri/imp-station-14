@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: rainyatrium
-  changes:
-  - message: A weaker (shuttle wall equivalent) interior mining wall variant. Add
-      construction graphs for all mining walls.
-    type: Add
-  id: 1472
-  time: '2025-04-05T04:14:38.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2204
 - author: wendyribstonpippin
   changes:
   - message: Interdyne lobby art that spills it
@@ -4240,3 +4232,14 @@
   id: 1971
   time: '2025-07-05T14:12:10.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/2920
+- author: widgetbeck
+  changes:
+  - message: Actually fixed the Replicator queen pinpointer bug for real this time.
+    type: Fix
+  - message: Prevented some instances of player bodies being deleted when put into
+      the Replicator Nest. This fix also makes lockers and crates dump their contents
+      upon falling.
+    type: Fix
+  id: 1972
+  time: '2025-07-05T14:14:24.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/2940
