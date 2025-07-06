@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: SixValentine
-  changes:
-  - message: Hash edits check the PR
-    type: Fix
-  id: 1484
-  time: '2025-04-08T02:14:46.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2218
 - author: hivehum
   changes:
   - message: Added plenty of new music, as suggested by the community.
@@ -4233,3 +4226,10 @@
   id: 1983
   time: '2025-07-06T12:01:52.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/2965
+- author: DinnerCalzone
+  changes:
+  - message: Fixed sprites for the spationaut suit and headphones.
+    type: Fix
+  id: 1984
+  time: '2025-07-06T12:03:37.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3001
