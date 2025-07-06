@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: TheGrimbeeper
-  changes:
-  - message: Changelings and heretics should be able to open their respective stores
-      regardless of what species/object they are.
-    type: Fix
-  id: 1483
-  time: '2025-04-07T15:34:02.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2191
 - author: SixValentine
   changes:
   - message: Hash edits check the PR
@@ -4233,3 +4225,11 @@
   id: 1982
   time: '2025-07-06T11:34:25.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/2961
+- author: Pinkbat5
+  changes:
+  - message: Atmos pipes now get their own dedicated category in the construction
+      menu.
+    type: Tweak
+  id: 1983
+  time: '2025-07-06T12:01:52.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/2965
