@@ -1,13 +1,4 @@
 ﻿Entries:
-- author: hivehum
-  changes:
-  - message: Added plenty of new music, as suggested by the community.
-    type: Add
-  - message: Shuffled around the jukebox a little. (Get it?)
-    type: Tweak
-  id: 1485
-  time: '2025-04-08T02:23:41.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2186
 - author: Kandiyaki, Sha-Sheng
   changes:
   - message: Removed the heretic's reality fractures.
@@ -4233,3 +4224,13 @@
   id: 1984
   time: '2025-07-06T12:03:37.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3001
+- author: Smugman
+  changes:
+  - message: New sprites for cigarette cartons!
+    type: Add
+  - message: Cigarette cartons actually opening is now no longer copyrighted by the
+      Syndicate.
+    type: Fix
+  id: 1985
+  time: '2025-07-06T12:24:26.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/2975
