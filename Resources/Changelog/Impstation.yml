@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: rainyatrium, Newemisma, astral_amy, Jellvisk, ComicalSomber
-  changes:
-  - message: Refsdal, a cozy(?) and safe(?) 5-25 person shuttle map for space adventure
-      with ragtag crew!
-    type: Add
-  id: 1491
-  time: '2025-04-08T07:32:14.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2207
 - author: widgetbeck
   changes:
   - message: Drones now see living beings only as silhouettes.
@@ -4239,3 +4231,10 @@
   id: 1990
   time: '2025-07-07T05:34:59.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3010
+- author: hivehum
+  changes:
+  - message: Headphones no longer teleport you to a source game.
+    type: Fix
+  id: 1991
+  time: '2025-07-07T05:36:46.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3004
