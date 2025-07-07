@@ -1,14 +1,6 @@
 ﻿Entries:
 - author: widgetbeck
   changes:
-  - message: Dragons now have a method of pinpointing the location of the station,
-      so they are no longer as likely to get lost in space.
-    type: Add
-  id: 1493
-  time: '2025-04-08T10:15:56.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2229
-- author: widgetbeck
-  changes:
   - message: Being pulled now thwarts mundane attempts to slip your cuffs.
     type: Tweak
   id: 1494
@@ -4231,3 +4223,10 @@
   id: 1992
   time: '2025-07-07T05:38:36.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3006
+- author: hivehum
+  changes:
+  - message: Bark like a dog. your below me moron
+    type: Tweak
+  id: 1993
+  time: '2025-07-07T05:44:04.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3009
