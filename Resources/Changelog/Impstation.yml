@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: rainyatrium
-  changes:
-  - message: various Refsdal fixes
-    type: Tweak
-  id: 1500
-  time: '2025-04-10T09:22:34.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2237
 - author: Sha-Seng
   changes:
   - message: Cybersun Briefcase is more obviously illegal.
@@ -4228,3 +4221,10 @@
   id: 1999
   time: '2025-07-07T14:48:03.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3016
+- author: msTheowo
+  changes:
+  - message: Some of CentComm's interns have been conscripted.
+    type: Add
+  id: 2000
+  time: '2025-07-07T17:11:53.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/2990
