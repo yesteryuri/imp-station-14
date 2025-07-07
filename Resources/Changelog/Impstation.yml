@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: jtfg-dev
-  changes:
-  - message: Removed the chance for aged light tubes to flicker endlessly.
-    type: Remove
-  id: 1490
-  time: '2025-04-08T03:09:18.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2223
 - author: rainyatrium, Newemisma, astral_amy, Jellvisk, ComicalSomber
   changes:
   - message: Refsdal, a cozy(?) and safe(?) 5-25 person shuttle map for space adventure
@@ -4239,3 +4232,10 @@
   id: 1989
   time: '2025-07-07T05:32:19.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3015
+- author: hivehum
+  changes:
+  - message: Thaven mimes get their starting baguette back. No response from the crowd.
+    type: Fix
+  id: 1990
+  time: '2025-07-07T05:34:59.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3010
