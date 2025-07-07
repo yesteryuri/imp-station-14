@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: widgetbeck
-  changes:
-  - message: Being pulled now thwarts mundane attempts to slip your cuffs.
-    type: Tweak
-  id: 1494
-  time: '2025-04-08T10:20:36.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2226
 - author: Kandiyaki
   changes:
   - message: The codex cicatrix can now only be opened by heretics.
@@ -4230,3 +4223,10 @@
   id: 1993
   time: '2025-07-07T05:44:04.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3009
+- author: eviltori
+  changes:
+  - message: elite syndicate spies are now fucking around in your maintenance tunnels.
+    type: Add
+  id: 1994
+  time: '2025-07-07T05:46:44.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/2948
