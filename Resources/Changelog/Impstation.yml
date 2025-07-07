@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: widgetbeck
-  changes:
-  - message: Player ghosts can now warp to player ghosts & corpses.
-    type: Add
-  id: 1496
-  time: '2025-04-08T16:19:56.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2222
 - author: kipdotnet
   changes:
   - message: S-Cargo Moving Trunks no longer have a giant ERROR written on them.
@@ -4225,3 +4218,10 @@
   id: 1995
   time: '2025-07-07T05:48:08.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3014
+- author: hivehum
+  changes:
+  - message: dog fix
+    type: Fix
+  id: 1996
+  time: '2025-07-07T05:57:30.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3008
