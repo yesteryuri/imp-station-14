@@ -1,33 +1,4 @@
 ﻿Entries:
-- author: AvianMaiden
-  changes:
-  - message: Reality should no longer end when you melee with some larger guns.
-    type: Fix
-  - message: What if I pistol-whipped you as hard as humanly possible?
-    type: Tweak
-  - message: Flare gun bonking.
-    type: Add
-  id: 1502
-  time: '2025-04-10T09:48:40.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2172
-- author: Darkmajia
-  changes:
-  - message: Jungle juice might be fixed for real.
-    type: Fix
-  id: 1503
-  time: '2025-04-10T14:12:04.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2242
-- author: jtfg-dev
-  changes:
-  - message: The jukebox is now sorted by track name, rather than by source / artist.
-    type: Tweak
-  - message: The recently-added music should sound a lot better, and is more in balance
-      volume-wise with the other songs. Your ears have been spared the wrath of FIRE
-      TEMPLE in the bar. (Gondal is, however, inescapable.)
-    type: Fix
-  id: 1504
-  time: '2025-04-12T04:22:42.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2248
 - author: MintyTheBinty
   changes:
   - message: 4 casual space outfits added to Clothesmate, with new jumpsuits available
@@ -4225,3 +4196,25 @@
   id: 2001
   time: '2025-07-08T05:50:07.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/2963
+- author: FlippenPage
+  changes:
+  - message: Ratvarian Trait and Syndicate Cyborgs now have new typing indicators.
+      Cool.
+    type: Tweak
+  id: 2002
+  time: '2025-07-08T05:52:34.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3013
+- author: DinnerCalzone
+  changes:
+  - message: Fixed wall recharges being completely unshaded while charging something.
+    type: Fix
+  id: 2003
+  time: '2025-07-08T05:54:00.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3026
+- author: Pinkbat5
+  changes:
+  - message: Lobby playtime comments don't refresh constantly anymore.
+    type: Fix
+  id: 2004
+  time: '2025-07-08T05:53:16.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3027
