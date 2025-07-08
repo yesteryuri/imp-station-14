@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: MintyTheBinty
-  changes:
-  - message: 4 casual space outfits added to Clothesmate, with new jumpsuits available
-      for security officer, chef, and hospitality director round start!
-    type: Add
-  id: 1505
-  time: '2025-04-12T05:55:45.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2235
 - author: mqole
   changes:
   - message: You now have 2 extra minutes between rounds to shit and piss as needed.
@@ -4218,3 +4210,10 @@
   id: 2004
   time: '2025-07-08T05:53:16.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3027
+- author: AirFryerBuyOneGetOneFree
+  changes:
+  - message: Borgs can now be awarded medals.
+    type: Add
+  id: 2005
+  time: '2025-07-08T05:56:54.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3030
