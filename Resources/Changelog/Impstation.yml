@@ -1,15 +1,4 @@
 ﻿Entries:
-- author: Sha-Seng
-  changes:
-  - message: Cybersun Briefcase is more obviously illegal.
-    type: Tweak
-  - message: Cybersun outerwear now shows your hands when facing east/west
-    type: Fix
-  - message: Lawyers will now properly spawn with their chosen briefcase
-    type: Fix
-  id: 1501
-  time: '2025-04-10T09:27:36.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2220
 - author: AvianMaiden
   changes:
   - message: Reality should no longer end when you melee with some larger guns.
@@ -4228,3 +4217,11 @@
   id: 2000
   time: '2025-07-07T17:11:53.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/2990
+- author: jtfg-dev
+  changes:
+  - message: Paradox clones will now sometimes (randomly) yearn to keep their other
+      selves alive, rather than murder them badly.
+    type: Add
+  id: 2001
+  time: '2025-07-08T05:50:07.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/2963
