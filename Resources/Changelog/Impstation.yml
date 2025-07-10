@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: DinnerCalzone
-  changes:
-  - message: Updates to Cluster, Marathon, Train, and other maps. Details in PR.
-    type: Tweak
-  id: 1510
-  time: '2025-04-13T05:00:05.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2249
 - author: SixValentine
   changes:
   - message: Fur trim to Warden's Hardsuit (Fashion Forward Militarism? Slay?)
@@ -4219,3 +4212,10 @@
   id: 2009
   time: '2025-07-10T19:30:31.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/2575
+- author: DVDPlayerOfDiscordFame
+  changes:
+  - message: Changed the sprites on the .22 auto magazines to make them more different
+    type: Tweak
+  id: 2010
+  time: '2025-07-10T19:34:41.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3050
