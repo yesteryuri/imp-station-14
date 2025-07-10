@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: DinnerCalzone
-  changes:
-  - message: Station Specific and Dining Services departments no longer appear in
-      the late-join menu.
-    type: Tweak
-  id: 1507
-  time: '2025-04-13T04:47:42.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2252
 - author: TheGrimbeeper
   changes:
   - message: weakened pull when artifact opens a supermatter portal
@@ -4217,3 +4209,10 @@
   id: 2006
   time: '2025-07-09T08:25:43.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3036
+- author: Kandiyaki
+  changes:
+  - message: random gamemode weights have been tweaked to add a bit more variety.
+    type: Tweak
+  id: 2007
+  time: '2025-07-10T18:57:43.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/2970
