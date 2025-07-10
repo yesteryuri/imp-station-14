@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: hivehum
-  changes:
-  - message: Mail looks more like you're used to.
-    type: Tweak
-  id: 1509
-  time: '2025-04-13T04:57:46.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2217
 - author: DinnerCalzone
   changes:
   - message: Updates to Cluster, Marathon, Train, and other maps. Details in PR.
@@ -4217,3 +4210,12 @@
   id: 2008
   time: '2025-07-10T18:58:44.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3039
+- author: DVDPlayerOfDiscordFame, iaada
+  changes:
+  - message: Added the Adder, Akurra, Anaconda, Xiuhcoatl, Ouroboros, and Leviathan.
+    type: Add
+  - message: .60 Speedloaders and Echion technology.
+    type: Add
+  id: 2009
+  time: '2025-07-10T19:30:31.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/2575
