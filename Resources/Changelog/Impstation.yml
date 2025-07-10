@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: SixValentine
-  changes:
-  - message: Fur trim to Warden's Hardsuit (Fashion Forward Militarism? Slay?)
-    type: Add
-  id: 1511
-  time: '2025-04-13T05:01:19.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2234
 - author: widgetbeck
   changes:
   - message: Player ghosts can now view a mass scanner interface.
@@ -4219,3 +4212,12 @@
   id: 2010
   time: '2025-07-10T19:34:41.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3050
+- author: mqole
+  changes:
+  - message: Jungle juice has been vanquished. FOR REAL THIS TIME.
+    type: Remove
+  - message: Subjuzine no longer uses DNA to function.
+    type: Remove
+  id: 2011
+  time: '2025-07-10T20:08:58.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3031
