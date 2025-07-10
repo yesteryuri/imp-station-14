@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: TheGrimbeeper
-  changes:
-  - message: weakened pull when artifact opens a supermatter portal
-    type: Fix
-  id: 1508
-  time: '2025-04-13T04:49:42.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2244
 - author: hivehum
   changes:
   - message: Mail looks more like you're used to.
@@ -4216,3 +4209,11 @@
   id: 2007
   time: '2025-07-10T18:57:43.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/2970
+- author: DinnerCalzone
+  changes:
+  - message: Bleach will now cause you to cough and deal a bit of damage if sprayed
+      on you. Be careful where you're cleaning!
+    type: Add
+  id: 2008
+  time: '2025-07-10T18:58:44.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3039
