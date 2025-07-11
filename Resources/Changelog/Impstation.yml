@@ -1,14 +1,4 @@
 ﻿Entries:
-- author: widgetbeck
-  changes:
-  - message: Player ghosts can now view a mass scanner interface.
-    type: Add
-  - message: Player ghosts can now view detailed inspect information on living players
-      from any distance.
-    type: Tweak
-  id: 1512
-  time: '2025-04-13T05:02:38.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2227
 - author: Darkmajia
   changes:
   - message: Catwalks placed over water tiles keep you above the surface.
@@ -4221,3 +4211,10 @@
   id: 2011
   time: '2025-07-10T20:08:58.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3031
+- author: DinnerCalzone
+  changes:
+  - message: Convex has been derotated.
+    type: Remove
+  id: 2012
+  time: '2025-07-11T03:02:05.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3057
