@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: DVDPlayerOfDiscordFame
-  changes:
-  - message: Introducing the Portable Sensor Array, a Stealth Detector. Unlocked in
-      "Special Means" and produced at Science!
-    type: Add
-  id: 1518
-  time: '2025-04-13T15:54:18.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2232
 - author: TheGrimbeeper
   changes:
   - message: Oxygen foam from artifacts.
@@ -4219,3 +4211,10 @@
   id: 2017
   time: '2025-07-12T03:55:25.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3064
+- author: Pinkbat5
+  changes:
+  - message: Beer goggles now protect you from flashes!
+    type: Add
+  id: 2018
+  time: '2025-07-12T03:56:35.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3065
