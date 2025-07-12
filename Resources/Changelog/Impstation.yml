@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: TheGrimbeeper
-  changes:
-  - message: Oxygen foam from artifacts.
-    type: Remove
-  id: 1519
-  time: '2025-04-13T15:56:09.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2245
 - author: Darkmajia
   changes:
   - message: I have typed "7 minutes in seconds" into Google. The pre-round lobby
@@ -4218,3 +4211,10 @@
   id: 2018
   time: '2025-07-12T03:56:35.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3065
+- author: hivehum
+  changes:
+  - message: Removed several music tracks, mostly Clair de Lune.
+    type: Remove
+  id: 2019
+  time: '2025-07-12T04:02:28.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3051
