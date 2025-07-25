@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: SixValentine
-  changes:
-  - message: The usual suspects for map maints stuff. Nerfed garbage.
-    type: Fix
-  id: 1523
-  time: '2025-04-16T12:09:56.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2258
 - author: DinnerCalzone
   changes:
   - message: Paradox clones now correctly use the same spawn location as fugitives.
@@ -4215,3 +4208,10 @@
   id: 2022
   time: '2025-07-23T10:29:59.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3146
+- author: HAPPYNEWYEAR1999
+  changes:
+  - message: Pathway Station is ready after a lengthy training montage.
+    type: Add
+  id: 2023
+  time: '2025-07-25T08:50:35.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3141
