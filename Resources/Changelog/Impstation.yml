@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: Ecramox
-  changes:
-  - message: Removed the metal gear chime from the cardboard box. Your exclamation
-      mark and general Metal Gear reference is still preserved, but so are your ears.
-    type: Remove
-  id: 1576
-  time: '2025-04-27T08:35:00.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2357
 - author: DinnerCalzone
   changes:
   - message: Nukeops Commander now requires 4 hours of playtime of any team nukeops
@@ -3833,14 +3825,16 @@
   url: https://github.com/impstation/imp-station-14/pull/3078
 - author: CrystalClover
   changes:
-  - message: Space France forgot to pay licensing fees so their escaped baguettes now play different music.
+  - message: Space France forgot to pay licensing fees so their escaped baguettes
+      now play different music.
     type: Tweak
   id: 2032
   time: '2025-07-25T11:28:22.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3049
 - author: yesteryuri
   changes:
-  - message: All trinkets, HOS Jumpsuits, medical glasses, and instruments in the loadout menu are now sorted into collapsible categories
+  - message: All trinkets, HOS Jumpsuits, medical glasses, and instruments in the
+      loadout menu are now sorted into collapsible categories
     type: Tweak
   id: 2033
   time: '2025-07-25T11:28:23.0000000+00:00'
@@ -3879,7 +3873,8 @@
   url: https://github.com/impstation/imp-station-14/pull/3084
 - author: DinnerCalzone
   changes:
-  - message: Chapel tiles can now be crafted from the cutter machine! Expect these to eventually replace chapel carpets in maps.
+  - message: Chapel tiles can now be crafted from the cutter machine! Expect these
+      to eventually replace chapel carpets in maps.
     type: Add
   id: 2038
   time: '2025-07-25T11:28:28.0000000+00:00'
@@ -3893,28 +3888,32 @@
   url: https://github.com/impstation/imp-station-14/pull/3081
 - author: DVDPlayerOfDiscordFame
   changes:
-  - message: Traitors on a tight budget rejoice! You can now purchase Deadly Dan's ValuShot 9000 at a real bargain!
+  - message: Traitors on a tight budget rejoice! You can now purchase Deadly Dan's
+      ValuShot 9000 at a real bargain!
     type: Add
   id: 2040
   time: '2025-07-25T11:28:30.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3076
 - author: meridiadottxt
   changes:
-  - message: Three shuttles from the Frontier Sector have been added- Pathfinder, Pioneer, and Hunter. Look for them in your shipyard catalogue!
+  - message: Three shuttles from the Frontier Sector have been added- Pathfinder,
+      Pioneer, and Hunter. Look for them in your shipyard catalogue!
     type: Add
   id: 2041
   time: '2025-07-25T11:28:31.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3075
 - author: CrystalClover
   changes:
-  - message: NT scanners are picking up readings of a Gray UFO approaching our sector, and sensors indicate they are ready to PARTY!!!
+  - message: NT scanners are picking up readings of a Gray UFO approaching our sector,
+      and sensors indicate they are ready to PARTY!!!
     type: Add
   id: 2042
   time: '2025-07-25T11:28:32.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/2988
 - author: yesteryuri
   changes:
-  - message: Fixed salvagers not having a survival box and command members receiving an extra backpack.
+  - message: Fixed salvagers not having a survival box and command members receiving
+      an extra backpack.
     type: Fix
   id: 2043
   time: '2025-07-25T11:28:33.0000000+00:00'
@@ -3935,14 +3934,16 @@
   url: https://github.com/impstation/imp-station-14/pull/3098
 - author: DinnerCalzone
   changes:
-  - message: Fixed command door remote not being able to interact with Hospitality Director locked doors.
+  - message: Fixed command door remote not being able to interact with Hospitality
+      Director locked doors.
     type: Fix
   id: 2046
   time: '2025-07-25T11:28:36.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3106
 - author: msTheowo
   changes:
-  - message: Security is now allowed to start the shift without armor or a belt if they would like
+  - message: Security is now allowed to start the shift without armor or a belt if
+      they would like
     type: Tweak
   id: 2047
   time: '2025-07-25T11:28:37.0000000+00:00'
@@ -3951,7 +3952,8 @@
   changes:
   - message: Tabletop computer sprite snow match the style of standing computers.
     type: Tweak
-  - message: Departmental request consoles have been resprited to match the cargo request console.
+  - message: Departmental request consoles have been resprited to match the cargo
+      request console.
     type: Tweak
   - message: The shipyard console has received a new sprite!
     type: Add
@@ -3967,9 +3969,11 @@
   url: https://github.com/impstation/imp-station-14/pull/3096
 - author: whatston3, arimah, the-hivequeen, dustylens
   changes:
-  - message: Nanotrasen chefs have received proper training and have learned about a second and third cooking appliance, now deployed to most space kitchens.
+  - message: Nanotrasen chefs have received proper training and have learned about
+      a second and third cooking appliance, now deployed to most space kitchens.
     type: Add
-  - message: Doctors have a proper device to make topicals and aren't nuking that shit.
+  - message: Doctors have a proper device to make topicals and aren't nuking that
+      shit.
     type: Add
   - message: Chefs and bartenders have also discovered several dozen forgotten recipes!
     type: Add
@@ -3978,21 +3982,24 @@
   url: https://github.com/impstation/imp-station-14/pull/3048
 - author: FlippenPage
   changes:
-  - message: anomalies can now transform walls, leaving engineers across the sector sobbing.
+  - message: anomalies can now transform walls, leaving engineers across the sector
+      sobbing.
     type: Tweak
   id: 2051
   time: '2025-07-25T11:28:41.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/2521
 - author: widgetbeck
   changes:
-  - message: Replicators are now actually targeted by dragons, space mobs, turrets, etc.
+  - message: Replicators are now actually targeted by dragons, space mobs, turrets,
+      etc.
     type: Fix
   id: 2052
   time: '2025-07-25T11:28:42.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3112
 - author: LandsharkRAWR
   changes:
-  - message: roses can now be juiced into rose water! there are 5 drinks you can make with it.
+  - message: roses can now be juiced into rose water! there are 5 drinks you can make
+      with it.
     type: Add
   - message: black roses now inject 4u of their contained reagents.
     type: Tweak
@@ -4005,7 +4012,8 @@
   changes:
   - message: You can now craft the Makeshift Laser Gun!
     type: Add
-  - message: The Makeshift Laser's stats and cosmetics have been changed to set it apart a little.
+  - message: The Makeshift Laser's stats and cosmetics have been changed to set it
+      apart a little.
     type: Tweak
   id: 2054
   time: '2025-07-25T11:28:44.0000000+00:00'
@@ -4039,7 +4047,8 @@
   url: https://github.com/impstation/imp-station-14/pull/3125
 - author: happy99, mousesweater, Squamatic
   changes:
-  - message: Adds Pathway, a station that has recently recovered from a supermatter delamination.
+  - message: Adds Pathway, a station that has recently recovered from a supermatter
+      delamination.
     type: Add
   id: 2058
   time: '2025-07-25T11:28:48.0000000+00:00'
@@ -4064,25 +4073,30 @@
     type: Fix
   - message: The Xiuhcoatl's projectiles are stronger and move faster now
     type: Tweak
-  - message: The Ouroboros bees are a bit more dangerous, and the gun is a lot less picky on what it wants to eat.
+  - message: The Ouroboros bees are a bit more dangerous, and the gun is a lot less
+      picky on what it wants to eat.
     type: Tweak
   id: 2061
   time: '2025-07-25T11:28:51.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3120
 - author: msTheowo
   changes:
-  - message: Security hud glasses to SecTech. Watch out, they don't have any flash protection!
+  - message: Security hud glasses to SecTech. Watch out, they don't have any flash
+      protection!
     type: Add
   id: 2062
   time: '2025-07-25T11:28:52.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3127
 - author: TheGrimbeeper
   changes:
-  - message: Old Xenoarcheology is BACK!! (New-Xeno NOT removed, they are coexisting peacefully!)
+  - message: Old Xenoarcheology is BACK!! (New-Xeno NOT removed, they are coexisting
+      peacefully!)
     type: Add
-  - message: can now craft alien artifacts (old-xeno) in addition to artifacts (new xeno)
+  - message: can now craft alien artifacts (old-xeno) in addition to artifacts (new
+      xeno)
     type: Tweak
-  - message: Can now buy natural (old-xeno), reticulated (new-xeno) or random (cheaper!!) artifacts from cargo
+  - message: Can now buy natural (old-xeno), reticulated (new-xeno) or random (cheaper!!)
+      artifacts from cargo
     type: Tweak
   id: 2063
   time: '2025-07-25T11:28:53.0000000+00:00'
@@ -4127,11 +4141,14 @@
   url: https://github.com/impstation/imp-station-14/pull/3070
 - author: widgetbeck
   changes:
-  - message: Added several grids from the salvage magnet pool to the roundstart wrecks pool to increase variety.
+  - message: Added several grids from the salvage magnet pool to the roundstart wrecks
+      pool to increase variety.
     type: Add
-  - message: Added a "rare ruins" pool, which will spawn one grid from its pool in 50% of rounds. The (previously removed) flagship is one of these.
+  - message: Added a "rare ruins" pool, which will spawn one grid from its pool in
+      50% of rounds. The (previously removed) flagship is one of these.
     type: Add
-  - message: Upped the amounts of both static and randomly-generated roundstart wrecks, and increased the radius they can spawn within.
+  - message: Upped the amounts of both static and randomly-generated roundstart wrecks,
+      and increased the radius they can spawn within.
     type: Tweak
   id: 2068
   time: '2025-07-25T11:28:58.0000000+00:00'
@@ -4152,7 +4169,8 @@
   url: https://github.com/impstation/imp-station-14/pull/2952
 - author: DinnerCalzone
   changes:
-  - message: Laughter AKA clown spider blood can now appear in roundstart puddles and is a little slipperier.
+  - message: Laughter AKA clown spider blood can now appear in roundstart puddles
+      and is a little slipperier.
     type: Add
   id: 2071
   time: '2025-07-25T11:29:01.0000000+00:00'
@@ -4166,7 +4184,8 @@
   url: https://github.com/impstation/imp-station-14/pull/3038
 - author: lichpassing
   changes:
-  - message: New lobby art featuring the consequence of science's actions (to everyone but science)
+  - message: New lobby art featuring the consequence of science's actions (to everyone
+      but science)
     type: Add
   id: 2073
   time: '2025-07-25T11:29:03.0000000+00:00'
@@ -4185,3 +4204,11 @@
   id: 2075
   time: '2025-07-25T11:29:05.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3146
+- author: sgp10, formlessnameless, dayn-e, mqole
+  changes:
+  - message: changelog fixed finally. Some things might be in a weird order, but it
+      should all be there now!
+    type: Fix
+  id: 2076
+  time: '2025-07-25T13:34:28.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3162
