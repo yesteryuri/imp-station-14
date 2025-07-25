@@ -1,17 +1,4 @@
 ﻿Entries:
-- author: jtfg-dev
-  changes:
-  - message: Nanotrasen is Nanotrasen. Cybersun is Cybersun. Gorlex is Gorlex. Baba
-      is You.
-    type: Fix
-  - message: Some descriptions have been refreshed and/or spiced.
-    type: Tweak
-  - message: Item names, descriptions, and flavor text throughout the game have been
-      cleaned up, per the request of the Intergalactic Standards Association.
-    type: Fix
-  id: 1530
-  time: '2025-04-19T12:44:49.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2231
 - author: ATDoop
   changes:
   - message: Added .45 stun bullets! The detective's revolver now comes loaded with
@@ -4215,3 +4202,11 @@
   id: 2029
   time: '2025-07-25T11:19:11.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3149
+- author: msTheowo
+  changes:
+  - message: Strong lenses will now spawn on your face if you have nothing there or
+      in your glasses' lens slot if they have one!
+    type: Tweak
+  id: 2030
+  time: '2025-07-25T11:28:20.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3104
