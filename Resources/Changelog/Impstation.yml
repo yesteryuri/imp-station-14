@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: Oberonics
-  changes:
-  - message: You can freely tie your jumpsuit around your waist once again.
-    type: Tweak
-  id: 1525
-  time: '2025-04-17T02:38:04.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2265
 - author: DVDPlayerOfDiscordFame
   changes:
   - message: Practice Laser and Disabler have updated light sprites and now recharge
@@ -4216,3 +4209,12 @@
   id: 2024
   time: '2025-07-25T09:57:04.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3161
+- author: yesteryuri
+  changes:
+  - message: Vox members of command wear their command masks to work
+    type: Tweak
+  - message: Vox once again have tank harnesses in their bags when needed
+    type: Fix
+  id: 2025
+  time: '2025-07-25T10:02:06.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3159
