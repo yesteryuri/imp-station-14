@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: ultramario1998
-  changes:
-  - message: Willow's brain experiments were a success! You'll be able to inhabit
-      her body every round.
-    type: Tweak
-  id: 1529
-  time: '2025-04-19T07:15:24.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2262
 - author: jtfg-dev
   changes:
   - message: Nanotrasen is Nanotrasen. Cybersun is Cybersun. Gorlex is Gorlex. Baba
@@ -4216,3 +4208,10 @@
   id: 2028
   time: '2025-07-25T11:13:36.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3156
+- author: Stonylogray
+  changes:
+  - message: The invader clause of Space law has been rewritten.
+    type: Tweak
+  id: 2029
+  time: '2025-07-25T11:19:11.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3149
