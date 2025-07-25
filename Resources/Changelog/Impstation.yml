@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: DinnerCalzone
-  changes:
-  - message: Paradox clones now correctly use the same spawn location as fugitives.
-    type: Fix
-  id: 1524
-  time: '2025-04-16T12:09:24.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2266
 - author: Oberonics
   changes:
   - message: You can freely tie your jumpsuit around your waist once again.
@@ -4215,3 +4208,11 @@
   id: 2023
   time: '2025-07-25T08:50:35.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3141
+- author: youtubevideo3
+  changes:
+  - message: Species-specific equipment sprites for Decapoids, Gastropoids, Thaven
+      and Grays should now show up on the loadout screen.
+    type: Fix
+  id: 2024
+  time: '2025-07-25T09:57:04.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3161
