@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: AvianMaiden
-  changes:
-  - message: Nanotrasen revisions to security's management of storing restricted items,
-      evidence, and prisoners' items, bring a new appearance and goodies!
-    type: Add
-  id: 1580
-  time: '2025-04-27T18:03:55.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2286
 - author: DinnerCalzone
   changes:
   - message: Amber, Atlas, Bagel, Cog, Cluster, Hummingbird, Marathon, Oasis, Omega,
@@ -4208,3 +4200,13 @@
   id: 2079
   time: '2025-07-26T09:52:39.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3167
+- author: Jellvisk
+  changes:
+  - message: Added the Steel Wood Wall and reinforced variant. Shove some wood in
+      your steel girders today!
+    type: Add
+  - message: Wood Wall has been re-sprited.
+    type: Tweak
+  id: 2080
+  time: '2025-07-26T10:08:46.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3168
