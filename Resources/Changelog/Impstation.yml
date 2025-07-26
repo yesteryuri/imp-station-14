@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: DinnerCalzone
-  changes:
-  - message: Amber, Atlas, Bagel, Cog, Cluster, Hummingbird, Marathon, Oasis, Omega,
-      Plasma, Saltern, and Train now have Griffy lockers.
-    type: Add
-  id: 1581
-  time: '2025-04-27T18:12:02.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2348
 - author: kipdotnet
   changes:
   - message: Decapoids can now wear a vaporizer with no clothing requirements.
@@ -4210,3 +4202,11 @@
   id: 2080
   time: '2025-07-26T10:08:46.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3168
+- author: hivehum, FoxxoTrystan, portfiend
+  changes:
+  - message: Prize tickets now have a use! Redeem them for toys from the brand new
+      prize counter!
+    type: Add
+  id: 2081
+  time: '2025-07-26T10:21:26.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3138
