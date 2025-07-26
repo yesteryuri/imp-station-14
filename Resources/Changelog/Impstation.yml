@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: DVDPlayerOfDiscordFame
-  changes:
-  - message: +20/25% heat resist on Security/HoS hardsuits. HoS hardsuit explosion
-      protection upped to 60% from 40% (on-par with standard security hardsuit)
-    type: Tweak
-  id: 1578
-  time: '2025-04-27T17:49:57.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2233
 - author: Mousetrinity
   changes:
   - message: Learner PAIs are here for every department! Heads of staff, check your
@@ -4208,3 +4200,10 @@
   id: 2077
   time: '2025-07-26T09:30:53.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3160
+- author: hivehum
+  changes:
+  - message: Kodepiia are hungrier.
+    type: Tweak
+  id: 2078
+  time: '2025-07-26T09:34:34.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3164
