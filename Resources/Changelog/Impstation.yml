@@ -1,18 +1,4 @@
 ﻿Entries:
-- author: crekulon
-  changes:
-  - message: you can now (noisily) lock/unlock secure containers from the inside!
-    type: Tweak
-  id: 1586
-  time: '2025-04-28T08:45:58.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2347
-- author: kipdotnet
-  changes:
-  - message: Apids have first (last?) names again.
-    type: Fix
-  id: 1587
-  time: '2025-04-28T10:40:58.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2363
 - author: DinnerCalzone
   changes:
   - message: Fixed Lone Operative appearing in the antag selection screen in the lobby.
@@ -4207,3 +4193,18 @@
   id: 2085
   time: '2025-07-27T02:06:44.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3176
+- author: EpicToast
+  changes:
+  - message: Box Station's orbit around EXO-3416 has begun decaying, further shifts
+      will not be issued until orbit has been recovered.
+    type: Remove
+  id: 2086
+  time: '2025-07-27T21:13:48.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3180
+- author: youtubevideo3
+  changes:
+  - message: You will no longer wear fancy gloves on your head.
+    type: Fix
+  id: 2087
+  time: '2025-07-27T21:12:56.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3179
