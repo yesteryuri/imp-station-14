@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: TheGrimbeeper
-  changes:
-  - message: Gray blood now counts as radioactive when splashed on science rocks
-    type: Fix
-  id: 1589
-  time: '2025-04-30T05:27:26.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2371
 - author: meridiadottxt
   changes:
   - message: gate station is now the perfect map
@@ -4211,3 +4204,11 @@
   id: 2088
   time: '2025-07-27T23:45:20.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3171
+- author: Mousetrinity
+  changes:
+  - message: Pathway Station didn't pass inspection, so we had to send in our best
+      team to fix it up! See PR for details
+    type: Tweak
+  id: 2089
+  time: '2025-07-27T23:58:48.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3175
