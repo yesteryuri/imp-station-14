@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: meridiadottxt
-  changes:
-  - message: gate station is now the perfect map
-    type: Add
-  id: 1590
-  time: '2025-04-30T05:25:52.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2370
 - author: jtfg-dev, rosysaturniidae
   changes:
   - message: The Intergalactic Standards Association continues its silent war on inconsistency.
@@ -4212,3 +4205,10 @@
   id: 2089
   time: '2025-07-27T23:58:48.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3175
+- author: DinnerCalzone
+  changes:
+  - message: Plasma has been updated to feature genpop and a new TEG setup.
+    type: Add
+  id: 2090
+  time: '2025-07-29T08:51:45.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3188
