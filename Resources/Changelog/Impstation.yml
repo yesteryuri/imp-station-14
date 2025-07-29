@@ -1,20 +1,4 @@
 ﻿Entries:
-- author: jtfg-dev, rosysaturniidae
-  changes:
-  - message: The Intergalactic Standards Association continues its silent war on inconsistency.
-    type: Tweak
-  - message: Some item descriptions explain what they do a little better.
-    type: Tweak
-  - message: A sabotaged Shining Spring no longer reveals its about-to-kill-nerds
-      nature on inspection. (Should you get your hands on one, the description IS
-      different, though...)
-    type: Fix
-  - message: The mail RPDS is not Syndicate contraband. Don't believe anyone who says
-      otherwise.
-    type: Fix
-  id: 1591
-  time: '2025-04-30T14:18:52.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2306
 - author: TuttlePants, Ecramox, AvianMaiden
   changes:
   - message: Added the bounty hunter, a new midround free agent with the goal of capturing
@@ -4212,3 +4196,20 @@
   id: 2090
   time: '2025-07-29T08:51:45.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3188
+- author: Impstation, bear777, DOSRG, mqole
+  changes:
+  - message: 'Modifications to various server rules! Please read them joyfully. Specific
+      changes are:'
+    type: Tweak
+  - message: A new 'Escalation Table' that seeks to answer some frequent questions
+      about escalation rules.
+    type: Add
+  - message: Clauses to rules A1, A2, A3, A6, B2, B3, B4, B5, B6, B8, Antag, and Silicon.
+    type: Add
+  - message: "Honestly there\u2019s a lot of specifics in there. If you're keen on\
+      \ the nitty-gritty, go to the PR page on GitHub, and hit 'View Changes' to see\
+      \ exactly what's different."
+    type: Add
+  id: 2091
+  time: '2025-07-29T09:22:52.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3172
