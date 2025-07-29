@@ -1,17 +1,4 @@
 ﻿Entries:
-- author: jtfg-dev
-  changes:
-  - message: 'Cyborgs now get the pronouns and detailed examine text set for the character
-      you join with, like any other job. (NOTE: For dedicated cyborg characters, if
-      you haven''t already, you should make a unique profile!)'
-    type: Add
-  - message: Altered the examine description of cyborgs to minimize misgendering.
-    type: Tweak
-  - message: Small piece of broken grammar on partly-consumed bodies.
-    type: Fix
-  id: 1594
-  time: '2025-04-30T20:13:04.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2335
 - author: CombustibleToast
   changes:
   - message: Atmos techs can now wear the engineering beret (with sufficient department
@@ -4212,3 +4199,10 @@
   id: 2093
   time: '2025-07-29T20:52:08.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3191
+- author: Jellvisk
+  changes:
+  - message: steel wood walls resprited
+    type: Tweak
+  id: 2094
+  time: '2025-07-29T21:19:59.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3190
