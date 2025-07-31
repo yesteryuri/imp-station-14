@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: crekulon
-  changes:
-  - message: The kodepiiae 'ring' emote now may play a new sound.
-    type: Tweak
-  id: 1597
-  time: '2025-05-04T00:39:51.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2401
 - author: TheGrimbeeper
   changes:
   - message: Allow Kodepaiia to use subjuzine
@@ -4202,3 +4195,17 @@
   id: 2096
   time: '2025-07-30T08:35:18.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3197
+- author: honeyed-lemons
+  changes:
+  - message: adds cream cheese, a cream cheese bagel,  and chocolate chips.
+    type: Add
+  - message: Altered various recipes that insinuated the use of chocolate chips and
+      cream cheese
+    type: Tweak
+  - message: Butter and Butter slice have been resprited
+    type: Tweak
+  - message: Chocolate bars now require being heated to be made
+    type: Tweak
+  id: 2097
+  time: '2025-07-31T15:06:49.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3113
