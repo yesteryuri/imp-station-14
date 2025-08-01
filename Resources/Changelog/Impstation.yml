@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: CrystalClover
-  changes:
-  - message: Added ability to eat food with Shovels/Spades
-    type: Add
-  id: 1600
-  time: '2025-05-04T23:53:29.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2396
 - author: AvianMaiden
   changes:
   - message: Vox working atmospherics should now look fashionable in the burn chamber.
@@ -4209,3 +4202,16 @@
   id: 2099
   time: '2025-08-01T03:04:17.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3185
+- author: Kandiyaki
+  changes:
+  - message: the heretic's void blast can once again be aimed at non-visible targets.
+    type: Fix
+  - message: the heretic's void teleport can go through lattices again.
+    type: Fix
+  - message: heretic blades can now be used as cutting tools, and are able to do executions.
+    type: Fix
+  - message: changed up the ghoul and sacrifice notification screens for clarity.
+    type: Tweak
+  id: 2100
+  time: '2025-08-01T03:13:45.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3163
