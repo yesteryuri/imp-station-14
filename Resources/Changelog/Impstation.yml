@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: Sha-Seng
-  changes:
-  - message: Logistics 101 is now properly in the Guidebookshelf
-    type: Add
-  id: 1599
-  time: '2025-05-04T23:54:39.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2383
 - author: CrystalClover
   changes:
   - message: Added ability to eat food with Shovels/Spades
@@ -4209,3 +4202,10 @@
   id: 2098
   time: '2025-08-01T03:01:49.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3080
+- author: sev7ves
+  changes:
+  - message: The spider clan has seen a sharp decrease in recruits.
+    type: Tweak
+  id: 2099
+  time: '2025-08-01T03:04:17.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3185
