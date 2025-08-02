@@ -930,4 +930,23 @@
       gender: male
   - type: Loadout
     prototypes: [ MobPollyGear ]
+  # imp edit start
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,2,2
+  - type: Sprite # wearable on shoulder :)
+    sprite: _NF/Mobs/NPC/Animals/parrot.rsi
+  - type: Clothing
+    quickEquip: true
+    slots:
+    - neck
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-avian
+  - type: StealTarget
+    stealGroup: AnimalPoly
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+  # imp edit end
 
