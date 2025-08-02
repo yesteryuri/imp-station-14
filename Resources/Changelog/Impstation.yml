@@ -1,24 +1,4 @@
 ﻿Entries:
-- author: TuttlePants, AvianMaiden
-  changes:
-  - message: Added a Bounty Hunter guidebook entry
-    type: Add
-  - message: Bounty Hunters now spawn with a gas mask
-    type: Tweak
-  - message: A few minor changes the Heron
-    type: Tweak
-  - message: borgdisabler and borgstunbaton no longer show up in the spawning menu
-    type: Tweak
-  - message: Bounty Hunters now spawn more often
-    type: Tweak
-  - message: Bounty Hunter gear is now (mostly) put into a bag instead of spilling
-      onto the floor
-    type: Fix
-  - message: Bounty Hunters now have last names
-    type: Fix
-  id: 1606
-  time: '2025-05-05T00:02:24.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2402
 - author: rainyatrium
   changes:
   - message: Basic pirate accent without forced Yarr! and Garr! before sentences
@@ -4230,3 +4210,12 @@
   id: 2105
   time: '2025-08-02T08:55:54.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3135
+- author: Widgetbeck, AirFryerBuyOneGetOneFree
+  changes:
+  - message: The Cargorilla has a rare chance to spawn at roundstart.
+    type: Add
+  - message: The Cargorilla can now stand up and beat his chest.
+    type: Add
+  id: 2106
+  time: '2025-08-02T09:01:49.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3095
