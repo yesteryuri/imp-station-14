@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: Darkmajia
-  changes:
-  - message: Thieving beacons have been given minor contraband status, and can be
-      anchored under tiles similar to the smuggler's satchel.
-    type: Tweak
-  id: 1604
-  time: '2025-05-04T23:55:24.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2382
 - author: AvianMaiden
   changes:
   - message: Station-specific category no longer appears on the job selection menu,
@@ -4218,3 +4210,23 @@
   id: 2103
   time: '2025-08-02T08:48:16.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3193
+- author: AvianMaiden
+  changes:
+  - message: The K2903 Star Rifle, a relic much like the Kardashev-Mosin but with
+      an interesting twist; buy now in your uplink!
+    type: Add
+  - message: Several weapon sounds and sound changes (such as volume) for feedback
+      and coolness.
+    type: Add
+  - message: More variety to Nanotrasen's cargo gifts in the armory category.
+    type: Add
+  - message: Teeny buffs and nerfs to a few weapons.
+    type: Tweak
+  - message: Have you melee'd with a flamethrower recently?
+    type: Tweak
+  - message: Rifle crate from the cargo armory catalog, since the Lecter crate already
+      exists.
+    type: Remove
+  id: 2104
+  time: '2025-08-02T08:50:30.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3182
