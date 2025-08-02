@@ -219,7 +219,6 @@ public sealed class NukeSystem : EntitySystem
                     space++;
 
                 total++;
-                total++;
             }
 
             if (space / total > component.MaxAllowedSpaceFrac)
