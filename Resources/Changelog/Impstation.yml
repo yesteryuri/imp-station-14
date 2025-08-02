@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: meridiadottxt
-  changes:
-  - message: many small changes to Gate Station, possible last update for a while?
-    type: Tweak
-  id: 1602
-  time: '2025-05-04T23:52:34.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2395
 - author: AvianMaiden
   changes:
   - message: Space mobs and snakes can now be like every other creature; if it bleeds,
@@ -4215,3 +4208,14 @@
   id: 2101
   time: '2025-08-02T08:43:11.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3209
+- author: DVDPlayerOfDiscordFame
+  changes:
+  - message: The Syndicate Raid Suit will now protect you from being knocked over
+      by the Leviathan firing.
+    type: Tweak
+  - message: The Mk 93 + 92HB both will now default to their respective signature
+      firing modes.
+    type: Tweak
+  id: 2102
+  time: '2025-08-02T08:44:49.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3212
