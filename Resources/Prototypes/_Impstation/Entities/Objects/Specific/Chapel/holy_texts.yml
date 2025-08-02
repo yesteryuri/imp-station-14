@@ -164,7 +164,7 @@
     children:
     - id: Beeble
     - id: HolyTextQuran
-    - id: HolyTextTanakh
+    - id: BibleTanakh
     - id: HolyTextHolyScroll
     - id: HolyTextHolyTablet
     - id: HolyTextGreybible

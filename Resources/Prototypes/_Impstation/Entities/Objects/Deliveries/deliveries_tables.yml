@@ -204,7 +204,7 @@
     children:
     - id: PersonalAI
       weight: 0.1
-    - id: GoldPersonalAI
+    - id: GoldenPersonalAI
       weight: 0.03
     - id: CandleRed
     - id: DrinkFlaskBar
