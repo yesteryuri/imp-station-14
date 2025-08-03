@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: ruddygreat
-  changes:
-  - message: The AI and cyborgs no longer show up in the station records computer.
-    type: Fix
-  id: 1613
-  time: '2025-05-06T22:43:39.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2410
 - author: Cutinup99
   changes:
   - message: the pride vend can finally be restocked!
@@ -4216,3 +4209,11 @@
   id: 2112
   time: '2025-08-03T12:12:26.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3215
+- author: Stonylogray
+  changes:
+  - message: Decapoids are now slower than they were, but not quite as slow as they
+      used to be.
+    type: Tweak
+  id: 2113
+  time: '2025-08-03T12:16:01.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3155
