@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: Cutinup99
-  changes:
-  - message: the pride vend can finally be restocked!
-    type: Tweak
-  id: 1614
-  time: '2025-05-06T22:43:57.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2411
 - author: FlippenPage
   changes:
   - message: Added the BoogieBot. Craft one today!
@@ -4217,3 +4210,10 @@
   id: 2113
   time: '2025-08-03T12:16:01.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3155
+- author: Kandiyaki, smuglysuperior
+  changes:
+  - message: Added the Wildering Mirror, a heretic item that reflects energy weapons!
+    type: Add
+  id: 2114
+  time: '2025-08-03T13:01:14.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3134
