@@ -120,3 +120,6 @@ uplink-pin-straight-desc = Demonstrate your support for the heterosexual communi
 
 uplink-cloak-straight-name = Straight Pride Cloak
 uplink-cloak-straight-desc = Demonstrate your support for the heterosexual community (and the hamburglar) with this stripy, black-and-white cloak.
+
+uplink-super-mosin-name = K2903 Star Rifle bundle
+uplink-super-mosin-desc = A modified bolt-action service rifle with a large magazine! Not modern by any standard. Quite the steal, if you don't mind hand-loading. Comes with a handful of stripper clips.
