@@ -1,14 +1,4 @@
 ﻿Entries:
-- author: AvianMaiden, ruddygreat
-  changes:
-  - message: Updates to Nanotrasen's data infrastructure now permit accessing employees'
-      historical records from the respective consoles. Please ensure all information
-      is correct before your shift. Thank you, and thank you to our friends in the
-      Delta and Cosmatic sectors.
-    type: Add
-  id: 1610
-  time: '2025-05-05T03:18:24.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2307
 - author: irismessage
   changes:
   - message: CONGRATULATIONS!! Your name has been approved by the Toon Council.
@@ -4215,3 +4205,10 @@
   id: 2109
   time: '2025-08-03T02:31:36.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3194
+- author: eviltori
+  changes:
+  - message: chem shelfs are now medical access instead of chem access. Yay Yay
+    type: Tweak
+  id: 2110
+  time: '2025-08-03T10:22:56.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3221
