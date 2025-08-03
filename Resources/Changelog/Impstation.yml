@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: rainyatrium
-  changes:
-  - message: Basic pirate accent without forced Yarr! and Garr! before sentences
-    type: Add
-  id: 1607
-  time: '2025-05-05T00:04:50.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2375
 - author: DVDPlayerOfDiscordFame
   changes:
   - message: Hey my disablers and blasters don't use the standard muzzle flash sprite
@@ -4219,3 +4212,10 @@
   id: 2106
   time: '2025-08-02T09:01:49.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3095
+- author: HippiDippi
+  changes:
+  - message: Added a new round end sound of coming
+    type: Add
+  id: 2107
+  time: '2025-08-03T01:35:16.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3211
