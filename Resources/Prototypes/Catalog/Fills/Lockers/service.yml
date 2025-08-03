@@ -68,7 +68,7 @@
       - id: FoodCondimentPacketSalt
       - id: FoodCondimentPacketPepper
     - !type:NestedSelector #imp edit
-      - tableId: FillClosetChef
+      tableId: RandomIngredientBox
 
 - type: entity
   id: ClosetJanitorFilled
