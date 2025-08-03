@@ -130,7 +130,7 @@ namespace Content.Server.Hands.Systems
             if (TryComp<InnateHeldItemComponent>(args.Part, out var innateHeldItem))
             {
                 var item = Spawn(innateHeldItem.ItemPrototype);
-                if (!TryPickup(uid, item, component.Hands[component.SortedHands[^1]], false, false, component, Comp<ItemComponent>(item)))
+                if (!TryPickup(ent, item, component.Hands[component.SortedHands[^1]], false, false, component, Comp<ItemComponent>(item)))
                 {
                     Log.Error("Failed to put innately held item into hand");
                 }
@@ -191,8 +191,8 @@ namespace Content.Server.Hands.Systems
             var throwSpeed = hands.BaseThrowspeed;
 
             // imp edit, throwing changes
-            var itemEv = new BeforeGettingThrownEvent(throwEnt, direction, throwSpeed, player);
-            RaiseLocalEvent(throwEnt, ref itemEv);
+            var itemEv = new BeforeGettingThrownEvent((EntityUid)throwEnt, direction, throwSpeed, player);
+            RaiseLocalEvent((EntityUid)throwEnt, ref itemEv);
 
             if (itemEv.Cancelled)
                 return true;
