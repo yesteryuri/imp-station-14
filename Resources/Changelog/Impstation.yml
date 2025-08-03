@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: AvianMaiden
-  changes:
-  - message: Shotgun and axe cabinets finally got cleaned
-    type: Tweak
-  id: 1616
-  time: '2025-05-08T20:04:16.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2416
 - author: hivehum
   changes:
   - message: All moths can sigh.
@@ -4220,3 +4213,12 @@
   id: 2115
   time: '2025-08-03T13:14:46.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3187
+- author: Mousetrinity
+  changes:
+  - message: coming in from planet teo, it's.... wait, what? .... uhuh... the v-rex?
+      what? no- that'll destroy the station!! strap in, ready your firearms, and prepare
+      for a bloodbath!
+    type: Add
+  id: 2116
+  time: '2025-08-03T15:49:20.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3198
