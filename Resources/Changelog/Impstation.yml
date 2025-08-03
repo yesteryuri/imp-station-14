@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: irismessage
-  changes:
-  - message: CONGRATULATIONS!! Your name has been approved by the Toon Council.
-    type: Add
-  id: 1611
-  time: '2025-05-06T22:41:27.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2406
 - author: honeyed-lemons
   changes:
   - message: Atmos Techs in Xeno might feel more confident taking their chute to engineering
@@ -4212,3 +4205,14 @@
   id: 2110
   time: '2025-08-03T10:22:56.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3221
+- author: kipdotnet
+  changes:
+  - message: Apids now have slightly better acceleration and air control.
+    type: Tweak
+  - message: Apid engineers now start with an RCD.
+    type: Tweak
+  - message: Apids can now wear gloves.
+    type: Tweak
+  id: 2111
+  time: '2025-08-03T12:09:16.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3216
