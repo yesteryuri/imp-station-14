@@ -1,13 +1,4 @@
 ﻿Entries:
-- author: Kandiyaki
-  changes:
-  - message: Sacrifice victims can no longer be ghouled.
-    type: Tweak
-  - message: Sacrifice victims can no longer be reused.
-    type: Fix
-  id: 1609
-  time: '2025-05-05T01:26:48.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2392
 - author: AvianMaiden, ruddygreat
   changes:
   - message: Updates to Nanotrasen's data infrastructure now permit accessing employees'
@@ -4216,3 +4207,11 @@
   id: 2108
   time: '2025-08-03T02:17:46.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3220
+- author: msTheowo
+  changes:
+  - message: Departments now have their own communications consoles, usable by their
+      head.
+    type: Add
+  id: 2109
+  time: '2025-08-03T02:31:36.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3194
