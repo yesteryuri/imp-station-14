@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: FlippenPage
-  changes:
-  - message: Added the BoogieBot. Craft one today!
-    type: Add
-  id: 1615
-  time: '2025-05-08T20:03:28.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2415
 - author: AvianMaiden
   changes:
   - message: Shotgun and axe cabinets finally got cleaned
@@ -4217,3 +4210,13 @@
   id: 2114
   time: '2025-08-03T13:01:14.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3134
+- author: VeeNomine
+  changes:
+  - message: Ported and added the magnet pickup feature from Frontier to the ore and
+      industrial ore processors. This means you can now dump your ore into the processor.
+    type: Add
+  - message: Added a fiery glow around the ore and industrial ore processors.
+    type: Tweak
+  id: 2115
+  time: '2025-08-03T13:14:46.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3187
