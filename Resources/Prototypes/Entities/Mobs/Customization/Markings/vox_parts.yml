@@ -141,15 +141,15 @@
 #        !type:SimpleColoring
 #        color: "#937e3d"
 
-- type: marking
-  id: VoxTail
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vox]
-  #forcedColoring: true #imp
-  sprites:
-  - sprite: Mobs/Customization/vox_parts.rsi
-    state: tail
+#- type: marking
+#  id: VoxTail
+#  bodyPart: Tail
+#  markingCategory: Tail
+#  speciesRestriction: [Vox]
+#  #forcedColoring: true #imp
+#  sprites:
+#  - sprite: Mobs/Customization/vox_parts.rsi
+#    state: tail
 
 - type: marking
   id: VoxTailShort
