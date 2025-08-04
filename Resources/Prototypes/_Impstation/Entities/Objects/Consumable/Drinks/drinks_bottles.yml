@@ -152,6 +152,8 @@
   - type: SolutionContainerVisuals
     maxFillLevels: 6
     fillBaseName: fill-
+    inHandsMaxFillLevels: 0
+    inHandsFillBaseName: null
   - type: Label
     currentLabel: reagent-name-apple-martini-crystal-lite
   - type: Sprite
