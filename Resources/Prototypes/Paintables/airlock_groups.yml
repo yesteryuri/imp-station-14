@@ -18,6 +18,35 @@
     science: AirlockScience
     security: AirlockSecurity
     virology: AirlockVirology
+    # imp edit start
+    armory: AirlockArmory
+    bar: AirlockBar
+    brig: AirlockBrig
+    captain: AirlockCaptain
+    ce: AirlockChiefEngineer
+    chapel: AirlockChapel
+    clown: AirlockClown
+    cmo: AirlockChiefMedicalOfficer
+    courier: AirlockCourier
+    detective: AirlockDetective
+    hd: AirlockHospitalityDirector
+    hop: AirlockHeadOfPersonnel
+    hos: AirlockHeadOfSecurity
+    janitor: AirlockJanitor
+    kitchen: AirlockKitchen
+    lawyer: AirlockLawyer
+    librarian: AirlockLibrarian
+    medsci: AirlockMedicalScience
+    mime: AirlockMime
+    musician: AirlockMusician
+    morgue: AirlockMedicalMorgue
+    qm: AirlockQuartermaster
+    rd: AirlockResearchDirector
+    reporter: AirlockReporter
+    secmed: AirlockSecurityMedical
+    service: AirlockService
+    theatre: AirlockTheatre
+    # imp edit end
 
 - type: paintableGroup
   id: AirlockGlass
@@ -38,3 +67,32 @@
     science: AirlockScienceGlass
     security: AirlockSecurityGlass
     virology: AirlockVirologyGlass
+    # imp edit start
+    armory: AirlockArmoryGlass
+    bar: AirlockBarGlass
+    brig: AirlockBrigGlass
+    captain: AirlockCaptainGlass
+    ce: AirlockChiefEngineerGlass
+    chapel: AirlockChapelGlass
+    clown: AirlockClownGlass
+    cmo: AirlockChiefMedicalOfficerGlass
+    courier: AirlockCourierGlass
+    detective: AirlockDetectiveGlass
+    hd: AirlockHospitalityDirectorGlass
+    hop: AirlockHeadOfPersonnelGlass
+    hos: AirlockHeadOfSecurityGlass
+    janitor: AirlockJanitorGlass
+    kitchen: AirlockKitchenGlass
+    lawyer: AirlockLawyerGlass
+    librarian: AirlockLibrarianGlass
+    medsci: AirlockMedicalScienceGlass
+    mime: AirlockMimeGlass
+    musician: AirlockMusicianGlass
+    morgue: AirlockMedicalMorgueGlass
+    qm: AirlockQuartermasterGlass
+    rd: AirlockResearchDirectorGlass
+    reporter: AirlockReporterGlass
+    secmed: AirlockSecurityMedicalGlass
+    service: AirlockServiceGlass
+    theatre: AirlockTheatreGlass
+    # imp edit end

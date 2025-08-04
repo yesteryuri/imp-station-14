@@ -28,6 +28,15 @@
     scientist: LockerScientist
     security: LockerSecurity
     welding: LockerWeldingSupplies
+    # imp edit start
+    AA: LockerAdministrativeAssistant
+    belongings: LockerBelongings
+    courier: LockerCourier
+    griffy: LockerGriffy
+    HD: LockerHospitalityDirector
+    janitor: LockerJanitor
+    musician: LockerMusician
+    # imp edit end
 
 - type: paintableGroup
   id: Closet
@@ -44,12 +53,15 @@
     bomb-janitor: ClosetJanitorBomb
     chef: ClosetChef
     fire: ClosetFire
-    janitor: ClosetJanitor
+    #janitor: ClosetJanitor #imp edit
     legal: ClosetLegal
     nitrogen: ClosetEmergencyN2
     oxygen: ClosetEmergency
     radiation: ClosetRadiationSuit
     tool: ClosetTool
+    # imp edit start
+    business: WardrobeBusiness
+    # imp edit end
 
 - type: paintableGroup
   id: WallCloset
