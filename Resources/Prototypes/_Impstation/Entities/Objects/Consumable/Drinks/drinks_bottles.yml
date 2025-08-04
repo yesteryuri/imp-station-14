@@ -38,6 +38,8 @@
   - type: SolutionContainerVisuals
     maxFillLevels: 6
     fillBaseName: fill-
+    inHandsMaxFillLevels: 0
+    inHandsFillBaseName: null
   - type: SolutionContainerManager
     solutions:
       drink:
