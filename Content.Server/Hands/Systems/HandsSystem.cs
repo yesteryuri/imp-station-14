@@ -130,11 +130,10 @@ namespace Content.Server.Hands.Systems
             if (TryComp<InnateHeldItemComponent>(args.Part, out var innateHeldItem))
             {
                 var item = Spawn(innateHeldItem.ItemPrototype);
-                /* UPSTREAM MERGE TODO: fix this
-                if (!TryPickup(ent, item, component.Hands[component.SortedHands[^1]], false, false, component, Comp<ItemComponent>(item)))
+                if (!TryPickup(ent, item, ent.Comp.SortedHands[^1], false, false, true, ent.Comp, Comp<ItemComponent>(item)))
                 {
                     Log.Error("Failed to put innately held item into hand");
-                }*/
+                }
             }
         }
 

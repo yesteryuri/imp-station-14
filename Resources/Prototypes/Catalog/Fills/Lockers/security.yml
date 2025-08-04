@@ -77,14 +77,7 @@
     - id: ClothingUniformJumpsuitSecGrey
       prob: 0.3
     - id: ClothingHeadHelmetBasic
-    - id: ClothingOuterArmorBasic
-      orGroup: OuterArmor # DeltaV
-      prob: 0.33
-    - id: ClothingOuterArmorDuraVest # DeltaV
-      orGroup: OuterArmor
-      prob: 0.33
-    - id: ClothingOuterArmorPlateCarrier # DeltaV
-      orGroup: OuterArmor
+    #- id: ClothingOuterArmorBasic #imp edit, move to GroupSelector
     - id: ClothingBeltSecurityFilled
     - id: Flash
       prob: 0.5
@@ -100,6 +93,11 @@
       prob: 0.5
     - id: TicketPad #imp special
     - id: BaseSeclinkRadio #imp
+    - !type:GroupSelector #imp edit
+      children:
+        - id: ClothingOuterArmorBasic
+        - id: ClothingOuterArmorDuraVest
+        - id: ClothingOuterArmorPlateCarrier
 
 - type: entity
   id: LockerBrigmedicFilled
