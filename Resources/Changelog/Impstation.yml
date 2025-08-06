@@ -1,20 +1,4 @@
 ﻿Entries:
-- author: DinnerCalzone
-  changes:
-  - message: Airlocks to escape pods now require maints access instead of external
-      access until roundstart docking is fixed.
-    type: Fix
-  id: 1621
-  time: '2025-05-08T23:47:15.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2424
-- author: CombustibleToast
-  changes:
-  - message: Two new bomber jackets for atmos techs! Find em in your loadout screen
-      or the atmos drobe.
-    type: Add
-  id: 1622
-  time: '2025-05-08T23:58:20.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2388
 - author: ATDoop
   changes:
   - message: Coconuts! Grow them and throw them today!
@@ -4212,3 +4196,21 @@
   id: 2120
   time: '2025-08-06T02:48:11.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3225
+- author: DinnerCalzone
+  changes:
+  - message: Woe, usptream merge be upon ye! This update includes changes from Wizden
+      published on July 7th and July 20th.
+    type: Add
+  - message: The janitorial welder has been removed from the janibelt and moved to
+      the locker (don't worry, they're still craftable at a lathe!)
+    type: Tweak
+  id: 2121
+  time: '2025-08-06T10:31:48.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3223
+- author: ATDoop
+  changes:
+  - message: Magnum stun projectiles should be a little more obvious.
+    type: Tweak
+  id: 2122
+  time: '2025-08-06T11:05:25.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3199
