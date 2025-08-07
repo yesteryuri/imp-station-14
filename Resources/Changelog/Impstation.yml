@@ -1,14 +1,4 @@
 ﻿Entries:
-- author: meridiadottxt
-  changes:
-  - message: properly labeled every substation, as well as many of the cameras on
-      Gate Station
-    type: Add
-  - message: a few excessive crew monitors have been removed or replaced
-    type: Remove
-  id: 1626
-  time: '2025-05-10T07:21:40.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2437
 - author: Mousetrinity
   changes:
   - message: captain is no longer wearing that hideous green!
@@ -4213,3 +4203,10 @@
   id: 2125
   time: '2025-08-06T16:48:15.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3229
+- author: DinnerCalzone
+  changes:
+  - message: Vocal emotes now properly appear in chat when manually typed.
+    type: Fix
+  id: 2126
+  time: '2025-08-07T04:29:13.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3244
