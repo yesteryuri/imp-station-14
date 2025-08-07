@@ -1,28 +1,4 @@
 ﻿Entries:
-- author: Mousetrinity
-  changes:
-  - message: captain is no longer wearing that hideous green!
-    type: Tweak
-  id: 1627
-  time: '2025-05-10T07:22:55.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2436
-- author: widgetbeck
-  changes:
-  - message: Anomalites are now only accessible through crit cores. Sorry, you gotta
-      work a little harder for your little guys.
-    type: Tweak
-  id: 1628
-  time: '2025-05-10T07:23:53.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2435
-- author: Darkmajia
-  changes:
-  - message: You gonna learn. This is the real world.
-    type: Add
-  - message: Adjusted the volume of several round end sounds to make them more audible.
-    type: Tweak
-  id: 1629
-  time: '2025-05-10T07:28:31.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2432
 - author: Sha-Seng
   changes:
   - message: Droopy and Cyclops eyes for slimes, and a glowing version of the slime
@@ -4210,3 +4186,29 @@
   id: 2126
   time: '2025-08-07T04:29:13.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3244
+- author: astral_amy
+  changes:
+  - message: A number of Bedlam and Whisper tweaks. See PR for more information.
+    type: Tweak
+  id: 2127
+  time: '2025-08-07T06:52:27.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3240
+- author: DinnerCalzone
+  changes:
+  - message: Crew members that have had their job set to Service Worker from the ID
+      card computer will now show up under the Service tab on the crew monitoring
+      console.
+    type: Fix
+  - message: You can no longer change your job to Administrative Assistant from the
+      ID card computer.
+    type: Remove
+  id: 2128
+  time: '2025-08-07T06:51:41.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3245
+- author: yesteryuri
+  changes:
+  - message: Vox suffer no ill effects of eating trash
+    type: Fix
+  id: 2129
+  time: '2025-08-07T06:50:55.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3243
