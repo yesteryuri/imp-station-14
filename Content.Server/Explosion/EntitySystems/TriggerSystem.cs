@@ -19,6 +19,7 @@ using Content.Shared.Inventory;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Payload.Components;
+using Content.Shared.Projectiles; // imp edit
 using Content.Shared.Radio;
 using Content.Shared.Slippery;
 using Content.Shared.StepTrigger.Systems;
@@ -104,6 +105,7 @@ namespace Content.Server.Explosion.EntitySystems
             SubscribeLocalEvent<TriggerOnStepTriggerComponent, StepTriggeredOffEvent>(OnStepTriggered);
             SubscribeLocalEvent<TriggerOnSlipComponent, SlipEvent>(OnSlipTriggered);
             SubscribeLocalEvent<TriggerWhenEmptyComponent, OnEmptyGunShotEvent>(OnEmptyTriggered);
+            SubscribeLocalEvent<TriggerOnEmbedComponent, EmbedEvent>(OnEmbedTriggered); // imp edit
             SubscribeLocalEvent<RepeatingTriggerComponent, MapInitEvent>(OnRepeatInit);
 
             SubscribeLocalEvent<SpawnOnTriggerComponent, TriggerEvent>(OnSpawnTrigger);
@@ -172,20 +174,31 @@ namespace Content.Server.Explosion.EntitySystems
         private void OnSpawnTrigger(Entity<SpawnOnTriggerComponent> ent, ref TriggerEvent args)
         {
             var xform = Transform(ent);
+            var savedAmount = ent.Comp.Amount; //#IMP: SingleUse
 
             if (ent.Comp.mapCoords)
             {
                 var mapCoords = _transformSystem.GetMapCoordinates(ent, xform);
-                Spawn(ent.Comp.Proto, mapCoords);
+                while (ent.Comp.Amount > 0) //#IMP While loop to allow amount to actually do something
+                {
+                    Spawn(ent.Comp.Proto, mapCoords);
+                    ent.Comp.Amount -= 1; //#IMP While loop to allow amount to actually do something
+                }
             }
             else
             {
                 var coords = xform.Coordinates;
                 if (!coords.IsValid(EntityManager))
                     return;
-                Spawn(ent.Comp.Proto, coords);
-
+                while (ent.Comp.Amount > 0)//#IMP While loop to allow amount to actually do something
+                {
+                    Spawn(ent.Comp.Proto, coords);
+                    ent.Comp.Amount -= 1; //#IMP While loop to allow amount to actually do something
+                }
             }
+            // #IMP: SingleUse
+            if (!ent.Comp.SingleUse)
+                ent.Comp.Amount = savedAmount;
         }
 
         private void HandleExplodeTrigger(EntityUid uid, ExplodeOnTriggerComponent component, TriggerEvent args)
@@ -295,6 +308,12 @@ namespace Content.Server.Explosion.EntitySystems
         private void OnEmptyTriggered(EntityUid uid, TriggerWhenEmptyComponent component, ref OnEmptyGunShotEvent args)
         {
             Trigger(uid, args.EmptyGun);
+        }
+
+        // imp edit, allow a projectile to explode when it embeds into something
+        private void OnEmbedTriggered(Entity<TriggerOnEmbedComponent> ent, ref EmbedEvent args)
+        {
+            Trigger(ent, args.Embedded);
         }
 
         private void OnRepeatInit(Entity<RepeatingTriggerComponent> ent, ref MapInitEvent args)

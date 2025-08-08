@@ -36,7 +36,7 @@ public sealed partial class AtmosphereSystem
            return;
        }
 
-       var mixtures = new GasMixture[9];
+       var mixtures = new GasMixture[11];
        for (var i = 0; i < mixtures.Length; i++)
            mixtures[i] = new GasMixture(Atmospherics.CellVolume) { Temperature = Atmospherics.T20C };
 
@@ -71,6 +71,15 @@ public sealed partial class AtmosphereSystem
        // 8: Air (GM)
        mixtures[8].AdjustMoles(Gas.Oxygen, Atmospherics.OxygenMolesGasMiner);
        mixtures[8].AdjustMoles(Gas.Nitrogen, Atmospherics.NitrogenMolesGasMiner);
+
+        // imp specials
+        // if this file ever creates a merge conflict, PLEASE change the values in Resources/Prototypes/_Impstation/Entities/Markers/atmos_blocker.yml
+
+        // 9: Water Vapor (GM)
+        mixtures[9].AdjustMoles(Gas.WaterVapor, Atmospherics.MolesCellGasMiner);
+
+       // 10: Water Vapor (101kpa) for decapoid rooms
+       mixtures[10].AdjustMoles(Gas.WaterVapor, Atmospherics.MolesCellStandard);
 
        foreach (var arg in args)
        {

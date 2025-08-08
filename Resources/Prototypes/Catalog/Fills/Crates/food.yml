@@ -128,6 +128,31 @@
       amount: 2
 
 - type: entity
+  id: CrateFoodSoftdrinksLarge
+  parent: CratePlastic
+  name: softdrinks bulk crate
+  description: Lots of sodas taken straight out of CentComm's own vending machines, because you just can't leave your department. Includes 32 sodas. # imp caps fix
+  components:
+  - type: EntityStorage
+    capacity: 32 # Slightly over-sized CratePlastic to accomodate over 30 drink cans at once.
+  - type: StorageFill
+    contents:
+      - id: DrinkColaCan
+        amount: 8
+      - id: DrinkGrapeCan
+        amount: 4
+      - id: DrinkRootBeerCan
+        amount: 4
+      - id: DrinkIcedTeaCan
+        amount: 4
+      - id: DrinkLemonLimeCan
+        amount: 4
+      - id: DrinkLemonLimeCranberryCan
+        amount: 4
+      - id: DrinkFourteenLokoCan
+        amount: 4
+
+- type: entity
   id: CrateFoodGetMore
   parent: CratePlastic
   name: Getmore Bakemore crate

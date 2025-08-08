@@ -20,7 +20,7 @@
   - Brig
   - Armory
   - Maintenance
-  - Service
+  #- Service imp edit
   - External
   - Detective
   - Cryogenics
@@ -32,13 +32,13 @@
   id: WardenGear
   equipment:
     eyes: ClothingEyesGlassesSecurity
-    id: WardenPDA
-    ears: ClothingHeadsetSecurity
-    pocket1: WeaponPistolMk58
+    ears: ClothingHeadsetWarden
+    # pocket1: WeaponPistolMk58 imp loadouts
   storage:
     back:
     - Flash
-    - MagazinePistol
+    # - MagazinePistol imp loadouts
+
 
 - type: chameleonOutfit
   id: WardenChameleonOutfit

@@ -5,6 +5,7 @@
   name: Urist McHands
   abstract: true
   components:
+  - type: Absorbable
   - type: Hunger
   - type: Icon # It will not have an icon in the adminspawn menu without this. Body parts seem fine for whatever reason.
     sprite: Mobs/Species/Human/parts.rsi
@@ -20,6 +21,9 @@
     hideLayersOnEquip:
     - Hair
     - Snout
+    - FacialHair #imp
+    - HeadSide #imp
+    - HeadTop #imp
   - type: Inventory
     femaleDisplacements:
       jumpsuit:
@@ -27,7 +31,6 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
-
 
 - type: entity
   parent: BaseSpeciesDummy

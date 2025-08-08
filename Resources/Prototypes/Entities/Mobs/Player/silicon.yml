@@ -42,8 +42,8 @@
         type: RadarConsoleBoundUserInterface
       enum.CrewMonitoringUIKey.Key:
         type: CrewMonitoringBoundUserInterface
-      enum.GeneralStationRecordConsoleKey.Key:
-        type: GeneralStationRecordConsoleBoundUserInterface
+      enum.CharacterRecordConsoleKey.Key: #imp edit - give the ai the CD char records instead of the default one
+        type: CharacterRecordConsoleBoundUserInterface
       enum.SiliconLawsUiKey.Key:
         type: SiliconLawBoundUserInterface
       enum.CommunicationsConsoleUiKey.Key:
@@ -54,8 +54,8 @@
         toggleAction: ActionAGhostShowRadar
       enum.CrewMonitoringUIKey.Key:
         toggleAction: ActionAGhostShowCrewMonitoring
-      enum.GeneralStationRecordConsoleKey.Key:
-        toggleAction: ActionAGhostShowStationRecords
+      enum.CharacterRecordConsoleKey.Key: #imp edit - give the ai the CD char records instead of the default one
+        toggleAction: ActionAGhostShowCharacterRecords
       enum.CommunicationsConsoleUiKey.Key:
         toggleAction: ActionAGhostShowCommunications
   - type: CrewMonitoringConsole
@@ -71,6 +71,11 @@
     title: comms-console-announcement-title-station-ai
     color: "#5ed7aa"
   - type: ShowJobIcons
+  - type: StealTarget #imp
+    stealGroup: AICore
+  - type: CharacterRecordConsole #imp edit - give the Ai the new cd records console. only employment because they're nominally a civilian role, but they can still use the sec & med consoles.
+    consoleType: Employment
+
 
 - type: entity
   id: AiHeldIntellicard
@@ -93,6 +98,8 @@
       enum.SiliconLawsUiKey.Key:
         type: SiliconLawBoundUserInterface
   - type: ShowJobIcons
+  - type: StealTarget #imp
+    stealGroup: AICore
 
 # Ai
 - type: entity
@@ -135,7 +142,7 @@
     proto: AiHeldIntellicard
     container: station_ai_mind_slot
   - type: Sprite
-    sprite: Objects/Devices/ai_card.rsi
+    sprite: _Impstation/Objects/Devices/ai_card.rsi #imp
     layers:
     - state: base
     - state: full
@@ -155,7 +162,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Mobs/Silicon/station_ai.rsi
+    sprite: _Impstation/Mobs/Silicon/station_ai.rsi #imp
     layers:
     - state: base
     - state: ai
@@ -293,6 +300,10 @@
       state: ai_female
   - type: NameIdentifier
     group: StationAi
+  - type: Grammar # imp
+    attributes:
+      proper: true
+  - type: SkipLoadingCharacterRecords #imp edit - make it so the AI doesn't show up in the character records list
 
 # Hologram projection that the AI's eye tracks.
 - type: entity
@@ -369,6 +380,9 @@
   - type: StartingMindRole
     mindRole: "MindRoleSiliconBrain"
     silent: true
+  - type: Grammar # imp
+    attributes:
+      proper: true
 
 - type: entity
   id: PlayerBorgSyndicateAssaultBattery
@@ -401,6 +415,8 @@
       rules: ghost-role-information-silicon-rules
       raffle:
         settings: default
+      mindRoles: # imp edit but this seems to be an upstream mistake
+      - MindRoleGhostRoleSiliconAntagonist
     - type: GhostTakeoverAvailable
 
 - type: entity
@@ -434,6 +450,8 @@
       rules: ghost-role-information-silicon-rules
       raffle:
         settings: default
+      mindRoles: # imp edit
+      - MindRoleGhostRoleSiliconAntagonist
     - type: GhostTakeoverAvailable
 
 - type: entity
@@ -483,4 +501,172 @@
       rules: ghost-role-information-silicon-rules
       raffle:
         settings: default
+      mindRoles: # imp edit once again this is upstream forgetting borgs exist
+      - MindRoleGhostRoleSilicon
     - type: GhostTakeoverAvailable
+
+  # Drones and OneStar mech
+- type: entity
+  save: false
+  abstract: true
+  id: PlayerSiliconBase #for player controlled silicons. it's a shitty name, idk why they did it like that.
+  components:
+  - type: Reactive
+    groups:
+      Acidic: [Touch]
+  - type: Input
+    context: "human"
+  - type: DamageOnHighSpeedImpact
+    damage:
+      types:
+        Blunt: 5
+    soundHit:
+      collection: MetalThud
+  - type: Clickable
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Bloodstream
+    bloodReagent: Oil
+    bloodlossDamage:
+      types:
+        Bloodloss:
+          1
+    bloodlossHealDamage:
+      types:
+        Bloodloss:
+          -1
+  - type: InteractionOutline
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          # Circles, cuz rotation of rectangles looks very bad
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 50
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 4
+    baseSprintSpeed : 3
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 60
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+  - type: Physics
+    bodyType: KinematicController
+  - type: Hands
+    showInHands: false
+  - type: ComplexInteraction
+  - type: Body
+    prototype: Drone
+    thermalVisibility: false # imp edit. mostly for drones, but i think this is cool and interesting
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+  - type: DoAfter
+  - type: Pullable
+  - type: Examiner
+  - type: Puller
+  - type: StandingState
+  - type: Alerts
+  - type: ProtectedFromStepTriggers
+
+- type: entity
+  name: onestar mecha
+  id: Onestar
+  description: A gigantic mech. You should really be shooting at it.
+  parent: PlayerSiliconBase
+  suffix: Boss, Ghost Role
+  components:
+  - type: Loadout # imp special. this replaces the InnateTool component.
+    prototypes:
+      - StartingGearOnestarWeapons
+  - type: UserInterface
+    interfaces:
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
+  - type: GhostRole
+    makeSentient: true
+    name: ghost-role-information-onestar-mecha-name
+    description: ghost-role-information-onestar-mecha-description
+    rules: ghost-role-information-antagonist-rules
+    mindRoles: # imp. if it matters.
+    - MindRoleGhostRoleSiliconAntagonist
+  - type: GhostTakeoverAvailable
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 3
+    baseSprintSpeed : 2
+  - type: MobState
+    allowedStates:
+      - Alive
+      - Dead
+  - type: MobThresholds # imp 1000 > 2000
+    thresholds:
+      0: Alive
+      2000: Dead
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - state: onestar_boss
+      sprite: Mobs/Silicon/onestar.rsi
+    - state: onestar_boss_screen
+      sprite: Mobs/Silicon/onestar.rsi
+      shader: unshaded
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
+  - type: MovementIgnoreGravity
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 1
+        density: 160
+        mask:
+        - LargeMobMask
+        layer:
+        - MobLayer
+  - type: Appearance
+  - type: CombatMode
+  - type: Tag
+    tags:
+      - FootstepSound
+  - type: NpcFactionMember # imp
+    factions:
+    - AllHostile
+  - type: HTN # imp
+    rootTask:
+      task: SimpleRangedHostileCompound
+    blackboard:
+      NavSmash: !type:Bool
+        true
+  - type: Destructible # imp
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 2000
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: OnestarDeath
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]

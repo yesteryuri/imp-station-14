@@ -2,6 +2,7 @@
   id: Nukeops
   name: roles-antag-nuclear-operative-name
   antagonist: true
+  playTimeTracker: AntagNuclearOperative # imp
   setPreference: true
   objective: roles-antag-nuclear-operative-objective
   requirements:
@@ -13,6 +14,7 @@
   id: NukeopsMedic
   name: roles-antag-nuclear-operative-agent-name
   antagonist: true
+  playTimeTracker: AntagNuclearAgent # imp
   setPreference: true
   objective: roles-antag-nuclear-operative-agent-objective
   requirements:
@@ -27,15 +29,20 @@
   id: NukeopsCommander
   name: roles-antag-nuclear-operative-commander-name
   antagonist: true
+  playTimeTracker: AntagNuclearCommander # imp
   setPreference: true
   objective: roles-antag-nuclear-operative-commander-objective
   requirements:
-  - !type:OverallPlaytimeRequirement
-    time: 18000 # 5h
-  - !type:DepartmentTimeRequirement
-    department: Security
-    time: 18000 # 5h
-  # should be changed to nukie playtime when thats tracked (wyci)
+  # imp edit start, added general nukie requirment
+  #- !type:OverallPlaytimeRequirement
+  #  time: 18000 # 5h
+  #- !type:DepartmentTimeRequirement
+  #  department: Security
+  #  time: 18000 # 5h
+  - !type:AntagGroupTimeRequirement
+    antagGroup: Nukies
+    time: 14400 # 4h
+  # imp edit end
   guides: [ NuclearOperatives ]
 
 - type: startingGear
@@ -81,6 +88,12 @@
   equipment:
     neck: SyndicateWhistle
     outerClothing: ClothingOuterHardsuitSyndieCommander
+  storage:
+    back:
+    - DeathAcidifierImplanter
+    - WeaponPistolViper
+    - PinpointerSyndicateNuclear
+    - NukieSpectralLocator # Imp special!!
   inhand:
   - NukeOpsDeclarationOfWar
 
@@ -130,3 +143,10 @@
   parent: SyndicateOperativeGearFull
   equipment:
     pocket2: BaseUplinkRadio60TC
+  storage:
+    back:
+    - WeaponPistolViper
+    - PinpointerSyndicateNuclear
+    - DeathAcidifierImplanter
+    - NukieSpectralLocator # Imp special!!
+

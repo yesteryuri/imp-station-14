@@ -15,6 +15,7 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Stacks;
 using Robust.Shared.Audio.Systems;
+using Content.Shared._Impstation.Medical; // imp
 
 namespace Content.Shared.Medical.Healing;
 
@@ -109,6 +110,10 @@ public sealed class HealingSystem : EntitySystem
         }
 
         _audio.PlayPredicted(healing.HealingEndSound, target.Owner, args.User);
+
+        // imp edit, raise healing success event to handle after-effects
+        var ev = new HealingSuccessEvent(args.User, target.Owner, args.Used.Value);
+        RaiseLocalEvent(args.Used.Value, ev);
 
         // Logic to determine the whether or not to repeat the healing action
         args.Repeat = HasDamage((args.Used.Value, healing), target) && !dontRepeat;

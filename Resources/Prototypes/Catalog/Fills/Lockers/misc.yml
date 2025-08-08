@@ -146,6 +146,11 @@
     - id: ToolboxSyndicateFilled
     - id: BalloonSyn
     - id: WeaponSniperMosin
+    - id: ClothingEyesNightVisionGogglesSyndie
+    - id: ClothingEyesThermalVisionGogglesSyndie
+    - id: ClothingNeckCloakKaijuCloak #imp
+    - id: ClothingNeckCloakFugitiveCloak #imp
+    - id: CigPackMixedRejects #imp
       weight: 2
     - id: ClothingHandsKnuckleDustersSyndicate
 
@@ -183,23 +188,27 @@
     # Recursive
     - id: ClosetMaintenanceFilledRandom
       prob: 0.01
+     # Enemy "Loot"
+    - !type:NestedSelector
+      tableId: MaintEnemyTable
+      prob: 0.01
 
 - type: entity
   id: ClosetMaintenanceFilledRandom
   suffix: Filled, Random
   parent: ClosetMaintenance
   components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage: !type:NestedSelector
-        tableId: MaintenanceLockerLoot
+    - type: EntityTableContainerFill
+      containers:
+        entity_storage: !type:NestedSelector
+          tableId: MaintenanceLockerLoot
 
 - type: entity
   id: ClosetWallMaintenanceFilledRandom
   parent: ClosetWall
   suffix: Filled, Random
   components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage: !type:NestedSelector
-        tableId: MaintenanceLockerLoot
+    - type: EntityTableContainerFill
+      containers:
+        entity_storage: !type:NestedSelector
+          tableId: MaintenanceLockerLoot

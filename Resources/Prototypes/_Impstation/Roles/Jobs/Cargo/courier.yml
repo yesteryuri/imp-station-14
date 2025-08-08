@@ -1,0 +1,34 @@
+- type: job
+  id: Courier
+  name: job-name-courier
+  description: job-description-courier
+  playTimeTracker: JobCourier
+  icon: JobIconCourier
+  startingGear: CourierGear
+  supervisors: job-supervisors-qm
+  access:
+  - Cargo
+  - Courier
+  - Maintenance
+  extendedAccess:
+  - Logistics
+  - Salvage
+
+- type: startingGear
+  id: CourierGear
+  equipment:
+    id: CourierPDA
+    ears: ClothingHeadsetCargo
+    belt: MailBag
+    pocket1: HoloBellProjector
+
+- type: chameleonOutfit
+  id: CourierChameleonOutfit
+  job: Courier
+  equipment:
+    head: ClothingHeadHatCouriersoft
+    eyes: ClothingEyesGlassesCheapSunglasses
+    mask: ClothingMaskBreath
+    outerClothing: ClothingOuterWinterCourier
+    neck: ClothingNeckScarfStripedBlue
+    gloves: ClothingHandsGlovesFingerless

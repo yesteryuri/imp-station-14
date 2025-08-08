@@ -12,7 +12,7 @@ using Content.Server.Preferences.Managers;
 using Content.Server.Roles;
 using Content.Server.Roles.Jobs;
 using Content.Server.Shuttles.Components;
-using Content.Server.Station.Events;
+using Content.Server.Players.PlayTimeTracking;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Antag;
 using Content.Shared.Clothing;
@@ -22,6 +22,7 @@ using Content.Shared.GameTicking.Components;
 using Content.Shared.Ghost;
 using Content.Shared.Humanoid;
 using Content.Shared.Mind;
+using Content.Shared.NPC.Systems;
 using Content.Shared.Players;
 using Content.Shared.Roles;
 using Content.Shared.Whitelist;
@@ -30,6 +31,7 @@ using Robust.Server.GameObjects;
 using Robust.Server.Player;
 using Robust.Shared.Enums;
 using Robust.Shared.Map;
+using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -41,19 +43,25 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
 {
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly IChatManager _chat = default!;
+    [Dependency] private readonly PlayTimeTrackingManager _playTime = default!;
     [Dependency] private readonly GhostRoleSystem _ghostRole = default!;
     [Dependency] private readonly JobSystem _jobs = default!;
     [Dependency] private readonly LoadoutSystem _loadout = default!;
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IServerPreferencesManager _pref = default!;
+    [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly RoleSystem _role = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
+    [Dependency] private readonly NpcFactionSystem _faction = default!; //#IMP
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
 
     // arbitrary random number to give late joining some mild interest.
     public const float LateJoinRandomChance = 0.5f;
+
+    public Dictionary<NetUserId, (ICommonSession, AntagSelectionDefinition, Entity<AntagSelectionComponent>)> QueuedAntags = [];
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -180,8 +188,9 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
 
         foreach (var (uid, antag) in rules)
         {
-            if (!RobustRandom.Prob(LateJoinRandomChance))
-                continue;
+            if (!antag.Definitions.Any(p => p.ForceAllPossible))
+                if (!RobustRandom.Prob(LateJoinRandomChance))
+                    continue;
 
             if (!antag.Definitions.Any(p => p.LateJoinAdditional))
                 continue;
@@ -283,10 +292,57 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
             picking = false;
         }
 
+        // imp begin. this is our playtime biasing solution.
+        // create a dictionary of player sessions paired with the total antag playtime that player has across mindroles in this rule.
+        Dictionary<ICommonSession, TimeSpan> sessionAndRoleTimes = [];
+        foreach (var session in playerPool.GetPoolSessions())
+        {
+            // if we've picked a valid session from the pool and there are mindroles to assign in the def,
+            if (session != null && def.PrefRoles != null)
+            {
+                var ruleTimeTotal = TimeSpan.Zero;
+                // grab this session's playtimes for each role,
+                foreach (var role in def.PrefRoles)
+                {
+                    TimeSpan? time = null;
+                    if (_prototype.TryIndex(role, out var antagRole))
+                    {
+                        _playTime.TryGetTrackerTime(session, antagRole.PlayTimeTracker, out time);
+                    }
+                    ruleTimeTotal += time != null ? time.Value : TimeSpan.Zero;
+                }
+                // add them to our dict,
+                sessionAndRoleTimes.Add(session, ruleTimeTotal);
+            }
+        }
+        // then sort our dict by role time.
+        var playersByRoleTimeAsc = from entry in sessionAndRoleTimes orderby entry.Value ascending select entry;
+
+        // now we do playtime biasing.
+        var probToGuarantee = 0.3f; // the highest chance of getting a guaranteed spot. given to the person queued with the lowest mindrole playtime.
+        var probReduction = probToGuarantee / ((float)playersByRoleTimeAsc.Count() / 2f); // linearly reduces the probability so that it hits zero after going through half of the players. NOTE: might tweak this to take the desired count instead of total players queued for this antag.
+        List<ICommonSession> guaranteed = [];
+        foreach (var keyValuePair in playersByRoleTimeAsc) // for each entry, decide whether or not it should override random antag selection based on its weight, and add it to a list if it should.
+        {
+            if (HasPrimaryAntagPreference(keyValuePair.Key, def) && _random.Prob(probToGuarantee))
+            {
+                guaranteed.Add(keyValuePair.Key);
+            }
+            probToGuarantee -= probReduction; // reduce the probability of the next entry getting a guaranteed slot by (maximum prob / (total queried players / 2))
+            if (probToGuarantee <= 0 || guaranteed.Count == count) // stop the loop if the next probability is less than or equal to 0, or if the guaranteed list has hit the target antag count.
+                break;
+        }
+
         for (var i = 0; i < count; i++)
         {
             var session = (ICommonSession?)null;
-            if (picking)
+            // if the playtime bias system picked any guaranteed antags,
+            if (guaranteed.Count > 0)
+            {
+                session = guaranteed[0]; // set this session as the picked session and proceed through the rest of the process
+                guaranteed.RemoveAt(0);
+            }
+            if (picking && session == null)
             {
                 if (!playerPool.TryPickAndTake(RobustRandom, out session) && noSpawner)
                 {
@@ -296,7 +352,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
 
                 if (session != null && ent.Comp.PreSelectedSessions.Values.Any(x => x.Contains(session)))
                 {
-                    Log.Warning($"Somehow picked {session} for an antag when this rule already selected them previously");
+                    Log.Warning($"Somehow picked {session} for an antag when another rule already selected them previously");
                     continue;
                 }
             }
@@ -374,7 +430,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         EntityUid? antagEnt = null;
         var isSpawner = false;
 
-        if (session != null)
+        if (session != null) //imp edit
         {
             if (!ent.Comp.PreSelectedSessions.TryGetValue(def, out var set))
                 ent.Comp.PreSelectedSessions.Add(def, set = new HashSet<ICommonSession>());
@@ -447,8 +503,21 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
             return;
         }
 
+        var prereqEv = new AntagPrereqSetupEvent(session, ent, def);
+        RaiseLocalEvent(ent, ref prereqEv, true);
+
         // The following is where we apply components, equipment, and other changes to our antagonist entity.
         EntityManager.AddComponents(player, def.Components);
+
+        // IMP: Modify factions
+        foreach (var addFaction in def.FactionsAdd)
+        {
+            _faction.AddFaction(player, addFaction);
+        }
+        foreach (var removeFaction in def.FactionsRemove)
+        {
+            _faction.RemoveFaction(player, removeFaction);
+        }
 
         // Equip the entity's RoleLoadout and LoadoutGroup
         List<ProtoId<StartingGearPrototype>> gear = new();
@@ -480,7 +549,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
 
         var afterEv = new AfterAntagEntitySelectedEvent(session, player, ent, def);
         RaiseLocalEvent(ent, ref afterEv, true);
-    }
+    } //end imp edit
 
     /// <summary>
     /// Gets an ordered player pool based on player preferences and the antagonist definition.
@@ -624,6 +693,13 @@ public record struct AntagSelectLocationEvent(ICommonSession? Session, Entity<An
 
     public List<MapCoordinates> Coordinates = new();
 }
+
+/// <summary>
+/// Event raised on a game rule entity to send additional information before begining setup.
+/// Used for applying additional more complex setup logic.
+/// </summary>
+[ByRefEvent]
+public readonly record struct AntagPrereqSetupEvent(ICommonSession? Session, Entity<AntagSelectionComponent> GameRule, AntagSelectionDefinition Def);
 
 /// <summary>
 /// Event raised on a game rule entity after the setup logic for an antag is complete.

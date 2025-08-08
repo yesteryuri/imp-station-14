@@ -112,11 +112,13 @@ public sealed class DamageOverlayUiController : UIController
                         _overlay.PainLevel = 0;
                     }
                 }
+                else
+                    _overlay.PainLevel = 0;
 
-                if (damageable.DamagePerGroup.TryGetValue("Airloss", out var oxyDamage))
-                {
+                if (thresholds.ShowAirlossOverlay && damageable.DamagePerGroup.TryGetValue("Airloss", out var oxyDamage))
                     _overlay.OxygenLevel = FixedPoint2.Min(1f, oxyDamage / critThreshold).Float();
-                }
+                else
+                    _overlay.OxygenLevel = 0;
 
                 _overlay.CritLevel = 0;
                 _overlay.DeadLevel = 0;
@@ -127,7 +129,10 @@ public sealed class DamageOverlayUiController : UIController
                 if (!_mobThresholdSystem.TryGetDeadPercentage(entity,
                         FixedPoint2.Max(0.0, damageable.TotalDamage), out var critLevel))
                     return;
-                _overlay.CritLevel = critLevel.Value.Float();
+                if (thresholds.ShowCritOverlay)
+                    _overlay.CritLevel = critLevel.Value.Float();
+                else
+                    _overlay.CritLevel = 0;
 
                 _overlay.PainLevel = 0;
                 _overlay.DeadLevel = 0;

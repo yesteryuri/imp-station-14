@@ -1213,18 +1213,18 @@
 
 - type: entity
   parent: DrinkGlass
-  id: DrinkIrishSlammer
-  suffix: grenade penguin
+  id: DrinkIrishCarBomb
+  suffix: irish car bomb
   components:
   - type: SolutionContainerManager
     solutions:
       drink:
         maxVol: 30
         reagents:
-        - ReagentId: IrishSlammer
+        - ReagentId: IrishCarBomb
           Quantity: 30
   - type: Icon
-    sprite: Objects/Consumable/Drinks/irishslammer.rsi
+    sprite: Objects/Consumable/Drinks/irishcarbomb.rsi
     state: icon
 
 - type: entity
@@ -2635,7 +2635,7 @@
         - ReagentId: MoscowMule
           Quantity: 30
   - type: Icon
-    sprite: Objects/Consumable/Drinks/moscowmule.rsi
+    sprite: _Impstation/Objects/Consumable/Drinks/moscowmule.rsi
     state: icon
 
 - type: entity

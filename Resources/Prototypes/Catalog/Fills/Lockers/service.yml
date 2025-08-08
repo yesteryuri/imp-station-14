@@ -12,6 +12,7 @@
   id: FillLockerBooze
   table: !type:AllSelector
     children:
+    - id: ClothingOuterArmorDuraVest # DeltaV - ClothingOuterArmorBasicSlim replaced in favour of stabproof vest
     - id: ClothingOuterArmorBasicSlim
     - id: WeaponShotgunDoubleBarreledRubber
     - id: DrinkShaker
@@ -25,6 +26,8 @@
       children:
       - id: BoxBeanbag
       - id: RagItem
+    - id: DrinkAppleMartiniCrystalLiteBottleFull #imp
+      prob: 0.2
 
 #- type: entity
 #  id: LockerFormalFilled
@@ -64,11 +67,14 @@
       children:
       - id: FoodCondimentPacketSalt
       - id: FoodCondimentPacketPepper
+    - !type:NestedSelector #imp edit
+      tableId: RandomIngredientBox
 
 - type: entity
   id: ClosetJanitorFilled
   suffix: Filled
   parent: ClosetJanitor
+  categories: [ HideSpawnMenu ] #imp edit
   components:
   - type: EntityTableContainerFill
     containers:

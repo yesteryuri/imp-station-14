@@ -15,6 +15,7 @@
   - type: Tag
     tags:
     - Trash
+    - KodeEdible # imp
   - type: SpaceGarbage
   - type: StaticPrice
     price: 5
@@ -33,6 +34,12 @@
   - type: Tag
     tags:
     - Trash
+    - PetWearable # imp
+    - KodeEdible # imp
+  - type: Food
+  - type: FlavorProfile
+    flavors:
+      - cigarettes
   - type: SolutionContainerManager
     solutions:
       smokable:
@@ -40,6 +47,14 @@
         reagents:
           - ReagentId: Nicotine
             Quantity: 10
+      food:
+        maxVol: 20
+        reagents:
+          - ReagentId: Nicotine
+            Quantity: 10
+  - type: FoodSequenceElement
+    entries:
+      Burger: CigarBurger
 
 - type: entity
   parent: BaseSmokable

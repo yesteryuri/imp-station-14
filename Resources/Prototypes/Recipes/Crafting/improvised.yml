@@ -150,13 +150,13 @@
   category: construction-category-misc
   objectType: Item
 
-- type: construction
-  id: HardsuitGoliath
-  graph: HardsuitGoliath
-  startNode: start
-  targetNode: hardsuitGoliath
-  category: construction-category-clothing
-  objectType: Item
+# - type: construction
+#   id: HardsuitGoliath
+#   graph: HardsuitGoliath
+#   startNode: start
+#   targetNode: hardsuitGoliath
+#   category: construction-category-clothing
+#   objectType: Item
 
 - type: construction
   id: scraparmor

@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Numerics;
 using Content.Server.Announcements;
+using Content.Server._Wizden.Chat.Systems; // Imp Edit LastMessageBeforeDeath Webhook
 using Content.Server.Discord;
 using Content.Server.GameTicking.Events;
 using Content.Server.Ghost;
@@ -24,6 +25,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
+using Content.Server.Announcements.Systems;
 
 namespace Content.Server.GameTicking
 {
@@ -32,6 +34,8 @@ namespace Content.Server.GameTicking
         [Dependency] private readonly DiscordWebhook _discord = default!;
         [Dependency] private readonly RoleSystem _role = default!;
         [Dependency] private readonly ITaskManager _taskManager = default!;
+        [Dependency] private readonly AnnouncerSystem _announcer = default!;
+        [Dependency] private readonly IEntityManager _entityManager = default!; // Imp Edit LastMessageBeforeDeath Webhook
 
         private static readonly Counter RoundNumberMetric = Metrics.CreateCounter(
             "ss14_round_number",
@@ -501,6 +505,7 @@ namespace Content.Server.GameTicking
             {
                 Log.Error($"Error while sending round end Discord message: {e}");
             }
+            SendLastMessagesBeforeDeath(); //Imp Edit: Last message before death webhook
         }
 
         public void ShowRoundEndScoreboard(string text = "")
@@ -628,11 +633,29 @@ namespace Content.Server.GameTicking
                 payload.AllowedMentions.AllowRoleMentions();
 
                 await _discord.CreateMessage(_webhookIdentifier.Value, payload);
+
+                if (_webhookIdentifierPostround == null)
+                    return;
+
+                content = Loc.GetString("discord-round-postround-end",
+                    ("id", RoundId));
+                payload = new WebhookPayload { Content = content };
+
+                await _discord.CreateMessage(_webhookIdentifierPostround.Value, payload);
             }
             catch (Exception e)
             {
                 Log.Error($"Error while sending discord round end message:\n{e}");
             }
+        }
+
+        /// <summary>
+        /// Imp Edit: trigger last messages to send to discord on round end
+        /// </summary>
+        public void SendLastMessagesBeforeDeath()
+        {
+            var lastMessageSystem = _entityManager.System<LastMessageBeforeDeathSystem>();
+            lastMessageSystem.OnRoundEnd();
         }
 
         public void RestartRound()
@@ -796,11 +819,8 @@ namespace Content.Server.GameTicking
 
             var proto = _robustRandom.Pick(options);
 
-            if (proto.Message != null)
-                _chatSystem.DispatchGlobalAnnouncement(Loc.GetString(proto.Message), playSound: true);
-
-            if (proto.Sound != null)
-                _audio.PlayGlobal(proto.Sound, Filter.Broadcast(), true);
+            _announcer.SendAnnouncement(_announcer.GetAnnouncementId(proto.ID), Filter.Broadcast(),
+                proto.Message ?? "game-ticker-welcome-to-the-station");
         }
 
         private async void SendRoundStartedDiscordMessage()

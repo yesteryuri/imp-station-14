@@ -4,6 +4,7 @@ using Content.Server.Actions;
 using Content.Server.Body.Systems;
 using Content.Server.Chat;
 using Content.Server.Chat.Systems;
+using Content.Server._Impstation.Drone.Components;
 using Content.Server.Emoting.Systems;
 using Content.Server.Speech.EntitySystems;
 using Content.Server.Roles;
@@ -248,7 +249,7 @@ namespace Content.Server.Zombies
                 if (args.User == entity)
                     continue;
 
-                if (!TryComp<MobStateComponent>(entity, out var mobState))
+                if (!TryComp<MobStateComponent>(entity, out var mobState) || HasComp<DroneComponent>(entity))
                     continue;
 
                 if (HasComp<ZombieComponent>(entity))

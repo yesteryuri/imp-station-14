@@ -227,6 +227,7 @@ public sealed partial class ZombieSystem
 
         _faction.ClearFactions(target, dirty: false);
         _faction.AddFaction(target, ZombieFaction);
+        _faction.AddFaction(target, "InitialInfectedIgnore"); //#IMP: zombies see intial infected as fellow zombies and don't attack
 
         //gives it the funny "Zombie ___" name.
         _nameMod.RefreshNameModifiers(target);

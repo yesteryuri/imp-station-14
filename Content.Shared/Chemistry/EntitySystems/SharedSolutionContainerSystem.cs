@@ -20,6 +20,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using Dependency = Robust.Shared.IoC.DependencyAttribute;
+using Content.Shared.Ghost;
 
 namespace Content.Shared.Chemistry.EntitySystems;
 
@@ -815,8 +816,12 @@ public abstract partial class SharedSolutionContainerSystem : EntitySystem
             return;
         }
 
-        var colorHex = solution.GetColor(PrototypeManager)
-            .ToHexNoAlpha(); //TODO: If the chem has a dark color, the examine text becomes black on a black background, which is unreadable.
+        // IMP, luminosity must be at least 0.4 to provide contrast with the textbox.
+        var colorHSL = Color.ToHsl(solution.GetColor(PrototypeManager));
+        colorHSL.Z = RescaleLuminosity((float) colorHSL.Z);
+
+        var colorHex = Color.FromHsl(colorHSL)
+            .ToHexNoAlpha();
         var messageString = "shared-solution-container-component-on-examine-main-text";
 
         using (args.PushGroup(nameof(ExaminableSolutionComponent)))
@@ -871,7 +876,11 @@ public abstract partial class SharedSolutionContainerSystem : EntitySystem
                     part = "examinable-solution-recognized-next";
                 }
 
-                msg.Append(Loc.GetString(part, ("color", reagent.SubstanceColor.ToHexNoAlpha()),
+                // IMP, luminosity must be at least 0.4 to provide contrast with the textbox.
+                var recognisedColorHSL = Color.ToHsl(reagent.SubstanceColor);
+                recognisedColorHSL.Z = RescaleLuminosity((float) recognisedColorHSL.Z);
+
+                msg.Append(Loc.GetString(part, ("color", Color.FromHsl(recognisedColorHSL).ToHexNoAlpha()),
                     ("chemical", reagent.LocalizedName)));
             }
 
@@ -883,7 +892,10 @@ public abstract partial class SharedSolutionContainerSystem : EntitySystem
     private void OnSolutionExaminableVerb(Entity<ExaminableSolutionComponent> entity, ref GetVerbsEvent<ExamineVerb> args)
     {
         if (!args.CanInteract || !args.CanAccess)
-            return;
+        {
+            if (!HasComp<GhostComponent>(args.User)) //IMP: Ghosts can see solution contents
+                return;
+        }
 
         var scanEvent = new SolutionScanEvent();
         RaiseLocalEvent(args.User, scanEvent);
@@ -918,6 +930,20 @@ public abstract partial class SharedSolutionContainerSystem : EntitySystem
         args.Verbs.Add(verb);
     }
 
+    /// <summary>
+    ///     # IMP Rescale luminosity value of a color to be at least 0.4.
+    //      Values less than 0.5 are scaled to be between 0.4 and 0.5, while values greater than 0.5 are kept the same.
+    //      Assumes all values are between 0 and 1.
+    /// </summary>
+    /// <param name="luminosity">Luminosity component of HSL</param>
+    private float RescaleLuminosity(float luminosity)
+    {
+        if (luminosity > 0.5){
+            return luminosity;
+        }
+        return (float) ((luminosity * 0.2) + 0.4);
+    }
+
     private FormattedMessage GetSolutionExamine(Solution solution)
     {
         var msg = new FormattedMessage();
@@ -939,10 +965,14 @@ public abstract partial class SharedSolutionContainerSystem : EntitySystem
 
         foreach (var (proto, quantity) in sortedReagentPrototypes)
         {
+            // IMP, luminosity must be at least 0.4 to provide contrast with the textbox.
+            var colorHSL = Color.ToHsl(proto.SubstanceColor);
+            colorHSL.Z = RescaleLuminosity((float) colorHSL.Z);
+
             msg.PushNewline();
             msg.AddMarkupOrThrow(Loc.GetString("scannable-solution-chemical"
                 , ("type", proto.LocalizedName)
-                , ("color", proto.SubstanceColor.ToHexNoAlpha())
+                , ("color", Color.FromHsl(colorHSL).ToHexNoAlpha())
                 , ("amount", quantity)));
         }
 

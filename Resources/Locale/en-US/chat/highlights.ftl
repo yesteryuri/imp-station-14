@@ -1,31 +1,39 @@
 # Command
-highlights-captain = Captain, "Cap", Bridge, Command
-highlights-head-of-personnel = Head Of Personnel, "HoP", Service, Bridge, Command
-highlights-chief-engineer = Chief Engineer, "CE", Engineering, Engineer, "Engi", Bridge, Command
-highlights-chief-medical-officer = Chief Medical Officer, "CMO", MedBay, "Med", Bridge, Command
-highlights-head-of-security = Head of Security, "HoS", Security, "Sec", Bridge, Command
-highlights-quartermaster = Quartermaster, "QM", Cargo, Bridge, Command
-highlights-research-director = Research Director, "RD", Science, "Sci", Bridge, Command
+highlights-captain = Captain, "Cap", Command
+#imp edit removes service from hop wordlist
+highlights-head-of-personnel = Head Of Personnel, "HoP", Command
+highlights-chief-engineer = Chief Engineer, "CE", Engineering, Engineer, "Engi", Command
+highlights-chief-medical-officer = Chief Medical Officer, "CMO", MedBay, "Med", Command
+highlights-head-of-security = Head of Security, "HoS", Security, "Sec", Command
+highlights-quartermaster = Quartermaster, "QM", Cargo, Command
+highlights-research-director = Research Director, "RD", Science, "Sci", Command
+# impstation edit - new job
+highlights-administrative-assistant = Administrative Assistant, "AA", Command, Secretary
 
 # Security
 highlights-detective = Detective, "Det", Security, "Sec"
-highlights-security-cadet = Security Cadet, Secoff, Cadet, Security, "Sec"
+highlights-security-cadet = Security Cadet, Cadet, Security, "Sec"
 highlights-security-officer = Security Officer, Secoff, Officer, Security, "Sec"
 highlights-warden = Warden, "Ward", Security, "Sec"
+# impstation edit - new job
+highlights-brigmedic = Brigmedic, Brigmed, "Medic", Security, "Sec"
 
 # Cargo
-highlights-cargo-technician = Cargo Technician, Cargo Tech, "Cargo"
-highlights-salvage-specialist = Salvage Specialist, Salvager, Salvage, "Salv", "Cargo", Miner
+highlights-cargo-technician = Cargo Technician, Cargo Tech, Cargo
+highlights-salvage-specialist = Salvage Specialist, Salvager, Salvage, "Salv", Miner
+# impstation edit - new job
+highlights-courier = Courier, Mail, Penalized
+highlights-supply-assistant = Supply Assistant, Supply, Cargo
 
 # Engineering
-highlights-atmospheric-technician = Atmospheric Technician, Atmos tech, Atmospheric, Engineering, "Atmos", "Engi"
+highlights-atmospheric-technician = Atmospheric Technician, Atmos tech, Atmospheric, Atmos
 highlights-station-engineer = Station Engineer, Engineering, Engineer, "Engi"
 highlights-technical-assistant = Technical Assistant, Tech Assistant, Engineering, Engineer, "Engi"
 
 # Medical
-highlights-chemist = Chemist, Chemistry, "Chem", MedBay, "Med"
+highlights-chemist = Chemist, Chemistry, MedBay
 highlights-medical-doctor = Medical Doctor, Doctor, "Doc", MedBay, "Med"
-highlights-medical-intern = Medical Intern, "Doc", Intern, MedBay, "Med"
+highlights-medical-intern = Medical Intern, Intern, MedBay, "Med"
 highlights-paramedic = Paramedic, "Para", MedBay, "Med"
 
 # Science
@@ -42,7 +50,7 @@ highlights-janitor = Janitor, "Jani"
 highlights-lawyer = Lawyer, Attorney
 highlights-librarian = Librarian, Library
 highlights-mime = Mime
-highlights-passenger = Passenger, Greytider, "Tider"
+highlights-passenger = Passenger
 highlights-service-worker = Service Worker
 
 # Station-specific

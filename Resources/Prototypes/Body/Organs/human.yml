@@ -23,9 +23,10 @@
   - type: FlavorProfile
     flavors:
       - people
-  - type: Tag
+  - type: Tag # goob edit
     tags:
-      - Meat
+    - Meat
+    - Organ
 
 - type: entity
   id: BaseHumanOrgan
@@ -50,9 +51,11 @@
   - type: Examiner
   - type: BlockMovement
   - type: BadFood
-  - type: Tag
+  - type: Tag # goob edit
     tags:
-      - Meat
+    - Meat
+    - Organ
+    - Brain
   - type: SolutionContainerManager
     solutions:
       organ:
@@ -74,7 +77,7 @@
   - type: Item
     size: Small
     heldPrefix: brain
-  
+
 - type: entity
   id: OrganHumanEyes
   parent: BaseHumanOrgan
@@ -85,6 +88,11 @@
     layers:
       - state: eyeball-l
       - state: eyeball-r
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Eyes
   - type: Item
     size: Small
     heldPrefix: eyeballs
@@ -154,6 +162,11 @@
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 5
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Lungs
 
 - type: entity
   id: OrganHumanHeart
@@ -173,6 +186,11 @@
     - id: Medicine
     - id: Poison
     - id: Narcotic
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Heart
   - type: Item
     size: Small
     heldPrefix: heart
@@ -208,6 +226,11 @@
     groups:
     - id: Food
     - id: Drink
+  - type: Tag # goob edit
+    tags:
+      - Meat
+      - Organ
+      - Stomach
 
 - type: entity
   id: OrganHumanLiver
@@ -226,6 +249,11 @@
     groups:
     - id: Alcohol
       rateModifier: 0.1 # removes alcohol very slowly along with the stomach removing it as a drink
+  - type: Tag # goob edit
+    tags:
+      - Meat
+      - Organ
+      - Liver
 
 - type: entity
   id: OrganHumanKidneys
@@ -245,3 +273,8 @@
     maxReagents: 5
     metabolizerTypes: [Human]
     removeEmpty: true
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Kidneys

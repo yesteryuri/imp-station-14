@@ -34,6 +34,16 @@
   - Atmospherics
   - GenpopEnter
   - GenpopLeave
+  #imp edit start
+  - Clown
+  - Courier
+  - HospitalityDirector
+  - Librarian
+  - Logistics
+  - Mime
+  - Musician
+  - Reporter
+  #imp edit end
 
 - type: accessGroup
   id: General

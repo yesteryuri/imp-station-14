@@ -21,9 +21,10 @@
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 5
-  - type: Tag
+  - type: Tag # goob edit
     tags:
-      - Meat
+    - Meat
+    - Organ
 
 - type: entity
   id: OrganArachnidStomach
@@ -39,6 +40,10 @@
     heldPrefix: stomach
   - type: Stomach
     digestionDelay: 30
+    specialDigestible:  #imp edit
+      tags:
+      - SpiderFood
+    isSpecialDigestibleExclusive: false # also imp
   - type: SolutionContainerManager
     solutions:
       stomach:
@@ -50,6 +55,12 @@
           Quantity: 5
   - type: Metabolizer
     updateInterval: 1.5
+    metabolizerTypes: [ Animal ]
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Stomach
 
 - type: entity
   id: OrganArachnidLungs
@@ -85,6 +96,11 @@
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 5
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Lungs
 
 - type: entity
   id: OrganArachnidHeart
@@ -105,6 +121,11 @@
     - id: Medicine
     - id: Poison
     - id: Narcotic
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Heart
 
 - type: entity
   id: OrganArachnidLiver
@@ -125,6 +146,11 @@
     groups:
     - id: Alcohol
       rateModifier: 0.1 # removes alcohol very slowly along with the stomach removing it as a drink
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Liver
 
 - type: entity
   id: OrganArachnidKidneys
@@ -146,6 +172,11 @@
     maxReagents: 5
     metabolizerTypes: [Animal]
     removeEmpty: true
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Kidneys
 
 - type: entity
   id: OrganArachnidEyes
@@ -157,9 +188,15 @@
     layers:
       - state: eyeball-l
       - state: eyeball-r
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Eyes
   - type: Item
     size: Small
     heldPrefix: eyeballs
+
 
 - type: entity
   id: OrganArachnidTongue
@@ -169,3 +206,8 @@
   components:
   - type: Sprite
     state: tongue
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Tongue

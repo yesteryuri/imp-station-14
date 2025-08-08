@@ -82,6 +82,14 @@
     selectedBorgType: service
 
 - type: entity
+  id: BorgChassisCargo
+  parent: BorgChassisSelectable
+  name: cargo cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: cargo
+
+- type: entity
   id: BorgChassisSyndicateAssault
   parent: BaseBorgChassisSyndicate
   name: syndicate assault cyborg

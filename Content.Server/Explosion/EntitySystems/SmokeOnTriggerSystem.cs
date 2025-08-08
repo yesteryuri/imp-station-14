@@ -52,6 +52,6 @@ public sealed class SmokeOnTriggerSystem : SharedSmokeOnTriggerSystem
             return;
         }
 
-        _smoke.StartSmoke(ent, comp.Solution, comp.Duration, comp.SpreadAmount, smoke);
+        _smoke.StartSmoke(ent, comp.Solution.Clone(), comp.Duration, comp.SpreadAmount, smoke);
     }
 }

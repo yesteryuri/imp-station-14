@@ -40,6 +40,8 @@
     spawned:
     - id: FoodMeat
       amount: 1
+  - type: Absorbable # imp edit - mouse bite sized
+    biomassRestored: 0.1
   - type: InteractionPopup
     successChance: 0.2
     interactSuccessString: petting-success-soft-floofy
@@ -78,6 +80,12 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
 
 - type: entity
   name: bee
@@ -139,6 +147,7 @@
     tags:
     - Bee
     - Trash
+    - MultitoolDefibrillatorTarget
   - type: Bloodstream
     bloodReagent: InsectBlood
     bloodMaxVolume: 0.1
@@ -253,6 +262,8 @@
     spawned:
     - id: FoodMeatChicken
       amount: 1
+  - type: Absorbable # imp edit - a good meal
+    biomassRestored: 0.2
   - type: InteractionPopup
     successChance: 0.8
     interactSuccessString: petting-success-bird
@@ -391,6 +402,8 @@
     bloodReagent: InsectBlood
     bloodMaxVolume: 20
   - type: Food
+  - type: Absorbable # imp edit
+    biomassRestored: 0.1
   - type: FlavorProfile
     flavors:
     - horrible
@@ -416,6 +429,8 @@
     tags:
     - Trash
     - VimPilot
+    - MultitoolDefibrillatorTarget # imp
+    - KodeEdible # imp
   - type: Destructible
     thresholds:
     - trigger:
@@ -435,7 +450,13 @@
     animation: WeaponArcBite
     damage:
       types:
-        Piercing: 0
+        Piercing: 1 # imp edit
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
 
 - type: entity
   name: glockroach
@@ -579,6 +600,7 @@
     - Trash
     - CannotSuicide
     - VimPilot
+    - MultitoolDefibrillatorTarget
   - type: CanEscapeInventory
   - type: NpcFactionMember
     factions:
@@ -604,6 +626,12 @@
     interfaces:
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
   - type: InventorySlots
   - type: Inventory
     speciesId: hamster
@@ -634,6 +662,7 @@
           32:
             sprite: Mobs/Animals/mothroach/displacement.rsi
             state: neck
+  - type: PleebnarGibbable # imp edit
 
 
 # Note that the mallard duck is actually a male drake mallard, with the brown duck being the female variant of the same species, however ss14 lacks sex specific textures
@@ -691,6 +720,8 @@
     spawned:
     - id: FoodMeatDuck
       amount: 1
+  - type: Absorbable # imp edit
+    biomassRestored: 0.2
   - type: InteractionPopup
     successChance: 0.9
     interactSuccessString: petting-success-bird
@@ -826,6 +857,8 @@
   - type: Tag
     tags:
     - Trash
+    - MultitoolDefibrillatorTarget
+    - Butterfly #imp, for butterfly orchid
   - type: Bloodstream
     bloodReagent: InsectBlood
     bloodMaxVolume: 0.1
@@ -840,6 +873,7 @@
       behaviors:
       - !type:GibBehavior
         recursive: false
+  - type: PleebnarGibbable # imp edit
 
 - type: entity
   name: cow
@@ -900,6 +934,8 @@
     spawned:
     - id: FoodMeat
       amount: 5
+  - type: Absorbable # imp edit
+    biomassRestored: 0.7
   - type: Grammar
     attributes:
       gender: female # Here because of UdderComponent
@@ -932,6 +968,8 @@
   id: MobCrab
   description: A folk legend goes around that his claw snaps spacemen out of existence over distasteful remarks. Be polite and tolerant for your own safety.
   components:
+  - type: VentCrawler
+    enterDelay: 3
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -961,6 +999,11 @@
     speechVerb: Arachnid
     speechSounds: Arachnid
     allowedEmotes: ['Click', 'Chitter']
+  - type: Vocal # imp
+    sounds:
+      Male: UnisexDecapoid
+      Female: UnisexDecapoid
+      Unsexed: UnisexDecapoid
   - type: DamageStateVisuals
     states:
       Alive:
@@ -973,6 +1016,8 @@
     spawned:
     - id: FoodMeatCrab
       amount: 2
+  - type: Absorbable # imp edit
+    biomassRestored: 0.3
   - type: InteractionPopup
     successChance: 0.5
     interactSuccessString: petting-success-crab
@@ -993,6 +1038,12 @@
       task: RuminantCompound
   - type: Body
     prototype: AnimalHemocyanin
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
 
 - type: entity
   name: goat
@@ -1062,6 +1113,8 @@
   - type: FlavorProfile
     flavors:
     - fiber
+  - type: Absorbable # imp edit
+    biomassRestored: 0.5
   - type: Butcherable
     spawned:
     - id: FoodMeat
@@ -1133,6 +1186,8 @@
     spawned:
     - id: FoodMeatChicken
       amount: 2
+  - type: Absorbable # imp edit
+    biomassRestored: 0.3
   - type: InteractionPopup # TODO: Make it so there's a separate chance to make certain animals outright hostile towards you.
     successChance: 0.1 # Yeah, good luck with that.
     interactSuccessString: petting-success-goose
@@ -1182,6 +1237,8 @@
     spawned:
     - id: FoodMeat
       amount: 4
+  - type: Absorbable # imp edit
+    biomassRestored: 0.8
   - type: Bloodstream
     bloodMaxVolume: 300
     # if you fuck with the gorilla he will harambe you
@@ -1261,6 +1318,8 @@
   - type: Butcherable
     spawned:
     - id: FoodMeat
+  - type: Absorbable # imp edit
+    biomassRestored: 0.8
   - type: DamageStateVisuals
     states:
       Alive:
@@ -1325,12 +1384,26 @@
   description: The genetic bipedal ancestor of... Uh... Something. Yeah, there's definitely something on the station that descended from whatever this is.
   abstract: true
   components:
+  - type: VentCrawler
+    enterDelay: 3
   - type: CombatMode
   - type: Inventory
     templateId: monkey
     speciesId: monkey
+    displacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _Impstation/Mobs/Animals/Monkey/displacement.rsi
+            state: jumpsuit
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _Impstation/Mobs/Animals/Monkey/displacement.rsi
+            state: outerClothing
   - type: Deathgasp
     prototype: MonkeyDeathgasp
+  - type: Blindable
   - type: Cuffable
   - type: RotationVisuals
     defaultRotation: 90
@@ -1384,7 +1457,7 @@
     sprite: Mobs/Effects/onfire.rsi
     normalState: Monkey_burning
   - type: InteractionPopup
-    successChance: 0.9
+    successChance: 0.7
     interactSuccessString: petting-success-monkey
     interactFailureString: petting-failure-monkey
     interactSuccessSpawn: EffectHearts
@@ -1406,6 +1479,8 @@
     spawned:
     - id: FoodMeat
       amount: 3
+  - type: Absorbable # imp edit
+    biomassRestored: 0.4
   - type: Puller
     needsHands: false
   - type: CanHostGuardian
@@ -1424,6 +1499,7 @@
     - VimPilot
     - DoorBumpOpener
     - AnomalyHost
+    - CanPilot #imp edit
   - type: Reactive
     groups:
       Flammable: [ Touch ]
@@ -1433,6 +1509,7 @@
       methods: [ Touch ]
       effects:
       - !type:WashCreamPieReaction
+  - type: LayingDown # imp
 
 
 
@@ -1444,10 +1521,19 @@
   components:
   - type: NameIdentifier
     group: Monkey
+  - type: Vocal
+    sounds:
+      Male: Monkey
+      Female: Monkey
+      Unsexed: Monkey
   - type: Speech
     speechSounds: Monkey
     speechVerb: Monkey
+    allowedEmotes: ['Scream', 'Laugh']
   - type: MonkeyAccent
+  - type: Emoting
+  - type: BodyEmotes
+    soundsId: GeneralBodyEmotes
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-primate
   - type: AlwaysRevolutionaryConvertible
@@ -1483,10 +1569,19 @@
     group: Monkey
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-primate
+  - type: Vocal
+    sounds:
+      Male: Monkey
+      Female: Monkey
+      Unsexed: Monkey
   - type: Speech
     speechSounds: Monkey
     speechVerb: Monkey
+    allowedEmotes: ['Scream', 'Laugh']
   - type: MonkeyAccent
+  - type: Emoting
+  - type: BodyEmotes
+    soundsId: GeneralBodyEmotes
   - type: NpcFactionMember
     factions:
     - Syndicate
@@ -1510,7 +1605,8 @@
   parent: MobBaseSyndicateMonkey
   suffix: syndicate agent
   components:
-    # make the player a traitor once its taken
+  - type: VentCrawler
+  # make the player a traitor once its taken
   - type: AutoTraitor
     profile: TraitorReinforcement
 
@@ -1536,7 +1632,7 @@
   - type: Speech
     speechSounds: Lizard
     speechVerb: Reptilian
-    allowedEmotes: ['Thump']
+    allowedEmotes: ['Thump', 'Hiss']
   - type: Vocal
     sounds:
       Male: MaleReptilian
@@ -1700,6 +1796,9 @@
   id: MobMouse
   description: Squeak!
   components:
+  - type: PleebnarGibbable # imp edit
+  - type: VentCrawler # imp edit
+    enterDelay: 1
   - type: Body
     prototype: Mouse
   - type: GhostRole
@@ -1784,6 +1883,8 @@
       Dead:
         Base: splat-0
   - type: Food
+  - type: Absorbable # imp edit
+    biomassRestored: 0.1
   - type: FlavorProfile
     flavors:
     - meaty
@@ -1812,6 +1913,12 @@
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 3
+        - ReagentId: MouseBites #imp
+          Quantity: 2
+      mousebites: #imp. dont look at this.
+        reagents:
+        - ReagentId: MouseBites
+          Quantity: 500 # DONT LOOK AT THIS
   - type: Butcherable
     spawned:
     - id: FoodMeatRat
@@ -1825,6 +1932,7 @@
     - ChefPilot
     - Mouse
     - Meat
+    - MultitoolDefibrillatorTarget
   - type: Respirator
     damage:
       types:
@@ -1876,6 +1984,29 @@
       behaviors:
       - !type:GibBehavior
         recursive: false
+  - type: Damageable # imp
+    damageContainer: Biological
+    damageModifierSet: Mouse
+  - type: MeleeChemicalInjector #imp
+    solution: mousebites
+    transferAmount: 1
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
+  - type: Reproductive # imp
+    partnerWhitelist:
+      tags:
+      - Mouse
+    offspring:
+    - id: MobMouse
+      maxAmount: 3
+    hungerPerBirth: 35
+    gestationDuration: 45
+    breedChance: 0.25
+  - type: ReproductivePartner # imp
 
 - type: entity
   parent: MobMouse
@@ -1937,7 +2068,16 @@
   - type: Item
     size: Tiny
     heldPrefix: 1
-
+  - type: Reproductive # imp
+    partnerWhitelist:
+      tags:
+      - Mouse
+    offspring:
+    - id: MobMouse1
+      maxAmount: 3
+    hungerPerBirth: 35
+    gestationDuration: 45
+    breedChance: 0.25
 - type: entity
   parent: MobMouse
   id: MobMouse2
@@ -1966,6 +2106,16 @@
   - type: Item
     size: Tiny
     heldPrefix: 2
+  - type: Reproductive # imp
+    partnerWhitelist:
+      tags:
+      - Mouse
+    offspring:
+    - id: MobMouse2
+      maxAmount: 3
+    hungerPerBirth: 35
+    gestationDuration: 45
+    breedChance: 0.25
 
 - type: entity
   name: cancer mouse
@@ -2008,6 +2158,17 @@
   id: MobLizard
   description: A harmless dragon.
   components:
+  - type: ReplacementAccent
+    accent: kobold
+  - type: Speech # Imp edit
+    speechSounds: Lizard
+    speechVerb: Reptilian
+    allowedEmotes: ['Hiss'] # Can't thump tail because no body component
+  - type: Vocal # Imp edit
+    sounds:
+      Male: MaleReptilian
+      Female: FemaleReptilian
+      Unsexed: MaleReptilian
   - type: MovementSpeedModifier
     baseWalkSpeed: 2
     baseSprintSpeed: 3
@@ -2041,6 +2202,8 @@
     spawned:
     - id: FoodMeatLizard
       amount: 1
+  - type: Absorbable # imp edit
+    biomassRestored: 0.2
   - type: InteractionPopup
     successChance: 0.3
     interactSuccessString: petting-success-reptile
@@ -2056,6 +2219,14 @@
   - type: Tag
     tags:
     - VimPilot
+    - MultitoolDefibrillatorTarget
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
+  - type: PleebnarGibbable # imp edit
 
 
 - type: entity
@@ -2064,6 +2235,8 @@
   id: MobSlug
   description: And they called this a lizard?
   components:
+  - type: VentCrawler
+    enterDelay: 1
   - type: MovementSpeedModifier
     baseWalkSpeed : 2
     baseSprintSpeed : 3
@@ -2097,6 +2270,8 @@
     spawned:
     - id: FoodMeat
       amount: 1
+  - type: Absorbable # imp edit
+    biomassRestored: 0.1
   - type: InteractionPopup
     successChance: 0.3
     interactSuccessString: petting-success-generic
@@ -2104,6 +2279,16 @@
     interactSuccessSpawn: EffectHearts
   - type: Bloodstream
     bloodMaxVolume: 50
+  - type: Tag
+    tags:
+    - MultitoolDefibrillatorTarget
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
+  - type: PleebnarGibbable # imp edit
 
 - type: entity
   name: frog
@@ -2111,6 +2296,8 @@
   id: MobFrog
   description: Hop hop hop. Lookin' moist.
   components:
+  - type: VentCrawler
+    enterDelay: 1
   - type: MovementSpeedModifier
     baseWalkSpeed: 3
     baseSprintSpeed: 6
@@ -2151,6 +2338,8 @@
     spawned:
     - id: FoodMeat
       amount: 1
+  - type: Absorbable # imp edit
+    biomassRestored: 0.1
   - type: InteractionPopup
     successChance: 0.6
     interactSuccessString: petting-success-frog
@@ -2163,6 +2352,7 @@
   - type: Tag
     tags:
     - VimPilot
+    - MultitoolDefibrillatorTarget # imp
   - type: Destructible
     thresholds:
     - trigger:
@@ -2172,6 +2362,13 @@
       behaviors:
       - !type:GibBehavior
         recursive: false
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
+  - type: PleebnarGibbable # imp edit
 
 # Would be cool to have some functionality for the parrot to be able to sit on stuff
 - type: entity
@@ -2213,6 +2410,8 @@
     spawned:
     - id: FoodMeat
       amount: 1
+  - type: Absorbable # imp edit
+    biomassRestored: 0.2
   - type: Speech
     speechSounds: Parrot
     speechVerb: Parrot
@@ -2294,6 +2493,8 @@
     spawned:
     - id: FoodMeatPenguin
       amount: 3
+  - type: Absorbable # imp edit
+    biomassRestored: 0.3
   - type: InteractionPopup
     successChance: 0.5
     interactSuccessString: petting-success-bird
@@ -2321,7 +2522,7 @@
 
 - type: entity
   name: grenade penguin
-  parent: [ MobPenguin, MobCombat, BaseSyndicateContraband ]
+  parent: [ MobPenguin, MobCombat, Tier3Contraband ]
   id: MobGrenadePenguin
   description: A small penguin with a grenade strapped around its neck. Harvested by the Syndicate from icy shit-hole planets.
   components:
@@ -2332,7 +2533,7 @@
   - type: MobMover
   - type: HTN
     rootTask:
-      task: SimpleHostileCompound
+      task: GrenadePenguinCompound # imp
   - type: NpcFactionMember
     factions:
     - Syndicate
@@ -2371,7 +2572,7 @@
     size: Normal
     sprite: Mobs/Animals/grenadepenguin.rsi
   - type: OnUseTimerTrigger
-    delay: 10
+    delay: 15 # imp
     beepSound:
       path: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg #funny sfx use
       params:
@@ -2379,7 +2580,7 @@
     beepInterval: 1
   - type: Explosive
     explosionType: Default
-    maxIntensity: 20
+    maxIntensity: 10 # imp
     intensitySlope: 20
     totalIntensity: 225
   - type: ExplodeOnTrigger
@@ -2396,8 +2597,10 @@
   name: snake
   parent: SimpleMobBase
   id: MobSnake
-  description: Hissss! Bites aren't poisonous.
+  description: Hisss! Bites aren't venomous. #imp poisonous isn't venomous. Also matches snake hissing length
   components:
+  - type: VentCrawler
+    enterDelay: 2
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -2428,6 +2631,8 @@
     spawned:
     - id: FoodMeatSnake
       amount: 1
+  - type: Absorbable # imp edit
+    biomassRestored: 0.2
   - type: InteractionPopup
     successChance: 0.6
     interactSuccessString: petting-success-reptile
@@ -2438,6 +2643,14 @@
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Scale
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
+  - type: Tag # imp - remove doorbumpopener
+    tags: []
 
 # Code unique spider prototypes or combine them all into one spider and get a
 # random sprite state when you spawn it.
@@ -2446,6 +2659,21 @@
   id: MobSpiderBase
   abstract: true
   components:
+  - type: VentCrawler
+    enterDelay: 3
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      state: tarantula
+      sprite: Mobs/Animals/spider.rsi
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: tarantula-moving
+    noMovementLayers:
+      movement:
+        state: tarantula
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -2461,10 +2689,12 @@
   - type: Butcherable
     spawned:
     - id: FoodMeatSpider
+      amount: 1 # imp
+    - id: FoodMeatSpiderLeg
       amount: 2
   - type: CombatMode
   - type: Body
-    prototype: AnimalHemocyanin
+    prototype: AnimalHemocyaninSpider #Imp for edible spider silk
   - type: MobThresholds
     thresholds:
       0: Alive
@@ -2528,6 +2758,14 @@
       groups:
         Brute: -0.07
         Burn: -0.07
+  - type: Absorbable # imp edit - big enough to restore a good amount of biomass
+    biomassRestored: 0.7
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
 
 - type: entity
   parent: MobSpiderBase
@@ -2605,9 +2843,16 @@
     - type: Sprite
       drawdepth: Mobs
       layers:
-      - map: ["enum.DamageStateVisualLayers.Base"]
+      - map: ["enum.DamageStateVisualLayers.Base", "movement"]
         state: clown
         sprite: Mobs/Animals/clownspider.rsi
+    - type: SpriteMovement
+      movementLayers:
+        movement:
+          state: clown
+      noMovementLayers:
+        movement:
+          state: clown
     - type: Butcherable
       spawned:
         - id: MaterialBananium1
@@ -2695,6 +2940,8 @@
     spawned:
     - id: FoodMeat
       amount: 3
+  - type: Absorbable # imp edit
+    biomassRestored: 0.3
   - type: InteractionPopup
     successChance: 0.2 # Low when undomesticated.
     interactSuccessString: petting-success-possum # Possums don't really make much noise when they're happy. They make clicking noises as a mating call, but that is NOT the same thing!
@@ -2707,6 +2954,12 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
 
 - type: entity
   name: possum
@@ -2728,6 +2981,12 @@
         Base: possum_dead_old
       Dead:
         Base: possum_dead_old
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
 
 - type: entity
   name: raccoon
@@ -2768,6 +3027,8 @@
     spawned:
     - id: FoodMeat
       amount: 3
+  - type: Absorbable # imp edit
+    biomassRestored: 0.3
   - type: InteractionPopup
     successChance: 0.2 # Low when undomesticated.
     interactSuccessString: petting-success-soft-floofy
@@ -2781,6 +3042,12 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
 
 - type: entity
   name: fox
@@ -2828,6 +3095,8 @@
     spawned:
     - id: FoodMeat
       amount: 3
+  - type: Absorbable # imp edit
+    biomassRestored: 0.3
   - type: InteractionPopup
     successChance: 0.5
     interactSuccessString: petting-success-soft-floofy
@@ -2859,6 +3128,13 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: DogVision # imp
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
 
 - type: entity
   abstract: true
@@ -2902,6 +3178,9 @@
       gender: epicene
   - type: MobPrice
     price: 200
+  - type: Absorbable # imp edit
+    biomassRestored: 0.3
+  - type: DogVision # imp
 
 - type: entity
   parent: MobCorgiBase
@@ -2994,6 +3273,8 @@
   id: MobCorgiPuppy
   description: A little corgi! Aww...
   components:
+  - type: VentCrawler # imp
+    enterDelay: 3
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Pets/corgi.rsi
@@ -3014,6 +3295,10 @@
   - type: Grammar
     attributes:
       gender: epicene
+  - type: Tag
+    tags:
+    - VimPilot
+    - MultitoolDefibrillatorTarget
 
 - type: entity
   name: cat
@@ -3057,6 +3342,8 @@
     spawned:
     - id: FoodMeat
       amount: 3
+  - type: Absorbable # imp edit
+    biomassRestored: 0.3
   - type: ReplacementAccent
     accent: cat
   - type: InteractionPopup
@@ -3086,6 +3373,12 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 2
     baseSprintSpeed: 4
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
 
 - type: entity
   name: calico cat
@@ -3113,6 +3406,7 @@
   description: Explosive kitten.
   components:
   - type: Sprite
+    sprite: _Impstation/Mobs/Pets/cats.rsi
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: syndicat
@@ -3132,6 +3426,7 @@
     rules: ghost-role-information-SyndiCat-rules
     mindRoles:
     - MindRoleGhostRoleTeamAntagonist
+    - MindRoleGhostRoleFamiliar #imp
     raffle:
       settings: default
   - type: GhostTakeoverAvailable
@@ -3158,6 +3453,13 @@
         Slash: 6
         Piercing: 6
         Structural: 15
+  - type: IntrinsicRadioReceiver #imp
+  - type: IntrinsicRadioTransmitter #imp
+    channels:
+    - Syndicate
+  - type: ActiveRadio
+    channels:
+    - Syndicate
 
 - type: entity
   name: space cat
@@ -3249,6 +3551,10 @@
     thresholds:
       0: Alive
       25: Dead
+  - type: Tag
+    tags:
+    - VimPilot
+    - MultitoolDefibrillatorTarget
 
 - type: entity
   name: sloth
@@ -3292,6 +3598,8 @@
     spawned:
     - id: FoodMeat
       amount: 3
+  - type: Absorbable # imp edit
+    biomassRestored: 0.3
   - type: InteractionPopup
     successChance: 0.9
     interactSuccessString: petting-success-sloth
@@ -3313,6 +3621,8 @@
   id: MobFerret
   description: Just a silly little guy!
   components:
+  - type: VentCrawler
+    enterDelay: 3
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Pets/ferret.rsi
@@ -3346,6 +3656,8 @@
     spawned:
     - id: FoodMeat
       amount: 3
+  - type: Absorbable # imp edit
+    biomassRestored: 0.3
   - type: InteractionPopup
     successChance: 0.8
     interactDelay: 1.5 # Avoids overlapping SFX due to spam - these SFX are a little longer than the typical 1 second.
@@ -3360,6 +3672,12 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
 
 - type: entity
   name: hamster
@@ -3367,6 +3685,8 @@
   id: MobHamster
   description: A cute, fluffy, robust hamster.
   components:
+  - type: VentCrawler
+    enterDelay: 1
   - type: GhostRole
     makeSentient: true
     allowSpeech: true
@@ -3436,6 +3756,8 @@
       Dead:
         Base: splat-0
   - type: Food
+  - type: Absorbable # imp edit
+    biomassRestored: 0.2
   - type: FlavorProfile
     flavors:
     - meaty
@@ -3466,6 +3788,7 @@
     - Trash
     - Hamster
     - Meat
+    - MultitoolDefibrillatorTarget
   - type: Respirator
     damage:
       types:
@@ -3512,6 +3835,7 @@
       behaviors:
       - !type:GibBehavior
         recursive: false
+  - type: PleebnarGibbable # imp edit
 
 - type: entity
   name: pig
@@ -3563,6 +3887,8 @@
     spawned:
     - id: FoodMeatBacon
       amount: 6
+  - type: Absorbable # imp edit
+    biomassRestored: 0.7
   - type: Grammar
     attributes:
       gender: epicene
@@ -3583,6 +3909,7 @@
   - type: HTN
     rootTask:
       task: RuminantCompound
+  - type: PleebnarGibbable # imp edit
 
 - type: entity
   name: diona nymph
@@ -3626,6 +3953,8 @@
     spawned:
     - id: MaterialWoodPlank1
       amount: 2
+  - type: Absorbable # imp edit
+    biomassRestored: 0.3
   - type: InteractionPopup
     successChance: 0.7
     interactSuccessString: petting-success-nymph
@@ -3656,6 +3985,7 @@
     tags:
     - DoorBumpOpener
     - VimPilot
+    - DionaMinded
   - type: Emoting
   - type: BodyEmotes
     soundsId: Nymph
@@ -3664,6 +3994,16 @@
     reformTime: 10
     popupText: diona-reform-attempt
     reformPrototype: MobDionaReformed
+  - type: Item
+    size: Small
+    heldPrefix: 0
+  - type: Clothing
+    quickEquip: false
+    sprite: Mobs/Animals/nymph.rsi
+    equippedPrefix: 0
+    slots:
+      - HEAD
+  - type: CanEscapeInventory
 
 - type: entity
   parent: MobDionaNymph
@@ -3672,6 +4012,7 @@
   components:
   - type: ReplacementAccent
     accent: nymph
+  - type: PleebnarGibbable # imp edit, if tupid then pleebnar meal
 
 - type: entity
   name: reindeer buck
@@ -3716,6 +4057,8 @@
     spawned:
     - id: FoodMeat
       amount: 4
+  - type: Absorbable # imp edit
+    biomassRestored: 0.5
   - type: Bloodstream
     bloodMaxVolume: 300
     # Horns though
@@ -3734,6 +4077,12 @@
       task: SimpleHostileCompound
   - type: Puller
     needsHands: false
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
 
 - type: entity
   name: reindeer doe

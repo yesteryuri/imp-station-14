@@ -33,6 +33,17 @@
       "Muted": {28: 0}
   - type: Sprite
     sprite: Objects/Fun/Instruments/eguitar.rsi
+  # imp edits #
+  - type: MeleeWeapon
+    wideAnimationRotation: 45
+    damage:
+      types:
+        Blunt: 6
+    soundHit:
+      path: /Audio/_EE/Weapons/electricguitarhit.ogg
+  - type: DamageOtherOnHit
+    staminaCost: 8
+  # end imp edits #
 
 - type: entity
   parent: BaseStringInstrumentClothing
@@ -50,6 +61,17 @@
       "Slap (XTra Funky)": {37: 0}
   - type: Sprite
     sprite: Objects/Fun/Instruments/bassguitar.rsi
+  # imp edits #
+  - type: MeleeWeapon
+    wideAnimationRotation: 45
+    damage:
+      types:
+        Blunt: 6
+    soundHit:
+      path: /Audio/_EE/Weapons/electricguitarhit.ogg
+  - type: DamageOtherOnHit
+    staminaCost: 8
+  # end imp edits #
 
 - type: entity
   parent: BaseStringInstrumentClothing
@@ -72,12 +94,16 @@
       types:
         Blunt: 6
         Slash: 2
+    soundHit:
+      path: /Audio/_EE/Weapons/electricguitarhit.ogg # imp
   - type: Wieldable
   - type: IncreaseDamageOnWield #they don't call it an axe for nothing
     damage:
       types:
         Blunt: 4
         Slash: 2
+  - type: DamageOtherOnHit # imp
+    staminaCost: 8
 
 - type: entity
   parent: BaseStringInstrumentClothing
@@ -125,6 +151,17 @@
     damage:
       types:
         Blunt: 15
+  # imp edits #
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 20
+    staminaCost: 8
+  - type: DamageOnLand
+    damage:
+      types:
+        Blunt: 20
+  # end imp edits #
 
 - type: entity
   parent: BaseStringInstrument

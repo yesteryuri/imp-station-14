@@ -505,7 +505,7 @@
 - type: entity
   parent: BaseItem
   id: BalloonNT
-  name: nanotrasen balloon
+  name: Nanotrasen balloon # imp edit; preferential to capitalizing company names
   description: Specially designed to inflict maximum psychological damage to Syndicate operatives.
   components:
   - type: Sprite
@@ -711,7 +711,7 @@
 - type: entity
   parent: BasePlushie
   id: ToyAmongPequeno
-  name: among pequeño
+  name: amoung pequeño  # imp
   description: Sus!
   components:
   - type: Sprite

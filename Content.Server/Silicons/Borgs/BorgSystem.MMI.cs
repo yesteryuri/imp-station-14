@@ -3,14 +3,26 @@ using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Mind.Components;
 using Content.Shared.Roles;
 using Content.Shared.Silicons.Borgs.Components;
+using Content.Shared.Traits.Assorted;
+using Content.Shared.Chemistry.Components;
+using Content.Server.Popups;
+using Content.Server.Fluids.EntitySystems;
 using Robust.Shared.Containers;
+using Robust.Server.Audio;
+using Content.Shared.Coordinates;
+using Content.Shared.Chemistry.EntitySystems;
+using Robust.Shared.GameObjects.Components.Localization; // imp; for Grammar
+using Robust.Shared.Enums; // imp; for Gender
 
 namespace Content.Server.Silicons.Borgs;
 
 /// <inheritdoc/>
 public sealed partial class BorgSystem
 {
-
+    [Dependency] private readonly PopupSystem _popup = default!;
+    [Dependency] private readonly AudioSystem _audio = default!;
+    [Dependency] private readonly PuddleSystem _puddle = default!;
+    [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
     [Dependency] private readonly SharedRoleSystem _roles = default!;
 
     public void InitializeMMI()
@@ -19,6 +31,7 @@ public sealed partial class BorgSystem
         SubscribeLocalEvent<MMIComponent, EntInsertedIntoContainerMessage>(OnMMIEntityInserted);
         SubscribeLocalEvent<MMIComponent, MindAddedMessage>(OnMMIMindAdded);
         SubscribeLocalEvent<MMIComponent, MindRemovedMessage>(OnMMIMindRemoved);
+        SubscribeLocalEvent<MMIComponent, ItemSlotInsertAttemptEvent>(OnMMIAttemptInsert);
 
         SubscribeLocalEvent<MMILinkedComponent, MindAddedMessage>(OnMMILinkedMindAdded);
         SubscribeLocalEvent<MMILinkedComponent, EntGotRemovedFromContainerMessage>(OnMMILinkedRemoved);
@@ -41,9 +54,22 @@ public sealed partial class BorgSystem
             return;
 
         var ent = args.Entity;
+        if (HasComp<UnborgableComponent>(ent))
+        {
+            return;
+        }
         var linked = EnsureComp<MMILinkedComponent>(ent);
         linked.LinkedMMI = uid;
         Dirty(uid, component);
+
+        //IMP EDIT: keep the pronouns of the brain inserted
+        var grammar = EnsureComp<GrammarComponent>(uid);
+        if (TryComp<GrammarComponent>(ent, out var formerSelf))
+        {
+            _grammar.SetGender((uid, grammar), formerSelf.Gender);
+            //man-machine interface is not a proper noun, so i'm not setting proper here
+        }
+        //END IMP EDIT
 
         if (_mind.TryGetMind(ent, out var mindId, out var mind))
         {
@@ -63,6 +89,13 @@ public sealed partial class BorgSystem
 
     private void OnMMIMindRemoved(EntityUid uid, MMIComponent component, MindRemovedMessage args)
     {
+        //IMP EDIT: no brain, no gender, bucko
+        if (TryComp<GrammarComponent>(uid, out var grammar))
+        {
+            _grammar.SetGender((uid, grammar), Gender.Neuter); // it/its
+        }
+        //END IMP EDIT
+
         _appearance.SetData(uid, MMIVisuals.HasMind, false);
     }
 
@@ -93,5 +126,24 @@ public sealed partial class BorgSystem
         }
 
         _appearance.SetData(linked, MMIVisuals.BrainPresent, false);
+    }
+
+    private void OnMMIAttemptInsert(EntityUid uid, MMIComponent component, ItemSlotInsertAttemptEvent args)
+    {
+        var ent = args.Item;
+        if (HasComp<UnborgableComponent>(ent))
+        {
+            _popup.PopupEntity("The brain suddenly dissolves on contact with the interface!", uid, Shared.Popups.PopupType.MediumCaution);
+            _audio.PlayPvs("/Audio/Effects/Fluids/splat.ogg", uid);
+            if (_solution.TryGetSolution(ent, "food", out var solution))
+            {
+                if (solution != null)
+                {
+                    Entity<SolutionComponent> solutions = (Entity<SolutionComponent>)solution;
+                    _puddle.TrySpillAt(Transform(uid).Coordinates, solutions.Comp.Solution, out _);
+                }
+            }
+            EntityManager.QueueDeleteEntity(ent);
+        }
     }
 }

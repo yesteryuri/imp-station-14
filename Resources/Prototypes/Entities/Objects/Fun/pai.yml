@@ -99,9 +99,18 @@
   - type: Tag
     tags:
     - SiliconEmotes
+  # imp edit start
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 3
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Common
+  # imp edit end
 
 - type: entity
-  parent: [ PersonalAI, BaseSyndicateContraband]
+  parent: [ PersonalAI, Tier2Contraband] #imp contraband
   id: SyndicatePersonalAI
   name: syndicate personal ai device
   description: Your Syndicate pal who's fun to be with!
@@ -146,15 +155,39 @@
   description: Your electronic pal who's fun to be with! Special golden edition!
   components:
   - type: Sprite
-    sprite: Objects/Fun/pai.rsi
+    # imp edit start
+    sprite: _Impstation/Objects/Fun/pai.rsi
     layers:
-    - state: golden-pai-base
-    - state: pai-off-overlay
+    - state: gold-pai-base
+    - state: gold-pai-shimmer-overlay
+      shader: unshaded
+    - state: gold-pai-off-overlay
       shader: unshaded
       map: ["screen"]
+    - state: gold-pai-swish-overlay
+      shader: unshaded
+    # imp edit end
   - type: Appearance
   - type: StaticPrice
     price: 5000
+  # imp edit start
+  - type: ToggleableGhostRole
+    roleName: pai-system-role-name-golden
+    roleDescription: pai-system-role-description-golden
+    roleRules: ghost-role-information-familiar-rules
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableGhostRoleVisuals.Status:
+        screen:
+          Off: { state: gold-pai-off-overlay }
+          Searching: { state: gold-pai-searching-overlay }
+          On: { state: gold-pai-on-overlay }
+  - type: PointLight
+    radius: 1.2
+    energy: 1.34
+    castShadows: false
+    color: "#9b68ff"
+  # imp edit end
 
 - type: entity
   parent: PersonalAI

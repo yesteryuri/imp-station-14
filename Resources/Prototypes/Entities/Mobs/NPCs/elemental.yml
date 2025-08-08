@@ -70,6 +70,12 @@
   - type: MobMover
   - type: ZombieImmune
   - type: ProtectedFromStepTriggers
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
 
 - type: entity
   abstract: true
@@ -414,6 +420,12 @@
     solution: bloodstream
   - type: DrainableSolution
     solution: bloodstream
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
 
 - type: entity
   name: Reagent Slime Spawner
@@ -425,22 +437,101 @@
         - state: red
         - sprite: Mobs/Aliens/elemental.rsi
           state: alive
-    - type: RandomSpawner
-      prototypes:
-        - ReagentSlime
-        - ReagentSlimeBeer
-        - ReagentSlimePax
-        - ReagentSlimeNocturine
-        - ReagentSlimeTHC
-        - ReagentSlimeBicaridine
-        - ReagentSlimeToxin
-        - ReagentSlimeNapalm
-        - ReagentSlimeOmnizine
-        - ReagentSlimeMuteToxin
-        - ReagentSlimeNorepinephricAcid
-        - ReagentSlimeEphedrine
-        - ReagentSlimeRobustHarvest
-      chance: 1
+    - type: SpawnEntrySpawner #IMP: Change to spawner that uses more complex probabilities
+      spawns:
+      - id: ReagentSlime
+        prob: 1
+        orGroup: ReagentSlimes
+      - id: ReagentSlimeBeer
+        prob: 1
+        orGroup: ReagentSlimes
+      - id: ReagentSlimePax
+        prob: 1
+        orGroup: ReagentSlimes
+      - id: ReagentSlimeNocturine
+        prob: 1
+        orGroup: ReagentSlimes
+      - id: ReagentSlimeTHC
+        prob: 1
+        orGroup: ReagentSlimes
+      - id: ReagentSlimeBicaridine
+        prob: 1
+        orGroup: ReagentSlimes
+      - id: ReagentSlimeToxin
+        prob: 1
+        orGroup: ReagentSlimes
+      - id: ReagentSlimeNapalm
+        prob: 1
+        orGroup: ReagentSlimes
+      - id: ReagentSlimeOmnizine
+        prob: 1
+        orGroup: ReagentSlimes
+      - id: ReagentSlimeMuteToxin
+        prob: 1
+        orGroup: ReagentSlimes
+      - id: ReagentSlimeNorepinephricAcid
+        prob: 1
+        orGroup: ReagentSlimes
+      - id: ReagentSlimeEphedrine
+        prob: 1
+        orGroup: ReagentSlimes
+      - id: ReagentSlimeRobustHarvest
+        prob: 1
+        orGroup: ReagentSlimes
+      - id: ReagentSlimeTestosterone
+        prob: 1
+        orGroup: ReagentSlimes
+      - id: ReagentSlimeEstradiol
+        prob: 1
+        orGroup: ReagentSlimes
+      - id: ReagentSlimeRomerol
+        prob: 0.5
+        orGroup: ReagentSlimes
+      - id: ReagentSlimePhlogiston
+        prob: 1
+        orGroup: ReagentSlimes
+      - id: ReagentSlimeLicoxide
+        prob: 1
+        orGroup: ReagentSlimes
+      - id: ReagentSlimeMindbreakerToxin
+        prob: 1
+        orGroup: ReagentSlimes
+      - id: ReagentSlimeDesoxyephedrine
+        prob: 1
+        orGroup: ReagentSlimes
+      - id: ReagentSlimeLexorin
+        prob: 1
+        orGroup: ReagentSlimes
+      - id: ReagentSlimeHorsepussy
+        prob: 1
+        orGroup: ReagentSlimes
+      - id: ReagentSlimeCogChamp
+        prob: 1
+        orGroup: ReagentSlimes
+      - id: ReagentSlimeDrGibb
+        prob: 1
+        orGroup: ReagentSlimes
+      - id: ReagentSlimeBrosochloricBros
+        prob: 1
+        orGroup: ReagentSlimes
+      - id: ReagentSlimeJuiceThatMakesYouWeh
+        prob: 1
+        orGroup: ReagentSlimes
+      - id: ReagentSlimeChlorineTrifluoride
+        prob: 1
+        orGroup: ReagentSlimes
+      - id: ReagentSlimeHonk
+        prob: 1
+        orGroup: ReagentSlimes
+      - id: ReagentSlimeIpecac
+        prob: 1
+        orGroup: ReagentSlimes
+      - id: ReagentSlimeJuiceThatMakesYouUngh
+        prob: 1
+        orGroup: ReagentSlimes
+      - id: ReagentSlimeCoffee
+        prob: 1
+        orGroup: ReagentSlimes
 
 - type: entity
   id: ReagentSlimeBeer
@@ -507,14 +598,14 @@
   - type: Bloodstream
     bloodReagent: THC
   - type: PointLight
-    color: "#808080"
+    color: "#50595C"
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Aliens/elemental.rsi
     layers:
       - map: [ "enum.DamageStateVisualLayers.Base" ]
         state: alive
-        color: "#808080"
+        color: "#50595C"
 
 - type: entity
   id: ReagentSlimeBicaridine

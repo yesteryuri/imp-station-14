@@ -21,4 +21,14 @@ public sealed partial class SpawnOnTriggerComponent : Component
     /// </summary>
     [DataField]
     public bool mapCoords;
+
+    [DataField]
+    public int Amount = 1;
+
+    /// <summary>
+    ///     #IMP Amount reduces by one for every entity spawned.
+    ///     If SingleUse is set to false, this will be reset after all entities spawned.
+    /// </summary>
+    [DataField]
+    public bool SingleUse = true;
 }

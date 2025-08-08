@@ -25,7 +25,7 @@
     - WhitelistChameleonIdCard
   - type: StealTarget
     stealGroup: IDCard
-
+  - type: NanoChatCard # DV
 #IDs with layers
 
 - type: entity
@@ -119,6 +119,7 @@
     - WhitelistChameleon
     - WhitelistChameleonIdCard
     - HighRiskItem
+    - WhitelistChameleonIdCard
   - type: StealTarget
     stealGroup: CaptainIDCard
 
@@ -205,6 +206,16 @@
     - state: idcargotechnician
   - type: PresetIdCard
     job: CargoTechnician
+
+- type: entity
+  parent: CargoIDCard
+  id: SeniorCargoIDCard
+  name: senior cargo ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idseniorcargo
 
 - type: entity
   parent: IDCardStandard
@@ -362,6 +373,7 @@
   name: lawyer ID card
   components:
     - type: Sprite
+      sprite: _Impstation/Objects/Misc/id_cards.rsi # imp edit
       layers:
         - state: default
         - state: idlawyer
@@ -462,6 +474,26 @@
     layers:
     - state: default
     - state: idbrigmedic
+  - type: IdCard
+    jobTitle: job-name-brigmedic
+    jobIcon: JobIconBrigmedic
+  - type: PresetIdCard
+    job: Brigmedic
+
+- type: entity
+  parent: IDCardStandard
+  id: RoboticsIDCard
+  name: robotics ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idroboticist
+  - type: IdCard
+    jobTitle: job-name-roboticist
+    jobIcon: JobIconRoboticist
+  - type: PresetIdCard
+    job: Roboticist
 
 - type: entity
   parent: IDCardStandard
@@ -470,12 +502,13 @@
   components:
   - type: Sprite
     layers:
-    - state: centcom
-    - state: idcentcom
+    - state: centcom #removed one of the layers: state (imp)
   - type: Item
     heldPrefix: blue
   - type: PresetIdCard
     job: CentralCommandOfficial
+  - type: NanoChatCard # DeltaV
+    listNumber: false
 
 - type: entity
   parent: IDCardStandard
@@ -484,12 +517,16 @@
   components:
   - type: Sprite
     layers:
-    - state: gold
-    - state: ert_commander
+    - state: ert_commander #imp
+  - type: IdCard
+    jobTitle: job-name-ertleader
+    jobIcon: JobIconERTLeader
   - type: PresetIdCard
     job: ERTLeader
   - type: Item
     heldPrefix: gold
+  - type: NanoChatCard # DeltaV
+    listNumber: false
 
 - type: entity
   parent: IDCardStandard
@@ -498,12 +535,16 @@
   components:
   - type: Sprite
     layers:
-    - state: gold
-    - state: ert_chaplain # we have the sprite for the id but dont have chaplain ERT equipment for now.
+    - state: ert_chaplain # imp
+  - type: IdCard
+    jobTitle: job-name-ertchaplain
+    jobIcon: JobIconERTChaplain
   - type: PresetIdCard
     job: ERTChaplain
   - type: Item
     heldPrefix: blue
+  - type: NanoChatCard # DeltaV
+    listNumber: false
 
 - type: entity
   parent: IDCardStandard
@@ -512,10 +553,14 @@
   components:
   - type: Sprite
     layers:
-    - state: gold
-    - state: ert_engineer
+    - state: ert_engineer #imp
+  - type: IdCard
+    jobTitle: job-name-ertengineer
+    jobIcon: JobIconERTEngineer
   - type: PresetIdCard
     job: ERTEngineer
+  - type: NanoChatCard # DeltaV
+    listNumber: false
 
 - type: entity
   parent: IDCardStandard
@@ -524,10 +569,14 @@
   components:
   - type: Sprite
     layers:
-    - state: gold
-    - state: ert_janitor
+    - state: ert_janitor #imp
+  - type: IdCard
+    jobTitle: job-name-ertjanitor
+    jobIcon: JobIconERTJanitor
   - type: PresetIdCard
     job: ERTJanitor
+  - type: NanoChatCard # DeltaV
+    listNumber: false
 
 - type: entity
   parent: IDCardStandard
@@ -536,10 +585,14 @@
   components:
   - type: Sprite
     layers:
-    - state: gold
-    - state: ert_medic
+    - state: ert_medic #imp
+  - type: IdCard
+    jobTitle: job-name-ertmedic
+    jobIcon: JobIconERTMedic
   - type: PresetIdCard
     job: ERTMedical
+  - type: NanoChatCard # DeltaV
+    listNumber: false
 
 - type: entity
   parent: IDCardStandard
@@ -548,10 +601,14 @@
   components:
   - type: Sprite
     layers:
-    - state: gold
-    - state: ert_security
+    - state: ert_security #imp
+  - type: IdCard
+    jobTitle: job-name-ertsecurity
+    jobIcon: JobIconERTSecurity
   - type: PresetIdCard
     job: ERTSecurity
+  - type: NanoChatCard # DeltaV
+    listNumber: false
 
 - type: entity
   parent: IDCardStandard
@@ -572,11 +629,34 @@
   components:
   - type: Sprite
     layers:
-    - state: centcom
+    - state: deathsquad # imp
   - type: Item
-    heldPrefix: blue
+    heldPrefix: red
+  - type: IdCard
+    jobTitle: job-name-deathsquad
+    jobIcon: JobIconDeathsquad
   - type: PresetIdCard
     job: DeathSquad
+  - type: NanoChatCard # DeltaV
+    listNumber: false
+
+- type: entity
+  parent: IDCardStandard
+  id: UndercoverIDCard
+  suffix: Undercover
+  name: passenger ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idpassenger
+  - type: IdCard
+    jobTitle: job-name-passenger
+    jobIcon: JobIconPassenger
+  - type: Access
+    tags:
+    - Maintenance
+    - SyndicateAgent
 
 - type: entity
   name: passenger ID card
@@ -611,6 +691,8 @@
         type: AgentIDCardBoundUserInterface
       enum.ChameleonUiKey.Key:
         type: ChameleonBoundUserInterface
+  - type: NanoChatCard # DeltaV
+    listNumber: false
 
 - type: entity
   name: passenger ID card
@@ -648,6 +730,8 @@
     tags:
     - NuclearOperative
     - SyndicateAgent
+  - type: NanoChatCard # DeltaV
+    listNumber: false
 
 - type: entity
   parent: [ IDCardStandard, BaseMajorContraband ]
@@ -661,6 +745,8 @@
     tags:
     - NuclearOperative
     - SyndicateAgent
+  - type: NanoChatCard # DeltaV
+    listNumber: false
 
 - type: entity
   parent: IDCardStandard
@@ -764,11 +850,13 @@
   components:
   - type: Sprite
     layers:
-    - state: centcom
+    - state: cburn #imp
   - type: Item
     heldPrefix: blue
   - type: PresetIdCard
     job: CBURN
+  - type: NanoChatCard # DeltaV
+    listNumber: false
 
 - type: entity
   parent: IDCardStandard
@@ -784,6 +872,8 @@
     jobTitle: job-title-cluwne
     jobIcon: JobIconCluwne
   - type: Unremoveable
+  - type: NanoChatCard # DeltaV
+    listNumber: false
 
 - type: entity
   parent: EngineeringIDCard
@@ -850,8 +940,7 @@
   - type: Sprite
     sprite: Objects/Misc/id_cards.rsi
     layers:
-    - state: admin
-    - state: idadmin
+    - state: admin #removed layer: state (imp)
   - type: Clothing
     sprite: Objects/Misc/id_cards.rsi
   - type: Item
@@ -869,6 +958,10 @@
     - SyndicateAgent
     - Wizard
     - Xenoborg
+    - Freelance # (imp)
+  - type: NanoChatCard # DeltaV
+    notificationsMuted: true
+    listNumber: false
   - type: Tag #  Ignore Chameleon tags
     tags:
     - DoorBumpOpener

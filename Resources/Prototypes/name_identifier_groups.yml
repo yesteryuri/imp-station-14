@@ -13,7 +13,7 @@
 
 - type: nameIdentifierGroup
   id: MMI
-  format: name-identifier-format-mmi
+  format: name-identifier-format-osi # imp
   minValue: 100
   maxValue: 999
 

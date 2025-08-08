@@ -20,11 +20,10 @@ research-technology-super-powercells = Super Powercells
 research-technology-bluespace-storage = Bluespace Storage
 research-technology-optimized-microgalvanism = Optimized Microgalvanism
 research-technology-space-scanning = Space Scanning
-research-technology-excavation = Mass Excavation
 
 research-technology-salvage-weapons = Salvage Weapons
-research-technology-draconic-munitions = Draconic Munitions
-research-technology-uranium-munitions = Uranium Munitions
+# research-technology-draconic-munitions = Draconic Munitions # imp - removed from game
+# research-technology-uranium-munitions = Uranium Munitions # imp - removed from game
 research-technology-explosive-technology = Explosive Technology
 research-technology-special-means = Special Means
 research-technology-weaponized-laser-manipulation = Weaponized Laser Manipulation

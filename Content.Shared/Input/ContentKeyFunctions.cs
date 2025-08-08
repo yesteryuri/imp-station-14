@@ -21,10 +21,15 @@ namespace Content.Shared.Input
         public static readonly BoundKeyFunction FocusOOC = "FocusOOCWindow";
         public static readonly BoundKeyFunction FocusAdminChat = "FocusAdminChatWindow";
         public static readonly BoundKeyFunction FocusDeadChat = "FocusDeadChatWindow";
+        public static readonly BoundKeyFunction FocusCollectiveMindChat = "FocusCollectiveMindChatWindow";
         public static readonly BoundKeyFunction FocusConsoleChat = "FocusConsoleChatWindow";
         public static readonly BoundKeyFunction CycleChatChannelForward = "CycleChatChannelForward";
         public static readonly BoundKeyFunction CycleChatChannelBackward = "CycleChatChannelBackward";
         public static readonly BoundKeyFunction EscapeContext = "EscapeContext";
+        public static readonly BoundKeyFunction NanoChatNavigateUp = "NanoChatNavigateUp"; // DeltaV - Keybinds for NanoChat
+        public static readonly BoundKeyFunction NanoChatNavigateDown = "NanoChatNavigateDown"; // DeltaV - Keybinds for NanoChat
+        public static readonly BoundKeyFunction NanoChatNavigateUpUnread = "NanoChatNavigateUpUnread"; // DeltaV - Keybinds for NanoChat
+        public static readonly BoundKeyFunction NanoChatNavigateDownUnread = "NanoChatNavigateDownUnread"; // DeltaV - Keybinds for NanoChat
         public static readonly BoundKeyFunction OpenCharacterMenu = "OpenCharacterMenu";
         public static readonly BoundKeyFunction OpenEmotesMenu = "OpenEmotesMenu";
         public static readonly BoundKeyFunction OpenCraftingMenu = "OpenCraftingMenu";
@@ -61,6 +66,7 @@ namespace Content.Shared.Input
         public static readonly BoundKeyFunction ZoomOut = "ZoomOut";
         public static readonly BoundKeyFunction ZoomIn = "ZoomIn";
         public static readonly BoundKeyFunction ResetZoom = "ResetZoom";
+        public static readonly BoundKeyFunction ToggleStanding = "ToggleStanding"; // WD EDIT
 
         public static readonly BoundKeyFunction ArcadeUp = "ArcadeUp";
         public static readonly BoundKeyFunction ArcadeDown = "ArcadeDown";

@@ -6,20 +6,22 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobWarden
-      time: 3600 #1 hr
+      time: 10800 #3 hrs, imp
     - !type:RoleTimeRequirement
       role: JobDetective
       time: 3600 #1 hr, knowing how to use the tools is important
     - !type:RoleTimeRequirement
       role: JobSecurityOfficer
-      time: 18000 #5 hrs
+      time: 36000 #10 hrs, imp
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 36000 # 10 hrs
+      time: 324000 # 90 hrs
+    - !type:OverallPlaytimeRequirement
+      time: 144000 #40 hrs
   weight: 10
   startingGear: HoSGear
   icon: "JobIconHeadOfSecurity"
-  supervisors: job-supervisors-captain
+  supervisors: job-supervisors-hop-captain #imp
   canBeAntag: false
   access:
   - HeadOfSecurity
@@ -28,7 +30,7 @@
   - Security
   - Armory
   - Maintenance
-  - Service
+  #- Service imp edit
   - External
   - Detective
   - Cryogenics
@@ -45,12 +47,12 @@
     eyes: ClothingEyesGlassesSecurity
     id: HoSPDA
     gloves: ClothingHandsGlovesCombat
-    ears: ClothingHeadsetAltSecurity
-    pocket1: WeaponPistolMk58
+    # pocket1: WeaponPistolMk58 imp loadouts
   storage:
     back:
     - Flash
-    - MagazinePistol
+    # - MagazinePistol imp loadouts
+
 
 - type: chameleonOutfit
   id: HeadOfSecurityChameleonOutfit

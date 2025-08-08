@@ -49,6 +49,7 @@
       - FoodBakedMuffinBluecherry
       - FoodBakedMuffinChocolate
       - FoodBakedMuffinBanana
+      - FoodBakedMuffinLemo
       - FoodBakedBunHoney
       - FoodBakedBunHotX
       - FoodBakedBunMeat
@@ -69,6 +70,7 @@
       - FoodBakedPretzel
       - FoodBakedCannoli
       - FoodPieAppleSlice
+      - FoodPieLemoSlice
       - FoodPieBaklavaSlice
       - FoodPieClafoutisSlice
       - FoodPieMeatSlice
@@ -79,6 +81,14 @@
       - FoodBakedBrownie
       - FoodPieBananaCreamSlice
       - FoodTartMimeSlice
+      # imp below
+      - FoodBakedMuffinPear
+      - FoodBakedAppleStrudelBite
+      - FoodBakedCinnamonRoll
+      - FoodTartPearCheeseSlice
+      - FoodPieAppleHoneySlice
+      - FoodMothMothmallowSlice
+      - FoodMothMoffin
     chance: 0.8
     offset: 0.0
     #rare
@@ -92,4 +102,6 @@
       - FoodBreadMeatXenoSlice
       - FoodPieXenoSlice
       - FoodBakedCannabisBrownie
+      # imp below
+      - FoodBreadChallahSlice
     rareChance: 0.05

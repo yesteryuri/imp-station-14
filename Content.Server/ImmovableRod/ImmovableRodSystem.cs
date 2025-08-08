@@ -14,6 +14,7 @@ using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Random;
+using Robust.Shared.Timing;
 
 namespace Content.Server.ImmovableRod;
 
@@ -29,6 +30,7 @@ public sealed class ImmovableRodSystem : EntitySystem
     [Dependency] private readonly DestructibleSystem _destructible = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
+    [Dependency] private readonly IGameTiming _gameTiming = default!;
 
     public override void Update(float frameTime)
     {
@@ -115,7 +117,11 @@ public sealed class ImmovableRodSystem : EntitySystem
         if (TryComp<BodyComponent>(ent, out var body))
         {
             component.MobCount++;
-            _popup.PopupEntity(Loc.GetString("immovable-rod-penetrated-mob", ("rod", uid), ("mob", ent)), uid, PopupType.LargeCaution);
+            if (_gameTiming.CurTime >= component.NextEviscerationPopup)
+            {
+                _popup.PopupEntity(Loc.GetString(component.EviscerationPopup, ("rod", uid), ("mob", ent)), uid, PopupType.LargeCaution);
+                component.NextEviscerationPopup = _gameTiming.CurTime + component.EviscerationPopupDelay;
+            }
 
             if (!component.ShouldGib)
             {

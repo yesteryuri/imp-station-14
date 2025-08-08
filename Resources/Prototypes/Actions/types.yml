@@ -75,8 +75,8 @@
   components:
   - type: Action
     useDelay: 1
-    icon: { sprite: Objects/Tools/flashlight.rsi, state: flashlight }
-    iconOn: { sprite: Objects/Tools/flashlight.rsi, state: flashlight-on }
+    icon: { sprite: _Impstation/Objects/Tools/flashlight.rsi, state: flashlight } # imp
+    iconOn: { sprite: _Impstation/Objects/Tools/flashlight.rsi, state: flashlight-on } # imp
 
 - type: entity
   parent: BaseAction
@@ -282,7 +282,7 @@
   - type: Action
     clientExclusive: true
     temporary: true
-    icon: { sprite: Objects/Tools/multitool.rsi, state: icon }
+    icon: { sprite: _Impstation/Objects/Tools/multitool.rsi, state: icon } # imp
   - type: InstantAction
     event: !type:ClearAllOverlaysEvent
 

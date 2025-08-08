@@ -10,6 +10,8 @@
     - id: CargoShuttleConsoleCircuitboard
     - id: SalvageMagnetMachineCircuitboard
     - id: SalvageJobBoardComputerCircuitboard
+    - id: ShipyardComputerCircuitboard # imp
+    - id: SalvageExpeditionsComputerCircuitboard # imp
     - id: CigPackGreen
       prob: 0.50
     - id: ClothingHeadsetAltCargo
@@ -20,6 +22,7 @@
     - id: AstroNavCartridge
     - id: ClothingHandsKnuckleDustersQM
     - id: MailTeleporterMachineCircuitboard
+    - id: PersonalAILearnerCargo #impspecial
 
 - type: entity
   id: LockerQuarterMasterFilled
@@ -57,6 +60,8 @@
       conditions:
       - !type:PlayerCountCondition
         max: 15
+    - id: TicketPad #imp special
+    - id: PersonalAILearnerCommand #impspecial
 
 # No laser table + Laser table
 - type: entityTable
@@ -75,7 +80,7 @@
     - id: ClothingOuterHardsuitCap
     - id: ClothingMaskGasCaptain
     - id: JetpackCaptainFilled
-    - id: OxygenTankFilled
+    - id: OxygenTankCommandFilled
 
 # No laser locker, used when the antique laser is placed in the special display crate
 - type: entity
@@ -120,7 +125,7 @@
     children:
     - id: AccessConfigurator
     - id: BoxEncryptionKeyPassenger
-    - id: BoxEncryptionKeyService
+    # - id: BoxEncryptionKeyService imp edit
     - id: BoxHeadset
     - id: BoxID
     - id: BoxPDA
@@ -132,15 +137,16 @@
       prob: 0.5
     - id: ClothingHeadsetCommand
     - id: ClothingNeckGoldmedal
-    - id: DoorRemoteService
+    - id: DoorRemoteCommand #imp edit
     - id: HoPIDCard
     - id: IDComputerCircuitboard
     - id: FundingAllocationComputerCircuitboard
-    - id: CargoRequestServiceComputerCircuitboard
+    # - id: CargoRequestServiceComputerCircuitboard imp edit
     - id: RubberStampApproved
     - id: RubberStampDenied
     - id: RubberStampHop
-    - id: WeaponDisabler
+    # - id: WeaponDisabler #imp edit
+    - id: AntiqueDisablerBox #imp edit
     - id: ClothingEyesHudCommand
 
 - type: entity
@@ -172,6 +178,7 @@
     - id: RCDAmmo
     - id: RubberStampCE
     - id: MetalFoamGrenade
+    - id: PersonalAILearnerEngineering #impspecial
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -182,7 +189,7 @@
     - id: ClothingOuterHardsuitEngineeringWhite
     - id: ClothingShoesBootsMagAdv
     - id: JetpackVoidFilled
-    - id: OxygenTankFilled
+    - id: OxygenTankCommandFilled
 
 # No hardsuit locker
 - type: entity
@@ -231,6 +238,7 @@
     - id: MedkitFilled
     - id: RubberStampCMO
     - id: MedTekCartridge
+    - id: PersonalAILearnerMedical #impspecial
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -239,7 +247,7 @@
     children:
     - id: ClothingMaskBreathMedical
     - id: ClothingOuterHardsuitMedical
-    - id: OxygenTankFilled
+    - id: OxygenTankCommandFilled
 
 # No hardsuit locker
 - type: entity
@@ -283,6 +291,7 @@
     - id: ResearchComputerCircuitboard
     - id: CargoRequestScienceComputerCircuitboard
     - id: RubberStampRd
+    - id: PersonalAILearnerScience #impspecial
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -291,7 +300,7 @@
     children:
     - id: ClothingMaskBreath
     - id: ClothingOuterHardsuitRd
-    - id: OxygenTankFilled
+    - id: OxygenTankCommandFilled
 
 # No hardsuit locker
 - type: entity
@@ -324,6 +333,7 @@
   id: LockerFillHeadOfSecurityNoHardsuit
   table: !type:AllSelector
     children:
+    - id: ClothingMaskGasSecurity
     - id: WeaponEnergyShotgun
     - id: BookSpaceLaw
     - id: BoxEncryptionKeySecurity
@@ -343,6 +353,11 @@
     - id: WeaponDisabler
     - id: WantedListCartridge
     - id: DrinkHosFlask
+    - id: ClothingNeckBronzeheart #imp
+    - id: TicketPad #imp special
+    - id: BaseSeclinkRadio #imp
+    - id: PillCanisterHOS #imp
+    - id: PersonalAILearnerSecurity #impspecial
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -352,7 +367,7 @@
     - id: ClothingMaskGasSwat
     - id: ClothingOuterHardsuitSecurityRed
     - id: JetpackSecurityFilled
-    - id: OxygenTankFilled
+    - id: OxygenTankCommandFilled
 
 # No hardsuit locker
 - type: entity

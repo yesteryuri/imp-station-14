@@ -4,10 +4,10 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Objects/Specific/Medical/medical.rsi
+    sprite: _Impstation/Objects/Specific/Medical/medical.rsi # imp
   - type: Item
     size: Small
-    sprite: Objects/Specific/Medical/medical.rsi
+    sprite: _Impstation/Objects/Specific/Medical/medical.rsi # imp
     heldPrefix: ointment
   # Inherited
   - type: StaticPrice
@@ -80,7 +80,9 @@
   - type: Tag
     tags:
     - Ointment
+    - RegenerativeMesh
   - type: Sprite
+    sprite: Objects/Specific/Medical/medical.rsi # imp
     state: regenerative-mesh
   - type: Item
     heldPrefix: regenerative-mesh
@@ -249,6 +251,7 @@
   - type: Tag
     tags:
     - Bloodpack
+    - KodeEdible # imp
   - type: Sprite
     state: bloodpack
   - type: Healing
@@ -273,6 +276,16 @@
     count: 10
   - type: StackPrice
     price: 10
+  - type: Food # imp - kodepiia gogurt
+    requiresSpecialDigestion: true
+  - type: SolutionContainerManager # imp
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Blood
+          Quantity: 15
+
 
 - type: entity
   parent: Bloodpack
@@ -302,6 +315,7 @@
       tags:
         - SecBeltEquip
     - type: Sprite
+      sprite: Objects/Specific/Medical/medical.rsi # imp
       state: tourniquet
     - type: Item
       heldPrefix: tourniquet
@@ -346,6 +360,7 @@
   - type: Healing
     damageContainers:
       - Biological
+      - BiologicalMetaphysical #imp
     damage:
       types:
         Slash: -5
@@ -384,18 +399,35 @@
     lingering: true
     count: 10
 
+# Making Aloe Cream it's own unique topical now. From Ointment (5 Heat/Shock/Cold & 1.5 Caut) -> 10 Heat, squishes when thrown. #imp
 - type: entity
   name: aloe cream
   description: A topical cream for burns.
-  parent: Ointment ##Yes it's a direct reskin
+  parent: BaseHealingItem
   id: AloeCream
   components:
+  - type: Healing
+    damageContainers:
+      - Biological
+    damage:
+      types:
+        Heat: -10
+    healingBeginSound:
+      path: "/Audio/Items/Toys/ToyFall2.ogg"
+    healingEndSound:
+      path: "/Audio/Items/Medical/ointment_end.ogg"
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/aloe.rsi
     state: cream
+  - type: EmitSoundOnLand
+    sound:
+      path: "/Audio/Voice/Slime/slime_squish.ogg"
   - type: Stack
     stackType: AloeCream
     count: 10
+  - type: Tag
+    tags:
+      - Aloe
 
 - type: entity
   parent: BaseHealingItem
@@ -405,7 +437,7 @@
   categories: [ DoNotMap ]
   components:
   - type: Sprite
-    sprite: Objects/Specific/Medical/healing_toolbox.rsi
+    sprite: _Wizden/Objects/Specific/Medical/healing_toolbox.rsi # imp
     state: icon
   - type: Healing
     damageContainers:
@@ -900,20 +932,22 @@
       prob: 0.10
       maxAmount: 7
       orGroup: RandomPill
-    - id: PillAmbuzol
-      prob: 0.075
-      maxAmount: 7
-      orGroup: RandomPill
-    - id: PillAmbuzolPlus
-      prob: 0.075
-      maxAmount: 7
-      orGroup: RandomPill
+    # imp edit start, removed ambuzol spawns
+    #- id: PillAmbuzol
+    #  prob: 0.075
+    #  maxAmount: 7
+    #  orGroup: RandomPill
+    #- id: PillAmbuzolPlus
+    #  prob: 0.075
+    #  maxAmount: 7
+    #  orGroup: RandomPill
+    # imp edit end
     - id: PillSpaceDrugs
-      prob: 0.075
+      prob: 0.10 #imp edit
       maxAmount: 7
       orGroup: RandomPill
     - id: StrangePill
-      prob: 0.075
+      prob: 0.10 #imp edit
       maxAmount: 7
       orGroup: RandomPill
 

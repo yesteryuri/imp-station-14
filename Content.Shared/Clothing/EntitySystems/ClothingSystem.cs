@@ -24,10 +24,8 @@ public abstract class ClothingSystem : EntitySystem
         SubscribeLocalEvent<ClothingComponent, AfterAutoHandleStateEvent>(AfterAutoHandleState);
         SubscribeLocalEvent<ClothingComponent, GotEquippedEvent>(OnGotEquipped);
         SubscribeLocalEvent<ClothingComponent, GotUnequippedEvent>(OnGotUnequipped);
-
         SubscribeLocalEvent<ClothingComponent, ClothingEquipDoAfterEvent>(OnEquipDoAfter);
         SubscribeLocalEvent<ClothingComponent, ClothingUnequipDoAfterEvent>(OnUnequipDoAfter);
-
         SubscribeLocalEvent<ClothingComponent, BeforeItemStrippedEvent>(OnItemStripped);
     }
 
@@ -46,9 +44,7 @@ public abstract class ClothingSystem : EntitySystem
         args.ApplyDelay = false;
     }
 
-    private void QuickEquip(
-        Entity<ClothingComponent> toEquipEnt,
-        Entity<InventoryComponent, HandsComponent> userEnt)
+    private void QuickEquip(Entity<ClothingComponent> toEquipEnt, Entity<InventoryComponent, HandsComponent> userEnt)
     {
         foreach (var slotDef in userEnt.Comp1.Slots)
         {

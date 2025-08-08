@@ -10,6 +10,13 @@
     - /Audio/Voice/Human/womanlaugh.ogg
 
 - type: soundCollection
+  id: UnisexLaugh
+  files:
+    - /Audio/Voice/Human/manlaugh1.ogg
+    - /Audio/Voice/Human/manlaugh2.ogg
+    - /Audio/Voice/Human/womanlaugh.ogg
+
+- type: soundCollection
   id: MaleCough
   files:
     - /Audio/Voice/Human/male_cough_1.ogg
@@ -21,6 +28,13 @@
     - /Audio/Voice/Human/female_cough_1.ogg
     - /Audio/Voice/Human/female_cough_2.ogg
 
+- type: soundCollection
+  id: UnisexCough
+  files:
+    - /Audio/Voice/Human/male_cough_1.ogg
+    - /Audio/Voice/Human/male_cough_2.ogg
+    - /Audio/Voice/Human/female_cough_1.ogg
+    - /Audio/Voice/Human/female_cough_2.ogg
 
 - type: soundCollection
   id: Claps
@@ -60,6 +74,12 @@
     - /Audio/Voice/Human/female_sigh.ogg
 
 - type: soundCollection
+  id: UnisexSigh
+  files:
+    - /Audio/Voice/Human/male_sigh.ogg
+    - /Audio/Voice/Human/female_sigh.ogg
+
+- type: soundCollection
   id: Salutes
   files:
     - /Audio/Effects/Emotes/salute.ogg
@@ -75,6 +95,18 @@
 - type: soundCollection
   id: FemaleCry
   files:
+    - /Audio/Voice/Human/cry_female_1.ogg
+    - /Audio/Voice/Human/cry_female_2.ogg
+    - /Audio/Voice/Human/cry_female_3.ogg
+    - /Audio/Voice/Human/cry_female_4.ogg
+
+- type: soundCollection
+  id: UnisexCry
+  files:
+    - /Audio/Voice/Human/cry_male_1.ogg
+    - /Audio/Voice/Human/cry_male_2.ogg
+    - /Audio/Voice/Human/cry_male_3.ogg
+    - /Audio/Voice/Human/cry_male_4.ogg
     - /Audio/Voice/Human/cry_female_1.ogg
     - /Audio/Voice/Human/cry_female_2.ogg
     - /Audio/Voice/Human/cry_female_3.ogg

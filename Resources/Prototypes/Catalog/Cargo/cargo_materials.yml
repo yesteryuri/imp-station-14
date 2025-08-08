@@ -84,7 +84,7 @@
     sprite: Objects/Materials/Sheets/other.rsi
     state: plasma_3
   product: CrateMaterialPlasma
-  cost: 1500
+  cost: 2200 #imp edit to prevent abritrage - was 2k.
   category: cargoproduct-category-name-materials
   group: market
 
@@ -131,7 +131,7 @@
 - type: cargoProduct
   id: MaterialFuelTank
   icon:
-    sprite: Structures/Storage/tanks.rsi
+    sprite: _Impstation/Structures/Storage/tanks.rsi # imp
     state: fueltank
   product: WeldingFuelTankFull
   cost: 1500
@@ -141,7 +141,7 @@
 - type: cargoProduct
   id: MaterialWaterTank
   icon:
-    sprite: Structures/Storage/tanks.rsi
+    sprite: _Impstation/Structures/Storage/tanks.rsi # imp
     state: watertank
   product: WaterTankFull
   cost: 1000

@@ -35,4 +35,6 @@
     guides:
     - SingularityEngine
     - Power
+  - type: StealTarget #imp
+    stealGroup: Generator
 

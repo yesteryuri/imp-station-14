@@ -27,6 +27,7 @@ using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Utility;
+using Content.Shared.Projectiles;
 
 namespace Content.Shared.Nutrition.EntitySystems;
 
@@ -53,6 +54,7 @@ public sealed class FoodSystem : EntitySystem
     [Dependency] private readonly StomachSystem _stomach = default!;
     [Dependency] private readonly UtensilSystem _utensil = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
+    [Dependency] public readonly SharedProjectileSystem _projectile = default!;
 
     public const float MaxFeedDistance = 1.0f;
 
@@ -333,6 +335,8 @@ public sealed class FoodSystem : EntitySystem
         RaiseLocalEvent(food, attemptEv);
         if (attemptEv.Cancelled)
             return;
+
+        _projectile.RemoveEmbeddedChildren(food); // imp edit
 
         var afterEvent = new AfterFullyEatenEvent(user);
         RaiseLocalEvent(food, ref afterEvent);

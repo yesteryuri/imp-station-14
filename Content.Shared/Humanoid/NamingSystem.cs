@@ -38,6 +38,9 @@ namespace Content.Shared.Humanoid
                 case SpeciesNaming.FirstDashFirst:
                     return Loc.GetString("namepreset-firstdashfirst",
                         ("first1", GetFirstName(speciesProto, gender)), ("first2", GetFirstName(speciesProto, gender)));
+                case SpeciesNaming.FirstMiddleLast:
+                    return Loc.GetString("namepreset-firstmiddlelast",
+                        ("first", GetFirstName(speciesProto, gender)), ("middle", GetMiddleName(speciesProto)), ("last", GetLastName(speciesProto)));
                 case SpeciesNaming.FirstLast:
                 default:
                     return Loc.GetString("namepreset-firstlast",
@@ -59,6 +62,11 @@ namespace Content.Shared.Humanoid
                     else
                         return _random.Pick(_prototypeManager.Index(speciesProto.FemaleFirstNames));
             }
+        }
+
+        public string GetMiddleName(SpeciesPrototype speciesProto)
+        {
+            return _random.Pick(_prototypeManager.Index<LocalizedDatasetPrototype>(speciesProto.MiddleNames));
         }
 
         public string GetLastName(SpeciesPrototype speciesProto)

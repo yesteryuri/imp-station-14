@@ -12,6 +12,7 @@
   - type: Tag
     tags:
     - Sheet
+    - DroneUsable
   - type: Damageable
     damageContainer: Inorganic
   - type: Destructible
@@ -26,11 +27,13 @@
     solutions:
       paper:
         canReact: false
+  - type: NonMobStatusIcon #imp edit. for the salvohud
 
 - type: entity
   parent: SheetOtherBase
   id: SheetPaper
   name: paper
+  description: Most commercially-made paper is made from paper. Paper is made from wood, trees, and paper. # imp
   suffix: Full
   components:
   - type: Stack
@@ -77,6 +80,7 @@
   parent: SheetOtherBase
   id: SheetPlasma
   name: plasma
+  description: An enigmatic, highly-reactive material that taps into... Well, it'll make you rich. # imp
   suffix: Full
   components:
   - type: Material
@@ -146,12 +150,14 @@
   parent: SheetOtherBase
   id: SheetPlastic
   name: plastic
+  description: A sheet of plastic. Fun to play with, but not to eat. # imp
   suffix: Full
   components:
   - type: Tag
     tags:
     - Plastic
     - Sheet
+    - DroneUsable
   - type: Material
   - type: PhysicalComposition
     materialComposition:
@@ -209,6 +215,7 @@
   parent: [SheetOtherBase, EdibleBase]
   id: SheetUranium
   name: uranium
+  description: A sheet of Element 92. Puts the 'new' in 'nuclear'. # imp
   suffix: Full
   components:
   - type: Material
@@ -244,6 +251,14 @@
         - ReagentId: Radium
           Quantity: 2
         canReact: false
+  - type: RadiationSource
+    intensity: 0.01
+    slope: 3
+  - type: PointLight
+    radius: 1.2
+    energy: 0.8
+    castShadows: false
+    color: "#9be792"
 
 - type: entity
   parent: SheetUranium
@@ -258,6 +273,7 @@
   parent: SheetOtherBase
   id: MaterialSheetMeat
   name: meat sheet
+  description: A sheet of meat; a meat sheet. # imp
   suffix: Full
   components:
     - type: Sprite
@@ -268,6 +284,10 @@
     - type: Tag
       tags:
       - Sheet
+      - DroneUsable
+      - KodeEdible # imp
+    - type: Food # imp
+      requiresSpecialDigestion: true
     - type: Material
     - type: PhysicalComposition
       materialComposition:
@@ -293,6 +313,12 @@
           - ReagentId: Fat
             Quantity: 3
           canReact: false
+        food: # imp
+          reagents:
+          - ReagentId: Protein
+            Quantity: 7
+          - ReagentId: Fat
+            Quantity: 3
 
 - type: entity
   parent: MaterialSheetMeat

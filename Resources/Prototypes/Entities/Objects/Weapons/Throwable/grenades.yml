@@ -52,7 +52,7 @@
 - type: entity
   name: explosive grenade
   description: Grenade that creates a small but devastating explosion.
-  parent: [GrenadeBase, BaseSyndicateContraband]
+  parent: [GrenadeBase, Tier3Contraband]
   id: ExGrenade
   components:
   - type: ExplodeOnTrigger
@@ -72,7 +72,7 @@
 
 - type: entity
   name: flashbang
-  description: Eeeeeeeeeeeeeeeeeeeeee.
+  description: THINK FAST CHUCKLENUTS!
   parent: [ GrenadeBase, BaseSecurityContraband ]
   id: GrenadeFlashBang
   components:
@@ -118,7 +118,7 @@
 - type: entity
   name: syndicate minibomb
   description: A syndicate-manufactured explosive used to stow destruction and cause chaos.
-  parent: [GrenadeBase, BaseSyndicateContraband]
+  parent: [GrenadeBase, Tier3Contraband]
   id: SyndieMiniBomb
   components:
   - type: Sprite
@@ -370,7 +370,7 @@
 - type: entity
   name: EMP grenade
   description: A grenade designed to wreak havoc on electronic systems.
-  parent: [GrenadeBase, BaseSyndicateContraband]
+  parent: [GrenadeBase, Tier2Contraband]
   id: EmpGrenade
   components:
   - type: Sprite
@@ -389,7 +389,7 @@
 - type: entity
   name: holy hand grenade
   description: O Lord, bless this thy hand grenade, that with it thou mayst blow thine enemies to tiny bits, in thy mercy.
-  parent: [GrenadeBase, BaseSyndicateContraband]
+  parent: [GrenadeBase, Tier3Contraband]
   id: HolyHandGrenade
   components:
   - type: Sprite
@@ -432,13 +432,20 @@
       path: /Audio/Items/smoke_grenade_prime.ogg
 
 - type: entity
-  parent: [ BaseCivilianContraband, SmokeGrenade ]
+  parent: [ BaseServiceContraband, SmokeGrenade ] #imp edit
   id: CleanerGrenade
   name: cleanade
   description: Special grenade for janitors, releasing large cloud of space cleaner foam.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Grenades/janitor.rsi
+  - type: Tag
+    tags: #imp special
+    - CleanerGrenade
+    - Grenade
+  - type: CartridgeAmmo #imp special
+    proto: BulletGrenadeCleaner
+    deleteOnSpawn: true
   - type: SmokeOnTrigger
     duration: 15
     spreadAmount: 50
@@ -476,8 +483,8 @@
   - type: OnUseTimerTrigger
     delay: 5
   - type: SmokeOnTrigger
-    duration: 10
-    spreadAmount: 20
+    duration: 2 # imp 10 -> 2
+    spreadAmount: 5 #imp 20 ->5
     smokePrototype: AluminiumMetalFoam
   - type: StaticPrice
     price: 350

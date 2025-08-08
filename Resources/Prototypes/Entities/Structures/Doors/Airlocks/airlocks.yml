@@ -103,6 +103,7 @@
     securityLevel: medSecurity
   - type: Wires
     layoutId: AirlockCommand
+  - type: DoorAlarm #imp change
 
 - type: entity
   parent: Airlock
@@ -110,7 +111,7 @@
   suffix: Security
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/security.rsi
+    sprite: _Impstation/Structures/Doors/Airlocks/Standard/security.rsi #imp edit
   - type: Wires
     layoutId: AirlockSecurity
 
@@ -184,7 +185,8 @@
 - type: entity
   parent: AirlockGlass
   id: AirlockMaintGlass
-  suffix: Maintenance
+  name: maintenance access #imp edit
+  suffix: Glass #imp edit
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/maint.rsi
@@ -274,6 +276,7 @@
     securityLevel: medSecurity
   - type: Wires
     layoutId: AirlockCommand
+  - type: DoorAlarm #imp change
 
 - type: entity
   parent: AirlockGlass
@@ -281,7 +284,7 @@
   suffix: Security
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/security.rsi
+    sprite: _Impstation/Structures/Doors/Airlocks/Glass/security.rsi #imp edit
   - type: Wires
     layoutId: AirlockSecurity
 

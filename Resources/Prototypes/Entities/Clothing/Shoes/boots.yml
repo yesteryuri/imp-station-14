@@ -73,7 +73,7 @@
     sprite: Clothing/Shoes/Boots/highheelboots.rsi
   - type: FootstepModifier
     footstepSoundCollection:
-      collection: FootstepHighHeels
+      collection: FootstepHighheels
       params:
         volume: -6
         variation: 0.09
@@ -109,6 +109,16 @@
     sprite: Clothing/Shoes/Boots/winterboots.rsi
   - type: Clothing
     sprite: Clothing/Shoes/Boots/winterboots.rsi
+
+- type: entity
+  parent: ClothingShoesBaseWinterBoots
+  id: ClothingShoesBootsWinterBrigmedic
+  name: brigmedic winter boots
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Shoes/Boots/winterbootsbrigmedic.rsi #imp
+  - type: Clothing
+    sprite: _Impstation/Clothing/Shoes/Boots/winterbootsbrigmedic.rsi #imp
 
 - type: entity
   parent: ClothingShoesBaseWinterBoots
@@ -151,6 +161,16 @@
     sprite: Clothing/Shoes/Boots/winterbootssci.rsi
 
 - type: entity
+  parent: ClothingShoesBaseWinterBoots
+  id: ClothingShoesBootsWinterRobo
+  name: robotics winter boots
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Boots/winterbootsrobo.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/winterbootsrobo.rsi
+
+- type: entity
   parent: [ClothingShoesBaseWinterBoots, ClothingShoesMilitaryBase, BaseSecurityContraband]
   id: ClothingShoesBootsWinterSec
   name: security winter boots
@@ -161,7 +181,7 @@
     sprite: Clothing/Shoes/Boots/winterbootssec.rsi
 
 - type: entity
-  parent: [ClothingShoesBaseWinterBoots, BaseSyndicateContraband]
+  parent: [ClothingShoesBaseWinterBoots, Tier1Contraband]
   id: ClothingShoesBootsWinterSyndicate
   name: syndicate's winter boots
   description: Durable heavy boots, looks like merch from "Syndieland".
@@ -215,7 +235,7 @@
     footstepSoundCollection:
       collection: FootstepSpurs
       params:
-        variation: 0.09
+        variation: 0.09 #making a note so this is in the commit if we want to change this later - ruddygreat
         volume: -6
 
 - type: entity

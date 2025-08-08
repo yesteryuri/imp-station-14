@@ -1,0 +1,31 @@
+# Mên-mên...
+
+- type: entity
+  name: finfin sashimi
+  parent: FoodMealBase
+  id: FoodMealFinfinSashimi
+  description: An unscrupulous delicacy. Japanese-Teoean fusion cuisine!
+  components:
+  - type: FlavorProfile
+    flavors:
+    - fishy
+    - finfin
+  - type: Sprite
+    state: sashimi
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 45
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 18
+        - ReagentId: Protein
+          Quantity: 18
+        - ReagentId: TableSalt
+          Quantity: 1
+  - type: Tag
+    tags:
+    - Meat
+  - type: FoodSequenceElement
+    entries:
+      Burger: FinfinSashimiBurger

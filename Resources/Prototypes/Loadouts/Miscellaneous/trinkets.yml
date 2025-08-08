@@ -14,12 +14,14 @@
   storage:
     back:
     - ClothingHeadHatFlowerWreath
+  groupBy: "headwear" #imp
 
 - type: loadout
   id: Hairflower
   storage:
     back:
     - ClothingHeadHatHairflower
+  groupBy: "headwear" #imp
 
 # Headphones
 - type: loadout
@@ -27,6 +29,7 @@
   storage:
     back:
     - ClothingMultipleHeadphones
+  groupBy: "neckwear" #imp
 
 # Toys
 - type: loadout
@@ -34,12 +37,14 @@
   storage:
     back:
     - PlushieLizard
+  groupBy: "baubles" #imp
 
 - type: loadout
   id: PlushieSpaceLizard
   storage:
     back:
     - PlushieSpaceLizard
+  groupBy: "baubles" #imp
 
 - type: loadout
   id: ThreeCandles
@@ -49,6 +54,7 @@
     - CandleRed
     - CandleBlue
     - CandleGreenSmall
+  groupBy: "baubles" #imp
 
 # Smokeables
 - type: loadout
@@ -289,7 +295,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
-      department: Civilian
+      department: Service #imp edit
       time: 360000 # 100hr
   storage:
     back:
