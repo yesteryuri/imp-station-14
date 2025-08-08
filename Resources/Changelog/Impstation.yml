@@ -1,13 +1,4 @@
 ﻿Entries:
-- author: CrystalClover
-  changes:
-  - message: Added new blinking noise to Slimes and Gastropoids
-    type: Add
-  - message: Blinking now has pitch variation
-    type: Tweak
-  id: 1637
-  time: '2025-05-10T11:38:01.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2442
 - author: jtfg-dev
   changes:
   - message: The cryptographic sequencer has been updated with the latest jukebox-cracker
@@ -4211,3 +4202,10 @@
   id: 2136
   time: '2025-08-08T08:56:00.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3252
+- author: yesteryuri
+  changes:
+  - message: Fixed Fin-Fin
+    type: Fix
+  id: 2137
+  time: '2025-08-08T11:30:13.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3256
