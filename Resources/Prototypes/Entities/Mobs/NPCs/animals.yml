@@ -1510,9 +1510,7 @@
       effects:
       - !type:WashCreamPieReaction
 
-
-
-- type: entityZ
+- type: entity
   name: monkey
   id: MobMonkey
   parent: MobBaseAncestor
