@@ -1509,11 +1509,10 @@
       methods: [ Touch ]
       effects:
       - !type:WashCreamPieReaction
-  - type: LayingDown # imp
 
 
 
-- type: entity
+- type: entityZ
   name: monkey
   id: MobMonkey
   parent: MobBaseAncestor
