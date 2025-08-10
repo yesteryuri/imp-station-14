@@ -1459,6 +1459,7 @@
     tags:
     - Cake
     - ClothMade
+    - ClothFood #imp
   - type: SolutionContainerManager
     solutions:
       food:
@@ -1485,6 +1486,7 @@
     tags:
     - Cake
     - ClothMade
+    - ClothFood #imp
     - Slice
   - type: SolutionContainerManager
     solutions:
