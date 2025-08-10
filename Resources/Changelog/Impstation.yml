@@ -1,13 +1,4 @@
 ﻿Entries:
-- author: TheGrimbeeper
-  changes:
-  - message: Anomalites can now always locate their core, so they know who to obey.
-    type: Add
-  - message: drones, dragons, and anomalite pinpointers now automatically activate.
-    type: Tweak
-  id: 1643
-  time: '2025-05-11T04:41:22.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2390
 - author: TheLuggage05
   changes:
   - message: Heavy nitrile gloves are now thick enough to actually obscure fingerprints!
@@ -4211,3 +4202,11 @@
   id: 2142
   time: '2025-08-10T04:26:17.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3265
+- author: DVDPlayerOfDiscordFame
+  changes:
+  - message: The Echion Synthesizer can now be equipped to your belt and suit storage
+      slots.
+    type: Tweak
+  id: 2143
+  time: '2025-08-10T07:09:03.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3238
