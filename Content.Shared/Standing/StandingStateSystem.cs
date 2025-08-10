@@ -117,6 +117,7 @@ public sealed class StandingStateSystem : EntitySystem
         // Seemed like the best place to put it
         _appearance.SetData(uid, RotationVisuals.RotationState, RotationState.Horizontal, appearance);
 
+        /* Imp edit, disabling this block of code until a reasonable way to allow crawling under plastic flaps and tables while slipping and disallow it for crawling can be figured out
         // Change collision masks to allow going under certain entities like flaps and tables
         if (TryComp(uid, out FixturesComponent? fixtureComponent))
         {
@@ -128,7 +129,7 @@ public sealed class StandingStateSystem : EntitySystem
                 standingState.ChangedFixtures.Add(key);
                 _physics.SetCollisionMask(uid, key, fixture, fixture.CollisionMask & ~StandingCollisionLayer, manager: fixtureComponent);
             }
-        }
+        } */
 
         // check if component was just added or streamed to client
         // if true, no need to play sound - mob was down before player could seen that
