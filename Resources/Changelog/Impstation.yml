@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: CrystalClover
-  changes:
-  - message: Added Head Frill marking for Reptilians
-    type: Add
-  id: 1642
-  time: '2025-05-11T03:58:55.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2431
 - author: TheGrimbeeper
   changes:
   - message: Anomalites can now always locate their core, so they know who to obey.
@@ -4210,3 +4203,11 @@
   id: 2141
   time: '2025-08-10T03:12:18.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3145
+- author: msTheowo
+  changes:
+  - message: Hospitality Directors are now allowed to use their own communications
+      console.
+    type: Fix
+  id: 2142
+  time: '2025-08-10T04:26:17.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3265
