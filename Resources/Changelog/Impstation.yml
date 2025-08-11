@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: TheLuggage05
-  changes:
-  - message: Heavy nitrile gloves are now thick enough to actually obscure fingerprints!
-    type: Fix
-  id: 1644
-  time: '2025-05-11T12:39:22.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2451
 - author: Stonylogray
   changes:
   - message: Adjusted divine grasp and gildgrail. Take a sip, babes!
@@ -4210,3 +4203,11 @@
   id: 2143
   time: '2025-08-10T07:09:03.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3238
+- author: msTheowo
+  changes:
+  - message: Strong prescription lens will now correctly start in your glasses instead
+      of being on the floor if your glasses start with lenses inside them.
+    type: Fix
+  id: 2144
+  time: '2025-08-11T06:02:49.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3166
