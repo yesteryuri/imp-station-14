@@ -1095,6 +1095,7 @@
       deleteOnRemove: true
       sound:
         path: /Audio/_Impstation/Effects/grapple_impact.ogg
+      autoRemoveDuration: 0 # IMP
     - type: Clickable
     - type: InteractionOutline
     - type: Sprite

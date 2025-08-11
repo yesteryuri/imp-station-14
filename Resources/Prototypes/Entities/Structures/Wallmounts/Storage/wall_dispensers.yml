@@ -40,6 +40,12 @@
           collection: MetalBreak
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: SpaceCleaner
+          Quantity: 2500 #imp edit, was 5000
   - type: DrainableSolution
     solution: tank
   - type: ReagentTank
