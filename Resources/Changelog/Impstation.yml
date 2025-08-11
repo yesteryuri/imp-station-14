@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: TheGrimbeeper
-  changes:
-  - message: Rat king ghost role rules are once again properly antagonist after upstream
-      merge convinced the king to be nice.
-    type: Fix
-  id: 1647
-  time: '2025-05-12T06:02:12.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2461
 - author: crocodilecarousel
   changes:
   - message: slimes can actually have earrings now
@@ -4214,3 +4206,16 @@
   id: 2146
   time: '2025-08-11T06:09:23.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3151
+- author: DinnerCalzone
+  changes:
+  - message: The amount of space cleaner in the space cleaner dispenser has been increased
+      from 1000u to 2500u.
+    type: Tweak
+  - message: The soap cargo order has been replaced with a crate of 6 jugs of space
+      cleaner for $750.
+    type: Tweak
+  - message: The soap cargo bounty has been restored.
+    type: Add
+  id: 2147
+  time: '2025-08-11T06:16:30.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3170
