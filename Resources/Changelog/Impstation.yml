@@ -1,22 +1,4 @@
 ﻿Entries:
-- author: LazyRiverfolk
-  changes:
-  - message: Added a variety of new topicals; visit your local Medifabs and Nanomeds
-      now!
-    type: Add
-  - message: Aloe Cream is now squishy when it lands.
-    type: Add
-  - message: Aloe Cream now heal 10 heat instead of being an Ointment reskin.
-    type: Tweak
-  - message: Medicated Sutures got a visual update; don't worry, it still works the
-      same as before.
-    type: Tweak
-  - message: Aloe Cream's sprite is now Centered. You no longer have to account for
-      the offset when placing it politely on tables.
-    type: Fix
-  id: 1653
-  time: '2025-05-12T10:34:52.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2450
 - author: Deltanadas, AirFryerBuyOneGetOneFree, Kip
   changes:
   - message: Added Automation! Robotic Arms, filters, automation kits, and storage
@@ -4230,3 +4212,17 @@
   id: 2152
   time: '2025-08-12T01:15:14.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/2466
+- author: VeeNomine
+  changes:
+  - message: Some cyborgs want ribbons to go with their hat.
+    type: Add
+  - message: Removed the whitelist for service borg neck slot. Unleash your fashion,
+      for it is the true endgame.
+    type: Remove
+  - message: All borgs have had their neck and hat positions manually tweaked to look
+      more clean and aesthetic. Not all items will look the best however since borgs
+      have unique proportions.
+    type: Tweak
+  id: 2153
+  time: '2025-08-12T06:30:10.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3271
