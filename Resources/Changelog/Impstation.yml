@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: mqole
-  changes:
-  - message: Advanced topicals removed from nanomed pending further discussion. craft
-      them in the medifab
-    type: Tweak
-  id: 1655
-  time: '2025-05-12T13:09:06.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2467
 - author: ruddygreat
   changes:
   - message: The Nuke is slightly less allergic to space
@@ -4222,3 +4214,11 @@
   id: 2154
   time: '2025-08-12T06:31:24.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3273
+- author: Smugman
+  changes:
+  - message: FOES? In your Syndicate Surplus? Its more likely than you think. Free
+      UNGH! Now.
+    type: Add
+  id: 2155
+  time: '2025-08-12T06:34:57.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3270
