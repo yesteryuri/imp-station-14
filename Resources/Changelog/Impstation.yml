@@ -1,15 +1,4 @@
 ﻿Entries:
-- author: Deltanadas, AirFryerBuyOneGetOneFree, Kip
-  changes:
-  - message: Added Automation! Robotic Arms, filters, automation kits, and storage
-      bins have been added. Make the factory of your dreams today.
-    type: Add
-  - message: Hyper-convection boards have been replaced with hyper-convection upgrade
-      kits, apply directly to machines to upgrade them!
-    type: Tweak
-  id: 1654
-  time: '2025-05-12T11:59:11.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2440
 - author: mqole
   changes:
   - message: Advanced topicals removed from nanomed pending further discussion. craft
@@ -4226,3 +4215,10 @@
   id: 2153
   time: '2025-08-12T06:30:10.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3271
+- author: ultramario1998
+  changes:
+  - message: The guidebook no longer mentions using greencomms from your headset.
+    type: Tweak
+  id: 2154
+  time: '2025-08-12T06:31:24.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3273
