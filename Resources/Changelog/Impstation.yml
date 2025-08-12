@@ -1,15 +1,4 @@
 ﻿Entries:
-- author: Darkmajia
-  changes:
-  - message: Supermatter delaminations have had their explosion strength reduced,
-      but have an ongoing effect over the course of the shift.
-    type: Tweak
-  - message: The supermatter's light turns red as it grows damaged, as was originally
-      intended.
-    type: Fix
-  id: 1657
-  time: '2025-05-12T20:13:32.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2455
 - author: widgetbeck
   changes:
   - message: The Pattern begins to coalesce.
@@ -4224,3 +4213,17 @@
   id: 2156
   time: '2025-08-12T08:33:59.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3264
+- author: mqole
+  changes:
+  - message: Decapoids, Apids, and Gastropoids have had some adjustments to their
+      movement.
+    type: Tweak
+  - message: Gastropoids no longer take 10x the amount of cold damage as other species.
+      (Instead, they take 5x.)
+    type: Remove
+  - message: Cotton pizza no longer fulfills the cloth meal bounty. The bounty description
+      has been updated to accommodate.
+    type: Remove
+  id: 2157
+  time: '2025-08-12T09:38:16.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3269
