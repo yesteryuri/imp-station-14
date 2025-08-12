@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: ruddygreat
-  changes:
-  - message: The Nuke is slightly less allergic to space
-    type: Tweak
-  id: 1656
-  time: '2025-05-12T13:57:17.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2458
 - author: Darkmajia
   changes:
   - message: Supermatter delaminations have had their explosion strength reduced,
@@ -4222,3 +4215,12 @@
   id: 2155
   time: '2025-08-12T06:34:57.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3270
+- author: kipdotnet
+  changes:
+  - message: Added the Apid care case, a cargo order for homesick apids.
+    type: Add
+  - message: Apid cryopods now have a label slot.
+    type: Tweak
+  id: 2156
+  time: '2025-08-12T08:33:59.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3264
