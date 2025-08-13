@@ -10,6 +10,8 @@ species-name-moth = Moth Person
 species-name-skeleton = Skeleton
 species-name-vox = Vox
 species-name-gingerbread = delicious baked good
+species-name-snail = Gastropoid
+species-name-thaven = Thaven
 
 ## Misc species things
 

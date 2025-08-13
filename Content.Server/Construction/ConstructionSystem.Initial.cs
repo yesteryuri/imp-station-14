@@ -294,6 +294,12 @@ namespace Content.Server.Construction
                 }
             }
 
+            // Inform consumed items that they have been consumed
+            foreach (var entity in container.ContainedEntities.ToArray())
+            {
+                RaiseLocalEvent(entity, new ConstructionConsumedObjectEvent(entity, newEntity));
+            }
+
             // We now get rid of all them.
             ShutdownContainers();
 

@@ -5,6 +5,7 @@
   id: BaseMobGingerbread
   abstract: true
   components:
+  - type: Absorbable
   - type: HumanoidAppearance
     species: Gingerbread
   - type: Icon
@@ -51,7 +52,7 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
-
+  - type: Carriable # Carrying system from nyanotrasen.
 
 - type: entity
   parent: BaseSpeciesDummy

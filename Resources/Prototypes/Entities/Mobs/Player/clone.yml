@@ -54,6 +54,7 @@
   - SouthernAccent
   - SpanishAccent
   - StutteringAccent
+  - UnadaptedToSpace # imp edit
 
 # for job-specific traits etc.
 - type: cloningSettings

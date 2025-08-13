@@ -1,0 +1,87 @@
+- type: entity
+  id: RandomHumanoidVisitorBrigmedic
+  name: visiting brigmedic ghost role
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: brigmedic
+    - type: RandomHumanoidSpawner
+      settings: VisitorBrigmedic
+    - type: AutoImplant
+      implants:
+      - MindShieldImplant
+
+- type: entity
+  id: RandomHumanoidVisitorCourier
+  name: visiting courier ghost role
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: cargo_tech # no courier job in the rsi
+    - type: RandomHumanoidSpawner
+      settings: VisitorCourier
+
+- type: entity
+  id: RandomHumanoidVisitorRoboticist
+  name: visiting roboticist ghost role
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: roboticist # no courier job in the rsi
+    - type: RandomHumanoidSpawner
+      settings: VisitorRoboticist
+
+- type: entity
+  id: RandomHumanoidVisitorLibrarianCryptid
+  name: visiting librarian ghost role
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: librarian
+    - type: RandomHumanoidSpawner
+      settings: VisitorLibrarianCryptid
+
+# CentComm Interns
+- type: entity
+  name: CentComm Intern
+  id: RandomHumanoidSpawnerCentcommIntern
+  suffix: ERTRole
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: centcom
+  - type: RandomHumanoidSpawner
+    settings: CentcommIntern
+
+- type: entity
+  name: CentComm Head Intern
+  id: RandomHumanoidSpawnerCentcommInternLeader
+  suffix: ERTRole
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: centcom
+  - type: RandomHumanoidSpawner
+    settings: CentcommInternLeader
+
+- type: entity
+  name: CentComm Intern
+  id: RandomHumanoidSpawnerCentcommInternUnarmed
+  suffix: ERTRole, Unarmed
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: centcom
+  - type: RandomHumanoidSpawner
+    settings: CentcommInternUnarmed
+
+- type: entity
+  name: CentComm Head Intern
+  id: RandomHumanoidSpawnerCentcommInternLeaderUnarmed
+  suffix: ERTRole, Unarmed
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: centcom
+  - type: RandomHumanoidSpawner
+    settings: CentcommInternLeaderUnarmed

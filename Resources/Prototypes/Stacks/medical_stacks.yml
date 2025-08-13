@@ -1,7 +1,7 @@
 - type: stack
   id: Ointment
   name: stack-ointment
-  icon: { sprite: "/Textures/Objects/Specific/Medical/medical.rsi", state: ointment }
+  icon: { sprite: "/Textures/_Impstation/Objects/Specific/Medical/medical.rsi", state: ointment } # imp
   spawn: Ointment
   maxCount: 10
 
@@ -15,21 +15,21 @@
 - type: stack
   id: Gauze
   name: stack-gauze
-  icon: { sprite: "/Textures/Objects/Specific/Medical/medical.rsi", state: gauze }
+  icon: { sprite: "/Textures/_Impstation/Objects/Specific/Medical/medical.rsi", state: gauze } # imp
   spawn: Gauze
   maxCount: 10
 
 - type: stack
   id: Brutepack
   name: stack-brutepack
-  icon: { sprite: "/Textures/Objects/Specific/Medical/medical.rsi", state: gauze }
+  icon: { sprite: "/Textures/_Impstation/Objects/Specific/Medical/medical.rsi", state: gauze } # imp
   spawn: Brutepack
   maxCount: 10
 
 - type: stack
   id: Bloodpack
   name: stack-bloodpack
-  icon: { sprite: "/Textures/Objects/Specific/Medical/medical.rsi", state: bloodpack }
+  icon: { sprite: "/Textures/_Impstation/Objects/Specific/Medical/medical.rsi", state: bloodpack } # imp
   spawn: Bloodpack
   maxCount: 10
 

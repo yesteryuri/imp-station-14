@@ -47,10 +47,10 @@
       - FakeMindShieldImplant
       - RadioImplant
       - ChameleonControllerImplant
-      deimplantFailureDamage:
-        types:
-          Cellular: 50
-          Heat: 10
+      #deimplantFailureDamage:
+      #  types:
+      #    Cellular: 50
+      #    Heat: 10
     - type: Sprite
       sprite: Objects/Specific/Medical/implanter.rsi
       state: implanter0
@@ -123,7 +123,7 @@
 
 - type: entity
   id: BaseImplantOnlyImplanterSyndi
-  parent: [BaseImplantOnlyImplanter, BaseSyndicateContraband]
+  parent: [BaseImplantOnlyImplanter, Tier3Contraband] #imp contraband
   name: syndicate implanter
   description: A compact disposable syringe exclusively designed for the injection of subdermal implants. Make sure to scrub it with soap or a rag to remove residual DNA after use!
   abstract: true
@@ -307,11 +307,11 @@
     - type: Implanter
       implant: MindShieldImplant
 
-# Centcomm implanters
+# CentComm implanters # imp i'm fixing this comment so it doesn't appear on text fix passes
 
 - type: entity
   id: RadioImplanterCentcomm
-  name: centcomm radio implanter
+  name: CentComm radio implanter # imp caps
   parent: BaseImplantOnlyImplanter
   components:
   - type: Implanter
@@ -319,7 +319,7 @@
 
 - type: entity
   id: DeathRattleImplanterCentcomm
-  name: centcomm death rattle implanter
+  name: CentComm death rattle implanter # imp caps
   parent: BaseImplantOnlyImplanter
   components:
   - type: Implanter

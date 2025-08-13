@@ -1,6 +1,7 @@
 using Content.Server.Administration.Systems;
 using Content.Shared.Antag;
 using Content.Shared.Destructible.Thresholds;
+using Content.Shared.NPC.Prototypes;
 using Content.Shared.Preferences.Loadouts;
 using Content.Shared.Roles;
 using Content.Shared.Whitelist;
@@ -54,6 +55,12 @@ public sealed partial class AntagSelectionComponent : Component
     /// Is not serialized.
     /// </summary>
     public HashSet<ICommonSession> AssignedSessions = new();
+
+    /// <summary>
+    /// Cached sessions of players who are chosen. Used so we don't have to rebuild the pool multiple times in a tick.
+    /// Is not serialized.
+    /// </summary>
+    public HashSet<ICommonSession> ProcessedSessions = new();
 
     /// <summary>
     /// Locale id for the name of the antag.
@@ -134,6 +141,12 @@ public partial struct AntagSelectionDefinition()
     [DataField]
     public bool LateJoinAdditional = false;
 
+    /// <summary>
+    /// If true, all possible players who have this antag type enabled will be selected. Includes latejoins if LateJoinAdditional is true.
+    /// </summary>
+    [DataField]
+    public bool ForceAllPossible = false;
+
     //todo: find out how to do this with minimal boilerplate: filler department, maybe?
     //public HashSet<ProtoId<JobPrototype>> JobBlacklist = new()
 
@@ -173,6 +186,20 @@ public partial struct AntagSelectionDefinition()
     /// </summary>
     [DataField]
     public List<EntProtoId>? MindRoles;
+
+    /// <summary>
+    /// NPC factions to add to the entity
+    /// #IMP
+    /// </sumamry>
+    [DataField]
+    public List<string> FactionsAdd = new();
+
+    /// <summary>
+    /// NPC factions to remove from the entity
+    /// #IMP
+    /// </sumamry>
+    [DataField]
+    public List<string> FactionsRemove = new();
 
     /// <summary>
     /// A set of starting gear that's equipped to the player.

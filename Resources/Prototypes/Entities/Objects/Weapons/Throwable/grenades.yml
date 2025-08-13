@@ -54,7 +54,7 @@
 - type: entity
   name: explosive grenade
   description: Grenade that creates a small but devastating explosion.
-  parent: [GrenadeBase, BaseSyndicateContraband]
+  parent: [GrenadeBase, Tier3Contraband] #imp contraband
   id: ExGrenade
   components:
   - type: ExplodeOnTrigger
@@ -76,7 +76,7 @@
 
 - type: entity
   name: flashbang
-  description: Eeeeeeeeeeeeeeeeeeeeee.
+  description: THINK FAST CHUCKLENUTS! #imp
   parent: [ GrenadeBase, BaseSecurityContraband ]
   id: GrenadeFlashBang
   components:
@@ -131,7 +131,7 @@
 - type: entity
   name: syndicate minibomb
   description: A syndicate-manufactured explosive used to stow destruction and cause chaos.
-  parent: [GrenadeBase, BaseSyndicateContraband]
+  parent: [GrenadeBase, Tier3Contraband] #imp contraband
   id: SyndieMiniBomb
   components:
   - type: Sprite
@@ -412,7 +412,7 @@
 - type: entity
   name: EMP grenade
   description: A grenade designed to wreak havoc on electronic systems.
-  parent: [GrenadeBase, BaseSyndicateContraband]
+  parent: [GrenadeBase, Tier2Contraband] #imp, contraband
   id: EmpGrenade
   components:
   - type: Sprite
@@ -435,7 +435,7 @@
 - type: entity
   name: holy hand grenade
   description: O Lord, bless this thy hand grenade, that with it thou mayst blow thine enemies to tiny bits, in thy mercy.
-  parent: [GrenadeBase, BaseSyndicateContraband]
+  parent: [GrenadeBase, Tier3Contraband] #imp, contraband
   id: HolyHandGrenade
   components:
   - type: Sprite
@@ -486,7 +486,7 @@
       path: /Audio/Items/smoke_grenade_prime.ogg
 
 - type: entity
-  parent: [ BaseCivilianContraband, SmokeGrenade ]
+  parent: [ BaseServiceContraband, SmokeGrenade ] #imp edit
   id: CleanerGrenade
   name: cleanade
   description: Special grenade for janitors, releasing large cloud of space cleaner foam.
@@ -503,6 +503,15 @@
       reagents:
       - ReagentId: SpaceCleaner
         Quantity: 30
+  # imp edit start
+  - type: Tag
+    tags:
+    - CleanerGrenade
+    - Grenade
+  - type: CartridgeAmmo
+    proto: BulletGrenadeCleaner
+    deleteOnSpawn: true
+  # imp edit end
 
 - type: entity
   parent: SmokeGrenade
@@ -536,8 +545,8 @@
   - type: SmokeOnTrigger
     keysIn:
     - timer
-    duration: 10
-    spreadAmount: 20
+    duration: 2 # imp 10 -> 2
+    spreadAmount: 5 #imp 20 ->5
     smokePrototype: AluminiumMetalFoam
   - type: StaticPrice
     price: 350

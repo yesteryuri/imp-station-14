@@ -1,6 +1,7 @@
 - type: entity
   id: BaseMagazineCaselessRifle
   name: "magazine (.25 caseless)"
+  description: A 30-round .25 caseless standard magazine. #imp
   parent: [ BaseItem, BaseSecurityContraband ]
   abstract: true
   components:
@@ -35,6 +36,7 @@
 - type: entity
   id: BaseMagazinePistolCaselessRifle
   name: "pistol magazine (.25 caseless)"
+  description: A 10-round .25 caseless pistol magazine. #imp
   parent: BaseMagazineCaselessRifle
   abstract: true
   components:
@@ -50,7 +52,7 @@
   - type: Item
     size: Small
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/Magazine/CaselessRifle/caseless_pistol_mag.rsi
+    sprite: _Impstation/Objects/Weapons/Guns/Ammunition/Magazine/CaselessRifle/caseless_pistol_mag.rsi #imp
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -66,14 +68,14 @@
   id: MagazinePistolCaselessRifle
   name: "pistol magazine (.25 caseless)"
   parent: BaseMagazinePistolCaselessRifle
-  description: 10-round magazine for the Cobra pistol. Intended to hold general-purpose kinetic ammunition.
+  description: A 10-round .25 caseless pistol magazine, marked as live-fire ammo. #imp
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRifle
     capacity: 10
   - type: Sprite
     layers:
-    - state: base
+    - state: red # imp
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
@@ -86,27 +88,30 @@
     inhandVisuals:
       left:
       - state: inhand-left-mag
+      - state: inhand-left-stripe
+        color: "#820a16" #imp
       right:
       - state: inhand-right-mag
       - state: inhand-right-stripe
+        color: "#820a16" #imp
 
 - type: entity
   id: MagazinePistolCaselessRiflePractice
   name: "pistol magazine (.25 caseless practice)"
   parent: BaseMagazinePistolCaselessRifle
-  description: 10-round magazine for the Cobra pistol. Intended to hold non-harmful chalk ammunition.
+  description: A 10-round .25 caseless pistol magazine, marked as practice ammo. #imp
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRiflePractice
     capacity: 10
   - type: Sprite
     layers:
-    - state: base
+    - state: practice # imp
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
-    - state: stripe
-      color: "#dbdbdb"
+    # - state: stripe # imp remove
+    #   color: "#dbdbdb"
   - type: MagazineVisuals
     magState: mag
     steps: 6
@@ -117,15 +122,16 @@
       left:
       - state: inhand-left-mag
       - state: inhand-left-stripe
-        color: "#dbdbdb"
+        color: "#ffcb6f" #imp
       right:
       - state: inhand-right-mag
       - state: inhand-right-stripe
-        color: "#dbdbdb"
+        color: "#ffcb6f" #imp
 
 - type: entity
   id: MagazineCaselessRifle
   name: "magazine (.25 caseless)"
+  description: A 30-round .25 caseless standard magazine, marked as live-fire ammo. #imp
   parent: BaseMagazineCaselessRifle
   components:
   - type: BallisticAmmoProvider
@@ -140,12 +146,17 @@
     inhandVisuals:
       left:
       - state: inhand-left-mag
+      - state: inhand-left-stripe
+        color: "#820a16" #imp
       right:
       - state: inhand-right-mag
+      - state: inhand-right-stripe
+        color: "#820a16" #imp
 
 - type: entity
   id: MagazineCaselessRiflePractice
   name: "magazine (.25 caseless practice)"
+  description: A 30-round .25 caseless standard magazine, marked as practice ammo. #imp
   parent: BaseMagazineCaselessRifle
   components:
   - type: BallisticAmmoProvider
@@ -157,14 +168,14 @@
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
     - state: stripe
-      color: "#dbdbdb"
+      color: "#ffcb6f" #imp
   - type: Item
     inhandVisuals:
       left:
       - state: inhand-left-mag
       - state: inhand-left-stripe
-        color: "#dbdbdb"
+        color: "#ffcb6f" #imp
       right:
       - state: inhand-right-mag
       - state: inhand-right-stripe
-        color: "#dbdbdb"
+        color: "#ffcb6f" #imp

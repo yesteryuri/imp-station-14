@@ -6,7 +6,7 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 18000 # 5 hrs
+      time: 54000 # 15 hrs, imp
       inverted: true # stop playing intern if you're good at med!
   startingGear: MedicalInternGear
   icon: "JobIconMedicalIntern"
@@ -21,12 +21,14 @@
   equipment:
     shoes: ClothingShoesColorWhite
     id: MedicalInternPDA
+    neck: ClothingNeckNoviceMark # imp
     ears: ClothingHeadsetMedical
     belt: ClothingBeltMedicalFilled
+    pocket1: TutorialPersonalAI #imp
     pocket2: BookMedicalReferenceBook
-  #storage:
-    #back:
-    #- Stuff
+  # storage:
+  #   back:
+  #   - Stuff
 
 - type: chameleonOutfit
   id: MedicalInternChameleonOutfit

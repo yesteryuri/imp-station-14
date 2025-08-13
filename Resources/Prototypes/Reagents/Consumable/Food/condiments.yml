@@ -131,6 +131,10 @@
       effects:
       - !type:SatiateHunger
         factor: 0.5
+        conditions: # imp
+        - !type:OrganType
+          type: Kodepiia
+          shouldHave: false
       - !type:SatiateThirst
         factor: -0.5 # high salt content
 
@@ -164,6 +168,19 @@
       # eating salt on its own kinda sucks, kids
       - !type:SatiateThirst
         factor: -0.5
+      - !type:HealthChange #start imp
+        conditions:
+        - !type:OrganType
+          type: Snail
+          shouldHave: true
+        damage:
+          types:
+            Poison: 4
+  tileReactions:
+    - !type:EnsureTileReaction
+      components:
+        - type: RevealRevenantOnCollide
+          popupText: revenant-revealed-salt #end imp
 
 - type: reagent
   id: Syrup
@@ -183,6 +200,10 @@
       effects:
       - !type:SatiateHunger
         factor: 6.0 #Stronger than cookedramen
+        conditions: # imp
+        - !type:OrganType
+          type: Kodepiia
+          shouldHave: false
   footstepSound:
     collection: FootstepSlime
     params:

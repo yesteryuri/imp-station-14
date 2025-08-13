@@ -27,7 +27,7 @@
         food:
           maxVol: 5
           reagents:
-          - ReagentId: GreyMatter
+          - ReagentId: Slime
             Quantity: 5
         organ:
           reagents:
@@ -37,7 +37,6 @@
       size: Small
       heldPrefix: brain
 
-      
 - type: entity
   id: OrganSlimeLungs
   parent: BaseHumanOrgan

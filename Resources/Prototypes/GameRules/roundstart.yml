@@ -300,8 +300,15 @@
     objectives:
     - WizardSurviveObjective
     - WizardDemonstrateObjective
+  - type: AntagRandomObjectives #imp
+    sets:
+    - groups: WizardPridefulGroups
+      maxPicks: 1
+    - groups: WizardChaosGroups
+      maxPicks: 1
+    maxDifficulty: 2
   - type: LoadMapRule
-    mapPath: /Maps/Nonstations/wizardsden.yml
+    mapPath: /Maps/_Impstation/Nonstations/wizardsden.yml #imp
   - type: RuleGrids
   - type: AntagSelection
   - type: AntagLoadProfileRule
@@ -368,11 +375,15 @@
         sound: "/Audio/Ambience/Antag/zombie_start.ogg"
       components:
       - type: PendingZombie
+        minInitialInfectedGrace: 300 #imp
+        maxInitialInfectedGrace: 600 #imp
       - type: ZombifyOnDeath
       - type: IncurableZombie
       - type: InitialInfected
       mindRoles:
       - MindRoleInitialInfected
+      factionsAdd: # IMP: Initial infected should be ignored by zombies.
+        - InitialInfectedIgnore
 
 # This rule makes the chosen players unable to get other antag rules, as a way to prevent metagaming job rolls.
 # Put this before antags assigned to station jobs, but after non-job antags (NukeOps/Wiz).
@@ -393,19 +404,27 @@
 # event schedulers
 
 - type: entityTable
-  id: BasicGameRulesTable
-  table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
+  id: BasicGameRulesTable # imp: changed from AllSelector to GroupSelector
+  table: !type:GroupSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
     children:
       - !type:NestedSelector
         tableId: BasicCalmEventsTable
+        weight: 30
       - !type:NestedSelector
-        tableId: BasicAntagEventsTable
+        tableId: GreaterAntagEventsTable #imp
+        weight: 7
+      - !type:NestedSelector
+        tableId: LesserAntagEventsTable #imp
+        weight: 15
       - !type:NestedSelector
         tableId: CargoGiftsTable
+        weight: 16
       - !type:NestedSelector
         tableId: CalmPestEventsTable
+        weight: 17
       - !type:NestedSelector
         tableId: SpicyPestEventsTable
+        weight: 15
 
 - type: entityTable
   id: SpaceTrafficControlTable

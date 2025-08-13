@@ -8,7 +8,7 @@
       steps:
       - tag: MimeHappyHonk
         icon:
-          sprite: Objects/Storage/Happyhonk/mime.rsi
+          sprite: _Wizden/Objects/Storage/Happyhonk/mime.rsi # imp
           state: box
         name: construction-graph-tag-mime-meal
       - tag: MimeBelt

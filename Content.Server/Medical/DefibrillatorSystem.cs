@@ -1,3 +1,4 @@
+using Content.Server._Impstation.Traits;
 using Content.Server.Atmos.Rotting;
 using Content.Server.Chat.Systems;
 using Content.Server.DoAfter;
@@ -23,6 +24,9 @@ using Content.Shared.Timing;
 using Content.Shared.Toggleable;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
+using Robust.Shared.Random;
+using Robust.Shared.Timing;
+using Content.Shared.Whitelist;
 
 namespace Content.Server.Medical;
 
@@ -45,7 +49,10 @@ public sealed class DefibrillatorSystem : EntitySystem
     [Dependency] private readonly RottingSystem _rotting = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
     [Dependency] private readonly UseDelaySystem _useDelay = default!;
+
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -95,7 +102,7 @@ public sealed class DefibrillatorSystem : EntitySystem
         if (!Resolve(uid, ref component))
             return false;
 
-        if (!_toggle.IsActivated(uid))
+        if (!_toggle.IsActivated(uid) && !component.IgnoreToggle)
         {
             if (user != null)
                 _popup.PopupEntity(Loc.GetString("defibrillator-not-on"), uid, user.Value);
@@ -108,7 +115,7 @@ public sealed class DefibrillatorSystem : EntitySystem
         if (!TryComp<MobStateComponent>(target, out var mobState))
             return false;
 
-        if (!_powerCell.HasActivatableCharge(uid, user: user))
+        if (!_powerCell.HasActivatableCharge(uid, user: user) && !component.IgnorePowerCell)
             return false;
 
         if (!targetCanBeAlive && _mobState.IsAlive(target, mobState))
@@ -117,7 +124,8 @@ public sealed class DefibrillatorSystem : EntitySystem
         if (!targetCanBeAlive && !component.CanDefibCrit && _mobState.IsCritical(target, mobState))
             return false;
 
-        return true;
+        // imp
+        return _whitelist.IsWhitelistPassOrNull(component.Whitelist, target);
     }
 
     /// <summary>
@@ -138,8 +146,15 @@ public sealed class DefibrillatorSystem : EntitySystem
         if (!CanZap(uid, target, user, component))
             return false;
 
-        _audio.PlayPvs(component.ChargeSound, uid);
-        return _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, user, component.DoAfterDuration, new DefibrillatorZapDoAfterEvent(),
+        if (component.SkipDoAfter)
+        {
+            Zap(uid, target, user, component);
+            return false;
+        }
+
+        if (component.PlayChargeSound)
+            _audio.PlayPvs(component.ChargeSound, uid);
+        return _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, user, TimeSpan.FromSeconds(component.DoAfterDuration), new DefibrillatorZapDoAfterEvent(),
             uid, target, uid)
         {
             NeedHand = true,
@@ -155,8 +170,11 @@ public sealed class DefibrillatorSystem : EntitySystem
         if (!Resolve(uid, ref component))
             return;
 
-        if (!_powerCell.TryUseActivatableCharge(uid, user: user))
-            return;
+        if (!component.IgnorePowerCell)
+        {
+            if (!_powerCell.TryUseActivatableCharge(uid, user: user))
+                return;
+        }
 
         var selfEvent = new SelfBeforeDefibrillatorZapsEvent(user, uid, target);
         RaiseLocalEvent(user, selfEvent);
@@ -179,8 +197,9 @@ public sealed class DefibrillatorSystem : EntitySystem
             !TryComp<MobThresholdsComponent>(target, out var thresholds))
             return;
 
-        _audio.PlayPvs(component.ZapSound, uid);
-        _electrocution.TryDoElectrocution(target, null, component.ZapDamage, component.WritheDuration, true, ignoreInsulation: true);
+        if (component.PlayZapSound)
+            _audio.PlayPvs(component.ZapSound, uid);
+        _electrocution.TryDoElectrocution(target, null, component.ZapDamage, TimeSpan.FromSeconds(component.WritheDuration), true, ignoreInsulation: true);
         if (!TryComp<UseDelayComponent>(uid, out var useDelay))
             return;
         _useDelay.SetLength((uid, useDelay), component.ZapDelay, component.DelayId);
@@ -191,55 +210,97 @@ public sealed class DefibrillatorSystem : EntitySystem
         var dead = true;
         if (_rotting.IsRotten(target))
         {
-            _chatManager.TrySendInGameICMessage(uid, Loc.GetString("defibrillator-rotten"),
-                InGameICChatType.Speak, true);
+            if (component.ShowMessages)
+                return;
+                _chatManager.TrySendInGameICMessage(uid,
+                    Loc.GetString("defibrillator-rotten"),
+                    InGameICChatType.Speak,
+                    true);
+            return;
         }
         else if (TryComp<UnrevivableComponent>(target, out var unrevivable))
         {
             _chatManager.TrySendInGameICMessage(uid, Loc.GetString(unrevivable.ReasonMessage),
                 InGameICChatType.Speak, true);
-        }
-        else
-        {
-            if (_mobState.IsDead(target, mob))
-                _damageable.TryChangeDamage(target, component.ZapHeal, true, origin: uid);
 
-            if (_mobThreshold.TryGetThresholdForState(target, MobState.Dead, out var threshold) &&
-                TryComp<DamageableComponent>(target, out var damageableComponent) &&
-                damageableComponent.TotalDamage < threshold)
+            return; //imp
+        }
+
+        if (HasComp<RandomUnrevivableComponent>(target))
+        {
+            var dnrComponent = Comp<RandomUnrevivableComponent>(target);
+
+            if (dnrComponent.Chance < _random.NextDouble())
+            {
+                if (component.ShowMessages)
+                    _chatManager.TrySendInGameICMessage(uid, Loc.GetString("defibrillator-unrevivable"), InGameICChatType.Speak, true);
+                dnrComponent.Chance = 0f;
+                var unrevivable = AddComp<UnrevivableComponent>(target); //imp
+                unrevivable.Cloneable = true; //imp
+                RemComp<RandomUnrevivableComponent>(target); //imp
+                return;
+            }
+            else
+            {
+                dnrComponent.Chance -= 0.1f;
+            }
+        }
+
+        if (_mobState.IsDead(target, mob))
+            _damageable.TryChangeDamage(target, component.ZapHeal, true, origin: uid);
+
+        if (_mobThreshold.TryGetThresholdForState(target, MobState.Dead, out var threshold) &&
+            TryComp<DamageableComponent>(target, out var damageableComponent) &&
+            damageableComponent.TotalDamage < threshold)
+        {
+            if (component.AllowSkipCrit &&
+            (!_mobThreshold.TryGetThresholdForState(target, MobState.Critical, out var critThreshold) ||
+            damageableComponent.TotalDamage < critThreshold))
+            {
+                _mobState.ChangeMobState(target, MobState.Alive, mob, uid);
+                dead = false;
+            }
+            else
             {
                 _mobState.ChangeMobState(target, MobState.Critical, mob, uid);
                 dead = false;
             }
-
-            if (_mind.TryGetMind(target, out _, out var mind) &&
-                _player.TryGetSessionById(mind.UserId, out var playerSession))
-            {
-                session = playerSession;
-                // notify them they're being revived.
-                if (mind.CurrentEntity != target)
-                {
-                    _euiManager.OpenEui(new ReturnToBodyEui(mind, _mind, _player), session);
-                }
-            }
-            else
-            {
-                _chatManager.TrySendInGameICMessage(uid, Loc.GetString("defibrillator-no-mind"),
-                    InGameICChatType.Speak, true);
-            }
         }
 
-        var sound = dead || session == null
-            ? component.FailureSound
-            : component.SuccessSound;
-        _audio.PlayPvs(sound, uid);
+        if (_mind.TryGetMind(target, out _, out var mind) && _player.TryGetSessionById(mind.UserId, out var playerSession))
+        {
+            session = playerSession;
+            // notify them they're being revived.
+            if (mind.CurrentEntity != target)
+                _euiManager.OpenEui(new ReturnToBodyEui(mind, _mind, _player), session);
+        }
+        else
+        {
+            if (component.ShowMessages)
+                _chatManager.TrySendInGameICMessage(uid,
+                    Loc.GetString("defibrillator-no-mind"),
+                    InGameICChatType.Speak,
+                    true);
 
-        // if we don't have enough power left for another shot, turn it off
-        if (!_powerCell.HasActivatableCharge(uid))
-            _toggle.TryDeactivate(uid);
+            if (dead || session == null)
+            {
+                if (component.PlayFailureSound)
+                    _audio.PlayPvs(component.FailureSound, uid);
+            } else {
+                if (component.PlaySuccessSound)
+                    _audio.PlayPvs(component.SuccessSound, uid);
+            }
 
-        // TODO clean up this clown show above
-        var ev = new TargetDefibrillatedEvent(user, (uid, component));
-        RaiseLocalEvent(target, ref ev);
+            // if we don't have enough power left for another shot, turn it off
+            if (!component.IgnorePowerCell)
+            {
+                if (!_powerCell.HasActivatableCharge(uid) && !component.IgnoreToggle)
+                    _toggle.TryDeactivate(uid);
+            }
+
+            // TODO clean up this clown show above
+            var ev = new TargetDefibrillatedEvent(user, (uid, component));
+            RaiseLocalEvent(target, ref ev);
+        }
     }
 }

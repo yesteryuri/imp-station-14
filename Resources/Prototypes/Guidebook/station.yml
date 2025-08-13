@@ -7,7 +7,9 @@
   - Jobs
   - Survival
   - Antagonists
+  - ImpGhostroles # imp special
   - Glossary
+  - AlertProcedure
 
 - type: guideEntry
   id: Glossary
@@ -18,3 +20,8 @@
   id: Survival
   name: guide-entry-survival
   text: "/ServerInfo/Guidebook/Survival.xml"
+
+- type: guideEntry
+  id: AlertProcedure
+  name: guide-entry-alertprocedure
+  text: "/ServerInfo/_Impstation/Guidebook/AlertProcedure.xml"

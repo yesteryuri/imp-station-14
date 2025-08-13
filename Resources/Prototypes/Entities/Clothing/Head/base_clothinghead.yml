@@ -24,6 +24,7 @@
     tags:
     - ClothMade
     - WhitelistChameleon
+    - DroneUsable # imp
 
 - type: entity
   abstract: true
@@ -189,6 +190,7 @@
     - Snout
     - HeadTop
     - HeadSide
+    - FacialHair #imp
 
 - type: entity
   abstract: true

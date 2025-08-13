@@ -5,6 +5,7 @@
   id: BaseMobDwarf
   abstract: true
   components:
+  - type: Absorbable
   - type: Hunger
   - type: Thirst
   - type: Icon
@@ -42,11 +43,10 @@
         - MobLayer
   - type: Vocal
     sounds:
-      Male: UnisexDwarf
+      Male: MaleDwarf
       Female: FemaleDwarf
       Unsexed: UnisexDwarf
-  - type: ReplacementAccent
-    accent: dwarf
+  - type: DwarfAccent # imp
   - type: Speech
     speechSounds: Bass
   - type: HumanoidAppearance
@@ -54,6 +54,7 @@
     hideLayersOnEquip:
     - Hair
     - Snout
+    - FacialHair #imp
   - type: Inventory
     femaleDisplacements:
       jumpsuit:
@@ -61,6 +62,7 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
+  - type: Carriable # Carrying system from nyanotrasen.
 
 - type: entity
   parent: BaseSpeciesDummy

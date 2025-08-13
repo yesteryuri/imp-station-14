@@ -16,6 +16,16 @@
     activatedDamage:
         types:
             Heat: 1
+    activatedSoundOnHit: # imp
+      path: /Audio/Weapons/Guns/Hits/energy_meat1.ogg
+      params:
+        variation: 0.250
+        volume: -15
+    activatedSoundOnHitNoDamage: # imp
+      path: /Audio/Weapons/Guns/Hits/energy_meat1.ogg
+      params:
+        variation: 0.250
+        volume: -17
   - type: ItemToggleSize
     activatedSize: Small
   - type: ItemToggleHot
@@ -88,6 +98,8 @@
     radius: 1.1 #smallest possible
     color: orange
   - type: ItemTogglePointLight
+  - type: ItemToggleDamageOtherOnHit # imp
+  - type: DamageOtherOnHit # imp
   - type: PhysicalComposition
 
 - type: entity
@@ -120,23 +132,25 @@
         maxVol: 4 #uses less fuel than a welder, so this isnt as bad as it looks
 
 - type: entity
-  name: flippo lighter
+  name: Flippo lighter # imp brand name fix
   parent: BaseItem
   id: FlippoLighter
   description: "A rugged metal lighter, lasts quite a while."
   components:
   - type: Sprite
-    sprite: Objects/Tools/Lighters/lighters.rsi
+    #imp start
+    sprite: _Impstation/Objects/Tools/lighters.rsi
     layers:
-    - state: zippo_icon_base
+    - state: zippo-icon-base
       map: ["base"]
-    - state: zippo_top
+    - state: icon-top
       map: ["top"]
       visible: false
-    - state: zippo_open
+    - state: zippo-icon-open
       map: ["open"]
       visible: false
-    - state: lighter_flame
+    - state: flame-orange
+    # /imp end
       map: ["flame"]
       visible: false
       shader: unshaded
@@ -154,12 +168,22 @@
     activatedDamage:
         types:
             Heat: 1
+    activatedSoundOnHit: # imp
+      path: /Audio/Weapons/Guns/Hits/energy_meat1.ogg
+      params:
+        variation: 0.250
+        volume: -15
+    activatedSoundOnHitNoDamage: # imp
+      path: /Audio/Weapons/Guns/Hits/energy_meat1.ogg
+      params:
+        variation: 0.250
+        volume: -17
   - type: ItemToggleSize
     activatedSize: Small
   - type: ItemToggleHot
   - type: Item
     size: Tiny
-    sprite: Objects/Tools/Lighters/lighters.rsi
+    sprite: _Impstation/Objects/Tools/lighters.rsi #imp resprite
     heldPrefix: zippo
   - type: Appearance
   - type: GenericVisualizer
@@ -189,13 +213,15 @@
     fuelLitCost: 0.1
     tankSafe: true
   - type: ToggleableVisuals
-    spriteLayer: lighter_flame
+    # imp start
+    spriteLayer: flame-orange
     inhandVisuals:
       left:
-      - state: zippo-inhand-left-flame
+      - state: zippo-inhand-left-lit
         shader: unshaded
       right:
-      - state: zippo-inhand-right-flame
+      - state: zippo-inhand-right-lit
+      # /imp end
         shader: unshaded
   - type: MeleeWeapon
     wideAnimationRotation: 180
@@ -211,30 +237,51 @@
   - type: UseDelay
   - type: IgnitionSource
     ignited: false
+  # imp edits #
+  - type: ItemToggleDamageOtherOnHit
+  - type: DamageOtherOnHit
+  - type: Engraveable
+  # end imp edits #
 
 - type: entity
-  name: flippo engraved lighter
+  name: Flippo engraved lighter # imp brand name fix
   parent: FlippoLighter
   id: FlippoEngravedLighter
   description: "A rugged golden lighter, lasts quite a while. Engravings serve no tactical advantage whatsoever."
   components:
   - type: Sprite
-    sprite: Objects/Tools/Lighters/lighters.rsi
+    #imp start
+    sprite: _Impstation/Objects/Tools/lighters.rsi
     layers:
-    - state: zippo_engraved_icon_base
+    - state: engraved-icon-base
       map: ["base"]
-    - state: zippo_top
+    - state: icon-top
       map: ["top"]
       visible: false
-    - state: zippo_engraved_open
+    - state: engraved-icon-open
       map: ["open"]
       visible: false
-    - state: lighter_flame
+    - state: flame-orange
+    # /imp end
       map: ["flame"]
       visible: false
       shader: unshaded
   - type: StealTarget
     stealGroup: FlippoEngravedLighter
+    # imp edit start
+  - type: Item
+    sprite: _Impstation/Objects/Tools/lighters.rsi
+    heldPrefix: engraved
+  - type: ToggleableVisuals
+    spriteLayer: flame-orange
+    inhandVisuals:
+      left:
+      - state: engraved-inhand-left-lit
+        shader: unshaded
+      right:
+      - state: engraved-inhand-right-lit
+        shader: unshaded
+        # imp edit end
 
 - type: entity
   abstract: true
@@ -312,15 +359,31 @@
     ignited: false
 
 - type: entity
-  parent: [BaseBrandedLighter, BaseSyndicateContraband]
+  parent: [BaseBrandedLighter, Tier2Contraband] #imp contraband, tier 2 because it's a gun
   id: SyndicateFlippo
-  name: Blood-red flippo
-  description: "A 'Valid' choice in lighters. Contains no copper."
+  name: Blood-red Flippo lighter #imp edit, Flippo is a brand
+  description: "A 'Valid' choice in lighters. Capable of superheating welding fuel into incendiary shots when lit. Contains no copper." #imp edit
   components:
   - type: Sprite
-    sprite: Objects/Tools/Lighters/syndielighter.rsi
+    # imp start
+    sprite: _Impstation/Objects/Tools/lighters.rsi
+    layers:
+    - state: syndie-icon-base
+      map: ["base"]
+    - state: syndie-icon-top
+      map: ["top"]
+      visible: false
+    - state: syndie-icon-open
+      map: ["open"]
+      visible: false
+    - state: flame-green
+      map: ["flame"]
+      visible: false
+      shader: unshaded
+    # /imp end
   - type: Item
-    sprite: Objects/Tools/Lighters/syndielighter.rsi
+    sprite: _Impstation/Objects/Tools/lighters.rsi # imp edit
+    heldPrefix: syndie #imp edit
   - type: Welder
     fuelConsumption: 0.005
     fuelLitCost: 0.01
@@ -330,6 +393,29 @@
     netsync: false
     radius: 2
     color: green
+  # imp edit start
+  - type: SolutionAmmoProvider
+    proto: BulletLighterIncendiary
+    fireCost: 3
+    solutionId: Welder
+  - type: ComponentToggler
+    components:
+    - type: Gun
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Gunshots/water_spray.ogg
+      soundEmpty:
+        path: /Audio/_Impstation/Weapons/Guns/Empty/dry_fire.ogg
+      showExamineText: false
+  - type: ToggleableVisuals
+    spriteLayer: flame-green
+    inhandVisuals:
+      left:
+      - state: syndie-inhand-left-lit
+        shader: unshaded
+      right:
+      - state: syndie-inhand-right-lit
+        shader: unshaded
+  # imp edit end
 
 - type: entity
   parent: Lighter
@@ -387,7 +473,7 @@
         maxVol: 3
 
 - type: entity
-  parent: [BaseBrandedLighter, BaseSyndicateContraband]
+  parent: [BaseBrandedLighter, Tier1Contraband] #imp contraband
   id: CybersunFlippo
   name: CyberSun Flippo
   description: "A Sleek black and magenta flippo lighter, bearing the logo and iconography of CyberSun Industries."
@@ -407,7 +493,7 @@
     color: magenta
 
 - type: entity
-  parent: [BaseBrandedLighter, BaseSyndicateContraband]
+  parent: [BaseBrandedLighter, Tier1Contraband] #imp contraband
   id: InterdyneFlippo
   name: Interdyne Flippo
   description: "A deep blue flippo lighter, decorated with the logo of Interdyne Pharmaceuticals' 'Gene Clean' clinics. Become the master of your own cigarette."
@@ -527,7 +613,7 @@
     color: green
 
 - type: entity
-  parent: [BaseBrandedLighter, BaseSyndicateContraband]
+  parent: [BaseBrandedLighter, Tier1Contraband] #imp contraband
   id: WaffleCoFlippo
   name: Waffle Co. flippo
   description: "A robust mass produced lighter. The Waffle Co. logo turns the spark wheel when pushed up, minimising risk of lighter burns for even the most inept user."

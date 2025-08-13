@@ -179,6 +179,9 @@
     subtype: role-subtype-nukie
     exclusiveAntag: true
     antagPrototype: Nukeops
+    getsNoSpendtext: true #imp edit
+    primaryCurrency: Telecrystal #imp edit
+    purchasePriority: 1 #imp edit
   - type: NukeopsRole
 
 - type: entity
@@ -188,6 +191,9 @@
   components:
   - type: MindRole
     antagPrototype: NukeopsMedic
+    getsNoSpendtext: true #imp edit
+    primaryCurrency: Telecrystal #imp edit
+    purchasePriority: 2 #imp edit
 
 - type: entity
   parent: MindRoleNukeops
@@ -196,6 +202,9 @@
   components:
   - type: MindRole
     antagPrototype: NukeopsCommander
+    getsNoSpendtext: true #imp edit
+    primaryCurrency: Telecrystal #imp edit
+    purchasePriority: 3 #imp edit
 
 # Revolutionaries
 - type: entity
@@ -251,6 +260,8 @@
   - type: MindRole
     antagPrototype: Traitor
     exclusiveAntag: true
+    getsNoSpendtext: true #imp edit
+    primaryCurrency: Telecrystal #imp edit
     subtype: role-subtype-traitor
   - type: TraitorRole
 
@@ -261,6 +272,8 @@
   components:
   - type: MindRole
     antagPrototype: TraitorSleeper
+    getsNoSpendtext: true # imp edit
+    primaryCurrency: Telecrystal #imp edit
 
 - type: entity
   parent: MindRoleTraitor

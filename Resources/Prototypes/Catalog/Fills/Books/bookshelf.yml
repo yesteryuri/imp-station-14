@@ -27,6 +27,12 @@
       rolls: !type:RangeNumberSelector
         range: 0, 3
       tableId: RandomHandwrittenBookTable
+    #imp, safe spellbooks
+    - !type:NestedSelector
+      rolls: !type:RangeNumberSelector
+        range: 0, 1
+      tableId: ImpBookMagicSafeEntityTable
+    #end imp
 
 - type: entityTable
   id: RandomHandwrittenBookTable
@@ -62,6 +68,18 @@
     - id: BookTruth
     - id: BookWatched
     - id: BookWorld
+ # Impstation Books
+    - id: BookAgony
+    - id: BookClownLaw
+    - id: BookGatsby
+    - id: BookCosmicCult
+    - id: BookJarvisBayCulture
+    - id: BookKeelBay
+    - id: BookKeelBayWorn
+    - id: BookTenebraeConspiracy
+    - id: BookMansus
+    - id: BookTEGtorial
+    - id: BookSMForDummies
 
 - type: entityTable
   id: RandomGuidebookTable

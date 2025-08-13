@@ -2,7 +2,7 @@
   parent: [BaseMob, StripableInventoryBase]
   id: BaseBorgChassisNotIonStormable
   name: cyborg
-  description: A man-machine hybrid that assists in station activity. They love being asked to state their laws over and over.
+  description: A man-machine hybrid that assists in station activity. Follows silicon laws, loves to talk constantly about them. #imp
   save: false
   abstract: true
   components:
@@ -141,6 +141,7 @@
       cell_slot:
         name: power-cell-slot-component-slot-name-default
   - type: Body
+    thermalVisibility: false # EE edit
   - type: StatusEffects
     allowed:
     - Flashed
@@ -167,6 +168,7 @@
   - type: Lock
     locked: true
     unlockOnClick: false
+    customLockText: "back panel" # imp
   - type: UIRequiresLock
     userInterfaceKeys:
     - enum.BorgUiKey.Key
@@ -285,6 +287,11 @@
     intensitySlope: 20
     maxIntensity: 20
     canCreateVacuum: false # its for killing the borg not the station
+  # imp edit start
+  - type: SignatureFont
+    font: Sixtyfour
+  - type: SkipLoadingCharacterRecords
+  # imp edit end
 
 - type: entity
   abstract: true
@@ -365,6 +372,10 @@
       Unsexed: UnisexSiliconSyndicate
   - type: PointLight
     color: "#dd200b"
+  # imp edit start
+  - type: TypingIndicator
+    proto: syndibot
+  # imp edit end
 
 - type: entity
   id: BaseBorgChassisDerelict

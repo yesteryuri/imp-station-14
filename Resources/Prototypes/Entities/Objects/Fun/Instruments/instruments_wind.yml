@@ -49,7 +49,7 @@
     slots:
     - neck
   - type: ActivatableUI
-    inHandsOnly: false  
+    inHandsOnly: false
 
 - type: entity
   parent: BaseWoodwindInstrument
@@ -94,6 +94,15 @@
     program: 75
   - type: Sprite
     sprite: Objects/Fun/Instruments/panflute.rsi
+  - type: Clothing #imp
+    quickEquip: false
+    slots:
+    - neck
+  - type: ActivatableUI #imp
+    inHandsOnly: false
+  - type: Item #imp
+    size: Small
+    storedRotation: -90
 
 #if you change this to some cringe-ass zelda reference so help me god i will shoot you dead.
 - type: entity

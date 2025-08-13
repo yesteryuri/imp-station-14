@@ -21,18 +21,21 @@
   - type: ExtensionCableReceiver
   - type: ActivatableUIRequiresPower
   - type: Sprite
-    sprite: Structures/Machines/computers.rsi
+    sprite: Structures/Machines/computers.rsi # use base directory for screen and keys (unless we've resprited them), use imp directory for body, keyboard, and panel
     layers:
     - map: ["computerLayerBody"]
       state: computer
+      sprite: _Impstation/Structures/Machines/computers.rsi # imp
     - map: ["computerLayerKeyboard"]
       state: generic_keyboard
+      sprite: _Impstation/Structures/Machines/computers.rsi # imp
     - map: ["computerLayerScreen"]
       state: generic
     - map: ["computerLayerKeys"]
       state: generic_keys
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
+      sprite: _Impstation/Structures/Machines/computers.rsi # imp
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -49,7 +52,8 @@
           False: { visible: true }
   - type: LitOnPowered
   - type: PointLight
-    radius: 1.5
+    color: "#887755FF" #imp
+    radius: 2.4 #imp
     energy: 1.6
     enabled: false
     mask: /Textures/Effects/LightMasks/cone.png
@@ -61,8 +65,8 @@
       collection: Keyboard
       params:
         volume: -1
-        variation: 0.10
-        pitch: 1.10  # low pitch keyboard sounds feel kinda weird
+        variation: 0.05 #making a note so this is in the commit if we want to change this later - ruddygreat
+        pitch: 1.05  # low pitch keyboard sounds feel kinda weird
     blacklist:
       tags:
       - NoConsoleSound
@@ -81,6 +85,19 @@
   - type: Wires
     boardName: wires-board-name-computer
     layoutId: Computer
+  - type: PowerSwitch #imp; idk thought it'd be cute and immersive to turn computers on and off - AvianMaiden
+# Begin Harmony changes, add ambience
+  - type: SpamEmitSoundRequirePower
+  - type: SpamEmitSound
+    minInterval: 15
+    maxInterval: 30
+    sound:
+      collection: HarmonyComputerSFX
+      params:
+        volume: -3
+        maxDistance: 3.5
+        variation: 0.1
+# End Harmony Changes
 #
 #     This is overwritten by children, so needs to be defined there
 #  - type: UserInterface

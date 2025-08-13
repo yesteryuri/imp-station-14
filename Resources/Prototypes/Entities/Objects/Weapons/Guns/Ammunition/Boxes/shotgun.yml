@@ -9,7 +9,7 @@
   - type: Item
     size: Normal
   - type: Sprite
-    sprite: Objects/Storage/boxes.rsi
+    sprite: _Wizden/Objects/Storage/boxes.rsi # imp
 
 - type: entity
   parent: BaseAmmoProvider
@@ -17,7 +17,7 @@
   abstract: true
   components:
     - type: Sprite
-      sprite: Objects/Weapons/Guns/Ammunition/Boxes/shotgun.rsi
+      sprite: _Impstation/Objects/Weapons/Guns/Ammunition/Boxes/shotgun.rsi #imp
     - type: BallisticAmmoProvider
       mayTransfer: true
       whitelist:
@@ -34,24 +34,26 @@
 - type: entity
   parent: AmmoProviderShotgunShell
   id: BoxBeanbag
-  name: ammunition box (.50 beanbag)
+  name: shell box (.50 stun slug) #imp
+  description: A box made for 16 .50 shotgun shells, labeled as stun slugs. #imp
   components:
     - type: BallisticAmmoProvider
       proto: ShellShotgunBeanbag
-    - type: MagazineVisuals
-      magState: mag-beanbag
+    - type: MagazineVisuals # imp
+      magState: mag-alt
       steps: 5
       zeroVisible: false
     - type: Sprite
       layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
-      - state: mag-beanbag-1
+      - state: mag-alt-1 # imp
         map: ["enum.GunVisualLayers.Mag"]
       - state: beanbag
 
 - type: entity
-  name: ammunition box (.50 pellet)
+  name: shell box (.50 buckshot) #imp
+  description: A box made for 16 .50 shotgun shells, labeled as buckshot. #imp
   parent: AmmoProviderShotgunShell
   id: BoxLethalshot
   components:
@@ -66,115 +68,122 @@
       - state: lethal
 
 - type: entity
-  name: ammunition box (.50 slug)
+  name: shell box (.50 slug) #imp
+  description: A box made for 16 .50 shotgun shells, labeled as slugs. #imp
   parent: AmmoProviderShotgunShell
   id: BoxShotgunSlug
   components:
     - type: BallisticAmmoProvider
       proto: ShellShotgunSlug
     - type: MagazineVisuals
-      magState: mag-slug
+      magState: mag-alt #imp
       steps: 5
       zeroVisible: false
     - type: Sprite
       layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
-      - state: mag-slug-1
+      - state: mag-alt-1 #imp
         map: ["enum.GunVisualLayers.Mag"]
       - state: slug
 
 - type: entity
-  name: ammunition box (.50 flare)
+  name: shell box (.50 flare) #imp
+  description: A box made for 16 .50 shotgun shells, labeled as flares. #imp
   parent: AmmoProviderShotgunShell
   id: BoxShotgunFlare
   components:
     - type: BallisticAmmoProvider
       proto: ShellShotgunFlare
-    - type: MagazineVisuals
-      magState: mag-flare
-      steps: 5
-      zeroVisible: false
+#imp edit to fix our shotgun box sprites; goes for all type:MagazineVisuals in this file
+#    - type: MagazineVisuals
+#      magState: mag-flare
+#      steps: 5
+#      zeroVisible: false
     - type: Sprite
       layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
-      - state: mag-flare-1
+      - state: mag-1 #imp
         map: ["enum.GunVisualLayers.Mag"]
       - state: flare
 
 - type: entity
-  name: ammunition box (.50 incendiary)
+  name: shell box (.50 incendiary) #imp
+  description: A box made for 16 .50 shotgun shells, labeled as incendiary pellets. #imp
   parent: AmmoProviderShotgunShell
   id: BoxShotgunIncendiary
   components:
     - type: BallisticAmmoProvider
       proto: ShellShotgunIncendiary
-    - type: MagazineVisuals
-      magState: mag-incend
-      steps: 5
-      zeroVisible: false
+#    - type: MagazineVisuals
+#      magState: mag-incend
+#      steps: 5
+#      zeroVisible: false
     - type: Sprite
       layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
-      - state: mag-incend-1
+      - state: mag-1 #imp
         map: ["enum.GunVisualLayers.Mag"]
       - state: incendiary
 
 - type: entity
-  name: ammunition box (.50 uranium)
+  name: shell box (.50 uranium) #imp
+  description: A box made for 16 .50 shotgun shells, labeled as uranium pellets. #imp
   parent: AmmoProviderShotgunShell
   id: BoxShotgunUranium
   components:
     - type: BallisticAmmoProvider
       proto: ShellShotgunUranium
     - type: MagazineVisuals
-      magState: mag-uranium
+      magState: mag-alt #imp
       steps: 5
       zeroVisible: false
     - type: Sprite
       layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
-      - state: mag-uranium-1
+      - state: mag-alt-1 # imp
         map: ["enum.GunVisualLayers.Mag"]
       - state: uranium
 
 - type: entity
-  name: ammunition box (.50 practice)
+  name: shell box (.50 practice) #imp
+  description: A box made for 16 .50 shotgun shells, labeled as practice ammo. #imp
   parent: AmmoProviderShotgunShell
   id: BoxShotgunPractice
   components:
     - type: BallisticAmmoProvider
       proto: ShellShotgunPractice
-    - type: MagazineVisuals
-      magState: mag-practice
-      steps: 5
-      zeroVisible: false
+#    - type: MagazineVisuals
+#      magState: mag-practice
+#      steps: 5
+#      zeroVisible: false
     - type: Sprite
       layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
-      - state: mag-practice-1
+      - state: mag-1 #imp
         map: ["enum.GunVisualLayers.Mag"]
       - state: practice
 
 - type: entity
-  name: ammunition box (.50 tranquilizer)
+  name: shell box (.50 tranquilizer) #imp
+  description: A box made for 16 .50 shotgun shells, labeled as tranquilizer darts. #imp
   parent: AmmoProviderShotgunShell
   id: BoxShellTranquilizer
   components:
     - type: BallisticAmmoProvider
       proto: ShellTranquilizer
-    - type: MagazineVisuals
-      magState: mag-tranq
-      steps: 5
-      zeroVisible: false
+#    - type: MagazineVisuals
+#      magState: mag-tranq
+#      steps: 5
+#      zeroVisible: false
     - type: Sprite
       layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
-      - state: mag-tranq-1
+      - state: mag-1 #imp
         map: ["enum.GunVisualLayers.Mag"]
       - state: tranquilizer

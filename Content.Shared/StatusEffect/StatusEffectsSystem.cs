@@ -6,6 +6,7 @@ using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Robust.Shared.GameObjects;
 
 namespace Content.Shared.StatusEffect
 {
@@ -142,6 +143,23 @@ namespace Content.Shared.StatusEffect
                     AddComp(uid, newComponent);
                     status.ActiveEffects[key].RelevantComponent = component;
                 }
+                return true;
+            }
+
+            return false;
+        }
+
+        // imp add: revenant haunting shit
+        public bool TryAddStatusEffect(EntityUid uid, string key, TimeSpan time, bool refresh, Component component,
+            StatusEffectsComponent? status = null)
+        {
+            if (!Resolve(uid, ref status, false))
+                return false;
+
+            if (TryAddStatusEffect(uid, key, time, refresh, status))
+            {
+                EntityManager.AddComponent(uid, component, true);
+                status.ActiveEffects[key].RelevantComponent = Factory.GetComponentName(component.GetType());
                 return true;
             }
 
@@ -360,7 +378,7 @@ namespace Content.Shared.StatusEffect
 
             if (!_prototypeManager.TryIndex<StatusEffectPrototype>(key, out var proto))
                 return false;
-            if (!status.AllowedEffects.Contains(key) && !proto.AlwaysAllowed)
+            if (!proto.AlwaysAllowed && !status.AllowedEffects.Contains(key))
                 return false;
 
             return true;

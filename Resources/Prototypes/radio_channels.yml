@@ -4,6 +4,7 @@
   keycode: ";"
   frequency: 1459
   color: "#2cdb2c"
+  intercomOnly: true # Imp Original
 
 - type: radioChannel
   id: CentCom
@@ -53,7 +54,7 @@
   name: chat-radio-service
   keycode: 'v'
   frequency: 1349
-  color: "#539c00"
+  color: "#cbff91"
 
 - type: radioChannel
   id: Supply

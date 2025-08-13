@@ -1,6 +1,6 @@
 using Content.Shared.Damage;
-using Content.Shared.Damage.Prototypes;
-using Robust.Shared.Audio;
+using Content.Shared.Mobs;
+using Content.Shared.Standing;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 
@@ -20,6 +20,21 @@ public sealed partial class BlockingSystem
         SubscribeLocalEvent<BlockingUserComponent, ContainerGettingInsertedAttemptEvent>(OnInsertAttempt);
         SubscribeLocalEvent<BlockingUserComponent, AnchorStateChangedEvent>(OnAnchorChanged);
         SubscribeLocalEvent<BlockingUserComponent, EntityTerminatingEvent>(OnEntityTerminating);
+
+        // impstation edits
+        SubscribeLocalEvent<BlockingUserComponent, MobStateChangedEvent>(OnMobStateChanged);
+        SubscribeLocalEvent<BlockingUserComponent, DownedEvent>(OnDowned);
+    }
+
+    private void OnMobStateChanged(EntityUid uid, BlockingUserComponent comp, MobStateChangedEvent args)
+    {
+        if (args.NewMobState != MobState.Alive)
+            UserStopBlocking(uid, comp);
+    }
+
+    private void OnDowned(EntityUid uid, BlockingUserComponent comp, DownedEvent downed)
+    {
+        UserStopBlocking(uid, comp);
     }
 
     private void OnParentChanged(EntityUid uid, BlockingUserComponent component, ref EntParentChangedMessage args)
@@ -53,7 +68,8 @@ public sealed partial class BlockingSystem
 
             var blockFraction = blocking.IsBlocking ? blocking.ActiveBlockFraction : blocking.PassiveBlockFraction;
             blockFraction = Math.Clamp(blockFraction, 0, 1);
-            _damageable.TryChangeDamage(component.BlockingItem, blockFraction * args.OriginalDamage);
+            if (!args.IsVirtual) //#IMP Don't damage shield if we are just seeing what damage COULD be blocked
+                _damageable.TryChangeDamage(component.BlockingItem, blockFraction * args.OriginalDamage);
 
             var modify = new DamageModifierSet();
             foreach (var key in dmgComp.Damage.DamageDict.Keys)
@@ -63,7 +79,7 @@ public sealed partial class BlockingSystem
 
             args.Damage = DamageSpecifier.ApplyModifierSet(args.Damage, modify);
 
-            if (blocking.IsBlocking && !args.Damage.Equals(args.OriginalDamage))
+            if (blocking.IsBlocking && !args.Damage.Equals(args.OriginalDamage) && !args.IsVirtual) //#IMP => IsVirtual
             {
                 _audio.PlayPvs(blocking.BlockSound, uid);
             }
@@ -99,6 +115,6 @@ public sealed partial class BlockingSystem
     private void UserStopBlocking(EntityUid uid, BlockingUserComponent component)
     {
         if (TryComp<BlockingComponent>(component.BlockingItem, out var blockComp) && blockComp.IsBlocking)
-            StopBlocking(component.BlockingItem.Value, blockComp, uid);
+            StopBlocking((component.BlockingItem.Value, blockComp), uid); // imp - changed to Entity<T>
     }
 }

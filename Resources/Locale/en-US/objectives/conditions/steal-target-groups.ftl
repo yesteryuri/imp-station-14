@@ -47,7 +47,8 @@ steal-target-groups-wanted-list-cartridge = wanted list cartridge
 # Thief structures
 steal-target-groups-teg = teg generator part
 steal-target-groups-freezer-heater = freezer or heater
-steal-target-groups-altar-nanotrasen = nanotrasen altar (any)
+steal-target-groups-altar-nanotrasen = altar of prayer (any will do)
+# imp edit; what the hell is a "nanotrasen altar (any)"
 
 steal-target-groups-nuclear-bomb = nuclear fission explosive
 steal-target-groups-fax-machine-captain = captain long range fax machine
@@ -58,11 +59,11 @@ steal-target-groups-plant-rd = "RD's potted plant"
 steal-target-groups-toilet-golden-dirty-water = golden toilet
 
 # Thief Animal
-steal-target-groups-animal-named-cat = CMO's Cat
+steal-target-groups-animal-named-cat = CMO's pet
 
 steal-target-groups-animal-ian = Ian
 steal-target-groups-animal-mc-griff = McGriff
-steal-target-groups-animal-walter = Walter
+steal-target-groups-animal-walter = Chemist's dog
 steal-target-groups-animal-morty = Morty
 steal-target-groups-animal-renault = Renault
 steal-target-groups-animal-shiva = Shiva

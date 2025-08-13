@@ -42,6 +42,60 @@
     - id: PlushieMoth
     - id: PlushieArachind
     - id: PlushiePenguin
+    # imp edit start
+    - id: PlushieGray
+    - id: PlushieUrsaMinor
+    - id: PlushieBug
+      weight: 0.1
+    - id: PlushieEvilBug
+      weight: 0.01
+    - id: PlushieDecapoid
+    - id: PlushieSnail
+    - id: PlushieThaven
+    - id: PlushieKodepiia
+    - id: PlushieThavenWeird
+      weight: 0.1
+    - id: PlushieDwarf
+      weight: 0.1
+    - id: PlushieApid
+      weight: 0.5
+    - id: PlushieGoblin
+      weight: 0.5
+    - id: PlushieGollylad
+      weight: 0.1
+    - id: PlushieImp
+      weight: 0.1
+    - id: PlushieHeadofPersonnel
+      weight: 0.1
+    - id: PlushieCaptain
+      weight: 0.1
+    - id: PlushieGiantBear
+      weight: 0.05
+    - id: PlushieJumboGray
+      weight: 0.1
+    - id: PlushieGriffy
+    - id: PlushieGnomeChild
+      weight: 0.1
+    # imp edit end
+    # DEN begin
+    - !type:GroupSelector
+      children:
+      - id: PlushieTeddyBear
+      - id: PlushieTeddyBearRecolorableRandom
+    - !type:GroupSelector
+      children:
+      - id: SqueakySmileyGuy
+      - id: SqueakySmileyGuyRandom
+    - !type:GroupSelector
+      children:
+      - id: SqueakySmileyBall
+      - id: SqueakySmileyBallRandom
+        weight: 0.3 # rare color variant...
+    - !type:GroupSelector
+      children:
+      - id: PlushieAlienGerm
+      - id: PlushieAlienGermMini
+    # DEN end
 
 - type: entityTable
   id: AllPottedPlantsTable
@@ -186,6 +240,7 @@
       - id: CelloInstrument
       - id: ViolaInstrument
       - id: HarpInstrument
+      - id: HandheldHarpInstrument #imp
 
 - type: entity
   id: CrateFunInstrumentsWoodwind
@@ -230,7 +285,7 @@
   id: CrateFunInstrumentsSpecial
   parent: CrateGenericSteel
   name: special instrument collector's crate
-  description: Create some noise with this special collection of arguably-instruments! Centcomm is not responsible for any trauma caused by the contents.
+  description: Create some noise with this special collection of arguably-instruments! CentComm is not responsible for any trauma caused by the contents. # imp caps fix
   components:
   - type: StorageFill
     contents:
@@ -459,7 +514,7 @@
         prob: 0.05
 
 - type: entity
-  name: hydrated scurret
+  name: hydrated sirval #imp edit
   description: Wait, what?
   id: CrateFunScurret
   parent: CrateLivestock
@@ -476,4 +531,3 @@
     - id: ClothingHeadHatHardhatYellow
     - id: ClothingNeckMantleQM
     - id: ClothingHeadsetCargo
-

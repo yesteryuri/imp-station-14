@@ -17,6 +17,12 @@
     solution: drink
   - type: ExaminableSolution
     examinableWhileClosed: false
+  # imp edit start
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 5
+  # imp edit end
 
 - type: entity
   id: DrinkFlaskVisualsOpenable
@@ -130,4 +136,5 @@
   description: Keeping your drinks at the perfect temperature since 1892.
   components:
   - type: Sprite
-    sprite: Objects/Consumable/Drinks/vacuumflask.rsi
+    sprite: _Impstation/Objects/Consumable/Drinks/vacuumflask.rsi #imp
+  - type: Engraveable #imp

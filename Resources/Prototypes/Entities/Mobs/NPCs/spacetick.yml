@@ -4,6 +4,8 @@
   parent: SimpleSpaceMobBase
   description: It's a space tick, watch out for its nasty bite. CentComm reports that 90 percent of cargo leg amputations are due to space tick bites.
   components:
+  - type: VentCrawler
+    enterDelay: 1
   - type: InputMover
   - type: MobMover
   - type: HTN
@@ -89,6 +91,14 @@
   - type: Speech
     speechVerb: SmallMob
   - type: NonSpreaderZombie
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
+  - type: Absorbable # imp edit
+    biomassRestored: 0.1
 
 - type: entity
   id: MobTickSalvage
@@ -97,3 +107,14 @@
   components:
   - type: SalvageMobRestrictions
 
+# - type: entity
+#   id: MobTickMaints
+#   parent: MobTick
+#   suffix: Maintenance
+#   components:
+#   - type: SolutionContainerManager
+#     solutions:
+#       melee:
+#         reagents:
+#         - ReagentId: Toxin
+#           Quantity: 2

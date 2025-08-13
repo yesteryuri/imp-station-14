@@ -22,11 +22,13 @@
   - type: Tag
     tags:
     - ConstructionMaterial
+    - DroneUsable #imp
 
 - type: entity
   parent: PartBase
   id: PartRodMetal
   name: metal rod
+  description: A long piece of steel. Very movable. # imp
   suffix: Full
   components:
   - type: PhysicalComposition
@@ -74,6 +76,18 @@
   - type: GuideHelp
     guides:
     - ExpandingRepairingStation
+  # imp edit start
+  - type: UserInterface
+    interfaces:
+      enum.ShortConstructionUiKey.Key:
+        type: ShortConstructionMenuBUI
+  - type: ActivatableUI
+    key: enum.ShortConstructionUiKey.Key
+  - type: ShortConstruction
+    prototypes:
+    - Grille
+    - Table
+  # imp edit end
 
 - type: entity
   parent: PartRodMetal
@@ -85,6 +99,7 @@
     tags:
     - RodMetal1
     - ConstructionMaterial
+    - DroneUsable #imp
   - type: Sprite
     state: rods
   - type: Stack
@@ -100,6 +115,7 @@
     tags:
     - RodMetal1
     - ConstructionMaterial
+    - DroneUsable #imp
   - type: Sprite
     state: rods
   - type: Stack

@@ -1,9 +1,12 @@
 using Content.Shared.Singularity.Components;
+using Content.Shared.CCVar;
+using Robust.Shared.Configuration;
 using Robust.Client.Graphics;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using System.Numerics;
+using Content.Shared._Impstation.CCVar;
 
 namespace Content.Client.Singularity
 {
@@ -13,6 +16,7 @@ namespace Content.Client.Singularity
 
         [Dependency] private readonly IEntityManager _entMan = default!;
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+        [Dependency] private readonly IConfigurationManager _configManager = default!;
         private SharedTransformSystem? _xformSystem = null;
 
         /// <summary>
@@ -83,6 +87,8 @@ namespace Content.Client.Singularity
         {
             if (ScreenTexture == null || args.Viewport.Eye == null)
                 return;
+            if (_configManager.GetCVar(CCVars.ReducedMotion) || _configManager.GetCVar(ImpCCVars.DisableSinguloWarping))
+                return;
 
             _shader?.SetParameter("renderScale", args.Viewport.RenderScale * args.Viewport.Eye.Scale);
             _shader?.SetParameter("count", _count);
@@ -102,6 +108,11 @@ namespace Content.Client.Singularity
         /// </summary>
         private void OnProjectFromScreenToMap(ref PixelToMapEvent args)
         {   // Mostly copypasta from the singularity shader.
+
+            // We don't gotta un-distort if we ain't distorting
+            if (_configManager.GetCVar(CCVars.ReducedMotion) || _configManager.GetCVar(ImpCCVars.DisableSinguloWarping))
+                return;
+
             if (args.Viewport.Eye == null)
                 return;
             var maxDistance = MaxDistance * EyeManager.PixelsPerMeter;

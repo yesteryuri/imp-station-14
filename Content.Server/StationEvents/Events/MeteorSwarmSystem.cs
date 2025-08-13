@@ -1,4 +1,6 @@
+using System.Linq; // Imp
 using System.Numerics;
+using Content.Server._Impstation.Station.Components; // Imp
 using Content.Server.Chat.Systems;
 using Content.Server.GameTicking.Rules;
 using Content.Server.Station.Systems;
@@ -11,6 +13,7 @@ using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
+using Content.Server.Announcements.Systems;
 
 namespace Content.Server.StationEvents.Events;
 
@@ -20,6 +23,7 @@ public sealed class MeteorSwarmSystem : GameRuleSystem<MeteorSwarmComponent>
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly StationSystem _station = default!;
+    [Dependency] private readonly AnnouncerSystem _announcer = default!;
 
     protected override void Added(EntityUid uid, MeteorSwarmComponent component, GameRuleComponent gameRule, GameRuleAddedEvent args)
     {
@@ -30,10 +34,27 @@ public sealed class MeteorSwarmSystem : GameRuleSystem<MeteorSwarmComponent>
         // we don't want to send to players who aren't in game (i.e. in the lobby)
         Filter allPlayersInGame = Filter.Empty().AddWhere(GameTicker.UserHasJoinedGame);
 
-        if (component.Announcement is { } locId)
-            _chat.DispatchFilteredAnnouncement(allPlayersInGame, Loc.GetString(locId), playSound: false, colorOverride: Color.Gold);
+        if (!TryComp<MeteorSwarmComponent>(uid, out var meteorSwarm))
+            return;
 
-        _audio.PlayGlobal(component.AnnouncementSound, allPlayersInGame, true);
+        if (meteorSwarm.StartAnnouncement)
+        {
+            var station = RobustRandom.Pick(_station.GetStations()); //Imp start
+            var announcement = _announcer.GetEventLocaleString(_announcer.GetAnnouncementId(args.RuleId));
+            if (TryComp<StationSpecificMeteorComponent>(station, out var stationMeteor))
+            {
+                foreach (var announcementPair in stationMeteor.AnnouncementReplacements.Where(announcementPair => announcement == announcementPair.Key))
+                {
+                    announcement = announcementPair.Value;
+                }
+            }// Imp end
+            _announcer.SendAnnouncement(
+                _announcer.GetAnnouncementId("MeteorSwarm"),
+                Filter.Broadcast(),
+                announcement, // imp
+                colorOverride: Color.Gold
+            );
+        }
     }
 
     protected override void ActiveTick(EntityUid uid, MeteorSwarmComponent component, GameRuleComponent gameRule, float frameTime)
@@ -63,6 +84,14 @@ public sealed class MeteorSwarmSystem : GameRuleSystem<MeteorSwarmComponent>
         for (var i = 0; i < meteorsToSpawn; i++)
         {
             var spawnProto = RobustRandom.Pick(component.Meteors);
+
+            if (TryComp<StationSpecificMeteorComponent>(station, out var stationMeteor))// imp start
+            {
+                foreach (var meteorPair in stationMeteor.MeteorReplacements.Where(meteorPair => spawnProto == meteorPair.Key))
+                {
+                    spawnProto = meteorPair.Value;
+                }
+            } // imp end
 
             var angle = component.NonDirectional
                 ? RobustRandom.NextAngle()

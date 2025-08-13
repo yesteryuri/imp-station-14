@@ -11,6 +11,10 @@
     tags:
       - Cigarette
       - Trash
+      - PetWearable # imp
+      - KodeEdible # imp
+  - type: StaticPrice
+    price: 1
   - type: SpaceGarbage
   - type: Clothing
     sprite: Objects/Consumable/Smokeables/Cigarettes/cigarette.rsi
@@ -38,6 +42,8 @@
     tags:
       - Cigarette
       - Trash
+      - PetWearable # imp
+      - KodeEdible # imp
   - type: SpaceGarbage
   - type: Clothing
     sprite: Objects/Consumable/Smokeables/Cigarettes/cigarette.rsi
@@ -62,11 +68,18 @@
     solutions:
       smokable:
         maxVol: 20
+      food: # imp
+        maxVol: 20
+        reagents:
+        - ReagentId: Nicotine
+          Quantity: 5
   - type: Tag
     tags:
       - Cigarette
+      - PetWearable # imp
       - Trash
       - Burnt
+      - KodeEdible # imp
 
 - type: entity
   id: CigaretteSyndicate
@@ -77,6 +90,13 @@
   - type: SolutionContainerManager
     solutions:
       smokable:
+        maxVol: 40
+        reagents:
+          - ReagentId: Nicotine
+            Quantity: 10
+          - ReagentId: Omnizine
+            Quantity: 30
+      food: # imp
         maxVol: 40
         reagents:
           - ReagentId: Nicotine
@@ -98,6 +118,13 @@
             Quantity: 10
           - ReagentId: Omnizine
             Quantity: 10
+      food: # imp
+        maxVol: 40
+        reagents:
+          - ReagentId: Nicotine
+            Quantity: 10
+          - ReagentId: Omnizine
+            Quantity: 10
 
 - type: entity
   id: CigaretteIron
@@ -107,6 +134,13 @@
   - type: SolutionContainerManager
     solutions:
       smokable:
+        maxVol: 40
+        reagents:
+          - ReagentId: Nicotine
+            Quantity: 10
+          - ReagentId: Iron
+            Quantity: 10
+      food: # imp
         maxVol: 40
         reagents:
           - ReagentId: Nicotine
@@ -128,6 +162,13 @@
             Quantity: 10
           - ReagentId: Tricordrazine
             Quantity: 10
+      food: # imp
+          maxVol: 40
+          reagents:
+            - ReagentId: Nicotine
+              Quantity: 10
+            - ReagentId: Tricordrazine
+              Quantity: 10
 
 - type: entity
   id: CigaretteDylovene
@@ -143,6 +184,14 @@
             Quantity: 10
           - ReagentId: Dylovene
             Quantity: 10
+      food: # imp
+        maxVol: 40
+        reagents:
+          - ReagentId: Nicotine
+            Quantity: 10
+          - ReagentId: Dylovene
+            Quantity: 10
+
 
 - type: entity
   id: CigaretteDermaline
@@ -152,6 +201,13 @@
   - type: SolutionContainerManager
     solutions:
       smokable:
+        maxVol: 40
+        reagents:
+          - ReagentId: Nicotine
+            Quantity: 10
+          - ReagentId: Dermaline
+            Quantity: 10
+      food: # imp
         maxVol: 40
         reagents:
           - ReagentId: Nicotine
@@ -173,6 +229,13 @@
             Quantity: 10
           - ReagentId: Arithrazine
             Quantity: 10
+      food: # imp
+        maxVol: 40
+        reagents:
+          - ReagentId: Nicotine
+            Quantity: 10
+          - ReagentId: Arithrazine
+            Quantity: 10
 
 - type: entity
   id: CigaretteNutriment
@@ -182,6 +245,13 @@
   - type: SolutionContainerManager
     solutions:
       smokable:
+        maxVol: 40
+        reagents:
+          - ReagentId: Nicotine
+            Quantity: 10
+          - ReagentId: Nutriment
+            Quantity: 10
+      food: # imp
         maxVol: 40
         reagents:
           - ReagentId: Nicotine
@@ -203,6 +273,13 @@
             Quantity: 10
           - ReagentId: Bicaridine
             Quantity: 10
+      food: # imp
+        maxVol: 40
+        reagents:
+          - ReagentId: Nicotine
+            Quantity: 10
+          - ReagentId: Bicaridine
+            Quantity: 10
 
 - type: entity
   id: CigaretteDexalin
@@ -212,6 +289,13 @@
   - type: SolutionContainerManager
     solutions:
       smokable:
+        maxVol: 40
+        reagents:
+          - ReagentId: Nicotine
+            Quantity: 10
+          - ReagentId: Dexalin
+            Quantity: 10
+      food: # imp
         maxVol: 40
         reagents:
           - ReagentId: Nicotine
@@ -233,6 +317,13 @@
             Quantity: 10
           - ReagentId: Saline
             Quantity: 10
+      food: # imp
+        maxVol: 40
+        reagents:
+          - ReagentId: Nicotine
+            Quantity: 10
+          - ReagentId: Saline
+            Quantity: 10
 
 - type: entity
   id: CigaretteBbqSauce
@@ -242,6 +333,13 @@
   - type: SolutionContainerManager
     solutions:
       smokable:
+        maxVol: 40
+        reagents:
+          - ReagentId: Nicotine
+            Quantity: 10
+          - ReagentId: BbqSauce
+            Quantity: 10
+      food: # imp
         maxVol: 40
         reagents:
           - ReagentId: Nicotine
@@ -263,6 +361,13 @@
             Quantity: 10
           - ReagentId: Frezon
             Quantity: 10
+      food: # imp
+        maxVol: 40
+        reagents:
+          - ReagentId: Nicotine
+            Quantity: 10
+          - ReagentId: Frezon
+            Quantity: 10
 
 - type: entity
   id: CigaretteCapsaicinOil
@@ -272,6 +377,13 @@
   - type: SolutionContainerManager
     solutions:
       smokable:
+        maxVol: 40
+        reagents:
+          - ReagentId: Nicotine
+            Quantity: 10
+          - ReagentId: CapsaicinOil
+            Quantity: 10
+      food: # imp
         maxVol: 40
         reagents:
           - ReagentId: Nicotine
@@ -293,6 +405,13 @@
             Quantity: 10
           - ReagentId: Radium
             Quantity: 10
+      food: # imp
+        maxVol: 40
+        reagents:
+          - ReagentId: Nicotine
+            Quantity: 10
+          - ReagentId: Radium
+            Quantity: 10
 
 - type: entity
   id: CigaretteHaloperidol
@@ -302,6 +421,13 @@
   - type: SolutionContainerManager
     solutions:
       smokable:
+        maxVol: 40
+        reagents:
+          - ReagentId: Nicotine
+            Quantity: 10
+          - ReagentId: Haloperidol
+            Quantity: 10
+      food: # imp
         maxVol: 40
         reagents:
           - ReagentId: Nicotine
@@ -323,6 +449,13 @@
             Quantity: 10
           - ReagentId: Laughter
             Quantity: 10
+      food: # imp
+        maxVol: 40
+        reagents:
+          - ReagentId: Nicotine
+            Quantity: 10
+          - ReagentId: Laughter
+            Quantity: 10
 
 - type: entity
   id: CigaretteLipolicide
@@ -338,6 +471,13 @@
             Quantity: 10
           - ReagentId: Lipolicide
             Quantity: 10
+      food: # imp
+        maxVol: 40
+        reagents:
+          - ReagentId: Nicotine
+            Quantity: 10
+          - ReagentId: Lipolicide
+            Quantity: 10
 
 - type: entity
   id: CigaretteSodiumPolyacrylate
@@ -347,6 +487,13 @@
   - type: SolutionContainerManager
     solutions:
       smokable:
+        maxVol: 40
+        reagents:
+          - ReagentId: Nicotine
+            Quantity: 10
+          - ReagentId: SodiumPolyacrylate
+            Quantity: 2
+      food: # imp
         maxVol: 40
         reagents:
           - ReagentId: Nicotine
@@ -368,6 +515,13 @@
             Quantity: 10
           - ReagentId: Mold
             Quantity: 10
+      food: # imp
+        maxVol: 40
+        reagents:
+          - ReagentId: Nicotine
+            Quantity: 10
+          - ReagentId: Mold
+            Quantity: 10
 
 - type: entity
   id: CigaretteLicoxide
@@ -377,6 +531,13 @@
   - type: SolutionContainerManager
     solutions:
       smokable:
+        maxVol: 40
+        reagents:
+          - ReagentId: Nicotine
+            Quantity: 10
+          - ReagentId: Licoxide
+            Quantity: 10
+      food: # imp
         maxVol: 40
         reagents:
           - ReagentId: Nicotine
@@ -398,6 +559,13 @@
             Quantity: 10
           - ReagentId: WeldingFuel
             Quantity: 10
+      food: # imp
+        maxVol: 40
+        reagents:
+          - ReagentId: Nicotine
+            Quantity: 10
+          - ReagentId: WeldingFuel
+            Quantity: 10
 
 - type: entity
   id: CigaretteRobustHarvest
@@ -407,6 +575,13 @@
   - type: SolutionContainerManager
     solutions:
       smokable:
+        maxVol: 40
+        reagents:
+          - ReagentId: Nicotine
+            Quantity: 10
+          - ReagentId: RobustHarvest
+            Quantity: 10
+      food: # imp
         maxVol: 40
         reagents:
           - ReagentId: Nicotine
@@ -428,6 +603,13 @@
           Quantity: 10
         - ReagentId: Phlogiston
           Quantity: 10
+      food: # imp
+        maxVol: 40
+        reagents:
+        - ReagentId: Nicotine
+          Quantity: 10
+        - ReagentId: Phlogiston
+          Quantity: 10
 
 - type: entity
   id: CigaretteBanana
@@ -437,6 +619,13 @@
   - type: SolutionContainerManager
     solutions:
       smokable:
+        maxVol: 40
+        reagents:
+        - ReagentId: Nicotine
+          Quantity: 10
+        - ReagentId: Potassium
+          Quantity: 10
+      food: # imp
         maxVol: 40
         reagents:
         - ReagentId: Nicotine
@@ -456,5 +645,12 @@
         reagents:
         - ReagentId: Nicotine
           Quantity: 10
-        - ReagentId: Blackpepper
+        - ReagentId: Paprika # imp Wasn't coughy enough
+          Quantity: 10
+      food: # imp
+        maxVol: 40
+        reagents:
+        - ReagentId: Nicotine
+          Quantity: 10
+        - ReagentId: Paprika
           Quantity: 10

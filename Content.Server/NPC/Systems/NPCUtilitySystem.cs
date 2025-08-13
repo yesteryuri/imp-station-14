@@ -10,12 +10,16 @@ using Content.Server.Nutrition.EntitySystems;
 using Content.Server.Storage.Components;
 using Content.Server.Temperature.Components;
 using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Cuffs;
+using Content.Shared.Cuffs.Components;
 using Content.Shared.Damage;
 using Content.Shared.Examine;
 using Content.Shared.Fluids.Components;
 using Content.Shared.Hands.Components;
 using Content.Shared.Inventory;
+using Content.Shared.Mech.EntitySystems; //imp
 using Content.Shared.Mobs;
+using Content.Shared.Mech.Components; //imp
 using Content.Shared.Mobs.Systems;
 using Content.Shared.NPC.Systems;
 using Content.Shared.Nutrition.Components;
@@ -52,11 +56,13 @@ public sealed class NPCUtilitySystem : EntitySystem
     [Dependency] private readonly OpenableSystem _openable = default!;
     [Dependency] private readonly PuddleSystem _puddle = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly SharedMechSystem _mechSystem = default!; //imp
     [Dependency] private readonly SharedSolutionContainerSystem _solutions = default!;
     [Dependency] private readonly WeldableSystem _weldable = default!;
     [Dependency] private readonly ExamineSystemShared _examine = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
     [Dependency] private readonly MobThresholdSystem _thresholdSystem = default!;
+    [Dependency] private readonly SharedCuffableSystem _cuffableSystem = default!;
     [Dependency] private readonly TurretTargetSettingsSystem _turretTargetSettings = default!;
 
     private EntityQuery<PuddleComponent> _puddleQuery;
@@ -241,6 +247,13 @@ public sealed class NPCUtilitySystem : EntitySystem
                             return 0.0f;
                         }
                     }
+                    if (TryComp<MechComponent>(container.Owner, out var mechComponent)) //imp
+                    {
+                        if (_mechSystem.IsEmpty(mechComponent))
+                        {
+                            return 1.0f;
+                        }
+                    }
                     else
                     {
                         // If we're in a container (e.g. held or whatever) then we probably can't get it. Only exception
@@ -356,6 +369,16 @@ public sealed class NPCUtilitySystem : EntitySystem
                     return melee.Damage.GetTotal().Float() * melee.AttackRate / 100f;
                 }
 
+                return 0f;
+            }
+            case TargetIsCuffableCon:
+            {
+                if (TryComp<CuffableComponent>(targetUid, out var cuffable))
+                {
+                    if(_cuffableSystem.IsCuffed((targetUid, cuffable), true))
+                        return 0f;
+                    return 1f;
+                }
                 return 0f;
             }
             case TargetOnFireCon:

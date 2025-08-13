@@ -26,6 +26,33 @@
         maxDistance: 2
   - type: UseDelay
     delay: 1.5
+  # imp edits # base pen made embeddable
+  - type: EmbeddableProjectile
+    offset: 0.3,0.0
+    removalTime: 0.0
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Piercing: 3
+  - type: ThrowingAngle
+    angle: 315
+  - type: LandAtCursor
+  - type: SignatureWriter
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PolygonShape
+          vertices:
+          - -0.3,0.1
+          - -0.1,0.3
+          - 0.3,-0.1
+          - 0.1,-0.3
+        density: 20 # derived from base_item
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
+  # end imp edits #
 
 - type: entity
   parent: Pen
@@ -41,7 +68,7 @@
   - type: DamageOtherOnHit
     damage:
       types:
-        Piercing: 3
+        Piercing: 8 #imp edit
   - type: Fixtures
     fixtures:
       fix1:
@@ -69,6 +96,12 @@
     state: luxury_pen
   - type: Item
     heldPrefix: luxury_pen
+  - type: SignatureWriter # imp
+    colorList:
+      black: "#2f4f4f"
+      blue: "#284283"
+      green: "#108473"
+      red: "#ac3235"
 
 - type: entity
   id: BaseAdvancedPen
@@ -96,9 +129,9 @@
 
 - type: entity
   name: Cybersun pen
-  parent: [BaseAdvancedPen, BaseSyndicateContraband]
+  parent: [BaseAdvancedPen, Tier2Contraband] #imp contraband
   id: CyberPen
-  description: A high-tech pen straight from Cybersun's legal department, capable of refracting hard-light at impossible angles through its diamond tip in order to write. So powerful, it's even able to rewrite officially stamped documents should the need arise.
+  description: A high-tech pen straight from Cybersun's legal department, capable of refracting hard-light at impossible angles through its diamond tip in order to write. So powerful, it's even able to rewrite officially-stamped documents, should the need arise. # imp edit
   components:
   - type: Sprite
     state: overpriced_pen
@@ -106,35 +139,69 @@
     heldPrefix: overpriced_pen
   - type: StaticPrice
     price: 500
+  # imp edit start
+  - type: SignatureWriter # imp
+    fontList:
+      Noto Sans: Default
+      Comic Neue: ComicNeue
+      Hachi Maru Pop: HachiMaruPop
+      Kode Mono: KodeMono
+      Reenie Beanie: ReenieBeanie
+      Tangerine: Tangerine
+      UnifrakturMaguntia: UnifrakturMaguntia
+      Wahroonga: Wahroonga
+    colorList:
+      black: "#2f4f4f"
+      blue: "#284283"
+      green: "#108473"
+      red: "#ac3235"
+      cyan: "#1a7694" #imp
+      purple: "#6a3059" #imp
+      magenta: "#a42f6b" #imp
+      command blue: "#1b67a5"
+      CentComm green: "#009100"
+    # imp edit end
 
 - type: entity
   name: CentComm pen
   parent: [BaseAdvancedPen, BaseCentcommContraband]
   id: PenCentcom
-  description: In an attempt to keep up with the "power" of the cybersun bureaucracy, NT made a replica of cyber pen, in their corporate style.
+  description: A high-tech pen utilizing refracted hard-light precision to write. In an attempt to keep up with the "power" of the Cybersun bureaucracy, NT made a replica of the infamous Cybersun pen, in their own corporate style. # imp edit
   components:
   - type: Sprite
     state: pen_centcom
   - type: Item
     heldPrefix: pen_centcom
+  # imp edits #
+  - type: SignatureWriter
+    color: "#009100"
+  # end imp edits #
 
 - type: entity
   name: captain's fountain pen
   parent: PenEmbeddable
   id: PenCap
-  description: A luxurious fountain pen for the captain of the station.
+  description: A luxurious fountain pen for the captain of the station. Perfect for signing death warrants. # imp edit
   components:
   - type: Sprite
     state: pen_cap
+  # imp edits #
+  - type: SignatureWriter
+    color: "#1b67a5"
+  # end imp edits #
 
 - type: entity
-  name: hop's fountain pen
+  name: HoP's fountain pen # imp; emphasizing this is an acronym and not for some guy named hop
   parent: PenEmbeddable
   id: PenHop
-  description: A luxurious fountain pen for the hop of the station.
+  description: A luxurious fountain pen for the head of personnel of the station. Perfect for signing all those employee safety waivers. # imp edit
   components:
   - type: Sprite
     state: pen_hop
+  # imp edits #
+  - type: SignatureWriter
+    color: "#1b67a5"
+  # end imp edits #
 
 - type: entity
   name: wizard's magical pen
@@ -149,3 +216,7 @@
     - WriteIgnoreStamps
     - Write
     - Pen
+  # imp edits #
+  - type: SignatureWriter
+    color: "#1b67a5"
+  # end imp edits #

@@ -65,6 +65,9 @@
   - type: MobPrice
     price: 1000 # Living critters are valuable in space.
   - type: Perishable
+  - type: Tag #imp edit to make space mobs stunnable
+    tags:
+    - DoorBumpOpener
 
 - type: entity
   parent:

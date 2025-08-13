@@ -12,9 +12,15 @@
   - type: DamageOtherOnHit
     damage:
       types:
-        Blunt: 5
+        Blunt: 5.5
+    staminaCost: 5 # imp
+    soundHit: # imp
+      collection: MetalThud
   - type: Stack
     count: 1
+  - type: Tag
+    tags:
+      - DroneUsable
   - type: Damageable
     damageContainer: Inorganic
   - type: Destructible
@@ -1430,6 +1436,21 @@
   - type: Construction
     graph: TileFlesh
     node: fleshTile
+  - type: Tag # imp
+    tags:
+    - DroneUsable
+    - KodeEdible
+  - type: Food # imp
+    requiresSpecialDigestion: true
+  - type: SolutionContainerManager # imp
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 3
+        - ReagentId: Fat
+          Quantity: 3
 
 - type: entity
   name: steel maint floor

@@ -12,6 +12,7 @@
   - type: Tag
     tags:
       - RawMaterial
+      - DroneUsable #imp
   - type: Damageable
     damageContainer: Inorganic
   - type: Destructible
@@ -27,6 +28,7 @@
   parent: MaterialBase
   id: MaterialCardboard
   name: cardboard
+  description: A tough corrugated paper that is really neither card nor board. # imp
   suffix: Full
   components:
   - type: Material
@@ -47,12 +49,13 @@
       map: ["base"]
   - type: Appearance
   - type: Extractable
-    grindableSolutionName: cardboard
+    grindableSolutionName: food #imp
   - type: SolutionContainerManager
     solutions:
-      cardboard:
+      food: #imp
+        maxVol: 6 #imp
         reagents:
-        - ReagentId: Cellulose
+        - ReagentId: Pulp #imp
           Quantity: 6
   - type: Item
     heldPrefix: cardboard
@@ -63,6 +66,34 @@
     prototype: CarpetCard
     doAfter: 0.5
     removeOnInteract: true
+  # imp edit start
+  - type: Edible
+    requiresSpecialDigestion: true
+    delay: 10
+  - type: FlavorProfile
+    flavors:
+    - paper
+  - type: UserInterface
+    interfaces:
+      enum.ShortConstructionUiKey.Key:
+        type: ShortConstructionMenuBUI
+  - type: ActivatableUI
+    key: enum.ShortConstructionUiKey.Key
+  - type: ShortConstruction
+    prototypes:
+    - WallCardboard
+    - WindowCardboard
+    - WindowDirectionalCardboard
+    - ChairCardboard
+    - TileCardboard
+    - DoorCardboard
+  - type: Tag #imp
+    tags:
+      - ClothMade
+      - DroneUsable
+      - RawMaterial
+  # imp edit end
+
 
 - type: entity
   parent: MaterialCardboard
@@ -88,6 +119,7 @@
   parent: MaterialBase
   id: MaterialCloth
   name: cloth
+  description: A fibrous textile, ancient in origin. # imp
   suffix: Full
   components:
   - type: Healing
@@ -148,6 +180,7 @@
       - Gauze
       - RawMaterial
       - ConstructionMaterial
+      - DroneUsable #imp edit
   - type: Construction
     graph: WebObjects # not sure if I should either keep this here or just make another prototype. Will keep it here just in case.
     node: cloth
@@ -178,6 +211,7 @@
   parent: MaterialBase
   id: MaterialDurathread
   name: durathread
+  description: A tough textile made from cloth and plastic, useful for armor, uniforms, or nice bedsheets. # imp
   suffix: Full
   components:
   - type: Stack
@@ -214,6 +248,7 @@
       - ClothMade
       - RawMaterial
       - ConstructionMaterial
+      - DroneUsable #imp edit
   - type: Item
     heldPrefix: durathread
 
@@ -238,6 +273,7 @@
   parent: MaterialBase
   id: MaterialWoodPlank
   name: wood
+  description: A material made from trees. It's time to carpent. # imp
   suffix: Full
   components:
   - type: Material
@@ -264,14 +300,53 @@
     - Wooden
     - RawMaterial
     - ConstructionMaterial
+    - ClothMade #imp
+    - DroneUsable #imp
   - type: Extractable
-    grindableSolutionName: wood
+    grindableSolutionName: food #imp
   - type: SolutionContainerManager
     solutions:
-      wood:
+      food: #imp
+        maxVol: 10 #imp
         reagents:
-        - ReagentId: Cellulose
+        - ReagentId: Pulp #imp
           Quantity: 10
+  # imp edit start
+  - type: Edible
+    requiresSpecialDigestion: true
+    delay: 30
+  - type: FlavorProfile
+    flavors:
+    - paper
+  - type: UserInterface
+    interfaces:
+      enum.ShortConstructionUiKey.Key:
+        type: ShortConstructionMenuBUI
+  - type: ActivatableUI
+    key: enum.ShortConstructionUiKey.Key
+  - type: ShortConstruction
+    prototypes:
+    - TileWood
+    - TileWoodBlack
+    - TileWoodChess
+    - TileWoodChessBlack
+    - TileWoodChessDark
+    - TileWoodChessLight
+    - TileWoodChessRed
+    - TileWoodDark
+    - TileWoodLarge
+    - TileWoodLargeBlack
+    - TileWoodLargeDark
+    - TileWoodLargeLight
+    - TileWoodLargeRed
+    - TileWoodLight
+    - TileWoodParquet
+    - TileWoodParquetBlack
+    - TileWoodParquetDark
+    - TileWoodParquetLight
+    - TileWoodParquetRed
+    - TileWoodRed
+  # imp edit end
 
 - type: entity
   parent: MaterialWoodPlank
@@ -293,6 +368,7 @@
   parent: MaterialBase
   id: MaterialBiomass
   name: biomass
+  description: Pure biological currency. One full cube contains about the same amount of suffering as your entire body. # imp
   suffix: Full
   components:
   - type: Material
@@ -318,11 +394,11 @@
   - type: Stack
     count: 1
 
-# Following not used currently
 - type: entity
   parent: MaterialBase
   id: MaterialHideBear
   name: bear hide
+  description: AAH! WHERE!!! # imp is this funny i dont know is this funny
   components:
   - type: Sprite
     sprite: Objects/Materials/materials.rsi
@@ -345,6 +421,11 @@
     energy: 1.5
     color: "#4faffb"
     slots:
+  # imp edit start
+  - type: Tag
+    tags:
+      - BearHide
+  # imp edit end
 
 - type: entity
   parent: MaterialBase
@@ -370,6 +451,7 @@
   parent: MaterialBase
   id: MaterialDiamond
   name: refined diamond
+  description: A luxurious pure carbon jewel, used throughout history for jewelry and engineering. # imp
   suffix: Full
   components:
   - type: Stack
@@ -403,6 +485,7 @@
     tags:
     - RawMaterial
     - Diamond
+  - type: NonMobStatusIcon #imp edit. for the salvohud
 
 - type: entity
   parent: MaterialDiamond
@@ -416,6 +499,7 @@
   parent: MaterialBase
   id: MaterialCotton
   name: cotton
+  description: A soft, fibrous material that grows on a plant. The basis of the moth palate. # imp
   suffix: Full
   components:
   - type: Stack
@@ -453,6 +537,7 @@
       - ClothMade
       - RawMaterial
       - Boll
+      - DroneUsable #imp
   - type: Material
   - type: PhysicalComposition
     materialComposition:
@@ -475,6 +560,7 @@
   parent: MaterialBase
   id: MaterialPyrotton
   name: pyrotton
+  description: An ever-burning cotton variant, ironically made by attempts to fireproof cotton. # imp
   suffix: Full
   components:
   - type: Stack
@@ -529,6 +615,7 @@
   parent: MaterialBase
   id: MaterialBananium
   name: bananium
+  description: An anomalous material. Has the exact same spatiotemporal properties as a banana. #imp
   suffix: Full
   components:
   - type: Material
@@ -590,7 +677,7 @@
   parent: MaterialBase
   id: MaterialWebSilk
   name: silk
-  description: A webby material.
+  description: A webby material produced by bugs, once thought quite luxurious. #imp
   suffix: Full
   components:
   - type: PhysicalComposition
@@ -608,23 +695,24 @@
     flavors:
       - cobwebs
     ignoreReagents:
-      - Fiber
+      - Protein   #imp
   - type: Extractable
     juiceSolution:
       reagents:
-      - ReagentId: Fiber
+      - ReagentId: Protein  #imp
         Quantity: 3
   - type: SolutionContainerManager
     solutions:
       food:
         maxVol: 3
         reagents:
-        - ReagentId: Fiber
+        - ReagentId: Protein  #imp
           Quantity: 3
   - type: Tag
     tags:
-      - ClothMade
-      - RawMaterial
+    - ClothMade
+    - RawMaterial
+    - SpiderFood  #imp edit
   - type: Item
     sprite: Objects/Materials/silk.rsi
     heldPrefix: silk
@@ -730,6 +818,7 @@
   parent: MaterialBase
   id: MaterialBones
   name: bones
+  description: Most crew members have at least one of these. # imp
   suffix: Full
   components:
   - type: Stack
@@ -756,6 +845,11 @@
           Quantity: 3
   - type: Item
     heldPrefix: bones
+  - type: Tag # imp
+    tags:
+    - DroneUsable
+    - RawMaterial
+    - KodeEdible
 
 - type: entity
   parent: MaterialBones
@@ -769,7 +863,7 @@
   parent: MaterialBase
   id: MaterialGunpowder
   name: gunpowder
-  description: An explosive compound.
+  description: An explosive compound. Outdated, but still bangs. # imp
   components:
   - type: Stack
     stackType: Gunpowder

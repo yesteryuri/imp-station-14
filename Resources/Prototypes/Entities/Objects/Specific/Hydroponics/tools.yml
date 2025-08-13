@@ -22,6 +22,12 @@
   - type: PhysicalComposition
     materialComposition:
       Steel: 100
+  # imp edits #
+  - type: DamageOtherOnHit
+    staminaCost: 5
+  - type: ThrowingAngle
+    angle: 135
+  # end imp edits #
 
 - type: entity
   name: plant clippers
@@ -46,6 +52,8 @@
   - type: PhysicalComposition
     materialComposition:
       Steel: 100
+  - type: DamageOtherOnHit # imp
+    staminaCost: 5
 
 - type: entity
   name: scythe
@@ -74,6 +82,15 @@
     materialComposition:
       Steel: 100
       Plastic: 100
+  # imp edits #
+  - type: DamageOtherOnHit
+    staminaCost: 7
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
+  - type: EmbedPassiveDamage
+  - type: ThrowingAngle
+    angle: 315
+  # end imp edits #
 
 - type: entity
   name: hatchet
@@ -100,6 +117,14 @@
   - type: PhysicalComposition
     materialComposition:
       Steel: 100
+  # imp edits #
+  - type: DamageOtherOnHit
+    meleeDamageMultiplier: 1.5
+    staminaCost: 6.5
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
+  - type: EmbedPassiveDamage
+  # end imp edits #
 
 - type: entity
   name: spade
@@ -128,6 +153,16 @@
   - type: PhysicalComposition
     materialComposition:
       Steel: 100
+  # imp edits #
+  - type: DamageOtherOnHit
+    staminaCost: 5
+  - type: ThrowingAngle
+    angle: 45
+  - type: Utensil #literally shoveling food in your mouth
+    types:
+    - Spoon
+    - Fork
+  # end imp edits #
 
 - type: entity
   name: plant bag

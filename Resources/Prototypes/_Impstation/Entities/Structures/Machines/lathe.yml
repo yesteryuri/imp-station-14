@@ -1,0 +1,53 @@
+- type: entity
+  id: ServiceTechFab
+  parent: BaseLatheLube
+  name: service techfab
+  description: Produces supplies useful for the service crew.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/techfab.rsi
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: service
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Machine
+    board: ServiceTechFabCircuitboard
+  - type: Lathe
+    idleState: icon
+    runningState: icon
+    unlitIdleState: unlit
+    unlitRunningState: unlit-building
+    staticPacks:
+      - LightsStatic
+      - ServiceStatic
+      - CleanPack
+      - BotanyPack
+      - BarPack
+      - KitchenPack
+      - BasicChemistryStatic
+      - ServiceMiscPack
+      - ReportingStatic # DeltaV
+      - LunchboxPack
+      - SteelBriefcaseImp
+      - NFServiceStorage # Frontier
+    dynamicPacks:
+      - CleanPackDynamic
+      # - ServiceMiscPackDynamic # disabled until there is something to fish
+      - FauxTiles
+      - NFService # Frontier
+  - type: EmagLatheRecipes
+    emagStaticPacks:
+      - ServiceEmagged
+  - type: MaterialStorage
+    whitelist:
+      tags:
+        - Sheet
+        - RawMaterial
+        - Ingot

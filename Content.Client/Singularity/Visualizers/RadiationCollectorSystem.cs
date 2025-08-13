@@ -17,7 +17,7 @@ public sealed class RadiationCollectorSystem : VisualizerSystem<RadiationCollect
     {
         comp.ActivateAnimation = new Animation
         {
-            Length = TimeSpan.FromSeconds(0.8f),
+            Length = TimeSpan.FromSeconds(1.1f), // imp - hardcoded animation lol
             AnimationTracks = {
                 new AnimationTrackSpriteFlick() {
                     LayerKey = RadiationCollectorVisualLayers.Main,
@@ -28,7 +28,7 @@ public sealed class RadiationCollectorSystem : VisualizerSystem<RadiationCollect
 
         comp.DeactiveAnimation = new Animation
         {
-            Length = TimeSpan.FromSeconds(0.8f),
+            Length = TimeSpan.FromSeconds(1.1f), // imp - hardcoded animation lol
             AnimationTracks = {
                 new AnimationTrackSpriteFlick() {
                     LayerKey = RadiationCollectorVisualLayers.Main,

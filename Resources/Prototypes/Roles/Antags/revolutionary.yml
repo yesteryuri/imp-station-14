@@ -2,17 +2,23 @@
   id: HeadRev
   name: roles-antag-rev-head-name
   antagonist: true
+  playTimeTracker: AntagHeadRevolutionary # imp
   setPreference: true
   objective: roles-antag-rev-head-objective
   guides: [ Revolutionaries ]
   requirements:
-  - !type:OverallPlaytimeRequirement
-    time: 3600 # 1h
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 36000 # 10h
+  - !type:DepartmentTimeRequirement
+    department: Command
+    time: 36000 # 10h
 
 - type: antag
   id: Rev
   name: roles-antag-rev-name
   antagonist: true
+  playTimeTracker: AntagRevolutionary # imp
   setPreference: false
   objective: roles-antag-rev-objective
   guides: [ Revolutionaries ]
@@ -23,3 +29,4 @@
     back:
     - Flash
     - ClothingEyesGlassesSunglasses
+    - BoxEncryptionKeyRevolution # imp

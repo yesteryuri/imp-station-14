@@ -45,6 +45,10 @@
   - type: RequireProjectileTarget
     active: False
   - type: StunVisuals
+  # imp edit start
+  - type: AnimatedEmotes
+  - type: CollectiveMind
+  # imp edit end
 
 - type: entity
   save: false

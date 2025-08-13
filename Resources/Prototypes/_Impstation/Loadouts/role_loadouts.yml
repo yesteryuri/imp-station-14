@@ -1,0 +1,79 @@
+# REORDERING CONVENTION: DO IT IN THIS ORDER
+# Head
+# Mask
+# Neck
+# Jumpsuit
+# OuterClothing
+# Gloves
+# Shoes
+# Headset
+# Glasses
+# Backpack
+# Belt
+# PDA
+# Survival
+# Trinkets
+# Special
+# GroupSpeciesBreathTool
+# GroupTankHarness
+# Weapon 
+# Ammo
+
+# Cargo
+- type: roleLoadout
+  id: JobCourier
+  groups:
+  - CourierHead
+  - CourierNeck
+  - CourierJumpsuit
+  - CourierOuterClothing
+  - CourierShoes
+  - Glasses
+  - CourierBackpack
+  - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool
+  - GroupBreathToolDecapoid
+  - GroupTankHarnessWithOuterwear
+  - GroupTankHarnessWithOuterwearAquatic
+
+# Security
+- type: roleLoadout
+  id: JobBrigmedic
+  groups:
+  - BrigmedicHead
+  - MedicalMask
+  - BrigmedicNeck
+  - BrigmedicJumpsuit
+  - BrigmedicOuterClothing
+  - MedicalGloves
+  - BrigmedicShoes
+  - BrigmedicBackpack
+  - SurvivalBrigmedic
+  - Trinkets
+  - SecurityStar
+  - GroupSpeciesBreathToolMedSec
+  - GroupBreathToolDecapoid
+  - GroupTankHarnessWithOuterwear
+  - GroupTankHarnessWithOuterwearAquatic
+
+# Service
+- type: roleLoadout
+  id: JobHospitalityDirector
+  groups:
+  - HospitalityDirectorHead
+  - ServiceMask
+  - HospitalityDirectorNeck
+  - HospitalityDirectorJumpsuit
+  - HospitalityDirectorOuterClothing
+  - HospitalityDirectorGloves
+  - HospitalityDirectorShoes
+  - HospitalityDirectorHeadset
+  - Glasses
+  - HospitalityDirectorBackpack
+  - SurvivalCommand
+  - Trinkets
+  - GroupSpeciesBreathToolCommand
+  - GroupBreathToolDecapoid
+  - GroupTankHarnessCommandWithOuterwear
+  - GroupTankHarnessCommandWithOuterwearAquatic

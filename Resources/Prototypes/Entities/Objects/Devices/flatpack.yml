@@ -9,7 +9,7 @@
   - type: Item
     size: Large
   - type: Sprite
-    sprite: Objects/Devices/flatpack.rsi
+    sprite: _Wizden/Objects/Devices/flatpack.rsi # imp
     layers:
     - state: base
     - state: overlay
@@ -35,6 +35,9 @@
       cpu_supply: "#A46106"
   - type: StaticPrice
     price: 250
+  - type: Tag
+    tags:
+    - DroneUsable
 
 - type: entity
   parent: BaseFlatpack

@@ -6,6 +6,7 @@ using Content.Shared.Destructible;
 using Content.Shared.Foldable;
 using Content.Shared.Hands.Components;
 using Content.Shared.Interaction;
+using Content.Shared.Interaction.Components; // imp edit
 using Content.Shared.Item;
 using Content.Shared.Lock;
 using Content.Shared.Movement.Events;
@@ -26,6 +27,7 @@ using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Shared.Movement.Pulling.Components;
 
 namespace Content.Shared.Storage.EntitySystems;
 
@@ -104,9 +106,9 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         if (target.Open)
             args.Cancelled = true;
 
-        // Cannot (un)lock from the inside. Maybe a bad idea? Security jocks could trap nerds in lockers?
+        // IMP - doesn't cancel, but causes the attempt to trigger LockSystem's doafter
         if (target.Contents.Contains(args.User))
-            args.Cancelled = true;
+            args.FromInside = true;
     }
 
     protected void OnDestruction(EntityUid uid, SharedEntityStorageComponent component, DestructionEventArgs args)
@@ -392,7 +394,7 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         if (!ResolveStorage(target, ref component))
             return false;
 
-        if (!HasComp<HandsComponent>(user))
+        if (!HasComp<HandsComponent>(user) && !HasComp<ComplexInteractionComponent>(user)) // imp edit - can add ComplexInteractionComponent to entities to allow them to do certain actions without hands
             return false;
 
         if (_weldable.IsWelded(target))
@@ -402,6 +404,26 @@ public abstract class SharedEntityStorageSystem : EntitySystem
 
             return false;
         }
+
+        if (_container.IsEntityInContainer(target))
+        {
+            if (_container.TryGetOuterContainer(target,Transform(target) ,out var container) &&
+                !HasComp<HandsComponent>(container.Owner))
+            {
+                Popup.PopupClient(Loc.GetString("entity-storage-component-already-contains-user-message"), user, user);
+
+                return false;
+            }
+        }
+
+        // impstation edit: prevent opening containers being pulled by others
+        if (
+            TryComp<PullableComponent>(target, out var pullable) && // Can be pulled
+            pullable.BeingPulled && // Someone is pulling it
+            pullable.Puller != user && // It is not the user
+            !component.Contents.Contains(user) // The user is not inside of it
+        )
+            return false;
 
         //Checks to see if the opening position, if offset, is inside of a wall.
         if (component.EnteringOffset != new Vector2(0, 0) && !HasComp<WallMountComponent>(target)) //if the entering position is offset
