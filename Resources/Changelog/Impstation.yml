@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: AirFryerBuyOneGetOneFree
-  changes:
-  - message: Lowered power draw of robotic arm, should not flicker the power constantly!
-    type: Tweak
-  id: 1662
-  time: '2025-05-13T00:35:56.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2476
 - author: AirFryerBuyOneGetOneFree, LazyRiverfolk
   changes:
   - message: Changed the limit for the number of burger tower items from 30 to 100!
@@ -4227,3 +4220,10 @@
   id: 2161
   time: '2025-08-13T07:58:09.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3285
+- author: AirFryerBuyOneGetOneFree
+  changes:
+  - message: Fixed last messages with * messing with discord formatting
+    type: Fix
+  id: 2162
+  time: '2025-08-13T10:20:34.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3259
