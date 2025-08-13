@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: AvianMaiden
-  changes:
-  - message: Shotgun shells now sound right when tossed.
-    type: Fix
-  id: 1660
-  time: '2025-05-12T22:52:58.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2473
 - author: Stonylogray
   changes:
   - message: Reduced vomit and jittering rates for synthflesh
@@ -4226,3 +4219,10 @@
   id: 2159
   time: '2025-08-13T06:08:36.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3249
+- author: DinnerCalzone
+  changes:
+  - message: ID card sprites have been stretched a little.
+    type: Tweak
+  id: 2160
+  time: '2025-08-13T06:10:52.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3281
