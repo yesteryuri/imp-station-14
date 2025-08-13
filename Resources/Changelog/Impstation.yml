@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: Stonylogray
-  changes:
-  - message: Reduced vomit and jittering rates for synthflesh
-    type: Tweak
-  id: 1661
-  time: '2025-05-12T22:59:46.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2471
 - author: AirFryerBuyOneGetOneFree
   changes:
   - message: Lowered power draw of robotic arm, should not flicker the power constantly!
@@ -4226,3 +4219,11 @@
   id: 2160
   time: '2025-08-13T06:10:52.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3281
+- author: mqole
+  changes:
+  - message: being gay no longer causes the world to reset for everyone around you
+      (HOPEFULLY)
+    type: Fix
+  id: 2161
+  time: '2025-08-13T07:58:09.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3285
