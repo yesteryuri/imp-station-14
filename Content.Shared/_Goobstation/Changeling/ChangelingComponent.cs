@@ -4,11 +4,11 @@ using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared.Changeling;
+namespace Content.Shared._Goobstation.Changeling;
 
 [RegisterComponent, NetworkedComponent]
 [AutoGenerateComponentState]
-public sealed partial class ChangelingComponent : Component
+public sealed partial class GoobChangelingComponent : Component
 {
     #region Prototypes
 

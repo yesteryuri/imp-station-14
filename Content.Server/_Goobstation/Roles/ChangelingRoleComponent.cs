@@ -1,8 +1,8 @@
 using Content.Shared.Roles;
 
-namespace Content.Server.Roles;
+namespace Content.Server._Goobstation.Roles;
 
 [RegisterComponent]
-public sealed partial class ChangelingRoleComponent : BaseMindRoleComponent
+public sealed partial class GoobChangelingRoleComponent : BaseMindRoleComponent
 {
 }

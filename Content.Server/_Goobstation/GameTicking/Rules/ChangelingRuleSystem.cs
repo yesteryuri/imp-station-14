@@ -3,7 +3,6 @@ using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Mind;
 using Content.Server.Objectives;
 using Content.Server.Roles;
-using Content.Shared.Changeling;
 using Content.Shared.NPC.Prototypes;
 using Content.Shared.NPC.Systems;
 using Content.Shared.Roles;
@@ -13,10 +12,14 @@ using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.GameObjects;
 using System.Text;
+using Content.Server._Goobstation.GameTicking.Rules.Components;
+using Content.Server._Goobstation.Roles;
+using Content.Server.GameTicking.Rules;
+using Content.Shared._Goobstation.Changeling;
 
-namespace Content.Server.GameTicking.Rules;
+namespace Content.Server._Goobstation.GameTicking.Rules;
 
-public sealed partial class ChangelingRuleSystem : GameRuleSystem<ChangelingRuleComponent>
+public sealed partial class GoobChangelingRuleSystem : GameRuleSystem<GoobChangelingRuleComponent>
 {
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly AntagSelectionSystem _antag = default!;
@@ -41,15 +44,15 @@ public sealed partial class ChangelingRuleSystem : GameRuleSystem<ChangelingRule
     {
         base.Initialize();
 
-        SubscribeLocalEvent<ChangelingRuleComponent, AfterAntagEntitySelectedEvent>(OnSelectAntag);
-        SubscribeLocalEvent<ChangelingRuleComponent, ObjectivesTextPrependEvent>(OnTextPrepend);
+        SubscribeLocalEvent<GoobChangelingRuleComponent, AfterAntagEntitySelectedEvent>(OnSelectAntag);
+        SubscribeLocalEvent<GoobChangelingRuleComponent, ObjectivesTextPrependEvent>(OnTextPrepend);
     }
 
-    private void OnSelectAntag(EntityUid uid, ChangelingRuleComponent comp, ref AfterAntagEntitySelectedEvent args)
+    private void OnSelectAntag(EntityUid uid, GoobChangelingRuleComponent comp, ref AfterAntagEntitySelectedEvent args)
     {
         MakeChangeling(args.EntityUid, comp);
     }
-    public bool MakeChangeling(EntityUid target, ChangelingRuleComponent rule)
+    public bool MakeChangeling(EntityUid target, GoobChangelingRuleComponent rule)
     {
         if (!_mind.TryGetMind(target, out var mindId, out var mind))
             return false;
@@ -63,7 +66,7 @@ public sealed partial class ChangelingRuleSystem : GameRuleSystem<ChangelingRule
 
         _antag.SendBriefing(target, briefing, Color.Yellow, BriefingSound);
 
-        if (_role.MindHasRole<ChangelingRoleComponent>(mindId, out var mr))
+        if (_role.MindHasRole<GoobChangelingRoleComponent>(mindId, out var mr))
             AddComp(mr.Value, new RoleBriefingComponent { Briefing = briefingShort }, overwrite: true);
 
         // hivemind stuff
@@ -71,7 +74,7 @@ public sealed partial class ChangelingRuleSystem : GameRuleSystem<ChangelingRule
         _npcFaction.AddFaction(target, ChangelingFactionId);
 
         // make sure it's initial chems are set to max
-        var changelingComp = EnsureComp<ChangelingComponent>(target);
+        var changelingComp = EnsureComp<GoobChangelingComponent>(target);
 
         // add store
         var store = EnsureComp<StoreComponent>(target);
@@ -92,14 +95,14 @@ public sealed partial class ChangelingRuleSystem : GameRuleSystem<ChangelingRule
         return true;
     }
 
-    private void OnTextPrepend(EntityUid uid, ChangelingRuleComponent comp, ref ObjectivesTextPrependEvent args)
+    private void OnTextPrepend(EntityUid uid, GoobChangelingRuleComponent comp, ref ObjectivesTextPrependEvent args)
     {
         var mostAbsorbedName = string.Empty;
         var mostStolenName = string.Empty;
         var mostAbsorbed = 0f;
         var mostStolen = 0f;
 
-        var query = EntityQueryEnumerator<ChangelingComponent>();
+        var query = EntityQueryEnumerator<GoobChangelingComponent>();
         while (query.MoveNext(out var user, out var ling))
         {
             if (!_mind.TryGetMind(user, out var mindId, out var mind))
