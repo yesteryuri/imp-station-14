@@ -30,28 +30,37 @@ public sealed partial class TriggerSystem
             return;
 
         var xform = Transform(target.Value);
+        var savedAmount = ent.Comp.Amount; //#IMP: SingleUse
 
         if (ent.Comp.UseMapCoords)
         {
             var mapCoords = _transform.GetMapCoordinates(target.Value, xform);
-            if (ent.Comp.Predicted)
-                EntityManager.PredictedSpawn(ent.Comp.Proto, mapCoords);
-            else if (_net.IsServer)
-                Spawn(ent.Comp.Proto, mapCoords);
-
+            while (ent.Comp.Amount > 0) //#IMP While loop to allow amount to actually do something
+            {
+                if (ent.Comp.Predicted)
+                    EntityManager.PredictedSpawn(ent.Comp.Proto, mapCoords);
+                else if (_net.IsServer)
+                    Spawn(ent.Comp.Proto, mapCoords);
+                ent.Comp.Amount -= 1; //#IMP While loop to allow amount to actually do something
+            }
         }
         else
         {
             var coords = xform.Coordinates;
             if (!coords.IsValid(EntityManager))
                 return;
-
-            if (ent.Comp.Predicted)
-                PredictedSpawnAttachedTo(ent.Comp.Proto, coords);
-            else if (_net.IsServer)
-                SpawnAttachedTo(ent.Comp.Proto, coords);
-
+            while (ent.Comp.Amount > 0) //#IMP While loop to allow amount to actually do something
+            {
+                if (ent.Comp.Predicted)
+                    PredictedSpawnAttachedTo(ent.Comp.Proto, coords);
+                else if (_net.IsServer)
+                    SpawnAttachedTo(ent.Comp.Proto, coords);
+                ent.Comp.Amount -= 1; //#IMP While loop to allow amount to actually do something
+            }
         }
+        // #IMP: SingleUse
+        if (!ent.Comp.SingleUse)
+            ent.Comp.Amount = savedAmount;
     }
 
     private void HandleDeleteOnTrigger(Entity<DeleteOnTriggerComponent> ent, ref TriggerEvent args)

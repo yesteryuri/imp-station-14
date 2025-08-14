@@ -1,4 +1,4 @@
-﻿namespace Content.Server.Xenoarchaeology.XenoArtifacts.Effects.Components;
+﻿namespace Content.Server._Impstation.Trigger.Components.Effects;
 
 /// <summary>
 /// Knocksdown everything within range, or on the entire local grid.

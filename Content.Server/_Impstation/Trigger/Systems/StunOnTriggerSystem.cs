@@ -1,11 +1,10 @@
-using Content.Server.Xenoarchaeology.XenoArtifacts.Effects.Components;
+using Content.Server._Impstation.Trigger.Components.Effects;
 using Content.Shared.Buckle.Components;
-using Content.Server.Xenoarchaeology.XenoArtifacts.Events;
 using Content.Shared.StatusEffect;
 using Content.Server.Stunnable;
-using Content.Server.Explosion.EntitySystems;
+using Content.Shared.Trigger;
 
-namespace Content.Server.Xenoarchaeology.XenoArtifacts.Effects.Systems;
+namespace Content.Server._Impstation.Trigger.Systems;
 
 public sealed class StunOnTriggerSystem : EntitySystem
 {
