@@ -1,3 +1,4 @@
+using Content.Server._Goobstation.GameTicking.Rules.Components; //goob
 using Content.Server.Antag;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules.Components;
@@ -192,6 +193,7 @@ public sealed partial class AdminVerbSystem
         if (HasComp<HumanoidAppearanceComponent>(args.Target)) // only humanoids can be cloned
             args.Verbs.Add(paradox);
 
+        // goobstation - changelings
         Verb ling = new()
         {
             Text = Loc.GetString("admin-verb-text-make-changeling"),
@@ -199,7 +201,7 @@ public sealed partial class AdminVerbSystem
             Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/_Goobstation/Changeling/changeling_abilities.rsi"), "transform"),
             Act = () =>
             {
-                _antag.ForceMakeAntag<ChangelingRuleComponent>(targetPlayer, "Changeling");
+                _antag.ForceMakeAntag<GoobChangelingRuleComponent>(targetPlayer, "Changeling");
             },
             Impact = LogImpact.High,
             Message = Loc.GetString("admin-verb-make-changeling"),
