@@ -10,6 +10,7 @@ using Content.Server.Roles; // imp
 using Robust.Shared.Player; // imp
 using Robust.Shared.Random;
 using System.Linq;
+using Content.Server._Goobstation.Roles; // imp
 
 namespace Content.Server.Objectives.Systems;
 
@@ -34,7 +35,6 @@ public sealed class PickObjectiveTargetSystem : EntitySystem
         SubscribeLocalEvent<PickSpecificPersonComponent, ObjectiveAssignedEvent>(OnSpecificPersonAssigned);
         SubscribeLocalEvent<PickRandomPersonComponent, ObjectiveAssignedEvent>(OnRandomPersonAssigned);
 
-        SubscribeLocalEvent<PickRandomTraitorComponent, ObjectiveAssignedEvent>(OnTraitorAssigned); // imp
         SubscribeLocalEvent<PickRandomAntagComponent, ObjectiveAssignedEvent>(OnAntagAssigned); // imp
     }
 
@@ -141,7 +141,7 @@ public sealed class PickObjectiveTargetSystem : EntitySystem
                 }
 
                 //huge list of every single whitelisted antag's role component
-                if (_role.MindHasRole<ChangelingRoleComponent>(mindId)  /*Changeling*/
+                if (_role.MindHasRole<GoobChangelingRoleComponent>(mindId)  /*Changeling*/
                 /*|| _role.MindHasRole<RevolutionaryRoleComponent>(mindId)/*Head Rev (REVS USE THE SAME MINDROLE WHYYY)*/
                 || _role.MindHasRole<HereticRoleComponent>(mindId)      /*Heretic*/
                 || _role.MindHasRole<ThiefRoleComponent>(mindId)        /*Thief*/
