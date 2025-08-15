@@ -79,7 +79,7 @@
     tags:
     - VimPilot
   # imp edit start
-  - type: Absorbable # mouse bite sized
+  - type: GoobAbsorbable # mouse bite sized
     biomassRestored: 0.1
   - type: Carriable #DeltaV
   - type: NightVision # EE edit
@@ -286,7 +286,7 @@
     factions:
     - Passive
   # imp edit start
-  - type: Absorbable # imp edit - a good meal
+  - type: GoobAbsorbable # imp edit - a good meal
     biomassRestored: 0.2
   - type: Carriable #DeltaV
     freeHandsRequired: 1
@@ -457,7 +457,7 @@
       types:
         Piercing: 1 # imp edit
   # imp edit start
-  - type: Absorbable # imp edit
+  - type: GoobAbsorbable # imp edit
     biomassRestored: 0.1
   - type: NightVision # EE edit
     isActive: true
@@ -752,7 +752,7 @@
     factions:
     - Passive
   # imp edit start
-  - type: Absorbable
+  - type: GoobAbsorbable
     biomassRestored: 0.2
   - type: Carriable #DeltaV
     freeHandsRequired: 1
@@ -977,7 +977,7 @@
     - Chef
     - FoodRecipes
   # imp edit start
-  - type: Absorbable
+  - type: GoobAbsorbable
     biomassRestored: 0.7
   # imp edit end
 
@@ -1049,7 +1049,7 @@
   - type: Body
     prototype: AnimalHemocyanin
   # imp edit start
-  - type: Absorbable
+  - type: GoobAbsorbable
   - type: Carriable #DeltaV
     biomassRestored: 0.3
   - type: NightVision # EE edit
@@ -1170,7 +1170,7 @@
     rootTask:
       task: RuminantHostileCompound
   # imp edit start
-  - type: Absorbable
+  - type: GoobAbsorbable
     biomassRestored: 0.5
   # imp edit end
 
@@ -1223,7 +1223,7 @@
     factions:
     - Passive
   # imp edit start
-  - type: Absorbable
+  - type: GoobAbsorbable
     biomassRestored: 0.3
   - type: Carriable #DeltaV
   # imp edit end
@@ -1305,7 +1305,7 @@
   - type: StaminaResistance
     damageCoefficient: 0.40
   # imp edit start
-  - type: Absorbable
+  - type: GoobAbsorbable
     biomassRestored: 0.8
   # imp edit end
 
@@ -1393,7 +1393,7 @@
     rootTask:
       task: SimpleHostileCompound
   # imp edit start
-  - type: Absorbable # imp edit
+  - type: GoobAbsorbable # imp edit
     biomassRestored: 0.8
   # imp edit end
 
@@ -1541,7 +1541,7 @@
       - !type:WashCreamPieReaction
   - type: Crawler
   # imp edit start
-  - type: Absorbable # imp edit
+  - type: GoobAbsorbable # imp edit
     biomassRestored: 0.4
   - type: VentCrawler #imp
     enterDelay: 3
@@ -2020,7 +2020,7 @@
       - !type:GibBehavior
         recursive: false
   # imp edit start
-  - type: Absorbable
+  - type: GoobAbsorbable
     biomassRestored: 0.1
   - type: Damageable
     damageContainer: Biological
@@ -2255,7 +2255,7 @@
     - VimPilot
     - MultitoolDefibrillatorTarget #imp edit
   # imp edit start
-  - type: Absorbable
+  - type: GoobAbsorbable
     biomassRestored: 0.2
   - type: ReplacementAccent
     accent: kobold
@@ -2329,7 +2329,7 @@
   - type: Tag
     tags:
     - MultitoolDefibrillatorTarget
-  - type: Absorbable
+  - type: GoobAbsorbable
     biomassRestored: 0.1
   - type: Carriable
     freeHandsRequired: 1
@@ -2413,7 +2413,7 @@
       - !type:GibBehavior
         recursive: false
   # imp edit start
-  - type: Absorbable
+  - type: GoobAbsorbable
     biomassRestored: 0.1
   - type: Carriable #DeltaV
   - type: NightVision # EE edit
@@ -2506,7 +2506,7 @@
   - type: Bloodstream
     bloodMaxVolume: 50
   # imp edit start
-  - type: Absorbable
+  - type: GoobAbsorbable
     biomassRestored: 0.2
   - type: Carriable #DeltaV
     freeHandsRequired: 1
@@ -2579,7 +2579,7 @@
       types:
         Heat : 0.2 #per second, scales with temperature & other constants
   # imp edit start
-  - type: Absorbable
+  - type: GoobAbsorbable
     biomassRestored: 0.3
   - type: Carriable #DeltaV
   # imp edit end
@@ -2708,7 +2708,7 @@
     damageContainer: Biological
     damageModifierSet: Scale
   # imp edit start
-  - type: Absorbable # imp edit
+  - type: GoobAbsorbable # imp edit
     biomassRestored: 0.2
   - type: Carriable #DeltaV
   - type: NightVision # EE edit
@@ -2828,7 +2828,7 @@
     noMovementLayers:
       movement:
         state: tarantula
-  - type: Absorbable # big enough to restore a good amount of biomass
+  - type: GoobAbsorbable # big enough to restore a good amount of biomass
     biomassRestored: 0.7
   - type: NightVision # EE edit
     isActive: true
@@ -3029,7 +3029,7 @@
     tags:
     - VimPilot
   # imp edit start
-  - type: Absorbable
+  - type: GoobAbsorbable
     biomassRestored: 0.3
   - type: Carriable #DeltaV
   - type: NightVision # EE edit
@@ -3122,7 +3122,7 @@
     tags:
     - VimPilot
   # imp edit start
-  - type: Absorbable
+  - type: GoobAbsorbable
     biomassRestored: 0.3
   - type: Carriable #DeltaV
   - type: NightVision # EE edit
@@ -3212,7 +3212,7 @@
     tags:
     - VimPilot
   # imp edit start
-  - type: Absorbable
+  - type: GoobAbsorbable
     biomassRestored: 0.3
   - type: Carriable #DeltaV
   - type: DogVision
@@ -3268,7 +3268,7 @@
     price: 200
   - type: MessyDrinker
   # imp edit start
-  - type: Absorbable
+  - type: GoobAbsorbable
     biomassRestored: 0.3
   - type: Carriable #DeltaV
   - type: DogVision
@@ -3466,7 +3466,7 @@
     baseWalkSpeed: 2
     baseSprintSpeed: 4
   # imp edit start
-  - type: Absorbable
+  - type: GoobAbsorbable
     biomassRestored: 0.3
   - type: Carriable #DeltaV
   - type: NightVision # EE edit
@@ -3716,7 +3716,7 @@
     tags:
     - VimPilot
   # imp edit start
-  - type: Absorbable # imp edit
+  - type: GoobAbsorbable # imp edit
     biomassRestored: 0.3
   - type: Carriable #DeltaV
   # imp edit end
@@ -3775,7 +3775,7 @@
     tags:
     - VimPilot
   # imp edit start
-  - type: Absorbable
+  - type: GoobAbsorbable
     biomassRestored: 0.3
   - type: Carriable #DeltaV
   - type: NightVision # EE edit
@@ -3941,7 +3941,7 @@
       - !type:GibBehavior
         recursive: false
   # imp edit start
-  - type: Absorbable
+  - type: GoobAbsorbable
     biomassRestored: 0.2
   - type: PleebnarGibbable
   - type: VentCrawler
@@ -4019,7 +4019,7 @@
     rootTask:
       task: RuminantCompound
   # imp edit start
-  - type: Absorbable
+  - type: GoobAbsorbable
     biomassRestored: 0.7
   - type: Carriable #DeltaV
   - type: PleebnarGibbable
@@ -4107,7 +4107,7 @@
     popupText: diona-reform-attempt
     reformPrototype: MobDionaReformed
   # imp edit start
-  - type: Absorbable
+  - type: GoobAbsorbable
     biomassRestored: 0.3
   - type: Item
     size: Small
@@ -4194,7 +4194,7 @@
   - type: Puller
     needsHands: false
   # imp edit start
-  - type: Absorbable
+  - type: GoobAbsorbable
     biomassRestored: 0.5
   - type: NightVision # EE edit
     isActive: true

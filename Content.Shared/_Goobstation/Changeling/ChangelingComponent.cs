@@ -42,7 +42,7 @@ public sealed partial class GoobChangelingComponent : Component
     /// </summary>
 
     [DataField, ViewVariables(VVAccess.ReadOnly)]
-    public ProtoId<FactionIconPrototype> StatusIcon { get; set; } = "HivemindFaction";
+    public ProtoId<FactionIconPrototype> StatusIcon { get; set; } = "GoobHivemindFaction";
 
     #endregion
 

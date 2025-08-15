@@ -32,7 +32,7 @@
     - id: ZombieOutbreak
     - id: LoneOpsSpawn
     - id: WizardSpawn
-    - id: ChangelingAwakening
+    - id: ChangelingAwakening #imp
     - id: BountyHunterSpawn # imp
     - id: ReplicatorSpawn # imp
     - id: VRexEvent #imp
@@ -65,7 +65,7 @@
     - id: ZombieOutbreak
     - id: LoneOpsSpawn
     - id: WizardSpawn
-    - id: ChangelingAwakening
+    - id: ChangelingAwakening # imp
     - id: BountyHunterSpawn # imp
     - id: ReplicatorSpawn # imp
     - id: VRexEvent #imp

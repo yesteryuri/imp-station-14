@@ -1,5 +1,5 @@
 - type: factionIcon
-  id: HivemindFaction
+  id: GoobHivemindFaction
   priority: 11
   showTo:
     components:

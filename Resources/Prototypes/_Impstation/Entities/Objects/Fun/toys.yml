@@ -89,7 +89,7 @@
     requiresSpecialDigestion: false
     useSound:
       path: /Audio/_Impstation/Voice/Gray/gray_scream.ogg
-  - type: Absorbable # everyone can eat them now
+  - type: GoobAbsorbable # everyone can eat them now
     biomassRestored: 0.1
 
 - type: entity
@@ -145,7 +145,7 @@
     requiresSpecialDigestion: false
     useSound:
       path: /Audio/Voice/Arachnid/arachnid_scream.ogg #OW!!! OWIE!!
-  - type: Absorbable #delicious
+  - type: GoobAbsorbable #delicious
     biomassRestored: 0.1
   - type: FlavorProfile
     flavors:

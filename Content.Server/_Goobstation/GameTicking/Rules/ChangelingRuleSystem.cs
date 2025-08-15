@@ -61,8 +61,8 @@ public sealed partial class GoobChangelingRuleSystem : GameRuleSystem<GoobChange
 
         // briefing
         var metaData = MetaData(target);
-        var briefing = Loc.GetString("changeling-role-greeting", ("name", metaData?.EntityName ?? "Unknown"));
-        var briefingShort = Loc.GetString("changeling-role-greeting-short", ("name", metaData?.EntityName ?? "Unknown"));
+        var briefing = Loc.GetString("goob-changeling-role-greeting", ("name", metaData?.EntityName ?? "Unknown"));
+        var briefingShort = Loc.GetString("goob-changeling-role-greeting-short", ("name", metaData?.EntityName ?? "Unknown"));
 
         _antag.SendBriefing(target, briefing, Color.Yellow, BriefingSound);
 
@@ -122,8 +122,8 @@ public sealed partial class GoobChangelingRuleSystem : GameRuleSystem<GoobChange
         }
 
         var sb = new StringBuilder();
-        sb.AppendLine(Loc.GetString($"roundend-prepend-changeling-absorbed{(!string.IsNullOrWhiteSpace(mostAbsorbedName) ? "-named" : "")}", ("name", mostAbsorbedName), ("number", mostAbsorbed)));
-        sb.AppendLine(Loc.GetString($"roundend-prepend-changeling-stolen{(!string.IsNullOrWhiteSpace(mostStolenName) ? "-named" : "")}", ("name", mostStolenName), ("number", mostStolen)));
+        sb.AppendLine(Loc.GetString($"goob-roundend-prepend-changeling-absorbed{(!string.IsNullOrWhiteSpace(mostAbsorbedName) ? "-named" : "")}", ("name", mostAbsorbedName), ("number", mostAbsorbed)));
+        sb.AppendLine(Loc.GetString($"goob-roundend-prepend-changeling-stolen{(!string.IsNullOrWhiteSpace(mostStolenName) ? "-named" : "")}", ("name", mostStolenName), ("number", mostStolen)));
 
         args.Text = sb.ToString();
     }
