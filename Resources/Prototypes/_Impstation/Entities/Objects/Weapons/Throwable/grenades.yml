@@ -40,9 +40,10 @@
     keysIn:
     - timer
   - type: EmitSoundOnTrigger
-    sound: /Audio/_Impstation/Items/bros_grenade_smoke.ogg
     keysIn:
     - timer
+    sound:
+      path: /Audio/_Impstation/Items/bros_grenade_smoke.ogg
   - type: TimerTriggerVisuals
     primingSound:
       path: /Audio/_Impstation/Items/bros_grenade_prime.ogg

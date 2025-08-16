@@ -1,8 +1,9 @@
+using Content.Client._Goobstation.Changeling;
 using Content.Server.Actions;
 using Content.Server.Antag;
-using Content.Server.Changeling;
 using Content.Server.GameTicking;
 using Content.Server.Mind;
+using Content.Shared._Goobstation.Changeling;
 using Content.Shared.Actions.Components;
 using Content.Shared.Changeling;
 using Content.Shared.Inventory;
@@ -32,7 +33,7 @@ public sealed class ChangelingArmorTest
         var entMan = server.ResolveDependency<IEntityManager>();
         var timing = server.ResolveDependency<IGameTiming>();
 
-        var lingSys = entMan.System<ChangelingSystem>();
+        var lingSys = entMan.System<GoobChangelingSystem>();
         var antagSys = entMan.System<AntagSelectionSystem>();
         var mindSys = entMan.System<MindSystem>();
         var actionSys = entMan.System<ActionsSystem>();
@@ -41,7 +42,7 @@ public sealed class ChangelingArmorTest
         Assert.That(ticker.RunLevel, Is.EqualTo(GameRunLevel.InRound));
 
         EntityUid urist = EntityUid.Invalid;
-        ChangelingComponent changeling = null;
+        GoobChangelingComponent changeling = null;
         Entity<ActionComponent> armorAction = (EntityUid.Invalid, null);
 
         await server.WaitPost(() =>
@@ -50,7 +51,7 @@ public sealed class ChangelingArmorTest
             urist = entMan.SpawnEntity("MobHuman", testMap.GridCoords);
 
             // Make urist a changeling
-            changeling = entMan.AddComponent<ChangelingComponent>(urist);
+            changeling = entMan.AddComponent<GoobChangelingComponent>(urist);
             changeling.TotalAbsorbedEntities += 10;
             changeling.MaxChemicals = 1000;
             changeling.Chemicals = 1000;
