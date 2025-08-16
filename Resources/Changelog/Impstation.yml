@@ -1,13 +1,4 @@
 ﻿Entries:
-- author: TheLuggage05
-  changes:
-  - message: New option to purchase SAW ammo, but you have to load it yourself.
-    type: Add
-  - message: Mosin ammo in the uplink now gives the correct kind of ammo.
-    type: Fix
-  id: 1670
-  time: '2025-05-14T13:05:11.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2488
 - author: animal-collective
   changes:
   - message: three new hairs for humanoids
@@ -4224,3 +4215,11 @@
   id: 2169
   time: '2025-08-16T11:43:52.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3283
+- author: ATDoop
+  changes:
+  - message: The Shining Spring now properly appears on your back when you equip it
+      in your back slot.
+    type: Fix
+  id: 2170
+  time: '2025-08-16T22:35:22.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3302
