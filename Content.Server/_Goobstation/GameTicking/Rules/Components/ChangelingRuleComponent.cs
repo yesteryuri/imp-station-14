@@ -7,7 +7,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server._Goobstation.GameTicking.Rules.Components;
 
-[Access(typeof(GoobChangelingRuleSystem))]
+[RegisterComponent, Access(typeof(GoobChangelingRuleSystem))]
 public sealed partial class GoobChangelingRuleComponent : Component
 {
     public readonly List<EntityUid> ChangelingMinds = new();

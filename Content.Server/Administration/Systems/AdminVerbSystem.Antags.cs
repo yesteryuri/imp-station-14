@@ -162,7 +162,7 @@ public sealed partial class AdminVerbSystem
             Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/Objects/Weapons/Melee/armblade.rsi"), "icon"),
             Act = () =>
             {
-                _antag.ForceMakeAntag<ChangelingRuleComponent>(targetPlayer, DefaultChangelingRule);
+                _antag.ForceMakeAntag<GoobChangelingRuleComponent>(targetPlayer, DefaultChangelingRule); //imp, use goobling until upstream version ready
             },
             Impact = LogImpact.High,
             Message = string.Join(": ", changelingName, Loc.GetString("admin-verb-make-changeling")),
@@ -192,21 +192,6 @@ public sealed partial class AdminVerbSystem
 
         if (HasComp<HumanoidAppearanceComponent>(args.Target)) // only humanoids can be cloned
             args.Verbs.Add(paradox);
-
-        // goobstation - changelings
-        Verb ling = new()
-        {
-            Text = Loc.GetString("admin-verb-text-make-changeling"),
-            Category = VerbCategory.Antag,
-            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/_Goobstation/Changeling/changeling_abilities.rsi"), "transform"),
-            Act = () =>
-            {
-                _antag.ForceMakeAntag<GoobChangelingRuleComponent>(targetPlayer, "Changeling");
-            },
-            Impact = LogImpact.High,
-            Message = Loc.GetString("admin-verb-make-changeling"),
-        };
-        args.Verbs.Add(ling);
 
         // goobstation - heretics
         Verb heretic = new()
