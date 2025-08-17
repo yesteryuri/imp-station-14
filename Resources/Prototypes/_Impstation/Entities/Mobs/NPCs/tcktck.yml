@@ -320,3 +320,5 @@
   - type: NpcFactionMember
     factions:
     - SimpleNeutral
+  - type: Carriable
+  - type: CanEscapeInventory #for carrying
