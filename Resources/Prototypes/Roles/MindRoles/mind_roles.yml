@@ -322,7 +322,6 @@
   - type: ZombieRole
 
 # Changeling
-# imp, disable until roundstart upstream changeling real
 #- type: entity
 #  parent: BaseMindRoleAntag
 #  id: MindRoleChangeling
@@ -334,3 +333,5 @@
 #    roleType: SoloAntagonist
 #    subtype: role-subtype-changeling
 #  - type: ChangelingRole
+#  - type: RoleBriefing
+#    briefing: changeling-briefing

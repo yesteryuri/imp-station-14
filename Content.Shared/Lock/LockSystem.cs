@@ -349,6 +349,7 @@ public sealed class LockSystem : EntitySystem
 
         AlternativeVerb verb = new()
         {
+            //Disabled = !CanToggleLock(uid, args.User), imp edit, moved the logic outside the constructor because we did some weird shit to CanToggleLock
             Act = component.Locked
                 ? () => TryUnlock(uid, args.User, component)
                 : () => TryLock(uid, args.User, component),
@@ -357,6 +358,7 @@ public sealed class LockSystem : EntitySystem
                 ? new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/lock.svg.192dpi.png"))
                 : new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/unlock.svg.192dpi.png")),
         };
+        verb.Disabled = CanToggleLock(uid, args.User) == "false"; //imp edit, disable verb if you cannot toggle the lock
         args.Verbs.Add(verb);
     }
 

@@ -11,6 +11,7 @@ using Robust.Shared.Player; // imp
 using Robust.Shared.Random;
 using System.Linq;
 using Content.Server._Goobstation.Roles; // imp
+using Content.Shared.Roles.Components; // imp
 
 namespace Content.Server.Objectives.Systems;
 

@@ -18,6 +18,7 @@ using Robust.Shared.Random;
 using System.Text;
 using Content.Server._Goobstation.Heretic.EntitySystems;
 using Content.Shared.GameTicking.Components;
+using Content.Shared.Roles.Components;
 
 namespace Content.Server.GameTicking.Rules;
 

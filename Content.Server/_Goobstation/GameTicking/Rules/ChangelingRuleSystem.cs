@@ -16,6 +16,7 @@ using Content.Server._Goobstation.GameTicking.Rules.Components;
 using Content.Server._Goobstation.Roles;
 using Content.Server.GameTicking.Rules;
 using Content.Shared._Goobstation.Changeling;
+using Content.Shared.Roles.Components;
 
 namespace Content.Server._Goobstation.GameTicking.Rules;
 
