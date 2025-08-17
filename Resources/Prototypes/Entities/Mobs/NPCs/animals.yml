@@ -1050,8 +1050,8 @@
     prototype: AnimalHemocyanin
   # imp edit start
   - type: GoobAbsorbable
-  - type: Carriable #DeltaV
     biomassRestored: 0.3
+  - type: Carriable #DeltaV
   - type: NightVision # EE edit
     isActive: true
     toggleAction: null

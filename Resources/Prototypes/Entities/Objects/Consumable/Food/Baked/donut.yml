@@ -447,7 +447,7 @@
 - type: entity
   name: scurret jelly-donut
   parent: FoodDonutBase
-  id: FoodDonutJellySlugcat
+  id: FoodDonutJellyScurret
   description: The jelly in this is pitch black. Transcendental. #imp
   components:
   - type: Sprite
