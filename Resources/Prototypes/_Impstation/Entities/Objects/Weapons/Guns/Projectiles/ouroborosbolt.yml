@@ -18,8 +18,12 @@
   - type: TimerTrigger
     delay: 0.25
   - type: SpawnOnTrigger
+    keysIn:
+    - timer
     proto: MobBeeroboros
   - type: DeleteOnTrigger
+    keysIn:
+    - timer
   - type: Projectile
     impactEffect: BulletImpactEffectOrangeDisabler
     damage:
