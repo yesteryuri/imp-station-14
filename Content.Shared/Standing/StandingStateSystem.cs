@@ -66,7 +66,7 @@ public sealed class StandingStateSystem : EntitySystem
             return;
 
         // Currently only Climbing also edits fixtures layers like this so this is fine for now.
-        ChangeLayers(entity);
+        //ChangeLayers(entity); //imp edit, commented out until a reasonable way to allow crawling under plastic flaps and tables while slipping and disallow it for crawling can be figured out
     }
 
     public bool IsDown(EntityUid uid, StandingStateComponent? standingState = null)
