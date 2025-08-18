@@ -83,7 +83,7 @@
 
 - type: entity
   parent: BaseAction
-  id: ActionChangelingTransform
+  id: ActionChangelingTransformGoob
   name: Transform
   description: We take on the voice and appearance of one we have absorbed. Costs a trace amount of chemicals.
   components:

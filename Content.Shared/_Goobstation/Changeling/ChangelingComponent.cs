@@ -32,7 +32,7 @@ public sealed partial class GoobChangelingComponent : Component
         "ActionAbsorbDNA",
         "ActionStingExtractDNA",
         "ActionChangelingTransformCycle",
-        "ActionChangelingTransform",
+        "ActionChangelingTransformGoob",
         "ActionEnterStasis",
         "ActionExitStasis"
     };

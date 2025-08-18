@@ -3,6 +3,7 @@
   id: MobLing
   name: Urist McLing
   suffix: Non-Antag
+  categories: [ HideSpawnMenu ] #imp edit, until we can rip out goobling
   components:
   - type: ChangelingDevour
   - type: ChangelingIdentity
