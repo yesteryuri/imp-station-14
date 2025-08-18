@@ -4,7 +4,7 @@
   showTo:
     components:
       - ShowAntagIcons
-      - Hivemind
+      - GoobHivemind
   icon:
     sprite: /Textures/_Goobstation/Interface/Misc/job_icons.rsi
     state: Changeling
