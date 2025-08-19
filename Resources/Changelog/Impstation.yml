@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: Ionward
-  changes:
-  - message: Dremon Sord's brave action has been immortalized.
-    type: Add
-  id: 1679
-  time: '2025-05-14T22:38:41.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2496
 - author: hivehum
   changes:
   - message: Fishing rods have been disabled due to there being no fish.
@@ -4203,3 +4196,12 @@
   id: 2178
   time: '2025-08-19T08:11:09.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3319
+- author: yesteryuri
+  changes:
+  - message: You can juice wood and cardboard for cellulose
+    type: Add
+  - message: Everyone can eat wood and cardboard with a little persistence
+    type: Add
+  id: 2179
+  time: '2025-08-19T08:39:40.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3282
