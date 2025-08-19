@@ -1,14 +1,4 @@
 ﻿Entries:
-- author: DinnerCalzone
-  changes:
-  - message: Shoveled astro-snow and astro-cave tiles can now be crafted after researching
-      Faux Astro-Tiles.
-    type: Add
-  - message: Asphalt tiles can now be crafted at cutter machines.
-    type: Add
-  id: 1677
-  time: '2025-05-14T18:23:15.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2487
 - author: meridiadottxt
   changes:
   - message: Gate Station now has main power connected to all departments
@@ -4209,3 +4199,10 @@
   id: 2176
   time: '2025-08-19T02:51:23.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3313
+- author: DinnerCalzone
+  changes:
+  - message: Fixed not being able to examine the damage on the portable cutter machine.
+    type: Fix
+  id: 2177
+  time: '2025-08-19T08:08:56.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3321
