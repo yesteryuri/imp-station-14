@@ -50,6 +50,10 @@
   - type: Appearance
   - type: Extractable
     grindableSolutionName: food #imp
+    juiceSolution: # imp
+      reagents:
+      - ReagentId: Cellulose
+        Quantity: 6
   - type: SolutionContainerManager
     solutions:
       food: #imp
@@ -87,13 +91,12 @@
     - ChairCardboard
     - TileCardboard
     - DoorCardboard
-  - type: Tag #imp
+  - type: Tag
     tags:
       - ClothMade
       - DroneUsable
       - RawMaterial
   # imp edit end
-
 
 - type: entity
   parent: MaterialCardboard
@@ -304,6 +307,10 @@
     - DroneUsable #imp
   - type: Extractable
     grindableSolutionName: food #imp
+    juiceSolution: # imp
+      reagents:
+      - ReagentId: Cellulose
+        Quantity: 10
   - type: SolutionContainerManager
     solutions:
       food: #imp
@@ -710,9 +717,9 @@
           Quantity: 3
   - type: Tag
     tags:
-    - ClothMade
-    - RawMaterial
-    - SpiderFood  #imp edit
+      - ClothMade
+      - RawMaterial
+      - SpiderFood  #imp edit
   - type: Item
     sprite: Objects/Materials/silk.rsi
     heldPrefix: silk

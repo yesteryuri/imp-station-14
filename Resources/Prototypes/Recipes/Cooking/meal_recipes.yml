@@ -2550,6 +2550,7 @@
     FoodTacoShell: 1
     FoodMeatDragonCutlet: 2
     FoodChiliPepper: 1
+  recipeType: Oven # imp
 
 - type: microwaveMealRecipe
   id: RecipeCroissant
@@ -2685,7 +2686,7 @@
     MobMothroach: 1
     OrganAnimalHeart: 1
     MoproachShoes: 1
-  recipeType: Microwave # Frontier
+  recipeType: Assembler # imp
 
 - type: microwaveMealRecipe
   id: RecipeCottonCake
