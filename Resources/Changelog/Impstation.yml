@@ -1,16 +1,4 @@
 ﻿Entries:
-- author: meridiadottxt
-  changes:
-  - message: Gate Station now has main power connected to all departments
-    type: Add
-  - message: fixed power issue in security
-    type: Fix
-  - message: altered a bunch of other stuff i can't remember it was a few days ago
-      ok
-    type: Tweak
-  id: 1678
-  time: '2025-05-14T22:37:31.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2493
 - author: Ionward
   changes:
   - message: Dremon Sord's brave action has been immortalized.
@@ -4206,3 +4194,12 @@
   id: 2177
   time: '2025-08-19T08:08:56.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3321
+- author: hivehum
+  changes:
+  - message: The recipes for heart carpaccio, moproach, and draco have been altered.
+    type: Tweak
+  - message: Cooked eggs no longer poison Kodepiiae.
+    type: Fix
+  id: 2178
+  time: '2025-08-19T08:11:09.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3319
