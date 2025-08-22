@@ -1,18 +1,4 @@
 ﻿Entries:
-- author: hivehum, whatston3, dvir001, foxxotrystan
-  changes:
-  - message: Kodepiiae continue to blend right in, now in plushie form.
-    type: Add
-  - message: 'From the Frontier sector: pet rocks! Now you can have friends, that
-      are definitely real, and can talk to you.'
-    type: Add
-  - message: Added more gambling!!!!! Yay!!!!!!!!!
-    type: Add
-  - message: Several completely harmless toys are no longer considered contraband.
-    type: Tweak
-  id: 1693
-  time: '2025-05-17T14:02:49.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2499
 - author: widgetbeck
   changes:
   - message: Defender Replicators are a bit tougher.
@@ -4195,3 +4181,13 @@
   id: 2192
   time: '2025-08-22T01:07:45.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3224
+- author: Kandiyaki
+  changes:
+  - message: Heretic book spawns are no longer limited to Heretic rounds!
+    type: Tweak
+  - message: Hundreds of heretic books should no longer be spawning on heretic rounds.
+      hopefully.
+    type: Fix
+  id: 2193
+  time: '2025-08-22T01:12:25.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3328
