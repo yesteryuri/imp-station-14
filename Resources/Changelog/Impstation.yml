@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: Ecramox
-  changes:
-  - message: Seeds are now properly tagged as contraband based off of what they grow.
-    type: Tweak
-  id: 1691
-  time: '2025-05-17T12:45:48.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2503
 - author: animal-collective
   changes:
   - message: 2 new thaven hairstyles!
@@ -4194,3 +4187,11 @@
   id: 2190
   time: '2025-08-22T01:03:02.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3329
+- author: britno
+  changes:
+  - message: Irwizine'd animals now have a ghost role to go with it. Ever wanted to
+      be a wild BROS? Now you can!
+    type: Tweak
+  id: 2191
+  time: '2025-08-22T01:04:33.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3100
