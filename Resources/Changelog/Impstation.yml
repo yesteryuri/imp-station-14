@@ -1,18 +1,4 @@
 ﻿Entries:
-- author: starlighthowls
-  changes:
-  - message: New lobby art by Wowls! Smoko?
-    type: Add
-  id: 1684
-  time: '2025-05-15T14:08:33.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2506
-- author: widgetbeck
-  changes:
-  - message: The Replicator Hive has evolved.
-    type: Tweak
-  id: 1685
-  time: '2025-05-15T23:38:38.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2490
 - author: crocodilecarousel
   changes:
   - message: moths can be other bugs!
@@ -4197,3 +4183,18 @@
   id: 2183
   time: '2025-08-20T02:52:52.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3291
+- author: ATDoop
+  changes:
+  - message: Nanotrasen culinary guidelines have loosened and kodepiiae can now safely
+      eat meat lollipops.
+    type: Tweak
+  id: 2184
+  time: '2025-08-22T00:40:51.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3318
+- author: TheGrimbeeper
+  changes:
+  - message: Emergency lasers once again have 10 shots (fix from 3)
+    type: Fix
+  id: 2185
+  time: '2025-08-22T00:41:38.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3336
