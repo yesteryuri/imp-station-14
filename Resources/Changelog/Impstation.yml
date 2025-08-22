@@ -1,13 +1,4 @@
 ﻿Entries:
-- author: crocodilecarousel
-  changes:
-  - message: moths can be other bugs!
-    type: Add
-  - message: chimera chest markings work for unisex moths now oops
-    type: Fix
-  id: 1686
-  time: '2025-05-15T23:50:42.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2504
 - author: rainyatrium
   changes:
   - message: decapoid salvager's coat is now available from the salvdrobe
@@ -4198,3 +4189,11 @@
   id: 2185
   time: '2025-08-22T00:41:38.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3336
+- author: msTheowo
+  changes:
+  - message: You now correctly start with lenses if you roll shortsighed with a random
+      traits trait.
+    type: Fix
+  id: 2186
+  time: '2025-08-22T00:42:55.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3315
