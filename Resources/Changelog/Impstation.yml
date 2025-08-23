@@ -1,15 +1,4 @@
 ﻿Entries:
-- author: kipdotnet
-  changes:
-  - message: Added novelty mugs to the service techfab. They have random colours and
-      random descriptions.
-    type: Add
-  - message: All mugs can now hold 30u, up from 20, to match the capacity of metamorphic
-      glasses.
-    type: Tweak
-  id: 1697
-  time: '2025-05-19T00:32:28.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2452
 - author: SixValentine
   changes:
   - message: Luna science and engineering raves have been removed
@@ -4175,3 +4164,10 @@
   id: 2196
   time: '2025-08-23T10:39:37.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3342
+- author: astral_amy
+  changes:
+  - message: Regularly scheduled Bedlam/Whisper updates. Check PR for changelog.
+    type: Tweak
+  id: 2197
+  time: '2025-08-23T10:41:50.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3339
