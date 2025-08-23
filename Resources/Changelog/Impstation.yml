@@ -1,15 +1,4 @@
 ﻿Entries:
-- author: widgetbeck
-  changes:
-  - message: Changed Replicator damage numbers for balance.
-    type: Tweak
-  - message: Fixed Tier 2 Replicators being unable to evolve.
-    type: Fix
-  - message: Fixed the grammar on the Replicator Round-End text.
-    type: Fix
-  id: 1696
-  time: '2025-05-19T00:24:19.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2519
 - author: kipdotnet
   changes:
   - message: Added novelty mugs to the service techfab. They have random colours and
@@ -4179,3 +4168,10 @@
   id: 2195
   time: '2025-08-22T14:39:57.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/2912
+- author: ATDoop
+  changes:
+  - message: Handcuffs will no longer stop diona from rooting.
+    type: Tweak
+  id: 2196
+  time: '2025-08-23T10:39:37.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3342
