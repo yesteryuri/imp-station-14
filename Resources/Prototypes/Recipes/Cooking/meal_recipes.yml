@@ -1875,6 +1875,7 @@
     FoodBerries: 5
   reagents:
     Milk: 10
+  recipeType: Assembler #imp
 
 - type: microwaveMealRecipe
   id: RecipeBreadDog

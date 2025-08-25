@@ -503,16 +503,16 @@
   components:
   - type: Sprite
     drawdepth: Mobs
-    sprite: Mobs/Animals/possum.rsi #imp
+    sprite: Mobs/Animals/possum_old.rsi
     layers:
     - map: [ "enum.DamageStateVisualLayers.Base" ]
-      state: possum #imp
+      state: possum_old
   - type: DamageStateVisuals
     states:
       Alive:
-        Base: possum #imp
+        Base: possum_old
       Dead:
-        Base: possum_dead #imp
+        Base: possum_dead_old
 
 - type: entity
   name: Poppy # the Safety Possum

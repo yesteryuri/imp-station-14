@@ -1520,12 +1520,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 55
+        maxVol: 85 #imp
         reagents:
         - ReagentId: Nutriment
-          Quantity: 40
+          Quantity: 45 #imp
         - ReagentId: Vitamin
-          Quantity: 10
+          Quantity: 25 #imp
         - ReagentId: Milk
           Quantity: 10
   - type: SliceableFood
@@ -1561,12 +1561,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 12
+        maxVol: 21 #imp
         reagents:
         - ReagentId: Nutriment
-          Quantity: 8
+          Quantity: 9 #imp
         - ReagentId: Vitamin
-          Quantity: 2
+          Quantity: 5 #imp
         - ReagentId: Milk
           Quantity: 2
   - type: Tag

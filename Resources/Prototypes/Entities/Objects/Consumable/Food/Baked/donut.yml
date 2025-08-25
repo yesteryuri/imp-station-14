@@ -445,7 +445,7 @@
 # Tastes like jelly-donut, fizzy tutti frutti.
 
 - type: entity
-  name: scurret jelly-donut
+  name: sirval jelly-donut #imp
   parent: FoodDonutBase
   id: FoodDonutJellyScurret
   description: The jelly in this is pitch black. Transcendental. #imp

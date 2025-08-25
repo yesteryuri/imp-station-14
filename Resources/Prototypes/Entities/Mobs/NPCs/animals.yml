@@ -2917,7 +2917,7 @@
     - type: Sprite
       drawdepth: Mobs
       layers:
-      - map: ["enum.DamageStateVisualLayers.Base", "movement"] #imp
+      - map: ["enum.DamageStateVisualLayers.Base"]
         state: clown
         sprite: Mobs/Animals/clownspider.rsi
     - type: Butcherable
@@ -2955,15 +2955,6 @@
     - type: Bloodstream
       bloodMaxVolume: 150
       bloodReagent: Laughter
-  # imp edit start
-    - type: SpriteMovement
-      movementLayers:
-        movement:
-          state: clown
-      noMovementLayers:
-        movement:
-          state: clown
-    # imp edit end
 
 - type: entity
   name: wizard spider
