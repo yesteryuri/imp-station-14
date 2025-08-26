@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: AirFryerBuyOneGetOneFree
-  changes:
-  - message: AAC tablets can now be crafted in the medical techfab
-    type: Fix
-  id: 1711
-  time: '2025-05-22T05:52:06.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2548
 - author: hivehum
   changes:
   - message: If you loved them so much, why don't you smoke them? You can now make
@@ -4178,3 +4171,11 @@
   id: 2210
   time: '2025-08-26T22:18:19.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3361
+- author: FlippenPage
+  changes:
+  - message: Nanotrasen would like to once again dispel the foolish rumor of job issued
+      PDAs being conductive to electricity.
+    type: Tweak
+  id: 2211
+  time: '2025-08-26T22:24:52.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3352
