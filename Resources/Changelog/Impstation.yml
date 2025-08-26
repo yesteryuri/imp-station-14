@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: Mousetrinity
-  changes:
-  - message: the devil's pitchfork is a normal pitchfork now
-    type: Fix
-  id: 1713
-  time: '2025-05-23T10:21:19.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2542
 - author: starlighthowls
   changes:
   - message: A few NTAS WW fixes
@@ -4181,3 +4174,12 @@
   id: 2212
   time: '2025-08-26T22:26:35.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3356
+- author: Smugman
+  changes:
+  - message: Syndicate Recruiters now start with a special briefcase, giving them
+      access to their own uplink full of useless trash. Recruit people to obtain more
+      budget.
+    type: Add
+  id: 2213
+  time: '2025-08-26T22:43:46.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3058
