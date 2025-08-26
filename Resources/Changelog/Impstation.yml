@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: hivehum
-  changes:
-  - message: If you loved them so much, why don't you smoke them? You can now make
-      blunts and joints out of ashes.
-    type: Add
-  id: 1712
-  time: '2025-05-23T04:32:44.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2558
 - author: Mousetrinity
   changes:
   - message: the devil's pitchfork is a normal pitchfork now
@@ -4179,3 +4171,13 @@
   id: 2211
   time: '2025-08-26T22:24:52.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3352
+- author: soup4food
+  changes:
+  - message: Added a seclight to the HoS locker
+    type: Add
+  - message: changed the standard gas mask in the Warden hardsuit table to the security
+      gas mask, matching both the sec hardsuit locker and HoS locker
+    type: Tweak
+  id: 2212
+  time: '2025-08-26T22:26:35.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3356
