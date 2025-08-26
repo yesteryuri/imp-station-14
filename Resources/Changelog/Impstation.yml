@@ -1,30 +1,4 @@
 ﻿Entries:
-- author: Cutinup99
-  changes:
-  - message: Emergency Autoinjector Crate! full of useful injectors for emergencies
-    type: Add
-  - message: Space medipen is actually obtainable now!
-    type: Tweak
-  - message: the Space medipen has been made smaller, providing 12 seconds of spacing
-      immunity rather than 40
-    type: Tweak
-  id: 1704
-  time: '2025-05-21T08:01:42.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2533
-- author: hivehum
-  changes:
-  - message: Chemists no longer start with plasma.
-    type: Remove
-  id: 1705
-  time: '2025-05-21T08:09:46.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2524
-- author: animal-collective
-  changes:
-  - message: 2 new humanoid hairstyles, 1 new thaven hairstyle
-    type: Add
-  id: 1706
-  time: '2025-05-21T08:18:31.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2520
 - author: AvianMaiden
   changes:
   - message: Tiny supermatter delam addition.
@@ -4185,3 +4159,31 @@
   id: 2203
   time: '2025-08-24T06:12:40.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3349
+- author: DinnerCalzone
+  changes:
+  - message: We have once again undergone another upstream merge. See the upstream
+      changelog for full details.
+    type: Add
+  id: 2204
+  time: '2025-08-26T12:42:11.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3314
+- author: EpicToast
+  changes:
+  - message: Crew visitor ghost roles outside of security and command no longer require
+      playtime.
+    type: Remove
+  id: 2205
+  time: '2025-08-26T22:09:23.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3311
+- author: DinnerCalzone
+  changes:
+  - message: Amber has been updated pulling the latest version from Wizden, which
+      includes genpop! The main station engine has also been restored to the TEG.
+      Station engineers without experience with it may want to utilize the station's
+      extra solar assembly crates.
+    type: Add
+  - message: Marathon has been updated to feature genpop!
+    type: Add
+  id: 2206
+  time: '2025-08-26T22:09:52.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3322
