@@ -51,6 +51,8 @@
         value: 3
     - id: SprayPainter
       prob: 0.7
+    - id: GreatWrench
+      prob: 0.1
 
 - type: entity
   id: LockerElectricalSuppliesFilled

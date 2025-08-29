@@ -11,10 +11,17 @@
   maleFirstNames: NamesReptilianMale
   femaleFirstNames: NamesReptilianFemale
   naming: FirstDashFirst
+  sexes:
+  - Male
+  - Female
+  - Unsexed
 
 - type: speciesBaseSprites
   id: MobReptilianSprites
   sprites:
+    TailBehind: MobHumanoidAnyMarking # floof
+    TailOversuit: MobHumanoidAnyMarking # floof
+    TailBehindBackpack: MobHumanoidAnyMarking # imp
     Head: MobReptilianHead
     Snout: MobHumanoidAnyMarking
     UndergarmentTop: MobHumanoidAnyMarking
@@ -64,13 +71,13 @@
       points: 1
       required: false
     Chest:
-      points: 3
+      points: 4
       required: false
     Legs:
-      points: 2
+      points: 8 #impspecial
       required: false
     Arms:
-      points: 2
+      points: 8 #impspecial
       required: false
 
 - type: humanoidBaseSprite

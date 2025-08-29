@@ -21,6 +21,7 @@ using Robust.Shared.Timing;
 using Content.Shared.DeviceNetwork.Components;
 using Content.Shared.Station.Components;
 using Timer = Robust.Shared.Timing.Timer;
+using Content.Server.Announcements.Systems;
 
 namespace Content.Server.RoundEnd
 {
@@ -41,6 +42,7 @@ namespace Content.Server.RoundEnd
         [Dependency] private readonly EmergencyShuttleSystem _shuttle = default!;
         [Dependency] private readonly SharedAudioSystem _audio = default!;
         [Dependency] private readonly StationSystem _stationSystem = default!;
+        [Dependency] private readonly AnnouncerSystem _announcer = default!;
 
         public TimeSpan DefaultCooldownDuration { get; set; } = TimeSpan.FromSeconds(30);
 
@@ -179,15 +181,17 @@ namespace Content.Server.RoundEnd
                 units = "eta-units-minutes";
             }
 
-            _chatSystem.DispatchGlobalAnnouncement(Loc.GetString(text,
-                ("time", time),
-                ("units", Loc.GetString(units))),
-                Loc.GetString(name),
-                false,
+            _announcer.SendAnnouncement(_announcer.GetAnnouncementId("ShuttleCalled"),
+                Filter.Broadcast(),
+                text,
+                name,
+                Color.Gold,
+                null, //imp
                 null,
-                Color.Gold);
-
-            _audio.PlayGlobal("/Audio/Announcements/shuttlecalled.ogg", Filter.Broadcast(), true);
+                null,
+                ("time", time),
+                    ("units", Loc.GetString(units))
+            );
 
             LastCountdownStart = _gameTiming.CurTime;
             ExpectedCountdownEnd = _gameTiming.CurTime + countdownTime;
@@ -232,10 +236,13 @@ namespace Content.Server.RoundEnd
                 _adminLogger.Add(LogType.ShuttleRecalled, LogImpact.High, $"Shuttle recalled");
             }
 
-            _chatSystem.DispatchGlobalAnnouncement(Loc.GetString("round-end-system-shuttle-recalled-announcement"),
-                Loc.GetString("round-end-system-shuttle-sender-announcement"), false, colorOverride: Color.Gold);
-
-            _audio.PlayGlobal("/Audio/Announcements/shuttlerecalled.ogg", Filter.Broadcast(), true);
+            _announcer.SendAnnouncement(
+                _announcer.GetAnnouncementId("ShuttleRecalled"),
+                Filter.Broadcast(),
+                "round-end-system-shuttle-recalled-announcement",
+                Loc.GetString("round-end-system-shuttle-sender-announcement"),
+                Color.Gold
+            );
 
             LastCountdownStart = null;
             ExpectedCountdownEnd = null;
@@ -314,9 +321,13 @@ namespace Content.Server.RoundEnd
                     // Check is shuttle called or not. We should only dispatch announcement if it's already called
                     if (IsRoundEndRequested())
                     {
-                        _chatSystem.DispatchGlobalAnnouncement(Loc.GetString(textAnnounce),
+                        _announcer.SendAnnouncement(
+                            _announcer.GetAnnouncementId("ShuttleCalled"),
+                            Filter.Broadcast(),
+                            textAnnounce,
                             Loc.GetString(sender),
-                            colorOverride: Color.Gold);
+                            Color.Gold
+                        );
                     }
                     else
                     {

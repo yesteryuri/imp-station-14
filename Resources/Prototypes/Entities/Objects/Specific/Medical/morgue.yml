@@ -13,6 +13,9 @@
     layers:
     - state: bag
       map: ["unfoldedLayer", "enum.StorageVisualLayers.Base"]
+    - state: bag_overlay #imp
+      map: ["unfoldedLayerOverlay"] #imp
+      shader: unshaded #imp
     - state: bag_folded
       map: ["foldedLayer"]
       visible: false
@@ -124,6 +127,7 @@
   - type: Tag
     tags:
     - Trash
+    - Ash # imp this is really stupid
   - type: SolutionContainerManager
     solutions:
       food:

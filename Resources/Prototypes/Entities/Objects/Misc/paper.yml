@@ -55,7 +55,10 @@
           Quantity: 1
   - type: Item
     size: Tiny
+  - type: Material # Corvax-Printer-Start
   - type: PhysicalComposition
+    materialComposition:
+      SheetPrinter: 100 # Corvax-Printer-End
 
 - type: entity
   name: paper
@@ -368,7 +371,7 @@
   - type: NukeCodePaper
 
 - type: entity
-  parent: [Paper, BaseSyndicateContraband] # eat or burn your damn piece of paper damn thieves
+  parent: [Paper, Tier2Contraband ] # eat or burn your damn piece of paper damn thieves # imp contraband
   id: TraitorCodePaper
   name: syndicate codeword
   description: A leaked codeword to possibly get in touch with the Syndicate.
@@ -377,7 +380,8 @@
   - type: TraitorCodePaper
 
 - type: entity
-  parent: [Paper, BaseSyndicateContraband]
+  parent: [Paper, Tier2Contraband]
+
   id: AllTraitorCodesPaper
   name: syndicate codewords registry
   description: A registry of all active Syndicate codewords.

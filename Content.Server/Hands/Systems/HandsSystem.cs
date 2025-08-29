@@ -5,10 +5,12 @@ using Content.Shared.ActionBlocker;
 using Content.Shared.Body.Part;
 using Content.Shared.CombatMode;
 using Content.Shared.Damage.Systems;
+using Content.Shared.Decapoids.Components; // Imp
 using Content.Shared.Explosion;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Input;
+using Content.Shared.Item; // Imp
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.Stacks;
@@ -123,6 +125,16 @@ namespace Content.Server.Hands.Systems
             };
 
             AddHand(ent.AsNullable(), args.Slot, location);
+
+            // ImpStation - for giving Decapoids their claws
+            if (TryComp<InnateHeldItemComponent>(args.Part, out var innateHeldItem))
+            {
+                var item = Spawn(innateHeldItem.ItemPrototype);
+                if (!TryPickup(ent, item, ent.Comp.SortedHands[^1], false, false, true, ent.Comp, Comp<ItemComponent>(item)))
+                {
+                    Log.Error("Failed to put innately held item into hand");
+                }
+            }
         }
 
         private void HandleBodyPartRemoved(EntityUid uid, HandsComponent component, ref BodyPartRemovedEvent args)
@@ -177,6 +189,14 @@ namespace Content.Server.Hands.Systems
             direction *= distance / length;
 
             var throwSpeed = hands.BaseThrowspeed;
+
+            // imp edit, throwing changes
+            var itemEv = new BeforeGettingThrownEvent((EntityUid)throwEnt, direction, throwSpeed, player);
+            RaiseLocalEvent((EntityUid)throwEnt, ref itemEv);
+
+            if (itemEv.Cancelled)
+                return true;
+            // imp edit,
 
             // Let other systems change the thrown entity (useful for virtual items)
             // or the throw strength.

@@ -1,41 +1,23 @@
 ## Plushies
 
+# imp comment: The difference between a "squeaky toy" and a "plushie" is that plushies have stashes and are made of cloth (edible by moths).
+# BaseSqueakyToy is at _DEN/Entities/Objects/Fun/toys.yml
+
 - type: entity
   abstract: true
-  parent: [BaseItem, BaseStash]
+  parent: [BaseSqueakyToy, BaseStash] # DEN: BaseItem -> BaseSqueakyToy
   id: BasePlushie
   components:
-  - type: EmitSoundOnUse
-    sound: &BasePlushieSound
-      collection: ToySqueak
-      params:
-        volume: -4
-  - type: EmitSoundOnActivate
-    sound: *BasePlushieSound
-  - type: EmitSoundOnCollide
-    sound: *BasePlushieSound
-  - type: EmitSoundOnLand
-    sound: *BasePlushieSound
-  - type: EmitSoundOnTrigger
-    sound: *BasePlushieSound
-  - type: UseDelay
-    delay: 3.0
-  - type: MeleeWeapon
-    attackRate: 0.333
-    wideAnimationRotation: 180
-    soundHit: *BasePlushieSound
-    damage:
-      types:
-        Blunt: 0
-    hidden: true
+  # DEN: Moved EmitSoundOnUse, EmitSoundOnActivate, EmitSoundOnCollide, EmitSoundOnLand, EmitSoundOnTrigger, UseDelay, MeleeWeapon, and StaticPrice into BaseSqueakyToy.
   - type: PhysicalComposition
     materialComposition:
       Cloth: 100
-  - type: StaticPrice
-    price: 5
   - type: Food
     requiresSpecialDigestion: true
-    useSound: *BasePlushieSound
+    useSound:
+      collection: ToySqueak #imp
+      params:
+        volume: -4 #imp
     delay: 2
   - type: SolutionContainerManager
     solutions:
@@ -48,6 +30,11 @@
     tags:
     - Payload
     - ClothMade
+    - Plushie # imp
+    # imp edits #
+  - type: StealTarget
+    stealGroup: Plushie
+  # end imp edits #
 
 - type: entity
   parent: BasePlushie
@@ -1044,24 +1031,27 @@
     sprite: Objects/Fun/Plushies/vox.rsi
     state: icon
   - type: EmitSoundOnUse
-    sound: &PlushieVoxSound
-      path: /Audio/Voice/Vox/shriek1.ogg
+    sound: &PlushieVoxCoo #imp
+      path: /Audio/_Impstation/Voice/Vox/voxcoo2.ogg #imp
       params:
         volume: -5
   - type: EmitSoundOnLand
-    sound: *PlushieVoxSound
+    sound: &PlushieVoxShriek #imp
+      path: /Audio/Voice/Vox/shriek1.ogg #imp
   - type: EmitSoundOnActivate
-    sound: *PlushieVoxSound
+    sound: *PlushieVoxShriek #imp
   - type: EmitSoundOnTrigger
-    sound: *PlushieVoxSound
+    sound: *PlushieVoxCoo #imp
   - type: EmitSoundOnCollide
-    sound: *PlushieVoxSound
+    sound: *PlushieVoxShriek #imp
   - type: Food
     requiresSpecialDigestion: true
-    useSound: *PlushieVoxSound
+    useSound:
+      path: /Audio/_Impstation/Voice/Vox/voxcry.ogg #imp
   - type: MeleeWeapon
     wideAnimationRotation: 180
-    soundHit: *PlushieVoxSound
+    soundHit:
+      path: /Audio/_Impstation/Voice/Vox/voxchitter2.ogg #imp
   - type: Clothing
     quickEquip: false
     sprite: Objects/Fun/Plushies/vox.rsi

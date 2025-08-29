@@ -78,6 +78,17 @@
   - type: Tag
     tags:
     - VimPilot
+  # imp edit start
+  - type: GoobAbsorbable # mouse bite sized
+    biomassRestored: 0.1
+  - type: Carriable #DeltaV
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
+  # imp edit end
 
 - type: entity
   name: bee
@@ -139,6 +150,7 @@
     tags:
     - Bee
     - Trash
+    - MultitoolDefibrillatorTarget #imp
   - type: Bloodstream
     bloodReagent: InsectBlood
     bloodMaxVolume: 0.1
@@ -273,6 +285,12 @@
   - type: NpcFactionMember
     factions:
     - Passive
+  # imp edit start
+  - type: GoobAbsorbable # imp edit - a good meal
+    biomassRestored: 0.2
+  - type: Carriable #DeltaV
+    freeHandsRequired: 1
+  # imp edit end
 
 - type: entity
   parent: MobChicken
@@ -416,6 +434,8 @@
     tags:
     - Trash
     - VimPilot
+    - MultitoolDefibrillatorTarget # imp
+    - KodeEdible # imp
   - type: Destructible
     thresholds:
     - trigger:
@@ -435,7 +455,17 @@
     animation: WeaponArcBite
     damage:
       types:
-        Piercing: 0
+        Piercing: 1 # imp edit
+  # imp edit start
+  - type: GoobAbsorbable # imp edit
+    biomassRestored: 0.1
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
+  # imp edit end
 
 - type: entity
   name: glockroach
@@ -579,6 +609,7 @@
     - Trash
     - CannotSuicide
     - VimPilot
+    - MultitoolDefibrillatorTarget #imp
   - type: CanEscapeInventory
   - type: NpcFactionMember
     factions:
@@ -634,6 +665,15 @@
           32:
             sprite: Mobs/Animals/mothroach/displacement.rsi
             state: neck
+  # imp edit start
+  - type: PleebnarGibbable
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
+  # imp edit end
 
 
 # Note that the mallard duck is actually a male drake mallard, with the brown duck being the female variant of the same species, however ss14 lacks sex specific textures
@@ -711,6 +751,12 @@
   - type: NpcFactionMember
     factions:
     - Passive
+  # imp edit start
+  - type: GoobAbsorbable
+    biomassRestored: 0.2
+  - type: Carriable #DeltaV
+    freeHandsRequired: 1
+  # imp edit end
 
 - type: entity
   name: white duck #Quack
@@ -826,6 +872,8 @@
   - type: Tag
     tags:
     - Trash
+    - MultitoolDefibrillatorTarget #imp
+    - Butterfly #imp, for butterfly orchid
   - type: Bloodstream
     bloodReagent: InsectBlood
     bloodMaxVolume: 0.1
@@ -840,6 +888,9 @@
       behaviors:
       - !type:GibBehavior
         recursive: false
+  # imp edit start
+  - type: PleebnarGibbable
+  # imp edit end
 
 - type: entity
   name: cow
@@ -925,6 +976,10 @@
     guides:
     - Chef
     - FoodRecipes
+  # imp edit start
+  - type: GoobAbsorbable
+    biomassRestored: 0.7
+  # imp edit end
 
 - type: entity
   name: crab
@@ -993,6 +1048,24 @@
       task: RuminantCompound
   - type: Body
     prototype: AnimalHemocyanin
+  # imp edit start
+  - type: GoobAbsorbable
+    biomassRestored: 0.3
+  - type: Carriable #DeltaV
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
+  - type: VentCrawler
+    enterDelay: 3
+  - type: Vocal
+    sounds:
+      Male: UnisexDecapoid
+      Female: UnisexDecapoid
+      Unsexed: UnisexDecapoid
+  # imp edit end
 
 - type: entity
   name: goat
@@ -1096,6 +1169,10 @@
   - type: HTN
     rootTask:
       task: RuminantHostileCompound
+  # imp edit start
+  - type: GoobAbsorbable
+    biomassRestored: 0.5
+  # imp edit end
 
 # Note that we gotta make this bitch vomit someday when you feed it anthrax or sumthin. Needs to be a small item thief too and aggressive if attacked.
 - type: entity
@@ -1145,6 +1222,11 @@
   - type: NpcFactionMember
     factions:
     - Passive
+  # imp edit start
+  - type: GoobAbsorbable
+    biomassRestored: 0.3
+  - type: Carriable #DeltaV
+  # imp edit end
 
 - type: entity
   name: gorilla
@@ -1220,6 +1302,10 @@
       0: Alive
       200: Critical
       250: Dead
+  # imp edit start
+  - type: GoobAbsorbable
+    biomassRestored: 0.8
+  # imp edit end
 
 - type: entity
   name: kangaroo
@@ -1304,6 +1390,10 @@
   - type: HTN
     rootTask:
       task: SimpleHostileCompound
+  # imp edit start
+  - type: GoobAbsorbable # imp edit
+    biomassRestored: 0.8
+  # imp edit end
 
 - type: entity
   name: boxing kangaroo
@@ -1327,8 +1417,22 @@
   - type: Inventory
     templateId: monkey
     speciesId: monkey
+    #imp edit start
+    displacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _Impstation/Mobs/Animals/Monkey/displacement.rsi
+            state: jumpsuit
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _Impstation/Mobs/Animals/Monkey/displacement.rsi
+            state: outerClothing
+    #imp edit end
   - type: Deathgasp
     prototype: MonkeyDeathgasp
+  - type: Blindable #imp
   - type: Cuffable
   - type: RotationVisuals
     defaultRotation: 90
@@ -1366,6 +1470,7 @@
       sprite: "Effects/creampie.rsi"
       state: "creampie_human"
       visible: false
+  - type: Carriable #DeltaV
   - type: Hands
   - type: ComplexInteraction
   - type: GenericVisualizer
@@ -1382,7 +1487,7 @@
     sprite: Mobs/Effects/onfire.rsi
     normalState: Monkey_burning
   - type: InteractionPopup
-    successChance: 0.9
+    successChance: 0.7 #imp
     interactSuccessString: petting-success-monkey
     interactFailureString: petting-failure-monkey
     interactSuccessSpawn: EffectHearts
@@ -1422,6 +1527,7 @@
     - VimPilot
     - DoorBumpOpener
     - AnomalyHost
+    - CanPilot #imp edit
   - type: Reactive
     groups:
       Flammable: [ Touch ]
@@ -1432,8 +1538,12 @@
       effects:
       - !type:WashCreamPieReaction
   - type: Crawler
-
-
+  # imp edit start
+  - type: GoobAbsorbable # imp edit
+    biomassRestored: 0.4
+  - type: VentCrawler #imp
+    enterDelay: 3
+  # imp edit end
 
 - type: entity
   name: monkey
@@ -1446,6 +1556,7 @@
   - type: Speech
     speechSounds: Monkey
     speechVerb: Monkey
+    allowedEmotes: ['Scream', 'Laugh'] #imp
   - type: MonkeyAccent
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-primate
@@ -1469,6 +1580,16 @@
         Blunt: 1
     clumsySound:
       path: /Audio/Animals/monkey_scream.ogg
+  # imp edit start
+  - type: Vocal #imp
+    sounds:
+      Male: Monkey
+      Female: Monkey
+      Unsexed: Monkey
+  - type: Emoting
+  - type: BodyEmotes
+    soundsId: GeneralBodyEmotes
+  # imp edit end
 
 
 - type: entity
@@ -1485,6 +1606,7 @@
   - type: Speech
     speechSounds: Monkey
     speechVerb: Monkey
+    allowedEmotes: ['Scream', 'Laugh'] #imp
   - type: MonkeyAccent
   - type: NpcFactionMember
     factions:
@@ -1503,6 +1625,16 @@
   - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [SyndicateOperativeGearMonkey]
+  # imp edit start
+  - type: Vocal
+    sounds:
+      Male: Monkey
+      Female: Monkey
+      Unsexed: Monkey
+  - type: Emoting
+  - type: BodyEmotes
+    soundsId: GeneralBodyEmotes
+  # imp edit end
 
 - type: entity
   id: MobMonkeySyndicateAgent
@@ -1512,6 +1644,9 @@
     # make the player a traitor once its taken
   - type: AutoTraitor
     profile: TraitorReinforcement
+  # imp edit start
+  - type: VentCrawler
+  # imp edit end
 
 - type: entity
   id: MobMonkeySyndicateAgentNukeops # Reinforcement exclusive to nukeops uplink
@@ -1535,7 +1670,7 @@
   - type: Speech
     speechSounds: Lizard
     speechVerb: Reptilian
-    allowedEmotes: ['Thump']
+    allowedEmotes: ['Thump', 'Hiss'] #imp
   - type: Vocal
     sounds:
       Male: MaleReptilian
@@ -1811,6 +1946,12 @@
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 3
+        - ReagentId: MouseBites #imp
+          Quantity: 2
+      mousebites: #imp. dont look at this.
+        reagents:
+        - ReagentId: MouseBites
+          Quantity: 500 # DONT LOOK AT THIS. i'm looking at this and making a note to make this better
   - type: Butcherable
     spawned:
     - id: FoodMeatRat
@@ -1824,6 +1965,7 @@
     - ChefPilot
     - Mouse
     - Meat
+    - MultitoolDefibrillatorTarget #imp
   - type: Respirator
     damage:
       types:
@@ -1875,6 +2017,36 @@
       behaviors:
       - !type:GibBehavior
         recursive: false
+  # imp edit start
+  - type: GoobAbsorbable
+    biomassRestored: 0.1
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Mouse
+  - type: PleebnarGibbable
+  - type: VentCrawler
+    enterDelay: 1
+  - type: MeleeChemicalInjector
+    solution: mousebites
+    transferAmount: 1
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
+  - type: Reproductive
+    partnerWhitelist:
+      tags:
+      - Mouse
+    offspring:
+    - id: MobMouse
+      maxAmount: 3
+    hungerPerBirth: 35
+    gestationDuration: 45
+    breedChance: 0.25
+  - type: ReproductivePartner
+  # imp edit end
 
 - type: entity
   parent: MobMouse
@@ -1936,6 +2108,18 @@
   - type: Item
     size: Tiny
     heldPrefix: 1
+  # imp edit start
+  - type: Reproductive
+    partnerWhitelist:
+      tags:
+      - Mouse
+    offspring:
+    - id: MobMouse1
+      maxAmount: 3
+    hungerPerBirth: 35
+    gestationDuration: 45
+    breedChance: 0.25
+  # imp edit end
 
 - type: entity
   parent: MobMouse
@@ -1965,6 +2149,18 @@
   - type: Item
     size: Tiny
     heldPrefix: 2
+  # imp edit start
+  - type: Reproductive
+    partnerWhitelist:
+      tags:
+      - Mouse
+    offspring:
+    - id: MobMouse2
+      maxAmount: 3
+    hungerPerBirth: 35
+    gestationDuration: 45
+    breedChance: 0.25
+  # imp edit end
 
 - type: entity
   name: cancer mouse
@@ -2055,6 +2251,30 @@
   - type: Tag
     tags:
     - VimPilot
+    - MultitoolDefibrillatorTarget #imp edit
+  # imp edit start
+  - type: GoobAbsorbable
+    biomassRestored: 0.2
+  - type: ReplacementAccent
+    accent: kobold
+  - type: Speech
+    speechSounds: Lizard
+    speechVerb: Reptilian
+    allowedEmotes: [ 'Hiss' ] # Can't thump tail because no body component
+  - type: Vocal
+    sounds:
+      Male: MaleReptilian
+      Female: FemaleReptilian
+      Unsexed: MaleReptilian
+  - type: Carriable #DeltaV
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
+  - type: PleebnarGibbable
+  # imp edit end
 
 
 - type: entity
@@ -2103,6 +2323,24 @@
     interactSuccessSpawn: EffectHearts
   - type: Bloodstream
     bloodMaxVolume: 50
+  # imp edit start
+  - type: Tag
+    tags:
+    - MultitoolDefibrillatorTarget
+  - type: GoobAbsorbable
+    biomassRestored: 0.1
+  - type: Carriable
+    freeHandsRequired: 1
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
+  - type: PleebnarGibbable
+  - type: VentCrawler
+    enterDelay: 1
+  # imp edit end
 
 - type: entity
   name: frog
@@ -2162,6 +2400,7 @@
   - type: Tag
     tags:
     - VimPilot
+    - MultitoolDefibrillatorTarget # imp
   - type: Destructible
     thresholds:
     - trigger:
@@ -2171,6 +2410,20 @@
       behaviors:
       - !type:GibBehavior
         recursive: false
+  # imp edit start
+  - type: GoobAbsorbable
+    biomassRestored: 0.1
+  - type: Carriable #DeltaV
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
+  - type: PleebnarGibbable
+  - type: VentCrawler
+    enterDelay: 1
+  # imp edit end
 
 # Would be cool to have some functionality for the parrot to be able to sit on stuff
 - type: entity
@@ -2250,6 +2503,12 @@
       path: /Audio/Animals/parrot_raught.ogg
   - type: Bloodstream
     bloodMaxVolume: 50
+  # imp edit start
+  - type: GoobAbsorbable
+    biomassRestored: 0.2
+  - type: Carriable #DeltaV
+    freeHandsRequired: 1
+  # imp edit end
 
 - type: entity
   parent: MobParrotBase
@@ -2317,11 +2576,16 @@
     heatDamage:
       types:
         Heat : 0.2 #per second, scales with temperature & other constants
+  # imp edit start
+  - type: GoobAbsorbable
+    biomassRestored: 0.3
+  - type: Carriable #DeltaV
+  # imp edit end
 
 # TODO: Make grenade penguin voice activated like the rest of the stealth items.
 - type: entity
   name: grenade penguin
-  parent: [ MobPenguin, MobCombat, BaseSyndicateContraband ]
+  parent: [ MobPenguin, MobCombat, Tier3Contraband ] #imp, contraband
   id: MobGrenadePenguin
   description: A small penguin with a grenade strapped around its neck. Harvested by the Syndicate from icy shit-hole planets.
   components:
@@ -2332,7 +2596,7 @@
   - type: MobMover
   - type: HTN
     rootTask:
-      task: SimpleHostileCompound
+      task: GrenadePenguinCompound # imp
   - type: NpcFactionMember
     factions:
     - Syndicate
@@ -2372,7 +2636,7 @@
     sprite: Mobs/Animals/grenadepenguin.rsi
   - type: TriggerOnUse
   - type: TimerTrigger
-    delay: 10
+    delay: 15 #imp
     beepSound:
       path: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg #funny sfx use
       params:
@@ -2380,7 +2644,7 @@
     beepInterval: 1
   - type: Explosive
     explosionType: Default
-    maxIntensity: 20
+    maxIntensity: 10 # imp
     intensitySlope: 20
     totalIntensity: 225
   - type: ExplodeOnTrigger
@@ -2399,7 +2663,7 @@
   name: snake
   parent: SimpleMobBase
   id: MobSnake
-  description: Hissss! Bites aren't poisonous.
+  description: Hisss! Bites aren't venomous. #imp poisonous isn't venomous. Also matches snake hissing length
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -2441,6 +2705,21 @@
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Scale
+  # imp edit start
+  - type: GoobAbsorbable # imp edit
+    biomassRestored: 0.2
+  - type: Carriable #DeltaV
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
+  - type: Tag # imp - remove doorbumpopener
+    tags: []
+  - type: VentCrawler
+    enterDelay: 2
+  # imp edit start
 
 # Code unique spider prototypes or combine them all into one spider and get a
 # random sprite state when you spawn it.
@@ -2464,10 +2743,12 @@
   - type: Butcherable
     spawned:
     - id: FoodMeatSpider
+      amount: 1 # imp
+    - id: FoodMeatSpiderLeg # imp
       amount: 2
   - type: CombatMode
   - type: Body
-    prototype: AnimalHemocyanin
+    prototype: AnimalHemocyaninSpider #Imp for edible spider silk
   - type: MobThresholds
     thresholds:
       0: Alive
@@ -2531,6 +2812,32 @@
       groups:
         Brute: -0.07
         Burn: -0.07
+  # imp edit start
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base", "movement" ]
+      state: tarantula
+      sprite: Mobs/Animals/spider.rsi
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: tarantula-moving
+    noMovementLayers:
+      movement:
+        state: tarantula
+  - type: GoobAbsorbable # big enough to restore a good amount of biomass
+    biomassRestored: 0.7
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
+  - type: VentCrawler
+    enterDelay: 3
+  - type: Carriable #DeltaV
+  # imp edit end
 
 - type: entity
   parent: MobSpiderBase
@@ -2710,6 +3017,17 @@
   - type: Tag
     tags:
     - VimPilot
+  # imp edit start
+  - type: GoobAbsorbable
+    biomassRestored: 0.3
+  - type: Carriable #DeltaV
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
+  # imp edit end
 
 - type: entity
   name: possum
@@ -2731,6 +3049,14 @@
         Base: possum_dead_old
       Dead:
         Base: possum_dead_old
+  # imp edit start
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
+  # imp edit end
 
 - type: entity
   name: raccoon
@@ -2784,6 +3110,17 @@
   - type: Tag
     tags:
     - VimPilot
+  # imp edit start
+  - type: GoobAbsorbable
+    biomassRestored: 0.3
+  - type: Carriable #DeltaV
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
+  # imp edit end
 
 - type: entity
   name: fox
@@ -2863,6 +3200,18 @@
   - type: Tag
     tags:
     - VimPilot
+  # imp edit start
+  - type: GoobAbsorbable
+    biomassRestored: 0.3
+  - type: Carriable #DeltaV
+  - type: DogVision
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
+  # imp edit end
 
 - type: entity
   abstract: true
@@ -2907,6 +3256,12 @@
   - type: MobPrice
     price: 200
   - type: MessyDrinker
+  # imp edit start
+  - type: GoobAbsorbable
+    biomassRestored: 0.3
+  - type: Carriable #DeltaV
+  - type: DogVision
+  # imp edit end
 
 - type: entity
   parent: MobCorgiBase
@@ -3019,6 +3374,14 @@
   - type: Grammar
     attributes:
       gender: epicene
+  # imp edit start
+  - type: VentCrawler
+    enterDelay: 3
+  - type: Tag
+    tags:
+    - VimPilot
+    - MultitoolDefibrillatorTarget
+  # imp edit start
 
 - type: entity
   name: cat
@@ -3091,6 +3454,17 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 2
     baseSprintSpeed: 4
+  # imp edit start
+  - type: GoobAbsorbable
+    biomassRestored: 0.3
+  - type: Carriable #DeltaV
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
+  # imp edit end
 
 - type: entity
   name: calico cat
@@ -3118,6 +3492,7 @@
   description: Explosive kitten.
   components:
   - type: Sprite
+    sprite: _Impstation/Mobs/Pets/cats.rsi #imp
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: syndicat
@@ -3137,6 +3512,7 @@
     rules: ghost-role-information-SyndiCat-rules
     mindRoles:
     - MindRoleGhostRoleTeamAntagonist
+    - MindRoleGhostRoleFamiliar #imp
     raffle:
       settings: default
   - type: GhostTakeoverAvailable
@@ -3163,6 +3539,15 @@
         Slash: 6
         Piercing: 6
         Structural: 15
+  # imp edit start
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Syndicate
+  - type: ActiveRadio
+    channels:
+    - Syndicate
+  # imp edit end
 
 - type: entity
   name: space cat
@@ -3254,6 +3639,14 @@
     thresholds:
       0: Alive
       25: Dead
+  # imp edit start
+  - type: Carriable #DeltaV
+    freeHandsRequired: 1
+  - type: Tag
+    tags:
+    - VimPilot
+    - MultitoolDefibrillatorTarget
+  # imp edit end
 
 - type: entity
   name: sloth
@@ -3311,6 +3704,11 @@
   - type: Tag
     tags:
     - VimPilot
+  # imp edit start
+  - type: GoobAbsorbable # imp edit
+    biomassRestored: 0.3
+  - type: Carriable #DeltaV
+  # imp edit end
 
 - type: entity
   name: ferret
@@ -3365,6 +3763,19 @@
   - type: Tag
     tags:
     - VimPilot
+  # imp edit start
+  - type: GoobAbsorbable
+    biomassRestored: 0.3
+  - type: Carriable #DeltaV
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
+  - type: VentCrawler
+    enterDelay: 3
+  # imp edit end
 
 - type: entity
   name: hamster
@@ -3471,6 +3882,7 @@
     - Trash
     - Hamster
     - Meat
+    - MultitoolDefibrillatorTarget #imp
   - type: Respirator
     damage:
       types:
@@ -3517,6 +3929,13 @@
       behaviors:
       - !type:GibBehavior
         recursive: false
+  # imp edit start
+  - type: GoobAbsorbable
+    biomassRestored: 0.2
+  - type: PleebnarGibbable
+  - type: VentCrawler
+    enterDelay: 1
+  # imp edit end
 
 - type: entity
   name: pig
@@ -3588,6 +4007,12 @@
   - type: HTN
     rootTask:
       task: RuminantCompound
+  # imp edit start
+  - type: GoobAbsorbable
+    biomassRestored: 0.7
+  - type: Carriable #DeltaV
+  - type: PleebnarGibbable
+  # imp edit end
 
 - type: entity
   name: diona nymph
@@ -3661,6 +4086,7 @@
     tags:
     - DoorBumpOpener
     - VimPilot
+    - DionaMinded #imp
   - type: Emoting
   - type: BodyEmotes
     soundsId: Nymph
@@ -3669,6 +4095,20 @@
     reformTime: 10
     popupText: diona-reform-attempt
     reformPrototype: MobDionaReformed
+  # imp edit start
+  - type: GoobAbsorbable
+    biomassRestored: 0.3
+  - type: Item
+    size: Small
+    heldPrefix: 0
+  - type: Clothing
+    quickEquip: false
+    sprite: Mobs/Animals/nymph.rsi
+    equippedPrefix: 0
+    slots:
+      - HEAD
+  - type: CanEscapeInventory
+  # imp edit end
 
 - type: entity
   parent: MobDionaNymph
@@ -3677,6 +4117,9 @@
   components:
   - type: ReplacementAccent
     accent: nymph
+  # imp edit start
+  - type: PleebnarGibbable # if tupid then pleebnar meal
+  # imp edit end
 
 - type: entity
   name: reindeer buck
@@ -3739,6 +4182,16 @@
       task: SimpleHostileCompound
   - type: Puller
     needsHands: false
+  # imp edit start
+  - type: GoobAbsorbable
+    biomassRestored: 0.5
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
+  # imp edit end
 
 - type: entity
   name: reindeer doe

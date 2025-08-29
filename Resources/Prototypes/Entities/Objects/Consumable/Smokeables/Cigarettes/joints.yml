@@ -11,6 +11,8 @@
     tags:
       - Cigarette
       - Trash
+      - PetWearable # imp
+      - KodeEdible # imp
   - type: SpaceGarbage
   - type: Clothing
     sprite: Objects/Consumable/Smokeables/Cannabis/joint.rsi
@@ -28,12 +30,17 @@
         reagents:
           - ReagentId: THC
             Quantity: 20
+      food:
+        maxVol: 30
+        reagents:
+          - ReagentId: THC
+            Quantity: 20
   - type: RandomMetadata
     nameSegments: [NamesRollie]
 
 - type: entity
   id: JointRainbow
-  parent: Joint
+  parent: [Joint, BaseMinorContraband]
   name: joint
   suffix: Rainbow
   description: A roll of dried plant matter wrapped in thin paper. Seems to be colorful inside.
@@ -44,6 +51,21 @@
   - type: SolutionContainerManager
     solutions:
       smokable:
+        maxVol: 20
+        reagents:
+        - ReagentId: SpaceDrugs
+          Quantity: 4
+        - ReagentId: Lipolicide
+          Quantity: 4
+        - ReagentId: MindbreakerToxin
+          Quantity: 2.66
+        - ReagentId: Happiness
+          Quantity: 2.66
+#       - ReagentId: ColorfulReagent
+#         Quantity: 1.33
+        - ReagentId: Psicodine
+          Quantity: 0.8
+      food:
         maxVol: 20
         reagents:
         - ReagentId: SpaceDrugs
@@ -72,6 +94,8 @@
     tags:
       - Cigarette
       - Trash
+      - HamsterWearable # imp
+      - KodeEdible # imp
   - type: SpaceGarbage
   - type: Clothing
     sprite: Objects/Consumable/Smokeables/Cannabis/blunt.rsi
@@ -85,6 +109,11 @@
   - type: SolutionContainerManager
     solutions:
       smokable:
+        maxVol: 30
+        reagents:
+          - ReagentId: THC
+            Quantity: 20
+      food:
         maxVol: 30
         reagents:
           - ReagentId: THC
@@ -105,6 +134,21 @@
   - type: SolutionContainerManager
     solutions:
       smokable:
+        maxVol: 20
+        reagents:
+        - ReagentId: SpaceDrugs
+          Quantity: 4
+        - ReagentId: Lipolicide
+          Quantity: 4
+        - ReagentId: MindbreakerToxin
+          Quantity: 2.66
+        - ReagentId: Happiness
+          Quantity: 2.66
+#       - ReagentId: ColorfulReagent
+#         Quantity: 1.33
+        - ReagentId: Psicodine
+          Quantity: 0.8
+      food:
         maxVol: 20
         reagents:
         - ReagentId: SpaceDrugs

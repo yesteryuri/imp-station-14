@@ -1,3 +1,4 @@
+# IMP NOTE: New imp migrations should be added to migration_imp.yml
 # This is a basic dictionary that maps old entity prototype ids to new ids. This only works for entity prototypes, and
 # is intended to allow maps to load without having to manually edit them. An empty or "null" string results in the
 # entity getting deleted.
@@ -175,8 +176,8 @@ FoodBoxDonkpocketGondola: FoodBoxDonkpocketPizza
 # 2024-01-31
 SpyCrewMonitor: null
 SpyCrewMonitorEmpty: null
-SyndiCrewMonitor: null
-SyndiCrewMonitorEmpty: null
+# SyndiCrewMonitor: null # imp
+# SyndiCrewMonitorEmpty: null # imp
 
 SpawnVehicleWheelchair: null
 SpawnVehicleWheelchairFolded: null
@@ -215,16 +216,16 @@ YellowOxygenTankFilled: OxygenTankFilled
 FoodDonutBlumpkin: FoodDonutBluePumpkin
 FoodDonutJellyBlumpkin: FoodDonutJellyBluePumpkin
 
-# 2024-02-19
-Drone: null
-SpawnMobDrone: null
-Onestar: null # I dont think this is even mapped, but just in case
+# 2024-02-19 #imp, restored drones
+#Drone: null
+#SpawnMobDrone: null
+#Onestar: null # I dont think this is even mapped, but just in case
 
 # 2024-02-22
 SolarAssemblyPart: SolarAssemblyFlatpack
 AmePart: AmePartFlatpack
 AmePartStealObjective: AmePartFlatpackStealObjective
-Observationskit: null
+# Observationskit: null # imp
 
 # 2024-02-26
 CrateBaseWeldable: CrateGenericSteel
@@ -379,7 +380,7 @@ SignChemistry1: SignChem
 SignChemistry2: SignChem
 SignCourt: SignLawyer
 SignAtmosMinsky: SignAtmos
-SignDrones: SignMaterials
+# SignDrones: SignMaterials - Reverted on Imp.
 SignShield: null # what was this even for?
 SignHydro2: SignHydro1
 SignHydro3: SignHydro1
@@ -536,7 +537,7 @@ LightTree05: LightTree
 LightTree06: LightTree
 
 # 2024-12-28
-DrinkIrishCarBomb: DrinkIrishSlammer
+# DrinkIrishCarBomb: DrinkIrishSlammer - reverted on imp
 
 # 2025-01-06
 BorgModuleRadiationDetection: null
@@ -554,7 +555,7 @@ WeaponSubMachineGunVector: null
 WeaponSubMachineGunVectorRubber: null
 
 # 2025-02-11
-WallShuttleInterior: WallShuttle
+#WallShuttleInterior: WallShuttle # imp lol
 
 # 2025-02-18
 PosterContrabandLustyExomorph: PosterContrabandRealExomorph

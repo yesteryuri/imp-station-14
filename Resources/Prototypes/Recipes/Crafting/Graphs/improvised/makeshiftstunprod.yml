@@ -13,12 +13,13 @@
               icon:
                 sprite: Objects/Power/power_cells.rsi
                 state: small
-            - tag: Handcuffs
+            - tag: Cablecuffs
               icon:
                 sprite: Objects/Misc/cablecuffs.rsi
                 state: cuff
-                color: red
+                color: forestgreen # imp
               name: construction-graph-tag-cuffs
+              doAfter: 1 # imp
             - tag: Igniter
               name: construction-graph-tag-igniter
               icon:

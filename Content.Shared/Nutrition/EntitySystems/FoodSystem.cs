@@ -13,6 +13,7 @@ using Content.Shared.Popups;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
+using Content.Shared.Projectiles; // imp
 
 namespace Content.Shared.Nutrition.EntitySystems;
 
@@ -31,6 +32,7 @@ public sealed class FoodSystem : EntitySystem
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] public readonly SharedProjectileSystem _projectile = default!; // imp
 
     public const float MaxFeedDistance = 1.0f;
 
@@ -162,6 +164,8 @@ public sealed class FoodSystem : EntitySystem
 
     private void OnFoodFullyEaten(Entity<FoodComponent> food, ref FullyEatenEvent args)
     {
+        _projectile.RemoveEmbeddedChildren(food); // imp edit
+
         if (food.Comp.Trash.Count == 0)
             return;
 

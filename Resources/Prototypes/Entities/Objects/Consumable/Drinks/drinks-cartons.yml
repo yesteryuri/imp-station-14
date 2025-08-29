@@ -45,6 +45,9 @@
   - type: TrashOnSolutionEmpty
     solution: drink
   - type: DnaSubstanceTrace
+  - type: Tag # imp edit, allow cartons in dispenser
+    tags:
+    - DrinkBottle
 
 - type: entity
   parent: DrinkCartonBaseFull

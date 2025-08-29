@@ -33,20 +33,18 @@
     state: pink
 
 - type: entity
-  parent: WarpPoint
+  parent: MarkerBase # imp edit
   id: WarpPointBombing
-  name: warp point
-  suffix: ninja bombing target
+  name: ninja bombing target # imp edit
+  #suffix: ninja bombing target # imp edit
   components:
   - type: BombingTarget
+    location: bombing target # imp edit
+  #- type: WarpPoint # imp edit
+  #  location: bombing target # imp edit
   - type: Tag
     tags:
     - GhostOnlyWarp
-  - type: WarpPoint
-    location: bombing target
-    blacklist:
-      tags:
-      - GhostOnlyWarp
   - type: Sprite
     layers:
     - state: pink

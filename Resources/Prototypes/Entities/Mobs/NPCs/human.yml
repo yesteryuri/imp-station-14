@@ -88,6 +88,8 @@
         Blunt: 19
   - type: Inventory
     templateId: corpse
+  - type: Rotting
+    totalRotTime: 1200 # 20 minutes
 
 - type: entity
   parent: MobHuman
@@ -96,5 +98,6 @@
   description: A polymorphed unfortunate.
   components:
   - type: Cluwne
+    geneticDamageOnDeath: 0 # IMP
   - type: Speech
     speechVerb: Cluwne

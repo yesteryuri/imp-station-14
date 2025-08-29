@@ -42,8 +42,8 @@
         type: RadarConsoleBoundUserInterface
       enum.CrewMonitoringUIKey.Key:
         type: CrewMonitoringBoundUserInterface
-      enum.GeneralStationRecordConsoleKey.Key:
-        type: GeneralStationRecordConsoleBoundUserInterface
+      enum.CharacterRecordConsoleKey.Key: #imp edit - give the ai the CD char records instead of the default one
+        type: CharacterRecordConsoleBoundUserInterface
       enum.SiliconLawsUiKey.Key:
         type: SiliconLawBoundUserInterface
       enum.CommunicationsConsoleUiKey.Key:
@@ -54,8 +54,8 @@
         toggleAction: ActionAGhostShowRadar
       enum.CrewMonitoringUIKey.Key:
         toggleAction: ActionAGhostShowCrewMonitoring
-      enum.GeneralStationRecordConsoleKey.Key:
-        toggleAction: ActionAGhostShowStationRecords
+      enum.CharacterRecordConsoleKey.Key: #imp edit - give the ai the CD char records instead of the default one
+        toggleAction: ActionAGhostShowCharacterRecords
       enum.CommunicationsConsoleUiKey.Key:
         toggleAction: ActionAGhostShowCommunications
   - type: CrewMonitoringConsole
@@ -71,6 +71,11 @@
     title: comms-console-announcement-title-station-ai
     color: "#5ed7aa"
   - type: ShowJobIcons
+  - type: StealTarget #imp
+    stealGroup: AICore
+  - type: CharacterRecordConsole #imp edit - give the Ai the new cd records console. only employment because they're nominally a civilian role, but they can still use the sec & med consoles.
+    consoleType: Employment
+
 
 - type: entity
   id: AiHeldIntellicard
@@ -93,6 +98,8 @@
       enum.SiliconLawsUiKey.Key:
         type: SiliconLawBoundUserInterface
   - type: ShowJobIcons
+  - type: StealTarget #imp
+    stealGroup: AICore
 
 # Ai
 - type: entity
@@ -135,7 +142,7 @@
     proto: AiHeldIntellicard
     container: station_ai_mind_slot
   - type: Sprite
-    sprite: Objects/Devices/ai_card.rsi
+    sprite: _Impstation/Objects/Devices/ai_card.rsi #imp
     layers:
     - state: base
     - state: full
@@ -155,7 +162,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Mobs/Silicon/station_ai.rsi
+    sprite: _Impstation/Mobs/Silicon/station_ai.rsi #imp
     layers:
     - state: base
     - state: ai
@@ -171,7 +178,7 @@
   suffix: Empty
   components:
   - type: Anchorable
-    flags: 
+    flags:
     - Anchorable
   - type: Rotatable
   - type: WarpPoint
@@ -298,6 +305,10 @@
       state: ai_female
   - type: NameIdentifier
     group: StationAi
+  - type: Grammar # imp
+    attributes:
+      proper: true
+  - type: SkipLoadingCharacterRecords #imp edit - make it so the AI doesn't show up in the character records list
 
 # Hologram projection that the AI's eye tracks.
 - type: entity
@@ -374,6 +385,9 @@
   - type: StartingMindRole
     mindRole: "MindRoleSiliconBrain"
     silent: true
+  - type: Grammar # imp
+    attributes:
+      proper: true
 
 - type: entity
   id: PlayerBorgSyndicateAssaultBattery
@@ -406,6 +420,8 @@
       rules: ghost-role-information-silicon-rules
       raffle:
         settings: default
+      mindRoles: # imp edit but this seems to be an upstream mistake
+      - MindRoleGhostRoleSiliconAntagonist
     - type: GhostTakeoverAvailable
 
 - type: entity
@@ -439,6 +455,8 @@
       rules: ghost-role-information-silicon-rules
       raffle:
         settings: default
+      mindRoles: # imp edit
+      - MindRoleGhostRoleSiliconAntagonist
     - type: GhostTakeoverAvailable
 
 - type: entity
@@ -524,6 +542,8 @@
       rules: ghost-role-information-silicon-rules
       raffle:
         settings: default
+      mindRoles: # imp edit once again this is upstream forgetting borgs exist
+      - MindRoleGhostRoleSilicon
     - type: GhostTakeoverAvailable
 
 - type: entity

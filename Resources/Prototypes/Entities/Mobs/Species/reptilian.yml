@@ -5,12 +5,14 @@
   id: BaseMobReptilian
   abstract: true
   components:
+  - type: GoobAbsorbable
   - type: HumanoidAppearance
     species: Reptilian
     hideLayersOnEquip:
     - Snout
     - HeadTop
     - HeadSide
+    - Tail #imp
     undergarmentBottom: UndergarmentBottomBoxersReptilian
   - type: Hunger
   - type: Puller
@@ -31,14 +33,14 @@
   - type: Speech
     speechSounds: Lizard
     speechVerb: Reptilian
-    allowedEmotes: ['Thump']
+    allowedEmotes: ['Thump', 'Hiss']
   - type: TypingIndicator
     proto: lizard
   - type: Vocal
     sounds:
       Male: MaleReptilian
       Female: FemaleReptilian
-      Unsexed: MaleReptilian
+      Unsexed: UnisexReptilian
   - type: BodyEmotes
     soundsId: ReptilianBodyEmotes
   - type: Damageable
@@ -77,7 +79,7 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
-
+  - type: Carriable # Carrying system from nyanotrasen.
 
 - type: entity
   parent: BaseSpeciesDummy
@@ -91,6 +93,7 @@
     - Snout
     - HeadTop
     - HeadSide
+    - Tail #imp
     undergarmentBottom: UndergarmentBottomBoxersReptilian
   - type: Inventory
     speciesId: reptilian

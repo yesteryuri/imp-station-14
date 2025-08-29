@@ -4,6 +4,7 @@ using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using Content.Shared.Clothing;
 using Content.Shared.Database;
+using Content.Shared.Implants; // imp
 using Content.Shared.Inventory;
 using Content.Shared.Lock;
 using Content.Shared.Popups;
@@ -39,6 +40,7 @@ public sealed partial class VoiceMaskSystem : EntitySystem
         SubscribeLocalEvent<VoiceMaskComponent, VoiceMaskChangeVerbMessage>(OnChangeVerb);
         SubscribeLocalEvent<VoiceMaskComponent, ClothingGotEquippedEvent>(OnEquip);
         SubscribeLocalEvent<VoiceMaskSetNameEvent>(OpenUI);
+        SubscribeLocalEvent<VoiceMaskComponent, ImplantRelayEvent<TransformSpeakerNameEvent>>(OnTransformSpeakerNameImplant); // imp
 
         Subs.CVar(_cfgManager, CCVars.MaxNameLength, value => _maxNameLength = value, true);
     }
@@ -55,6 +57,13 @@ public sealed partial class VoiceMaskSystem : EntitySystem
             _actions.RemoveAction(ent.Comp.ActionEntity);
         else if (_container.TryGetContainingContainer(ent.Owner, out var container))
             _actions.AddAction(container.Owner, ref ent.Comp.ActionEntity, ent.Comp.Action, ent);
+    }
+
+    // Delta-v specific for implants
+    private void OnTransformSpeakerNameImplant(Entity<VoiceMaskComponent> entity, ref ImplantRelayEvent<TransformSpeakerNameEvent> args)
+    {
+        args.Event.VoiceName = GetCurrentVoiceName(entity);
+        args.Event.SpeechVerb = entity.Comp.VoiceMaskSpeechVerb ?? args.Event.SpeechVerb;
     }
 
     #region User inputs from UI
@@ -94,7 +103,8 @@ public sealed partial class VoiceMaskSystem : EntitySystem
         if (_lock.IsLocked(uid))
             return;
 
-        _actions.AddAction(args.Wearer, ref component.ActionEntity, component.Action, uid);
+        if (component.AddAction) // imp
+            _actions.AddAction(args.Wearer, ref component.ActionEntity, component.Action, uid);
     }
 
     private void OpenUI(VoiceMaskSetNameEvent ev)

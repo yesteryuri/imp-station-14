@@ -473,7 +473,7 @@
   parent: PosterBase
   id: PosterContrabandTheBigGasTruth
   name: "The Big Gas Giant Truth"
-  description: "Don't believe everything you see on a poster, patriots. All the lizards at central command don't want to answer this SIMPLE QUESTION: WHERE IS THE GAS MINER MINING FROM, CENTCOMM?"
+  description: "Don't believe everything you see on a poster, patriots. All the lizards at Central Command don't want to answer this SIMPLE QUESTION: WHERE IS THE GAS MINER MINING FROM, CENTCOMM?" # imp caps fix...
   components:
   - type: Sprite
     state: poster48_contraband
@@ -933,11 +933,26 @@
 - type: entity
   parent: PosterBase
   id: PosterLegitNoERP
-  name: "No ERP"
-  description: "This poster reminds the crew that Eroticism and Pornography are banned on Nanotrasen stations."
+  name: "ERP Policy" # imp
+  description: "This poster serves as a reminder to crew of policies regarding Eroticism and Pornography on Nanotrasen stations." # imp
   components:
+  # imp below. i don't want to talk about it.
   - type: Sprite
-    state: poster34_legit
+    sprite: _Floof/Structures/Wallmounts/posters.rsi
+    layers:
+    - state: poster34_legit
+    - state: poster34_june
+      map: ["pride"]
+      visible: false
+  - type: HolidayVisuals
+    holidays:
+      pride:
+      - PrideMonth
+  - type: GenericVisualizer
+    visuals:
+      enum.HolidayVisuals.Holiday:
+        pride:
+          pride: { visible: true }
 
 - type: entity
   parent: PosterBase
@@ -1069,9 +1084,10 @@
   parent: PosterBase
   id: PosterLegitPeriodicTable
   name: "Periodic Table of the Elements"
-  description: "A periodic table of the elements, from Hydrogen to Oganesson, and everything inbetween."
+  description: "A periodic table of the elements, from Hydrogen to Unhexennium, and everything inbetween." #Imp
   components:
     - type: Sprite
+      sprite: _Impstation/Structures/Wallmounts/posters.rsi #Imp
       state: poster49_legit
 
 - type: entity

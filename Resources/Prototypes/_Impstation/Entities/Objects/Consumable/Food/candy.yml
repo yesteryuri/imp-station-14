@@ -1,0 +1,409 @@
+﻿- type: entity
+  name: one single gummy worm
+  parent: FoodMealBase
+  id: FoodGummyWorm
+  description: How did this get in here...
+  components:
+  - type: Tag
+    tags:
+    - FoodSnack
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _Impstation/Objects/Consumable/Food/Candy/the_gummy_worm.rsi
+    state: asinglegummyworm
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 3
+
+- type: entity
+  name: conversation heart
+  parent: FoodMealBase
+  id: FoodConversationHeart
+  description: "You can barely make out the imprinted text: luv u"
+  components:
+  - type: Tag
+    tags:
+    - FoodSnack
+  - type: FlavorProfile
+    flavors:
+    - chalky
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _Impstation/Objects/Consumable/Food/Candy/chalk_heart.rsi
+    layers:
+    - state: chalkheartcolorable
+      map: [ "enum.DamageStateVisualLayers.Base" ]
+  - type: RandomSprite
+    available:
+    - enum.DamageStateVisualLayers.Base:
+        chalkheartcolorable: Pastel
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 1
+  - type: RandomMetadata
+    descriptionSegments: [ConversationHeartDescriptions]
+
+- type: entity
+  name: chocolate heart
+  parent: FoodMealBase
+  id: FoodChocolateHeart
+  description: A mass-produced chocolate heart. How sweet.
+  components:
+  - type: Tag
+    tags:
+    - FoodSnack
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _Impstation/Objects/Consumable/Food/Candy/chocolate_heart.rsi
+    layers:
+    - state: chocolateheart
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 2
+        - ReagentId: CocoaPowder # no chocolate i guess LOL
+          Quantity: 2
+        - ReagentId: Theobromine # cocoa powder doesnt metabolize into theobromine so i have to add it manually
+          Quantity: 1
+
+- type: entity
+  name: chocolate heart
+  suffix: dark
+  parent: FoodChocolateHeart
+  id: FoodChocolateHeartDark
+  components:
+  - type: Sprite
+    sprite: _Impstation/Objects/Consumable/Food/Candy/chocolate_heart.rsi
+    layers:
+    - state: chocolateheartdark
+
+- type: entity
+  name: chocolate heart
+  suffix: white
+  parent: FoodChocolateHeart
+  id: FoodChocolateHeartWhite
+  components:
+  - type: Sprite
+    sprite: _Impstation/Objects/Consumable/Food/Candy/chocolate_heart.rsi
+    layers:
+    - state: chocolateheartwhite
+
+- type: entity
+  name: homemade chocolate heart
+  parent: FoodChocolateHeart
+  id: FoodHomemadeChocolateHeart
+  description: A chocolate heart, made with love and a microwave.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Objects/Consumable/Food/Candy/chocolate_heart.rsi
+    layers:
+    - state: homemadechocolate
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15 # extra space for poison purposes
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 2
+        - ReagentId: CocoaPowder
+          Quantity: 0.5
+        - ReagentId: Milk
+          Quantity: 2
+        - ReagentId: Theobromine
+          Quantity: 1.5
+
+- type: entity
+  name: berry macaron
+  parent: FoodMealBase
+  id: FoodMacaronBerry
+  description: Complex to make, beautiful to look at, underwhelming to eat. A perfect romantic treat.
+  components:
+  - type: Tag
+    tags:
+    - FoodSnack
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _Impstation/Objects/Consumable/Food/Candy/macaron.rsi
+    state: macaronberry
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 3
+        - ReagentId: JuiceBerry
+          Quantity: 2
+
+- type: entity
+  name: cherry macaron
+  parent: FoodMacaronBerry
+  id: FoodMacaronCherry
+  components:
+  - type: Sprite
+    state: macaroncherry
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 3
+        - ReagentId: JuiceCherry
+          Quantity: 2
+
+- type: entity
+  name: cotton macaron
+  parent: FoodMacaronBerry
+  id: FoodMacaronCotton
+  description: Hey, wait! This isn't a macaron! It's a doily!
+  components:
+  - type: Food
+    requiresSpecialDigestion: true
+  - type: Tag
+    tags:
+    - FoodSnack
+    - ClothMade
+    - ClothFood
+  - type: Sprite
+    state: macaroncotton
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 3
+        - ReagentId: Fiber
+          Quantity: 2
+
+- type: entity
+  name: lemon macaron
+  parent: FoodMacaronBerry
+  id: FoodMacaronLemon
+  components:
+  - type: Sprite
+    state: macaronlemon
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 3
+        - ReagentId: JuiceLemon
+          Quantity: 2
+
+- type: entity
+  name: mimana macaron
+  parent: FoodMacaronBerry
+  id: FoodMacaronMimana
+  description: Complex to make, beautiful to look at, underwhelming to eat. This one feels like nothing.
+  components:
+  - type: Sprite
+    state: macaronmimana
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 3
+        - ReagentId: MuteToxin
+          Quantity: 2
+
+#lolipops!!!!
+
+- type: entity
+  name: giant lollipop
+  parent: FoodMealBase
+  id: FoodMealBigLollipop
+  description: Wow!!! It's as big as your head!!!
+  components:
+  - type: Tag
+    tags:
+    - FoodSnack
+  - type: Food
+    trash:
+    - FoodKebabSkewer
+  - type: FlavorProfile
+    flavors:
+      - whimsy
+      - sugar
+  - type: Sprite
+    sprite: _Impstation/Objects/Consumable/Food/Candy/lolipops.rsi
+    state: big-lollipop
+  - type: Item
+    heldPrefix: big-lollipop
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 1 # sugar needs nutriment to be able to satiate hunger so im nerfing this but keeping it
+        - ReagentId: Sugar
+          Quantity: 10
+  - type: Clothing # DeltaV lollipop wearing sprite stuff
+    sprite: _DV/Objects/Consumable/Food/candy.rsi
+    slots: [ mask ]
+    equippedPrefix: lollipop
+    quickEquip: false # would block eating otherwise
+
+- type: entity
+  name: cloth lollipop
+  parent: FoodMealBigLollipop
+  id: FoodMealClothLollipop
+  description: Woven with love.
+  components:
+  - type: Tag
+    tags:
+    - FoodSnack
+    - ClothMade
+    - ClothFood
+  - type: Food
+    requiresSpecialDigestion: true
+    trash:
+    - FoodKebabSkewer
+  - type: FlavorProfile
+    flavors:
+      - whimsy
+      - sugar
+      - cotton
+  - type: Sprite
+    sprite: _Impstation/Objects/Consumable/Food/Candy/lolipops.rsi
+    state: cloth-lollipop
+  - type: Item
+    heldPrefix: cloth-lollipop
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 25
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 1
+        - ReagentId: Sugar
+          Quantity: 10
+        - ReagentId: Fiber
+          Quantity: 10
+
+- type: entity
+  name: fruit lollipop
+  parent: FoodMealBigLollipop
+  id: FoodMealFruitLollipop
+  description: Didn't this come out of a microwave? How did the chef even do this?
+  components:
+  - type: Tag
+    tags:
+    - FoodSnack
+    - Fruit
+  - type: Food
+    trash:
+    - FoodKebabSkewer
+  - type: FlavorProfile
+    flavors:
+      - whimsy
+      - fruity
+      - apple
+      - orange
+      - watermelon
+  - type: Sprite
+    sprite: _Impstation/Objects/Consumable/Food/Candy/lolipops.rsi
+    state: fruit-lollipop
+  - type: Item
+    heldPrefix: fruit-lollipop
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 40
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Vitamin
+          Quantity: 5.25
+        - ReagentId: Sugar
+          Quantity: 10
+        - ReagentId: Water
+          Quantity: 7.5
+
+- type: entity
+  name: meat lollipop
+  parent: FoodMealBigLollipop
+  id: FoodMealMeatLollipop
+  description: It's still dripping...
+  components:
+  - type: Tag
+    tags:
+    - Meat
+    - FoodSnack
+  - type: Food
+    trash:
+    - FoodKebabSkewer
+  - type: FlavorProfile
+    flavors:
+      - whimsy
+      - meaty
+  - type: Sprite
+    sprite: _Impstation/Objects/Consumable/Food/Candy/lolipops.rsi
+    state: meat-lollipop
+  - type: Item
+    heldPrefix: meat-lollipop
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 35
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 9
+        - ReagentId: Sugar
+          Quantity: 10
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 9
+
+- type: entity
+  name: entro-pop
+  parent: FoodMealBigLollipop
+  id: FoodMealCultLollipop
+  description: It seems to flicker in and out of view, your eyes never truly focusing on it. It's cosmically delicious!
+  components:
+  - type: Tag
+    tags:
+    - FoodSnack
+  - type: Food
+    trash:
+    - FoodKebabSkewer
+  - type: FlavorProfile
+    flavors:
+      - whimsy
+      - strange
+  - type: Sprite
+    sprite: _Impstation/Objects/Consumable/Food/Candy/lolipops.rsi
+    state: entro-lollipop
+  - type: Item
+    heldPrefix: entro-lollipop
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 25
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 1
+        - ReagentId: Sugar
+          Quantity: 10
+        - ReagentId: Fresium
+          Quantity: 10

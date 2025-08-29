@@ -28,7 +28,7 @@
 
 - type: entity
   id: ProtolatheMachineCircuitboard
-  parent: BaseMachineCircuitboard
+  parent: [ BaseMachineCircuitboard, BaseScienceContraband ]
   name: protolathe machine board
   description: A machine printed circuit board for a protolathe.
   components:
@@ -44,7 +44,7 @@
         defaultPrototype: Beaker
 
 - type: entity
-  parent: BaseMachineCircuitboard
+  parent: [ BaseMachineCircuitboard, BaseScienceContraband ]
   id: ProtolatheHyperConvectionMachineCircuitboard
   name: hyper convection protolathe machine board
   description: A machine printed circuit board for a hyper convection protolathe.
@@ -79,7 +79,7 @@
 
 - type: entity
   id: SecurityTechFabCircuitboard
-  parent: BaseMachineCircuitboard
+  parent: [ BaseMachineCircuitboard, BaseSecurityContraband ]
   name: security techfab machine board
   description: A machine printed circuit board for a security techfab.
   components:
@@ -96,7 +96,7 @@
 
 - type: entity
   id: AmmoTechFabCircuitboard
-  parent: BaseMachineCircuitboard
+  parent: [ BaseMachineCircuitboard, BaseSecurityContraband ]
   name: ammo techfab circuit board
   description: A machine printed circuit board for an ammo techfab.
   components:
@@ -109,7 +109,7 @@
 
 - type: entity
   id: MedicalTechFabCircuitboard
-  parent: BaseMachineCircuitboard
+  parent: [ BaseMachineCircuitboard, BaseMedicalContraband ]
   name: medical techfab machine board
   description: A machine printed circuit board for a medical techfab.
   components:
@@ -128,7 +128,7 @@
 
 - type: entity
   id: CircuitImprinterMachineCircuitboard
-  parent: BaseMachineCircuitboard
+  parent: [ BaseMachineCircuitboard, BaseScienceContraband ]
   name: circuit imprinter machine board
   components:
   - type: Sprite
@@ -143,7 +143,7 @@
         defaultPrototype: Beaker
 
 - type: entity
-  parent: BaseMachineCircuitboard
+  parent: [ BaseMachineCircuitboard, BaseScienceContraband ]
   id: CircuitImprinterHyperConvectionMachineCircuitboard
   name: hyper convection circuit imprinter machine board
   description: A machine printed circuit board for a hyper convection circuit imprinter.
@@ -164,7 +164,7 @@
 
 - type: entity
   id: ExosuitFabricatorMachineCircuitboard
-  parent: BaseMachineCircuitboard
+  parent: [ BaseMachineCircuitboard, BaseScienceContraband ]
   name: exosuit fabricator machine board
   components:
   - type: Sprite
@@ -181,7 +181,7 @@
 # yes i know this prototype name is long i'm just following conventions
 - type: entity
   id: ResearchAndDevelopmentServerMachineCircuitboard
-  parent: BaseMachineCircuitboard
+  parent: [ BaseMachineCircuitboard, BaseCommandContraband ]
   name: R&D server machine board
   description: A machine printed circuit board for the R&D server.
   components:
@@ -272,7 +272,7 @@
 
 - type: entity
   id: ArtifactCrusherMachineCircuitboard
-  parent: BaseMachineCircuitboard
+  parent: [ BaseMachineCircuitboard, BaseScienceContraband ]
   name: artifact crusher machine board
   description: A machine printed circuit board for an artifact crusher.
   components:
@@ -301,7 +301,7 @@
         PlasmaGlass: 10
 
 - type: entity
-  parent: BaseMachineCircuitboard
+  parent: [ BaseMachineCircuitboard, BaseScienceContraband ]
   id: AnomalyVesselExperimentalCircuitboard
   name: experimental anomaly vessel machine board
   description: A machine printed circuit board for an experimental anomaly vessel.
@@ -332,7 +332,7 @@
         Cable: 5
 
 - type: entity
-  parent: BaseMachineCircuitboard
+  parent: [ BaseMachineCircuitboard, BaseScienceContraband ]
   id: APECircuitboard
   name: A.P.E. machine board
   description: A machine printed circuit board for an A.P.E.
@@ -731,6 +731,13 @@
         Plastic: 30
     - type: StaticPrice
       price: 15
+    #imp edit start
+    - type: Tag
+      tags:
+      - DroneUsable
+      - WeaponCapacitorRechargerCircuitboard
+    #imp edit end
+
 
 - type: entity
   id: TurboItemRechargerCircuitboard
@@ -1050,7 +1057,7 @@
 
 - type: entity
   id: SyndicateMicrowaveMachineCircuitboard
-  parent: BaseMachineCircuitboard
+  parent: [ BaseMachineCircuitboard, Tier1Contraband ]
   name: donk co. microwave machine board
   components:
     - type: Sprite
@@ -1207,7 +1214,7 @@
 
 - type: entity
   id: CargoTelepadMachineCircuitboard
-  parent: BaseMachineCircuitboard
+  parent: [ BaseMachineCircuitboard, BaseCargoContraband ]
   name: cargo telepad machine board
   description: A machine printed circuit board for a cargo telepad.
   components:
@@ -1221,7 +1228,7 @@
 
 - type: entity
   id: MailTeleporterMachineCircuitboard
-  parent: BaseMachineCircuitboard
+  parent: [ BaseMachineCircuitboard, BaseCargoContraband ] # imp edit
   name: mail teleporter machine board
   description: A machine printed circuit board for a mail teleporter.
   components:
@@ -1265,7 +1272,7 @@
       Cable: 2
 
 - type: entity
-  parent: BaseMachineCircuitboard
+  parent: [ BaseMachineCircuitboard, BaseCargoContraband ]
   id: SalvageMagnetMachineCircuitboard
   name: salvage magnet machine board
   description: A machine printed circuit board for a salvage magnet.
@@ -1337,6 +1344,9 @@
       Steel: 2
       Glass: 5
       Cable: 2
+  - type: Tag # imp
+    tags: 
+    - JukeboxBoard
 
 - type: entity
   parent: BaseMachineCircuitboard

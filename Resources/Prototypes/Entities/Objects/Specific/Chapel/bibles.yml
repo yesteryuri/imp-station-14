@@ -1,7 +1,7 @@
 - type: entity
   name: bible
   description: New Interstellar Version 2340.
-  parent: BaseStorageItem
+  parent: BaseItem
   id: Bible
   components:
   - type: UseDelay
@@ -23,12 +23,15 @@
       collection: Punch
     damage:
       types:
-        Holy: 25
+        Holy: 10 # imp 25 -> 10
         Blunt: 1
   - type: Prayable
     bibleUserOnly: true
   - type: Summonable
     specialItem: SpawnPointGhostRemilia
+  - type: RevealRevenantOnCollide
+  - type: CollisionWake
+    enabled: false # Causes test fails otherwise
   - type: ReactionMixer
     mixMessage: "bible-mixing-success"
     reactionTypes:
@@ -42,13 +45,25 @@
   - type: Clothing
     slots:
     - Belt
-  - type: Storage
-    grid:
-    - 0,0,0,1
-  - type: UserInterface
-    interfaces:
-      enum.StorageUiKey.Key:
-        type: StorageBoundUserInterface
+  - type: ContainerContainer
+    containers:
+      stash: !type:ContainerSlot {}
+  - type: Speech
+    speechVerb: Default # for pais (In the secret stash)
+  - type: SecretStash
+    secretStashName: secret-stash-book
+    blacklist:
+      components:
+      - SecretStash
+      - NukeDisk
+      tags:
+      - QuantumSpinInverter
+      - FakeNukeDisk
+  - type: ToolOpenable
+    openToolQualityNeeded: Slicing
+    closeToolQualityNeeded: null # can't exactly un-cut a book
+    hasVerbs: false
+    name: secret-stash-book
   - type: Tag
     tags:
     - Book
@@ -56,7 +71,7 @@
     stealGroup: Bible
 
 - type: entity
-  parent: [Bible, BaseSyndicateContraband]
+  parent: [Bible, Tier2Contraband]
   name: necronomicon
   description: "There's a note: Klatuu, Verata, Nikto -- Don't forget it again!"
   id: BibleNecronomicon
@@ -98,13 +113,16 @@
 - type: entity
   parent: Bible
   name: tanakh
-  description: "For God's chosen crewmembers"
+  description: Instructions, Prophets, and Writings. #imp edit
   id: BibleTanakh
   components:
   - type: Sprite
-    sprite: Objects/Specific/Chapel/tanakh.rsi
+    sprite: _Impstation/Objects/Specific/Chapel/holytexts.rsi #imp
+    state: tanakh #imp
   - type: Item
-    sprite: Objects/Specific/Chapel/tanakh.rsi
+    size: Small #imp
+    heldPrefix: tanakh #imp
+    sprite: _Impstation/Objects/Specific/Chapel/holytexts.rsi #imp
 
 - type: entity
   parent: Bible

@@ -49,6 +49,11 @@
     price: 800
   - type: ResearchClient
   - type: TechnologyDatabase
+  - type: AutomationSlots # Goobstation
+    slots:
+    - !type:AutomatedMaterialStorage
+      input: AutomationSlotMaterials
+      output: null
 
 # a lathe that can be sped up with space lube / slowed down with glue
 - type: entity
@@ -132,9 +137,14 @@
     - ServiceStatic
     - PowerCellsStatic
     - ElectronicsStatic
+    - ImpAutoStatic # Imp
+    - ReportingStatic # DeltaV
+    dynamicPacks:
+    - ImpAutoDynamic # Imp
   - type: EmagLatheRecipes
     emagStaticPacks:
     - SecurityAmmoStatic
+    - ImpAutoEmagged # imp
   - type: BlueprintReceiver
     whitelist:
       tags:
@@ -161,7 +171,7 @@
 
 - type: entity
   id: Protolathe
-  parent: BaseLatheLube
+  parent: [ BaseLatheLube, BaseScienceContraband ] # imp
   name: protolathe
   description: Converts raw materials into advanced items.
   components:
@@ -195,6 +205,9 @@
     staticPacks:
     - ChemistryStatic
     - SurgeryStatic
+    - ImpProtoStatic # Imp
+    - ReportingStatic # DeltaV
+    - SteelBriefcaseImp # Imp
     dynamicPacks:
     - AdvancedTools
     - ScienceEquipment
@@ -210,12 +223,15 @@
     - Instruments
     - Equipment
     - FauxTiles
+    - ImpProtoDynamic # Imp
+    - NFService # Frontier
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - SecurityAmmo
     - SecurityExplosives
     - SecurityEquipment
     - SecurityWeapons
+    - ImpProtoEmagged # Imp
 
 - type: entity
   id: ProtolatheHyperConvection
@@ -230,7 +246,7 @@
 
 - type: entity
   id: CircuitImprinter
-  parent: BaseLatheLube
+  parent: [ BaseLatheLube, BaseScienceContraband ] # imp
   name: circuit imprinter
   description: Prints circuit boards for machines.
   components:
@@ -258,6 +274,7 @@
     - MedicalBoardsStatic
     - EngineeringBoardsStatic
     - CircuitFloorsStatic
+    - ImpCircuitStatic # Imp
     dynamicPacks:
     - EngineeringBoards
     - CargoBoards
@@ -267,7 +284,11 @@
     - CameraBoards
     - MechBoards
     - ShuttleBoards
+    - ImpCircuitDynamic # imp
+    - UpgradeKits # Goobstation
   - type: EmagLatheRecipes
+    emagStaticPacks: # imp
+    - ImpCircuitEmagged
     emagDynamicPacks:
     - SecurityBoards
   - type: MaterialStorage
@@ -292,7 +313,7 @@
 
 - type: entity
   id: ExosuitFabricator
-  parent: BaseLatheLube
+  parent: [ BaseLatheLube, BaseScienceContraband ] # imp
   name: exosuit fabricator
   description: Creates parts for robotics and other mechanical needs.
   components:
@@ -371,7 +392,7 @@
 
 - type: entity
   id: SecurityTechFab
-  parent: BaseLatheLube
+  parent: [ BaseLatheLube, BaseSecurityContraband ] # imp
   name: security techfab
   description: Prints equipment for use by security crew.
   components:
@@ -393,11 +414,14 @@
   - type: Lathe
     idleState: icon
     runningState: icon
+    unlitIdleState: unlit
+    unlitRunningState: unlit-building
     staticPacks:
     - SecurityEquipmentStatic
     - SecurityPracticeStatic
     - SecurityAmmoStatic
     - SecurityWeaponsStatic
+    - SteelBriefcaseImp # Imp
     dynamicPacks:
     - SalvageSecurityBoards
     - SalvageSecurityWeapons
@@ -419,7 +443,7 @@
 
 - type: entity
   id: AmmoTechFab
-  parent: BaseLatheLube
+  parent: [ BaseLatheLube, BaseSecurityContraband ] # imp
   name: ammo techfab
   description: Prints the bare minimum of bullets that any budget military or armory could need. Nothing fancy.
   components:
@@ -441,6 +465,8 @@
     - type: Lathe
       idleState: icon
       runningState: icon
+      unlitIdleState: unlit
+      unlitRunningState: unlit-building
       staticPacks:
       - SecurityAmmoStatic
     - type: MaterialStorage
@@ -453,7 +479,7 @@
 
 - type: entity
   id: MedicalTechFab
-  parent: BaseLatheLube
+  parent: [ BaseLatheLube, BaseMedicalContraband ] # imp
   name: medical techfab
   description: Prints equipment for use by the medbay.
   components:
@@ -473,6 +499,8 @@
   - type: Lathe
     idleState: icon
     runningState: icon
+    unlitIdleState: unlit
+    unlitRunningState: unlit-building
     staticPacks:
     - TopicalsStatic
     - ChemistryStatic
@@ -481,8 +509,10 @@
     - MedicalClothingStatic
     - EmptyMedkitsStatic
     - SurgeryStatic
+    - ImpMedStatic # Imp
     dynamicPacks:
     - Chemistry
+    - ImpMedDynamic # Imp
   - type: Machine
     board: MedicalTechFabCircuitboard
   - type: StealTarget
@@ -525,10 +555,14 @@
     - Scarves
     - Carpets
     - Bedsheets
+    - PrideFlags # imp
+    - BeltsDeltaV # DeltaV
+    - ClothingJustice # DeltaV
   - type: EmagLatheRecipes
     emagStaticPacks:
     - ClothingCentComm
     - ClothingSyndie
+    - ImpClothesEmagged # Imp
   - type: MaterialStorage
     whitelist:
       tags:
@@ -608,10 +642,17 @@
     - type: Lathe
       idleState: icon
       runningState: building
-      defaultProductionAmount: 10
+      defaultProductionAmount: 30 #Imp, changed from 10 to 30
       staticPacks:
       - OreSmelting
       - RGlassSmelting
+    - type: MaterialStorageMagnetPickup # Imp This allows the ore processor to have a magnet that also inserts the ore
+      range: 0.30 # Imp The range of the magnet effect
+    - type: PlaceableSurface # Imp This is required for the magnet pickup to work, this component allows a dumpable surface
+    - type: PointLight # Imp This adds a red light glow around the basic ore processor to thematically show the temperature of the flame.
+      radius: 2.5
+      energy: 5
+      color: "#ff5a00"
 
 - type: entity
   parent: OreProcessor
@@ -624,12 +665,19 @@
   - type: Machine
     board: OreProcessorIndustrialMachineCircuitboard
   - type: Lathe
-    materialUseMultiplier: 0.75
+    materialUseMultiplier: 0.50 # imp, from 1.5x more sheets to 2x
     timeMultiplier: 0.5
     staticPacks:
     - OreSmelting
     - RGlassSmelting
     - AdvancedSmelting
+  - type: MaterialStorageMagnetPickup # Imp This allows the ore processor to have a magnet that also inserts the ore
+    range: 0.30 # Imp The range of the magnet effect
+  - type: PlaceableSurface # Imp This is required for the magnet pickup to work, this component allows a dumpable surface
+  - type: PointLight # Imp This adds a blue light glow around the industrial ore processor to thematically show the temperature of an even hotter flame.
+    radius: 2.5
+    energy: 5
+    color: "#5ad6ff"
 
 - type: entity
   parent: BaseLathe

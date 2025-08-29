@@ -3,6 +3,7 @@
   id: BaseMobVox
   abstract: true
   components:
+  - type: GoobAbsorbable
   - type: Hunger
   - type: Thirst
   - type: Icon
@@ -15,12 +16,13 @@
   - type: Speech
     speechVerb: Vox
     speechSounds: Vox
+    allowedEmotes: ['Hiss', 'Chitter', 'Coo', 'Caw'] #imp
   - type: TypingIndicator
     proto: vox
   - type: Vocal
     sounds:
-      Male: UnisexVox
-      Female: UnisexVox
+      Male: MaleVox
+      Female: FemaleVox
       Unsexed: UnisexVox
   - type: Butcherable
     butcheringType: Spike
@@ -61,6 +63,7 @@
         Slash: 5 # Reduce?
   - type: Sprite # Need to redefine the whole order to draw the tail over their gas tank
     layers:
+    - map: [ "enum.HumanoidVisualLayers.TailBehind" ] # Floof
     - map: [ "enum.HumanoidVisualLayers.Chest" ]
     - map: [ "enum.HumanoidVisualLayers.Head" ]
     - map: [ "enum.HumanoidVisualLayers.Snout" ]
@@ -84,6 +87,7 @@
     - map: [ "id" ]
     - map: [ "outerClothing" ]
     - map: [ "back" ]
+    - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Floof
     - map: [ "neck" ]
     - map: [ "suitstorage" ] # This is not in the default order
     - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
@@ -105,6 +109,11 @@
       state: "creampie_vox" # Not default
       visible: false
   - type: HumanoidAppearance
+    hideLayersOnEquip: #imp
+    - HeadSide
+    - Hair
+    - Tail
+    - FacialHair
     species: Vox
     undergarmentTop: UndergarmentTopTanktopVox
     undergarmentBottom: UndergarmentBottomBoxersVox
@@ -168,6 +177,7 @@
         32:
           sprite: Mobs/Species/Vox/displacement.rsi
           state: hand_r
+  - type: Carriable # Carrying system from nyanotrasen.
 
 - type: entity
   parent: BaseSpeciesDummy

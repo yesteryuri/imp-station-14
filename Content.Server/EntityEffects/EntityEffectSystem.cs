@@ -40,6 +40,11 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Content.Server.Forensics; // imp
+using Content.Shared._Impstation.EntityEffects.Effects; // imp
+using Content.Shared._Impstation.Ghost; // imp
+using Content.Shared.Chemistry.Reagent; // imp
+using Content.Shared.Humanoid; // imp
 
 using TemperatureCondition = Content.Shared.EntityEffects.EffectConditions.Temperature; // disambiguate the namespace
 using PolymorphEffect = Content.Shared.EntityEffects.Effects.Polymorph;
@@ -75,6 +80,7 @@ public sealed class EntityEffectSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _xform = default!;
     [Dependency] private readonly VomitSystem _vomit = default!;
     [Dependency] private readonly TurfSystem _turf = default!;
+    [Dependency] private readonly ForensicsSystem _forensicsSystem = default!; // imp
 
     public override void Initialize()
     {
@@ -126,6 +132,10 @@ public sealed class EntityEffectSystem : EntitySystem
         SubscribeLocalEvent<ExecuteEntityEffectEvent<PlantSpeciesChange>>(OnExecutePlantSpeciesChange);
         SubscribeLocalEvent<ExecuteEntityEffectEvent<PolymorphEffect>>(OnExecutePolymorph);
         SubscribeLocalEvent<ExecuteEntityEffectEvent<ResetNarcolepsy>>(OnExecuteResetNarcolepsy);
+
+        SubscribeLocalEvent<ExecuteEntityEffectEvent<MakeSyndient>>(OnExecuteMakeSyndient); // imp
+        SubscribeLocalEvent<ExecuteEntityEffectEvent<Medium>>(OnExecuteMedium); // Imp
+        SubscribeLocalEvent<ExecuteEntityEffectEvent<MakeTame>>(OnExecuteMakeTame); // imp
     }
 
     private void OnCheckTemperature(ref CheckEntityEffectConditionEvent<TemperatureCondition> args)
@@ -975,4 +985,76 @@ public sealed class EntityEffectSystem : EntitySystem
 
         _narcolepsy.AdjustNarcolepsyTimer(args.Args.TargetEntity, args.Effect.TimerReset);
     }
+
+    // IMP EFFECTS BEGIN
+
+    private void OnExecuteMakeSyndient(ref ExecuteEntityEffectEvent<MakeSyndient> args)
+    {
+        var entityManager = args.Args.EntityManager;
+        var uid = args.Args.TargetEntity;
+
+
+        // Let affected entities speak normally to make this effect different from, say, the "random sentience" event
+        // This also works on entities that already have a mind
+        // We call this before the mind check to allow things like player-controlled mice to be able to benefit from the effect
+        entityManager.RemoveComponent<ReplacementAccentComponent>(uid);
+        entityManager.RemoveComponent<MonkeyAccentComponent>(uid);
+
+        // Stops from adding a ghost role to things like people who already have a mind
+        if (entityManager.TryGetComponent<MindContainerComponent>(uid, out var mindContainer) && mindContainer.HasMind ||
+        //slightly hacky way to make sure it doesn't work on humanoid ghost roles that haven't been claimed yet
+            HasComp<HumanoidAppearanceComponent>(uid))
+        {
+            return;
+        }
+
+        // in an ideal world, this is where we would get the name of the injector to display as ghost role text.
+
+        entityManager.EnsureComponent<GhostRoleComponent>(uid, out var ghostRole);
+        entityManager.EnsureComponent<GhostTakeoverAvailableComponent>(uid);
+        var entityData = entityManager.GetComponent<MetaDataComponent>(uid);
+
+        ghostRole.RoleName = entityData.EntityName;
+        ghostRole.RoleDescription = Loc.GetString("ghost-role-information-subjuzine-description");
+        ghostRole.RoleRules = Loc.GetString("ghost-role-information-subjuzine-rules");
+
+        //if there already was a ghost role, change the role description and rules to make it clear it's been injected with subjuzine
+        Dirty(uid, ghostRole);
+
+        // TODO: give the entity some way to identify who injected it. and don't do it using reagentsystem.
+        // in memoriam jungle juice 2/10/2024-8/7/2025
+    }
+
+    // copied from above
+    private void OnExecuteMakeTame(ref ExecuteEntityEffectEvent<MakeTame> args) ///imp
+    {
+        var entityManager = args.Args.EntityManager;
+        var uid = args.Args.TargetEntity;
+
+        // Stops from adding a ghost role to things like people who already have a mind
+        if (entityManager.TryGetComponent<MindContainerComponent>(uid, out var mindContainer) && mindContainer.HasMind ||
+        //slightly hacky way to make sure it doesn't work on humanoid ghost roles that haven't been claimed yet
+            HasComp<HumanoidAppearanceComponent>(uid))
+        {
+            return;
+        }
+
+        entityManager.EnsureComponent<GhostRoleComponent>(uid, out var ghostRole);
+        entityManager.EnsureComponent<GhostTakeoverAvailableComponent>(uid);
+        var entityData = entityManager.GetComponent<MetaDataComponent>(uid);
+
+        ghostRole.RoleName = entityData.EntityName;
+        ghostRole.RoleDescription = Loc.GetString("ghost-role-information-nonantagonist-freeagent-tame");
+        ghostRole.RoleRules = Loc.GetString("ghost-role-information-tame-rules");
+    }
+
+
+    private void OnExecuteMedium(ref ExecuteEntityEffectEvent<Medium> args)
+    {
+        var entityManager = args.Args.EntityManager;
+        var uid = args.Args.TargetEntity;
+
+        entityManager.EnsureComponent<MediumComponent>(uid);
+    }
+
 }

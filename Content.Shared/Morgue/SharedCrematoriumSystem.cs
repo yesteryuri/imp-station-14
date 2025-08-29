@@ -3,6 +3,7 @@ using Content.Shared.Examine;
 using Content.Shared.Mind;
 using Content.Shared.Morgue.Components;
 using Content.Shared.Popups;
+using Content.Shared.Power; //imp
 using Content.Shared.Standing;
 using Content.Shared.Storage;
 using Content.Shared.Storage.Components;
@@ -34,6 +35,8 @@ public abstract class SharedCrematoriumSystem : EntitySystem
         SubscribeLocalEvent<CrematoriumComponent, ExaminedEvent>(OnExamine);
         SubscribeLocalEvent<CrematoriumComponent, GetVerbsEvent<AlternativeVerb>>(AddCremateVerb);
         SubscribeLocalEvent<ActiveCrematoriumComponent, StorageOpenAttemptEvent>(OnAttemptOpen);
+        SubscribeLocalEvent<CrematoriumComponent, PowerChangedEvent>(OnPowerChanged); // imp
+        SubscribeLocalEvent<ActiveCrematoriumComponent, PowerChangedEvent>(OnActivePowerChanged); // imp
     }
 
     private void OnExamine(Entity<CrematoriumComponent> ent, ref ExaminedEvent args)
@@ -100,7 +103,7 @@ public abstract class SharedCrematoriumSystem : EntitySystem
             return false;
 
         _audio.PlayPredicted(ent.Comp.CremateStartSound, ent.Owner, user);
-        _audio.PlayPredicted(ent.Comp.CrematingSound, ent.Owner, user);
+        ent.Comp.CrematingSoundEntity = _audio.PlayPvs(ent.Comp.CrematingSound, ent); // imp
         _appearance.SetData(ent.Owner, CrematoriumVisuals.Burning, true);
 
         AddComp<ActiveCrematoriumComponent>(ent);
@@ -118,8 +121,11 @@ public abstract class SharedCrematoriumSystem : EntitySystem
         if (!Resolve(ent, ref ent.Comp1, ref ent.Comp2))
             return false;
 
-        if (ent.Comp2.Open || ent.Comp2.Contents.ContainedEntities.Count < 1)
+        if (ent.Comp2.Open || ent.Comp2.Contents.ContainedEntities.Count < 1 || ent.Comp1.Powered == false) // imp
+        {
+            Popup.PopupEntity(Loc.GetString("microwave-component-interact-using-no-power"), ent); // imp
             return false;
+        }
 
         return Cremate((ent.Owner, ent.Comp1), user);
     }
@@ -151,6 +157,7 @@ public abstract class SharedCrematoriumSystem : EntitySystem
 
         if (_net.IsServer) // can't predict without the user
             _audio.PlayPvs(ent.Comp1.CremateFinishSound, ent.Owner);
+        ent.Comp1.CrematingSoundEntity = null; // imp
     }
 
     public override void Update(float frameTime)
@@ -167,4 +174,27 @@ public abstract class SharedCrematoriumSystem : EntitySystem
             FinishCooking((uid, crematorium, null));
         }
     }
+
+    //imp
+    private void OnPowerChanged(Entity<CrematoriumComponent> entity, ref PowerChangedEvent args)
+    {
+        entity.Comp.Powered = args.Powered;
+    }
+
+    //imp
+    private void OnActivePowerChanged(Entity<ActiveCrematoriumComponent> entity, ref PowerChangedEvent args)
+    {
+        if (!TryComp<CrematoriumComponent>(entity, out var crematoriumComponent))
+            return;
+
+        if (!args.Powered)
+        {
+            _audio.Stop(crematoriumComponent.CrematingSoundEntity?.Item1, crematoriumComponent.CrematingSoundEntity?.Item2);
+            crematoriumComponent.CrematingSoundEntity = null;
+            _appearance.SetData(entity.Owner, CrematoriumVisuals.Burning, false);
+            RemComp<ActiveCrematoriumComponent>(entity.Owner);
+        }
+
+    }
+
 }

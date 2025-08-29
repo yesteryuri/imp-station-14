@@ -6,19 +6,22 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 14400 # 4 hours
+      time: 54000 # 15 hours, imp
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 14400 # 4 hours
-    - !type:DepartmentTimeRequirement
-      department: Science
-      time: 14400 # 4 hours
+      time: 54000 # 15 hours, imp
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 14400 # 4 hours
+      time: 54000 # 15 hours
+    - !type:DepartmentTimeRequirement #imp
+      department: Cargo
+      time: 54000 # 15 hours
+    - !type:DepartmentTimeRequirement #imp
+      department: Science
+      time: 54000 # 15 hours
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 14400 # 4 hours
+      time: 72000 # 20 hours, imp
   weight: 20
   startingGear: CaptainGear
   icon: "JobIconCaptain"
@@ -37,11 +40,11 @@
 - type: startingGear
   id: CaptainGear
   equipment:
-    shoes: ClothingShoesBootsLaceup
-    eyes: ClothingEyesGlassesCommand
-    gloves: ClothingHandsGlovesCaptain
+    #shoes: ClothingShoesBootsLaceup #imp
+    #eyes: ClothingEyesGlassesCommand #imp
+    #gloves: ClothingHandsGlovesCaptain #imp
     id: CaptainPDA
-    ears: ClothingHeadsetAltCommand
+    #ears: ClothingHeadsetAltCommand #imp
   storage:
     back:
     - Flash

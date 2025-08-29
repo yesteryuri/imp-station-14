@@ -5,20 +5,20 @@
   placement:
     mode: SnapgridCenter
   components:
-    - type: AtmosDevice
-    - type: Tag
-      tags:
-        - Unstackable
-    - type: SubFloorHide
-      blockInteractions: false
-      blockAmbience: false
-    - type: NodeContainer
-      nodes:
-        pipe:
-          !type:PipeNode
-          nodeGroupID: Pipe
-          pipeDirection: South
-    - type: CollideOnAnchor
+  - type: AtmosDevice
+  - type: Tag
+    tags:
+    - Unstackable
+  - type: SubFloorHide
+    blockInteractions: false
+    blockAmbience: false
+  - type: NodeContainer
+    nodes:
+      pipe:
+        !type:PipeNode
+        nodeGroupID: Pipe
+        pipeDirection: South
+  - type: CollideOnAnchor
 
 - type: entity
   parent: [GasUnaryBase, AirSensorBase]
@@ -26,7 +26,7 @@
   name: air vent
   description: Has a valve and a pump attached to it.
   placement:
-    mode: SnapgridCenter
+    mode: AlignAtmosPipeLayers #imp edit
   components:
     - type: ApcPowerReceiver
     - type: ExtensionCableReceiver
@@ -77,6 +77,16 @@
       guides:
       - AirVent
       - DeviceMonitoringAndControl
+    # imp edit start
+    - type: VentCrawTube
+      containerId: VentCrawTube
+    - type: VentCrawEntry
+    - type: AtmosPipeLayers
+      alternativePrototypes:
+        Primary: GasVentPump
+        Secondary: GasVentPumpAlt1
+        Tertiary: GasVentPumpAlt2
+    # imp edit end
 
 - type: entity
   parent: GasUnaryBase
@@ -84,7 +94,7 @@
   name: passive vent
   description: It's an open vent.
   placement:
-    mode: SnapgridCenter
+    mode: AlignAtmosPipeLayers #imp edit
   components:
     - type: SubFloorHide
       visibleLayers:
@@ -109,6 +119,16 @@
     - type: GuideHelp
       guides:
       - PassiveVent
+  # imp edit start
+    - type: VentCrawTube
+      containerId: VentCrawTube
+    - type: VentCrawEntry
+    - type: AtmosPipeLayers
+      alternativePrototypes:
+        Primary: GasPassiveVent
+        Secondary: GasPassiveVentAlt1
+        Tertiary: GasPassiveVentAlt2
+  # imp edit end
 
 - type: entity
   parent: [GasUnaryBase, AirSensorBase]
@@ -116,7 +136,7 @@
   name: air scrubber
   description: Has a valve and pump attached to it.
   placement:
-    mode: SnapgridCenter
+    mode: AlignAtmosPipeLayers #imp edit
   components:
     - type: ApcPowerReceiver
     - type: ExtensionCableReceiver
@@ -167,6 +187,16 @@
       guides:
       - AirScrubber
       - DeviceMonitoringAndControl
+  # imp edit start
+    - type: VentCrawTube
+      containerId: VentCrawTube
+    - type: VentCrawEntry
+    - type: AtmosPipeLayers
+      alternativePrototypes:
+        Primary: GasVentScrubber
+        Secondary: GasVentScrubberAlt1
+        Tertiary: GasVentScrubberAlt2
+  # imp edit end
 
 - type: entity
   parent: GasUnaryBase
@@ -174,7 +204,7 @@
   name: air injector
   description: Has a valve and pump attached to it.
   placement:
-    mode: SnapgridCenter
+    mode: AlignAtmosPipeLayers #imp edit
   components:
     - type: Sprite
       drawdepth: FloorObjects
@@ -211,6 +241,16 @@
     - type: GuideHelp
       guides:
       - AirInjector
+  # imp edit start
+    - type: VentCrawTube
+      containerId: VentCrawTube
+    - type: VentCrawEntry
+    - type: AtmosPipeLayers
+      alternativePrototypes:
+        Primary: GasOutletInjector
+        Secondary: GasOutletInjectorAlt1
+        Tertiary: GasOutletInjectorAlt2
+  # imp edit end
 
 - type: entity
   parent: [ BaseMachinePowered, ConstructibleMachine ]
@@ -221,7 +261,7 @@
     mode: SnapgridCenter
   components:
     - type: Sprite
-      sprite: Structures/Piping/Atmospherics/thermomachine.rsi
+      sprite: _Impstation/Structures/Piping/Atmospherics/thermomachine.rsi # imp
       snapCardinals: true
     - type: Appearance
     - type: PipeColorVisuals
@@ -275,33 +315,42 @@
   placement:
     mode: SnapgridCenter
   components:
-    - type: StationAiWhitelist
-    - type: Sprite
-      granularLayersRendering: true
-      layers:
-        - state: freezerOff
-          map: [ "enum.PowerDeviceVisualLayers.Powered" ]
-        - state: freezerPanelOpen
-          map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-        - state: pipe
-          map: [ "enum.PipeVisualLayers.Pipe" ]
-          renderingStrategy: Default
-    - type: GenericVisualizer
-      visuals:
-        enum.PowerDeviceVisuals.Powered:
-          enum.PowerDeviceVisualLayers.Powered:
-            True: { state: freezerOn }
-            False: { state: freezerOff }
-    - type: GasThermoMachine
-      coefficientOfPerformance: -3.9
-    - type: ApcPowerReceiver
-      powerDisabled: true #starts off
-    - type: Machine
-      board: ThermomachineFreezerMachineCircuitBoard
-    - type: DeviceNetwork
-      prefix: device-address-prefix-freezer
-    - type: StealTarget
-      stealGroup: FreezerHeater
+  - type: StationAiWhitelist
+  - type: Sprite
+    granularLayersRendering: true
+    layers:
+      - state: freezerOff
+      - state: freezerOn # imp
+        map: ["enum.PowerDeviceVisualLayers.Powered"]
+        visible: false #imp edit
+      - state: freezer-Unshaded # imp
+        shader: unshaded
+        map: ["freezing"]
+        visible: false
+      - state: freezerPanelOpen
+        map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      - state: pipe
+        map: [ "enum.PipeVisualLayers.Pipe" ]
+        renderingStrategy: Default
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { visible: true } # imp
+          False: { visible: false } # imp
+        freezing: # imp
+          True: { visible: true }
+          False: { visible: false }
+  - type: GasThermoMachine
+    coefficientOfPerformance: -3.9
+  - type: ApcPowerReceiver
+    powerDisabled: true #starts off
+  - type: Machine
+    board: ThermomachineFreezerMachineCircuitBoard
+  - type: DeviceNetwork
+    prefix: device-address-prefix-freezer
+  - type: StealTarget
+    stealGroup: FreezerHeater
 
 - type: entity
   parent: GasThermoMachineFreezer
@@ -320,33 +369,42 @@
   placement:
     mode: SnapgridCenter
   components:
-    - type: StationAiWhitelist
-    - type: Sprite
-      granularLayersRendering : true
-      layers:
-        - state: heaterOff
-          map: [ "enum.PowerDeviceVisualLayers.Powered" ]
-        - state: heaterPanelOpen
-          map: ["enum.WiresVisualLayers.MaintenancePanel"]
-        - state: pipe
-          map: [ "enum.PipeVisualLayers.Pipe" ]
-          renderingStrategy: Default
-    - type: GenericVisualizer
-      visuals:
-        enum.PowerDeviceVisuals.Powered:
-          enum.PowerDeviceVisualLayers.Powered:
-            True: { state: heaterOn }
-            False: { state: heaterOff }
-    - type: GasThermoMachine
-      coefficientOfPerformance: 0.95
-    - type: ApcPowerReceiver
-      powerDisabled: true #starts off
-    - type: Machine
-      board: ThermomachineHeaterMachineCircuitBoard
-    - type: DeviceNetwork
-      prefix: device-address-prefix-heater
-    - type: StealTarget
-      stealGroup: FreezerHeater
+  - type: StationAiWhitelist
+  - type: Sprite
+    granularLayersRendering : true
+    layers:
+      - state: heaterOff
+      - state: heaterOn # imp
+        map: ["enum.PowerDeviceVisualLayers.Powered"]
+        visible: false #imp edit
+      - state: heater-Unshaded # imp
+        shader: unshaded
+        map: ["heating"]
+        visible: false
+      - state: heaterPanelOpen
+        map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      - state: pipe
+        map: [ "enum.PipeVisualLayers.Pipe" ]
+        renderingStrategy: Default
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { visible: true } # imp
+          False: { visible: false } # imp
+        heating: # imp
+          True: { visible: true }
+          False: { visible: false }
+  - type: GasThermoMachine
+    coefficientOfPerformance: 0.95
+  - type: ApcPowerReceiver
+    powerDisabled: true #starts off
+  - type: Machine
+    board: ThermomachineHeaterMachineCircuitBoard
+  - type: DeviceNetwork
+    prefix: device-address-prefix-heater
+  - type: StealTarget
+    stealGroup: FreezerHeater
 
 - type: entity
   parent: GasThermoMachineHeater
@@ -364,7 +422,7 @@
   description: An advanced machine that cools gas in connected pipes. Has the side effect of chilling the surrounding area. Cold as Hell!
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/hellfirethermomachine.rsi
+    sprite: _Impstation/Structures/Piping/Atmospherics/hellfirethermomachine.rsi # imp
   - type: GasThermoMachine
     minTemperature: 23.15
     heatCapacity: 40000
@@ -379,7 +437,7 @@
   description: An advanced machine that heats gas in connected pipes. Has the side effect of leaking heat into the surrounding area. Hot as Hell!
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/hellfirethermomachine.rsi
+    sprite: _Impstation/Structures/Piping/Atmospherics/hellfirethermomachine.rsi # imp
   - type: GasThermoMachine
     maxTemperature: 1193.15
     heatCapacity: 40000

@@ -11,7 +11,7 @@
   - type: CartridgeAmmo
     proto: BulletMagnum
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    sprite: _Impstation/Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi #imp
     layers:
     - state: base
       map: ["enum.AmmoVisualLayers.Base"]
@@ -22,7 +22,7 @@
   id: CartridgeMagnum
   name: cartridge (.45 magnum)
   parent: BaseCartridgeMagnum
-  description: Heavy magnum cartridge mostly used by revolvers. Standard kinetic ammunition is common and useful in most situations.
+  description: A powerful kinetic pistol cartridge with incredible stopping power. The best designs are timeless. #imp
   components:
   - type: CartridgeAmmo
     proto: BulletMagnum
@@ -31,7 +31,7 @@
   id: CartridgeMagnumPractice
   name: cartridge (.45 magnum practice)
   parent: BaseCartridgeMagnum
-  description: Heavy magnum cartridge mostly used by revolvers. Chalk ammunition is generally non-harmful, used for practice.
+  description: A powerful pistol cartridge with a wax projectile to simulate the real deal. Can be used for force-on-force training but still stings like a bitch. Eye protection required. #imp
   components:
   - type: CartridgeAmmo
     proto: BulletMagnumPractice
@@ -41,13 +41,13 @@
         map: [ "enum.AmmoVisualLayers.Base" ]
       - state: tip
         map: [ "enum.AmmoVisualLayers.Tip" ]
-        color: "#dbdbdb"
+        color: "#ffcb6f" #imp
 
 - type: entity
   id: CartridgeMagnumIncendiary
   name: cartridge (.45 magnum incendiary)
   parent: BaseCartridgeMagnum
-  description: Heavy magnum cartridge mostly used by revolvers. Incendiary ammunition contains a self-igniting compound that sets the target ablaze.
+  description: A powerful pistol cartridge tipped with a softer projectile containing a pyrophoric compound, setting targets ablaze. #imp
   components:
   - type: CartridgeAmmo
     proto: BulletMagnumIncendiary
@@ -57,13 +57,13 @@
         map: [ "enum.AmmoVisualLayers.Base" ]
       - state: tip
         map: [ "enum.AmmoVisualLayers.Tip" ]
-        color: "#ff6e52"
+        color: "#d46925" #imp
 
 - type: entity
   id: CartridgeMagnumAP
   name: cartridge (.45 magnum armor-piercing)
   parent: BaseCartridgeMagnum
-  description: Heavy magnum cartridge mostly used by revolvers. Armor piercing ammunition is renowned for its ability to cut straight through body armor.
+  description: A powerful pistol cartridge with a tungsten carbide penetrator core and a PTFE coating, defeating conventional armor. #imp
   components:
   - type: CartridgeAmmo
     proto: BulletMagnumAP
@@ -73,13 +73,13 @@
         map: [ "enum.AmmoVisualLayers.Base" ]
       - state: tip
         map: [ "enum.AmmoVisualLayers.Tip" ]
-        color: "#0a0a0a"
+        color: "#662598" #imp
 
 - type: entity
   id: CartridgeMagnumUranium
   name: cartridge (.45 magnum uranium)
   parent: BaseCartridgeMagnum
-  description: Heavy magnum cartridge mostly used by revolvers. Uranium ammunition replaces the lead core of the bullet with fissile material, irradiating the target from the inside.
+  description: A powerful pistol cartridge with a heavier depleted uranium projectile, delivering radiation poisoning at the cost of worse penetration. #imp
   components:
   - type: CartridgeAmmo
     proto: BulletMagnumUranium
@@ -89,4 +89,4 @@
         map: [ "enum.AmmoVisualLayers.Base" ]
       - state: tip
         map: [ "enum.AmmoVisualLayers.Tip" ]
-        color: "#65fe08"
+        color: "#22b24d" #imp

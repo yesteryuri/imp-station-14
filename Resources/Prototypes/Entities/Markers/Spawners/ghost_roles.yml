@@ -18,7 +18,7 @@
   - type: GhostRole
     name: ghost-role-information-rat-king-name
     description: ghost-role-information-rat-king-description
-    rules: ghost-role-information-antagonist-rules
+    rules: ghost-role-information-antagonist-rat-king-rules
     mindRoles:
     - MindRoleGhostRoleSoloAntagonist
     raffle:
@@ -232,6 +232,8 @@
     name: ghost-role-information-derelict-cyborg-name
     description: ghost-role-information-derelict-cyborg-description
     rules: ghost-role-information-silicon-rules
+    mindRoles: #imp
+    - MindRoleGhostRoleFreeAgent
     raffle:
       settings: default
   - type: Sprite

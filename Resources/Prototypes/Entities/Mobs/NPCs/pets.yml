@@ -371,6 +371,7 @@
   - type: StealTarget
     stealGroup: AnimalMcGriff
   - type: MessyDrinker
+  - type: DogVision # imp
 
 - type: entity
   name: Paperwork
@@ -468,6 +469,7 @@
     speechVerb: Canine
     speechSounds: Dog
   - type: MessyDrinker
+  - type: DogVision # imp
 
 - type: entity
   name: Morty
@@ -558,18 +560,20 @@
     - VimPilot
 
 - type: entity
-  name: Alexander
+  name: VILE SHITPIG # imp
   parent: MobPig
   id: MobAlexander
   description: Chef's finest colleague.
   components:
   - type: InteractionPopup
     successChance: 1
-    interactSuccessString: petting-success-pig
-    interactFailureString: petting-failure-pig
+    interactSuccessString: petting-success-disgustingpig #imp
+    interactFailureString: petting-failure-disgustingpig #imp
     interactSuccessSpawn: EffectHearts
     interactSuccessSound:
-      path: /Audio/Animals/pig_oink.ogg
+      collection: DisgustingPig #imp
+      params:
+       variation: .5 #imp
   - type: Grammar
     attributes:
       proper: true
@@ -657,10 +661,13 @@
     - Hamster
     - VimPilot
     - ChefPilot
+    - MultitoolDefibrillatorTarget #imp
   - type: FlavorProfile
     flavors:
     - meaty
     - sadness
+  - type: PleebnarGibbable #imp edit
+    mindshield: true
 
 - type: entity
   parent: MobHamsterHamlet
@@ -768,7 +775,12 @@
     - DoorBumpOpener
     - FootstepSound
   - type: GhostRole
-    prob: 0.25
+    # imp edit start
+    prob: 1 # up from 0.25
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    # imp edit end
     name: ghost-role-information-willow-name
     description: ghost-role-information-willow-description
     rules: ghost-role-information-nonantagonist-rules
@@ -936,4 +948,23 @@
       gender: male
   - type: Loadout
     prototypes: [ MobPollyGear ]
+  # imp edit start
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,2,2
+  - type: Sprite # wearable on shoulder :)
+    sprite: _NF/Mobs/NPC/Animals/parrot.rsi
+  - type: Clothing
+    quickEquip: true
+    slots:
+    - neck
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-avian
+  - type: StealTarget
+    stealGroup: AnimalPoly
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+  # imp edit end
 

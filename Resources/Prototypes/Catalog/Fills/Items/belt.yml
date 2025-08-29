@@ -45,7 +45,7 @@
   id: BeltSecurityEntityTable
   table: !type:AllSelector
     children:
-    - id: Stunbaton
+    #- id: Stunbaton  impcluded in SecLink
     - id: Handcuffs
     - id: Handcuffs
     - id: HoloprojectorSecurity
@@ -194,6 +194,7 @@
     contents:
         - id: WeaponRevolverInspector
         - id: SpeedLoaderMagnum
+        - id: SpeedLoaderMagnumStun #imp
 
 - type: entity
   id: ClothingBeltChefFilled

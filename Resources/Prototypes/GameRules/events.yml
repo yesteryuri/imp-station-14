@@ -8,46 +8,75 @@
     - id: BreakerFlip
     - id: BureaucraticError
     - id: ClericalError
-    - id: CockroachMigration
+    #- id: CockroachMigration
     - id: GasLeak
-    - id: GreytideVirus
+    # - id: GreytideVirus
     - id: IonStorm # its calm like 90% of the time smh
     - id: KudzuGrowth
     - id: MassHallucinations
-    - id: MimicVendorRule
-    - id: MouseMigration
+    #- id: MimicVendorRule
+    #- id: MouseMigration
     - id: PowerGridCheck
     - id: RandomSentience
-    - id: SlimesSpawn
+    #- id: SlimesSpawn
     - id: SolarFlare
-    - id: SnakeSpawn
-    - id: SpiderClownSpawn
-    - id: SpiderSpawn
+    #- id: SnakeSpawn
+    #- id: SpiderClownSpawn
+    #- id: SpiderSpawn
     - id: VentClog
+    - id: GoblinKnightEvent # imp
+    - id: HereticBooksSpawnSmall #imp
 
 - type: entityTable
-  id: BasicAntagEventsTable
-  table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
-    children:
-    - id: ClosetSkeleton
-    - id: KingRatMigration
-    - id: RevenantSpawn
-    - !type:NestedSelector
-      tableId: DerelictBorgEventTable
-
-- type: entityTable
-  id: ModerateAntagEventsTable
+  id: GreaterAntagEventsTable #imp: higher impact antags
   table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
     children:
     - id: DragonSpawn
+    - id: KingRatMigration
     - id: NinjaSpawn
-    - id: ParadoxCloneSpawn
+    - id: RevenantSpawn
     - id: SleeperAgents
     - id: ZombieOutbreak
     - id: LoneOpsSpawn
     - id: WizardSpawn
+    - id: ChangelingAwakening #imp
+    - id: BountyHunterSpawn # imp
+    - id: ReplicatorSpawn # imp
+    - id: VRexEvent #imp
+
+- type: entityTable
+  id: LesserAntagEventsTable # imp: lower impact antags
+  table: !type:AllSelector
+    children:
+    - !type:NestedSelector # DV
+      tableId: BasicAntagEventsTableDV
+    - id: ClosetSkeleton
+    - id: ParadoxCloneSpawn
     - !type:NestedSelector
       tableId: DerelictBorgEventTable
+    - id: GoblinStowawaysEvent #imp
+    - id: GoblinCastawaysEvent #imp
+    - id: OppaSpawnLight #imp
+    - id: OppaSpawnNight #imp
+    - id: SyndicateInfiltratorSpawn # imp
+
+- type: entityTable
+  id: SleeperlessGreaterAntagEventsTable
+  table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
+    children:
+    - !type:NestedSelector # DV
+      tableId: BasicAntagEventsTableDV
+    - id: DragonSpawn
+    - id: KingRatMigration
+    - id: NinjaSpawn
+    - id: RevenantSpawn
+    - id: ZombieOutbreak
+    - id: LoneOpsSpawn
+    - id: WizardSpawn
+    - id: ChangelingAwakening # imp
+    - id: BountyHunterSpawn # imp
+    - id: ReplicatorSpawn # imp
+    - id: VRexEvent #imp
 
 - type: entityTable
   id: DerelictBorgEventTable #For Derelict Borg spawns
@@ -56,15 +85,15 @@
     - !type:GroupSelector # Standard NT Borgs
       weight: 85
       children:
-        - id: DerelictEngineerCyborgSpawn
-        - id: DerelictGenericCyborgSpawn
-        - id: DerelictJanitorCyborgSpawn
-        - id: DerelictMedicalCyborgSpawn
-        - id: DerelictMiningCyborgSpawn
+      - id: DerelictEngineerCyborgSpawn
+      - id: DerelictGenericCyborgSpawn
+      - id: DerelictJanitorCyborgSpawn
+      - id: DerelictMedicalCyborgSpawn
+      - id: DerelictMiningCyborgSpawn
     - !type:GroupSelector # Other Borgs
       weight: 15
       children:
-        - id: DerelictSyndicateAssaultCyborgSpawn
+      - id: DerelictSyndicateAssaultCyborgSpawn
 
 - type: entity
   id: BaseStationEvent
@@ -101,9 +130,9 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-    startAnnouncementColor: "#18abf5"
-    startAudio:
-      path: /Audio/Announcements/announce.ogg
+    #startAnnouncementColor: "#18abf5" #imp edit
+    #startAudio:
+    #  path: /Audio/Announcements/announce.ogg
     weight: 8
     duration: 35
   - type: AnomalySpawnRule
@@ -117,9 +146,9 @@
       min:  30
       max:  30
   - type: StationEvent
-    startAnnouncementColor: "#18abf5"
-    startAudio:
-      path: /Audio/Announcements/announce.ogg
+    #startAnnouncementColor: "#18abf5" #imp edit
+    #startAudio:
+    #  path: /Audio/Announcements/announce.ogg
     weight: 8
     duration: 35
   - type: BluespaceArtifactRule
@@ -150,7 +179,7 @@
   parent: BaseGameRule
   components:
   - type: StationEvent
-    startAnnouncement: station-event-bureaucratic-error-announcement
+    startAnnouncement: true #imp
     minimumPlayers: 25
     weight: 3
     duration: 1
@@ -163,7 +192,7 @@
   parent: BaseGameRule
   components:
   - type: StationEvent
-    startAnnouncement: station-event-clerical-error-announcement
+    startAnnouncement: true #imp
     minimumPlayers: 15
     weight: 5
     duration: 1
@@ -176,7 +205,7 @@
   - type: StationEvent
     weight: 5
     duration: 1
-    minimumPlayers: 10
+    minimumPlayers: 15 #imp
   - type: RandomEntityStorageSpawnRule
     prototype: MobSkeletonCloset
 
@@ -188,7 +217,7 @@
     weight: 6.5
     earliestStart: 40
     reoccurrenceDelay: 20
-    minimumPlayers: 20
+    minimumPlayers: 30 #imp
     duration: null
   - type: SpaceSpawnRule
     spawnDistance: 0
@@ -216,7 +245,7 @@
   id: NinjaSpawn
   components:
   - type: StationEvent
-    weight: 6
+    weight: 1 #imp
     duration: null
     earliestStart: 30
     reoccurrenceDelay: 20
@@ -264,7 +293,7 @@
     cost: 75
 
 - type: entity
-  parent: BaseGameRule
+  parent: BaseMidRoundAntag # Imp - uses midround antag spawners this way
   id: ParadoxCloneSpawn
   components:
   - type: StationEvent
@@ -277,11 +306,15 @@
     objectiveBlacklist:
       tags:
       - ParadoxCloneObjectiveBlacklist
-  - type: AntagObjectives
-    objectives:
-    - ParadoxCloneKillObjective
-    - ParadoxCloneLivingObjective
-  - type: AntagRandomSpawn # TODO: improve spawning so they only start in maints
+  #- type: AntagObjectives
+   # objectives:
+    # - ParadoxCloneKillObjective # imp to allow for savior clones
+    # - ParadoxCloneLivingObjective
+  # - type: AntagRandomSpawn imp edit, uses midround antag spawners
+  - type: AntagRandomObjectives # imp
+    sets:
+    - groups: ParadoxTypeGroups
+    maxDifficulty: 2 # will pick two objective
   - type: AntagSelection
     agentName: paradox-clone-round-end-agent-name
     definitions:
@@ -322,7 +355,7 @@
     duration: 1
     earliestStart: 30
     reoccurrenceDelay: 60
-    minimumPlayers: 10
+    minimumPlayers: 15 #imp
   - type: AntagSelection
     agentName: wizard-round-end-name
     definitions:
@@ -367,10 +400,8 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-    startAnnouncement: station-event-gas-leak-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
-    endAnnouncement: station-event-gas-leak-end-announcement
+    startAnnouncement: true #imp
+    endAnnouncement: true #imp
     weight: 8
   - type: GasLeakRule
 
@@ -391,12 +422,8 @@
   components:
   - type: StationEvent
     weight: 5
-    startAnnouncement: station-event-power-grid-check-start-announcement
-    endAnnouncement: station-event-power-grid-check-end-announcement
-    startAudio:
-      path: /Audio/Announcements/power_off.ogg
-      params:
-        volume: -4
+    startAnnouncement: true #imp
+    endAnnouncement: true #imp
     duration: 60
     maxDuration: 120
   - type: PowerGridCheckRule
@@ -407,10 +434,8 @@
   components:
   - type: StationEvent
     weight: 8
-    startAnnouncement: station-event-solar-flare-start-announcement
-    endAnnouncement: station-event-solar-flare-end-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAnnouncement: true #imp
+    endAnnouncement: true #imp
     duration: 120
     maxDuration: 240
   - type: SolarFlareRule
@@ -434,90 +459,14 @@
   parent: BaseStationEventLongDelay
   components:
   - type: StationEvent
-    startAnnouncement: station-event-vent-clog-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    #startAnnouncement: station-event-vent-clog-start-announcement #imp
+    #startAudio:
+    #  path: /Audio/Announcements/attention.ogg
     earliestStart: 15
     minimumPlayers: 15
     weight: 5
     duration: 60
   - type: VentClogRule
-
-- type: entity
-  id: SlimesSpawn
-  parent: BaseStationEventShortDelay
-  components:
-  - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
-    earliestStart: 20
-    minimumPlayers: 15
-    weight: 5
-    duration: 60
-  - type: VentCrittersRule
-    entries:
-    - id: MobAdultSlimesBlueAngry
-      prob: 0.02
-    - id: MobAdultSlimesGreenAngry
-      prob: 0.02
-    - id: MobAdultSlimesYellowAngry
-      prob: 0.02
-
-- type: entity
-  id: SnakeSpawn
-  parent: BaseStationEventShortDelay
-  components:
-  - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
-    earliestStart: 20
-    minimumPlayers: 15
-    weight: 5
-    duration: 60
-  - type: VentCrittersRule
-    entries:
-    - id: MobPurpleSnake
-      prob: 0.02
-    - id: MobSmallPurpleSnake
-      prob: 0.02
-    - id: MobCobraSpace
-      prob: 0.02
-
-- type: entity
-  id: SpiderSpawn
-  parent: BaseStationEventShortDelay
-  components:
-  - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
-    earliestStart: 20
-    minimumPlayers: 15
-    weight: 5
-    duration: 60
-  - type: VentCrittersRule
-    entries:
-    - id: MobGiantSpiderAngry
-      prob: 0.05
-
-- type: entity
-  id: SpiderClownSpawn
-  parent: BaseStationEventShortDelay
-  components:
-  - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
-    earliestStart: 20
-    minimumPlayers: 20
-    weight: 1.5
-    duration: 60
-  - type: VentCrittersRule
-    entries:
-    - id: MobClownSpider
-      prob: 0.05
 
 - type: entity
   id: ZombieOutbreak
@@ -551,6 +500,8 @@
       - type: InitialInfected
       mindRoles:
       - MindRoleInitialInfected
+      factionsAdd: # IMP: Initial infected should be ignored by zombies.
+        - InitialInfectedIgnore
   - type: DynamicRuleCost
     cost: 200
 
@@ -565,7 +516,7 @@
     duration: null # LoneOpsSpawn needs an infinite duration so that it inherits the NukeOpsRule things of an actually appropriate end screen (not always "Neutral outcome!") and... ending the game if the station is nuked.
   - type: RuleGrids
   - type: LoadMapRule
-    gridPath: /Maps/Shuttles/ShuttleEvent/striker.yml
+    gridPath: /Maps/_Impstation/Shuttles/ShuttleEvent/striker.yml  #imp
   - type: NukeopsRule
     roundEndBehavior: Nothing
   - type: AntagSelection
@@ -601,9 +552,7 @@
     weight: 8
     minimumPlayers: 15
     maxOccurrences: 1 # can only happen once per round
-    startAnnouncement: station-event-communication-interception
-    startAudio:
-      path: /Audio/Announcements/intercept.ogg
+    startAnnouncement: true #imp
     duration: null # the rule has to last the whole round not 1 second
     occursDuringRoundEnd: false
   - type: AlertLevelInterceptionRule
@@ -625,7 +574,7 @@
   parent: BaseGameRule
   components:
   - type: StationEvent
-    weight: 7
+    weight: 2 #imp
     duration: 150
     maxDuration: 300
     reoccurrenceDelay: 30
@@ -662,8 +611,8 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    #startAudio: #imp
+    #  path: /Audio/Announcements/attention.ogg
     weight: 5
     minimumPlayers: 25
     reoccurrenceDelay: 20

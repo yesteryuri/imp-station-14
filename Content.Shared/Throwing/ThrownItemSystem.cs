@@ -136,6 +136,9 @@ namespace Content.Shared.Throwing
         /// </summary>
         public void ThrowCollideInteraction(ThrownItemComponent component, EntityUid thrown, EntityUid target)
         {
+            if (HasComp<ThrownItemImmuneComponent>(target))
+                return;
+
             if (component.Thrower is not null)
                 _adminLogger.Add(LogType.ThrowHit, LogImpact.Low,
                     $"{ToPrettyString(thrown):thrown} thrown by {ToPrettyString(component.Thrower.Value):thrower} hit {ToPrettyString(target):target}.");

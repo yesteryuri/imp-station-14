@@ -18,6 +18,16 @@ public sealed partial class VentClogRuleComponent : Component
         "Water", "Blood", "Slime", "SpaceDrugs", "SpaceCleaner", "Nutriment", "Sugar", "SpaceLube", "Ephedrine", "Ale", "Beer", "SpaceGlue"
     };
 
+    // Imp addition
+    /// <summary>
+    /// Blacklist for chemicals that should never be available from vent clog.
+    /// </summary>
+    [DataField]
+    public IReadOnlyList<ProtoId<ReagentPrototype>> BlacklistedVentChemicals = new ProtoId<ReagentPrototype>[]
+    {
+        "Holium", "PhilosophersJuice"
+    };
+
     /// <summary>
     /// Sound played when foam is being created.
     /// </summary>

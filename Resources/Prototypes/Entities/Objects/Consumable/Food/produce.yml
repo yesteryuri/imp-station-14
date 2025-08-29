@@ -548,8 +548,6 @@
           Quantity: 5
         - ReagentId: Vitamin
           Quantity: 4
-        - ReagentId: Oculine
-          Quantity: 3
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/carrot.rsi
   - type: Item
@@ -561,8 +559,6 @@
       reagents:
       - ReagentId: JuiceCarrot
         Quantity: 10
-      - ReagentId: Oculine
-        Quantity: 2
   - type: FoodSequenceElement
     entries:
       Burger: CarrotBurger
@@ -1584,6 +1580,7 @@
   - type: Tag
     tags:
     - Flower # TODO add "RedFlower" or "Poppy" tag, when other color flowers will be
+    - Poppy # goob edit
   - type: FoodSequenceElement
     entries:
       Taco: Poppy
@@ -1847,7 +1844,7 @@
 
 - type: entity
   name: fly amanita
-  parent: FoodProduceBase
+  parent: [FoodProduceBase, BaseMajorContraband]
   id: FoodFlyAmanita
   description: A delicious-looking mushroom like you see in those cartoons.
   components:
@@ -1882,7 +1879,7 @@
 
 - type: entity
   name: gatfruit
-  parent: [ FoodProduceBase, BaseSyndicateContraband ]
+  parent: [ FoodProduceBase, Tier2Contraband ]
   id: FoodGatfruit
   description: A delicious, gun-shaped fruit with a thick wooden stem.
   components:
@@ -2074,6 +2071,9 @@
     entries:
       Taco: Koibean
       Burger: KoibeanBurger
+  - type: FlavorProfile #imp
+    flavors:
+      - carpflesh
 
 - type: entity
   name: watermelon
@@ -2646,6 +2646,7 @@
     tags:
     - ClothMade
     - CottonBoll
+    - PyrottonBoll #imp
   - type: Extractable
     grindableSolutionName: food
   - type: FoodSequenceElement

@@ -2,7 +2,7 @@
   id: CrateCargoLuxuryHardsuit
   parent: CratePirate
   name: luxury mining hardsuit crate
-  description: Finally, a hardsuit Quartermasters could call their own. Centcomm has heard you, now stop asking.
+  description: Finally, a hardsuit Quartermasters could call their own. CentComm has heard you, now stop asking. # imp caps fix
   components:
   - type: StorageFill
     contents:
@@ -121,6 +121,12 @@
     - id: WeaponRifleAk
       prob: 0.0001
       orGroup: Weapons
+    - id: WeaponPistolValuPlus #imp
+      prob: 0.0001
+      orGroup: Weapons
+    - id: WeaponRifleMule #imp
+      prob: 0.0005
+      orGroup: Weapons
     - id: WeaponLauncherPirateCannon
       prob: 0.001
       orGroup: Weapons
@@ -169,8 +175,17 @@
     - id: WeaponTurretXeno
       prob: 0.01
       orGroup: Weapons
+    - id: WeaponGoldZipperFake #imp
+      prob: 0.01
+      orGroup: Weapons
+    - id: WeaponPistolValu #imp
+      prob: 0.01
+      orGroup: Weapons
     - id: WeaponRifleFoam
       prob: 0.03
+      orGroup: Weapons
+    - id: WeaponPistolZipper #imp
+      prob: 0.02
       orGroup: Weapons
     #clothing
     - id: ClothingUniformJumpsuitFamilyGuy
@@ -264,6 +279,9 @@
     - id: ToolboxGoldFilled
       prob: 0.001
       orGroup: Swag
+    - id: ClothingEyesGlassesGarMecha
+      prob: 0.01
+      orGroup: Swag
     - id: ClothingEyesGlassesGar
       prob: 0.01
       orGroup: Swag
@@ -278,6 +296,9 @@
       orGroup: Swag
     - id: ClothingBeltChampion
       prob: 0.01
+      orGroup: Swag
+    - id: MobFinfin
+      prob: 0.001
       orGroup: Swag
     #plushies
     - id: PlushieRGBee
@@ -301,6 +322,8 @@
     - id: PlushieLizard
       prob: 0.01
       orGroup: Plushies
+    - id: PlushieFinfin
+      prob: 0.01
     - id: PlushieRouny
       prob: 0.01
       orGroup: Plushies
@@ -318,6 +341,9 @@
       orGroup: Plushies
     - id: PlushieThrongler #hehe
       prob: 0.0005
+      orGroup: Plushies
+    - id: PrizeBall # imp. let's go gambling!
+      prob: 0.1
       orGroup: Plushies
     #useful
     - id: AmeJar
@@ -414,3 +440,8 @@
     - id: GrenadeFoamDart
       prob: 0.001
       orGroup: NotUseful
+    # imp stuff
+    - id: ClothingOuterHardsuitGoliath
+      prob: 0.05
+    - id: ClothingOuterHardsuitMaxim # i hit the juckport 1 trillion$
+      prob: 0.001

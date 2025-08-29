@@ -23,6 +23,7 @@
       whitelist:
         components:
           - Item
+          - Mech
         tags:
           - Structure
     - type: PhysicalComposition

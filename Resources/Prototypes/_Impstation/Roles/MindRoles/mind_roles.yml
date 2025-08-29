@@ -1,0 +1,39 @@
+﻿- type: entity # for goblins
+  parent: BaseMindRole
+  id: MindRoleGhostRoleTeamFreeAgent
+  name: Ghost Role (Team Free Agent)
+  components:
+  - type: MindRole
+    roleType: FreeAgent
+  - type: GhostRoleMarkerRole
+
+# Bounty Hunter
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleBountyHunter
+  name: Bounty Hunter Role
+  components:
+  - type: MindRole
+    antag: true
+    antagPrototype: BountyHunter
+    roleType: FreeAgent
+  - type: BountyHunterRole
+
+# Syndicate Infiltrator
+- type: entity
+  parent: MindRoleTraitor
+  id: MindRoleInfiltrator
+  components:
+  - type: MindRole
+    subtype: role-subtype-traitor
+
+# V-Rex
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindroleVRex
+  name: V-Rex Role
+  components:
+  - type: MindRole
+    antagPrototype: VRex
+    roleType: TeamAntagonist
+    exclusiveAntag: true

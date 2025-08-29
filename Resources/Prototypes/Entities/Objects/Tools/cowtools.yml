@@ -6,6 +6,7 @@
   components:
   - type: Tag
     tags:
+    - Wirecutter # imp special
     - PlantSampleTaker
   - type: Sprite
     sprite: Objects/Tools/Cowtools/haycutters.rsi
@@ -47,6 +48,9 @@
     useSound:
       collection: Screwdriver
     speedModifier: 0.05
+  - type: Tag
+    tags:
+      - Screwdriver
 
 - type: entity
   name: wronch
@@ -70,6 +74,9 @@
     useSound:
       path: /Audio/Items/ratchet.ogg
     speedModifier: 0.05
+  - type: Tag
+    tags:
+      - Wrench
 
 - type: entity
   name: cowbar
@@ -95,6 +102,9 @@
     delay: 10
   - type: Prying
     speedModifier: 0.05
+  - type: Tag
+    tags:
+      - Crowbar
 
 - type: entity
   name: mooltitool
@@ -157,10 +167,10 @@
   description: A weirdly shaped box, stocked with... tools?
   components:
   - type: Sprite
-    sprite: Objects/Tools/Cowtools/cow_toolbox.rsi
+    sprite: _Wizden/Objects/Tools/Cowtools/cow_toolbox.rsi # imp
     state: cow_toolbox
   - type: Item
-    sprite: Objects/Tools/Cowtools/cow_toolbox.rsi
+    sprite: _Wizden/Objects/Tools/Cowtools/cow_toolbox.rsi # imp
   - type: MeleeWeapon
     damage:
       types:

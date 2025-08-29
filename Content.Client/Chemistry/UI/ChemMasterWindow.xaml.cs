@@ -18,7 +18,9 @@ using Robust.Client.GameObjects;
 namespace Content.Client.Chemistry.UI
 {
     /// <summary>
-    /// Client-side UI used to control a <see cref="SharedChemMasterComponent"/>
+    /// Client-side UI used to control a <see>
+    ///     <cref>SharedChemMasterComponent</cref>
+    /// </see>
     /// </summary>
     [GenerateTypedNameReferences]
     public sealed partial class ChemMasterWindow : FancyWindow
@@ -31,7 +33,7 @@ namespace Content.Client.Chemistry.UI
         public event Action<BaseButton.ButtonEventArgs, ReagentButton>? OnReagentButtonPressed;
         public readonly Button[] PillTypeButtons;
 
-        private const string PillsRsiPath = "/Textures/Objects/Specific/Chemistry/pills.rsi";
+        private const string PillsRsiPath = "/Textures/_Impstation/Objects/Specific/Chemistry/pills.rsi"; // imp
 
         /// <summary>
         /// Create and initialize the chem master UI client-side. Creates the basic layout,
@@ -48,7 +50,7 @@ namespace Content.Client.Chemistry.UI
             // Pill rsi file should have states named as pill1, pill2, and so on.
             var resourcePath = new ResPath(PillsRsiPath);
             var pillTypeGroup = new ButtonGroup();
-            PillTypeButtons = new Button[20];
+            PillTypeButtons = new Button[22];
             for (uint i = 0; i < PillTypeButtons.Length; i++)
             {
                 // For every button decide which stylebase to have
@@ -164,7 +166,7 @@ namespace Content.Client.Chemistry.UI
         private void UpdateDosageFields(ChemMasterBoundUserInterfaceState castState)
         {
             var output = castState.OutputContainerInfo;
-            var remainingCapacity = output is null ? 0 : (output.MaxVolume - output.CurrentVolume).Int();
+            var remainingCapacity = output is null ?    0 : (output.MaxVolume - output.CurrentVolume).Int();
             var holdsReagents = output?.Reagents != null;
             var pillNumberMax = holdsReagents ? 0 : remainingCapacity;
             var bottleAmountMax = holdsReagents ? remainingCapacity : 0;

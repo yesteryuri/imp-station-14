@@ -1,9 +1,12 @@
+using Content.Client.Administration.Managers; // imp
+using Content.Shared.Ghost; // imp
 using Content.Client.Interactable.Components;
 using Content.Client.StatusIcon;
 using Content.Shared.Stealth;
 using Content.Shared.Stealth.Components;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
+using Robust.Client.Player; // imp
 using Robust.Shared.Prototypes;
 
 namespace Content.Client.Stealth;
@@ -15,23 +18,33 @@ public sealed class StealthSystem : SharedStealthSystem
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
     [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
     [Dependency] private readonly SpriteSystem _sprite = default!;
+    [Dependency] private readonly IPlayerManager _playerManager = default!; // imp
+    [Dependency] private readonly IClientAdminManager _adminManager = default!; // imp
+    [Dependency] private readonly ContainerSystem _containerSystem = default!; // imp
 
     private ShaderInstance _shader = default!;
+    // imp edit start
+    private ShaderInstance _altShader = default!;
+    private float timer = 0;
+    // imp edit end
 
     public override void Initialize()
     {
         base.Initialize();
 
-        _shader = _protoMan.Index(Shader).InstanceUnique();
+        _shader = _protoMan.Index<ShaderPrototype>("Stealth").InstanceUnique(); // imp
+        _altShader = _protoMan.Index<ShaderPrototype>("AccessibleFullStealth").InstanceUnique(); // imp
 
         SubscribeLocalEvent<StealthComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<StealthComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<StealthComponent, BeforePostShaderRenderEvent>(OnShaderRender);
     }
 
+    //no longer needs a force update! yaaaaay!
+
     public override void SetEnabled(EntityUid uid, bool value, StealthComponent? component = null)
     {
-        if (!Resolve(uid, ref component) || component.Enabled == value)
+        if (!Resolve(uid, ref component)) // imp
             return;
 
         base.SetEnabled(uid, value, component);
@@ -44,7 +57,10 @@ public sealed class StealthSystem : SharedStealthSystem
             return;
 
         _sprite.SetColor((uid, sprite), Color.White);
-        sprite.PostShader = enabled ? _shader : null;
+        //imp special - use the alternative full-invis shader if we're set to
+        var shaderToUse = component.UseAltShader ? _altShader : _shader;
+        sprite.PostShader = enabled ? shaderToUse : null;
+        //imp special end
         sprite.GetScreenTexture = enabled;
         sprite.RaiseShaderEvent = enabled;
 
@@ -75,6 +91,36 @@ public sealed class StealthSystem : SharedStealthSystem
 
     private void OnShaderRender(EntityUid uid, StealthComponent component, BeforePostShaderRenderEvent args)
     {
+        //imp special - show an outline for people that should see it, goes along with complete invisibility
+        //includes the entity with the component, any admins & any ghosts
+        var shaderToUse = component.UseAltShader ? _altShader : _shader;
+        shaderToUse.SetParameter("ShowOutline", false); //make sure it's always false by default
+
+        bool isCorrectSession = false;
+        bool isGhost = false;
+        bool isInContainer = false;
+
+        if (_playerManager.LocalSession != null)
+        {
+            if (_playerManager.TryGetSessionByEntity(uid, out var playerSession))
+            {
+                isCorrectSession = playerSession.UserId == _playerManager.LocalSession.UserId;
+            }
+
+            isGhost = HasComp<GhostComponent>(_playerManager.LocalSession.AttachedEntity);
+
+            if (_playerManager.LocalSession.AttachedEntity is { } entity) //why can you not just use a normal nullcheck for this I hate c#
+            {
+                isInContainer = _containerSystem.ContainsEntity(uid, entity);
+            }
+        }
+
+        if (isCorrectSession || isGhost || isInContainer)
+        {
+            shaderToUse.SetParameter("ShowOutline", true);
+        }
+        //imp special end
+
         // Distortion effect uses screen coordinates. If a player moves, the entities appear to move on screen. this
         // makes the distortion very noticeable.
 
@@ -92,8 +138,8 @@ public sealed class StealthSystem : SharedStealthSystem
         // actual visual visibility effect is limited to +/- 1.
         visibility = Math.Clamp(visibility, -1f, 1f);
 
-        _shader.SetParameter("reference", reference);
-        _shader.SetParameter("visibility", visibility);
+        shaderToUse.SetParameter("reference", reference); // imp
+        shaderToUse.SetParameter("visibility", visibility); // imp
 
         visibility = MathF.Max(0, visibility);
         _sprite.SetColor((uid, args.Sprite), new Color(visibility, visibility, 1, 1));

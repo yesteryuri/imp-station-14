@@ -92,6 +92,9 @@
   - Supply
   - Science
 
+  addComponents: # imp
+  - type: Magboots
+
   # Visual
   inventoryTemplateId: borgTall
   spriteBodyState: miner
@@ -129,7 +132,7 @@
   - Service
 
   # Visual
-  inventoryTemplateId: borgShort
+  inventoryTemplateId: borgJanitor # imp
   spriteBodyState: janitor
   spriteBodyMovementState: janitor_moving
   spriteHasMindState: janitor_e
@@ -173,6 +176,9 @@
   - type: ShowHealthIcons
     damageContainers:
     - Biological
+  - type: FabricateCandy # Borg Candy - DeltaV
+    actions:
+    - ActionFabricateGumball
 
   # Visual
   inventoryTemplateId: borgDutch
@@ -199,7 +205,7 @@
   dummyPrototype: BorgChassisService
 
   # Functional
-  extraModuleCount: 3
+  extraModuleCount: 4
   moduleWhitelist:
     tags:
     - BorgModuleGeneric
@@ -208,6 +214,7 @@
   defaultModules:
   - BorgModuleTool
   - BorgModuleMusique
+  - BorgModuleBartender # imp
   - BorgModuleService
   - BorgModuleClowning
   - BorgModuleGardening
@@ -217,7 +224,7 @@
   - Service
 
   # Visual
-  inventoryTemplateId: borgTall
+  inventoryTemplateId: borgHumanoid # imp
   spriteBodyState: service
   spriteHasMindState: service_e
   spriteNoMindState: service_e_r

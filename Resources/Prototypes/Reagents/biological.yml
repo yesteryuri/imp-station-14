@@ -38,6 +38,11 @@
           groups:
             Brute: -3
             Burn: -1.25
+      - !type:ModifyBloodLevel # imp
+        conditions:
+        - !type:OrganType
+          type: Kodepiia
+        amount: 2
   plantMetabolism:
     - !type:PlantAdjustWater
       amount: 0.5
@@ -76,6 +81,12 @@
       effects:
       - !type:SatiateHunger
         factor: 1
+      - !type:ModifyBloodLevel # imp
+        conditions:
+        - !type:OrganType
+          type: Slime
+          shouldHave: true
+        amount: 0.48 # imp Restores slime at a 24:25 ratio. Just shove that shit back in there.
   footstepSound:
     collection: FootstepSlime # makes sense
     params:
@@ -199,6 +210,13 @@
     collection: FootstepBlood
     params:
       volume: 6
+  metabolisms: # imp
+    Food:
+      effects:
+      - !type:SatiateHunger
+        conditions:
+        - !type:OrganType
+          type: Kodepiia
 
 - type: reagent
   id: Vomit
@@ -243,3 +261,7 @@
         damage:
           types:
             Cellular: 2
+        conditions: # imp
+        - !type:OrganType
+          type: Kodepiia
+          shouldHave: false

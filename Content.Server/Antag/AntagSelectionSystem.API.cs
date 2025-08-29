@@ -8,10 +8,12 @@ using Content.Shared.Chat;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Mind;
 using Content.Shared.Preferences;
+using Content.Shared.Roles;
 using JetBrains.Annotations;
 using Robust.Shared.Audio;
 using Robust.Shared.Enums;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.Antag;
 
@@ -80,6 +82,20 @@ public sealed partial class AntagSelectionSystem
 
         return count;
     }
+
+    // goob edit
+    public List<ICommonSession> GetAliveConnectedPlayers(IList<ICommonSession> pool)
+    {
+        var l = new List<ICommonSession>();
+        foreach (var session in pool)
+        {
+            if (session.Status is SessionStatus.Disconnected or SessionStatus.Zombie)
+                continue;
+            l.Add(session);
+        }
+        return l;
+    }
+    // goob edit end
 
     /// <summary>
     /// Gets the number of antagonists that should be present for a given antag definition based on the provided pool.
@@ -166,7 +182,7 @@ public sealed partial class AntagSelectionSystem
     public bool HasPrimaryAntagPreference(ICommonSession? session, AntagSelectionDefinition def)
     {
         if (session == null)
-            return true;
+            return false;
 
         if (def.PrefRoles.Count == 0)
             return false;
@@ -181,14 +197,39 @@ public sealed partial class AntagSelectionSystem
     public bool HasFallbackAntagPreference(ICommonSession? session, AntagSelectionDefinition def)
     {
         if (session == null)
-            return true;
+            return false;
 
         if (def.FallbackRoles.Count == 0)
             return false;
 
-        var pref = (HumanoidCharacterProfile) _pref.GetPreferences(session.UserId).SelectedCharacter;
+        var pref = (HumanoidCharacterProfile)_pref.GetPreferences(session.UserId).SelectedCharacter;
         return pref.AntagPreferences.Any(p => def.FallbackRoles.Contains(p));
     }
+    /// imp addition
+    /// <summary>
+    /// Checks if a given session has jobs that can be an antagonist enabled
+    /// </summary>
+    public bool HasValidAntagJobs(ICommonSession? session)
+    {
+        if (session == null)
+            return false;
+
+        var pref = (HumanoidCharacterProfile)_pref.GetPreferences(session.UserId).SelectedCharacter;
+        if (pref.PreferenceUnavailable == PreferenceUnavailableMode.SpawnAsOverflow)
+            return true;
+
+        var profileJobs = pref.JobPriorities.Keys.Select(k => new ProtoId<JobPrototype>(k)).ToList();
+        foreach (var jobId in profileJobs)
+        {
+            if (!_prototype.TryIndex(jobId, out var job))
+                continue;
+            if (job.CanBeAntag)
+                return true;
+        }
+
+        return false;
+    }
+    /// end imp addition
 
     /// <summary>
     /// Returns all the antagonists for this rule who are currently alive

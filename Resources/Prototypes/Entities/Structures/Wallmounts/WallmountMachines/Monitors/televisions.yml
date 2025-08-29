@@ -34,9 +34,10 @@
         enum.SurveillanceCameraMonitorUiKey.Key:
           type: SurveillanceCameraMonitorBoundUserInterface
   - type: PointLight
-    radius: 1.5
+    radius: 6 #imp
     energy: 1.6
-    color: "#b89f25"
+    color: "#809fff" #imp
+    castShadows: true #imp
   - type: Destructible
     thresholds:
       - trigger:

@@ -29,6 +29,11 @@ public sealed partial class MindComponent : Component
     public List<EntityUid> Objectives = new();
 
     /// <summary>
+    ///     List of entities assigned to this mind's target objectives, if applicable.
+    /// </summary>
+    public List<EntityUid> ObjectiveTargets = new();
+
+    /// <summary>
     ///     The session ID of the player owning this mind.
     /// </summary>
     [DataField, AutoNetworkedField, Access(typeof(SharedMindSystem))]
@@ -121,4 +126,10 @@ public sealed partial class MindComponent : Component
     /// </summary>
     [DataField]
     public LocId? Subtype;
+
+    /// <summary>
+    ///     Imp Edit: Hold issuer to display on round end for traitors.
+    /// </summary>
+    [DataField]
+    public LocId? ObjectiveIssuer;
 }

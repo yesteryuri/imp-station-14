@@ -33,7 +33,6 @@ public sealed class GasAnalyzerSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<GasAnalyzerComponent, AfterInteractEvent>(OnAfterInteract);
-
         Subs.BuiEvents<GasAnalyzerComponent>(GasAnalyzerUiKey.Key, subs =>
         {
             subs.Event<BoundUIOpenedEvent>(OnBoundUIOpened);

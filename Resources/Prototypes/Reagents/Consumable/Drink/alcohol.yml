@@ -78,6 +78,19 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: true
   fizziness: 0.6
+  metabolisms: #imp
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.06
+      - !type:Emote
+        emote: Wuhey
+        showInChat: true
+        force: true
+        probability: 0.02
 
 - type: reagent
   id: BlueCuracao
@@ -1158,6 +1171,15 @@
   metamorphicMaxFillLevels: 6
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
+  metabolisms: #imp
+    Narcotic:
+      effects:
+      - !type:GenericStatusEffect
+        key: SeeingRainbows
+        component: SeeingRainbows
+        type: Add
+        time: 3
+        refresh: false
 
 - type: reagent
   id: Hooch
@@ -1185,15 +1207,15 @@
   fizziness: 0.6
 
 - type: reagent
-  id: IrishSlammer
-  name: reagent-name-irish-slammer
+  id: IrishCarBomb #imp, kept all instances of the name being irish car bomb instead of irish slammer
+  name: reagent-name-irish-car-bomb
   parent: BaseAlcohol
-  desc: reagent-desc-irish-slammer
+  desc: reagent-desc-irish-car-bomb
   physicalDesc: reagent-physical-desc-bubbly
-  flavor: irishslammer
+  flavor: irishcarbomb
   color: "#2E6671"
   metamorphicSprite:
-    sprite: Objects/Consumable/Drinks/irishslammer.rsi
+    sprite: Objects/Consumable/Drinks/irishcarbomb.rsi
     state: icon_empty
   metamorphicMaxFillLevels: 6
   metamorphicFillBaseName: fill-
@@ -1584,7 +1606,7 @@
   metamorphicSprite:
     sprite: Objects/Consumable/Drinks/pinacolada.rsi
     state: icon_empty
-  metamorphicMaxFillLevels: 6
+  metamorphicMaxFillLevels: 3
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:

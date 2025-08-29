@@ -58,7 +58,8 @@ public sealed class MimePowersSystem : EntitySystem
 
     private void OnComponentInit(Entity<MimePowersComponent> ent, ref ComponentInit args)
     {
-        EnsureComp<MutedComponent>(ent);
+        var mutedComponent = EnsureComp<MutedComponent>(ent); // IMP
+        mutedComponent.MutedScream = false; // IMP
 
         if (ent.Comp.PreventWriting)
         {

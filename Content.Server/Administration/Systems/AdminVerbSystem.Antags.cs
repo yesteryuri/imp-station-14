@@ -1,3 +1,4 @@
+using Content.Server._Goobstation.GameTicking.Rules.Components; //goob
 using Content.Server.Antag;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules.Components;
@@ -161,7 +162,7 @@ public sealed partial class AdminVerbSystem
             Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/Objects/Weapons/Melee/armblade.rsi"), "icon"),
             Act = () =>
             {
-                _antag.ForceMakeAntag<ChangelingRuleComponent>(targetPlayer, DefaultChangelingRule);
+                _antag.ForceMakeAntag<GoobChangelingRuleComponent>(targetPlayer, DefaultChangelingRule); //imp, use goobling until upstream version ready
             },
             Impact = LogImpact.High,
             Message = string.Join(": ", changelingName, Loc.GetString("admin-verb-make-changeling")),
@@ -191,5 +192,20 @@ public sealed partial class AdminVerbSystem
 
         if (HasComp<HumanoidAppearanceComponent>(args.Target)) // only humanoids can be cloned
             args.Verbs.Add(paradox);
+
+        // goobstation - heretics
+        Verb heretic = new()
+        {
+            Text = Loc.GetString("admin-verb-make-heretic"),
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/_Goobstation/Heretic/Blades/blade_blade.rsi"), "icon"),
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<HereticRuleComponent>(targetPlayer, "Heretic");
+            },
+            Impact = LogImpact.High,
+            Message = Loc.GetString("admin-verb-make-heretic"),
+        };
+        args.Verbs.Add(heretic);
     }
 }

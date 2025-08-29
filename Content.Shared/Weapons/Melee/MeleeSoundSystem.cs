@@ -31,10 +31,11 @@ public sealed class MeleeSoundSystem : EntitySystem
     /// </summary>
     /// <param name="damageType"> Serves as a lookup key for a hit sound </param>
     /// <param name="hitSoundOverride"> A sound can be supplied by the <see cref="MeleeHitEvent"/> itself to override everything else </param>
-    public void PlayHitSound(EntityUid targetUid, EntityUid? userUid, string? damageType, SoundSpecifier? hitSoundOverride, MeleeWeaponComponent weaponComponent)
+    // Imp edit, moved hitSound and noDamageSound to parameters, replacing MeleeWeaponComponent parameter for throwing changes
+    public void PlayHitSound(EntityUid targetUid, EntityUid? userUid, string? damageType, SoundSpecifier? hitSoundOverride, SoundSpecifier? hitSound, SoundSpecifier? noDamageSound)
     {
-        var hitSound      = weaponComponent.HitSound;
-        var noDamageSound = weaponComponent.NoDamageSound;
+        //var hitSound      = weaponComponent.HitSound; // imp edit for throwing changes
+        //var noDamageSound = weaponComponent.NoDamageSound; // imp edit for throwing changes
 
         var playedSound = false;
 
@@ -76,7 +77,7 @@ public sealed class MeleeSoundSystem : EntitySystem
                 _audio.PlayPredicted(hitSound, coords, userUid, hitSound.Params.WithVariation(DamagePitchVariation));
                 playedSound = true;
             }
-            else
+            else if (noDamageSound != null) //imp edit, null check
             {
                 _audio.PlayPredicted(noDamageSound, coords, userUid, noDamageSound.Params.WithVariation(DamagePitchVariation));
                 playedSound = true;

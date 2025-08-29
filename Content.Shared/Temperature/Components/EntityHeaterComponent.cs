@@ -10,7 +10,13 @@ namespace Content.Shared.Temperature.Components;
 [RegisterComponent, Access(typeof(SharedEntityHeaterSystem))]
 [NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class EntityHeaterComponent : Component
-{
+{   //Imp Edit
+    /// <summary>
+    /// Does this heater require electicity to work.
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public bool RequirePower = true;
+
     /// <summary>
     /// Power used when heating at the high setting.
     /// Low and medium are 33% and 66% respectively.

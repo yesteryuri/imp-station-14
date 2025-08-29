@@ -52,6 +52,8 @@
     whitelist:
       tags:
       - Document
+      - Write #imp
+      - RubberStamp #imp
   - type: ItemMapper
     mapLayers:
       folder-overlay-paper:
@@ -266,6 +268,8 @@
     whitelist:
       tags:
       - Document
+      - Write #imp
+      - RubberStamp #imp
   - type: ItemMapper
     mapLayers:
       clipboard_paper:

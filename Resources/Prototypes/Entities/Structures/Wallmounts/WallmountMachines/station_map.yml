@@ -95,6 +95,9 @@
       blacklist:
         tags:
         - NoConsoleSound
+    - type: PointLight #imp
+      range: 1.5
+      color: "#58e873"
 
 - type: entity
   parent: BaseWallmountMetallic

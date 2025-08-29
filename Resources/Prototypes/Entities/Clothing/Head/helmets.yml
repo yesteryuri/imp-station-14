@@ -89,7 +89,7 @@
 
 #Syndicate SWAT Helmet
 - type: entity
-  parent: ClothingHeadHelmetSwat
+  parent: [ ClothingHeadBase, Tier2Contraband ] #imp; it's Syndicate gear
   id: ClothingHeadHelmetSwatSyndicate
   name: SWAT helmet
   suffix: Syndicate
@@ -102,6 +102,17 @@
   - type: HideLayerClothing
     layers:
       Hair: HEAD
+  - type: Armor #imp for parenting reasons
+    modifiers:
+      coefficients:
+        Blunt: 0.80
+        Slash: 0.80
+        Piercing: 0.80
+        Heat: 0.80
+        Radiation: 0.80
+        Caustic: 0.95
+  - type: ExplosionResistance #imp for parenting reasons
+    damageCoefficient: 0.75
 
 #Light Riot Helmet
 - type: entity
@@ -419,15 +430,15 @@
       Hair: HEAD
 
 - type: entity
-  parent: [ BaseSyndicateContraband, ClothingHeadHelmetBase ]
+  parent: [ Tier3Contraband, ClothingHeadHelmetBase ]
   id: ClothingHeadHelmetRaid
   name: syndicate raid helmet
   description: An armored helmet for use with the syndicate raid suit. Very stylish.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Helmets/syndie-raid.rsi
+    sprite: _Impstation/Clothing/Head/Helmets/syndie-raid.rsi #imp edit
   - type: Clothing
-    sprite: Clothing/Head/Helmets/syndie-raid.rsi
+    sprite: _Impstation/Clothing/Head/Helmets/syndie-raid.rsi #imp edit
   - type: Armor
     modifiers: #There's gotta be SOME reason to use this over other helmets.
       coefficients:
@@ -466,9 +477,6 @@
     sprite: Clothing/Head/Helmets/podwars_helmet.rsi
   - type: Clothing
     sprite: Clothing/Head/Helmets/podwars_helmet.rsi
-  - type: HideLayerClothing
-    layers:
-      Hair: HEAD
 
 #Justice Helmet
 - type: entity
