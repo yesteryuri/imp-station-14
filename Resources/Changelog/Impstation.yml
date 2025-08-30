@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: widgetbeck
-  changes:
-  - message: Shields now *properly* slow you down instead of bodyblocking.
-    type: Tweak
-  id: 1721
-  time: '2025-05-24T22:09:57.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2574
 - author: DinnerCalzone
   changes:
   - message: Banana's cargo shuttle should be less likely to start clipped inside
@@ -4183,3 +4176,13 @@
   id: 2220
   time: '2025-08-30T00:36:06.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3384
+- author: astral_amy
+  changes:
+  - message: Added a surgical bay to Bedlam. Also, completely redesigned Bedlam's
+      medical bay.
+    type: Add
+  - message: A couple of touch-ups for Bedlam and Whisper - see PR for details.
+    type: Tweak
+  id: 2221
+  time: '2025-08-30T02:06:43.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3389
