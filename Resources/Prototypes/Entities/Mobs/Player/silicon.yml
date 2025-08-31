@@ -509,6 +509,7 @@
     rules: ghost-role-information-silicon-rules
     raffle:
       settings: default
+    reregister: false
   - type: GhostTakeoverAvailable
 
 - type: entity
@@ -542,6 +543,7 @@
       rules: ghost-role-information-silicon-rules
       raffle:
         settings: default
+      reregister: false
       mindRoles: # imp edit once again this is upstream forgetting borgs exist
       - MindRoleGhostRoleSilicon
     - type: GhostTakeoverAvailable
@@ -579,6 +581,7 @@
     rules: ghost-role-information-silicon-rules
     raffle:
       settings: default
+    reregister: false
   - type: GhostTakeoverAvailable
 
 - type: entity
@@ -615,6 +618,7 @@
     rules: ghost-role-information-silicon-rules
     raffle:
       settings: default
+    reregister: false
   - type: GhostTakeoverAvailable
 
 - type: entity
@@ -650,6 +654,7 @@
     rules: ghost-role-information-silicon-rules
     raffle:
       settings: default
+    reregister: false
   - type: GhostTakeoverAvailable
 
 - type: entity
@@ -684,4 +689,5 @@
     rules: ghost-role-information-silicon-rules
     raffle:
       settings: default
+    reregister: false
   - type: GhostTakeoverAvailable
