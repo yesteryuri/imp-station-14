@@ -24,6 +24,10 @@
     tags:
     - Inflatable
     - DroneUsable #imp
+  - type: PluralName # imp
+    oneOf: plural-name-an
+    someOf: plural-name-arm-1
+    nameSomeOf: inflatable barricades
 # TODO: Add stack sprites + visuals.
 
 - type: entity
@@ -52,6 +56,10 @@
     tags:
     - Inflatable
     - DroneUsable #imp
+  - type: PluralName # imp
+    oneOf: plural-name-an
+    someOf: plural-name-arm-1
+    nameSomeOf: inflatable doors
 # TODO: Add stack sprites + visuals.
 
 - type: entity
