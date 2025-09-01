@@ -388,9 +388,6 @@ ui-options-admin-player-tab-color-setting-character = Colorize antag character n
 ui-options-admin-player-tab-color-setting-roletype = Colorize all role types
 ui-options-admin-player-tab-color-setting-both = Colorize both
 
-ui-options-admin-logs-title = Admin Logs
-ui-options-admin-logs-highlight-color = Highlight Color
-
 ui-options-admin-overlay-title = Admin Overlay
 ui-options-admin-overlay-antag-format = Antag label style
 ui-options-admin-overlay-antag-format-binary = Show antag status
