@@ -1,17 +1,4 @@
 ﻿Entries:
-- author: Cutinup99
-  changes:
-  - message: Armory crate purchase for the the Drozd, Lecter, and Kammerer
-    type: Add
-  - message: AKMS is now obtainable via cargo.
-    type: Add
-  - message: renamed the SMG and shotgun crates to reflect whats actually within them
-    type: Tweak
-  - message: daitos are now marginally cheaper
-    type: Tweak
-  id: 1726
-  time: '2025-05-25T07:25:46.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2566
 - author: msTheowo
   changes:
   - message: Business cards! Get them by crafting them!
@@ -4182,3 +4169,17 @@
   id: 2225
   time: '2025-09-03T11:46:36.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3369
+- author: widgetbeck
+  changes:
+  - message: Fixed replicator nest sound effects lingering after the nest is destroyed.
+    type: Fix
+  - message: Fixed replicators from old nests not getting leveled up from their new
+      nest - instead, all replicators on the map are affected by all nests. There
+      is one Hive.
+    type: Fix
+  - message: Fixed replicators not getting a popup notification when they are orphaned
+      (when their Queen dies.) The Queen will also now lose its Crown upon its death.
+    type: Fix
+  id: 2226
+  time: '2025-09-03T11:48:10.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3348
