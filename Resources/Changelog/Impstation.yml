@@ -1,27 +1,4 @@
 ﻿Entries:
-- author: MintyTheBinty
-  changes:
-  - message: 'New Dan''s Soaked Smokes: Rejects, dangerously fun cigs! Available in
-      uplinks, emag''d Discount Dan''s, and select maints lockers station wide.'
-    type: Add
-  id: 1728
-  time: '2025-05-25T10:21:53.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2578
-- author: Stonylogray
-  changes:
-  - message: Adjusted implanter failure text to match the lack of genetic damage.
-    type: Fix
-  id: 1729
-  time: '2025-05-25T15:40:17.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2470
-- author: MintyTheBinty
-  changes:
-  - message: Lethal poison auto-injectors now available in select syndicate and nuclear
-      operative uplinks, get jabbin' agent!
-    type: Add
-  id: 1730
-  time: '2025-05-25T19:04:50.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2556
 - author: SixValentine
   changes:
   - message: 'Welcome to Sobriety: Hash Station is Real'
@@ -4183,3 +4160,26 @@
   id: 2227
   time: '2025-09-03T11:52:07.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3376
+- author: DVDPlayerOfDiscordFame
+  changes:
+  - message: The Xiuhcoatl has some more gusto now
+    type: Tweak
+  id: 2228
+  time: '2025-09-05T11:08:53.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3412
+- author: FlippenPage
+  changes:
+  - message: The Big Red Button has been approved for use on Nanotrasen stations.
+      May you never need it.
+    type: Add
+  id: 2229
+  time: '2025-09-05T11:08:28.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3202
+- author: DVDPlayerOfDiscordFame
+  changes:
+  - message: Stripper Clips (.30 rifle and .45 magnum) both reload their respective
+      guns faster than a box of bullets.
+    type: Tweak
+  id: 2230
+  time: '2025-09-05T11:09:37.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3392
