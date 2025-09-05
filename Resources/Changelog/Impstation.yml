@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: Mousetrinity
-  changes:
-  - message: voxes can now afford gender tail assignment surgery
-    type: Fix
-  id: 1732
-  time: '2025-05-25T22:07:31.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2581
 - author: Superlagg, hivehum, crocodilecarousel
   changes:
   - message: At long last, you can no longer see between a lizard's legs! Unless you
@@ -4189,3 +4182,10 @@
   id: 2231
   time: '2025-09-05T11:16:49.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3341
+- author: CrystalClover
+  changes:
+  - message: You can now shield bash, knocking away attackers!
+    type: Tweak
+  id: 2232
+  time: '2025-09-05T11:24:06.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3381
