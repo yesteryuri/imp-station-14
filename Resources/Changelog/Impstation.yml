@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: SixValentine
-  changes:
-  - message: 'Welcome to Sobriety: Hash Station is Real'
-    type: Add
-  id: 1731
-  time: '2025-05-25T21:46:26.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2580
 - author: Mousetrinity
   changes:
   - message: voxes can now afford gender tail assignment surgery
@@ -4183,3 +4176,16 @@
   id: 2230
   time: '2025-09-05T11:09:37.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3392
+- author: CrystalClover
+  changes:
+  - message: A powerful burst of clown magic has been detected. Clown masks have been
+      seen transforming their visages...
+    type: Add
+  - message: Chaplains of the Honkmother can now recieve her holy text; "The Rule
+      of Threes"
+    type: Add
+  - message: The Robes of the Honkmother have recieved a slight touch up.
+    type: Tweak
+  id: 2231
+  time: '2025-09-05T11:16:49.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3341
