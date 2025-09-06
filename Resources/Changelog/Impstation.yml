@@ -1,17 +1,4 @@
 ﻿Entries:
-- author: jtfg-dev
-  changes:
-  - message: Your pride is now clear and obvious to all! Wearing a pin, cloak, medal
-      or scarf now appears in your examine text.
-    type: Add
-  - message: Pins in your pockets can also be seen upon examination! Hooray! No more
-      need to dedicate your neck to your lapel.
-    type: Tweak
-  - message: This is my badge, and it proves that I am a lawyer.
-    type: Tweak
-  id: 1737
-  time: '2025-05-26T23:29:22.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2462
 - author: DinnerCalzone
   changes:
   - message: Ambuzol and Ambuzol Plus pills can no longer spawn in randomized pill
@@ -4192,3 +4179,11 @@
   id: 2236
   time: '2025-09-06T11:52:23.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3359
+- author: TheGrimbeeper
+  changes:
+  - message: Shiva and Runtime can no longer sense zombie infections in initial infected
+      (attacked IIs on sight)
+    type: Fix
+  id: 2237
+  time: '2025-09-06T14:51:59.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3417
