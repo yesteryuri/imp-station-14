@@ -1,13 +1,4 @@
 ﻿Entries:
-- author: SixValentine
-  changes:
-  - message: Luna now has some new computers.
-    type: Tweak
-  - message: Luna bunny ears have moved again.
-    type: Tweak
-  id: 1746
-  time: '2025-05-28T07:08:59.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2601
 - author: Tomce795
   changes:
   - message: Imported healthy gumballs from the Delta sector! Look for them in your
@@ -4185,3 +4176,11 @@
   id: 2245
   time: '2025-09-11T11:10:53.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3429
+- author: DVDPlayerOfDiscordFame
+  changes:
+  - message: The Ouroboros works again so you should be fining shooting bees and BROS
+      at your besties
+    type: Fix
+  id: 2246
+  time: '2025-09-11T11:32:51.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3432
