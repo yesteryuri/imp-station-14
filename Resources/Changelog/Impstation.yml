@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: mqole
-  changes:
-  - message: Hemp bags no longer hold eight times the storage space they take up.
-    type: Fix
-  id: 1743
-  time: '2025-05-27T15:52:16.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2600
 - author: widgetbeck
   changes:
   - message: "The Hive's s\u0337c\u0335o\u0334u\u0336t\u0336s\u0337 have determined\
@@ -4189,3 +4182,10 @@
   id: 2242
   time: '2025-09-10T08:48:44.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3397
+- author: sowelipililimute
+  changes:
+  - message: Dionaea can now chirp in a chorus.
+    type: Add
+  id: 2243
+  time: '2025-09-11T10:43:15.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3408
