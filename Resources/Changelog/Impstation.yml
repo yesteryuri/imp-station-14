@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: meridiadottxt
-  changes:
-  - message: dolby has learned frost shield! be careful when discharging your weapon
-      at him!
-    type: Add
-  id: 1745
-  time: '2025-05-28T07:08:04.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2604
 - author: SixValentine
   changes:
   - message: Luna now has some new computers.
@@ -4186,3 +4178,10 @@
   id: 2244
   time: '2025-09-11T10:51:25.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3421
+- author: qwat, hivehum
+  changes:
+  - message: Pick up a potted plant to hide behind it.
+    type: Tweak
+  id: 2245
+  time: '2025-09-11T11:10:53.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3429
