@@ -1,14 +1,4 @@
 ﻿Entries:
-- author: Tomce795
-  changes:
-  - message: Imported healthy gumballs from the Delta sector! Look for them in your
-      nearest medical cyborg.
-    type: Add
-  - message: We have figured out how to put lollipops in our mouths.
-    type: Add
-  id: 1747
-  time: '2025-05-28T09:05:11.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2518
 - author: crocodilecarousel
   changes:
   - message: thaven arent caucasian anymore
@@ -4184,3 +4174,10 @@
   id: 2246
   time: '2025-09-11T11:32:51.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3432
+- author: Kandiyaki
+  changes:
+  - message: Two new markings for humans - Glowing Eyes!
+    type: Add
+  id: 2247
+  time: '2025-09-11T12:04:38.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3394
