@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: CrystalClover
-  changes:
-  - message: Simple Sutures are now twice as expensive in the medical lathe
-    type: Tweak
-  id: 1758
-  time: '2025-05-31T12:17:28.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2625
 - author: Widgetbeck, ThatKidConnor
   changes:
   - message: Added Cindy, the Syndicate counterpart to NT's Griffy.
@@ -4176,3 +4169,10 @@
   id: 2257
   time: '2025-09-14T14:04:42.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3420
+- author: Pinkbat5
+  changes:
+  - message: You can now print cold-toned lightbulbs at the nearest lathe.
+    type: Add
+  id: 2258
+  time: '2025-09-14T14:19:31.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3438
