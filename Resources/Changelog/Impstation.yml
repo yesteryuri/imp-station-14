@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: DinnerCalzone
-  changes:
-  - message: Space cleaner dispensers start with considerably less space cleaner in
-      them. Ask your local chemist for a resupply if you need more!
-    type: Tweak
-  id: 1753
-  time: '2025-05-30T09:51:20.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2621
 - author: kipdotnet
   changes:
   - message: The frilly aprons for bartender and chef are now unlocked at 10 hours
@@ -4181,3 +4173,11 @@
   id: 2252
   time: '2025-09-14T10:30:24.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3447
+- author: DinnerCalzone
+  changes:
+  - message: The HD's portable cutter machine is now a bit more durable and is guaranteed
+      to drop its machine board when destroyed.
+    type: Tweak
+  id: 2253
+  time: '2025-09-14T10:33:32.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3446
