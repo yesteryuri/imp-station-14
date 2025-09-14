@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: SixValentine
-  changes:
-  - message: Officer Vlogs Is Gone
-    type: Remove
-  id: 1757
-  time: '2025-05-31T06:34:51.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2620
 - author: CrystalClover
   changes:
   - message: Simple Sutures are now twice as expensive in the medical lathe
@@ -4175,3 +4168,11 @@
   id: 2256
   time: '2025-09-14T14:02:54.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3410
+- author: TheGrimbeeper
+  changes:
+  - message: Syndicate Shuttle Pilots and listening post guards have been woken up
+      (also mindless clones won't fall asleep)
+    type: Fix
+  id: 2257
+  time: '2025-09-14T14:04:42.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3420
