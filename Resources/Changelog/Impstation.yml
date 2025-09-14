@@ -1,14 +1,4 @@
 ﻿Entries:
-- author: widgetbeck
-  changes:
-  - message: All related replicators (should) now get a popup when the current Queen
-      dies.
-    type: Add
-  - message: Replicators are now blocked from using vendors and other machines.
-    type: Remove
-  id: 1756
-  time: '2025-05-30T19:46:16.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2610
 - author: SixValentine
   changes:
   - message: Officer Vlogs Is Gone
@@ -4177,3 +4167,11 @@
   id: 2255
   time: '2025-09-14T13:58:53.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3402
+- author: DinnerCalzone
+  changes:
+  - message: Station Specific and Dining Services departments are now properly hidden
+      from the crew monitoring console once again.
+    type: Fix
+  id: 2256
+  time: '2025-09-14T14:02:54.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3410
