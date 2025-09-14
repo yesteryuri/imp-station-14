@@ -1,18 +1,4 @@
 ﻿Entries:
-- author: crocodilecarousel
-  changes:
-  - message: one new moth wings!
-    type: Add
-  id: 1751
-  time: '2025-05-30T03:31:34.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2618
-- author: SixValentine
-  changes:
-  - message: Hash QoL and Future Proofing.
-    type: Tweak
-  id: 1752
-  time: '2025-05-30T09:52:18.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2619
 - author: DinnerCalzone
   changes:
   - message: Space cleaner dispensers start with considerably less space cleaner in
@@ -4180,3 +4166,18 @@
   id: 2250
   time: '2025-09-13T05:56:51.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3439
+- author: widgetbeck
+  changes:
+  - message: Fixed Drones and high-tier Replicators not being affected by changes
+      in gravity.
+    type: Fix
+  id: 2251
+  time: '2025-09-14T10:30:49.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3441
+- author: yesteryuri
+  changes:
+  - message: The old walking cane trinket now works as a mobility aid
+    type: Fix
+  id: 2252
+  time: '2025-09-14T10:30:24.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3447
