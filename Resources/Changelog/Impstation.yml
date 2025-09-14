@@ -1,14 +1,4 @@
 ﻿Entries:
-- author: kipdotnet
-  changes:
-  - message: The frilly aprons for bartender and chef are now unlocked at 10 hours
-      each, down from 30.
-    type: Tweak
-  - message: Hospitality directors can now choose a frilly apron if they have it unlocked.
-    type: Tweak
-  id: 1754
-  time: '2025-05-30T09:56:34.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2599
 - author: DVDPlayerOfDiscordFame
   changes:
   - message: 8-round .45 magnum stripper clips for more convenient Sturm reloading
@@ -4181,3 +4171,11 @@
   id: 2253
   time: '2025-09-14T10:33:32.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3446
+- author: eviltori
+  changes:
+  - message: '"assistant" is now a job that can be assigned at an ID card computer,
+      with its iconic A.'
+    type: Add
+  id: 2254
+  time: '2025-09-14T13:50:31.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3279
