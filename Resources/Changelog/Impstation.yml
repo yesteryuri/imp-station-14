@@ -1,13 +1,4 @@
 ﻿Entries:
-- author: jtfg-dev & normalgirl2171
-  changes:
-  - message: "The novice's mark pin \U0001F530 has been added! For trainees and anyone\
-      \ (as a trinket) who might feel a little unskilled, and need patience from their\
-      \ fellows!"
-    type: Add
-  id: 1761
-  time: '2025-06-01T02:44:31.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2626
 - author: ghostphasemoon
   changes:
   - message: Removed Sam Grimm Lobby Art from the Lobby Art rotation.
@@ -4174,3 +4165,15 @@
   id: 2260
   time: '2025-09-14T14:24:08.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3403
+- author: mousesweater, CrocodileCarousel
+  changes:
+  - message: moths are no longer shrink-wrapped. you may now wear your poncho in peace.
+    type: Fix
+  - message: moths may now dye their neckfluff no matter their wingtype
+    type: Add
+  - message: mothwings have been turned white. please recolor your mothwings whenever
+      possible.
+    type: Remove
+  id: 2261
+  time: '2025-09-14T15:16:48.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3396
