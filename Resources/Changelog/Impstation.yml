@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: Widgetbeck, ThatKidConnor
-  changes:
-  - message: Added Cindy, the Syndicate counterpart to NT's Griffy.
-    type: Add
-  id: 1759
-  time: '2025-06-01T02:38:10.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2635
 - author: SixValentine
   changes:
   - message: Warden's must beg to become a dog on Hash
@@ -4176,3 +4169,10 @@
   id: 2258
   time: '2025-09-14T14:19:31.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3438
+- author: ATDoop
+  changes:
+  - message: Added a new recipe for syndicate ovens. It's actually so lit.
+    type: Add
+  id: 2259
+  time: '2025-09-14T14:22:05.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3437
