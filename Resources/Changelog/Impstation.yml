@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: ComedyIdiot
-  changes:
-  - message: Replicators now take structural damage as originally intended
-    type: Fix
-  id: 1763
-  time: '2025-06-04T08:31:52.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2663
 - author: so many people
   changes:
   - message: Another upstream merge. Check the upstream changelog, and please report
@@ -4177,3 +4170,14 @@
   id: 2262
   time: '2025-09-15T00:45:21.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3455
+- author: DinnerCalzone
+  changes:
+  - message: The vault is now locked by a new Vault access, which all command jobs
+      have been given. It still needs to be unbolted by the captain, though.
+    type: Add
+  - message: The HoP has a new door remote which no longer has Captain access and
+      does not have Vault access.
+    type: Tweak
+  id: 2263
+  time: '2025-09-17T17:16:59.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3290
