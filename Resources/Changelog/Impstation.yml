@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: ThatKidConnor
-  changes:
-  - message: Gave the syndicat a recolour resembling Impstation Bloodred hardsuits.
-    type: Tweak
-  id: 1770
-  time: '2025-06-08T04:16:44.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2646
 - author: DinnerCalzone, hivehum, crocodilecarousel, ATDoop
   changes:
   - message: A number of things have been added to celebrate Impstation's anniversary
@@ -4182,3 +4175,17 @@
   id: 2269
   time: '2025-09-18T07:28:59.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3477
+- author: sowelipililimute
+  changes:
+  - message: Revenant can now siphon soul energy from critical people, and deals cold
+      damage from doingso
+    type: Fix
+  - message: Unidentified corpses no longer spawn alive
+    type: Fix
+  - message: Bottles return to their original 1x1 size
+    type: Tweak
+  - message: People can now become fully unconscious from large amounts of pain
+    type: Tweak
+  id: 2270
+  time: '2025-09-18T21:05:54.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3480
