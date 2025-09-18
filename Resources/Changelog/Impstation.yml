@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: kipdotnet
-  changes:
-  - message: Apid salvagers now start with a special, fully accurate PKA variant,
-      to make up for not being able to wield a normal one properly.
-    type: Tweak
-  id: 1768
-  time: '2025-06-08T04:09:08.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2665
 - author: sev7ves
   changes:
   - message: Added a door alarm wire to high sec doors
@@ -4167,3 +4159,11 @@
   id: 2267
   time: '2025-09-17T17:22:21.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3431
+- author: sowelipililimute
+  changes:
+  - message: Medical and Damage as a whole has been reworked. Check your guidebooks!
+      Good luck!
+    type: Add
+  id: 2268
+  time: '2025-09-18T02:53:32.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3463
