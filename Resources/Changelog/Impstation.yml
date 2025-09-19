@@ -1,13 +1,4 @@
 ﻿Entries:
-- author: ruddygreat
-  changes:
-  - message: Mass scanner interfaces will now show every entity with an active jetpack.
-    type: Add
-  - message: Syndicate jetpacks are now stealthy.
-    type: Tweak
-  id: 1777
-  time: '2025-06-08T11:49:52.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2589
 - author: TuttlePants
   changes:
   - message: Bounty hunters can now target nukies and head revolutionaries.
@@ -4188,3 +4179,10 @@
   id: 2276
   time: '2025-09-19T08:19:48.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3486
+- author: HAPPYNEWYEAR1999
+  changes:
+  - message: Minor Pathway changes, see PR for details
+    type: Tweak
+  id: 2277
+  time: '2025-09-19T08:44:50.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3485
