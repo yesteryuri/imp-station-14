@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: Mousetrinity
-  changes:
-  - message: grug is home now, along with a few other silly clothing options
-    type: Add
-  id: 1775
-  time: '2025-06-08T04:23:58.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2628
 - author: ThatKidConnor
   changes:
   - message: Added deerstalker in detective's loadout & detdrobe to match with your
@@ -4189,3 +4182,10 @@
   id: 2274
   time: '2025-09-19T02:32:36.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3483
+- author: honeyed-lemons
+  changes:
+  - message: Flesh heretics are now worse at sucking.
+    type: Tweak
+  id: 2275
+  time: '2025-09-19T02:52:40.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3479
