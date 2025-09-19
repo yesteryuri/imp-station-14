@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: Oberonics
-  changes:
-  - message: Cremators across all stations are now electrically powered. How they
-      worked before is classified.
-    type: Tweak
-  id: 1772
-  time: '2025-06-08T04:12:59.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2502
 - author: AvianMaiden
   changes:
   - message: Slime/Gastro blinks work with directional audio now. Kode babies harm
@@ -4188,3 +4180,13 @@
   id: 2271
   time: '2025-09-18T23:57:36.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3482
+- author: sowelipililimute
+  changes:
+  - message: There is now a surgery UI that guides you through the steps to do a specific
+      operation!
+    type: Add
+  - message: Surgery should be more reliable now.
+    type: Fix
+  id: 2272
+  time: '2025-09-19T00:35:46.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3481
