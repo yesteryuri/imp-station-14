@@ -1,13 +1,6 @@
 ﻿Entries:
 - author: hivehum
   changes:
-  - message: CMOs start with one survival box now. Don't get greedy.
-    type: Remove
-  id: 1783
-  time: '2025-06-09T00:56:52.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2689
-- author: hivehum
-  changes:
   - message: Kodepiia, grays, and thaven are no longer discriminated against by bloodthirsty
       artifacts.
     type: Fix
@@ -4200,3 +4193,10 @@
   id: 2282
   time: '2025-09-23T01:53:21.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3494
+- author: Banditoz
+  changes:
+  - message: You can now move while scanning somebody with the health analyzer.
+    type: Tweak
+  id: 2283
+  time: '2025-09-23T08:25:19.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3497
