@@ -1,14 +1,4 @@
 ﻿Entries:
-- author: meridiadottxt
-  changes:
-  - message: added material silo to science and lockboxes to every department on gate
-      (i forgor to do it before)
-    type: Add
-  - message: all departments now run on their own independent power source again
-    type: Fix
-  id: 1782
-  time: '2025-06-09T00:56:29.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2692
 - author: hivehum
   changes:
   - message: CMOs start with one survival box now. Don't get greedy.
@@ -4193,3 +4183,20 @@
   id: 2281
   time: '2025-09-22T12:28:04.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3498
+- author: sowelipililimute
+  changes:
+  - message: Zombie infection mechanics have been overhauled! Chemistry lab exploded?
+      Try bloodletting like leeches are in style!
+    type: Add
+  - message: Currently metabolizing and recently metabolized medical reagents are
+      now indicated in the health analyzer
+    type: Add
+  - message: Patients with stopped hearts now have an examine message cueing others
+      in that they need CPR
+    type: Add
+  - message: The defibrillator will now announce if the patient's condition may cause
+      the heart to stop after defibrillation
+    type: Add
+  id: 2282
+  time: '2025-09-23T01:53:21.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3494
