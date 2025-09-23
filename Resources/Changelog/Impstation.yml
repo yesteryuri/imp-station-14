@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: hivehum
-  changes:
-  - message: Kodepiia, grays, and thaven are no longer discriminated against by bloodthirsty
-      artifacts.
-    type: Fix
-  id: 1784
-  time: '2025-06-09T00:57:12.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2690
 - author: jtfg-dev
   changes:
   - message: The new pins added in the upstream merge can now be seen on full display!
@@ -4200,3 +4192,10 @@
   id: 2283
   time: '2025-09-23T08:25:19.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3497
+- author: Kandiyaki
+  changes:
+  - message: heretics can now sacrifice critical-condition (gasping) bodies.
+    type: Tweak
+  id: 2284
+  time: '2025-09-23T08:33:05.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3488
