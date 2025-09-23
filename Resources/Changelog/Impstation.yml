@@ -1,20 +1,4 @@
 ﻿Entries:
-- author: mqole
-  changes:
-  - message: Another upstream merge. Surprise!
-    type: Add
-  id: 1790
-  time: '2025-06-09T05:08:13.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2695
-- author: Pinkbat5
-  changes:
-  - message: You can now craft an administration eyepatch from a hud and an eyepatch.
-    type: Add
-  - message: You can now select eyepatches in loadouts.
-    type: Add
-  id: 1791
-  time: '2025-06-09T05:12:40.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2696
 - author: DinnerCalzone
   changes:
   - message: The mail teleporter sprite has been changed to use the sprite from upstream
@@ -4195,3 +4179,18 @@
   id: 2289
   time: '2025-09-23T16:21:39.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3470
+- author: DinnerCalzone
+  changes:
+  - message: Map population ranges have been tweaked to have more clear brackets for
+      maps to roll.
+    type: Tweak
+  id: 2290
+  time: '2025-09-23T16:25:10.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3501
+- author: sowelipililimute
+  changes:
+  - message: Station AI and cyborgs now have an in-built PDA
+    type: Add
+  id: 2291
+  time: '2025-09-23T16:25:55.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3419
