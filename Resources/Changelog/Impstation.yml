@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: DinnerCalzone
-  changes:
-  - message: Train has been updated to feature genpop.
-    type: Add
-  id: 1799
-  time: '2025-06-10T11:50:46.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2713
 - author: hivehum
   changes:
   - message: Ammo no longer errors out when you hold it wrong.
@@ -4205,3 +4198,10 @@
   id: 2298
   time: '2025-09-28T22:46:10.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3478
+- author: honeyed-lemons
+  changes:
+  - message: Heretics can now make ghouls again.. Huzzah!
+    type: Fix
+  id: 2299
+  time: '2025-09-28T22:47:21.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3519
