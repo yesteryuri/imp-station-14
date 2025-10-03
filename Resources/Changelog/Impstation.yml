@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: Jellvisk
-  changes:
-  - message: Floor lights! Of varying designs, based on what tube you put in the...
-      METAMORPHIC HOLE.
-    type: Add
-  id: 1804
-  time: '2025-06-10T23:43:49.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2513
 - author: DinnerCalzone
   changes:
   - message: Lock boxes and water tank cargo orders now use our sprites in the request
@@ -4194,3 +4186,11 @@
   id: 2303
   time: '2025-10-03T01:34:30.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3513
+- author: msTheowo
+  changes:
+  - message: Strong prescription lenses will definitely always spawn now. If they're
+      not in your eyes, in your glasses, or in your hands, they're on the floor!
+    type: Fix
+  id: 2304
+  time: '2025-10-03T20:28:27.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3505
