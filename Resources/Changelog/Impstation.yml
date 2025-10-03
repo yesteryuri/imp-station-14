@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: eviltori
-  changes:
-  - message: lawyer is no longer in service, and answers to the HOP.
-    type: Tweak
-  id: 1803
-  time: '2025-06-10T23:35:29.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2380
 - author: Jellvisk
   changes:
   - message: Floor lights! Of varying designs, based on what tube you put in the...
@@ -4192,3 +4185,12 @@
   id: 2302
   time: '2025-10-02T19:59:59.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3527
+- author: Tox3ct
+  changes:
+  - message: Recent Nanotrasen antibiotic manufacturing has been proven less effective
+      in treating parasitic pathogens. Ambuzol now requires Phalanximine as a replacement
+      to Dylovene.
+    type: Tweak
+  id: 2303
+  time: '2025-10-03T01:34:30.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3513
