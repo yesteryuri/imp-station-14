@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: mqole
-  changes:
-  - message: You can once again quick-craft rods and tiles.
-    type: Fix
-  id: 1807
-  time: '2025-06-11T03:04:33.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2718
 - author: DinnerCalzone
   changes:
   - message: The science biohazard locker sprite has been reverted, the generic biohazard
@@ -4194,3 +4187,13 @@
   id: 2306
   time: '2025-10-03T20:31:21.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3254
+- author: honeyed-lemons
+  changes:
+  - message: Visitor ghost roles can now appear as non-standard species. Please watch
+      for visiting Ungu.
+    type: Tweak
+  - message: His spores have spread.
+    type: Tweak
+  id: 2307
+  time: '2025-10-04T06:05:53.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3522
