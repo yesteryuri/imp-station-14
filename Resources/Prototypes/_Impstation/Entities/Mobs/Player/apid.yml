@@ -101,6 +101,9 @@
     - ApidCourier
     - ApidNames
     nameFormat: name-format-standard
+  - type: NpcFactionMember
+    factions:
+    - Courier
 
 - type: entity
   name: apid scientist

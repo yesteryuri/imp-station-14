@@ -380,11 +380,13 @@
     altDisarm: false
     angle: 0
     animation: WeaponArcBite
-    soundHit:
-      path: /Audio/Effects/bite.ogg
     damage:
       types:
-        Piercing: 3
+        Blunt: 0
+    soundHit:
+      path: /Audio/Animals/dog_bark1.ogg
+  - type: StaminaDamageOnHit
+    damage: 20
   - type: HTN
     rootTask:
       task: SimpleHostileCompound
@@ -495,11 +497,13 @@
     altDisarm: false
     angle: 0
     animation: WeaponArcBite
-    soundHit:
-      path: /Audio/Effects/bite.ogg
     damage:
       types:
-        Piercing: 3
+        Blunt: 0
+    soundHit:
+      path: /Audio/Animals/dog_bark1.ogg
+  - type: StaminaDamageOnHit
+    damage: 20
   - type: HTN
     rootTask:
       task: SimpleHostileCompound
