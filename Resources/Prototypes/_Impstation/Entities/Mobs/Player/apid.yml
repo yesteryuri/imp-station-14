@@ -104,6 +104,7 @@
   - type: NpcFactionMember
     factions:
     - Courier
+    - NanoTrasen
 
 - type: entity
   name: apid scientist

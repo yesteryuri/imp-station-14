@@ -19,6 +19,7 @@
       - type: NpcFactionMember
         factions:
         - Courier
+        - NanoTrasen
 
 - type: startingGear
   id: CourierGear
