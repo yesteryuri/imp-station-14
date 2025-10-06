@@ -48,3 +48,11 @@
   - Dino
   - Penguin
   - AllHostile
+
+- type: npcFaction
+  id: Dog
+  hostile:
+  - Courier
+
+- type: npcFaction
+  id: Courier

@@ -13,6 +13,12 @@
   extendedAccess:
   - Logistics
   - Salvage
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: NpcFactionMember
+        factions:
+        - Courier
 
 - type: startingGear
   id: CourierGear

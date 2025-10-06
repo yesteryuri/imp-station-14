@@ -3305,6 +3305,23 @@
   - type: Tag
     tags:
     - VimPilot
+# imp start
+  - type: NpcFactionMember
+    factions:
+      - Dog
+  - type: MeleeWeapon
+    altDisarm: false
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    damage:
+      types:
+        Piercing: 3
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+# imp end
 
 - type: entity
   name: corrupted corgi
