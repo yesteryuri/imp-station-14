@@ -1,14 +1,4 @@
 ﻿Entries:
-- author: DinnerCalzone
-  changes:
-  - message: Cargo Technician no longer has a playtime requirement (again).
-    type: Tweak
-  - message: Supply Assistant has been limited to 1 per map and locks out after 4
-      hours of Cargo playtime.
-    type: Tweak
-  id: 1813
-  time: '2025-06-12T02:59:50.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2733
 - author: BubbaBean
   changes:
   - message: rebalanced replicators to greatly favor a more defensive team orientated
@@ -4202,3 +4192,10 @@
   id: 2312
   time: '2025-10-07T11:05:02.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3544
+- author: honeyed-lemons
+  changes:
+  - message: Ungus have learned their inside voices.
+    type: Tweak
+  id: 2313
+  time: '2025-10-08T22:08:26.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3547
