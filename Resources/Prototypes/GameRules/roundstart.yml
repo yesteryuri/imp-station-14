@@ -281,6 +281,9 @@
       components:
       - type: Revolutionary
       - type: HeadRevolutionary
+      special:
+      - !type:AddImplantSpecial
+        implants: DeathRattleImplantCentcomm
       mindRoles:
       - MindRoleHeadRevolutionary
   - type: DynamicRuleCost

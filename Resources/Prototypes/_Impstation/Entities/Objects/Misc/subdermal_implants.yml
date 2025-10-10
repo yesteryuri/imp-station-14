@@ -31,3 +31,12 @@
     interfaces:
       enum.StorageUiKey.Key:
         type: StorageBoundUserInterface
+
+- type: entity
+  parent: DeathRattleImplant
+  id: DeathRattleImplantHeadrev
+  name: revolutionary death rattle implant
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: RattleOnTrigger
+    radioChannel: Revolution
