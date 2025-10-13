@@ -18,6 +18,9 @@
     solution: drink
   - type: Item
     size: Normal
+  - type: Tag # imp edit, allow cartons in dispenser
+    tags:
+    - DrinkBottle
 
 - type: entity
   abstract: true

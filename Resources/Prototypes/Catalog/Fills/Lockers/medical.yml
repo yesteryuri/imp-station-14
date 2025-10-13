@@ -97,7 +97,7 @@
     - id: BoxPillCanister
     - id: BoxBottle
     - id: BoxVial
-    - id: PlasmaChemistryVial
+    # - id: PlasmaChemistryVial # imp
     - id: ChemBag
     - id: ClothingHandsGlovesLatex
     - id: ClothingHeadsetMedical
@@ -119,6 +119,7 @@
   id: LockerFillParamedic
   table: !type:AllSelector
     children:
+    - id: ClothingHeadHatParamedicSirenCap #imp
     - id: ClothingOuterHardsuitVoidParamed
     - id: ClothingOuterCoatParamedicWB
     - id: ClothingHeadHatParamedicsoft
@@ -142,3 +143,4 @@
     containers:
       entity_storage: !type:NestedSelector
         tableId: LockerFillParamedic
+

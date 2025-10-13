@@ -11,8 +11,9 @@
     tags:
     - PlantSampleTaker
     - Wirecutter
+    - DroneUsable
   - type: Sprite
-    sprite: Objects/Tools/wirecutters.rsi
+    sprite: _Impstation/Objects/Tools/wirecutters.rsi # imp
     layers:
     - state: cutters
       map: [ "enum.DamageStateVisualLayers.Base" ]
@@ -35,7 +36,7 @@
       - enum.DamageStateVisualLayers.Base:
           cutters: Rainbow
   - type: Item
-    sprite: Objects/Tools/wirecutters.rsi
+    sprite: _Impstation/Objects/Tools/wirecutters.rsi # imp
     storedRotation: -90
   - type: ToolTileCompatible
   - type: PhysicalComposition
@@ -43,6 +44,7 @@
       Steel: 100
   - type: StaticPrice
     price: 30
+  - type: DamageOtherOnHit # imp
 
 - type: entity
   name: screwdriver
@@ -56,14 +58,15 @@
   - type: Tag
     tags:
     - Screwdriver
+    - DroneUsable
   - type: Sprite
-    sprite: Objects/Tools/screwdriver.rsi
+    sprite: _Impstation/Objects/Tools/screwdriver.rsi # imp
     layers:
       - state: screwdriver
         map: [ "enum.DamageStateVisualLayers.Base" ]
       - state: screwdriver-screwybits
   - type: Item
-    sprite: Objects/Tools/screwdriver.rsi
+    sprite: _Impstation/Objects/Tools/screwdriver.rsi # imp
     storedRotation: -90
   - type: MeleeWeapon
     wideAnimationRotation: -90
@@ -87,6 +90,16 @@
       Steel: 100
   - type: StaticPrice
     price: 30
+  # imp edits #
+  - type: DamageOtherOnHit
+    staminaCost: 5
+  - type: ThrowingAngle
+    angle: 270
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
+    removalTime: 1
+  - type: EmbedPassiveDamage
+  # end imp edits #
 
 - type: entity
   name: wrench
@@ -100,6 +113,7 @@
   - type: Tag
     tags:
     - Wrench
+    - DroneUsable
   - type: Sprite
     sprite: Objects/Tools/wrench.rsi
     state: icon
@@ -129,6 +143,7 @@
   - type: GuideHelp
     guides:
     - Construction
+  - type: DamageOtherOnHit # imp
 
 - type: entity
   name: multitool
@@ -140,7 +155,7 @@
     sound:
       path: /Audio/Items/multitool_drop.ogg
   - type: Sprite
-    sprite: Objects/Tools/multitool.rsi
+    sprite: _Impstation/Objects/Tools/multitool.rsi # imp
     layers:
     - state: icon
     - state: green-unlit
@@ -148,7 +163,7 @@
   - type: Item
     size: Small
   - type: Clothing
-    sprite: Objects/Tools/multitool.rsi
+    sprite: _Impstation/Objects/Tools/multitool.rsi # imp
     quickEquip: false
     slots:
     - Belt
@@ -170,6 +185,7 @@
   - type: Tag
     tags:
       - Multitool
+      - DroneUsable
       - DoorElectronicsConfigurator
   - type: PhysicalComposition
     materialComposition:
@@ -183,6 +199,30 @@
     - WirePanels
     - Airlocks
     - InspectingPower
+  - type: DamageOtherOnHit # imp
+    damage:
+      types:
+        Shock: 2
+  - type: Defibrillator # imp
+    zapDelay: 1
+    zapHeal:
+      types:
+        Asphyxiation: -10
+    zapDamage: 0
+    writheDuration: 0
+    skipDoAfter: true
+    ignoreToggle: true
+    ignorePowerCell: true
+    allowSkipCrit: true
+    whitelist:
+      tags:
+      - MultitoolDefibrillatorTarget
+    zapSound: /Audio/Effects/sparks1.ogg
+    playChargeSound: false
+    playFailureSound: false
+    playSuccessSound: false
+    playReadySound: false
+  - type: UseDelay
 
 - type: entity
   name: network configurator
@@ -220,6 +260,7 @@
       inHandsOnly: true
     - type: Tag
       tags:
+        - DroneUsable
         - DoorElectronicsConfigurator
     - type: UserInterface
       interfaces:
@@ -247,10 +288,10 @@
     tags:
     - Powerdrill
   - type: Sprite
-    sprite: Objects/Tools/drill.rsi
+    sprite: _Impstation/Objects/Tools/drill.rsi # imp
     state: drill_screw
   - type: Item
-    sprite: Objects/Tools/drill.rsi
+    sprite: _Impstation/Objects/Tools/drill.rsi # imp
     size: Small
   - type: Tool
     qualities:
@@ -262,7 +303,7 @@
     entries:
       - behavior: Screwing
         sprite:
-          sprite: Objects/Tools/drill.rsi
+          sprite: _Impstation/Objects/Tools/drill.rsi # imp
           state: drill_screw
         useSound:
           path: /Audio/Items/drill_use.ogg
@@ -270,7 +311,7 @@
           path: /Audio/Items/change_drill.ogg
       - behavior: Anchoring
         sprite:
-          sprite: Objects/Tools/drill.rsi
+          sprite: _Impstation/Objects/Tools/drill.rsi # imp
           state: drill_bolt
         useSound:
           path: /Audio/Items/drill_use.ogg
@@ -290,6 +331,13 @@
         Piercing: 10
     soundHit:
       path: "/Audio/Items/drill_hit.ogg"
+  - type: DamageOtherOnHit # imp
+    damage:
+      types:
+        Blunt: 8
+    staminaCost: 7.5
+    soundHit:
+      collection: MetalThud
 
 - type: entity
   id: RCD
@@ -321,12 +369,12 @@
   - type: LimitedCharges
     maxCharges: 30
   - type: Sprite
-    sprite: Objects/Tools/rcd.rsi
+    sprite: _Impstation/Objects/Tools/rcd.rsi # imp
     state: icon
   - type: Item
     size: Normal
   - type: Clothing
-    sprite: Objects/Tools/rcd.rsi
+    sprite: _Impstation/Objects/Tools/rcd.rsi # imp
     quickEquip: false
     slots:
     - Belt
@@ -343,6 +391,9 @@
   - type: ActivatableUI
     inHandsOnly: true
     key: enum.RcdUiKey.Key
+  - type: Tag
+    tags:
+    - DroneUsable
 
 - type: entity
   id: RCDEmpty
@@ -486,6 +537,16 @@
   - type: StaticPrice
     price: 25
   - type: Shovel
+  # imp edits #
+  - type: DamageOtherOnHit
+    staminaCost: 8.5
+  - type: ThrowingAngle
+    angle: 45
+  - type: Utensil #literally shoveling food in your mouth
+    types:
+    - Spoon
+    - Fork
+  # end imp edits #
 
 - type: entity
   parent: BaseItem
@@ -524,3 +585,4 @@
   - type: Construction
     graph: WoodenRollingPin
     node: rollingpin
+  - type: DamageOtherOnHit # imp

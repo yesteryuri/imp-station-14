@@ -1,11 +1,13 @@
 using System.Linq;
 using System.Numerics;
+using Content.Server.Access.Systems; //imp
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
 using Content.Server.Ghost.Components;
 using Content.Server.Mind;
 using Content.Server.Roles.Jobs;
+using Content.Shared._Impstation.Ghost; //imp
 using Content.Shared.Actions;
 using Content.Shared.CCVar;
 using Content.Shared.Damage;
@@ -25,6 +27,7 @@ using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Systems;
 using Content.Shared.NameModifier.EntitySystems;
 using Content.Shared.Popups;
+using Content.Shared.SSDIndicator; //imp
 using Content.Shared.Storage.Components;
 using Content.Shared.Tag;
 using Content.Shared.Warps;
@@ -67,6 +70,7 @@ namespace Content.Server.Ghost
         [Dependency] private readonly IRobustRandom _random = default!;
         [Dependency] private readonly TagSystem _tag = default!;
         [Dependency] private readonly NameModifierSystem _nameMod = default!;
+        [Dependency] private readonly IdCardSystem _id = default!; // imp. used for identifying dead players' jobs
 
         private EntityQuery<GhostComponent> _ghostQuery;
         private EntityQuery<PhysicsComponent> _physicsQuery;
@@ -107,6 +111,8 @@ namespace Content.Server.Ghost
 
             SubscribeLocalEvent<GhostComponent, GetVisMaskEvent>(OnGhostVis);
         }
+
+        //TODO: Rework medium system
 
         private void OnGhostVis(Entity<GhostComponent> ent, ref GetVisMaskEvent args)
         {
@@ -232,6 +238,12 @@ namespace Content.Server.Ghost
             _actions.AddAction(uid, ref component.ToggleLightingActionEntity, component.ToggleLightingAction);
             _actions.AddAction(uid, ref component.ToggleFoVActionEntity, component.ToggleFoVAction);
             _actions.AddAction(uid, ref component.ToggleGhostsActionEntity, component.ToggleGhostsAction);
+        }
+
+        // imp addition
+        private void OnMapInitMedium(EntityUid uid, MediumComponent component, MapInitEvent args)
+        {
+            _actions.AddAction(uid, ref component.ToggleGhostsMediumActionEntity, component.ToggleGhostsMediumAction);
         }
 
         private void OnGhostExamine(EntityUid uid, GhostComponent component, ExaminedEvent args)
@@ -378,6 +390,21 @@ namespace Content.Server.Ghost
 
                 if (_mobState.IsAlive(attached) || _mobState.IsCritical(attached))
                     yield return new GhostWarp(GetNetEntity(attached), playerInfo, false);
+            }
+
+            // imp - added this so people can warp to dead players
+            var bodyEnumerator = EntityQueryEnumerator<SSDIndicatorComponent>();
+            while (bodyEnumerator.MoveNext(out var uid, out var ssdIndicator))
+            {
+                if (ssdIndicator.HasHadPlayer && ssdIndicator.IsSSD)
+                {
+                    var status = _mobState.IsDead(uid) ? "Dead" : "SSD";
+
+                    var info = _id.TryFindIdCard(uid, out var idCard) && idCard.Comp.LocalizedJobTitle != null ?
+                    $"{Comp<MetaDataComponent>(uid).EntityName} ({idCard.Comp.LocalizedJobTitle}, {status})" : $"{Comp<MetaDataComponent>(uid).EntityName} ({status})";
+
+                    yield return new GhostWarp(GetNetEntity(uid), info, false);
+                }
             }
         }
 

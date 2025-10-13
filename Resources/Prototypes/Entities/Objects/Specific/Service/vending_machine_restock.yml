@@ -43,6 +43,11 @@
       - !type:DumpRestockInventory
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: DamageOtherOnHit # imp
+    damage:
+      types:
+        Blunt: 11
+    staminaCost: 15
 
 - type: entity
   parent: BaseVendingMachineRestock
@@ -120,6 +125,7 @@
     - AtmosDrobeInventory
     - BarDrobeInventory
     - CargoDrobeInventory
+    - SalvDrobeInventory #imp
     - ChefDrobeInventory
     - ChemDrobeInventory
     - DetDrobeInventory
@@ -135,6 +141,8 @@
     - ViroDrobeInventory
     - WinterDrobeInventory
     - CuraDrobeInventory
+    - CourierDrobeInventory # imp
+    - PrideDrobeInventory # imp
   - type: Sprite
     layers:
     - state: base
@@ -146,7 +154,7 @@
   parent: BaseVendingMachineRestock
   id: VendingMachineRestockCostumes
   name: AutoDrobe restock box
-  description: A panoply of NanoTrasen employees are prancing about a colorful theater in a tragicomedy. You can join them too! Load this into your nearest AutoDrobe vending machine.
+  description: A panoply of Nanotrasen employees are prancing about a colorful theater in a tragicomedy. You can join them too! Load this into your nearest AutoDrobe vending machine. # imp edit; lower-case t in Nanotrasen
   components:
   - type: VendingMachineRestock
     canRestock:
@@ -338,7 +346,7 @@
     - SpaceUpInventory
     - SodaInventory
     - DrGibbInventory
-    - SmiteInventory 
+    - SmiteInventory
   - type: Sprite
     layers:
     - state: base
@@ -484,6 +492,8 @@
   - type: VendingMachineRestock
     canRestock:
     - ChemVendInventory
+    - ChemVendInventorySyndicate # DeltaV: Let it restock synthesis/nukie vendor
+    - ChemVendInventoryInterdyne # Imp: let it restock Interdyne ChemVend
   - type: Sprite
     layers:
     - state: base

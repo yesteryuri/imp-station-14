@@ -10,6 +10,9 @@ using Content.Shared.Station.Components;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Content.Server.Announcements.Systems; // imp
+using Robust.Shared.Player; // imp
+using Content.Shared.Chemistry.Reaction; // imp
 
 namespace Content.Server.StationEvents.Events;
 
@@ -17,6 +20,25 @@ namespace Content.Server.StationEvents.Events;
 public sealed class VentClogRule : StationEventSystem<VentClogRuleComponent>
 {
     [Dependency] private readonly SmokeSystem _smoke = default!;
+    [Dependency] private readonly AnnouncerSystem _announcer = default!; // imp
+
+    // imp edit start
+    protected override void Added(EntityUid uid, VentClogRuleComponent component, GameRuleComponent gameRule, GameRuleAddedEvent args)
+    {
+        base.Added(uid, component, gameRule, args);
+
+        if (!TryGetRandomStation(out var chosenStation))
+            return;
+
+        _announcer.SendAnnouncement(
+            _announcer.GetAnnouncementId(args.RuleId),
+            Filter.Broadcast(),
+            "station-event-vent-clog-announcement",
+            null,
+            Color.Gold
+        );
+    }
+    // imp edit end
 
     protected override void Started(EntityUid uid, VentClogRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
@@ -30,7 +52,10 @@ public sealed class VentClogRule : StationEventSystem<VentClogRuleComponent>
             .Where(x => !x.Abstract)
             .Select(x => new ProtoId<ReagentPrototype>(x.ID)).ToList();
 
-        foreach (var (_, transform) in EntityQuery<GasVentPumpComponent, TransformComponent>())
+        // Imp edit, 'Safe random' for chems, excludes chems in the blacklist defined in the component
+        allReagents.RemoveAll(r => component.BlacklistedVentChemicals.Any(a => a == r));
+
+        foreach (var (_, transform) in EntityManager.EntityQuery<GasVentPumpComponent, TransformComponent>())
         {
             if (CompOrNull<StationMemberComponent>(transform.GridUid)?.Station != chosenStation)
             {

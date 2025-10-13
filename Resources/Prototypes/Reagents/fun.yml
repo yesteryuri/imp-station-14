@@ -37,10 +37,13 @@
   metabolisms:
     Food:
       effects:
-      - !type:SatiateHunger
-        conditions:
-        - !type:OrganType
-          type: Moth
+      #- !type:SatiateHunger #imp
+      #  conditions:
+      #  - !type:OrganType
+      #    type: Moth
+      - !type:AdjustReagent #imp
+        reagent: Cellulose
+        amount: 1
 
 - type: reagent
   id: BuzzochloricBees
@@ -51,6 +54,7 @@
   contrabandSeverity: Minor
   flavor: bee
   color: "#FFD35D"
+  contraband: Minor # imp
   tileReactions:
   - !type:CreateEntityTileReaction
     entity: MobBee
@@ -313,6 +317,8 @@
   color: "#FF4DD2"
   slipData:
     requiredSlipSpeed: 3.5 #clown juice gotta slip
+    superSlippery: true #imp edit, funnier this way
+  friction: 0.05 #imp edit, matches space lube
   metabolisms:
     Medicine:
       effects:
@@ -416,6 +422,9 @@
         conditions:
         - !type:ReagentThreshold
           min: 50
+        - !type:ReagentThreshold # imp - you're mutating yourself into dog
+          reagent: UnstableMutagen
+          min: 10
       - !type:AdjustReagent
         reagent: CorgiJuice
         amount: -20

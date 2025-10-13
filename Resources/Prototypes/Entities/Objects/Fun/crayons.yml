@@ -21,8 +21,9 @@
       enum.CrayonUiKey.Key:
         type: CrayonBoundUserInterface
   - type: Crayon
-    capacity: 25
+    capacity: 100
   - type: Food
+    delay: 3 # imp i am so piskun mad at eating my CRAYONS
   - type: FlavorProfile
     flavors:
     - chewy
@@ -37,6 +38,11 @@
           Quantity: 2
   - type: StaticPrice
     price: 5
+  - type: FoodSequenceElement
+    entries:
+      Burger: CrayonBurger
+  - type: SignatureWriter # imp
+    font: ComicNeueBold
 
 - type: entity
   parent: Crayon
@@ -88,7 +94,7 @@
   - type: Crayon
     color: Red
     selectableColor: true
-    capacity: 30
+    capacity: 200
   - type: Tag
     tags:
     - Write

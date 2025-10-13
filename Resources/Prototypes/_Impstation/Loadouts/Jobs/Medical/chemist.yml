@@ -1,0 +1,41 @@
+# Senior times
+- type: loadoutEffectGroup
+  id: SeniorChemist
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobChemist
+      time: 108000 #30 hrs, ~20 rounds
+
+- type: loadoutEffectGroup
+  id: Chemist10hr
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobChemist
+      time: 36000 #10 hrs, ~7 rounds
+
+# Jumpsuit
+- type: loadout
+  id: SpaceChemistJumpsuit
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: Chemist10hr
+  equipment:
+    jumpsuit: ClothingUniformSpaceJumpsuitChemist
+
+# id
+- type: loadout
+  id: ChemistryPDA
+  equipment:
+    id: ChemistryPDA
+
+- type: loadout
+  id: SeniorChemistryPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorChemist
+  equipment:
+    id: SeniorChemistryPDA

@@ -47,6 +47,14 @@
     shape:
     - 0,0,0,2
   - type: DisarmMalus
+  # imp edits #
+  - type: DamageOtherOnHit
+    staminaCost: 5
+  - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
+  - type: ThrowingAngle
+    angle: 225
+  # end imp edits #
 
 - type: entity
   name: machete
@@ -72,6 +80,18 @@
     shape:
     - 0,0,0,2
   - type: DisarmMalus
+  # imp edits #
+  - type: Clothing # imp
+    sprite: Objects/Weapons/Melee/machete.rsi
+    slots:
+    - Belt
+  - type: DamageOtherOnHit
+    staminaCost: 5
+  - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
+  - type: ThrowingAngle
+    angle: 225
+  # end imp edits #
 
 #Longswords
 - type: entity
@@ -109,6 +129,14 @@
     # not putting a BlockMovement component here cause that's funny.
   - type: StealTarget
     stealGroup: CaptainSword
+  # imp edits #
+  - type: DamageOtherOnHit
+    staminaCost: 5
+  - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
+  - type: ThrowingAngle
+    angle: 225
+  # end imp edits #
 
 - type: entity
   name: katana
@@ -139,6 +167,14 @@
     - Back
     - Belt
   - type: DisarmMalus
+  # imp edits #
+  - type: DamageOtherOnHit
+    staminaCost: 10
+  - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
+  - type: ThrowingAngle
+    angle: 225
+  # end imp edits #
 
 - type: entity
   name: energy katana
@@ -175,6 +211,8 @@
   - type: Reflect
     slotFlags:
     - NONE
+  - type: ThrowingAngle # imp
+    angle: 300
 
 #Greatswords
 - type: entity
@@ -204,6 +242,14 @@
     - Back
     - SuitStorage #Bigger than the other swords, easier to strap to your suit.
   - type: DisarmMalus
+  # imp edits #
+  - type: DamageOtherOnHit
+    staminaCost: 18
+  - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
+  - type: ThrowingAngle
+    angle: 225
+  # end imp edits #
 
 #Other/Weird
 - type: entity
@@ -236,3 +282,4 @@
     - type: Grammar
       attributes:
         proper: true
+    - type: DamageOtherOnHit # imp

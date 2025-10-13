@@ -52,6 +52,8 @@
         mask:
         - ItemMask
   - type: Appearance
+  - type: PluralName # imp
+    nameOneOf: speso
 
 - type: material
   id: Credit
@@ -165,6 +167,17 @@
     state: cash_25000
   - type: Stack
     count: 30000
+
+- type: entity
+  parent: SpaceCash
+  id: SpaceCash50000
+  suffix: 50000
+  components:
+  - type: Icon
+    sprite: Objects/Economy/cash.rsi
+    state: cash_1000
+  - type: Stack
+    count: 50000
 
 - type: entity
   parent: SpaceCash

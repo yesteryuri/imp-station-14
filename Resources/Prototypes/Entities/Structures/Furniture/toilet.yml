@@ -41,6 +41,7 @@
     whitelist:
       components:
       - Item
+      - Goblin #imp
     soundFlush: /Audio/Effects/Fluids/flush.ogg
     soundInsert: /Audio/Effects/Fluids/splash.ogg
   - type: Toilet

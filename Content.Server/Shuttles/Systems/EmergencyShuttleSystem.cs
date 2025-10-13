@@ -4,6 +4,7 @@ using System.Threading;
 using Content.Server.Access.Systems;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
+using Content.Server.Announcements.Systems; // imp
 using Content.Server.Chat.Systems;
 using Content.Server.Communications;
 using Content.Server.DeviceNetwork.Systems;
@@ -67,6 +68,7 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly TransformSystem _transformSystem = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
+    [Dependency] private readonly AnnouncerSystem _announcer = default!; // imp
 
     private const float ShuttleSpawnBuffer = 1f;
 
@@ -334,8 +336,7 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
         {
             _chatSystem.DispatchStationAnnouncement(
                 result.Station,
-                Loc.GetString(stationShuttleComp.FailureAnnouncement),
-                playDefaultSound: false);
+                Loc.GetString(stationShuttleComp.FailureAnnouncement)); //imp. gutted default announcement sounds. announcersystem handles them now.
 
             // TODO: Need filter extensions or something don't blame me.
             _audio.PlayGlobal(stationShuttleComp.FailureAudio, Filter.Broadcast(), true);
@@ -369,8 +370,8 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
                 ("time", $"{_consoleAccumulator:0}"),
                 ("direction", direction),
                 ("location", location),
-                ("extended", extendedText)),
-            playDefaultSound: false);
+                ("extended", extendedText))); //imp. gutted default announcement sounds. announcersystem handles them now.
+
 
         // Trigger shuttle timers on the shuttle.
 

@@ -6,19 +6,22 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 9000 # 2.5 hours
+      time: 36000 # 10 hours, imp
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 9000 # 2.5 hours
-    - !type:DepartmentTimeRequirement
-      department: Science
-      time: 9000 # 2.5 hrs
+      time: 36000 # 10 hours, imp
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 9000 # 2.5 hrs
+      time: 36000 # 10 hrs, imp
+    - !type:DepartmentTimeRequirement #imp
+      department: Cargo
+      time: 36000 # 10 hrs
+    - !type:DepartmentTimeRequirement #imp
+      department: Science
+      time: 36000 # 10 hrs
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 9000 # 2.5 hours
+      time: 36000 # 10 hours, imp
   weight: 20
   startingGear: HoPGear
   icon: "JobIconHeadOfPersonnel"
@@ -51,6 +54,16 @@
   - Cargo
   - Atmospherics
   - Medical
+  #imp edit start
+  - Courier
+  - Logistics
+  - Clown
+  - Librarian
+  - Mime
+  - Musician
+  - Reporter
+  - Vault
+  #imp edit end
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
@@ -61,12 +74,13 @@
 - type: startingGear
   id: HoPGear
   equipment:
-    shoes: ClothingShoesColorBrown
+    #shoes: ClothingShoesColorBrown #imp
     id: HoPPDA
     gloves: ClothingHandsGlovesHop
-    ears: ClothingHeadsetAltCommand
-    belt: BoxFolderClipboardThreePapers
-    eyes: ClothingEyesHudCommand
+    #ears: ClothingHeadsetAltCommand #imp
+    #belt: BoxFolderClipboard #imp
+    belt: ClothingBeltPaperworkFilled # imp edit
+    #eyes: ClothingEyesHudCommand #imp
   storage:
     back:
     - Flash

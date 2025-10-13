@@ -81,7 +81,7 @@
   description: It's a very sterile backpack.
   components:
   - type: Sprite
-    sprite: Clothing/Back/Backpacks/brigmedic.rsi
+    sprite: _Impstation/Clothing/Back/Backpacks/brigmedic.rsi #imp
 
 - type: entity
   parent: ClothingBackpack
@@ -117,7 +117,7 @@
   description: It's a special backpack made exclusively for Nanotrasen officers.
   components:
   - type: Sprite
-    sprite: Clothing/Back/Backpacks/captain.rsi
+    sprite: _Impstation/Clothing/Back/Backpacks/captain.rsi #imp
 
 - type: entity
   parent: ClothingBackpack
@@ -282,7 +282,7 @@
 
 #Syndicate
 - type: entity
-  parent: [ClothingBackpack, BaseSyndicateContraband]
+  parent: [ClothingBackpack, Tier1Contraband]
   id: ClothingBackpackSyndicate
   name: syndicate backpack
   description:
@@ -355,6 +355,11 @@
   - type: DeviceLinkSink
     ports:
       - Trigger
+  - type: Tag
+    tags:
+      - Electropack # imp
+      - WhitelistChameleon
+      - Backpack
 
 # Debug
 - type: entity

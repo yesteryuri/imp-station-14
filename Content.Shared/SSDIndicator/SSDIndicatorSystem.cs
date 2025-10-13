@@ -34,6 +34,7 @@ public sealed class SSDIndicatorSystem : EntitySystem
     private void OnPlayerAttached(EntityUid uid, SSDIndicatorComponent component, PlayerAttachedEvent args)
     {
         component.IsSSD = false;
+        component.HasHadPlayer = true; // imp
 
         // Removes force sleep and resets the time to zero
         if (_icSsdSleep)
@@ -83,6 +84,7 @@ public sealed class SSDIndicatorSystem : EntitySystem
         {
             // Forces the entity to sleep when the time has come
             if (!ssd.IsSSD
+                || ssd.DoNotSleep //#IMP npcs shouldn't fall asleep
                 || ssd.NextUpdate > curTime
                 || ssd.FallAsleepTime > curTime
                 || TerminatingOrDeleted(uid))

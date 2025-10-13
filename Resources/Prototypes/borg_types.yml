@@ -67,6 +67,10 @@
   petSuccessString: petting-success-engineer-cyborg
   petFailureString: petting-failure-engineer-cyborg
 
+  # Impstation - Borg PDAs
+  pdaBorderColor: "#bf803a"
+  pdaAccentVerticalColor: "#ffd187"
+
 
 # Salvage borg
 - type: borgType
@@ -92,6 +96,9 @@
   - Supply
   - Science
 
+  addComponents: # imp
+  - type: Magboots
+
   # Visual
   inventoryTemplateId: borgTall
   spriteBodyState: miner
@@ -103,6 +110,10 @@
   # Pet
   petSuccessString: petting-success-salvage-cyborg
   petFailureString: petting-failure-salvage-cyborg
+
+  # Impstation - Borg PDAs
+  pdaBorderColor: "#af9366"
+  pdaAccentVerticalColor: "#8900c9"
 
 
 # Janitor borg
@@ -129,7 +140,7 @@
   - Service
 
   # Visual
-  inventoryTemplateId: borgShort
+  inventoryTemplateId: borgJanitor # imp
   spriteBodyState: janitor
   spriteBodyMovementState: janitor_moving
   spriteHasMindState: janitor_e
@@ -139,6 +150,9 @@
   # Pet
   petSuccessString: petting-success-janitor-cyborg
   petFailureString: petting-failure-janitor-cyborg
+
+  # Impstation - Borg PDAs
+  pdaBorderColor: "#5D2D56"
 
 
 # Medical borg
@@ -173,6 +187,9 @@
   - type: ShowHealthIcons
     damageContainers:
     - Biological
+  - type: FabricateCandy # Borg Candy - DeltaV
+    actions:
+    - ActionFabricateGumball
 
   # Visual
   inventoryTemplateId: borgDutch
@@ -190,6 +207,10 @@
   footstepCollection:
     collection: FootstepHoverBorg
 
+  # Impstation - Borg PDAs
+  pdaBorderColor: "#d7d7d0"
+  pdaAccentVerticalColor: "#447987"
+
 
 # Service borg
 - type: borgType
@@ -199,7 +220,7 @@
   dummyPrototype: BorgChassisService
 
   # Functional
-  extraModuleCount: 3
+  extraModuleCount: 4
   moduleWhitelist:
     tags:
     - BorgModuleGeneric
@@ -208,6 +229,7 @@
   defaultModules:
   - BorgModuleTool
   - BorgModuleMusique
+  - BorgModuleBartender # imp
   - BorgModuleService
   - BorgModuleClowning
   - BorgModuleGardening
@@ -217,7 +239,7 @@
   - Service
 
   # Visual
-  inventoryTemplateId: borgTall
+  inventoryTemplateId: borgHumanoid # imp
   spriteBodyState: service
   spriteHasMindState: service_e
   spriteNoMindState: service_e_r
@@ -226,3 +248,7 @@
   # Pet
   petSuccessString: petting-success-service-cyborg
   petFailureString: petting-failure-service-cyborg
+
+  # Impstation - Borg PDAs
+  pdaBorderColor: "#717059"
+  pdaAccentVerticalColor: "#00cc35"

@@ -33,10 +33,13 @@ ui-options-ambient-music-volume = Ambient music volume:
 ui-options-ambience-volume = Ambience volume:
 ui-options-lobby-volume = Lobby & Round-end volume:
 ui-options-interface-volume = Interface volume:
+ui-options-announcer-volume = Announcer volume:
 ui-options-ambience-max-sounds = Ambience simultaneous sounds:
 ui-options-lobby-music = Lobby & Round-end Music
 ui-options-restart-sounds = Round Restart Sounds
 ui-options-event-music = Event Music
+ui-options-announcer-disable-multiple-sounds = Disable Overlapping Announcer Sounds
+ui-options-announcer-disable-multiple-sounds-tooltip = Some announcements will not sound right, this setting isn't recommended
 ui-options-admin-sounds = Play Admin Sounds
 ui-options-bwoink-sound = Play AHelp Notification Sound
 ui-options-volume-label = Volume
@@ -355,9 +358,9 @@ ui-options-accessability-header-content = Content
 ui-options-enable-color-name = Add colors to character names
 ui-options-colorblind-friendly = Colorblind friendly mode
 ui-options-reduced-motion = Reduce motion of visual effects
-ui-options-screen-shake-intensity = Screen shake intensity
-
+ui-options-disable-singulo-warp = Disable the singularity's screen warping effect
 ui-options-chat-window-opacity = Chat window opacity
+ui-options-screen-shake-intensity = Screen shake intensity
 ui-options-speech-bubble-text-opacity = Speech bubble text opacity
 ui-options-speech-bubble-speaker-opacity = Speech bubble speaker opacity
 ui-options-speech-bubble-background-opacity = Speech bubble background opacity
@@ -402,3 +405,10 @@ ui-options-admin-enable-overlay-starting-job = Show starting job
 ui-options-admin-overlay-merge-distance = Stack merge distance
 ui-options-admin-overlay-ghost-fade-distance = Ghost overlay fade range from mouse
 ui-options-admin-overlay-ghost-hide-distance = Ghost overlay hide range from mouse
+
+## DeltaV NanoChat keybinds
+ui-options-header-nano-chat = NanoChat
+ui-options-function-nano-chat-navigate-up = Navigate up
+ui-options-function-nano-chat-navigate-down = Navigate down
+ui-options-function-nano-chat-navigate-up-unread = Navigate up to next unread
+ui-options-function-nano-chat-navigate-down-unread = Navigate down to next unread

@@ -146,6 +146,8 @@
   - chat-speech-verb-parrot-1
   - chat-speech-verb-parrot-2
   - chat-speech-verb-parrot-3
+  - chat-speech-verb-echo-2 #imp
+  - chat-speech-verb-echo-3 #imp
 
 - type: speechVerb
   id: Cluwne

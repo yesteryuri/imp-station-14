@@ -555,8 +555,9 @@
     - item: Shovel
     - item: MineralScannerUnpowered
     - item: BorgOreBag
+    - item: RadioHandheld # imp
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: mining-module }
+    icon: { sprite: _Impstation/Interface/Actions/actions_borg.rsi, state: mining-module } #imp edit
 
 - type: entity
   id: BorgModuleAdvancedMining
@@ -1053,6 +1054,7 @@
           components:
           - FitsInDispenser
     - item: BarSpoon
+    - item: RubberStampBorg # imp
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: service-module }
 
@@ -1165,7 +1167,7 @@
 
 #syndicate modules
 - type: entity
-  parent: [ BaseBorgModule, BaseProviderBorgModule, BaseSyndicateContraband ]
+  parent: [ BaseBorgModule, BaseProviderBorgModule, Tier3Contraband ] #imp, contraband
   id: BorgModuleSyndicateWeapon
   name: weapon cyborg module
   components:
@@ -1201,7 +1203,7 @@
     price: 2500
 
 - type: entity
-  parent: [ BaseBorgModuleSyndicate, BaseProviderBorgModule, BaseSyndicateContraband ]
+  parent: [ BaseBorgModuleSyndicate, BaseProviderBorgModule, Tier2Contraband ] #imp, contraband
   id: BorgModuleOperative
   name: operative cyborg module
   description: A module that comes with a crowbar, an Emag, an Access Breaker and a syndicate pinpointer.
@@ -1220,7 +1222,7 @@
       icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-operative-module }
 
 - type: entity
-  parent: [ BaseBorgModuleSyndicate, BaseProviderBorgModule, BaseSyndicateContraband ]
+  parent: [ BaseBorgModuleSyndicate, BaseProviderBorgModule, Tier3Contraband ] #imp, contraband
   id: BorgModuleEsword
   name: energy sword cyborg module
   description: A weapons module that comes with an energy sword.
@@ -1238,7 +1240,7 @@
 
 - type: entity
   id: BorgModuleDoubleEsword
-  parent: [ BaseBorgModuleSyndicate, BaseProviderBorgModule, BaseSyndicateContraband ]
+  parent: [ BaseBorgModuleSyndicate, BaseProviderBorgModule, Tier3Contraband ] #imp, contraband
   name: double energy sword cyborg module
   description: A weapons module that comes with a double energy sword.
   components:
@@ -1254,7 +1256,7 @@
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-desword-module }
 
 - type: entity
-  parent: [ BaseBorgModuleSyndicateAssault, BaseProviderBorgModule, BaseSyndicateContraband ]
+  parent: [ BaseBorgModuleSyndicateAssault, BaseProviderBorgModule, Tier3Contraband ] #imp, contraband
   id: BorgModuleL6C
   name: L6C ROW cyborg module
   description: A weapons module that comes with a L6C.
@@ -1269,9 +1271,12 @@
     - item: PinpointerSyndicateNuclear
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-l6c-module }
+  - type: Tag #imp edit - let crew borgs use the l6 if salvagers find one or an assault borg is killed.
+    tags:
+    - BorgModuleGeneric
 
 - type: entity
-  parent: [ BaseBorgModuleSyndicateAssault, BaseProviderBorgModule, BaseSyndicateContraband ]
+  parent: [ BaseBorgModuleSyndicateAssault, BaseProviderBorgModule, Tier3Contraband ] #imp, contraband
   id: BorgModuleC20r
   name: C-20r ROW cyborg module
   description: A weapons module that comes with a burst-fire C-20r.
@@ -1288,7 +1293,7 @@
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-c20r-module }
 
 - type: entity
-  parent: [ BaseBorgModule, BaseProviderBorgModule, BaseSyndicateContraband ]
+  parent: [ BaseBorgModule, BaseProviderBorgModule, Tier3Contraband ] #imp, contraband
   id: BorgModuleMartyr
   name: martyr cyborg module
   description: "A module that comes with an explosive you probably don't want to handle yourself."

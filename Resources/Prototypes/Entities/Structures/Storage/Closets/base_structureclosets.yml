@@ -11,7 +11,7 @@
     noRot: true
   - type: Sprite
     noRot: true
-    sprite: Structures/Storage/closet.rsi
+    sprite: _Impstation/Structures/Storage/closet.rsi # imp
     layers:
     - state: generic
       map: ["enum.StorageVisualLayers.Base"]
@@ -113,6 +113,11 @@
     stateDoorClosed: generic_door
   - type: StaticPrice
     price: 75
+  - type: DamageOtherOnHit # imp
+    damage:
+      types:
+        Blunt: 10
+    staminaCost: 35
 
 # steel closet base (that can be constructed/deconstructed)
 - type: entity
@@ -142,7 +147,7 @@
   - type: Sprite
     drawdepth: WallMountedItems
     noRot: false
-    sprite: Structures/Storage/wall_locker.rsi
+    sprite: _Impstation/Structures/Storage/wall_locker.rsi # imp
     layers:
     - state: generic
       map: ["enum.StorageVisualLayers.Base"]
@@ -210,7 +215,7 @@
   - type: Lock
   - type: LockVisuals
   - type: Sprite
-    sprite: Structures/Storage/wall_locker.rsi
+    sprite: _Impstation/Structures/Storage/wall_locker.rsi # imp
     layers:
     - state: generic
       map: ["enum.StorageVisualLayers.Base"]
@@ -244,7 +249,7 @@
     noRot: true
   - type: Sprite
     noRot: true
-    sprite: Structures/Storage/suit_storage.rsi
+    sprite: _Impstation/Structures/Storage/suit_storage.rsi # imp
     layers:
     - state: base
     - state: door

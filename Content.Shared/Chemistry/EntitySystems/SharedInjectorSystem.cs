@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Shared._DV.Chemistry.Components; //DeltaV
 using Content.Shared.Administration.Logs;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
@@ -147,6 +148,11 @@ public abstract class SharedInjectorSystem : EntitySystem
     private void InjectDoAfter(Entity<InjectorComponent> injector, EntityUid target, EntityUid user)
     {
         // Create a pop-up for the user
+        if (HasComp<BlockInjectionComponent>(target)) // DeltaV
+        {
+            _popup.PopupEntity(Loc.GetString("injector-component-deny-user"), target, user);
+            return;
+        }
         if (injector.Comp.ToggleState == InjectorToggleMode.Draw)
         {
             _popup.PopupClient(Loc.GetString("injector-component-drawing-user"), target, user);
@@ -287,6 +293,9 @@ public abstract class SharedInjectorSystem : EntitySystem
     private bool TryInject(Entity<InjectorComponent> injector, EntityUid target,
         Entity<SolutionComponent> targetSolution, EntityUid user, bool asRefill)
     {
+        if (HasComp<BlockInjectionComponent>(target))  // DeltaV
+            return false;
+
         if (!SolutionContainer.ResolveSolution(injector.Owner, injector.Comp.SolutionName, ref injector.Comp.Solution,
                 out var solution) || solution.Volume == 0)
             return false;

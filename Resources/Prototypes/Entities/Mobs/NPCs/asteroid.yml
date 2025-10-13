@@ -27,6 +27,12 @@
   - type: Tag
     tags:
     - DoorBumpOpener
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
 
 - type: entity
   id: MobGoliath
@@ -50,14 +56,14 @@
     baseSprintSpeed : 2.00
   - type: Bloodstream
     bloodMaxVolume: 350
-    chemicalMaxVolume: 0
+    chemicalMaxVolume: 20 #imp
   - type: MobThresholds
     thresholds:
       0: Alive
       150: Dead
   - type: MeleeWeapon
     soundHit:
-      path: "/Audio/Weapons/smash.ogg"
+      path: "/Audio/_Impstation/Weapons/strong_hit_slash_pierce.ogg" # imp
     angle: 0
     attackRate: 0.75
     animation: WeaponArcPunch
@@ -93,6 +99,12 @@
       amount: 3
     - id: MaterialGoliathHide1
       amount: 3
+  - type: InteractionPopup #imp
+    successChance: 0.5
+    interactSuccessString: petting-success-goliath
+    interactFailureString: petting-failure-goliath
+  - type: GoobAbsorbable # imp edit
+    biomassRestored: 0.8
 
 - type: entity
   parent: BaseAction
@@ -190,7 +202,7 @@
 
 - type: entity
   id: MobHivelord
-  parent: [ BaseMobAsteroid, FlyingMobBase ]
+  parent: [ BaseMobAsteroid, FlyingMobBase, MobBloodstream ]
   name: hivelord
   description: A truly alien creature, it is a mass of unknown organic material, constantly fluctuating. When attacking, pieces of it split off and attack in tandem with the original.
   components:
@@ -247,10 +259,17 @@
   - type: Butcherable
     spawned:
     - id: FoodHivelordRemains
+  - type: Bloodstream #imp
+    bloodMaxVolume: 350
+    chemicalMaxVolume: 20
+  - type: InteractionPopup #imp
+    successChance: 0.5
+    interactSuccessString: petting-success-hivelord
+    interactFailureString: petting-failure-hivelord
 
 - type: entity
   id: MobHivelordBrood
-  parent: [ BaseMobAsteroid, FlyingMobBase ]
+  parent: [ BaseMobAsteroid, FlyingMobBase, MobBloodstream ]
   name: hivelord brood
   description: A fragment of the original hivelord, rallying behind its original. One isn't much of a threat, but...
   components:
@@ -300,6 +319,13 @@
         true
   - type: TimedDespawn
     lifetime: 100
+  - type: Bloodstream #imp
+    bloodMaxVolume: 350
+    chemicalMaxVolume: 20
+  - type: InteractionPopup #imp
+    successChance: 0.5
+    interactSuccessString: petting-success-hivelordbrood
+    interactFailureString: petting-failure-hivelordbrood
 
 - type: entity
   id: FoodHivelordRemains
@@ -331,6 +357,7 @@
   - type: Tag
     tags:
     - HivelordRemains
+    - KodeEdible # imp
 
 - type: entity
   id: FoodHivelordRemainsInert
@@ -402,7 +429,7 @@
     count: 1
   - type: Bloodstream
     bloodMaxVolume: 200
-    chemicalMaxVolume: 0
+    chemicalMaxVolume: 20 #imp
   - type: NpcFactionMember
     factions:
     - SimpleHostile
@@ -425,3 +452,7 @@
     - id: DiamondOre1
       amount: 1
       maxAmount: 3
+  - type: InteractionPopup #imp
+    successChance: 0.5
+    interactSuccessString: petting-success-basilisk
+    interactFailureString: petting-failure-basilisk

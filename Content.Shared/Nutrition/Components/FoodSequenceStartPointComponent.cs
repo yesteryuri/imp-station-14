@@ -39,6 +39,12 @@ public sealed partial class FoodSequenceStartPointComponent : Component
     [DataField]
     public string Solution = "food";
 
+    /// <summary>
+    /// The threshold for EatSign to be applied to a foodsequence item (IMP ADDITION)
+    /// </summary>
+    [DataField]
+    public int EatThreshold = 80;
+
     #region name generation
 
     /// <summary>

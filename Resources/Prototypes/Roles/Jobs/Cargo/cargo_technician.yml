@@ -9,8 +9,10 @@
   access:
   - Cargo
   - Maintenance
+  - Logistics #Imp
   extendedAccess:
   - Salvage
+  - Courier # Imp
   special:
   - !type:GiveItemOnHolidaySpecial
     holiday: BoxingDay

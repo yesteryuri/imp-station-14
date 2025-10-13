@@ -72,10 +72,27 @@
   - type: Reflect
   - type: IgnitionSource
     temperature: 700
+  # imp edits #
+  - type: ItemToggleDamageOtherOnHit
+    activatedStaminaCost: 6
+  - type: ItemToggleEmbedPassiveDamage
+  - type: ItemToggleEmbeddableProjectile
+    activatedEmbedOnThrow: true
+  - type: ItemToggleThrowingAngle
+    activatedAngle: 225
+    deleteOnDeactivate: true
+  - type: DamageOtherOnHit
+  - type: EmbeddableProjectile
+    embedOnThrow: false
+  - type: EmbedPassiveDamage
+  - type: ItemToggleSignatureWriter
+    activatedFont: AndTheDoorCreeeaked
+    activatedColor: black
+  # end imp edits #
 
 - type: entity
   name: energy sword
-  parent: [BaseMeleeWeaponEnergy, BaseSyndicateContraband]
+  parent: [BaseMeleeWeaponEnergy, Tier3Contraband]
   id: EnergySword
   description: A very loud & dangerous sword with a beam made of pure, concentrated plasma. Cuts through unarmored targets like butter.
   components:
@@ -95,7 +112,7 @@
 
 - type: entity
   name: energy dagger
-  parent: [BaseMeleeWeaponEnergy, BaseSyndicateContraband]
+  parent: [BaseMeleeWeaponEnergy, Tier3Contraband]
   id: EnergyDaggerLoud
   description: A not as loud and dangerous dagger with a beam made of pure, concentrated plasma. This one is completely undisguised.
   components:
@@ -156,6 +173,8 @@
     energy: 1.5
     color: white
     netsync: false
+  - type: ItemToggleThrowingAngle # imp
+    activatedAngle: 135
 
 - type: entity
   name: pen
@@ -235,9 +254,33 @@
   - type: Tag
     tags:
     - Write
+  # imp edits #
+  - type: ItemToggleEmbeddableProjectile
+    activatedOffset: 0.0,0.0
+    activatedRemovalTime: 3
+  - type: ItemToggleThrowingAngle
+    activatedAngle: 135
+    deleteOnDeactivate: false
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Piercing: 3
+    staminaCost: 3.5
+  - type: EmbeddableProjectile
+    offset: 0.3,0.0
+    removalTime: 0.0
+    embedOnThrow: true
+  - type: EmbedPassiveDamage
+    damage:
+      types:
+        Blunt: 0
+  - type: ThrowingAngle
+    angle: 315
+  - type: SignatureWriter
+  # end imp edits #
 
 - type: entity
-  parent: [BaseItem, BaseSyndicateContraband]
+  parent: [BaseItem, Tier3Contraband]
   id: EnergyDaggerBox
   name: e-dagger box
   suffix: E-Dagger
@@ -280,7 +323,7 @@
 
 - type: entity
   name: double-bladed energy sword
-  parent: [BaseMeleeWeaponEnergy, BaseSyndicateContraband]
+  parent: [BaseMeleeWeaponEnergy, Tier3Contraband]
   id: EnergySwordDouble
   description: Syndicate Command Interns thought that having one blade on the energy sword was not enough. This can be stored in pockets.
   components:
@@ -345,9 +388,9 @@
 
 # Item will look weird in handslot. Will need to adjust handstorage visuals in a future PR
 - type: entity
+  name: Hypereutactic Blade
   parent: EnergySwordDouble
   id: HyperEutacticBlade
-  name: hypereutactic-blade
   description: A supermassive weapon envisioned to cleave the very fabric of space and time itself in twain, the hypereutactic blade dynamically flash-forges a hypereutactic crystaline nanostructure capable of passing through most known forms of matter like a hot knife through butter.
   components:
   - type: MeleeWeapon
@@ -378,22 +421,22 @@
   - type: Sprite
     sprite: Objects/Weapons/Melee/hypereutactic_blade.rsi
     layers:
-    - state: hypereutactic
-    - state: hypereutactic_blade
-      color: "#FFFFFF"
-      visible: false
-      shader: unshaded
-      map: [ "blade" ]
-    - state: hypereutactic_gem
-      color: "#FFFFFF"
-      visible: false
-      shader: unshaded
-      map: [ "gem" ]
+      - state: hypereutactic
+      - state: hypereutactic_blade
+        color: "#FFFFFF"
+        visible: false
+        shader: unshaded
+        map: [ "blade" ]
+      - state: hypereutactic_gem
+        color: "#FFFFFF"
+        visible: false
+        shader: unshaded
+        map: [ "gem" ]
   - type: Item
     size: Small
     sprite: Objects/Weapons/Melee/hypereutactic_blade_inhands.rsi
   - type: Reflect
-    reflectProb: 1.0
+    reflectProb: .75 #imp edit: original pr has this at 1 but that seems. um. insane.
     spread: 75
 
 # Borgs

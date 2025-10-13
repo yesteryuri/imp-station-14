@@ -1,3 +1,4 @@
+using Content.Shared._Impstation.Tools.Components; // imp
 using Content.Shared.Administration.Logs;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.DoAfter;
@@ -7,6 +8,7 @@ using Content.Shared.Item.ItemToggle;
 using Content.Shared.Maps;
 using Content.Shared.Popups;
 using Content.Shared.Tools.Components;
+using Content.Shared.Whitelist; // imp
 using JetBrains.Annotations;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
@@ -35,6 +37,8 @@ public abstract partial class SharedToolSystem : EntitySystem
     [Dependency] private   readonly TileSystem _tiles = default!;
     [Dependency] private   readonly TurfSystem _turfs = default!;
 
+    [Dependency] private   readonly EntityWhitelistSystem _whitelist = default!; // imp
+
     public const string CutQuality = "Cutting";
     public const string PulseQuality = "Pulsing";
 
@@ -43,6 +47,7 @@ public abstract partial class SharedToolSystem : EntitySystem
         InitializeMultipleTool();
         InitializeTile();
         InitializeWelder();
+        InitializeSolutionRefuel(); // imp
         SubscribeLocalEvent<ToolComponent, ToolDoAfterEvent>(OnDoAfter);
         SubscribeLocalEvent<ToolComponent, ExaminedEvent>(OnExamine);
     }
@@ -169,7 +174,15 @@ public abstract partial class SharedToolSystem : EntitySystem
             return false;
 
         var toolEvent = new ToolDoAfterEvent(fuel, doAfterEv, GetNetEntity(target));
-        var doAfterArgs = new DoAfterArgs(EntityManager, user, delay / toolComponent.SpeedModifier, toolEvent, tool, target: target, used: tool)
+        // imp edit start, if a tool has CowTool and the user has CowToolProficiency, use speed modifier from CowToolComponent
+        // else, use speed modifier from ToolComponent, as normal
+        TimeSpan doAfterDuration; //delay parameter moved to its own variable from DoAfterArgs call below to allow it to be set to different durations
+        if (TryComp<CowToolComponent>(tool, out var cowToolComponent) && TryComp<CowToolProficiencyComponent>(user, out _))
+            doAfterDuration = delay / cowToolComponent.ProficiencySpeedModifier;
+        else
+            doAfterDuration = delay / toolComponent.SpeedModifier;
+        // imp edit end
+        var doAfterArgs = new DoAfterArgs(EntityManager, user, doAfterDuration, toolEvent, tool, target: target, used: tool) // imp edit, doAfterDuration was previously delay / toolComponent.SpeedModifier
         {
             BreakOnDamage = true,
             BreakOnMove = true,

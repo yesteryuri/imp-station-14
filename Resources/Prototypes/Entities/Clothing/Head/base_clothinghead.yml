@@ -24,6 +24,7 @@
     tags:
     - ClothMade
     - WhitelistChameleon
+    - DroneUsable # imp
 
 - type: entity
   abstract: true

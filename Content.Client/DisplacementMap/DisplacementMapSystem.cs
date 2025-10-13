@@ -3,6 +3,7 @@ using Content.Shared.DisplacementMap;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Serialization.Manager;
+using static Robust.Client.GameObjects.SpriteComponent; //imp
 
 namespace Content.Client.DisplacementMap;
 
@@ -39,8 +40,15 @@ public sealed class DisplacementMapSystem : EntitySystem
 
         EnsureDisplacementIsNotOnSprite(sprite, key);
 
-        if (data.ShaderOverride is not null)
-            sprite.Comp.LayerSetShader(index, data.ShaderOverride);
+        if (data.ShaderOverride != null)
+        {
+            //imp edit start - replaced the simple shader replacement w/ a ternary that checks if the layer is unshaded before setting the shader
+            sprite.Comp.LayerSetShader(index,
+                sprite.Comp[index] is Layer layer && layer.ShaderPrototype == "unshaded"
+                    ? data.ShaderOverrideUnshaded
+                    : data.ShaderOverride);
+            //imp edit end
+        }
 
         //allows you not to write it every time in the YML
         foreach (var pair in data.SizeMaps)

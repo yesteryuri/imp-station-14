@@ -19,10 +19,10 @@ public sealed partial class StationEventComponent : Component
     public float Weight = WeightNormal;
 
     [DataField]
-    public string? StartAnnouncement;
+    public bool StartAnnouncement;
 
     [DataField]
-    public string? EndAnnouncement;
+    public bool EndAnnouncement;
 
     [DataField]
     public Color StartAnnouncementColor = Color.Gold;
@@ -30,17 +30,17 @@ public sealed partial class StationEventComponent : Component
     [DataField]
     public Color EndAnnouncementColor = Color.Gold;
 
-    [DataField]
-    public SoundSpecifier? StartAudio;
-
-    [DataField]
-    public SoundSpecifier? EndAudio;
-
     /// <summary>
     ///     In minutes, when is the first round time this event can start
     /// </summary>
     [DataField]
     public int EarliestStart = 5;
+
+    /// <summary>
+    /// imp. In minutes, the *last* round time this event can start. if null, does nothing.
+    /// </summary>
+    [DataField]
+    public int? LatestStart = null;
 
     /// <summary>
     ///     In minutes, the amount of time before the same event can occur again

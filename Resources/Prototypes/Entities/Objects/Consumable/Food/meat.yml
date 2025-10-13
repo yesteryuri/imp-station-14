@@ -15,7 +15,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 15 # imp
         reagents:
         - ReagentId: Nutriment
           Quantity: 5
@@ -93,6 +93,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 20 # imp
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 9
@@ -129,6 +130,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 10 # imp
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 9
@@ -152,7 +154,8 @@
   components:
   - type: FlavorProfile
     flavors:
-      - fishy
+      #- fishy # imp
+      - carpflesh #imp
   - type: Tag
     tags:
     - Raw
@@ -162,6 +165,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 10 # imp
         reagents:
         - ReagentId: CarpoToxin
           Quantity: 5
@@ -177,6 +181,9 @@
       - state: generic-pink-inhand-left
       right:
       - state: generic-pink-inhand-right
+  - type: FoodSequenceElement #imp
+    entries:
+      Burger: RawCarpFilletBurger
 
 - type: entity
   # bacon is cured so not raw = cant rot
@@ -194,6 +201,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 15 # imp
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 2
@@ -226,6 +234,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 20 # imp
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 9
@@ -252,13 +261,14 @@
   parent: FoodMeatRawBase
   id: FoodMeatPenguin
   name: raw penguin meat
-  description: A slab of raw penguin meat. Can be used as a substitute for fish in recipes.
+  description: A slab of raw penguin meat. # Can be used as a substitute for fish in recipes. # imp - this literally isnt true lol
   components:
   - type: Sprite
     state: bird
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 20 # imp
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 9
@@ -290,6 +300,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 20 # imp
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 9
@@ -323,6 +334,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 20 # imp
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 9
@@ -360,6 +372,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 25 # imp
         reagents:
         - ReagentId: Bicaridine
           Quantity: 20
@@ -390,6 +403,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 5 # imp
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 1
@@ -411,6 +425,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 10 # imp
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 5
@@ -448,6 +463,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 15 # imp
         reagents:
         - ReagentId: Ichor
           Quantity: 10
@@ -482,6 +498,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 10 # imp
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 3
@@ -509,6 +526,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 20 # imp
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 9
@@ -557,6 +575,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 15 # imp
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 5
@@ -571,6 +590,9 @@
       - state: rotten-inhand-left
       right:
       - state: rotten-inhand-right
+  - type: FoodSequenceElement # imp
+    entries:
+      Burger: RottenMeatBurger
 
 - type: entity
   parent: FoodMeatRawBase
@@ -583,6 +605,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 20 # imp
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 9
@@ -594,6 +617,11 @@
   - type: Item
     storedOffset: 0,2
     heldPrefix: spider
+  - type: Tag # imp
+    tags:
+    - Raw
+    - Meat
+    - SpiderMeat
 
 - type: entity
   parent: FoodMeatBase
@@ -606,6 +634,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 20 # imp
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 10
@@ -622,6 +651,13 @@
       right:
       - state: snake-inhand-right
         color: "#333333"
+  # imp edit start
+  - type: Tag # why tf isnt this in FoodMeatBase
+    tags:
+    - Raw
+    - Meat
+  - type: RandomWalk # twitchy.
+  # imp edit end
 
 - type: entity
   parent: FoodMeatBase
@@ -637,9 +673,13 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 5 # imp
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 1
+  - type: Tag # imp
+    tags:
+    - KodeEdible
   - type: Item
     size: Tiny
     shape:
@@ -667,6 +707,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 15 # imp
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 10
@@ -679,6 +720,9 @@
       - state: snake-inhand-left
       right:
       - state: snake-inhand-right
+  - type: FoodSequenceElement # imp
+    entries:
+      Burger: RawSnakeMeatBurger
 
 - type: entity
   # not raw since acid kills bacteria or something, same as xeno
@@ -700,6 +744,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 25 # imp
         reagents:
         - ReagentId: SulfuricAcid
           Quantity: 20
@@ -737,6 +782,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 25 # imp
         reagents:
         - ReagentId: SulfuricAcid
           Quantity: 20
@@ -799,6 +845,15 @@
     damage:
       types:
         Blunt: 2
+  - type: SolutionContainerManager # imp
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 3
+        - ReagentId: Protein
+          Quantity: 3
 
 - type: entity
   parent: FoodMeatBase
@@ -820,6 +875,15 @@
     state: clown
   - type: SliceableFood
     slice: FoodMeatSalamiSlice
+  - type: SolutionContainerManager # imp
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 3
+        - ReagentId: Protein
+          Quantity: 3
 
 - type: entity
   parent: FoodMeatBase
@@ -838,6 +902,18 @@
     - Meat
   - type: Sprite
     state: meatball
+  - type: SolutionContainerManager # imp
+    solutions:
+      food:
+        maxVol: 20
+        canReact: false # preventing an infinite meatball trick
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+        - ReagentId: Flour
+          Quantity: 5
+        - ReagentId: Egg
+          Quantity: 6
   - type: Construction
     graph: MeatMeatballCooked
     node: start
@@ -895,6 +971,16 @@
       - state: slime-inhand-left
       right:
       - state: slime-inhand-right
+  - type: SolutionContainerManager # imp
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Slime
+          Quantity: 10
+  - type: FoodSequenceElement # imp
+    entries:
+      Burger: SlimeballBurger
 
 - type: entity
   parent: FoodMeatRawBase
@@ -936,6 +1022,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 200 # imp
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 90
@@ -987,6 +1074,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 55 # imp
         reagents:
         - ReagentId: Omnizine
           Quantity: 30
@@ -1017,6 +1105,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 20 # imp
         reagents:
         - ReagentId: Nutriment
           Quantity: 10
@@ -1062,11 +1151,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 15 # imp
         reagents:
         - ReagentId: Nutriment
-          Quantity: 5
+          Quantity: 9 # imp
         - ReagentId: Protein
-          Quantity: 5
+          Quantity: 2 # imp
   - type: Construction
     graph: Bacon
     node: bacon
@@ -1101,9 +1191,10 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 10 # imp
         reagents:
         - ReagentId: Nutriment
-          Quantity: 5
+          Quantity: 2 # imp
         - ReagentId: Protein
           Quantity: 5
   - type: SliceableFood
@@ -1124,7 +1215,7 @@
   parent: FoodMeatBase
   id: FoodMeatPenguinCooked
   name: penguin filet
-  description: A cooked filet of penguin. Can be used as a substitute for fish in recipes.
+  description: A cooked filet of penguin. # Can be used as a substitute for fish in recipes. # imp - this literally isnt true lol
   components:
   - type: Tag
     tags:
@@ -1136,11 +1227,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 20 # imp
         reagents:
         - ReagentId: Nutriment
-          Quantity: 5
+          Quantity: 9 # imp
         - ReagentId: Protein
-          Quantity: 5
+          Quantity: 9 # imp
   - type: SliceableFood
     count: 3
     slice: FoodMeatPenguinCutletCooked
@@ -1177,11 +1269,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 20 # imp
         reagents:
         - ReagentId: Nutriment
-          Quantity: 5
+          Quantity: 9 # imp
         - ReagentId: Protein
-          Quantity: 5
+          Quantity: 9 # imp
   - type: SliceableFood
     count: 3
     slice: FoodMeatChickenCutletCooked
@@ -1224,11 +1317,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 20 # imp
         reagents:
         - ReagentId: Nutriment
-          Quantity: 5
+          Quantity: 9 # imp
         - ReagentId: Protein
-          Quantity: 5
+          Quantity: 9 # imp
   - type: FoodSequenceElement
     entries:
       Burger: MeatChicken
@@ -1258,11 +1352,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 20 # imp
         reagents:
         - ReagentId: Nutriment
-          Quantity: 5
+          Quantity: 9 # imp
         - ReagentId: Protein
-          Quantity: 5
+          Quantity: 9 # imp
   - type: SliceableFood
     count: 3
     slice: FoodMeatDuckCutletCooked
@@ -1302,11 +1397,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 5 # imp
         reagents:
         - ReagentId: Nutriment
-          Quantity: 5
+          Quantity: 2 # imp
         - ReagentId: Protein
-          Quantity: 5
+          Quantity: 2 # imp
   - type: Construction
     graph: CrabSteak
     node: cooked crab
@@ -1339,9 +1435,10 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 10 # imp
         reagents:
         - ReagentId: Nutriment
-          Quantity: 5
+          Quantity: 3 # imp
         - ReagentId: Protein
           Quantity: 5
   - type: Construction
@@ -1380,6 +1477,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 25 # imp
         reagents:
         - ReagentId: Nutriment
           Quantity: 10
@@ -1416,11 +1514,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 20 # imp
         reagents:
         - ReagentId: Nutriment
-          Quantity: 5
+          Quantity: 9 # imp
         - ReagentId: Protein
-          Quantity: 5
+          Quantity: 9 # imp
   - type: SliceableFood
     count: 3
     slice: FoodMeatLizardCutletCooked
@@ -1455,11 +1554,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 15 # imp
         reagents:
         - ReagentId: Nutriment
-          Quantity: 5
+          Quantity: 3 # imp
         - ReagentId: Protein
-          Quantity: 5
+          Quantity: 10 # imp
   - type: FoodSequenceElement
     entries:
       Burger: MeatSpiderBurger
@@ -1489,9 +1589,10 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 20 # imp
         reagents:
         - ReagentId: Nutriment
-          Quantity: 5
+          Quantity: 11 # imp
         - ReagentId: Protein
           Quantity: 5
   - type: FoodSequenceElement
@@ -1596,11 +1697,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 200 # imp
         reagents:
         - ReagentId: Nutriment
-          Quantity: 100
+          Quantity: 90 # imp
         - ReagentId: Protein
-          Quantity: 50
+          Quantity: 90 # imp
   - type: SliceableFood
     count: 10
     sliceTime: 5
@@ -1680,11 +1782,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 10 # imp
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 3
         - ReagentId: Fat
-          Quantity: 2
+          Quantity: 3 # imp
   - type: Construction
     graph: Cutlet
     node: start
@@ -1718,11 +1821,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 10 # imp
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 3
         - ReagentId: Fat
-          Quantity: 2
+          Quantity: 3 # imp
   - type: Construction
     graph: BearCutlet
     node: start
@@ -1743,7 +1847,7 @@
   parent: FoodMeatBase
   id: FoodMeatPenguinCutlet
   name: raw penguin cutlet
-  description: A cutlet of raw penguin meat. Can be used as a substitute for fish in recipes.
+  description: A cutlet of raw penguin meat. # Can be used as a substitute for fish in recipes. # imp - this literally isnt true lol
   components:
   - type: Tag
     tags:
@@ -1756,11 +1860,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 10 # imp
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 3
         - ReagentId: Fat
-          Quantity: 2
+          Quantity: 3 # imp
   - type: Construction
     graph: PenguinCutlet
     node: start
@@ -1794,11 +1899,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 10 # imp
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 3
         - ReagentId: Fat
-          Quantity: 2
+          Quantity: 3 # imp
   - type: Construction
     graph: ChickenCutlet
     node: start
@@ -1830,11 +1936,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 10 # imp
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 3
         - ReagentId: Fat
-          Quantity: 2
+          Quantity: 3 # imp
   - type: Construction
     graph: DuckCutlet
     node: start
@@ -1869,11 +1976,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 10 # imp
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 3
         - ReagentId: Fat
-          Quantity: 2
+          Quantity: 3 # imp
   - type: Construction
     graph: LizardCutlet
     node: start
@@ -1906,11 +2014,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 10 # imp
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 3
         - ReagentId: Fat
-          Quantity: 2
+          Quantity: 3 # imp
   - type: Construction
     graph: SpiderCutlet
     node: start
@@ -1947,9 +2056,10 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 10 # imp
         reagents:
         - ReagentId: SulfuricAcid
-          Quantity: 20
+          Quantity: 6.67 # imp
   - type: Construction
     graph: XenoCutlet
     node: start
@@ -1986,6 +2096,20 @@
     color: red
   - type: StaticPrice
     price: 30
+  - type: FoodSequenceElement # imp
+    entries:
+      Burger: MeatTomatoCutletBurger
+  - type: SolutionContainerManager # imp
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 1.67
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 0.33
+        - ReagentId: Fat
+          Quantity: 1.67
 
 - type: entity
   parent: FoodMeatBase
@@ -2008,11 +2132,15 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 5 # imp
         reagents:
         - ReagentId: Nutriment
           Quantity: 1
         - ReagentId: Protein
           Quantity: 1
+  - type: FoodSequenceElement # imp
+    entries:
+      Burger: SalamiBurger
 
 - type: entity
   parent: FoodMeatBase
@@ -2070,11 +2198,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 10 # imp
         reagents:
         - ReagentId: Nutriment
-          Quantity: 2
+          Quantity: 3 # imp
         - ReagentId: Protein
-          Quantity: 2
+          Quantity: 3 # imp
   - type: Construction
     graph: Cutlet
     node: cutlet
@@ -2114,11 +2243,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 10 # imp
         reagents:
         - ReagentId: Nutriment
-          Quantity: 2
+          Quantity: 3 # imp
         - ReagentId: Protein
-          Quantity: 2
+          Quantity: 3 # imp
   - type: Construction
     graph: BearCutlet
     node: bear cutlet
@@ -2156,11 +2286,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 10 # imp
         reagents:
         - ReagentId: Nutriment
-          Quantity: 2
+          Quantity: 3 # imp
         - ReagentId: Protein
-          Quantity: 2
+          Quantity: 3 # imp
   - type: Construction
     graph: PenguinCutlet
     node: penguin cutlet
@@ -2198,11 +2329,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 10 # imp
         reagents:
         - ReagentId: Nutriment
-          Quantity: 2
+          Quantity: 3 # imp
         - ReagentId: Protein
-          Quantity: 2
+          Quantity: 3 # imp
   - type: Construction
     graph: ChickenCutlet
     node: chicken cutlet
@@ -2240,11 +2372,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 10 # imp
         reagents:
         - ReagentId: Nutriment
-          Quantity: 2
+          Quantity: 3 # imp
         - ReagentId: Protein
-          Quantity: 2
+          Quantity: 3 # imp
   - type: Construction
     graph: DuckCutlet
     node: duck cutlet
@@ -2283,11 +2416,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 10 # imp
         reagents:
         - ReagentId: Nutriment
-          Quantity: 2
+          Quantity: 3 # imp
         - ReagentId: Protein
-          Quantity: 2
+          Quantity: 3 # imp
   - type: Construction
     graph: LizardCutlet
     node: lizard cutlet
@@ -2324,11 +2458,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 10 # imp
         reagents:
         - ReagentId: Nutriment
-          Quantity: 1
+          Quantity: 3 # imp
         - ReagentId: Protein
-          Quantity: 1
+          Quantity: 3 # imp
   - type: Construction
     graph: SpiderCutlet
     node: spider cutlet
@@ -2365,6 +2500,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
+        maxVol: 5 # imp
         reagents:
         - ReagentId: Nutriment
           Quantity: 1

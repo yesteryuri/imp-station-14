@@ -22,6 +22,7 @@
   name: "vox torso"
   components:
   - type: Sprite
+    sprite: _Impstation/Mobs/Species/Vox/parts.rsi #imp
     state: "torso"
   - type: Extractable
     juiceSolution:

@@ -64,13 +64,13 @@ public sealed partial class XenoArtifactComponent : Component
     /// How long does the unlocking state last by default.
     /// </summary>
     [DataField]
-    public TimeSpan UnlockStateDuration = TimeSpan.FromSeconds(6);
+    public TimeSpan UnlockStateDuration = TimeSpan.FromSeconds(8);//#IMP increased to 8 from 6
 
     /// <summary>
     /// By how much unlocking state should be prolonged for each node that was unlocked.
     /// </summary>
     [DataField]
-    public TimeSpan UnlockStateIncrementPerNode = TimeSpan.FromSeconds(10);
+    public TimeSpan UnlockStateIncrementPerNode = TimeSpan.FromSeconds(12);//#IMP increased to 12 from 10
 
     /// <summary>
     /// Minimum waiting time between unlock states.
@@ -166,9 +166,34 @@ public sealed partial class XenoArtifactComponent : Component
     /// </summary>
     [DataField]
     public EntProtoId<InstantActionComponent> SelfActivateAction = "ActionArtifactActivate";
+
+    /// <summary>
+    /// Imp edit. The sound that plays when an artifact finishes unlocking successfully (with node unlocked).
+    /// </summary>
+    [DataField]
+    public SoundSpecifier UnlockActivationSuccessfulSound = new SoundCollectionSpecifier("ArtifactUnlockingActivationSuccess")
+    {
+        Params = new()
+        {
+            Variation = 0.1f,
+            Volume = 3f
+        }
+    };
+
+    /// <summary>
+    /// Imp edit. The sound that plays when artifact finishes unlocking non-successfully.
+    /// </summary>
+    [DataField]
+    public SoundSpecifier? UnlockActivationFailedSound = new SoundCollectionSpecifier("ArtifactUnlockActivationFailure")
+    {
+        Params = new()
+        {
+            Variation = 0.1f
+        }
+    };
 }
 
 /// <summary>
 /// Event raised by sentient artifact to activate itself at no durability cost.
 /// </summary>
-public sealed partial class ArtifactSelfActivateEvent : InstantActionEvent;
+public sealed partial class XAEArtifactSelfActivateEvent : InstantActionEvent; //#IMP: Renamed to "XAEArtifact..." from "Artifact..."

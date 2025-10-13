@@ -6,7 +6,7 @@
   playTimeTracker: JobERTLeader
   setPreference: false
   startingGear: ERTLeaderGearEVA
-  icon: "JobIconNanotrasen"
+  icon: "JobIconERTLeader" #imp
   supervisors: job-supervisors-centcom
   canBeAntag: false
   accessGroups:
@@ -107,7 +107,7 @@
   playTimeTracker: JobERTChaplain
   setPreference: false
   startingGear: ERTChaplainGear
-  icon: "JobIconNanotrasen"
+  icon: "JobIconERTChaplain" #imp
   supervisors: job-supervisors-centcom
   canBeAntag: false
   accessGroups:
@@ -151,6 +151,7 @@
     - FoodBakedBunHotX
     - FoodBakedBunHotX
     - Lighter
+    - NullRodDefault # imp
 
 - type: startingGear
   id: ERTChaplainGearEVA
@@ -182,6 +183,7 @@
     - FoodBakedBunHotX
     - FoodBakedBunHotX
     - Lighter
+    - NullRodDefault # imp
 
 - type: chameleonOutfit
   id: ERTChaplainChameleonOutfit
@@ -201,7 +203,7 @@
   playTimeTracker: JobERTEngineer
   setPreference: false
   startingGear: ERTEngineerGearEVA
-  icon: "JobIconNanotrasen"
+  icon: "JobIconERTEngineer" #imp
   supervisors: job-supervisors-centcom
   canBeAntag: false
   accessGroups:
@@ -284,7 +286,7 @@
   playTimeTracker: JobERTSecurity
   setPreference: false
   startingGear: ERTSecurityGearEVA
-  icon: "JobIconNanotrasen"
+  icon: "JobIconERTSecurity" #imp
   supervisors: job-supervisors-centcom
   canBeAntag: false
   accessGroups:
@@ -385,7 +387,7 @@
   playTimeTracker: JobERTMedical
   setPreference: false
   startingGear: ERTMedicalGearEVA
-  icon: "JobIconNanotrasen"
+  icon: "JobIconERTMedic" #imp
   supervisors: job-supervisors-centcom
   canBeAntag: false
   accessGroups:
@@ -460,7 +462,7 @@
   playTimeTracker: JobERTJanitor
   setPreference: false
   startingGear: ERTJanitorGearEVA
-  icon: "JobIconNanotrasen"
+  icon: "JobIconERTJanitor" #imp
   supervisors: job-supervisors-centcom
   canBeAntag: false
   accessGroups:

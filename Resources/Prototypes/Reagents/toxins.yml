@@ -39,10 +39,18 @@
     Poison:
       effects:
       - !type:HealthChange
+        conditions: #imp, thaven are immune to carpotoxin because it's naturally in their bodies
+        - !type:OrganType
+          type: Thaven
+          shouldHave: false
         damage:
           types:
             Poison: 4
       - !type:PopupMessage
+        conditions: #imp, thaven are immune to carpotoxin because it's naturally in their bodies
+        - !type:OrganType
+          type: Thaven
+          shouldHave: false
         type: Local
         visualType: MediumCaution
         messages: [ "generic-reagent-effect-burning-insides" ]
@@ -313,6 +321,7 @@
   physicalDesc: reagent-physical-desc-strong-smelling
   contrabandSeverity: Major
   color: "#5f959c"
+  contraband: Major # imp
   metabolisms:
     Poison:
       effects:
@@ -332,6 +341,7 @@
   physicalDesc: reagent-physical-desc-pungent
   contrabandSeverity: Syndicate
   color: "#6b0007"
+  contraband: Tier3Contraband # imp
   metabolisms:
     Poison:
       effects:
@@ -348,6 +358,7 @@
   physicalDesc: reagent-physical-desc-opaque
   flavor: bitter
   color: "#77b58e"
+  contraband: Minor # imp
   plantMetabolism:
   - !type:PlantAdjustToxins
     amount: 10
@@ -410,7 +421,7 @@
   boilingPoint: 554 # I'm not a chemist, but it boils at 295, lower than melting point, idk how it works so I gave it higher value
   metabolisms:
     Poison:
-      metabolismRate: 0.05
+      metabolismRate: 0.045 #changed on impstation so that it can build up slightly
       effects:
       - !type:HealthChange
         conditions:
@@ -424,6 +435,8 @@
         conditions:
           - !type:OrganType
             type: Animal
+          - !type:ReagentThreshold #imp
+            min: 0.12
 
 - type: reagent
   id: Amatoxin
@@ -433,6 +446,7 @@
   physicalDesc: reagent-physical-desc-nondescript
   contrabandSeverity: Major
   color: "#D6CE7B"
+  contraband: Major #imp
   metabolisms:
     Poison:
       metabolismRate: 0.2
@@ -454,9 +468,15 @@
     Poison:
       effects:
         - !type:HealthChange
+          conditions: #imp
+          - !type:HasTag
+            tag: BROS
+            invert: true
           damage:
             types:
               Poison: 2
+  tileReactions: #imp
+    - !type:SpillTileReaction
 
 - type: reagent
   id: Romerol
@@ -467,6 +487,7 @@
   contrabandSeverity: Syndicate
   flavor: bitter
   color: "#7e916e"
+  contraband: Tier3Contraband #imp
   worksOnTheDead: true
   metabolisms:
     Medicine:
@@ -495,6 +516,9 @@
           - !type:OrganType
             type: Vox
             shouldHave: false
+          - !type:OrganType # imp
+            type: Kodepiia
+            shouldHave: false
         type: Local
         visualType: MediumCaution
         messages: [ "generic-reagent-effect-sick" ]
@@ -508,6 +532,9 @@
           - !type:OrganType
             type: Vox
             shouldHave: false
+          - !type:OrganType # imp
+            type: Kodepiia
+            shouldHave: false
       - !type:HealthChange
         conditions:
         - !type:OrganType
@@ -516,9 +543,21 @@
         - !type:OrganType
           type: Vox
           shouldHave: false
+        - !type:OrganType # imp
+          type: Kodepiia
+          shouldHave: false
         damage:
           types:
             Poison: 1
+      - !type:HealthChange # imp
+        probability: 0.5
+        conditions:
+        - !type:OrganType
+          type: Kodepiia
+          shouldHave: true
+        damage:
+          groups:
+            Brute: -0.4
       - !type:AdjustReagent
         conditions:
         - !type:OrganType
@@ -531,6 +570,23 @@
           type: Vox
         reagent: Protein
         amount: 0.25
+      - !type:AdjustReagent # Frontier
+        conditions:
+        - !type:OrganType
+          type: Goblin
+        reagent: Protein
+        amount: 0.5
+      - !type:SatiateHunger # imp
+        conditions:
+        - !type:OrganType
+          type: Kodepiia
+          shouldHave: true
+      - !type:ModifyBloodLevel # imp
+        amount: 1
+        conditions:
+        - !type:OrganType
+          type: Kodepiia
+          shouldHave: true
 
 - type: reagent
   id: Allicin
@@ -553,6 +609,16 @@
         damage:
           types:
             Poison: 0.06
+      - !type:Emote #imp edit
+        emote: Crying
+        probability: 0.1
+  reactiveEffects: # imp edit
+    Acidic:
+      methods: [ Touch ]
+      effects:
+      - !type:Emote
+        emote: Crying
+        force: true
 
 - type: reagent
   id: Pax
@@ -647,6 +713,7 @@
   contrabandSeverity: Syndicate
   flavor: medicine
   color: "#435166"
+  contraband: Tier2Contraband # imp
   metabolisms:
     Poison:
       effects:
@@ -671,6 +738,7 @@
   contrabandSeverity: Syndicate
   flavor: shocking
   color: "#FDD023"
+  contraband: Tier3Contraband #imp
   metabolisms:
     Poison:
       effects:
@@ -758,3 +826,20 @@
         conditions:
         - !type:OrganType
           type: Vox
+      # imp edit start
+      - !type:SatiateHunger
+          conditions:
+            - !type:OrganType
+              type: Rat
+      - !type:HealthChange
+          conditions:
+          - !type:OrganType
+            type: Rat
+            shouldHave: false
+          - !type:OrganType
+            type: Vox
+            shouldHave: false
+          damage:
+            types:
+              Poison: 0.5
+      # imp edit end

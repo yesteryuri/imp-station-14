@@ -38,6 +38,10 @@
   - type: SolutionContainerVisuals
     maxFillLevels: 3
     fillBaseName: icon-
+  - type: SolutionContainerManager #IMP START #Increased to 30 to match metamorphics, so theyre not a downgrade.
+    solutions:
+      drink:
+        maxVol: 30 #IMP END
 
 ## Misc Cups
 
@@ -115,6 +119,7 @@
     - Trash
     - DrinkCup
     - WhitelistChameleon
+    - DroneUsable #imp
   - type: Appearance
   - type: TrashOnSolutionEmpty
     solution: drink

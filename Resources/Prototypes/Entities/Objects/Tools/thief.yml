@@ -38,15 +38,24 @@
       layers:
         - state: extraction_point
           map: [ "foldedLayer" ]
+    # imp edit start
+    - type: SubFloorHide
+    - type: Anchorable
+    - type: CollideOnAnchor
+    - type: Transform
+      anchored: false
+    - type: Visibility
+      layer: 1
+    # imp edit end
 
 - type: entity
   id: ToolboxThief
   name: undetermined thieving toolbox
   description: This is where your favorite thief's supplies lie. Try to remember which ones.
-  parent: [ BaseItem, BaseMinorContraband ]
+  parent: BaseItem
   components:
   - type: Sprite
-    sprite: Objects/Tools/Toolboxes/toolbox_thief.rsi
+    sprite: _Impstation/Objects/Tools/Toolboxes/toolbox_thief.rsi #imp edit
     state: icon
   - type: ThiefUndeterminedBackpack
     possibleSets:

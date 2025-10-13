@@ -2,7 +2,7 @@
   id: TattooHiveChest
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf]
+  speciesRestriction: [Human, Dwarf, SlimePerson]
   coloring:
     default:
       type:
@@ -16,7 +16,7 @@
   id: TattooNightlingChest
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf]
+  speciesRestriction: [Human, Dwarf, SlimePerson]
   coloring:
     default:
       type:

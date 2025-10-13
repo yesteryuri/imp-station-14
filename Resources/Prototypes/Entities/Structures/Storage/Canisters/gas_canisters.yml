@@ -10,10 +10,12 @@
     - type: Transform
       noRot: true
     - type: Sprite
-      sprite: Structures/Storage/canister.rsi
+      sprite: _Impstation/Structures/Storage/canister.rsi # imp
       noRot: true
       layers:
         - state: grey
+        - state: paper #imp
+          map: ["enum.PaperLabelVisuals.Layer"]
     - type: Appearance
     - type: GenericVisualizer
       visuals:
@@ -35,6 +37,16 @@
             1: { state: can-o1, shader: "unshaded" }
             2: { state: can-o2, shader: "unshaded" }
             3: { state: can-o3, shader: "unshaded" }
+        enum.PaperLabelVisuals.HasLabel: #imp
+          enum.PaperLabelVisuals.Layer:
+            True: { visible: true }
+            False: { visible: false }
+        enum.PaperLabelVisuals.LabelType:
+          enum.PaperLabelVisuals.Layer:
+            Paper: { state: paper }
+            Bounty: { state: bounty }
+            CaptainsPaper: { state: captains_paper }
+            Invoice: { state: invoice }
     - type: ActivatableUI
       key: enum.GasCanisterUiKey.Key
     - type: UIRequiresLock
@@ -89,6 +101,7 @@
     - type: ContainerContainer
       containers:
         tank_slot: !type:ContainerSlot {}
+        paper_label: !type:ContainerSlot #imp
     - type: NodeContainer
       nodes:
         port:
@@ -116,6 +129,16 @@
       - GasCanisters
     - type: Paintable
       group: Canisters
+    - type: PaperLabel #imp
+      labelSlot:
+        insertVerbText: comp-paper-label-insert
+        ejectVerbText: comp-paper-label-eject
+        whitelist:
+          components:
+          - Paper
+        blacklist:
+          tags:
+          - Book
 
 - type: entity
   parent: GasCanister
@@ -638,7 +661,7 @@
       damageModifierSet: Metallic
     - type: InteractionOutline
     - type: Sprite
-      sprite: Structures/Storage/canister.rsi
+      sprite: _Impstation/Structures/Storage/canister.rsi # imp
       state: grey-1
     - type: Physics
       bodyType: Dynamic

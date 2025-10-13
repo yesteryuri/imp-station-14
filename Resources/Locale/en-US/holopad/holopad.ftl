@@ -15,7 +15,6 @@ holopad-window-ai-request = Your presence is requested by:
 holopad-window-emergency-broadcast-in-progress = [color=#cf2f2f][bold]Emergency broadcast in progress[/bold][/color]
 holopad-window-controls-locked-out = Control of this device has been locked to:
 holopad-window-controls-unlock-countdown = It will automatically unlock in: {$countdown}
-
 # Buttons
 holopad-window-answer-call = Answer call
 holopad-window-end-call = End call
@@ -24,7 +23,6 @@ holopad-window-activate-projector = Activate projector
 holopad-window-emergency-broadcast = Emergency broadcast
 holopad-window-emergency-broadcast-with-countdown = Emergency broadcast ({$countdown})
 holopad-window-access-denied = Access denied
-
 # Contact list
 holopad-window-select-contact-from-list = Select a contact to initiate a holo-call
 holopad-window-fetching-contacts-list = No holopads are currently contactable
@@ -54,7 +52,6 @@ holopad-general-lounge = General - Lounge
 holopad-general-arcade = General - Arcade
 holopad-general-evac = General - Evac
 holopad-general-arrivals = General - Arrivals
-
 # Command
 holopad-command-bridge = Command - Bridge
 holopad-command-vault = Command - Vault
@@ -68,7 +65,6 @@ holopad-command-qm = Command - QM
 holopad-command-ce = Command - CE
 holopad-command-rd = Command - RD
 holopad-command-hos = Command - HoS
-
 # Science
 holopad-science-anomaly = Science - Anomaly
 holopad-science-artifact = Science - Artifact
@@ -78,7 +74,6 @@ holopad-science-robotics = Science - Robotics
 holopad-science-rnd = Science - R&D
 holopad-science-front = Science - Front
 holopad-science-breakroom = Science - Breakroom
-
 # Medical
 holopad-medical-medbay = Medical - Medbay
 holopad-medical-chemistry = Medical - Chemistry

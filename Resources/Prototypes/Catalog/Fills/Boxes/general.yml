@@ -53,6 +53,9 @@
     contents:
       - id: LightBulb
         amount: 12
+  - type: Tag
+    tags:
+      - DroneUsable
 
 - type: entity
   name: lightbulb box warm
@@ -77,6 +80,9 @@
     contents:
       - id: LightTube
         amount: 12
+  - type: Tag
+    tags:
+      - DroneUsable
 
 - type: entity
   name: mixed lights box
@@ -93,6 +99,9 @@
         amount: 6
       - id: LightBulb
         amount: 6
+  - type: Tag
+    tags:
+      - DroneUsable
 
 - type: entity
   name: holiday lighttube box
@@ -188,7 +197,7 @@
       - id: FoodCondimentPacketKetchup
   - type: Sprite
     layers:
-      - state: box
+      - state: box_olive # imp
       - state: writing
 
 - type: entity
@@ -217,7 +226,9 @@
     layers:
       - state: box
       - state: inflatable
-
+  - type: Tag
+    tags:
+      - DroneUsable
 
 - type: entity
   name: hatsune miku day bag
@@ -227,9 +238,9 @@
   components:
   - type: StorageFill
     contents:
-      - id: ClothingShoesBootsPerformer
-      - id: ClothingUniformJumpskirtPerformer
-      - id: ClothingHeadPerformerWig
+      # - id: ClothingShoesBootsPerformer # Imp edit - vocaloid ref removal lazy ver
+      # - id: ClothingUniformJumpskirtPerformer
+      # - id: ClothingHeadPerformerWig
       - id: FoodMealMemoryleek
         amount: 2
 
@@ -269,6 +280,9 @@
     layers:
       - state: box
       - state: trashbag
+  - type: Tag
+    tags:
+      - DroneUsable
 
 - type: entity
   name: passenger encryption key box
@@ -371,7 +385,7 @@
 
 - type: entity
   name: syndicate encryption key box
-  parent: [BoxEncryptionKeyPassenger, BaseSyndicateContraband]
+  parent: [BoxEncryptionKeyPassenger, Tier2Contraband]
   id: BoxEncryptionKeySyndie
   description: Two syndicate encryption keys for the price of one. Miniaturized for ease of use.
   components:
@@ -485,6 +499,7 @@
   description: A box filled with forks and spoons.
   components:
   - type: Sprite
+    sprite: Objects/Storage/boxes.rsi # imp
     layers:
       - state: box
       - state: utensils

@@ -114,7 +114,7 @@
   group: Narcotics
   desc: reagent-desc-stimulants
   physicalDesc: reagent-physical-desc-energizing
-  contrabandSeverity: Syndicate
+  contrabandSeverity: Tier3Contraband #imp, tiered contraband
   flavor: sharp
   color: "#9A040E"
   boilingPoint: 212.0
@@ -214,6 +214,21 @@
   plantMetabolism:
   - !type:PlantAdjustHealth
     amount: -5
+  metabolisms: # imp edit begin
+    Narcotic:
+      effects:
+      - !type:HealthChange
+        probability: 0.1
+        damage:
+          types:
+            Cellular: 0.2
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 1
+        damage:
+          types:
+            Cellular: 0.2 # imp edit end
 
 # TODO: Replace these nonstandardized effects with generic brain damage
 - type: reagent
@@ -252,6 +267,7 @@
   physicalDesc: reagent-physical-desc-syrupy
   flavor: bitter
   color: "#63806e"
+  contrabandSeverity: Minor #imp
   metabolisms:
     Narcotic:
       effects:
@@ -283,7 +299,7 @@
   group: Narcotics
   desc: reagent-desc-nocturine
   physicalDesc: reagent-physical-desc-powdery
-  contrabandSeverity: Syndicate
+  contrabandSeverity: Tier2Contraband # imp, tiered contraband
   color: "#128e80"
   boilingPoint: 444.0
   meltingPoint: 128.0
@@ -306,7 +322,7 @@
   group: Narcotics
   desc: reagent-desc-mute-toxin
   physicalDesc: reagent-physical-desc-syrupy
-  contrabandSeverity: Syndicate
+  contrabandSeverity: Tier2Contraband # imp, tiered
   color: "#000000"
   boilingPoint: 255.0
   meltingPoint: 36.0
@@ -469,3 +485,9 @@
         effectProto: StatusEffectSeeingRainbow
         type: Add
         time: 5
+      - !type:GenericStatusEffect # imp
+        key: RelentlessPositivity
+        component: RelentlessPositivity
+        conditions:
+        - !type:ReagentThreshold
+          max: 20

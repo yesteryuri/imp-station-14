@@ -23,6 +23,7 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
+using Content.Server.Announcements.Systems; // imp edit
 
 namespace Content.Server.Nuke;
 
@@ -45,6 +46,7 @@ public sealed class NukeSystem : EntitySystem
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly AppearanceSystem _appearance = default!;
     [Dependency] private readonly TurfSystem _turf = default!;
+    [Dependency] private readonly AnnouncerSystem _announcer = default!; // imp edit
 
     /// <summary>
     ///     Used to calculate when the nuke song should start playing for maximum kino with the nuke sfx
@@ -208,16 +210,25 @@ public sealed class NukeSystem : EntitySystem
 
             var worldPos = _transform.GetWorldPosition(xform);
 
+            //imp edit start - make the nuke check for some number of nearby space tiles instead of failing on the first once
+            var total = 1f; //start at 1 to avoid a division by 0. it'll never actually happen but this pleases rider
+            var space = 0f;
             foreach (var tile in _map.GetTilesIntersecting(xform.GridUid.Value, grid, new Circle(worldPos, component.RequiredFloorRadius), false))
             {
-                if (!_turf.IsSpace(tile))
-                    continue;
+                if (_turf.IsSpace(tile))
+                    space++;
 
+                total++;
+            }
+
+            if (space / total > component.MaxAllowedSpaceFrac)
+            {
                 var msg = Loc.GetString("nuke-component-cant-anchor-floor");
                 _popups.PopupEntity(msg, uid, args.Actor, PopupType.MediumCaution);
 
                 return;
             }
+            //imp edit end
 
             _transform.SetCoordinates(uid, xform, xform.Coordinates.SnapToGrid());
             _transform.AnchorEntity(uid, xform);
@@ -493,12 +504,19 @@ public sealed class NukeSystem : EntitySystem
         // We are collapsing the randomness here, otherwise we would get separate random song picks for checking duration and when actually playing the song afterwards
         _selectedNukeSong = _audio.ResolveSound(component.ArmMusic);
 
-        // warn a crew
-        var announcement = Loc.GetString("nuke-component-announcement-armed",
-            ("time", (int) component.RemainingTime),
-            ("location", FormattedMessage.RemoveMarkupOrThrow(_navMap.GetNearestBeaconString((uid, nukeXform)))));
-        var sender = Loc.GetString("nuke-component-announcement-sender");
-        _chatSystem.DispatchStationAnnouncement(stationUid ?? uid, announcement, sender, false, null, Color.Red);
+        // imp edit start
+        _announcer.SendAnnouncementMessage(
+            _announcer.GetAnnouncementId("NukeArm"),
+            "nuke-component-announcement-armed",
+            Loc.GetString("nuke-component-announcement-sender"),
+            Color.Red,
+            stationUid ?? uid,
+            null,
+            null, //imp
+            ("time", (int)component.RemainingTime),
+            ("location", FormattedMessage.RemoveMarkupOrThrow(_navMap.GetNearestBeaconString((uid, nukeXform))))
+        );
+        // imp edit end
 
         _sound.PlayGlobalOnStation(uid, _audio.ResolveSound(component.ArmSound));
         _nukeSongLength = (float) _audio.GetAudioLength(_selectedNukeSong).TotalSeconds;
@@ -535,10 +553,14 @@ public sealed class NukeSystem : EntitySystem
         if (stationUid != null)
             _alertLevel.SetLevel(stationUid.Value, component.AlertLevelOnDeactivate, true, true, true);
 
-        // warn a crew
-        var announcement = Loc.GetString("nuke-component-announcement-unarmed");
-        var sender = Loc.GetString("nuke-component-announcement-sender");
-        _chatSystem.DispatchStationAnnouncement(uid, announcement, sender, false);
+        // imp edit start
+       _announcer.SendAnnouncementMessage(
+           _announcer.GetAnnouncementId("NukeDisarm"),
+           "nuke-component-announcement-unarmed",
+           Loc.GetString("nuke-component-announcement-sender"),
+           station: stationUid ?? uid
+       );
+       // imp edit end
 
         component.PlayedNukeSong = false;
         _sound.PlayGlobalOnStation(uid, _audio.ResolveSound(component.DisarmSound));

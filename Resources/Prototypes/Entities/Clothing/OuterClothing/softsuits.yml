@@ -12,13 +12,13 @@
   - type: Tag
     tags:
     - SuitEVA
-    - MonkeyWearable
+    # - MonkeyWearable # imp
     - CorgiWearable
     - WhitelistChameleon
 
 #Syndicate EVA
 - type: entity
-  parent: [ ClothingOuterEVASuitBase, BaseSyndicateContraband ]
+  parent: [ ClothingOuterEVASuitBase, Tier1Contraband ] # imp contraband
   id: ClothingOuterEVASuitSyndicate
   name: syndicate EVA suit
   description: "Has a tag on the back that reads: 'Totally not property of an enemy corporation, honest!'"
@@ -30,7 +30,7 @@
   - type: Tag
     tags:
     - SuitEVA
-    - MonkeyWearable
+#    - MonkeyWearable #imp
     - WhitelistChameleon
   - type: StaticPrice
     price: 1000 # Helmet is 500
@@ -62,6 +62,7 @@
   - type: Tag
     tags:
     - CorgiWearable
+    # - MonkeyWearable # imp
     - ScurretWearable
     - MonkeyWearable
     - WhitelistChameleon
@@ -80,7 +81,7 @@
   - type: Tag
     tags:
     - SuitEVA
-    - MonkeyWearable
+#    - MonkeyWearable #imp
     - WhitelistChameleon
 
 #NTSRA Voidsuit / Ancient Voidsuit

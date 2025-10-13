@@ -5,27 +5,27 @@
   placement:
     mode: SnapgridCenter
   components:
-    - type: AtmosDevice
-    - type: Tag
-      tags:
-        - Unstackable
-    - type: SubFloorHide
-      blockInteractions: false
-      blockAmbience: false
-    - type: NodeContainer
-      nodes:
-        inlet:
-          !type:PipeNode
-          nodeGroupID: Pipe
-          pipeDirection: North
-        filter:
-          !type:PipeNode
-          nodeGroupID: Pipe
-          pipeDirection: West
-        outlet:
-          !type:PipeNode
-          nodeGroupID: Pipe
-          pipeDirection: South
+  - type: AtmosDevice
+  - type: Tag
+    tags:
+    - Unstackable
+  - type: SubFloorHide
+    blockInteractions: false
+    blockAmbience: false
+  - type: NodeContainer
+    nodes:
+      inlet:
+        !type:PipeNode
+        nodeGroupID: Pipe
+        pipeDirection: North
+      filter:
+        !type:PipeNode
+        nodeGroupID: Pipe
+        pipeDirection: West
+      outlet:
+        !type:PipeNode
+        nodeGroupID: Pipe
+        pipeDirection: South
 
 - type: entity
   parent: GasTrinaryBase
@@ -39,6 +39,7 @@
       visibleLayers:
       - enum.SubfloorLayers.FirstLayer
     - type: Sprite
+      drawdepth: FloorObjects #imp
       sprite: Structures/Piping/Atmospherics/gasfilter.rsi
       layers:
         - sprite: Structures/Piping/Atmospherics/pipe.rsi
@@ -78,6 +79,9 @@
     - type: GuideHelp
       guides:
       - MixingAndFiltering
+    - type: VentCrawTube
+      containerId: VentCrawTube
+    - type: VentCrawJunction
 
 - type: entity
   parent: GasFilter
@@ -91,6 +95,7 @@
     visibleLayers:
     - enum.SubfloorLayers.FirstLayer
   - type: Sprite
+    drawdepth: FloorObjects #imp
     sprite: Structures/Piping/Atmospherics/gasfilter.rsi
     layers:
     - sprite: Structures/Piping/Atmospherics/pipe.rsi
@@ -109,7 +114,9 @@
           False: { state: gasFilterF }
   - type: Construction
     node: filterflipped
-
+  - type: VentCrawTube
+    containerId: VentCrawTube
+  - type: VentCrawJunction
   - type: PipeColorVisuals
   - type: NodeContainer
     nodes:
@@ -138,6 +145,7 @@
       visibleLayers:
       - enum.SubfloorLayers.FirstLayer
     - type: Sprite
+      drawdepth: FloorObjects #imp
       sprite: Structures/Piping/Atmospherics/gasmixer.rsi
       layers:
         - sprite: Structures/Piping/Atmospherics/pipe.rsi
@@ -177,6 +185,9 @@
     - type: GuideHelp
       guides:
       - MixingAndFiltering
+    - type: VentCrawTube
+      containerId: VentCrawTube
+    - type: VentCrawJunction
 
 - type: entity
   parent: GasMixer
@@ -187,6 +198,7 @@
     mode: SnapgridCenter
   components:
   - type: Sprite
+    drawdepth: FloorObjects #imp
     sprite: Structures/Piping/Atmospherics/gasmixer.rsi
     layers:
     - sprite: Structures/Piping/Atmospherics/pipe.rsi
@@ -220,6 +232,9 @@
         pipeDirection: North
   - type: Construction
     node: mixerflipped
+  - type: VentCrawTube
+    containerId: VentCrawTube
+  - type: VentCrawJunction
 
 - type: entity
   parent: GasPipeBase
@@ -253,6 +268,7 @@
           nodeGroupID: Pipe
           pipeDirection: South
     - type: Sprite
+      drawdepth: FloorObjects #imp
       sprite: Structures/Piping/Atmospherics/pneumaticvalve.rsi
       layers:
         - sprite: Structures/Piping/Atmospherics/pipe.rsi
@@ -285,3 +301,6 @@
       - PneumaticValve
       - Pumps
       - Valves
+    - type: VentCrawTube
+      containerId: VentCrawTube
+    - type: VentCrawJunction

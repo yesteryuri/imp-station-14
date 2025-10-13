@@ -30,7 +30,7 @@
       state: base
   - type: InstantAction
     event: !type:RandomGlobalSpawnSpellEvent
-      makeSurvivorAntagonist: true
+      makeSurvivorAntagonist: false #imp edit, fuck this free agent shit ^^!
       spawns:
       - id: WeaponPistolViper
         orGroup: Guns
@@ -180,7 +180,7 @@
       state: magicmissile
   - type: InstantAction
     event: !type:RandomGlobalSpawnSpellEvent
-      makeSurvivorAntagonist: true
+      makeSurvivorAntagonist: false #imp
       spawns:
       - id: SpawnSpellbook
         orGroup: Magics

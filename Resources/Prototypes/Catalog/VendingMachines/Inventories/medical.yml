@@ -5,6 +5,7 @@
     Gauze: 3
     Brutepack: 3
     Ointment: 3
+    Tincture: 3 #imp
     Bloodpack: 3
     ChemistryBottleEpinephrine: 3
     Syringe: 3
@@ -49,6 +50,7 @@
     SyringeIpecac: 1
     ClothingEyesHudMedical: 2
     ClothingEyesEyepatchHudMedical: 2
+    ClothingEyesGlassesHudMedical: 2
   contrabandInventory:
     PillCanisterRandom: 3
     PillSpaceDrugs: 3

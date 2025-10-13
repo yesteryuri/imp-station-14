@@ -19,9 +19,10 @@
   - type: FlavorProfile
     flavors:
       - chicken # everything kinda tastes like chicken
-  - type: Tag
+  - type: Tag # goob edit
     tags:
-      - Meat
+    - Meat
+    - Organ
 
 - type: entity
   id: BaseAnimalOrgan
@@ -60,9 +61,15 @@
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 5
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Lungs
   - type: Item
     size: Small
     heldPrefix: lungs
+
 
 - type: entity
   id: OrganAnimalStomach
@@ -89,9 +96,15 @@
     groups:
     - id: Food
     - id: Drink
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Stomach
   - type: Item
     size: Small
     heldPrefix: stomach
+
 
 - type: entity
   id: OrganMouseStomach
@@ -121,6 +134,11 @@
     groups:
     - id: Alcohol
       rateModifier: 0.1
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Liver
   - type: Item
     size: Small
     heldPrefix: liver
@@ -141,6 +159,11 @@
     - id: Medicine
     - id: Poison
     - id: Narcotic
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Heart
   - type: Item
     size: Small
     heldPrefix: heart
@@ -160,6 +183,11 @@
     maxReagents: 5
     metabolizerTypes: [ Animal ]
     removeEmpty: true
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Kidneys
   - type: Item
     size: Small
     heldPrefix: kidneys

@@ -2,6 +2,8 @@ using System.Numerics;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Camera;
 using Content.Shared.CCVar;
+using Content.Shared.Damage.Components; // imp
+using Content.Shared.Damage.Systems; // imp
 using Content.Shared.Construction.Components;
 using Content.Shared.Database;
 using Content.Shared.Friction;
@@ -35,6 +37,8 @@ public sealed class ThrowingSystem : EntitySystem
     [Dependency] private readonly SharedCameraRecoilSystem _recoil = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private readonly IConfigurationManager _configManager = default!;
+
+    [Dependency] private readonly SharedStaminaSystem _stamina = default!; // imp
 
     public override void Initialize()
     {
@@ -242,5 +246,8 @@ public sealed class ThrowingSystem : EntitySystem
 
         if (pushEv.Push)
             _physics.ApplyLinearImpulse(user.Value, -impulseVector / physics.Mass * pushbackRatio * MathF.Min(massLimit, physics.Mass), body: userPhysics);
+
+        if (TryComp<DamageOtherOnHitComponent>(uid, out var damage) && TryComp<StaminaComponent>(user, out var stamina)) // imp
+            _stamina.TakeStaminaDamage(user.Value, damage.StaminaCost, stamina, visual: false);
     }
 }

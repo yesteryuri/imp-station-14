@@ -27,6 +27,13 @@
       - Slicing
     useSound:
       path: /Audio/Items/Culinary/chop.ogg
+  # imp edits #
+  - type: DamageOtherOnHit
+    staminaCost: 5
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
+  - type: EmbedPassiveDamage
+  # end imp edits #
 
 - type: entity
   parent: BaseKnife
@@ -49,6 +56,8 @@
     guides:
     - Chef
     - FoodRecipes
+  - type: ThrowingAngle # imp
+    angle: 225
 
 - type: entity
   name: butcher's cleaver
@@ -76,6 +85,12 @@
     guides:
     - Chef
     - FoodRecipes
+  # imp edits #
+  - type: DamageOtherOnHit
+    staminaCost: 7.5
+  - type: ThrowingAngle
+    angle: 315
+  # end imp edits #
 
 - type: entity
   name: combat knife
@@ -96,9 +111,6 @@
     damage:
       types:
         Slash: 12
-  - type: EmbeddableProjectile
-    sound: /Audio/Weapons/star_hit.ogg
-    offset: -0.15,0.0
   - type: LandAtCursor
   - type: DamageOtherOnHit
     damage:
@@ -143,6 +155,8 @@
     storedSprite:
       state: storage
       sprite: Objects/Weapons/Melee/survival_knife.rsi
+  - type: ThrowingAngle # imp
+    angle: 225
 
 - type: entity
   name: kukri knife
@@ -161,6 +175,8 @@
   - type: Item
     sprite: Objects/Weapons/Melee/kukri_knife.rsi
     storedSprite: null
+  - type: ThrowingAngle # imp
+    angle: 225
 
 - type: entity
   parent: [ClothingHeadHatGreyFlatcap, BaseMinorContraband]
@@ -178,15 +194,17 @@
     damage:
       types:
         Slash: 5
-  - type: DamageOtherOnHit
-    damage:
-      types:
-        Slash: 10
   - type: LandAtCursor
   - type: Sprite
     sprite: Clothing/Head/Hats/greyflatcap.rsi
   - type: Clothing
     sprite: Clothing/Head/Hats/greyflatcap.rsi
+  # imp edits #
+  - type: DamageOtherOnHit
+    staminaCost: 5
+  - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
+  # end imp edits #
 
 - type: entity
   parent: BladedFlatcapGrey
@@ -205,7 +223,7 @@
   name: shiv
   parent: [BaseKnife, BaseMinorContraband]
   id: Shiv
-  description: A crude weapon fashioned from a piece of cloth and a glass shard.
+  description: Got me a loicense for stabbin' right 'ere. # imp
   components:
   - type: Tag
     tags:
@@ -227,12 +245,14 @@
     sprite: Objects/Weapons/Melee/shiv.rsi
   - type: DisarmMalus
     malus: 0.225
+  - type: ThrowingAngle # imp
+    angle: 200
 
 - type: entity
   name: reinforced shiv
   parent: Shiv
   id: ReinforcedShiv
-  description: A crude weapon fashioned from a piece of cloth and a reinforced glass shard.
+  # description: A crude weapon fashioned from a piece of cloth and a reinforced glass shard. # imp comment-out
   components:
   - type: Construction
     graph: ReinforcedShiv
@@ -251,7 +271,7 @@
   name: plasma shiv
   parent: Shiv
   id: PlasmaShiv
-  description: A crude weapon fashioned from a piece of cloth and a plasma glass shard.
+  description: A broken piece of plasma glass, wrapped to be brandished as a crude weapon. The pinkness of the glass makes it do extra damage. # imp
   components:
   - type: Construction
     graph: PlasmaShiv
@@ -270,7 +290,7 @@
   name: uranium shiv
   parent: Shiv
   id: UraniumShiv
-  description: A crude weapon fashioned from a piece of cloth and a uranium glass shard. Violates the geneva convention!
+  description: A broken piece of uranium glass, wrapped to be brandished as a crude weapon. Violates the Geneva convention! # imp rephrase
   components:
   - type: Construction
     graph: UraniumShiv
@@ -288,7 +308,7 @@
 
 - type: entity
   name: throwing knife
-  parent: [BaseKnife, BaseSyndicateContraband]
+  parent: [BaseKnife, Tier3Contraband]
   id: ThrowingKnife
   description: This blood-red knife is very aerodynamic and easy to throw, but good luck trying to fight someone hand-to-hand.
   components:
@@ -305,9 +325,6 @@
     damage:
       types:
         Slash: 5
-  - type: EmbeddableProjectile
-    sound: /Audio/Weapons/star_hit.ogg
-    offset: -0.15,0.0
   - type: LandAtCursor
   - type: DamageOtherOnHit
     ignoreResistances: true

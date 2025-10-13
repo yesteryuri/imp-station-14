@@ -83,6 +83,8 @@
       - NotekeeperCartridge
       - NanoTaskCartridge
       - NewsReaderCartridge
+      - NanoChatCartridge # DV
+      - SOSCartridge # Imp
     cartridgeSlot:
       priority: -1
       name: device-pda-slot-component-slot-name-cartridge
@@ -122,6 +124,18 @@
     proto: robot
   - type: Speech
     speechVerb: Robotic
+  - type: DamageOtherOnHit # imp
+    damage:
+      types:
+        Blunt: 4
+  - type: ComponentToggler #imp :)
+    components:
+    - type: LightningTarget
+      priority: 1
+  - type: ItemToggle # imp
+    onUse: false
+    onActivate: false
+    predictable: false
 
 - type: entity
   parent: BasePDA
@@ -154,7 +168,8 @@
     - NanoTaskCartridge
     - NewsReaderCartridge
     - WantedListCartridge
-
+    - NanoChatCartridge # DV
+    - SOSCartridge # Imp
 - type: entity
   parent: BasePDA
   id: BaseMedicalPDA
@@ -168,6 +183,8 @@
       - NanoTaskCartridge
       - NewsReaderCartridge
       - MedTekCartridge
+      - NanoChatCartridge # DV
+      - SOSCartridge # Imp
 
 - type: entity
   parent: BasePDA
@@ -480,6 +497,9 @@
     - NanoTaskCartridge
     - NewsReaderCartridge
     - AstroNavCartridge
+    - NanoChatCartridge # DV
+    - MailMetricsCartridge  # DV - turning this off until i can fix it with the rest of the mail
+    - SOSCartridge # Imp
 
 - type: entity
   parent: BasePDA
@@ -498,6 +518,14 @@
     borderColor: "#e39751"
   - type: Icon
     state: pda-cargo
+  - type: CartridgeLoader # DeltaV
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NanoTaskCartridge
+      - NewsReaderCartridge
+      - NanoChatCartridge # DeltaV
+      - SOSCartridge # Imp
 
 - type: entity
   parent: BasePDA
@@ -525,6 +553,8 @@
       - NanoTaskCartridge
       - NewsReaderCartridge
       - AstroNavCartridge
+      - NanoChatCartridge # DV
+      - SOSCartridge # Imp
 
 - type: entity
   parent: BasePDA
@@ -875,6 +905,8 @@
     - NewsReaderCartridge
     - WantedListCartridge
     - LogProbeCartridge
+    - NanoChatCartridge # DV
+    - SOSCartridge # Imp
 
 - type: entity
   parent: BaseSecurityPDA
@@ -947,6 +979,8 @@
       - WantedListCartridge
       - LogProbeCartridge
       - AstroNavCartridge
+      - NanoChatCartridge # DV
+      - SOSCartridge # Imp
 
 - type: entity
   parent: CentcomPDA
@@ -973,6 +1007,9 @@
       - WantedListCartridge
       - MedTekCartridge
       - AstroNavCartridge
+      - NanoChatCartridge # DV
+      - SOSCartridge # Imp
+
   - type: Tag #  Ignore Chameleon tags
     tags:
     - DoorBumpOpener
@@ -981,12 +1018,27 @@
   parent: CentcomPDA
   id: DeathsquadPDA
   suffix: Death Squad
+  name: death squad PDA #imp edit
+  description: The red helps to mask the blood. #imp edit
   components:
   - type: Pda
     id: CentcomIDCardDeathsquad
   - type: Tag #  Ignore Chameleon tags
     tags:
     - DoorBumpOpener
+  # imp edit start
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-deathsquadron
+  - type: Icon
+    state: pda-deathsquadron
+  - type: PdaBorderColor
+    borderColor: "#640202"
+    accentHColor: "#06064B"
+    accentVColor: "#06064B"
+  # imp edit end
 
 - type: entity
   parent: BasePDA
@@ -1091,6 +1143,7 @@
     preinstalled:
       - NotekeeperCartridge
       - NanoTaskCartridge
+      - NanoChatCartridge # DV
 
 - type: entity
   parent: [ SyndiPDA, BaseSyndicateContraband ]
@@ -1129,6 +1182,7 @@
       - NotekeeperCartridge
       - NanoTaskCartridge
       - MedTekCartridge
+      - NanoChatCartridge # DV
 
 - type: entity
   parent: [ SyndiOperativePDA, BaseSyndicateContraband ]
@@ -1177,6 +1231,8 @@
       - WantedListCartridge
       - LogProbeCartridge
       - AstroNavCartridge
+      - NanoChatCartridge # DV
+      - SOSCartridge # Imp
 
 - type: entity
   parent: ERTLeaderPDA
@@ -1238,8 +1294,17 @@
     id: CBURNIDcard
   - type: PdaBorderColor
     borderColor: "#A32D26"
-    accentHColor: "#447987"
-    accentVColor: "#447987"
+    accentHColor: "#D0B01A" #imp
+    accentVColor: "#D0B01A" #imp
+  # imp edit start
+  - type: Appearance #imp
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-cburn
+  - type: Icon
+    state: pda-cburn
+  # imp edit end
 
 - type: entity
   parent: BasePDA
@@ -1346,6 +1411,8 @@
     - NewsReaderCartridge
     - WantedListCartridge
     - LogProbeCartridge
+    - NanoChatCartridge # DV
+    - SOSCartridge # Imp
 
 - type: entity
   parent: BaseMedicalPDA
@@ -1374,6 +1441,8 @@
     - NewsReaderCartridge
     - WantedListCartridge
     - MedTekCartridge
+    - NanoChatCartridge # DV
+    - SOSCartridge # Imp
 
 - type: entity
   parent: ClownPDA
@@ -1573,7 +1642,7 @@
 - type: entity
   parent: ClearPDA
   id: ScurretPDA
-  description: A temporary PDA granted to scurret temps. Doesn't do much. Wawa!
+  description: A temporary PDA granted to sirval temps. Doesn't do much. #imp edit
   components:
   - type: Pda
     id: VisitorIDCard

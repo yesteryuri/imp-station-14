@@ -1281,9 +1281,9 @@
   description: The traditional greytide defense.
   components:
   - type: Sprite
-    sprite: Structures/Walls/wood.rsi
+    sprite: _Impstation/Structures/Walls/wood.rsi # imp
   - type: Icon
-    sprite: Structures/Walls/wood.rsi
+    sprite: _Impstation/Structures/Walls/wood.rsi # imp
   - type: Construction
     graph: Barricade
     node: woodWall
@@ -1390,7 +1390,10 @@
   parent: BaseWall
   id: WallMining
   name: mining wall
+  description: Rugged and heat-resistant. #imp
   components:
+  - type: StaticPrice # imp
+    price: 400
   - type: Sprite
     sprite: Structures/Walls/mining.rsi
   - type: Icon
@@ -1406,6 +1409,9 @@
   - type: IconSmooth
     key: walls
     base: mining
+  - type: Construction #imp
+    graph: Girder
+    node: miningWall
   - type: RandomIconSmooth
     randomStates:
     - mining
@@ -1414,9 +1420,13 @@
 
 - type: entity
   parent: WallDiagonalBase
+  description: Rugged and heat-resistant. #imp
   id: WallMiningDiagonal
   name: mining wall
   components:
+  - type: Construction #imp
+    graph: Girder
+    node: diagonalMiningWall
   - type: Sprite
     drawdepth: Walls
     sprite: Structures/Walls/mining_diagonal.rsi
@@ -1452,6 +1462,9 @@
           collection: MetalSlam
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  - type: StaticPrice # imp arbitrage
+    price: 295
+
 
 
 # Vault Walls

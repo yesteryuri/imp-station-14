@@ -38,8 +38,8 @@
     sprite: Clothing/Head/Hats/beret_french.rsi
   - type: Clothing
     sprite: Clothing/Head/Hats/beret_french.rsi
-  - type: AddAccentClothing
-    accent: FrenchAccent
+#  - type: AddAccentClothing # Imp
+#    accent: FrenchAccent
   - type: Tag
     tags:
     - PetWearable
@@ -180,9 +180,9 @@
   description: A corporate-blue beret with a warden's rank emblem. For officers that are more inclined towards style than safety.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hats/beret_warden.rsi
+    sprite: _Impstation/Clothing/Head/Hats/beret_warden.rsi #imp
   - type: Clothing
-    sprite: Clothing/Head/Hats/beret_warden.rsi
+    sprite: _Impstation/Clothing/Head/Hats/beret_warden.rsi #imp
   - type: Tag
     tags:
     - PetWearable
@@ -210,9 +210,9 @@
   description: A white beret for brigmedics.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hats/beret_brigmedic.rsi
+    sprite: _Impstation/Clothing/Head/Hats/beret_brigmedic.rsi #imp
   - type: Clothing
-    sprite: Clothing/Head/Hats/beret_brigmedic.rsi
+    sprite: _Impstation/Clothing/Head/Hats/beret_brigmedic.rsi #imp
   - type: Tag
     tags:
     - PetWearable
@@ -404,9 +404,9 @@
   description: A stylish cap worn by the Head of Personnel. Shows paperwork who's in charge.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hats/hopcap.rsi
+    sprite: _DV/Clothing/Head/Hats/hopcap.rsi # Delta-v edit
   - type: Clothing
-    sprite: Clothing/Head/Hats/hopcap.rsi
+    sprite: _DV/Clothing/Head/Hats/hopcap.rsi # Delta-v edit
   - type: Tag
     tags:
     - PetWearable
@@ -459,9 +459,9 @@
   description: A witch hat.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hats/witchhat.rsi
+    sprite: _Impstation/Clothing/Head/Hats/witchhat.rsi #imp edit
   - type: Clothing
-    sprite: Clothing/Head/Hats/witchhat.rsi
+    sprite: _Impstation/Clothing/Head/Hats/witchhat.rsi #imp edit
   - type: Tag
     tags:
     - PetWearable
@@ -525,9 +525,15 @@
   description: A strange-looking red hat that most certainly belongs to a powerful magic-user.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hats/redwizard.rsi
+    sprite: _Impstation/Clothing/Head/Hats/redwizard.rsi # imp edit
   - type: Clothing
-    sprite: Clothing/Head/Hats/redwizard.rsi
+    # imp edit start
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        offset: "0, 0.0625"
+    sprite: _Impstation/Clothing/Head/Hats/redwizard.rsi
+    # imp edit end
   - type: Tag
     tags:
     - PetWearable
@@ -578,8 +584,8 @@
     sprite: Clothing/Head/Hats/sombrero.rsi
   - type: Clothing
     sprite: Clothing/Head/Hats/sombrero.rsi
-  - type: AddAccentClothing
-    accent: SpanishAccent
+#  - type: AddAccentClothing # Imp
+#    accent: SpanishAccent
   - type: Tag
     tags:
     - PetWearable
@@ -667,8 +673,8 @@
   - type: Clothing
     sprite: Clothing/Head/Hats/ushanka.rsi
   - type: Appearance
-  - type: AddAccentClothing
-    accent: RussianAccent
+#  - type: AddAccentClothing # Imp
+#    accent: RussianAccent
   - type: Foldable
     canFoldInsideContainer: true
   - type: FoldableClothing
@@ -728,9 +734,15 @@
   description: A strange-looking violet hat that most certainly belongs to a powerful magic-user.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hats/violetwizard.rsi
+    sprite: _Impstation/Clothing/Head/Hats/violetwizard.rsi # imp edit
   - type: Clothing
-    sprite: Clothing/Head/Hats/violetwizard.rsi
+    # imp edit start
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        offset: "0, 0.0625"
+    sprite: _Impstation/Clothing/Head/Hats/violetwizard.rsi
+    # imp edit end
   - type: Tag
     tags:
     - PetWearable
@@ -745,9 +757,9 @@
   description: This hat emphasizes that you are THE LAW.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hats/warden.rsi
+    sprite: _Impstation/Clothing/Head/Hats/warden.rsi #imp
   - type: Clothing
-    sprite: Clothing/Head/Hats/warden.rsi
+    sprite: _Impstation/Clothing/Head/Hats/warden.rsi #imp
   - type: StealTarget
     stealGroup: ClothingHeadHatWarden
   - type: Tag
@@ -807,9 +819,15 @@
   description: A strange-looking blue hat that most certainly belongs to a powerful magic-user.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hats/wizardhat.rsi
+    sprite: _Impstation/Clothing/Head/Hats/wizardhat.rsi # imp edit
   - type: Clothing
-    sprite: Clothing/Head/Hats/wizardhat.rsi
+    # imp edit start
+    clothingVisuals:
+        head:
+        - state: equipped-HELMET
+          offset: "0, 0.125"
+    sprite: _Impstation/Clothing/Head/Hats/wizardhat.rsi
+    # imp edit end
   - type: Tag
     tags:
     - PetWearable
@@ -842,7 +860,7 @@
     sprite: Clothing/Head/Hats/truckershat.rsi
 
 - type: entity
-  parent: [ ClothingHeadBase, BaseSyndicateContraband ]
+  parent: [ ClothingHeadBase, Tier1Contraband ] #imp contraband
   id: ClothingHeadPyjamaSyndicateBlack
   name: syndicate black pyjama hat
   description: For keeping that traitor head of yours warm.
@@ -858,7 +876,7 @@
       HeadSide : HEAD
 
 - type: entity
-  parent: [ ClothingHeadBase, BaseSyndicateContraband ]
+  parent: [ ClothingHeadBase, Tier1Contraband ] #imp contraband
   id: ClothingHeadPyjamaSyndicatePink
   name: syndicate pink pyjama hat
   description: For keeping that traitor head of yours warm.
@@ -874,7 +892,7 @@
       HeadSide : HEAD
 
 - type: entity
-  parent: [ ClothingHeadBase, BaseSyndicateContraband ]
+  parent: [ ClothingHeadBase, Tier1Contraband ] #imp contraband
   id: ClothingHeadPyjamaSyndicateRed
   name: syndicate red pyjama hat
   description: For keeping that traitor head of yours warm.
@@ -952,9 +970,9 @@
   description: Somehow I feel I'm not supposed to leave this place.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hats/nursehat.rsi
+    sprite: _Impstation/Clothing/Head/Hats/nursehat.rsi #imp edit for resprites
   - type: Clothing
-    sprite: Clothing/Head/Hats/nursehat.rsi
+    sprite: _Impstation/Clothing/Head/Hats/nursehat.rsi #imp edit for resprites
   - type: Tag
     tags:
     - ClothMade
@@ -1075,7 +1093,7 @@
         Caustic: 0.95
 
 - type: entity
-  parent: [ClothingHeadBase, BaseSyndicateContraband]
+  parent: [ClothingHeadBase, Tier1Contraband] #imp contraband
   id: ClothingHeadHatSyndie
   name: syndicate hat
   description: A souvenir hat from "Syndieland", their production has already been closed.
@@ -1233,6 +1251,7 @@
     - CorgiWearable
     - WhitelistChameleon
     - HamsterWearable
+    - DroneUsable #imp edit
 
 - type: entity
   parent: ClothingHeadHatPartyRed
@@ -1337,9 +1356,9 @@
       sprite: Clothing/Head/Hats/cowboyhatbrown.rsi
     - type: Clothing
       sprite: Clothing/Head/Hats/cowboyhatbrown.rsi
-    - type: AddAccentClothing
-      accent: ReplacementAccent
-      replacement: cowboy
+#    - type: AddAccentClothing
+#      accent: ReplacementAccent
+#      replacement: cowboy
     - type: Tag
       tags:
       - PetWearable

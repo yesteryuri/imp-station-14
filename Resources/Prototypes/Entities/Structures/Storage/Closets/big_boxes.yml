@@ -23,7 +23,7 @@
           hard: true
     - type: Pullable
     - type: CardboardBox
-      effectSound: /Audio/Effects/chime.ogg
+      quiet: true # Imp change, removes the chime sound
     - type: InputMover
     - type: EntityStorage
       isCollidableWhenOpen: false
@@ -69,6 +69,7 @@
       quiet: true
     - type: Stealth
       hadOutline: true
+      useAltShader: true
     - type: StealthOnMove
       passiveVisibilityRate: -0.37
       movementVisibilityRate: 0.20
@@ -86,7 +87,6 @@
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-
 
 #For admin spawning only
 - type: entity

@@ -3,7 +3,7 @@
   id: Scream
   name: chat-emote-name-scream
   category: Vocal
-  icon: Interface/Emotes/scream.png
+  icon: _Impstation/Interface/Emotes/scream.png #imp
   whitelist:
     components:
     - Vocal
@@ -30,13 +30,13 @@
   id: Laugh
   name: chat-emote-name-laugh
   category: Vocal
-  icon: Interface/Emotes/laugh.png
+  icon: _Impstation/Interface/Emotes/laugh.png #imp
   whitelist:
     components:
     - Vocal
-  blacklist:
-    tags:
-    - SiliconEmotes
+  #blacklist: # imp - borgs can laugh
+  #  tags:
+  #  - SiliconEmotes
   chatMessages: ["chat-emote-msg-laugh"]
   chatTriggers:
     - laugh
@@ -54,12 +54,13 @@
     - chortle
     - chortles
     - chortling
+    - chortled # Frontier
 
 - type: emote
   id: Honk
   name: chat-emote-name-honk
   category: Vocal
-  icon: Interface/Emotes/honk.png
+  icon: _Impstation/Interface/Emotes/honk.png #imp
   whitelist:
     requireAll: true
     components:
@@ -77,7 +78,7 @@
   id: Sigh
   name: chat-emote-name-sigh
   category: Vocal
-  icon: Interface/Emotes/sigh.png
+  icon: _Impstation/Interface/Emotes/sigh.png #imp
   whitelist:
     components:
     - Vocal
@@ -89,12 +90,13 @@
     - sigh
     - sighs
     - sighed
+    - sighing # Frontier
 
 - type: emote
   id: Whistle
   name: chat-emote-name-whistle
   category: Vocal
-  icon: Interface/Emotes/whistle.png
+  icon: _Impstation/Interface/Emotes/whistle.png #imp
   whitelist:
     components:
     - Vocal
@@ -106,12 +108,13 @@
     - whistle
     - whistles
     - whistleblowing
+    - whistled # Frontier
 
 - type: emote
   id: Crying
   name: chat-emote-name-crying
   category: Vocal
-  icon: Interface/Emotes/cry.png
+  icon: _Impstation/Interface/Emotes/cry.png #imp
   whitelist:
     components:
     - Vocal
@@ -126,13 +129,15 @@
     - sob
     - sobs
     - sobbing
+    - sobbed # Frontier
+    - cried # Frontier
 
 - type: emote
   id: Squish
   name: chat-emote-name-squish
   category: Vocal
   available: false
-  icon: Interface/Emotes/squish.png
+  icon: _Impstation/Interface/Emotes/squish.png #imp
   whitelist:
     components:
     - Vocal
@@ -144,13 +149,14 @@
     - squish
     - squishing
     - squishes
+    - squished # Frontier
 
 - type: emote
   id: Chitter
   name: chat-emote-name-chitter
   category: Vocal
   available: false
-  icon: Interface/Emotes/chitter.png
+  icon: _Impstation/Interface/Emotes/chitter.png #imp
   whitelist:
     components:
     - Vocal
@@ -168,7 +174,7 @@
   name: chat-emote-name-squeak
   category: Vocal
   available: false
-  icon: Interface/Emotes/squeak.png
+  icon: _Impstation/Interface/Emotes/squeak.png #imp
   whitelist:
     components:
       - Vocal
@@ -180,13 +186,14 @@
    - squeak
    - squeaks
    - squeaked
+   - squeaking # Frontier
 
 - type: emote
   id: Click
   name: chat-emote-name-click
   category: Vocal
   available: false
-  icon: Interface/Emotes/click.png
+  icon: _Impstation/Interface/Emotes/click.png #imp
   whitelist:
     components:
     - Vocal
@@ -197,6 +204,8 @@
   chatTriggers:
    - click
    - clicks
+   - clicked # Frontier
+   - clicking # Frontier
 
 # Vulpkanin
 - type: emote
@@ -294,7 +303,7 @@
   id: Clap
   name: chat-emote-name-clap
   category: Hands
-  icon: Interface/Emotes/clap.png
+  icon: _Impstation/Interface/Emotes/clap.png #imp
   whitelist:
     components:
     - Hands
@@ -330,7 +339,7 @@
   id: Snap
   name: chat-emote-name-snap
   category: Hands
-  icon: Interface/Emotes/snap.png
+  icon: _Impstation/Interface/Emotes/snap.png #imp
   whitelist:
     components:
     - Hands
@@ -357,7 +366,7 @@
   name: chat-emote-name-thump
   category: Hands
   available: false
-  icon: Interface/Emotes/tailslap.png
+  icon: _Impstation/Interface/Emotes/tailslap.png #imp
   whitelist:
     components:
     - Hands
@@ -381,7 +390,7 @@
   id: Salute
   name: chat-emote-name-salute
   category: Hands
-  icon: Interface/Emotes/salute.png
+  icon: _Impstation/Interface/Emotes/salute.png #imp
   whitelist:
     components:
     - Hands
@@ -392,6 +401,8 @@
   chatTriggers:
     - salute
     - salutes
+    - saluted # Frontier
+    - saluting # Frontier
 
 - type: emote
   id: Gasp
@@ -404,11 +415,12 @@
    - gasp
    - gasps
    - gasped
+   - gasping # Frontier
 
 - type: emote
   id: DefaultDeathgasp
   name: chat-emote-name-deathgasp
-  icon: Interface/Emotes/deathgasp.png
+  icon: _Impstation/Interface/Emotes/deathgasp.png #imp
   whitelist:
     components:
     - MobState
@@ -419,7 +431,7 @@
 - type: emote
   id: MonkeyDeathgasp
   name: chat-emote-name-deathgasp
-  icon: Interface/Emotes/deathgasp.png
+  icon: _Impstation/Interface/Emotes/deathgasp.png #imp
   chatMessages: ["chat-emote-msg-deathgasp-monkey"]
 
 - type: emote
@@ -432,7 +444,7 @@
   id: Buzz
   name: chat-emote-name-buzz
   category: Vocal
-  icon: Interface/Emotes/buzz.png
+  icon: _Impstation/Interface/Emotes/buzz.png #imp
   whitelist:
     requireAll: true
     components:
@@ -465,7 +477,7 @@
   name: chat-emote-name-chirp
   category: Vocal
   available: false
-  icon: Interface/Emotes/chirp.png
+  icon: _Impstation/Interface/Emotes/chirp.png #imp
   whitelist:
     components:
     - Nymph
@@ -485,7 +497,7 @@
   id: Beep
   name: chat-emote-name-beep
   category: Vocal
-  icon: Interface/Emotes/beep.png
+  icon: _Impstation/Interface/Emotes/beep.png #imp
   whitelist:
     requireAll: true
     components:
@@ -503,7 +515,7 @@
   id: Chime
   name: chat-emote-name-chime
   category: Vocal
-  icon: Interface/Emotes/chime.png
+  icon: _Impstation/Interface/Emotes/chime.png #imp
   whitelist:
     requireAll: true
     components:
@@ -521,7 +533,7 @@
   id: Buzz-Two
   name: chat-emote-name-buzztwo
   category: Vocal
-  icon: Interface/Emotes/buzztwo.png
+  icon: _Impstation/Interface/Emotes/buzztwo.png #imp
   whitelist:
     requireAll: true
     components:
@@ -540,12 +552,13 @@
     - buzzes twice
     - buzzing twice
     - buzzed twice
+    - buzzedtwice # Frontier
 
 - type: emote
   id: Ping
   name: chat-emote-name-ping
   category: Vocal
-  icon: Interface/Emotes/ping.png
+  icon: _Impstation/Interface/Emotes/ping.png #imp
   whitelist:
     requireAll: true
     components:

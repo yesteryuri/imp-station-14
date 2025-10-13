@@ -4,6 +4,7 @@ using Content.Server.Actions;
 using Content.Server.Body.Systems;
 using Content.Server.Chat;
 using Content.Server.Chat.Systems;
+using Content.Server._Impstation.Drone.Components;
 using Content.Server.Emoting.Systems;
 using Content.Server.Speech.EntitySystems;
 using Content.Shared.Anomaly.Components;
@@ -90,7 +91,7 @@ namespace Content.Server.Zombies
         private void OnPendingMapInit(EntityUid uid, IncurableZombieComponent component, MapInitEvent args)
         {
             _actions.AddAction(uid, ref component.Action, component.ZombifySelfActionPrototype);
-            _faction.AddFaction(uid, Faction);
+            //_faction.AddFaction(uid, Faction); #IMP We have our own II not attacked by zombies, and this makes II attacked by station pets.
 
             if (HasComp<ZombieComponent>(uid) || HasComp<ZombieImmuneComponent>(uid))
                 return;
@@ -248,7 +249,7 @@ namespace Content.Server.Zombies
                 if (args.User == entity)
                     continue;
 
-                if (!TryComp<MobStateComponent>(entity, out var mobState))
+                if (!TryComp<MobStateComponent>(entity, out var mobState) || HasComp<DroneComponent>(entity))
                     continue;
 
                 if (HasComp<ZombieComponent>(entity))

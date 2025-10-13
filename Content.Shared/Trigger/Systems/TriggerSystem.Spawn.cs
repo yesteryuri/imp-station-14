@@ -38,7 +38,15 @@ public sealed partial class TriggerSystem
             return;
 
         var xform = Transform(target.Value);
-        SpawnTriggerHelper((target.Value, xform), ent.Comp.Proto, ent.Comp.UseMapCoords, ent.Comp.Predicted);
+        var savedAmount = ent.Comp.Amount; //imp
+        while (savedAmount > 0) //imp
+        {
+            SpawnTriggerHelper((target.Value, xform), ent.Comp.Proto, ent.Comp.UseMapCoords, ent.Comp.Predicted);
+            savedAmount--;
+        }
+        // #IMP: SingleUse
+        if (!ent.Comp.SingleUse)
+            ent.Comp.Amount = savedAmount;
     }
 
     private void HandleSpawnTableOnTrigger(Entity<SpawnEntityTableOnTriggerComponent> ent, ref TriggerEvent args)

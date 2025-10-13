@@ -59,6 +59,14 @@
 
 - type: entity
   parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelDrone
+  components:
+  - type: Tag
+    tags:
+    - InnateDontDelete
+
+- type: entity
+  parent: ClothingBackpackSatchel
   id: ClothingBackpackSatchelMime
   name: mime satchel
   description: A satchel designed for the silent and expressive art of miming.
@@ -130,7 +138,7 @@
   description: A sterile satchel for medical related needs.
   components:
   - type: Sprite
-    sprite: Clothing/Back/Satchels/brigmedic.rsi
+    sprite: _Impstation/Clothing/Back/Satchels/brigmedic.rsi #imp
 
 - type: entity
   parent: [ClothingBackpackSatchel, BaseCommandContraband]
@@ -139,7 +147,7 @@
   description: An exclusive satchel for Nanotrasen officers.
   components:
   - type: Sprite
-    sprite: Clothing/Back/Satchels/captain.rsi
+    sprite: _Impstation/Clothing/Back/Satchels/captain.rsi #imp
 
 - type: entity
   parent: ClothingBackpackSatchel

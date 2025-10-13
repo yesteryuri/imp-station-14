@@ -1,4 +1,4 @@
-﻿using Robust.Shared.Configuration;
+using Robust.Shared.Configuration;
 
 namespace Content.Shared.CCVar;
 
@@ -52,6 +52,12 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<string> DiscordRoundUpdateWebhook =
         CVarDef.Create("discord.round_update_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+    /// <summary>
+    ///     URL of the Discord webhook which will relay round restart messages.
+    /// </summary>
+    public static readonly CVarDef<string> DiscordPostroundChatWebhook =
+        CVarDef.Create("discord.postround_chat_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
 
     /// <summary>
     ///     Role id for the Discord webhook to ping when the round ends.
@@ -113,5 +119,4 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<bool> DiscordNewsWebhookSendDuringRound =
         CVarDef.Create("discord.news_webhook_send_during_round", false, CVar.SERVERONLY);
-
 }

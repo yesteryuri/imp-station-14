@@ -425,6 +425,8 @@
     tags:
     - DoorBumpOpener
     - FootstepSound
+  - type: GoobAbsorbable # imp edit
+    biomassRestored: 0.2
 
 - type: entity
   name: space adder

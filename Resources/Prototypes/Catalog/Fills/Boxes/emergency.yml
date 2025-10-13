@@ -79,7 +79,6 @@
     currentLabel: reagent-name-nitrogen
 
 - type: entity
-
   parent: BoxCardboard
   id: BoxSurvivalSecurity
   name: survival box
@@ -120,7 +119,6 @@
     currentLabel: reagent-name-nitrogen
 
 - type: entity
-
   parent: BoxCardboard
   id: BoxSurvivalMedical
   name: survival box
@@ -157,6 +155,42 @@
     layers:
     - state: internals
     - state: nitrogentank
+  - type: Label
+    currentLabel: reagent-name-nitrogen
+
+- type: entity
+  parent: BoxCardboard
+  id: BoxSurvivalBrigmedic
+  description: It's a box with basic internals inside.
+  suffix: MedSec
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingMaskBreathMedicalSecurity
+    - id: EmergencyOxygenTankFilled
+    - id: EmergencyMedipen
+    - id: Flare
+    - id: FoodSnackNutribrick
+    - id: DrinkWaterBottleFull
+  - type: Sprite
+    layers:
+      - state: internals
+      - state: emergencytank
+
+- type: entity
+  parent: BoxSurvivalBrigmedic
+  id: BoxSurvivalBrigmedicNitrogen
+  suffix: MedSec N2
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingMaskBreathMedicalSecurity
+    - id: EmergencyNitrogenTankFilled
+    - id: EmergencyMedipen
+    - id: Flare
+    - id: FoodSnackNutribrick
+    - id: DrinkWaterBottleFull
+  # Intentionally wrong picture on the box. NT did not care enough to change it.
   - type: Label
     currentLabel: reagent-name-nitrogen
 

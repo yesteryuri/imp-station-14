@@ -4,16 +4,15 @@
   description: job-description-rd
   playTimeTracker: JobResearchDirector
   requirements:
-  - !type:RoleTimeRequirement
-    role: JobScientist
-    time: 18000 #5 hrs
-  - !type:DepartmentTimeRequirement
-    department: Science
-    time: 36000 #10 hrs
+    - !type:DepartmentTimeRequirement
+      department: Science
+      time: 72000 #20 hrs, imp
+    - !type:OverallPlaytimeRequirement
+      time: 144000 #40 hrs
   weight: 10
   startingGear: ResearchDirectorGear
   icon: "JobIconResearchDirector"
-  supervisors: job-supervisors-captain
+  supervisors: job-supervisors-hop-captain #imp
   canBeAntag: false
   access:
   - Research
@@ -22,6 +21,7 @@
   - ResearchDirector
   - Brig
   - Cryogenics
+  - Vault #imp
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
@@ -33,7 +33,6 @@
   id: ResearchDirectorGear
   equipment:
     id: RnDPDA
-    ears: ClothingHeadsetRD
   storage:
     back:
     - Flash

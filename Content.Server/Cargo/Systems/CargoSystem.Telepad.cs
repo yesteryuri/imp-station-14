@@ -114,6 +114,7 @@ public sealed partial class CargoSystem
 
                 comp.CurrentOrders.Remove(currentOrder);
                 comp.CurrentState = CargoTelepadState.Teleporting;
+                Spawn(comp.BeamInFx, Transform(uid).Coordinates);
                 _appearance.SetData(uid, CargoTelepadVisuals.State, CargoTelepadState.Teleporting, appearance);
             }
 

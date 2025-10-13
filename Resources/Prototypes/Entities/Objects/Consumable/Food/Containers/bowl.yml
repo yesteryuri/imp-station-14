@@ -65,6 +65,7 @@
         acts: [ "Destruction" ]
   - type: Tag
     tags:
+    - Bowl
     - Trash
 
 - type: entity
@@ -103,3 +104,6 @@
     - map: ["enum.SolutionContainerLayers.Fill"]
       state: fill-1
       visible: false
+  - type: Tag
+    tags:
+    - Bowl

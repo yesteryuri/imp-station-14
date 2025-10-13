@@ -1,4 +1,5 @@
-using Content.Server.Power.Components;
+using Content.Server.Power.Components; //imp edit
+using Content.Shared.Atmos.Components;
 using Content.Shared.Placeable;
 using Content.Shared.Temperature;
 using Content.Shared.Temperature.Components;
@@ -29,16 +30,28 @@ public sealed class EntityHeaterSystem : SharedEntityHeaterSystem
 
     public override void Update(float deltaTime)
     {
-        var query = EntityQueryEnumerator<EntityHeaterComponent, ItemPlacerComponent, ApcPowerReceiverComponent>();
-        while (query.MoveNext(out _, out _, out var placer, out var power))
+        var query = EntityQueryEnumerator<EntityHeaterComponent, ItemPlacerComponent>(); //Imp edit
+        while (query.MoveNext(out var uid, out var comp, out var placer))
         {
-            if (!power.Powered)
+            var energy = comp.Power * deltaTime; //Just use base power if no power required
+            if (comp.RequirePower)
+            {
+                TryComp<ApcPowerReceiverComponent>(uid, out var power);
+                if (power == null)
+                    continue;
+                if (!power.Powered)
+                    continue;
+
+                // don't divide by total entities since its a big grill
+                // excess would just be wasted in the air but that's not worth simulating
+                // if you want a heater thermomachine just use that...
+                energy = power.PowerReceived * deltaTime;
+            }
+
+            if (TryComp<FlammableComponent>(uid, out var flammable) && !flammable.OnFire)
                 continue;
 
-            // don't divide by total entities since it's a big grill
-            // excess would just be wasted in the air but that's not worth simulating
-            // if you want a heater thermomachine just use that...
-            var energy = power.PowerReceived * deltaTime;
+
             foreach (var ent in placer.PlacedEntities)
             {
                 _temperature.ChangeHeat(ent, energy);

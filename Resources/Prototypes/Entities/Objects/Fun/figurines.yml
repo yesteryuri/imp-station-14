@@ -207,6 +207,7 @@
   components:
   - type: Sprite
     state: salvage
+    sprite: _Impstation/Objects/Fun/figurines.rsi #imp
   - type: SpeakOnTrigger
     pack: FigurinesSalvage
 
@@ -394,6 +395,7 @@
   components:
   - type: Sprite
     state: nukie
+    sprite: _Impstation/Objects/Fun/figurines.rsi #imp
   - type: SpeakOnTrigger
     pack: FigurinesNukie
 
@@ -404,6 +406,7 @@
   description: A figurine depicting someone in an elite blood-red hardsuit, similar to what someone on a nuclear operative team might wear.
   components:
   - type: Sprite
+    sprite: _Impstation/Objects/Fun/figurines.rsi #imp
     state: nukie_elite
   - type: SpeakOnTrigger
     pack: FigurinesNukieElite
@@ -415,6 +418,7 @@
   description: A figurine depicting someone in a beefed-up blood-red hardsuit, similar to what the commander of a nuclear operative team might wear.
   components:
   - type: Sprite
+    sprite: _Impstation/Objects/Fun/figurines.rsi #imp
     state: nukie_commander
   - type: SpeakOnTrigger
     pack: FigurinesNukieCommander

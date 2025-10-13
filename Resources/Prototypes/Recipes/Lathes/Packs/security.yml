@@ -1,6 +1,8 @@
 ## Static recipes
 
 - type: latheRecipePack
+  parent:
+  - SecurityEquipmentStaticDeltaV # DeltaV
   id: SecurityEquipmentStatic
   recipes:
   - ClothingEyesHudSecurity
@@ -13,6 +15,7 @@
 
 # Practice ammo/mags and practice weapons
 - type: latheRecipePack
+  parent: SecurityPracticeStaticImp # imp
   id: SecurityPracticeStatic
   recipes:
   - BoxShotgunPractice
@@ -31,6 +34,7 @@
 
 # Shared between secfab and emagged autolathe
 - type: latheRecipePack
+  parent: SecurityAmmoStaticImp # imp
   id: SecurityAmmoStatic
   recipes:
   - BoxLethalshot
@@ -66,6 +70,7 @@
 ## Dynamic recipes
 
 - type: latheRecipePack
+  parent: SecurityEquipmentImp # imp
   id: SecurityEquipment
   recipes:
   - ClothingBackpackElectropack
@@ -100,6 +105,7 @@
 
 # Shared between secfab and emagged protolathe
 - type: latheRecipePack
+  parent: SecurityAmmoImp # imp
   id: SecurityAmmo
   recipes:
   - BoxBeanbag
@@ -128,6 +134,7 @@
   - SpeedLoaderMagnumUranium
 
 - type: latheRecipePack
+  parent: SecurityWeaponsImp # imp
   id: SecurityWeapons
   recipes:
   - Truncheon
@@ -138,6 +145,7 @@
   - WeaponTemperatureGun
 
 - type: latheRecipePack
+  parent: SecurityDisablersImp # imp
   id: SecurityDisablers
   recipes:
   - WeaponDisabler

@@ -235,6 +235,7 @@ public sealed class JobRequirementsManager : ISharedPlaytimeManager
     public IEnumerable<KeyValuePair<string, TimeSpan>> FetchPlaytimeByRoles()
     {
         var jobsToMap = _prototypes.EnumeratePrototypes<JobPrototype>();
+        var antagsToMap = _prototypes.EnumeratePrototypes<AntagPrototype>(); // imp
 
         foreach (var job in jobsToMap)
         {
@@ -243,6 +244,14 @@ public sealed class JobRequirementsManager : ISharedPlaytimeManager
                 yield return new KeyValuePair<string, TimeSpan>(job.Name, locJobName);
             }
         }
+        // imp
+        foreach (var antag in antagsToMap)
+        {
+            if (_roles.TryGetValue(antag.PlayTimeTracker, out var locAntagName))
+            {
+                yield return new KeyValuePair<string, TimeSpan>(antag.Name, locAntagName);
+            }
+        } // end imp
     }
 
     public IReadOnlyDictionary<string, TimeSpan> GetPlayTimes(ICommonSession session)

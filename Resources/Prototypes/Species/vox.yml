@@ -1,3 +1,9 @@
+## hey this is carousel
+## in service of vox being somewhat in line with impstation species design standards
+## i have rearranged the furniture in here quite severely
+## mouse here!! im also doing edits, textureswise mostly, to make voxtails actually tails
+## Who let the tails be part of the fucking TORSO
+
 - type: species
   id: Vox
   name: species-name-vox
@@ -6,19 +12,24 @@
   sprites: MobVoxSprites
   markingLimits: MobVoxMarkingLimits
   dollPrototype: MobVoxDummy
-  skinColoration: VoxFeathers
+  skinColoration: Hues #imp
   defaultSkinTone: "#6c741d"
   maleFirstNames: NamesVox
   femaleFirstNames: NamesVox
   naming: First
   sexes:
+  - Male
+  - Female
   - Unsexed
 
 - type: speciesBaseSprites
   id: MobVoxSprites
   sprites:
+    TailBehind: MobHumanoidAnyMarking # floof
+    TailOversuit: MobHumanoidAnyMarking # floof
     Head: MobVoxHead
     Snout: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking #imp
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
     UndergarmentTop: MobHumanoidAnyMarking
@@ -42,24 +53,28 @@
     Hair:
       points: 1
       required: false
+      weight: 1 # imp
     FacialHair:
       points: 1
       required: false
     Head:
-      points: 1
-      required: true
+      points: 2
+      required: false #imp
+    HeadSide: #imp
+      points: 2
+      required: false
     Snout:
       points: 1
-      required: true
-      defaultMarkings: [ VoxBeak ]
+      required: false #imp
+      #defaultMarkings: [ VoxBeak ]
     Arms:
-      points: 4
-      required: true
-      defaultMarkings: [ VoxLArmScales, VoxRArmScales, VoxRHandScales, VoxLHandScales ]
+      points: 6
+      required: false #imp
+      #defaultMarkings: [ VoxLArmScales, VoxRArmScales, VoxRHandScales, VoxLHandScales ]
     Legs:
-      points: 4
-      required: true
-      defaultMarkings: [ VoxLLegScales, VoxRLegScales, VoxRFootScales, VoxLFootScales ]
+      points: 6
+      required: false #imp
+      #defaultMarkings: [ VoxLLegScales, VoxRLegScales, VoxRFootScales, VoxLFootScales ]
     UndergarmentTop:
       points: 1
       required: false
@@ -69,10 +84,13 @@
     Chest:
       points: 2
       required: false
+    Overlay:
+      points: 4
+      required: false
     Tail:
       points: 1
       required: true
-      defaultMarkings: [ VoxTail ]
+      defaultMarkings: [ VoxTailBack ]
 
 - type: humanoidBaseSprite
   id: MobVoxEyes
@@ -101,19 +119,19 @@
 - type: humanoidBaseSprite
   id: MobVoxTorso
   baseSprite:
-    sprite: Mobs/Species/Vox/parts.rsi
+    sprite: _Impstation/Mobs/Species/Vox/parts.rsi #imp
     state: torso
 
 - type: humanoidBaseSprite
   id: MobVoxTorsoMale
   baseSprite:
-    sprite: Mobs/Species/Vox/parts.rsi
+    sprite: _Impstation/Mobs/Species/Vox/parts.rsi #imp
     state: torso
 
 - type: humanoidBaseSprite
   id: MobVoxTorsoFemale
   baseSprite:
-    sprite: Mobs/Species/Vox/parts.rsi
+    sprite: _Impstation/Mobs/Species/Vox/parts.rsi #imp
     state: torso
 
 - type: humanoidBaseSprite
@@ -131,7 +149,7 @@
 - type: humanoidBaseSprite
   id: MobVoxLHand
   baseSprite:
-    sprite: Mobs/Species/Vox/parts.rsi
+    sprite: Mobs/Customization/vox_parts.rsi #imp
     state: l_hand
 
 - type: humanoidBaseSprite
@@ -155,7 +173,7 @@
 - type: humanoidBaseSprite
   id: MobVoxRHand
   baseSprite:
-    sprite: Mobs/Species/Vox/parts.rsi
+    sprite: Mobs/Customization/vox_parts.rsi #imp
     state: r_hand
 
 - type: humanoidBaseSprite

@@ -49,7 +49,7 @@
   description: A large duffel bag for holding extra captainly goods.
   components:
   - type: Sprite
-    sprite: Clothing/Back/Duffels/captain.rsi
+    sprite: _Impstation/Clothing/Back/Duffels/captain.rsi #imp
 
 - type: entity
   parent: ClothingBackpackDuffel
@@ -85,7 +85,7 @@
   description: A large duffel bag for holding extra medical related goods.
   components:
   - type: Sprite
-    sprite: Clothing/Back/Duffels/brigmedic.rsi
+    sprite: _Impstation/Clothing/Back/Duffels/brigmedic.rsi #imp
 
 - type: entity
   parent: ClothingBackpackDuffel
@@ -163,7 +163,7 @@
       sprite: Clothing/Back/Duffels/salvage.rsi
 
 - type: entity
-  parent: [ClothingBackpackDuffel, BaseSyndicateContraband]
+  parent: [ClothingBackpackDuffel, Tier1Contraband]
   id: ClothingBackpackDuffelSyndicate
   name: syndicate duffel bag
   description: A large duffel bag for holding various traitor goods.

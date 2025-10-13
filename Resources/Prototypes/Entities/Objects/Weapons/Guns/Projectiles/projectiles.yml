@@ -3,15 +3,20 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
-    lifetime: 0.4
+    lifetime: 0.2 #imp
   - type: Sprite
     drawdepth: BelowMobs
     layers:
     - shader: unshaded
       map: ["enum.EffectLayers.Unshaded"]
-      sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
-      state: muzzle_bullet
+      sprite: _Impstation/Objects/Weapons/Guns/Projectiles/muzzleflashes.rsi #imp
+      state: kinetic #imp
   - type: EffectVisuals
+  - type: PointLight
+    enabled: true
+    color: "#ffa223" #imp
+    radius: 1.4 #imp
+    energy: 5.0 #imp
   - type: Tag
     tags:
       - HideContextMenu
@@ -22,28 +27,38 @@
   id: MuzzleFlashEffectOmnilaser
   categories: [ HideSpawnMenu ]
   components:
+  - type: PointLight
+    enabled: true
+    color: "#0ab8c4" #imp
+    radius: 1.4 #imp
+    energy: 5.0 #imp
   - type: Sprite
     drawdepth: BelowMobs
     offset: 0.15, 0
     layers:
     - shader: unshaded
       map: ["enum.EffectLayers.Unshaded"]
-      sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
-      state: omnilaser_flash
+      sprite: _Impstation/Objects/Weapons/Guns/Projectiles/muzzleflashes.rsi #imp
+      state: energystun #imp
 
 - type: entity
   parent: MuzzleFlashEffect
   id: MuzzleFlashEffectHeavyLaser
   categories: [ HideSpawnMenu ]
   components:
+  - type: PointLight
+    enabled: true
+    color: "#d63b28" #imp
+    radius: 1.4 #imp
+    energy: 5.0 #imp
   - type: Sprite
     drawdepth: BelowMobs
     offset: 0.15, 0
     layers:
     - shader: unshaded
       map: ["enum.EffectLayers.Unshaded"]
-      sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
-      state: heavylaser_flash
+      sprite: _Impstation/Objects/Weapons/Guns/Projectiles/muzzleflashes.rsi #imp
+      state: energy #imp
 
 # One bullet to bring them all into the darkness and bind them
 - type: entity
@@ -93,6 +108,7 @@
       path: /Audio/Weapons/Guns/Hits/bullet_hit.ogg
   - type: TimedDespawn
     lifetime: 10
+  - type: Engraveable # imp
 
 - type: entity
   id: BaseBulletTrigger # Trigger-on-collide bullets
@@ -146,7 +162,7 @@
   - type: PointLight
     enabled: true
     color: "#ff4300"
-    radius: 2.0
+    radius: 1.4 #imp
     energy: 7.0
   - type: IgniteOnCollide
     fireStacks: 0.25
@@ -195,11 +211,9 @@
       params:
         volume: 5
   - type: Sprite
-    noRot: true
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
-    color: "#ffff33"
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi #imp
     layers:
-    - state: spark
+    - state: lightgold #imp
       shader: unshaded
   - type: Physics
   - type: Fixtures
@@ -275,9 +289,9 @@
       params:
         volume: 5
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi #imp
     layers:
-    - state: omnilaser
+    - state: mediumstun #imp
       shader: unshaded
   - type: Physics
   - type: Fixtures
@@ -292,8 +306,9 @@
         - BulletImpassable
       fly-by: *flybyfixture
   - type: Ammo
+    muzzleFlash: MuzzleFlashEffectOmnilaser #imp
   - type: StaminaDamageOnCollide
-    damage: 33
+    damage: 30
   - type: Projectile
     impactEffect: BulletImpactEffectDisabler
     damage:
@@ -315,9 +330,9 @@
       params:
         volume: 5
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi #imp
     layers:
-    - state: omnilaser
+    - state: mediumstun #imp
       shader: unshaded
   - type: Physics
   - type: Fixtures
@@ -332,6 +347,7 @@
         - BulletImpassable
       fly-by: *flybyfixture
   - type: Ammo
+    muzzleFlash: MuzzleFlashEffectOmnilaser #imp
   - type: StaminaDamageOnCollide
     damage: 1
   - type: Projectile
@@ -350,12 +366,12 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Structures/Power/Generation/Singularity/emitter.rsi
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi #imp
     layers:
-      - state: projectile
-        shader: unshaded
+    - state: mediumsynd #imp
+      shader: unshaded
   - type: Ammo
-    muzzleFlash: null
+    muzzleFlash: MuzzleFlashEffectSyndLaser #imp
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -392,9 +408,9 @@
       params:
         volume: 5
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi #imp
     layers:
-    - state: omnilaser
+    - state: mediumtemp2
       shader: unshaded
   - type: Ammo
     muzzleFlash: null
@@ -426,9 +442,11 @@
   parent: WatcherBolt
   categories: [ HideSpawnMenu ]
   components:
+  - type: Ammo #imp
+    muzzleFlash: MuzzleFlashEffectTempCold
   - type: Projectile
     #   soundHit:  Waiting on serv3
-    impactEffect: BulletImpactEffectDisabler
+    impactEffect: BulletImpactEffectCold #imp
     damage:
       types:
         Cold: 10
@@ -444,14 +462,15 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi #imp
     layers:
-    - state: omnilaser_greyscale
+    - state: mediumtemp #imp
       shader: unshaded
-      color: orangered
+  - type: Ammo
+    muzzleFlash: MuzzleFlashEffectTempHot #imp
   - type: Projectile
     #   soundHit:  Waiting on serv3
-    impactEffect: BulletImpactEffectOrangeDisabler
+    impactEffect: BulletImpactEffectHot #imp
     damage:
       types:
         Heat: 0
@@ -844,7 +863,7 @@
     deleteOnCollide: false
     damage:
       types:
-        Blunt: 1
+        Blunt: 15 #imp
     soundHit:
       path: /Audio/Effects/gen_hit.ogg
   - type: StaminaDamageOnCollide
@@ -1075,6 +1094,9 @@
   components:
     - type: EmbeddableProjectile
       deleteOnRemove: true
+      sound:
+        path: /Audio/_Impstation/Effects/grapple_impact.ogg
+      autoRemoveDuration: 0 # IMP
     - type: Clickable
     - type: InteractionOutline
     - type: Sprite
@@ -1118,9 +1140,9 @@
       params:
         volume: 5
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi #imp
     layers:
-    - state: omnilaser
+    - state: lightstun #imp
       shader: unshaded
   - type: Physics
   - type: Fixtures
@@ -1135,6 +1157,7 @@
         - BulletImpassable
       fly-by: *flybyfixture
   - type: Ammo
+    muzzleFlash: MuzzleFlashEffectOmnilaser #imp
   - type: StaminaDamageOnCollide
     damage: 15
   - type: Projectile
@@ -1161,9 +1184,9 @@
       params:
         volume: 5
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi #imp
     layers:
-    - state: heavylaser
+    - state: medium #imp
       shader: unshaded
   - type: Physics
   - type: Fixtures
@@ -1187,9 +1210,9 @@
   - type: Ammo
     muzzleFlash: MuzzleFlashEffectHeavyLaser
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi #imp
     layers:
-    - state: heavylaser
+    - state: medium #imp
       shader: unshaded
   - type: Projectile
     impactEffect: BulletImpactEffectOrangeDisabler
@@ -1206,9 +1229,9 @@
   - type: Ammo
     muzzleFlash: MuzzleFlashEffectOmnilaser
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi #imp
     layers:
-    - state: omnilaser
+    - state: mediumstun #imp
       shader: unshaded
   - type: StaminaDamageOnCollide
     damage: 30
@@ -1227,6 +1250,8 @@
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:
+  - type: Ammo #imp
+    muzzleFlash: null
   - type: TimedDespawn
     lifetime: 5
   - type: Sprite
@@ -1269,9 +1294,9 @@
       params:
         volume: 5
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi #imp
     layers:
-    - state: heavylaser
+    - state: light #imp
       shader: unshaded
   - type: Physics
   - type: Fixtures
@@ -1286,6 +1311,7 @@
         - BulletImpassable
       fly-by: *flybyfixture
   - type: Ammo
+    muzzleFlash: MuzzleFlashEffectHeavyLaser #imp
   - type: Projectile
     impactEffect: BulletImpactEffectOrangeDisabler
     damage:
@@ -1310,7 +1336,7 @@
   parent: BulletLaser
   components:
   - type: ProjectileSpread
-    proto: BulletLaser
+    proto: BulletLaserHeavy
     count: 4 #52 heat damage if you hit all your shots, but narrower spread
     spread: 10
 

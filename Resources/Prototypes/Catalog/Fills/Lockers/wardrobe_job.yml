@@ -288,8 +288,14 @@
     - id: ClothingShoesBootsJack
     - id: ClothingEyesGlassesSunglasses
     - id: ClothingHeadHelmetBasic
-    - id: ClothingOuterArmorBasic
+    #- id: ClothingOuterArmorBasic #imp edit, move to group selector
     - id: ClothingUniformJumpskirtSec
+    - id: ClothingUniformJumpskirtSec
+    - !type:GroupSelector #imp edit
+      children:
+      - id: ClothingOuterArmorBasic
+      - id: ClothingOuterArmorDuraVest
+      - id: ClothingOuterArmorPlateCarrier
 
 - type: entity
   id: WardrobeCargoFilled
@@ -331,8 +337,21 @@
     - id: ClothingBackpack
     - id: ClothingShoesBootsSalvage
       amount: 2
-    - id: ClothingUniformJumpsuitSalvageSpecialist
-      amount: 2
+    #- id: ClothingUniformJumpsuitSalvageSpecialist #imp edit, move to GroupSelector
+    #  amount: 2
+    - !type:GroupSelector #imp edit, jumpsuits
+      children:
+        - id: ClothingUniformJumpsuitSalvageSpecialist
+          amount: 2
+        - id: ClothingUniformJumpsuitSalvageSpecialistDV
+          amount: 2
+    - !type:GroupSelector #imp edit, jumpskirts
+      children:
+      - id: ClothingUniformJumpskirtSalvageSpecialist
+        amount: 2
+      - id: ClothingUniformJumpskirtSalvageSpecialistDV
+        amount: 2
+
 
 - type: entity
   id: WardrobeAtmosphericsFilled

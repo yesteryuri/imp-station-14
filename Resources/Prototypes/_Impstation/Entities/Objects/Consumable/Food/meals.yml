@@ -1,0 +1,94 @@
+# Mên-mên...
+
+- type: entity
+  name: finfin sashimi
+  parent: FoodMealBase
+  id: FoodMealFinfinSashimi
+  description: An unscrupulous delicacy. Japanese-Teoean fusion cuisine!
+  components:
+  - type: FlavorProfile
+    flavors:
+    - fishy
+    - finfin
+  - type: Sprite
+    state: sashimi
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 45
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 18
+        - ReagentId: Protein
+          Quantity: 18
+        - ReagentId: TableSalt
+          Quantity: 1
+  - type: Tag
+    tags:
+    - Meat
+  - type: FoodSequenceElement
+    entries:
+      Burger: FinfinSashimiBurger
+
+- type: entity
+  parent: FoodMealBase
+  id: FabricScrapSalad
+  name: fabric scrap salad
+  description: Whose clothes are these?
+  components:
+  - type: Sprite
+    sprite: _Impstation/Objects/Fun/toys.rsi
+    state: fabric-scrap-salad
+  - type: Food
+    requiresSpecialDigestion: true
+    trash:
+    - FoodBowlBig
+  - type: FlavorProfile
+    flavors:
+    - leafy
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 10
+  - type: Construction
+    graph: FabricScrapSalad
+    node: salad
+  - type: Tag
+    tags:
+    - ClothMade
+    - ClothFood
+
+- type: entity
+  parent: FoodMealBase
+  id: YarnNoodles
+  name: yarn noodles
+  description: Looks like someone's failed knitting project.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Objects/Fun/toys.rsi
+    state: yarn-noodles
+  - type: Food
+    requiresSpecialDigestion: true
+    trash:
+    - ChopSticks
+  - type: FlavorProfile
+    flavors:
+    - pasta
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 10
+  - type: Construction
+    graph: YarnNoodles
+    node: noodles
+  - type: Tag
+    tags:
+    - ClothMade
+    - ClothFood
+    

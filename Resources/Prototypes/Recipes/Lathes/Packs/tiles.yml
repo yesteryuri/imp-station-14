@@ -2,6 +2,9 @@
 
 - type: latheRecipePack
   id: FloorDarkTilesStatic
+  parent: #imp
+  - FloorTilesStaticImp
+  - FloorTilesStaticCorvax
   recipes:
   - FloorTileItemDark
   - FloorTileItemDarkDiagonalMini

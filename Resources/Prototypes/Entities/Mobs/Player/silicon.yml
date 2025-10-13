@@ -1,6 +1,7 @@
 # Be careful with these as they get removed on shutdown too!
 - type: entity
   id: AiHeld
+  save: false # Impstation - AI PDAs
   description: Components added / removed from an entity that gets inserted into an AI core.
   categories: [ HideSpawnMenu ]
   components:
@@ -36,26 +37,33 @@
     - ActionJumpToCore
     - ActionSurvCameraLights
     - ActionAIViewLaws
+    - ActionOpenCartridges # Impstation - AI PDA
   - type: UserInterface
     interfaces:
       enum.RadarConsoleUiKey.Key:
         type: RadarConsoleBoundUserInterface
       enum.CrewMonitoringUIKey.Key:
         type: CrewMonitoringBoundUserInterface
-      enum.GeneralStationRecordConsoleKey.Key:
-        type: GeneralStationRecordConsoleBoundUserInterface
+      enum.CharacterRecordConsoleKey.Key: #imp edit - give the ai the CD char records instead of the default one
+        type: CharacterRecordConsoleBoundUserInterface
       enum.SiliconLawsUiKey.Key:
         type: SiliconLawBoundUserInterface
       enum.CommunicationsConsoleUiKey.Key:
         type: CommunicationsConsoleBoundUserInterface
+      # Begin Impstation - AI PDAs
+      enum.PdaUiKey.Key:
+        type: PdaBoundUserInterface
+      enum.RingerUiKey.Key:
+        type: RingerBoundUserInterface
+      # End Impstation - AI PDAs
   - type: IntrinsicUI
     uis:
       enum.RadarConsoleUiKey.Key:
         toggleAction: ActionAGhostShowRadar
       enum.CrewMonitoringUIKey.Key:
         toggleAction: ActionAGhostShowCrewMonitoring
-      enum.GeneralStationRecordConsoleKey.Key:
-        toggleAction: ActionAGhostShowStationRecords
+      enum.CharacterRecordConsoleKey.Key: #imp edit - give the ai the CD char records instead of the default one
+        toggleAction: ActionAGhostShowCharacterRecords
       enum.CommunicationsConsoleUiKey.Key:
         toggleAction: ActionAGhostShowCommunications
   - type: CrewMonitoringConsole
@@ -74,6 +82,20 @@
   - type: DamagedSiliconAccent
     startPowerCorruptionAtCharIdx: 4
     maxPowerCorruptionAtCharIdx: 20
+  # imp edit start
+  - type: StealTarget #imp
+    stealGroup: AICore
+  - type: CharacterRecordConsole # give the Ai the new cd records console. only employment because they're nominally a civilian role, but they can still use the sec & med consoles.
+    consoleType: Employment
+  - type: Pda
+    idSlot:
+      locked: true
+    penSlot:
+      locked: true
+    paiSlot:
+      locked: true
+  - type: Ringer
+  # imp edit end
 
 - type: entity
   id: AiHeldIntellicard
@@ -96,6 +118,8 @@
       enum.SiliconLawsUiKey.Key:
         type: SiliconLawBoundUserInterface
   - type: ShowJobIcons
+  - type: StealTarget #imp
+    stealGroup: AICore
 
 # Ai
 - type: entity
@@ -138,7 +162,7 @@
     proto: AiHeldIntellicard
     container: station_ai_mind_slot
   - type: Sprite
-    sprite: Objects/Devices/ai_card.rsi
+    sprite: _Impstation/Objects/Devices/ai_card.rsi #imp
     layers:
     - state: base
     - state: full
@@ -160,7 +184,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Mobs/Silicon/station_ai.rsi
+    sprite: _Impstation/Mobs/Silicon/station_ai.rsi #imp
     layers:
     - state: base
     - state: ai
@@ -246,7 +270,7 @@
   - type: ApcPowerReceiverBattery
     idleLoad: 500
     batteryRechargeRate: 1000
-    batteryRechargeEfficiency: 0 # Setting to zero until the light flickering issue associated with dynamic power loads is fixed 
+    batteryRechargeEfficiency: 0 # Setting to zero until the light flickering issue associated with dynamic power loads is fixed
   - type: StationAiCore
   - type: StationAiVision
   - type: InteractionOutline
@@ -315,7 +339,7 @@
       - StationAiCoreElectronics
   - type: StaticPrice
     price: 5000
-      
+
 # The job-ready version of an AI spawn.
 - type: entity
   id: PlayerStationAi
@@ -334,7 +358,7 @@
   description: An unfinished computer core for housing an artifical intelligence.
   components:
   - type: Anchorable
-    flags: 
+    flags:
     - Anchorable
   - type: Rotatable
   - type: Sprite
@@ -452,6 +476,36 @@
       state: ai_female
   - type: NameIdentifier
     group: StationAi
+  # imp edit start
+  - type: Grammar
+    attributes:
+      proper: true
+  - type: SkipLoadingCharacterRecords #make it so the AI doesn't show up in the character records list
+  # Begin Impstation - AI PDA
+  - type: NanoChatCard
+  - type: CartridgeLoader
+    uiKey: enum.PdaUiKey.Key
+    preinstalled:
+    - NewsReaderCartridge
+    - NanoChatCartridge
+    cartridgeSlot:
+      locked: true
+      priority: -1
+      name: device-pda-slot-component-slot-name-cartridge
+      ejectSound: /Audio/Machines/id_swipe.ogg
+      insertSound: /Audio/Machines/id_insert.ogg
+      whitelist:
+        components:
+        - Cartridge
+  - type: ContainerContainer
+    containers:
+      program-container: !type:Container
+      Cartridge-Slot: !type:ContainerSlot
+  - type: ItemSlots
+  - type: PdaBorderColor
+    borderColor: "#45453f"
+    accentVColor: "#447987"
+  # End Impstation - AI PDA
 
 # Hologram projection that the AI's eye tracks.
 - type: entity
@@ -528,6 +582,9 @@
   - type: StartingMindRole
     mindRole: "MindRoleSiliconBrain"
     silent: true
+  - type: Grammar # imp
+    attributes:
+      proper: true
 
 - type: entity
   id: PlayerBorgSyndicateAssaultBattery
@@ -560,6 +617,8 @@
       rules: ghost-role-information-silicon-rules
       raffle:
         settings: default
+      mindRoles: # imp edit but this seems to be an upstream mistake
+      - MindRoleGhostRoleSiliconAntagonist
       job: Borg
     - type: GhostTakeoverAvailable
 
@@ -594,6 +653,8 @@
       rules: ghost-role-information-silicon-rules
       raffle:
         settings: default
+      mindRoles: # imp edit
+      - MindRoleGhostRoleSiliconAntagonist
       job: Borg
     - type: GhostTakeoverAvailable
 
@@ -683,6 +744,8 @@
       raffle:
         settings: default
       reregister: false
+      mindRoles: # imp edit once again this is upstream forgetting borgs exist
+      - MindRoleGhostRoleSilicon
       job: Borg
     - type: GhostTakeoverAvailable
 

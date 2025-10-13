@@ -5,33 +5,39 @@
   color: "#A46106"
   roles:
   - CargoTechnician
+  - Courier # Imp
   - Quartermaster
   - SalvageSpecialist
+  - SupplyAssistant # DeltaV
 
 - type: department
   id: Civilian
   name: department-Civilian
   description: department-Civilian-description
-  color: "#9FED58"
-  weight: -10
+  color: "#9e9e9e" #imp edit, grey for the greytide
+  weight: -11
   roles:
-  - Bartender
-  - Botanist
-  - Boxer
-  - Chaplain
-  - Chef
-  - Clown
-  - HeadOfPersonnel
-  - Janitor
+  # begin imp edit, service split
+  #- Bartender
+  #- Botanist
+  #- Boxer
+  #- Chaplain
+  #- Chef
+  #- Clown
+  #- Janitor
+  #- HeadOfPersonnel
+  #- Lawyer
+  #- Librarian
+  #- Mime
+  #- Musician
+  #- Reporter
+  #- Visitor
+  #- Zookeeper
+  #- ServiceWorker
+  # end imp edit, a department of TWO, available on xbox 360 and playstation 3 march 6, 2008
   - Lawyer
-  - Librarian
-  - Mime
-  - Musician
   - Passenger
-  - Reporter
-  - Visitor
-  - Zookeeper
-  - ServiceWorker
+  - Assistant # non-roundstart
 
 - type: department
   id: CentralCommand
@@ -48,6 +54,8 @@
   - ERTSecurity
   - ERTEngineer
   - DeathSquad
+  - CentcommIntern # imp
+  - CentcommInternLeader # imp
   editorHidden: true
   weight: 120
 
@@ -73,6 +81,7 @@
   - ERTSecurity
   - ERTEngineer
   - DeathSquad
+  - HospitalityDirector #Imp
   primary: false
   weight: 100
 
@@ -112,6 +121,7 @@
   - SecurityOfficer
   - Detective
   - Warden
+  - Brigmedic # Imp
 
 - type: department
   id: Science
@@ -144,3 +154,5 @@
   - Zookeeper
   - Psychologist
   primary: false
+  manifestHidden: true #imp edit
+  editorHidden: true #imp edit

@@ -17,6 +17,7 @@
         - id: ClothingEyesGlassesGar
         - id: ClothingEyesGlassesGarOrange
         - id: ClothingEyesGlassesGarGiga
+        - id: ClothingEyesGlassesGarMecha # imp
       - id: Wristwatch
         weight: 0.5
       - id: ClothingHeadHatCake
@@ -88,12 +89,15 @@
       - id: ClothingShoesTourist
       - id: ClothingUniformJumpsuitLoungewear
       - id: ClothingHeadHatCowboyRed
+      - id: HeartLocket # imp
+      - id: HeartLocketSilver # imp
+      - id: CDDogtags # CD
     # Uncommon Group
     - !type:GroupSelector
       weight: 23
       children:
       - id: ClothingNeckCloakHerald
-      - id: ClothingHeadHelmetTemplar
+      #- id: ClothingHeadHelmetTemplar #imp edit, kill this thing
       # Cloaks
       - !type:GroupSelector
         children:
@@ -111,6 +115,8 @@
         - id: ClothingNeckCloakGay
         - id: ClothingNeckCloakEnby
         - id: ClothingNeckCloakPan
+        - id: ClothingNeckCloakBear # imp
+        - id: ClothingNeckCloakStraight # imp
       - id: ToySkeleton
       - id: Basketball
       - id: Football
@@ -160,6 +166,7 @@
         - id: ClothingNeckTransPin
         - id: ClothingNeckAutismPin
         - id: ClothingNeckGoldAutismPin
+        - id: ClothingNeckStraightPin # imp
     # Rare Group
     - !type:GroupSelector
       weight: 2
@@ -175,6 +182,8 @@
       - id: RubberStampGreytide
       - id: MysteryLighterBox
       - id: GoldenPersonalAI
+      - id: StraightHandyFlag # imp
+      - id: ClothingBeltFoamSheathFilled # DeltaV - Add small chance of it spawning in maints locker.
 
 - type: entity
   name: Maint Loot Spawner
@@ -184,9 +193,9 @@
   components:
   - type: Sprite
     layers:
-      - state: red
-      - sprite: Clothing/Eyes/Glasses/gar.rsi
-        state: icon-super
+    - state: red
+    - sprite: Clothing/Eyes/Glasses/gar.rsi
+      state: icon-super
   - type: EntityTableSpawner
     table: !type:NestedSelector
       tableId: MaintFluffTable
@@ -281,6 +290,8 @@
       - id: ModularReceiver
       - id: WeaponFlareGun
       - id: BarberScissors
+      - id: MagazineZipper # imp
+      - id: ToolboxJanitorialFilled # imp
       - !type:GroupSelector
         children:
         - id: DrinkSpaceGlue
@@ -335,6 +346,7 @@
       - id: RifleStock
       - id: ModularReceiver
       - id: HydroponicsToolScythe
+      - id: WeaponPistolZipper #imp
     # Rare Group
     - !type:GroupSelector
       weight: 5

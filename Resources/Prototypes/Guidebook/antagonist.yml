@@ -1,16 +1,18 @@
 - type: guideEntry
   id: Antagonists
   name: guide-entry-antagonists
-  text: "/ServerInfo/Guidebook/Antagonist/Antagonists.xml"
+  text: "/ServerInfo/_Impstation/Guidebook/Antagonist/Antagonists.xml"
   children:
   - Traitors
-  - Thieves
-  - Revolutionaries
+  - Changelings # goobstation - changelings
+  - Heretics # goob - heretics
   - NuclearOperatives
-  - SpaceNinja
-  - Wizard
   - Zombies
+  - Revolutionaries
   - MinorAntagonists
+  - SpaceNinja
+  - Thieves
+  - Wizard
 
 - type: guideEntry
   id: Traitors
@@ -25,7 +27,7 @@
 - type: guideEntry
   id: Zombies
   name: guide-entry-zombies
-  text: "/ServerInfo/Guidebook/Antagonist/Zombies.xml"
+  text: "/ServerInfo/_Impstation/Guidebook/Antagonist/Zombies.xml" #imp
 
 - type: guideEntry
   id: Revolutionaries

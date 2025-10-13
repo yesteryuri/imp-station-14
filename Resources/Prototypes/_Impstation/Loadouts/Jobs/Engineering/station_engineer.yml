@@ -1,0 +1,24 @@
+# 10 Hr
+- type: loadoutEffectGroup
+  id: Engineer10hr
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobStationEngineer
+      time: 36000 #10 hrs, ~7 rounds
+
+# Jumpsuit
+- type: loadout
+  id: SpaceEngineerJumpsuit
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: Engineer10hr
+  equipment:
+    jumpsuit: ClothingUniformSpaceJumpsuitEngineer
+
+# Outer CLothing
+- type: loadout
+  id: BomberEngineering
+  equipment:
+    outerClothing: ClothingOuterCoatBomberEngineer

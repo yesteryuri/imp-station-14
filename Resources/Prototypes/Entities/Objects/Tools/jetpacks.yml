@@ -114,7 +114,7 @@
 #Empty black
 - type: entity
   id: JetpackBlack
-  parent: [BaseJetpack, BaseSyndicateContraband]
+  parent: [BaseJetpack, Tier1Contraband] #imp, contraband
   name: jetpack
   suffix: Empty
   components:
@@ -134,7 +134,7 @@
   id: JetpackBlackFilled
   parent: JetpackBlack
   name: jetpack
-  suffix: Filled
+  suffix: Filled, Stealthy #imp edit - added stealthy
   components:
   - type: GasTank
     outputPressure: 42.6
@@ -145,6 +145,7 @@
       moles:
         Oxygen: 1.025689525 # oxygen
         Nitrogen: 1.025689525 # nitrogen
+  - type: RadarBlipStealth #imp edit - hide this specific proto from mass scanners. fine to use on this proto because it's only given to traitors / syndies / ninjas who should be stealthy.
 
 #Empty captain
 - type: entity
@@ -196,6 +197,7 @@
   components:
     - type: Item
       sprite: Objects/Tanks/Jetpacks/mini.rsi
+      size: Large #imp
     - type: Sprite
       sprite: Objects/Tanks/Jetpacks/mini.rsi
     - type: Clothing

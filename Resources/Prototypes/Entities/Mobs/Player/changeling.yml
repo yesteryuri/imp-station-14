@@ -2,7 +2,7 @@
   parent: MobHuman
   id: MobLing
   name: Urist McLing
-  suffix: Non-Antag
+  suffix: Upstream version, Non-Antag #imp edit, in case admins want to play around with it
   components:
   - type: ChangelingDevour
   - type: ChangelingIdentity

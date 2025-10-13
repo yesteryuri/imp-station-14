@@ -80,6 +80,7 @@ public abstract class SharedPowerCellSystem : EntitySystem
             ent.Comp.NextUpdateTime = Timing.CurTime;
 
         ent.Comp.Enabled = enabled;
+        ent.Comp.NextUpdateTime = Timing.CurTime; // imp edit
         Dirty(ent, ent.Comp);
     }
 

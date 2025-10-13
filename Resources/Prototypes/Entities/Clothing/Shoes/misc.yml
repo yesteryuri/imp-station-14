@@ -32,7 +32,7 @@
     sprite: Clothing/Shoes/Misc/slippers.rsi
 
 - type: entity
-  parent: ClothingShoesBaseButcherable
+  parent: ClothingShoesClownBase #imp edit
   id: ClothingShoeSlippersDuck
   name: ducky slippers
   description: You wish these made quacking sounds as you walked. It's a good thing they don't, though.
@@ -49,6 +49,13 @@
   - type: Construction
     graph: ClothingShoeSlippersDuck
     node: shoes
+  #start imp edit
+  - type: ItemToggle
+    soundActivate:
+      path: /Audio/_Impstation/Effects/Footsteps/quack_on.ogg
+    soundDeactivate:
+      path: /Audio/_Impstation/Effects/Footsteps/quack_off.ogg
+  #end imp edit
 
 - type: entity
   parent: ClothingShoesBaseButcherable

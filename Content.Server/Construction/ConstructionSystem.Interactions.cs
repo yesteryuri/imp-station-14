@@ -2,6 +2,7 @@ using System.Linq;
 using Content.Server.Administration.Logs;
 using Content.Server.Construction.Components;
 using Content.Server.Temperature.Components;
+using Content.Shared._Impstation.Construction.Steps;
 using Content.Shared.Construction;
 using Content.Shared.Construction.Components;
 using Content.Shared.Construction.EntitySystems;
@@ -43,6 +44,7 @@ namespace Content.Server.Construction
                 new []{typeof(EncryptionKeySystem)});
             SubscribeLocalEvent<ConstructionComponent, OnTemperatureChangeEvent>(EnqueueEvent);
             SubscribeLocalEvent<ConstructionComponent, PartAssemblyPartInsertedEvent>(EnqueueEvent);
+            SubscribeLocalEvent<ConstructionComponent, EntRemovedFromContainerMessage>(EnqueueEvent); // imp
         }
 
         /// <summary>
@@ -425,6 +427,18 @@ namespace Content.Server.Construction
                     return HandleResult.False;
                 }
 
+                case EntityRemoveConstructionGraphStep removeStep: //imp
+                {
+                    if (ev is not EntRemovedFromContainerMessage entRemoved)
+                        break;
+
+                    var toRemove = entRemoved.Entity;
+
+                    if (removeStep.EntityValid(toRemove, EntityManager, Factory)) // Does the removed entity have the desired tag?
+                        return HandleResult.True;
+                    return HandleResult.False;
+                }
+
                 #endregion
                 // --- CONSTRUCTION STEP EVENT HANDLING FINISH ---
 
@@ -637,5 +651,17 @@ namespace Content.Server.Construction
     public sealed class OnConstructionTemperatureEvent : HandledEntityEventArgs
     {
         public HandleResult? Result;
+    }
+
+    public sealed class ConstructionConsumedObjectEvent : EntityEventArgs
+    {
+        public EntityUid Old;
+        public EntityUid New;
+
+        public ConstructionConsumedObjectEvent(EntityUid oldEnt, EntityUid newEnt)
+        {
+            Old = oldEnt;
+            New = newEnt;
+        }
     }
 }

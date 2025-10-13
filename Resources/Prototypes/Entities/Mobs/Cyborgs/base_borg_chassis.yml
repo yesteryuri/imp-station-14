@@ -2,7 +2,7 @@
   parent: [BaseMob, StripableInventoryBase]
   id: BaseBorgChassisNotIonStormable
   name: cyborg
-  description: A man-machine hybrid that assists in station activity. They love being asked to state their laws over and over.
+  description: A man-machine hybrid that assists in station activity. Follows silicon laws, loves to talk constantly about them. #imp
   save: false
   abstract: true
   components:
@@ -73,6 +73,12 @@
       # Only used for NT borgs that can switch type, defined here to avoid copy-pasting the rest of this component.
       enum.BorgSwitchableTypeUiKey.SelectBorgType:
         type: BorgSelectTypeUserInterface
+      # Begin Impstation - Borg PDAs
+      enum.PdaUiKey.Key:
+        type: PdaBoundUserInterface
+      enum.RingerUiKey.Key:
+        type: RingerBoundUserInterface
+      # End Impstation - Borg PDAs
   - type: ActivatableUI
     key: enum.BorgUiKey.Key
   - type: SiliconLawBound
@@ -122,6 +128,8 @@
       cell_slot: !type:ContainerSlot { }
       borg_module: !type:Container { }
       part-container: !type:Container
+      program-container: !type:Container # Impstation - Borg PDAs
+      Cartridge-Slot: !type:ContainerSlot # Impstation - Borg PDAs
   - type: PowerCellSlot
     cellSlotId: cell_slot
     fitsInCharger: true
@@ -141,6 +149,7 @@
       cell_slot:
         name: power-cell-slot-component-slot-name-default
   - type: Body
+    thermalVisibility: false # EE edit
   - type: StatusEffects
     allowed:
     - Flashed
@@ -167,6 +176,7 @@
   - type: Lock
     locked: true
     unlockOnClick: false
+    customLockText: "back panel" # imp
   - type: UIRequiresLock
     userInterfaceKeys:
     - enum.BorgUiKey.Key
@@ -248,6 +258,7 @@
     damageProtection:
       flatReductions:
         Heat: 10 # capable of touching light bulbs and stoves without feeling pain!
+        Cold: 10 # imp edit. For cold lightbulb
 
 - type: entity
   abstract: true
@@ -285,6 +296,11 @@
     intensitySlope: 20
     maxIntensity: 20
     canCreateVacuum: false # its for killing the borg not the station
+  # imp edit start
+  - type: SignatureFont
+    font: Sixtyfour
+  - type: SkipLoadingCharacterRecords
+  # imp edit end
 
 - type: entity
   abstract: true
@@ -366,6 +382,10 @@
       Unsexed: UnisexSiliconSyndicate
   - type: PointLight
     color: "#dd200b"
+  # imp edit start
+  - type: TypingIndicator
+    proto: syndibot
+  # imp edit end
 
 - type: entity
   id: BaseBorgChassisDerelict
@@ -424,6 +444,10 @@
       Unsexed: UnisexSiliconSyndicate
   - type: PointLight
     color: "#dd200b"
+  # imp edit start
+  - type: TypingIndicator
+    proto: syndibot
+  # imp edit end
 
 - type: entity
   parent: BaseBorgChassisNotIonStormable

@@ -73,6 +73,8 @@
     clothingVisuals:
       outerClothing:
       - state: ATMOS-equipped-OUTERCLOTHING
+      outerClothing-vox: # imp
+      - state: ATMOS-equipped-OUTERCLOTHING-vox
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterEngineer
 
@@ -96,8 +98,35 @@
     clothingVisuals:
       outerClothing:
       - state: BAR-equipped-OUTERCLOTHING
+      outerClothing-vox: # imp
+      - state: BAR-equipped-OUTERCLOTHING-vox
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterBartender
+
+- type: entity
+  parent: ClothingOuterWinterCoatToggleable
+  id: ClothingOuterWinterBrigmedic
+  name: brigmedic winter coat
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/OuterClothing/WinterCoats/brigmediccoat.rsi #imp
+    layers:
+    - state: BRIGMEDIC-icon
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: BRIGMEDIC-inhand-left
+      right:
+      - state: BRIGMEDIC-inhand-right
+  - type: Clothing
+    sprite: _Impstation/Clothing/OuterClothing/WinterCoats/brigmediccoat.rsi #imp
+    clothingVisuals:
+      outerClothing:
+      - state: BRIGMEDIC-equipped-OUTERCLOTHING
+      outerClothing-vox: # imp
+      - state: BRIGMEDIC-equipped-OUTERCLOTHING-vox
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodWinterBrigmedic
 
 - type: entity
   parent: [ClothingOuterWinterCoatToggleable, BaseCommandContraband]
@@ -119,6 +148,8 @@
     clothingVisuals:
       outerClothing:
       - state: CAP-equipped-OUTERCLOTHING
+      outerClothing-vox: # imp
+      - state: CAP-equipped-OUTERCLOTHING-vox
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterCaptain
 
@@ -142,6 +173,8 @@
     clothingVisuals:
       outerClothing:
       - state: CARGO-equipped-OUTERCLOTHING
+      outerClothing-vox: # imp
+      - state: CARGO-equipped-OUTERCLOTHING-vox
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterCargo
 
@@ -165,6 +198,8 @@
     clothingVisuals:
       outerClothing:
       - state: CE-equipped-OUTERCLOTHING
+      outerClothing-vox: # imp
+      - state: CE-equipped-OUTERCLOTHING-vox
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterCE
 
@@ -263,6 +298,8 @@
     clothingVisuals:
       outerClothing:
       - state: CMO-equipped-OUTERCLOTHING
+      outerClothing-vox: # imp
+      - state: CMO-equipped-OUTERCLOTHING-vox
   - type: Armor
     modifiers:
       coefficients:
@@ -303,6 +340,8 @@
     clothingVisuals:
       outerClothing:
       - state: ENGI-equipped-OUTERCLOTHING
+      outerClothing-vox: # imp
+      - state: ENGI-equipped-OUTERCLOTHING-vox
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterEngineer
 
@@ -368,9 +407,9 @@
   description: A sturdy, utilitarian winter coat designed to protect a head of security from any brig-bound threats and hypothermic events.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/WinterCoats/coathosarmored.rsi
+    sprite: _Impstation/Clothing/OuterClothing/WinterCoats/coathosarmored.rsi #imp
   - type: Clothing
-    sprite: Clothing/OuterClothing/WinterCoats/coathosarmored.rsi
+    sprite: _Impstation/Clothing/OuterClothing/WinterCoats/coathosarmored.rsi #imp
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterHOS
 ##########################################################
@@ -419,6 +458,8 @@
     clothingVisuals:
       outerClothing:
       - state: HYDRO-equipped-OUTERCLOTHING
+      outerClothing-vox: # imp
+      - state: HYDRO-equipped-OUTERCLOTHING-vox
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterHydro
 
@@ -472,6 +513,8 @@
     clothingVisuals:
       outerClothing:
       - state: MED-equipped-OUTERCLOTHING
+      outerClothing-vox: # imp
+      - state: MED-equipped-OUTERCLOTHING-vox
   - type: Armor
     modifiers:
       coefficients:
@@ -502,6 +545,8 @@
     clothingVisuals:
       outerClothing:
       - state: MIME-equipped-OUTERCLOTHING
+      outerClothing-vox: # imp
+      - state: MIME-equipped-OUTERCLOTHING-vox
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterMime
 
@@ -525,6 +570,8 @@
     clothingVisuals:
       outerClothing:
       - state: MINER-equipped-OUTERCLOTHING
+      outerClothing-vox: # imp
+      - state: MINER-equipped-OUTERCLOTHING-vox
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterMiner
 
@@ -548,6 +595,8 @@
     clothingVisuals:
       outerClothing:
       - state: PARA-equipped-OUTERCLOTHING
+      outerClothing-vox: # imp
+      - state: PARA-equipped-OUTERCLOTHING-vox
   - type: Armor
     modifiers:
       coefficients:
@@ -656,6 +705,8 @@
     clothingVisuals:
       outerClothing:
       - state: SCI-equipped-OUTERCLOTHING
+      outerClothing-vox: # imp
+      - state: SCI-equipped-OUTERCLOTHING-vox
   - type: Armor
     modifiers:
       coefficients:
@@ -686,6 +737,8 @@
     clothingVisuals:
       outerClothing:
       - state: SEC-equipped-OUTERCLOTHING
+      outerClothing-vox: # imp
+      - state: SEC-equipped-OUTERCLOTHING-vox
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterSec
 
@@ -727,9 +780,9 @@
   description: A sturdy, utilitarian winter coat designed to protect a warden from any brig-bound threats and hypothermic events.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/WinterCoats/coatwardenarmored.rsi
+    sprite: _Impstation/Clothing/OuterClothing/WinterCoats/coatwardenarmored.rsi #imp
   - type: Clothing
-    sprite: Clothing/OuterClothing/WinterCoats/coatwardenarmored.rsi
+    sprite: _Impstation/Clothing/OuterClothing/WinterCoats/coatwardenarmored.rsi #imp
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterWarden
 ################################################################
@@ -741,7 +794,7 @@
   description: A sturdy coat, a warm coat, but not an armored coat.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
+    sprite: _Impstation/Clothing/OuterClothing/WinterCoats/wardencoat.rsi #imp
     layers:
     - state: WARD-icon
   - type: Item
@@ -751,7 +804,7 @@
       right:
       - state: WARD-inhand-right
   - type: Clothing
-    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
+    sprite: _ImpstationClothing/OuterClothing/WinterCoats/wardencoat.rsi #imp
     clothingVisuals:
       outerClothing:
       - state: WARD-equipped-OUTERCLOTHING
@@ -759,7 +812,7 @@
     clothingPrototype: ClothingHeadHatHoodWinterWarden
 
 - type: entity
-  parent: [ClothingOuterWinterCoatToggleable, BaseSyndicateContraband]
+  parent: [ClothingOuterWinterCoatToggleable, Tier1Contraband]
   id: ClothingOuterWinterSyndieCap
   name: syndicate's winter coat
   description: "The syndicate's winter coat is made of durable fabric, with gilded patterns, and coarse wool."
@@ -784,7 +837,7 @@
 
 ##############################################################
 - type: entity
-  parent: [ BaseSyndicateContraband, ClothingOuterWinterWarden ]
+  parent: [ Tier1Contraband, ClothingOuterWinterWarden ] # imp contraband
   id: ClothingOuterWinterSyndieCapArmored
   name: syndicate's armored winter coat
   description: "The syndicate's armored winter coat is made of durable fabric, with gilded patterns, and coarse wool."
@@ -798,7 +851,7 @@
 ##############################################################
 
 - type: entity
-  parent: [ClothingOuterWinterCoatToggleable, BaseSyndicateContraband]
+  parent: [ClothingOuterWinterCoatToggleable, Tier1Contraband]
   id: ClothingOuterWinterSyndie
   name: syndicate's winter coat
   description: Insulated winter coat, looks like a merch from "Syndieland".
@@ -901,8 +954,12 @@
     clothingVisuals:
       outerClothing:
       - state: coatybits-equipped-OUTERCLOTHING
-        color: "#1d1d1d"
+        color: "#3f3f3f" # imp: "#1d1d1d" -> "#3f3f3f"
       - state: winterbits-equipped-OUTERCLOTHING
+      outerClothing-vox: # imp
+      - state: coatybits-equipped-OUTERCLOTHING-vox
+        color: "#3f3f3f"
+      - state: winterbits-equipped-OUTERCLOTHING-vox
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterColorBlack
 
@@ -934,6 +991,10 @@
       - state: coatybits-equipped-OUTERCLOTHING
         color: "#9C0DE1"
       - state: winterbits-equipped-OUTERCLOTHING
+      outerClothing-vox: # imp
+      - state: coatybits-equipped-OUTERCLOTHING-vox
+        color: "#9C0DE1"
+      - state: winterbits-equipped-OUTERCLOTHING-vox
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterColorPurple
 
@@ -965,6 +1026,10 @@
       - state: coatybits-equipped-OUTERCLOTHING
         color: "#940000"
       - state: winterbits-equipped-OUTERCLOTHING
+      outerClothing-vox: # imp
+      - state: coatybits-equipped-OUTERCLOTHING-vox
+        color: "#940000"
+      - state: winterbits-equipped-OUTERCLOTHING-vox
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterColorRed
 
@@ -996,6 +1061,10 @@
       - state: coatybits-equipped-OUTERCLOTHING
         color: "#0089EF"
       - state: winterbits-equipped-OUTERCLOTHING
+      outerClothing-vox: # imp
+      - state: coatybits-equipped-OUTERCLOTHING-vox
+        color: "#0089EF"
+      - state: winterbits-equipped-OUTERCLOTHING-vox
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterColorBlue
 
@@ -1027,6 +1096,10 @@
       - state: coatybits-equipped-OUTERCLOTHING
         color: "#723A02"
       - state: winterbits-equipped-OUTERCLOTHING
+      outerClothing-vox: # imp
+      - state: coatybits-equipped-OUTERCLOTHING-vox
+        color: "#723A02"
+      - state: winterbits-equipped-OUTERCLOTHING-vox
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterColorBrown
 
@@ -1058,6 +1131,10 @@
       - state: coatybits-equipped-OUTERCLOTHING
         color: "#999999"
       - state: winterbits-equipped-OUTERCLOTHING
+      outerClothing-vox: # imp
+      - state: coatybits-equipped-OUTERCLOTHING-vox
+        color: "#999999"
+      - state: winterbits-equipped-OUTERCLOTHING-vox
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterColorGray
 
@@ -1089,6 +1166,10 @@
       - state: coatybits-equipped-OUTERCLOTHING
         color: "#5ABF2F"
       - state: winterbits-equipped-OUTERCLOTHING
+      outerClothing-vox: # imp
+      - state: coatybits-equipped-OUTERCLOTHING-vox
+        color: "#5ABF2F"
+      - state: winterbits-equipped-OUTERCLOTHING-vox
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterColorGreen
 
@@ -1120,6 +1201,10 @@
       - state: coatybits-equipped-OUTERCLOTHING
         color: "#C09F72"
       - state: winterbits-equipped-OUTERCLOTHING
+      outerClothing-vox: # imp
+      - state: coatybits-equipped-OUTERCLOTHING-vox
+        color: "#C09F72"
+      - state: winterbits-equipped-OUTERCLOTHING-vox
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterColorLightBrown
 
@@ -1151,6 +1236,10 @@
       - state: coatybits-equipped-OUTERCLOTHING
         color: "#EF8100"
       - state: winterbits-equipped-OUTERCLOTHING
+      outerClothing-vox: # imp
+      - state: coatybits-equipped-OUTERCLOTHING-vox
+        color: "#EF8100"
+      - state: winterbits-equipped-OUTERCLOTHING-vox
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterColorOrange
 
@@ -1182,6 +1271,10 @@
       - state: coatybits-equipped-OUTERCLOTHING
         color: "#EAE8E8"
       - state: winterbits-equipped-OUTERCLOTHING
+      outerClothing-vox: # imp
+      - state: coatybits-equipped-OUTERCLOTHING-vox
+        color: "#EAE8E8"
+      - state: winterbits-equipped-OUTERCLOTHING-vox
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterColorWhite
 
@@ -1213,5 +1306,9 @@
       - state: coatybits-equipped-OUTERCLOTHING
         color: "#EBE216"
       - state: winterbits-equipped-OUTERCLOTHING
+      outerClothing-vox: # imp
+      - state: coatybits-equipped-OUTERCLOTHING-vox
+        color: "#EBE216"
+      - state: winterbits-equipped-OUTERCLOTHING-vox
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterColorYellow

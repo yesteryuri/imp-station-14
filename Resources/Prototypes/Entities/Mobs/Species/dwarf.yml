@@ -5,6 +5,7 @@
   id: BaseMobDwarf
   abstract: true
   components:
+  - type: GoobAbsorbable
   - type: Hunger
   - type: Thirst
   - type: Icon
@@ -42,11 +43,10 @@
         - MobLayer
   - type: Vocal
     sounds:
-      Male: UnisexDwarf
+      Male: MaleDwarf
       Female: FemaleDwarf
       Unsexed: UnisexDwarf
-  - type: ReplacementAccent
-    accent: dwarf
+  - type: DwarfAccent # imp
   - type: Speech
     speechSounds: Bass
   - type: HumanoidAppearance
@@ -54,6 +54,7 @@
     hideLayersOnEquip:
     - Hair
     - Snout
+    - FacialHair #imp
   - type: Inventory
     femaleDisplacements:
       jumpsuit:

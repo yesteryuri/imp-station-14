@@ -7,14 +7,14 @@
     tags:
     - GlassBeaker
   - type: Sprite
-    sprite: Objects/Specific/Chemistry/beaker.rsi
+    sprite: _Impstation/Objects/Specific/Chemistry/beaker.rsi # imp
     layers:
       - state: beaker
       - state: beaker1
         map: ["enum.SolutionContainerLayers.Fill"]
         visible: false
   - type: Item
-    sprite: Objects/Specific/Chemistry/beaker.rsi
+    sprite: _Impstation/Objects/Specific/Chemistry/beaker.rsi # imp
   - type: MeleeWeapon
     soundNoDamage:
       path: "/Audio/Effects/Fluids/splat.ogg"
@@ -107,14 +107,14 @@
     tags:
     - GlassBeaker
   - type: Sprite
-    sprite: Objects/Specific/Chemistry/beaker.rsi
+    sprite: _Impstation/Objects/Specific/Chemistry/beaker.rsi # imp
     layers:
       - state: beaker
       - state: beaker1
         map: ["enum.SolutionContainerLayers.Fill"]
         visible: false
   - type: Item
-    sprite: Objects/Specific/Chemistry/beaker.rsi
+    sprite: _Impstation/Objects/Specific/Chemistry/beaker.rsi # imp
   - type: MeleeWeapon
     soundNoDamage:
       path: "/Audio/Effects/Fluids/splat.ogg"
@@ -207,7 +207,7 @@
   - type: Spillable
     solution: beaker
   - type: Sprite
-    sprite: Objects/Specific/Chemistry/beaker_large.rsi
+    sprite: _Impstation/Objects/Specific/Chemistry/beaker_large.rsi # imp
     layers:
       - state: beakerlarge
       - state: beakerlarge1
@@ -215,7 +215,7 @@
         visible: false
   - type: Item
     size: Normal
-    sprite: Objects/Specific/Chemistry/beaker_large.rsi
+    sprite: _Impstation/Objects/Specific/Chemistry/beaker_large.rsi # imp
   - type: SolutionContainerManager
     solutions:
       beaker:
@@ -261,7 +261,7 @@
   - type: Spillable
     solution: beaker
   - type: Sprite
-    sprite: Objects/Specific/Chemistry/beaker_bluespace.rsi
+    sprite: _Impstation/Objects/Specific/Chemistry/beaker_bluespace.rsi # imp
     layers:
       - state: beakerbluespace
   - type: SolutionContainerVisuals
@@ -278,7 +278,7 @@
   id: Dropper
   components:
   - type: Sprite
-    sprite: Objects/Specific/Chemistry/dropper.rsi
+    sprite: _Impstation/Objects/Specific/Chemistry/dropper.rsi # imp
     layers:
       - state: dropper
       - state: dropper1
@@ -309,11 +309,11 @@
   - type: Spillable
     solution: injector
   - type: Item
-    sprite: Objects/Specific/Chemistry/dropper.rsi
+    sprite: _Impstation/Objects/Specific/Chemistry/dropper.rsi # imp
     size: Tiny
   - type: Appearance
   - type: SolutionContainerVisuals
-    maxFillLevels: 1
+    maxFillLevels: 5 # imp
     fillBaseName: dropper
     inHandsMaxFillLevels: 1
     inHandsFillBaseName: -fill-
@@ -332,7 +332,7 @@
   description: State-of-the-art hydraulic dropper built for cyborgs. It features a higher capacity than hand-powered droppers, able to hold 15 units of liquid.
   components:
   - type: Sprite
-    sprite: Objects/Specific/Chemistry/dropper.rsi
+    sprite: _Impstation/Objects/Specific/Chemistry/dropper.rsi # imp
     layers:
       - state: borgdropper
       - state: dropper1
@@ -343,7 +343,7 @@
       injector:
         maxVol: 15
   - type: Item
-    sprite: Objects/Specific/Chemistry/dropper.rsi
+    sprite: _Impstation/Objects/Specific/Chemistry/dropper.rsi # imp
 
 - type: entity
   name: syringe
@@ -554,11 +554,11 @@
   description: It's not a suppository.
   components:
   - type: Sprite
-    sprite: Objects/Specific/Chemistry/pills.rsi
+    sprite: _Impstation/Objects/Specific/Chemistry/pills.rsi # imp
     state: pill
   - type: Item
     size: Tiny
-    sprite: Objects/Specific/Chemistry/pills.rsi
+    sprite: _Impstation/Objects/Specific/Chemistry/pills.rsi # imp
   - type: Pill
   - type: Edible
     delay: 0.6
@@ -595,6 +595,10 @@
   - type: Tag
     tags:
     - Pill
+    - KodeEdible # imp
+  - type: FoodSequenceElement # imp
+    entries:
+      Burger: PillBurger
 
 - type: entity
   name: pill canister
@@ -604,9 +608,9 @@
   components:
   - type: Item
     size: Tiny
-    sprite: Objects/Specific/Chemistry/pills_canister.rsi
+    sprite: _Impstation/Objects/Specific/Chemistry/pills_canister.rsi
   - type: Sprite
-    sprite: Objects/Specific/Chemistry/pills_canister.rsi
+    sprite: _Impstation/Objects/Specific/Chemistry/pills_canister.rsi
     state: pill_canister
   - type: Tag
     tags:

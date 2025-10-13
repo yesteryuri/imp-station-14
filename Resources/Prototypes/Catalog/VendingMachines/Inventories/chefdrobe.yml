@@ -12,5 +12,8 @@
     ClothingShoesColorBlack: 2
     ClothingShoesChef: 2
     ClothingBeltChef: 2
+    ClothingNeckScarfStripedRed: 2
   contrabandInventory:
     ToyFigurineChef: 1
+    ClothingMaskClownService: 1 # imp
+    ClothingOuterApronClown: 1 # imp

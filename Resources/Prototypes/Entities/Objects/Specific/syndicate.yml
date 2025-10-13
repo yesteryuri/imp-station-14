@@ -1,7 +1,7 @@
 
 - type: entity
   name: telecrystal
-  parent: [BaseItem, BaseSyndicateContraband]
+  parent: [BaseItem, Tier2Contraband]
   id: Telecrystal
   suffix: 20 TC
   description: It seems to be pulsing with suspiciously enticing energies.
@@ -22,6 +22,10 @@
   - type: Currency
     price:
       Telecrystal: 1
+  - type: PluralName # imp
+    oneOf: plural-name-a
+    someOf: plural-name-hand-1
+    nameSomeOf: telecrystals
 
 - type: entity
   parent: Telecrystal
@@ -49,7 +53,7 @@
 
 # Uplinks
 - type: entity
-  parent: [BaseItem, StorePresetUplink, BaseSyndicateContraband]
+  parent: [BaseItem, StorePresetUplink, Tier3Contraband]
   id: BaseUplinkRadio
   name: syndicate uplink
   description: Suspiciously looking old radio...

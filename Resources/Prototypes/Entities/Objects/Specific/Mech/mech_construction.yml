@@ -104,6 +104,7 @@
   - type: Tag
     tags:
     - RipleyLArm
+    - RipleyLimb # imp
 
 - type: entity
   parent: BaseRipleyPartItem
@@ -116,6 +117,7 @@
   - type: Tag
     tags:
     - RipleyLLeg
+    - RipleyLimb # imp
 
 - type: entity
   parent: BaseRipleyPartItem
@@ -128,6 +130,7 @@
   - type: Tag
     tags:
     - RipleyRLeg
+    - RipleyLimb # imp
 
 - type: entity
   parent: BaseRipleyPartItem
@@ -140,6 +143,7 @@
   - type: Tag
     tags:
     - RipleyRArm
+    - RipleyLimb # imp
 
 # H.O.N.K.
 

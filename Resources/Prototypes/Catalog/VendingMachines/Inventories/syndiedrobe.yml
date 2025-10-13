@@ -1,6 +1,8 @@
 - type: vendingMachineInventory
   id: SyndieDrobeInventory
   startingInventory:
+    ClothingBackpackSyndicate: 2 #imp
+    ClothingBackpackSatchelSyndicate: 2 #imp
     ClothingHeadHatOutlawHat: 3
     ClothingHeadHatSyndie: 5
     ClothingMaskNeckGaiter: 5

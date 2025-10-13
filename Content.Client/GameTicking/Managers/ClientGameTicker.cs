@@ -22,13 +22,16 @@ namespace Content.Client.GameTicking.Managers
         [Dependency] private readonly IClyde _clyde = default!;
         [Dependency] private readonly IUserInterfaceManager _userInterfaceManager = default!;
 
-        private Dictionary<NetEntity, Dictionary<ProtoId<JobPrototype>, int?>>  _jobsAvailable = new();
+        private Dictionary<NetEntity, Dictionary<ProtoId<JobPrototype>, int?>> _jobsAvailable = new();
         private Dictionary<NetEntity, string> _stationNames = new();
 
         [ViewVariables] public bool AreWeReady { get; private set; }
         [ViewVariables] public bool IsGameStarted { get; private set; }
         [ViewVariables] public ResolvedSoundSpecifier? RestartSound { get; private set; }
-        [ViewVariables] public string? LobbyBackground { get; private set; }
+        [ViewVariables] public string? LobbyBackgroundImage { get; private set; } // imp edit
+        [ViewVariables] public string? LobbyBackgroundName { get; private set; } // imp edit
+        [ViewVariables] public string? LobbyBackgroundArtist { get; private set; } // imp edit
+
         [ViewVariables] public bool DisallowedLateJoin { get; private set; }
         [ViewVariables] public string? ServerInfoBlob { get; private set; }
         [ViewVariables] public TimeSpan StartTime { get; private set; }
@@ -124,7 +127,9 @@ namespace Content.Client.GameTicking.Managers
             RoundStartTimeSpan = message.RoundStartTimeSpan;
             IsGameStarted = message.IsRoundStarted;
             AreWeReady = message.YouAreReady;
-            LobbyBackground = message.LobbyBackground;
+            LobbyBackgroundImage = message.LobbyBackgroundImage;
+            LobbyBackgroundName = message.LobbyBackgroundName;
+            LobbyBackgroundArtist = message.LobbyBackgroundArtist;
             Paused = message.Paused;
 
             LobbyStatusUpdated?.Invoke();

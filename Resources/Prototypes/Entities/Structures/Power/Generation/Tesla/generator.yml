@@ -29,4 +29,6 @@
     guides:
     - TeslaEngine
     - Power
+  - type: StealTarget #imp
+    stealGroup: Generator
 

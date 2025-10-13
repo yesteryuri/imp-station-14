@@ -34,11 +34,15 @@ namespace Content.Client.Input
             common.AddFunction(ContentKeyFunctions.RotateStoredItem);
             common.AddFunction(ContentKeyFunctions.SaveItemLocation);
             common.AddFunction(ContentKeyFunctions.Point);
-            common.AddFunction(ContentKeyFunctions.ZoomOut);
+			common.AddFunction(ContentKeyFunctions.ZoomOut);
             common.AddFunction(ContentKeyFunctions.ZoomIn);
             common.AddFunction(ContentKeyFunctions.ResetZoom);
             common.AddFunction(ContentKeyFunctions.InspectEntity);
             common.AddFunction(ContentKeyFunctions.ToggleRoundEndSummaryWindow);
+            common.AddFunction(ContentKeyFunctions.NanoChatNavigateUp); // DeltaV - NanoChat keybinds
+            common.AddFunction(ContentKeyFunctions.NanoChatNavigateDown); // DeltaV - NanoChat keybinds
+            common.AddFunction(ContentKeyFunctions.NanoChatNavigateUpUnread); // DeltaV - NanoChat keybinds
+            common.AddFunction(ContentKeyFunctions.NanoChatNavigateDownUnread); // DeltaV - NanoChat keybinds
 
             // Not in engine, because engine cannot check for sanbox/admin status before starting placement.
             common.AddFunction(ContentKeyFunctions.EditorCopyObject);

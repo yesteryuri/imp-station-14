@@ -111,6 +111,8 @@
     state: mop
     rotation: 225
     noRot: false
+  - type: ImmovableRod #imp edit, custom popup
+    eviscerationPopup: immovable-rod-penetrated-mob-mop
 
 - type: entity
   parent: ImmovableRodKeepTilesStill
@@ -123,6 +125,8 @@
     state: blue
     rotation: 90
     noRot: false
+  - type: ImmovableRod #imp edit, custom popup
+    eviscerationPopup: immovable-rod-penetrated-mob-shark
 
 - type: entity
   parent: ImmovableRodKeepTilesStill
@@ -135,6 +139,8 @@
     state: clown
     rotation: 180
     noRot: false
+  - type: ImmovableRod #imp edit, custom popup
+    eviscerationPopup: immovable-rod-penetrated-mob-clown
 
 - type: entity
   parent: ImmovableRodKeepTilesStill
@@ -146,6 +152,8 @@
     sprite: Objects/Specific/Hydroponics/banana.rsi
     state: produce
     noRot: false
+  - type: ImmovableRod #imp edit, custom popup
+    eviscerationPopup: immovable-rod-penetrated-mob-banana
 
 - type: entity
   parent: ImmovableRodKeepTilesStill
@@ -158,6 +166,8 @@
     state: icon
     rotation: 225
     noRot: false
+  - type: ImmovableRod #imp edit, custom popup
+    eviscerationPopup: immovable-rod-penetrated-mob-hammer
 
 - type: entity
   parent: ImmovableRodKeepTilesStill
@@ -170,6 +180,8 @@
     state: icon
     rotation: 225
     noRot: false
+  - type: ImmovableRod #imp edit, custom popup
+    eviscerationPopup: immovable-rod-penetrated-mob-throngler
 
 - type: entity
   parent: ImmovableRodKeepTilesStill
@@ -182,6 +194,8 @@
     state: icon
     rotation: 225
     noRot: false
+  - type: ImmovableRod #imp edit, custom popup
+    eviscerationPopup: immovable-rod-penetrated-mob-gibstick
 
 - type: entity
   parent: ImmovableRodKeepTilesStill
@@ -193,3 +207,5 @@
     sprite: Objects/Fun/Plushies/lizard.rsi
     state: icon
     noRot: false
+  - type: ImmovableRod #imp edit, custom popup
+    eviscerationPopup: immovable-rod-penetrated-mob-weh

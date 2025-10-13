@@ -40,5 +40,13 @@ namespace Content.Server.GameTicking.Presets
         /// </summary>
         [DataField("supportedMaps", customTypeSerializer: typeof(PrototypeIdSerializer<GameMapPoolPrototype>))]
         public string? MapPool;
+
+        // imp edit
+        /// <summary>
+        /// Ensures that this gamemode does not get selected for a number of rounds
+        /// by something like Secret. This is not considered when the preset is forced.
+        /// </summary>
+        [DataField("cooldown")]
+        public int Cooldown = 0;
     }
 }

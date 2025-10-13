@@ -67,7 +67,7 @@ public sealed class StandingStateSystem : EntitySystem
             return;
 
         // Currently only Climbing also edits fixtures layers like this so this is fine for now.
-        ChangeLayers(entity);
+        //ChangeLayers(entity); //imp edit, commented out until a reasonable way to allow crawling under plastic flaps and tables while slipping and disallow it for crawling can be figured out
     }
 
     public bool IsMatchingState(Entity<StandingStateComponent?> entity, bool standing)
@@ -128,7 +128,7 @@ public sealed class StandingStateSystem : EntitySystem
         _appearance.SetData(uid, RotationVisuals.RotationState, RotationState.Horizontal, appearance);
 
         // Change collision masks to allow going under certain entities like flaps and tables
-        ChangeLayers((uid, standingState));
+        //ChangeLayers((uid, standingState)); //imp edit, commented out until a reasonable way to allow crawling under plastic flaps and tables while slipping and disallow it for crawling can be figured out
 
         // check if component was just added or streamed to client
         // if true, no need to play sound - mob was down before player could seen that

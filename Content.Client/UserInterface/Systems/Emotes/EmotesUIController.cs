@@ -28,11 +28,11 @@ public sealed class EmotesUIController : UIController, IOnStateChanged<GameplayS
         new()
         {
             [EmoteCategory.General] = ("emote-menu-category-general",
-                new SpriteSpecifier.Rsi(new ResPath("/Textures/Clothing/Head/Soft/mimesoft.rsi"), "icon")),
+                new SpriteSpecifier.Texture(new ResPath("/Textures/_Impstation/Interface/Emotes/general.png"))), // imp resprite
             [EmoteCategory.Hands] = ("emote-menu-category-hands",
-                new SpriteSpecifier.Rsi(new ResPath("/Textures/Clothing/Hands/Gloves/latex.rsi"), "icon")),
+                new SpriteSpecifier.Texture(new ResPath("/Textures/_Impstation/Interface/Emotes/hand.png"))), // imp resprite
             [EmoteCategory.Vocal] = ("emote-menu-category-vocal",
-                new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Emotes/vocal.png"))),
+                new SpriteSpecifier.Texture(new ResPath("/Textures/_Impstation/Interface/Emotes/vocal.png"))), // imp resprite
         };
 
     public void OnStateEntered(GameplayState state)
