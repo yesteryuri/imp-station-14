@@ -190,6 +190,15 @@ namespace Content.Shared.Chemistry.Reagent
         [DataField]
         public SoundSpecifier FootstepSound = new SoundCollectionSpecifier("FootstepPuddle");
 
+        // IMP TODO: better documentation for these
+        // imp add
+        [DataField]
+        public bool ImpEvaporates = false;
+
+        // imp add
+        [DataField]
+        public float ImpEvaporationAmount = 0.3f;
+
         public FixedPoint2 ReactionTile(TileRef tile, FixedPoint2 reactVolume, IEntityManager entityManager, List<ReagentData>? data)
         {
             var removed = FixedPoint2.Zero;

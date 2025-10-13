@@ -1,16 +1,14 @@
+using Content.Server.Forensics;
+using Content.Server.Humanoid;
 using Content.Server.Xenoarchaeology.XenoArtifacts.Effects.Components;
 using Content.Server.Xenoarchaeology.XenoArtifacts.Events;
-using Content.Shared.Preferences;
-using Content.Server.Humanoid;
-using System.Linq;
-using Robust.Shared.Random;
-using Content.Shared.Humanoid;
-using Content.Shared.Forensics.Components;
 using Content.Shared.Forensics;
-using Content.Server.Forensics;
-using Content.Server.IdentityManagement;
-
-
+using Content.Shared.Forensics.Components;
+using Content.Shared.Humanoid;
+using Content.Shared.IdentityManagement;
+using Content.Shared.Preferences;
+using Robust.Shared.Random;
+using System.Linq;
 
 namespace Content.Server.Xenoarchaeology.XenoArtifacts.Effects.Systems;
 
@@ -48,13 +46,14 @@ public sealed class ScrambleDNAArtifactSystem : EntitySystem
 
         //Select random targets to scramble DNA
         var numScrambled = 0;
-        while (numScrambled < ent.Comp.Count){
+        while (numScrambled < ent.Comp.Count)
+        {
             var targetIndex = _random.Next(0, possibleVictims.Count);
             var target = possibleVictims.ElementAt(targetIndex);
             possibleVictims.Remove(target);
 
             ScrambleTargetDNA(target, ent.Comp);
-            numScrambled ++;
+            numScrambled++;
         }
     }
 

@@ -115,16 +115,6 @@ public sealed class MagnetPickupSystem : EntitySystem
             if (!comp.MagnetEnabled)
                 continue;
 
-            // is ore bag on belt?
-            if (HasComp<ClothingComponent>(uid))
-            {
-                if (!_inventory.TryGetContainingSlot(uid, out var slotDef))
-                    continue;
-
-                if ((slotDef.SlotFlags & comp.SlotFlags) == 0x0)
-                    continue;
-            }
-
             var parentUid = xform.ParentUid;
             var playedSound = false;
             var finalCoords = xform.Coordinates;
