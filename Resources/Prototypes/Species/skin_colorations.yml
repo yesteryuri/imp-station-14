@@ -8,6 +8,7 @@
   strategy: !type:ClampedHslColoration
     saturation: [0, 0.1]
     lightness: [0.85, 1]
+  squashAllColors: true # imp
 
 - type: skinColoration
   id: VoxFeathers
@@ -19,6 +20,7 @@
 - type: skinColoration
   id: HumanToned
   strategy: !type:HumanTonedSkinColoration {}
+  realisticColors: true # imp
 
 - type: skinColoration
   id: VulpkaninColors

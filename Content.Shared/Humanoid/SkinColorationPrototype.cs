@@ -19,6 +19,22 @@ public sealed partial class SkinColorationPrototype : IPrototype
     /// </summary>
     [DataField(required: true)]
     public ISkinColorationStrategy Strategy = default!;
+
+    // Imp add.
+    /// <summary>
+    ///     If true, will randomly generate realistic hair and eye colors.
+    ///     Will also crush randomly generated colors down to the skin's luminosity
+    ///     so markings don't appear too bright on darker skin.
+    /// </summary>
+    [DataField]
+    public bool RealisticColors;
+
+    // Imp add.
+    /// <summary>
+    ///     If true, will also squash hair and eye colors to the coloration strategy.
+    /// </summary>
+    [DataField]
+    public bool SquashAllColors;
 }
 
 /// <summary>
