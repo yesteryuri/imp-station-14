@@ -95,8 +95,7 @@ uplink-pistol-magazine-desc = Pistol magazine with 10 cartridges. Compatible wit
 
 #imp desc tweak
 uplink-pistol-magazine-c20r-name = SMG magazine (.35 auto)
-uplink-pistol-magazine-c20r-desc = SMG magazine with 30 catridges. Compatible with C-20R Gorgon.
-
+uplink-pistol-magazine-c20r-desc = SMG magazine with 30 cartridges. Compatible with C-20R Gorgon.
 
 uplink-magazine-bulldog-pellet-name = Drum magazine (.50 pellet)
 uplink-magazine-bulldog-pellet-desc = Shotgun magazine with 8 shells filled with buckshot. Compatible with the Bulldog.
