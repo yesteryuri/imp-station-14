@@ -30,6 +30,7 @@
       - WeldingMask
       - RemoteSignaller
       - UtilityKnife
+      - Dart #Until Zookeeper gets its own belt they're gonna have to share. This is a temporary stopgap. Also Imp.
       components:
       - StationMap
       - SprayPainter
@@ -137,6 +138,8 @@
       - Plunger
       - GoldenPlunger
       - WireBrush
+      - DampRag #imp edit
+      - JanitorialWelder #imp edit
       components:
       - LightReplacer
       - SmokeOnTrigger
@@ -247,7 +250,7 @@
   - type: Storage
     whitelist:
       tags:
-      # - PlantAnalyzer
+      - PlantAnalyzer # nf uncomment
       - PlantSampleTaker
       - BotanyShovel
       - BotanyHoe
@@ -319,6 +322,7 @@
       - Skewer
       - MonkeyCube
       - Mayo
+      - DampRag #imp edit
       components:
       - Mousetrap
       - Smokable
@@ -393,6 +397,12 @@
       - CombatKnife
       - Truncheon
       - HandGrenade
+      # imp edit start
+      - SecTicket
+      - Pribar
+      - SpaceBladeSec
+      - HandheldCriminalRecords
+      # imp edit end
       components:
       - Stunbaton
       - FlashOnTrigger
