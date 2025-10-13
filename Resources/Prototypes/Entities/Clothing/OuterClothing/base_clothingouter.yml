@@ -167,7 +167,9 @@
     staminaCost: 44
     soundHit:
       collection: MetalThud
-  - type: HarpyHideWings # Frontier, needed for Kodepiiae
+  - type: HideLayerClothing
+    slots:
+    - RArmExtension
   # imp edit end
 
 - type: entity
@@ -202,7 +204,7 @@
   - type: HideLayerClothing
     slots:
     - Tail
-  - type: HarpyHideWings # Frontier, needed for Kodepiiae
+    - RArmExtension #imp
 
 - type: entity
   parent: ClothingOuterBase

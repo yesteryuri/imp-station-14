@@ -162,6 +162,7 @@ namespace Content.IntegrationTests.Tests
             "Boat",
             "BoxImp",
             "CentCommImp",
+            "Cluster",
             "CogImp",
             "CoreImp",
             "E1M1",

@@ -140,6 +140,7 @@
     slots:
     - Hair
     - Snout
+    - SnoutCover # imp
     - HeadTop
     - HeadSide
     - FacialHair
@@ -192,6 +193,7 @@
     - HeadTop
     - HeadSide
     - FacialHair
+    - SnoutCover # imp
 
 - type: entity
   abstract: true

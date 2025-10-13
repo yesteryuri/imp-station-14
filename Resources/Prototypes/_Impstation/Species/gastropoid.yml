@@ -2,6 +2,7 @@
   id: Gastropoid
   name: species-name-gastropoid
   roundStart: true
+  randomViable: true
   prototype: MobGastropoid
   sprites: MobGastropoidSprites
   defaultSkinTone: "#385878"
