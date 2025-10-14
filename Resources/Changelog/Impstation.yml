@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: ruddygreat
-  changes:
-  - message: Added basic orgnaisational capabilities to the cargo bounty conputer
-    type: Add
-  id: 1820
-  time: '2025-06-13T00:24:10.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2727
 - author: crocodilecarousel, LandsharkRAWR
   changes:
   - message: new crab markings
@@ -4195,3 +4188,10 @@
   id: 2319
   time: '2025-10-14T14:05:57.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3556
+- author: FancyPlanks
+  changes:
+  - message: Wizards can no longer buy the Animate spell until it is fixed!
+    type: Remove
+  id: 2320
+  time: '2025-10-14T14:14:32.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3562
