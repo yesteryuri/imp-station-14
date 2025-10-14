@@ -243,7 +243,7 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
             {
                 newHairStyle = markings.Count == 0 || !random.Prob(categorySet.Weight)
                     ? HairStyles.DefaultHairStyle.Id
-                    : random.Pick(markingWeights);
+                    : random.Pick(markingWeights).Key;
             }
 
             // if it's facial hair, there are entries in the category, and the character is not female, roll & assign a random one. else bald
@@ -251,7 +251,7 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
             {
                 newFacialHairStyle = markings.Count == 0 || sex == Sex.Female || !random.Prob(categorySet.Weight)
                     ? HairStyles.DefaultFacialHairStyle.Id
-                    : random.Pick(markingWeights);
+                    : random.Pick(markingWeights).Key;
             }
 
             // for every other category,
@@ -270,7 +270,7 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
                         continue;
 
                     // pick a random marking from the list
-                    var randomMarking = random.Pick(markingWeights);
+                    var randomMarking = random.Pick(markingWeights).Key;
                     if (!markings.TryGetValue(randomMarking, out var protoToAdd))
                         continue;
                     var markingToAdd = protoToAdd.AsMarking();
