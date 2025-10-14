@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: CombustibleToast
-  changes:
-  - message: Some jumpsuits can go slutmode again
-    type: Fix
-  id: 1818
-  time: '2025-06-13T00:20:14.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2735
 - author: msTheowo
   changes:
   - message: Moved some service jobs back into the civilian department
@@ -4189,3 +4182,11 @@
   id: 2317
   time: '2025-10-14T01:47:48.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3457
+- author: msTheowo
+  changes:
+  - message: Natural artifacts now behave more similarly to reticulated artifacts,
+      but they are still their own thing.
+    type: Tweak
+  id: 2318
+  time: '2025-10-14T01:53:15.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3526
