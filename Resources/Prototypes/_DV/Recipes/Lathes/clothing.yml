@@ -49,7 +49,7 @@
 # Ponchos
 
 - type: latheRecipe
-  parent: BaseCommandCoatRecipe
+  parent: BaseCoatRecipe #edit from command, these were showing up in the command filter
   id: ClothingNeckCWPArctic
   result: ClothingNeckCWPArctic
   completetime: 4
@@ -204,8 +204,6 @@
 # Utility
 
 - type: latheRecipe
+  parent: BaseBeltRecipe # edit, added parent for expanded belt recipes
   id: ClothingBeltPaperwork
   result: ClothingBeltPaperwork
-  materials:
-    Cloth: 200
-    Durathread: 100

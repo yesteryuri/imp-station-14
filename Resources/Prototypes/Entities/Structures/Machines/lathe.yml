@@ -570,6 +570,9 @@
         - RawMaterial
         - Ingot
   - type: OreSiloClient
+  - type: ActivatableUIRequiresAccess # imp edit
+  - type: AccessReader # imp edit
+    access: [[ "Command" ]]
 
 - type: entity
   id: Biogenerator

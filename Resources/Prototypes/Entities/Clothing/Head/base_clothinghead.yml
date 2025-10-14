@@ -281,3 +281,6 @@
     - Hair
     - HeadTop
     - HeadSide
+  - type: Tag # imp edit
+    tags:
+    - WhitelistChameleon

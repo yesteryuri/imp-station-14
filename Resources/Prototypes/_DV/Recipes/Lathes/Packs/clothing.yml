@@ -67,6 +67,7 @@
   - ClothingNeckCWPArctic
 
 - type: latheRecipePack
+  parent: BeltsImp # edit, more belts
   id: BeltsDeltaV
   recipes:
   - ClothingBeltPaperwork

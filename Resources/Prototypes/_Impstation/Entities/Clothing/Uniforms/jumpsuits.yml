@@ -523,6 +523,8 @@
   - type: Tag
     tags:
     - HiViz
+    - WhitelistChameleon
+    - ClothMade
 
 - type: entity
   parent: [ClothingUniformBase, BaseCentcommContraband]
