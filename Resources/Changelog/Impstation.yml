@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: msTheowo
-  changes:
-  - message: Moved some service jobs back into the civilian department
-    type: Tweak
-  id: 1819
-  time: '2025-06-13T00:21:51.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2730
 - author: ruddygreat
   changes:
   - message: Added basic orgnaisational capabilities to the cargo bounty conputer
@@ -4190,3 +4183,15 @@
   id: 2318
   time: '2025-10-14T01:53:15.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3526
+- author: VeeNomine
+  changes:
+  - message: Added the Shamisen, a traditional Japanese string instrument.
+    type: Add
+  - message: The Shamisen is a selectable starter instrument for musicans.
+    type: Add
+  - message: The Shamisen has been added the string instruments crate, purchasable
+      from Cargo.
+    type: Add
+  id: 2319
+  time: '2025-10-14T14:05:57.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3556
