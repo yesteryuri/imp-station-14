@@ -1,13 +1,4 @@
 ﻿Entries:
-- author: crocodilecarousel, LandsharkRAWR
-  changes:
-  - message: new crab markings
-    type: Add
-  - message: pauldrons layer better now
-    type: Tweak
-  id: 1821
-  time: '2025-06-14T00:22:22.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2746
 - author: DVDPlayerOfDiscordFame
   changes:
   - message: New in-hand sprites for our Impstation magazines!
@@ -4195,3 +4186,10 @@
   id: 2320
   time: '2025-10-14T14:14:32.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3562
+- author: DVDPlayerOfDiscordFame
+  changes:
+  - message: New visuals for stun projectiles and their hit animations!
+    type: Add
+  id: 2321
+  time: '2025-10-14T14:20:23.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3553
