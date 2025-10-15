@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: hivehum
-  changes:
-  - message: A body has been discovered.
-    type: Add
-  id: 1826
-  time: '2025-06-14T04:36:16.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2732
 - author: mqole
   changes:
   - message: FIXED WHITE
@@ -4193,3 +4186,11 @@
   id: 2325
   time: '2025-10-15T03:32:53.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3393
+- author: TheGrimbeeper
+  changes:
+  - message: Supermatter will now realise that it has eaten all the gas in its room
+      and get hangry.
+    type: Fix
+  id: 2326
+  time: '2025-10-15T03:36:17.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3554
