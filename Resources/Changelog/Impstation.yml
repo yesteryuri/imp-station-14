@@ -1,15 +1,4 @@
 ﻿Entries:
-- author: entings
-  changes:
-  - message: Added some funky new jaws and a set of legs for your weird spider!
-    type: Add
-  - message: There are a couple new web weaving patterns floating around!
-    type: Add
-  - message: Giant spiders can finally eat their webs to clean up after themselves!
-    type: Add
-  id: 1825
-  time: '2025-06-14T04:33:21.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2741
 - author: hivehum
   changes:
   - message: A body has been discovered.
@@ -4192,3 +4181,15 @@
   id: 2324
   time: '2025-10-15T03:29:02.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3551
+- author: honeyed-lemons
+  changes:
+  - message: Kodepiiae should feel slightly less full after consuming something, but
+      can now do it twice as often.
+    type: Tweak
+  - message: Kodepiiae can now consume rotten corpses, with a downside.
+    type: Tweak
+  - message: Kodepiiae are now a bit heavier
+    type: Tweak
+  id: 2325
+  time: '2025-10-15T03:32:53.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3393
