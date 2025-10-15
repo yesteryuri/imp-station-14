@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: Mousetrinity
-  changes:
-  - message: watch out, there's an oppa in the pantry! butcher it, and you'll be rewarded.
-    type: Add
-  id: 1823
-  time: '2025-06-14T00:46:11.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2699
 - author: yesteryuri
   changes:
   - message: Budget cuts at the Mail Inspection Division have led to many more interesting
@@ -4192,3 +4185,11 @@
   id: 2322
   time: '2025-10-14T15:08:52.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3559
+- author: Moodotsuki
+  changes:
+  - message: the head of security's shoulder holster can now store SecLink utility
+      items.
+    type: Fix
+  id: 2323
+  time: '2025-10-15T03:05:29.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3560
