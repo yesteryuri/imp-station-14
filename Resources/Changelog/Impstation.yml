@@ -1,18 +1,4 @@
 ﻿Entries:
-- author: msTheowo
-  changes:
-  - message: Unadapted to space disability
-    type: Add
-  id: 1828
-  time: '2025-06-14T17:34:22.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2676
-- author: hivehum
-  changes:
-  - message: Doors are now normal about snakes.
-    type: Fix
-  id: 1829
-  time: '2025-06-14T22:51:21.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2762
 - author: astral_amy
   changes:
   - message: Added Bedlam to map rotation!
@@ -4198,3 +4184,24 @@
   id: 2327
   time: '2025-10-15T03:39:24.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3548
+- author: Entings, Squamatic
+  changes:
+  - message: TLC updates to Arachnids and Moths!
+    type: Add
+  - message: The kitchens have switched to using non-arachnid-safe onions and coffee.
+      Sorry, guys.
+    type: Fix
+  - message: Spiders can eat webs off the damn ground again.
+    type: Fix
+  id: 2328
+  time: '2025-10-15T03:48:42.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3539
+- author: TheGrimbeeper
+  changes:
+  - message: Both Natural and Reticulated artifacts ask for "Expressiveness"
+    type: Tweak
+  - message: Gas triggers are less common.
+    type: Tweak
+  id: 2329
+  time: '2025-10-15T03:49:43.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3563
