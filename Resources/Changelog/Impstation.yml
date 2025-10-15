@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: yesteryuri
-  changes:
-  - message: Budget cuts at the Mail Inspection Division have led to many more interesting
-      items appearing in letters and packages again.
-    type: Tweak
-  id: 1824
-  time: '2025-06-14T03:54:09.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2744
 - author: entings
   changes:
   - message: Added some funky new jaws and a set of legs for your weird spider!
@@ -4193,3 +4185,10 @@
   id: 2323
   time: '2025-10-15T03:05:29.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3560
+- author: starlighthowls
+  changes:
+  - message: Ungu got better at smoking, mooing, eating and more!
+    type: Fix
+  id: 2324
+  time: '2025-10-15T03:29:02.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3551
