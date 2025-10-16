@@ -1167,22 +1167,6 @@ namespace Content.Client.Lobby.UI
 
                     break;
                 }
-                // Imp edit start
-                case HumanoidSkinColor.GrayToned:
-                {
-                    if (!RgbSkinColorContainer.Visible)
-                    {
-                        Skin.Visible = false;
-                        RgbSkinColorContainer.Visible = true;
-                    }
-
-                    var color = SkinColor.GraySkinTone(_rgbSkinColorSelector.Color);
-
-                    Markings.CurrentSkinColor = color;
-                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
-                    break;
-                }
-                // Imp edit end
             }
 
             ReloadProfilePreview();

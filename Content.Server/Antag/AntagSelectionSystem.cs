@@ -32,6 +32,7 @@ using Robust.Server.GameObjects;
 using Robust.Server.Player;
 using Robust.Shared.Enums;
 using Robust.Shared.Map;
+using Robust.Shared.Network; // imp
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -63,6 +64,8 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
 
     // arbitrary random number to give late joining some mild interest.
     public const float LateJoinRandomChance = 0.5f;
+
+    public Dictionary<NetUserId, (ICommonSession, AntagSelectionDefinition, Entity<AntagSelectionComponent>)> QueuedAntags = [];
 
     /// <inheritdoc/>
     public override void Initialize()
