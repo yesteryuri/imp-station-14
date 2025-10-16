@@ -245,6 +245,7 @@
       - id: ViolaInstrument
       - id: HarpInstrument
       - id: HandheldHarpInstrument #imp
+      - id: ShamisenInstrument #imp
 
 - type: entity
   id: CrateFunInstrumentsWoodwind

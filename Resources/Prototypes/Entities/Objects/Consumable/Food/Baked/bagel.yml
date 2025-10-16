@@ -25,6 +25,7 @@
   - type: Tag # imp
     tags:
     - Bagel
+    - Bread # imp
 
 - type: entity
   parent: FoodBagelBase
@@ -52,6 +53,11 @@
           Quantity: 4 # imp
         - ReagentId: Nutriment
           Quantity: 6.5 # imp
+  - type: Tag # imp
+    tags:
+    - UnguFood
+    - Bagel
+    - Bread
 
 - type: entity
   parent: FoodBagelBase

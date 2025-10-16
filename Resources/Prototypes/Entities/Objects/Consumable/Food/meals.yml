@@ -48,6 +48,9 @@
           Quantity: 14
         - ReagentId: Vitamin
           Quantity: 4
+  - type: Tag # imp
+    tags:
+    - UnguFood
 # Tastes like potato.
 
 - type: entity
@@ -78,6 +81,9 @@
   - type: FoodSequenceElement # imp
     entries:
       Burger: SpaceFriesBurger
+  - type: Tag # imp
+    tags:
+    - UnguFood
 # Tastes like fries, salt.
 
 - type: entity
@@ -109,6 +115,9 @@
   - type: FoodSequenceElement # imp
     entries:
       Burger: CheesyFriesBurger
+  - type: Tag # imp
+    tags:
+    - UnguFood
 # Tastes like fries, cheese.
 
 - type: entity
@@ -128,6 +137,7 @@
   - type: Tag
     tags:
     - CarrotFries
+    - Vegetable # imp
   - type: SolutionContainerManager
     solutions:
       food:
@@ -169,6 +179,9 @@
         #  Quantity: 1
         - ReagentId: TableSalt
           Quantity: 1
+  - type: Tag # imp
+    tags:
+    - UnguFood
 # Tastes like nachos.
 
 - type: entity
@@ -199,6 +212,9 @@
         #  Quantity: 3
         - ReagentId: TableSalt
           Quantity: 1 # imp
+  - type: Tag # imp
+    tags:
+    - UnguFood
 # Tastes like nachos, cheese.
 
 - type: entity
@@ -230,6 +246,9 @@
           Quantity: 10 # imp
         - ReagentId: Vitamin
           Quantity: 4 # imp
+  - type: Tag # imp
+    tags:
+    - UnguFood
 # Tastes like nachos, hot pepper.
 
 - type: entity
@@ -299,6 +318,9 @@
       - potatoes
   - type: Sprite
     state: yakiimo
+  - type: Tag # imp
+    tags:
+    - UnguFood
 # Tastes like sweet potato.
 
 - type: entity
@@ -652,6 +674,9 @@
             Quantity: 10
           - ReagentId: Vitamin
             Quantity: 4
+    - type: Tag # imp
+      tags:
+      - UnguFood
 # Its queso! Everyone loves queso... Right?.
 
 - type: entity
@@ -781,3 +806,6 @@
           Quantity: 5
         #- ReagentId: Vitamin
         #  Quantity: 4
+  - type: Tag # imp
+    tags:
+    - UnguFood

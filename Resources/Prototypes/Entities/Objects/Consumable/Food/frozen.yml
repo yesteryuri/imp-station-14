@@ -120,6 +120,9 @@
           Quantity: 3
         - ReagentId: Sugar
           Quantity: 1
+  - type: Tag # imp
+    tags:
+    - UnguFood
 
 - type: entity
   parent: FoodFrozenBase

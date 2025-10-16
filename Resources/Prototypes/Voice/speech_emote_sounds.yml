@@ -125,6 +125,8 @@
     # imp edit start
     Hiss:
       collection: ReptilianHiss
+    Chirp:
+      collection: ReptilianChirp
     Sneeze:
       collection: MaleSneezes #placeholder
     Cough:
@@ -165,6 +167,8 @@
     # imp edit start
     Hiss:
       collection: ReptilianHiss
+    Chirp:
+      collection: ReptilianChirp
     Sneeze:
       collection: FemaleSneezes #placeholder
     Cough:
@@ -396,20 +400,22 @@
     Honk:
       collection: BikeHorn
     Gasp:
-      collection: UnisexGasp # imp
+      path: /Audio/_Impstation/Voice/Arachnid/arachnid_gasp.ogg #imp
     DefaultDeathgasp:
       collection: DeathGasp
     # imp edit start
+    Hiss:
+      path: /Audio/_Impstation/Voice/Arachnid/arachnid_hiss.ogg
     Sneeze:
       collection: UnisexSneezes #placeholder
     Cough:
-      collection: UnisexCoughs #placeholder
+      path: /Audio/_Impstation/Voice/Arachnid/arachnid_cough.ogg
     Yawn:
-      collection: UnisexYawn #placeholder
+      path: /Audio/_Impstation/Voice/Arachnid/arachnid_yawn.ogg
     Sigh:
-      collection: UnisexSigh #placeholder
+      path: /Audio/_Impstation/Voice/Arachnid/arachnid_sigh.ogg
     Crying:
-      collection: UnisexCry #placeholder
+      path: /Audio/_Impstation/Voice/Arachnid/arachnid_cry.ogg
     Whistle:
       collection: Whistles
     Wuhey:
@@ -538,20 +544,20 @@
     Honk:
       collection: BikeHorn
     Gasp:
-      collection: MaleGasp
+      path: /Audio/_Impstation/Voice/Moth/mothgasp.ogg # imp
     DefaultDeathgasp:
       collection: MothDeathGasp
     # imp edit start
     Sneeze:
       collection: UnisexSneezes #placeholder
     Cough:
-      collection: UnisexCoughs #placeholder
+      path: /Audio/_Impstation/Voice/Moth/mothcough.ogg
     Yawn:
-      collection: UnisexYawn #placeholder
+      path: /Audio/_Impstation/Voice/Moth/mothyawn.ogg
     Sigh:
-      collection: UnisexSigh #placeholder
+      path: /Audio/_Impstation/Voice/Moth/mothsigh.ogg
     Crying:
-      collection: UnisexCry #placeholder
+      path: /Audio/_Impstation/Voice/Moth/mothcry.ogg
     Whistle:
       collection: Whistles
     Wuhey:
