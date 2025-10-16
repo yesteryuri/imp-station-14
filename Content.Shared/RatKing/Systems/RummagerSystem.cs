@@ -5,6 +5,7 @@ using Content.Shared.Verbs;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
 using Robust.Shared.Serialization;
+using Robust.Shared.Timing; // imp
 
 namespace Content.Shared.RatKing.Systems;
 
@@ -14,6 +15,7 @@ public sealed class RummagerSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private readonly IGameTiming _gameTiming = default!; // imp
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -26,20 +28,27 @@ public sealed class RummagerSystem : EntitySystem
 
     private void OnGetVerb(Entity<RummageableComponent> ent, ref GetVerbsEvent<AlternativeVerb> args)
     {
-        if (!HasComp<RummagerComponent>(args.User) || ent.Comp.Looted)
+
+        if (!HasComp<RummagerComponent>(args.User) || ent.Comp.Looted && !ent.Comp.Relootable) // imp add relootable
+            return;
+
+        // IMP ADD: if the ent is relootable but not currently lootable, skip adding verbs
+        if (!IsCurrentlyLootable(ent))
             return;
 
         var user = args.User;
 
         args.Verbs.Add(new AlternativeVerb
         {
-            Text = Loc.GetString("rat-king-rummage-text"),
+            //Text = Loc.GetString("rat-king-rummage-text"),
+            Text = ent.Comp.RummageVerb, // imp edit
             Priority = 0,
             Act = () =>
             {
+                var rummageDuration = ent.Comp.RummageDuration * ent.Comp.RummageModifier; // imp add
                 _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager,
                     user,
-                    ent.Comp.RummageDuration,
+                    rummageDuration, // imp, was ent.comp.RummageDuration
                     new RummageDoAfterEvent(),
                     ent,
                     ent)
@@ -55,10 +64,16 @@ public sealed class RummagerSystem : EntitySystem
 
     private void OnDoAfterComplete(Entity<RummageableComponent> ent, ref RummageDoAfterEvent args)
     {
-        if (args.Cancelled || ent.Comp.Looted)
+        if (args.Cancelled || ent.Comp.Looted
+            || !IsCurrentlyLootable(ent)) // imp add
             return;
 
         ent.Comp.Looted = true;
+
+        // imp: set the next refresh if the entity is relootable.
+        if (ent.Comp.Relootable)
+            ent.Comp.NextRelootable = _gameTiming.CurTime + ent.Comp.RelootableCooldown;
+
         Dirty(ent, ent.Comp);
         _audio.PlayPredicted(ent.Comp.Sound, ent, args.User);
 
@@ -72,6 +87,14 @@ public sealed class RummagerSystem : EntitySystem
         {
             Spawn(spawn, coordinates);
         }
+    }
+
+    // imp add
+    /// Checks if the entity is currently lootable - Does not check if the entity has been looted.
+    private bool IsCurrentlyLootable(Entity<RummageableComponent> entity)
+    {
+        // if the entity doesn't have relootable, return true. if the entity's relootable cooldown is up, return true. else return false
+        return !entity.Comp.Relootable || entity.Comp.NextRelootable < _gameTiming.CurTime;
     }
 }
 
