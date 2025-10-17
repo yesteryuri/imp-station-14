@@ -178,7 +178,7 @@
   id: FoodMacaronCotton
   description: Hey, wait! This isn't a macaron! It's a doily!
   components:
-  - type: Food
+  - type: Edible
     requiresSpecialDigestion: true
   - type: Tag
     tags:
@@ -252,7 +252,7 @@
     tags:
     - FoodSnack
     - UnguFood
-  - type: Food
+  - type: Edible
     trash:
     - FoodKebabSkewer
   - type: FlavorProfile
@@ -290,7 +290,7 @@
     - FoodSnack
     - ClothMade
     - ClothFood
-  - type: Food
+  - type: Edible
     requiresSpecialDigestion: true
     trash:
     - FoodKebabSkewer
@@ -326,7 +326,7 @@
     tags:
     - FoodSnack
     - Fruit
-  - type: Food
+  - type: Edible
     trash:
     - FoodKebabSkewer
   - type: FlavorProfile
@@ -365,7 +365,7 @@
     tags:
     - Meat
     - FoodSnack
-  - type: Food
+  - type: Edible
     trash:
     - FoodKebabSkewer
   - type: FlavorProfile
@@ -398,7 +398,7 @@
   - type: Tag
     tags:
     - FoodSnack
-  - type: Food
+  - type: Edible
     trash:
     - FoodKebabSkewer
   - type: FlavorProfile
