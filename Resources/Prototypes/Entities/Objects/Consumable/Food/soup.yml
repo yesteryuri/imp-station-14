@@ -1262,7 +1262,8 @@
           - ReagentId: Nutriment
             Quantity: 15
           - ReagentId: Vitamin
-            Quantity: 15  - type: Tag # imp
+            Quantity: 15
+  - type: Tag # imp
     tags:
     - Vegetable
 # Tastes like sweet potato.

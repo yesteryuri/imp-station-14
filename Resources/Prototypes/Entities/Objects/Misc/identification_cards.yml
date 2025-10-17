@@ -715,6 +715,7 @@
   name: syndicate ID card
   components:
   - type: Sprite
+    sprite: Objects/Misc/id_cards.rsi # imp
     layers:
     - state: black
     - state: syndi
@@ -752,6 +753,7 @@
   name: syndicate commander ID card
   components:
   - type: Sprite
+    sprite: Objects/Misc/id_cards.rsi # imp
     layers:
     - state: black
     - state: syndi_commander

@@ -36,6 +36,7 @@
       components:
       - Stamp
   - type: Sprite
+    sprite: Objects/Storage/boxes.rsi # imp
     layers:
       - state: box
       - state: stamp
@@ -74,6 +75,7 @@
       components:
       - Stamp
   - type: Sprite
+    sprite: Objects/Storage/boxes.rsi # imp
     layers:
       - state: box
       - state: stamp

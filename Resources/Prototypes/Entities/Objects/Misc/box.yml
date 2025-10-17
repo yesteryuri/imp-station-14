@@ -35,6 +35,7 @@
   description: A large tote for carrying circuit boards.
   components:
   - type: Sprite
+    sprite: Objects/Storage/boxes.rsi # imp
     layers:
       - state: tote-0
         map: ["enum.StorageFillLayers.Fill"]

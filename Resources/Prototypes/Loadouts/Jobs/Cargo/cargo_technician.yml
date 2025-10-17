@@ -73,6 +73,6 @@
   id: SeniorCourierPDA
   effects:
   - !type:GroupLoadoutEffect
-    proto: SeniorCargo
+    proto: SeniorCourier # imp, was SeniorCargo
   equipment:
     id: SeniorCourierPDA

@@ -21,7 +21,7 @@
       requirement:
         !type:DepartmentTimeRequirement
         department: Security
-      time: 90h # imp, was 100
+        time: 90h # imp, was 100
 
 # Head
 - type: loadout

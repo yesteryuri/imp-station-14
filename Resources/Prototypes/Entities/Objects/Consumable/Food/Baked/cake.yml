@@ -416,13 +416,14 @@
       - state: plain-inhand-right
       - state: alpha-slice-filling-inhand-right
         color: "#ffffff"
-  - type: Tag # imp
+# Tastes like sweetness, cream cheese.
+  # imp edit start
+  - type: Tag
     tags:
     - UnguFood
     - Cake
-# Tastes like sweetness, cream cheese.
-  # imp edit start
-  - type: FlavorProfile # Imp
+    - Slice
+  - type: FlavorProfile
     flavors:
     - creamy
     - cheesy
@@ -437,29 +438,14 @@
         maxVol: 10
         reagents:
         - ReagentId: Nutriment
-          Quantity: 4 # imp
+          Quantity: 4
         - ReagentId: Vitamin
           Quantity: 1
-        - ReagentId: Milk # Imp
+        - ReagentId: Milk
           Quantity: 1
-        - ReagentId: TableSalt # Imp
+        - ReagentId: TableSalt
           Quantity: 1
   # imp edit end
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: plain-slice-inhand-left
-      - state: alpha-filling-inhand-left
-        color: "#ffffff"
-      right:
-      - state: plain-inhand-right
-      - state: alpha-slice-filling-inhand-right
-        color: "#ffffff"
-  - type: Tag # imp
-    tags:
-    - UnguFood
-    - Cake
-    - Slice
 # Tastes like sweetness, cream cheese.
 
 - type: entity

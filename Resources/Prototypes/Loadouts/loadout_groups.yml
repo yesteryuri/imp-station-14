@@ -889,6 +889,7 @@
   name: loadout-group-cargo-technician-id
   loadouts:
   - CargoTechnicianPDA
+  - SeniorCargoTechnicianPDA # imp
   - SeniorCourierPDA
 
 - type: loadoutGroup

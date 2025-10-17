@@ -713,8 +713,8 @@
   name: enchiladas
   description: Viva La Mexico!
   components:
-  - type: Item
-    storedOffset: -1,0
+    - type: Item
+      storedOffset: -1,0
     - type: FlavorProfile
       flavors:
       - meaty

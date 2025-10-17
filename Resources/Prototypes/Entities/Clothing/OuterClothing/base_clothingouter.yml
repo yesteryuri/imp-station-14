@@ -149,6 +149,7 @@
   - type: HideLayerClothing
     slots:
     - Tail
+    - RArmExtension # imp, kode
   # imp edit start
   - type: Clothing #for equip/unequip delay
     equipSound: /Audio/Mecha/mechmove03.ogg
@@ -167,9 +168,6 @@
     staminaCost: 44
     soundHit:
       collection: MetalThud
-  - type: HideLayerClothing
-    slots:
-    - RArmExtension
   # imp edit end
 
 - type: entity
