@@ -105,7 +105,9 @@
       - FootstepSound
       - Meat #imp
   - type: NoSlip
-  #- type: Rummager TODO: fix this
+  - type: Rummager
+    rummageLoot: !type:NestedSelector # imp
+      tableId: RatKingLoot
   - type: RatKing
     hungerPerArmyUse: 25
     hungerPerDomainUse: 50
@@ -154,9 +156,6 @@
     color: "#50595C"
     activateSound: null
     deactivateSound: null
-  - type: CanRummage
-    rummageLoot: !type:NestedSelector
-      tableId: RatKingLoot
   - type: GoobAbsorbable
     biomassRestored: 0.6
   # imp edit end

@@ -80,7 +80,12 @@ public sealed class RummagerSystem : EntitySystem
         if (_net.IsClient)
             return;
 
-        var spawns = _entityTable.GetSpawns(ent.Comp.Table);
+        // imp add: use rummager's loot settings if provided
+        var table = TryComp<RummagerComponent>(args.User, out var rummager) && rummager.RummageLoot is not null
+            ? rummager.RummageLoot
+            : ent.Comp.Table;
+
+        var spawns = _entityTable.GetSpawns(table); // imp: comp table -> var
         var coordinates = Transform(ent).Coordinates;
 
         foreach (var spawn in spawns)
