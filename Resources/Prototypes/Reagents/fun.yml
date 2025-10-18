@@ -54,7 +54,6 @@
   contrabandSeverity: Minor
   flavor: bee
   color: "#FFD35D"
-  contraband: Minor # imp
   tileReactions:
   - !type:CreateEntityTileReaction
     entity: MobBee

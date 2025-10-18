@@ -24,7 +24,6 @@
   color: "#757245"
   boilingPoint: 2977.0 # Aluminum oxide
   meltingPoint: 2030.0
-  contraband: Major # imp
   tileReactions:
   - !type:FlammableTileReaction
     temperatureMultiplier: 2
@@ -46,7 +45,6 @@
   contrabandSeverity: Major
   flavor: bitter
   color: "#FA00AF"
-  contraband: Major # imp
   tileReactions:
   - !type:FlammableTileReaction
     temperatureMultiplier: 5
@@ -77,7 +75,6 @@
   contrabandSeverity: Major
   flavor: bitter
   color: "#D4872A"
-  contraband: Minor # imp
   metabolisms:
     Poison:
       effects:
@@ -108,7 +105,6 @@
   contrabandSeverity: Major
   flavor: bitter
   color: "#FFC8C8"
-  contraband: Major # imp
   tileReactions:
   - !type:PryTileReaction
   metabolisms:

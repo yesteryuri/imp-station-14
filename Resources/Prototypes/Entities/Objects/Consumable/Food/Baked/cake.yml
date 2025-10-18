@@ -955,19 +955,19 @@
         color: "#00ffff"
       - state: alpha-filling-inhand-right
         color: "#00ffff"
-    # imp edit start
-      - type: SolutionContainerManager # imp
-        solutions:
-          food:
-            maxVol: 45
-            reagents:
-            - ReagentId: Nutriment
-              Quantity: 20
-            - ReagentId: Vitamin
-              Quantity: 5
-            - ReagentId: Slime
-              Quantity: 15
-    # imp edit end
+  # imp edit start
+  - type: SolutionContainerManager # imp
+    solutions:
+      food:
+        maxVol: 45
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 20
+        - ReagentId: Vitamin
+          Quantity: 5
+        - ReagentId: Slime
+          Quantity: 15
+  # imp edit end
 
 - type: entity
   name: slice of slime cake

@@ -321,7 +321,6 @@
   physicalDesc: reagent-physical-desc-strong-smelling
   contrabandSeverity: Major
   color: "#5f959c"
-  contraband: Major # imp
   metabolisms:
     Poison:
       effects:
@@ -339,9 +338,8 @@
   group: Toxins
   desc: reagent-desc-lexorin
   physicalDesc: reagent-physical-desc-pungent
-  contrabandSeverity: Syndicate
+  contrabandSeverity: Tier3Contraband # imp
   color: "#6b0007"
-  contraband: Tier3Contraband # imp
   metabolisms:
     Poison:
       effects:
@@ -358,7 +356,7 @@
   physicalDesc: reagent-physical-desc-opaque
   flavor: bitter
   color: "#77b58e"
-  contraband: Minor # imp
+  contrabandSeverity: Minor # imp
   plantMetabolism:
   - !type:PlantAdjustToxins
     amount: 10
@@ -446,7 +444,6 @@
   physicalDesc: reagent-physical-desc-nondescript
   contrabandSeverity: Major
   color: "#D6CE7B"
-  contraband: Major #imp
   metabolisms:
     Poison:
       metabolismRate: 0.2
@@ -484,10 +481,9 @@
   group: Toxins
   desc: reagent-desc-romerol
   physicalDesc: reagent-physical-desc-necrotic
-  contrabandSeverity: Syndicate
+  contrabandSeverity: Tier3Contraband #imp
   flavor: bitter
   color: "#7e916e"
-  contraband: Tier3Contraband #imp
   worksOnTheDead: true
   metabolisms:
     Medicine:
@@ -710,10 +706,9 @@
   group: Toxins
   desc: reagent-desc-vestine
   physicalDesc: reagent-physical-desc-shiny
-  contrabandSeverity: Syndicate
+  contrabandSeverity: Tier2Contraband # imp
   flavor: medicine
   color: "#435166"
-  contraband: Tier2Contraband # imp
   metabolisms:
     Poison:
       effects:
@@ -735,10 +730,9 @@
   group: Toxins
   desc: reagent-desc-tazinide
   physicalDesc: reagent-physical-desc-metallic
-  contrabandSeverity: Syndicate
+  contrabandSeverity: Tier3Contraband #imp
   flavor: shocking
   color: "#FDD023"
-  contraband: Tier3Contraband #imp
   metabolisms:
     Poison:
       effects:

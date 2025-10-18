@@ -224,12 +224,12 @@
       collection: MaleSlimeGasp # imp
     DefaultDeathgasp:
       collection: MaleSlimeDeathGasp # imp
-  # imp edit start
-  Wuhey:
-    collection: Wuhey
-  Ungh:
-    collection: Ungh
-  # imp edit end
+    # imp edit start
+    Wuhey:
+      collection: Wuhey
+    Ungh:
+      collection: Ungh
+    # imp edit end
   params:
     variation: 0.125
 

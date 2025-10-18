@@ -724,7 +724,7 @@ ClothingUniformJumpsuitParamedicNT: ClothingUniformJumpsuitParamedic
 PrefilledSyringe: Syringe
 
 # 2025-10-6
-BibleTanakh: null
+#BibleTanakh: null # imp revert
 BibleSatanic: null
 
 # 2025-10-8
