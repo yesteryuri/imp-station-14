@@ -51,7 +51,7 @@
   components:
   - type: StorageFill
     contents:
-    - id: FoodRiceBushel
+    - id: RiceBushel
     - id: FoodCorn
     - id: FoodSoybeans
     - id: FoodChiliPepper
