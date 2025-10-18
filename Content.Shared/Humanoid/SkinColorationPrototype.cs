@@ -143,7 +143,7 @@ public sealed partial class HumanTonedSkinColoration : ISkinColorationStrategy
 
     public Color ClosestSkinColor(Color color)
     {
-        return ValidHumanSkinTone;
+        return FromUnary(ToUnary(color)); // imp, used to just return default tone
     }
 
     public Color FromUnary(float color)
