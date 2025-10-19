@@ -88,7 +88,7 @@
 ## Dynamic
 
 - type: latheRecipePack
-  id: FauxTiles
+  id: FauxTilesImp # imp
   recipes:
   - FauxTileAstroGrass
   - FauxTileMowedAstroGrass
