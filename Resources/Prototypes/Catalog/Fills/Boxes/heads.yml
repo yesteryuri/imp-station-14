@@ -13,6 +13,8 @@
       - id: SalvageMagnetMachineCircuitboard
       - id: SalvageJobBoardComputerCircuitboard
       - id: MailTeleporterMachineCircuitboard
+      - id: ShipyardComputerCircuitboard # imp
+      - id: SalvageExpeditionsComputerCircuitboard # imp
 
 - type: entity
   name: stamp box [QM]

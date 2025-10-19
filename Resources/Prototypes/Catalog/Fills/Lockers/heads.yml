@@ -12,8 +12,6 @@
     - id: DoorRemoteCargo
     - id: AstroNavCartridge
     - id: ClothingHandsKnuckleDustersQM
-    - id: ShipyardComputerCircuitboard # imp
-    - id: SalvageExpeditionsComputerCircuitboard # imp
     - id: PrinterDocFlatpack  # Corvax-Printer
     - id: PersonalAILearnerCargo #impspecial
 
