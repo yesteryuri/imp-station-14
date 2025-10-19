@@ -9,6 +9,8 @@
     - FoodSnack
   - type: Item
     size: Tiny
+    shape:
+    - 0,0,0,0
   - type: Sprite
     sprite: _Impstation/Objects/Consumable/Food/Candy/the_gummy_worm.rsi
     state: asinglegummyworm
@@ -34,6 +36,8 @@
     - chalky
   - type: Item
     size: Tiny
+    shape:
+    - 0,0,0,0
   - type: Sprite
     sprite: _Impstation/Objects/Consumable/Food/Candy/chalk_heart.rsi
     layers:
@@ -64,6 +68,8 @@
     - FoodSnack
   - type: Item
     size: Tiny
+    shape:
+    - 0,0,0,0
   - type: Sprite
     sprite: _Impstation/Objects/Consumable/Food/Candy/chocolate_heart.rsi
     layers:
@@ -138,6 +144,8 @@
     - Fruit
   - type: Item
     size: Tiny
+    shape:
+    - 0,0,0,0
   - type: Sprite
     sprite: _Impstation/Objects/Consumable/Food/Candy/macaron.rsi
     state: macaronberry

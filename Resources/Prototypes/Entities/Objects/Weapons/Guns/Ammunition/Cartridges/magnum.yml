@@ -7,6 +7,7 @@
   - type: Tag
     tags:
       - CartridgeMagnum
+      - Cartridge # imp
   - type: CartridgeAmmo
     proto: BulletMagnum
   - type: Sprite

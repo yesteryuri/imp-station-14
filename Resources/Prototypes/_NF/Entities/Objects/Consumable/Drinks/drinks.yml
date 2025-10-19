@@ -92,9 +92,6 @@
   - type: Clothing
     sprite: _NF/Clothing/Head/Hats/condiment_cup.rsi
   - type: CondimentCup
-  - type: SolutionContainerVisuals
-    maxFillLevels: 3
-    fillBaseName: icon-
   - type: SolutionContainerManager
     solutions:
       drink:

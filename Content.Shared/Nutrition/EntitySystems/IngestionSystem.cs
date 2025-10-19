@@ -139,7 +139,8 @@ public sealed partial class IngestionSystem : EntitySystem
     {
         // Beakers, Soap and other items have drainable, and we should be able to eat that solution.
         // This ensures that tests fail when you configured the yaml from and EdibleComponent uses the wrong solution,
-        if (TryComp<DrainableSolutionComponent>(entity, out var existingDrainable))
+        if (TryComp<DrainableSolutionComponent>(entity, out var existingDrainable)
+            && !existingDrainable.OverrideEdibleSolution) // imp add
             entity.Comp.Solution = existingDrainable.Solution;
         else
             _solutionContainer.EnsureSolution(entity.Owner, entity.Comp.Solution, out _);

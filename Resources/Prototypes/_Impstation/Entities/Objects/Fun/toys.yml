@@ -308,6 +308,11 @@
         reagents:
         - ReagentId: Mucin
           Quantity: 10
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 10
 
 - type: entity
   parent: BasePlushie
@@ -506,8 +511,11 @@
     preventMelee: false
   - type: Absorbent
     pickupAmount: 15
+  - type: Edible
+    solution: food
   - type: DrainableSolution
     solution: absorbed
+    overrideEdibleSolution: true
   - type: SolutionContainerManager
     solutions:
       absorbed++:
@@ -515,6 +523,11 @@
         reagents:
         - ReagentId: Milk
           Quantity: 15
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 10
   - type: FlavorProfile
     flavors:
     - weird
