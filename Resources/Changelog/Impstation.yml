@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: Princess-Cheeseballs
-  changes:
-  - message: Salvage bounties should now be counted properly when turning them in
-      alongside other bounties.
-    type: Fix
-  id: 1841
-  time: '2025-06-16T09:35:22.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2782
 - author: hivehum
   changes:
   - message: Oswald no longer sounds like a fucking chicken
@@ -4209,3 +4201,17 @@
   id: 2340
   time: '2025-10-20T05:23:44.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3504
+- author: yesteryuri
+  changes:
+  - message: Bartenders remembered their golden shaker
+    type: Fix
+  - message: Security cadets are allowed more than 15 seconds of job training
+    type: Fix
+  - message: Couriers have access to the senior courier pda
+    type: Fix
+  - message: The folder trinket groups have been merged, you'll have to re-add the
+      clipboard trinket if you used it before this week.
+    type: Tweak
+  id: 2341
+  time: '2025-10-20T05:25:37.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3587
