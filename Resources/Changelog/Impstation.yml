@@ -1,15 +1,4 @@
 ﻿Entries:
-- author: VeeNomine
-  changes:
-  - message: Added a borg courier module to the default cargo chassis. This includes
-      both a mail bag and a holobell projector.
-    type: Add
-  - message: Changed the cargo chassis description that appears on the chassis selection
-      screen.
-    type: Tweak
-  id: 1840
-  time: '2025-06-15T22:10:21.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2770
 - author: Princess-Cheeseballs
   changes:
   - message: Salvage bounties should now be counted properly when turning them in
@@ -4212,3 +4201,11 @@
   id: 2339
   time: '2025-10-20T04:11:09.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3586
+- author: Kipdotnet, Starlighthowls, Widgetbeck
+  changes:
+  - message: A reclusive species of spacefaring sauropods have been spotted amongst
+      interstellar shuttle crews.
+    type: Add
+  id: 2340
+  time: '2025-10-20T05:23:44.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3504
