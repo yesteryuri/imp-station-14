@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: hivehum
-  changes:
-  - message: Oswald no longer sounds like a fucking chicken
-    type: Fix
-  id: 1842
-  time: '2025-06-16T09:35:57.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/2781
 - author: EpicToast
   changes:
   - message: Elkridge Depot now supports genpop.
@@ -4215,3 +4208,11 @@
   id: 2341
   time: '2025-10-20T05:25:37.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/3587
+- author: DinnerCalzone
+  changes:
+  - message: AI restoration computers have been added to Amber, Bagel, Cog, Hummingbird,
+      Marathon, Oasis, Plasma, Saltern, and Train
+    type: Add
+  id: 2342
+  time: '2025-10-20T05:30:02.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/3589
