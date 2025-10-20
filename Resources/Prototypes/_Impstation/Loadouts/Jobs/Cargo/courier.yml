@@ -27,7 +27,7 @@
   equipment:
     shoes: ClothingShoesBootsWinterCourier
 
-# Shoes
+# PDA
 - type: loadout
   id: CourierPDA
   equipment:
