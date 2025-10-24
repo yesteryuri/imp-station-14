@@ -14,7 +14,21 @@
     - tasks:
         - !type:HTNPrimitiveTask
           operator: !type:UtilityOperator
-              proto: NearbyStunnedTargets
+              proto: NearbyStunnedTargets # choose melee targets that arent stunned
+        - !type:HTNCompoundTask
+          task: BeforeDogMeleeAttackTargetCompound # unbuckle first, then attack
+          
+- type: htnCompound
+  id: BeforeDogMeleeAttackTargetCompound
+  branches:
+    - preconditions:
+        - !type:BuckledPrecondition
+          isBuckled: true
+      tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:UnbuckleOperator
+            shutdownState: TaskFinished
+    - tasks:
         - !type:HTNCompoundTask
           task: DogMeleeAttackTargetCompound
 
