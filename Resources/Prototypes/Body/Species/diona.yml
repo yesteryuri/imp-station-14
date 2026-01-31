@@ -258,6 +258,7 @@
   id: OrganDionaBrainNymphing
   components:
   - type: Nymph
+    transferMind: true
     entityPrototype: OrganDionaNymphBrain
 
 - type: entity
