@@ -141,6 +141,10 @@
   - type: BodyEmotes #imp edit
     soundsId: ArachnidBodyEmotes
   # imp edit end
+  - type: CreamPied
+    sprite:
+      sprite: Effects/creampie.rsi
+      state: creampie_arachnid
 
 - type: entity
   parent: OrganBase

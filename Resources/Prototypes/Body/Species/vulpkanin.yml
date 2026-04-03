@@ -206,6 +206,10 @@
         layer:
         - MobLayer
   # imp end
+  - type: CreamPied
+    sprite:
+      sprite: Effects/creampie.rsi
+      state: creampie_vulpkanin
 
 - type: entity
   parent: OrganBase
