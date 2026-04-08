@@ -4,27 +4,26 @@
     children:
     - id: AnomalySpawn
     - id: BluespaceArtifact
-    - id: BluespaceLockerDefault # imp
-    - id: BluespaceLockerRandom # imp
-    - id: BluespaceLockerRandomUnrestricted # imp
+    - !type:NestedSelector # imp edit into table
+      tableId: BluespaceLockerTable
     - id: BreakerFlip
     - id: BureaucraticError
     - id: ClericalError
-    #- id: CockroachMigration
+    - id: CockroachMigration
     - id: GasLeak
-    # - id: GreytideVirus
+    - id: GreytideVirus
     - id: IonStorm # its calm like 90% of the time smh
     - id: KudzuGrowth
     - id: MassHallucinations
     #- id: MimicVendorRule
-    #- id: MouseMigration
+    - id: MouseMigration
     - id: PowerGridCheck
     - id: RandomSentience
-    #- id: SlimesSpawn
+    - id: SlimesSpawn
     - id: SolarFlare
-    #- id: SnakeSpawn
-    #- id: SpiderClownSpawn
-    #- id: SpiderSpawn
+    - id: SnakeSpawn
+    - id: SpiderClownSpawn
+    - id: SpiderSpawn
     - id: VentClog
     - id: GoblinKnightEvent # imp
     - id: HereticBooksSpawnSmall #imp
@@ -32,59 +31,44 @@
     - id: SynthStorm # CD: Unique event for synths
 
 - type: entityTable
-  id: GreaterAntagEventsTable #imp: higher impact antags
+  id: BasicAntagEventsTable
   table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
-    children:
-    - id: DragonSpawn
-    - id: KingRatMigration
-    - id: NinjaSpawn
-    - id: RevenantSpawn
-    - id: SleeperAgents
-    - id: ZombieOutbreak
-    - id: LoneOpsSpawn
-    - id: WizardSpawn
-    - id: ChangelingAwakening #imp
-    - id: BountyHunterSpawn # imp
-    - id: ReplicatorSpawn # imp
-    - id: VRexEvent #imp
-    - id: EeepEvent # imp
-
-- type: entityTable
-  id: LesserAntagEventsTable # imp: lower impact antags
-  table: !type:AllSelector
     children:
     - !type:NestedSelector # DV
       tableId: BasicAntagEventsTableDV
     - id: ClosetSkeleton
-    - id: ParadoxCloneSpawn
+    - id: KingRatMigration
+    - id: RevenantSpawn
     - !type:NestedSelector
       tableId: DerelictBorgEventTable
-    - id: GoblinStowawaysEvent #imp
-    - id: GoblinCastawaysEvent #imp
-    - id: OppaSpawnLight #imp
-    - id: OppaSpawnNight #imp
-    - id: SyndicateInfiltratorSpawn # imp
-    - !type:NestedSelector # imp
+    # imp below
+    - id: GoblinStowawaysEvent
+    - id: GoblinCastawaysEvent
+    - id: OppaSpawnLight
+    - id: OppaSpawnNight
+    - id: SyndicateInfiltratorSpawn
+    - !type:NestedSelector
       tableId: TouristShuttleEvents
 
 - type: entityTable
-  id: SleeperlessGreaterAntagEventsTable
+  id: ModerateAntagEventsTable
   table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
     children:
-    - !type:NestedSelector # DV
-      tableId: BasicAntagEventsTableDV
     - id: DragonSpawn
-    - id: KingRatMigration
     - id: NinjaSpawn
-    - id: RevenantSpawn
+    - id: ParadoxCloneSpawn
+    - id: SleeperAgents
     - id: ZombieOutbreak
     - id: LoneOpsSpawn
     - id: WizardSpawn
-    - id: ChangelingAwakening # imp
-    - id: BountyHunterSpawn # imp
-    - id: ReplicatorSpawn # imp
-    - id: VRexEvent # imp
-    - id: EeepEvent # imp
+    - !type:NestedSelector
+      tableId: DerelictBorgEventTable
+    # imp below
+    - id: ChangelingAwakening
+    - id: BountyHunterSpawn
+    - id: ReplicatorSpawn
+    - id: VRexEvent
+    - id: EeepEvent
 
 - type: entityTable
   id: DerelictBorgEventTable #For Derelict Borg spawns
@@ -229,7 +213,7 @@
     weight: 6.5
     earliestStart: 30 #imp, originally 40
     reoccurrenceDelay: 20
-    minimumPlayers: 30 #imp
+    minimumPlayers: 30 #imp from 20
     duration: null
   - type: SpaceSpawnRule
     spawnDistance: 0
@@ -257,7 +241,7 @@
   id: NinjaSpawn
   components:
   - type: StationEvent
-    weight: 1 #imp
+    weight: 1 #imp from 6
     duration: null
     earliestStart: 30
     reoccurrenceDelay: 20
@@ -351,7 +335,7 @@
   id: RevenantSpawn
   components:
   - type: StationEvent
-    weight: 7.5
+    weight: 4 #imp 7.5 > 4
     duration: 1
     earliestStart: 30 #imp, original 45
     minimumPlayers: 20
@@ -367,7 +351,7 @@
     duration: 1
     earliestStart: 30
     reoccurrenceDelay: 60
-    minimumPlayers: 15 #imp used to be 10, wizden increased this to 30 recently
+    minimumPlayers: 15 #imp from 30
   - type: AntagSelection
     agentName: wizard-round-end-name
     definitions:
@@ -481,6 +465,84 @@
   - type: VentClogRule
 
 - type: entity
+  id: SlimesSpawn
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+#    startAnnouncement: station-event-vent-creatures-start-announcement #imp
+#    startAudio:
+#      path: /Audio/Announcements/attention.ogg
+    earliestStart: 20
+    minimumPlayers: 15
+    weight: 5
+    duration: 60
+  - type: VentCrittersRule
+    entries:
+    - id: MobAdultSlimesBlueAngry
+      prob: 0.01998 #imp from 0.02
+    - id: MobAdultSlimesGreenAngry
+      prob: 0.01998 # imp from 0.02
+    - id: MobAdultSlimesYellowAngry
+      prob: 0.01998 # imp from 0.02
+    - id: ReagentSlimeSpawner #imp
+      prob: 0.00006
+
+- type: entity
+  id: SnakeSpawn
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+#    startAnnouncement: station-event-vent-creatures-start-announcement # imp
+#    startAudio:
+#      path: /Audio/Announcements/attention.ogg
+    earliestStart: 20
+    minimumPlayers: 15
+    weight: 5
+    duration: 60
+  - type: VentCrittersRule
+    entries:
+    - id: MobPurpleSnake
+      prob: 0.02
+    - id: MobSmallPurpleSnake
+      prob: 0.02
+    - id: MobCobraSpace
+      prob: 0.02
+
+- type: entity
+  id: SpiderSpawn
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+#    startAnnouncement: station-event-vent-creatures-start-announcement # imp
+#    startAudio:
+#      path: /Audio/Announcements/attention.ogg
+    earliestStart: 20
+    minimumPlayers: 15
+    weight: 5
+    duration: 60
+  - type: VentCrittersRule
+    entries:
+    - id: MobGiantSpiderAngry
+      prob: 0.05
+
+- type: entity
+  id: SpiderClownSpawn
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+#    startAnnouncement: station-event-vent-creatures-start-announcement # imp
+#    startAudio:
+#      path: /Audio/Announcements/attention.ogg
+    earliestStart: 20
+    minimumPlayers: 20
+    weight: 1.5
+    duration: 60
+  - type: VentCrittersRule
+    entries:
+    - id: MobClownSpider
+      prob: 0.05
+
+- type: entity
   id: ZombieOutbreak
   parent: BaseGameRule
   components:
@@ -527,6 +589,7 @@
     weight: 5.5
     minimumPlayers: 20
     duration: null # LoneOpsSpawn needs an infinite duration so that it inherits the NukeOpsRule things of an actually appropriate end screen (not always "Neutral outcome!") and... ending the game if the station is nuked.
+    occursDuringRoundEnd: false # imp
   - type: RuleGrids
   - type: LoadMapRule
     gridPath: /Maps/_Impstation/Shuttles/ShuttleEvent/striker.yml  #imp
@@ -587,7 +650,7 @@
   parent: BaseGameRule
   components:
   - type: StationEvent
-    weight: 2 #imp
+    weight: 4 #imp 7 > 4
     duration: 150
     maxDuration: 300
     reoccurrenceDelay: 30
@@ -626,7 +689,7 @@
   - type: StationEvent
     #startAudio: #imp
     #  path: /Audio/Announcements/attention.ogg
-    weight: 5
+    weight: 1 # imp 5 > 1
     minimumPlayers: 25
     reoccurrenceDelay: 20
   - type: GreytideVirusRule

@@ -3,6 +3,8 @@
 - type: entityTable
   id: CargoGiftsTable
   table: !type:GroupSelector # ~~we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp~~ But we arent doing that shit yet, it picks a random one StationEventComp be damned.
+    rolls: !type:RangeNumberSelector # imp
+      range: 1, 3
     children:
     - !type:NestedSelector # Impstation
       tableId: GiftsImpstation

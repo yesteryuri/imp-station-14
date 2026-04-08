@@ -57,7 +57,7 @@
   components:
   - type: StationEvent #imp- remove announcement
     earliestStart: 15
-    weight: 6
+    weight: 3 # imp 6 > 3
     duration: 50
     minimumPlayers: 30 # Hopefully this is enough for the Rat King's potential Army (it was not, raised from 15 -> 30)
   - type: VentCrittersRule

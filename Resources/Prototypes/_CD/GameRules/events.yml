@@ -3,7 +3,8 @@
   id: SynthStorm
   components:
   - type: StationEvent
-    weight: 8 # High but not too high
+    weight: 4 # High but not too high # imp 8 > 4
     reoccurrenceDelay: 20
     duration: 1
+    minimumPlayers: 25 # imp, it only picks one synth so the event is nothing in lowpop
   - type: SynthStormRule

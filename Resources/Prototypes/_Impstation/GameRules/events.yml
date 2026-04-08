@@ -99,9 +99,7 @@
   - type: StationEvent
     weight: 4
     earliestStart: 10
-    reoccurrenceDelay: 10
     minimumPlayers: 5
-    duration: null
   - type: SpaceSpawnRule
     spawnDistance: 0
   - type: AntagSpawner
@@ -122,9 +120,7 @@
   - type: StationEvent
     weight: 2
     earliestStart: 10
-    reoccurrenceDelay: 20
     minimumPlayers: 10
-    duration: null
   - type: SpaceSpawnRule
     spawnDistance: 0
   - type: AntagSelection
@@ -256,6 +252,14 @@
     duration: 1
   - type: BluespaceLockerRuleRandomUnrestricted
 
+- type: entityTable
+  id: BluespaceLockerTable
+  table: !type:AllSelector # if too common make it a group selector
+    children:
+    - id: BluespaceLockerDefault
+    - id: BluespaceLockerRandom
+    - id: BluespaceLockerRandomUnrestricted
+
 # biomagnetic polarization
 - type: entity
   id: BiomagneticPolarizationRule
@@ -265,7 +269,6 @@
     weight: 1
     duration: 150
     maxDuration: 300
-    reoccurrenceDelay: 30
   - type: GlobalStatusEffectRule
     statusEffect: "StatusEffectBiomagneticPolarization"
     announcement: "station-event-biomagnetic-polarization-announcement"
@@ -310,3 +313,22 @@
         - Passive
       mindRoles:
       - MindRoleButler
+
+- type: entityTable
+  id: SleeperlessModerateAntagEventsTable # for paci svs
+  table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
+    children:
+    - !type:NestedSelector # DV
+      tableId: BasicAntagEventsTableDV
+    - id: DragonSpawn
+    - id: KingRatMigration
+    - id: NinjaSpawn
+    - id: RevenantSpawn
+    - id: ZombieOutbreak
+    - id: LoneOpsSpawn
+    - id: WizardSpawn
+    - id: ChangelingAwakening # imp
+    - id: BountyHunterSpawn # imp
+    - id: ReplicatorSpawn # imp
+    - id: VRexEvent # imp
+    - id: EeepEvent # imp
