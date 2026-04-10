@@ -32,8 +32,7 @@
       min:  30
       max:  30
   - type: StationEvent
-    weight: 1
-    duration: 1
+    weight: 0.5 #this is ridiculously rare for the record
     minimumPlayers: 60 # there are ten of them. if they roll at 40, fully 25% of the station has to be dead for every slot to fill.
     earliestStart: 15
   - type: BluespaceArtifactRule

@@ -5,8 +5,8 @@
   - type: StationEvent
     earliestStart: 30 #originally 35
     minimumPlayers: 30 # roundstart changeling is 15 which seems insane
-    weight: 2 # twice as common as zombies
-    duration: 1
+    weight: 3
+    maxOccurrences: 1
     occursDuringRoundEnd: false
   - type: GoobChangelingRule
   - type: AntagObjectives
@@ -82,7 +82,6 @@
   components:
   - type: StationEvent
     weight: 3.5 #not as rare as midround ling or zombies, but rare enough to feel dread
-    duration: 1
     earliestStart: 20 #maybe a strange choice, but the one play of v-rex in shift i saw was really calm
     minimumPlayers: 40
     maxOccurrences: 1 # imagine 2 of them
@@ -136,7 +135,7 @@
   id: SyndicateInfiltratorSpawn
   components:
   - type: StationEvent
-    weight: 3
+    weight: 3.5
     reoccurrenceDelay: 5
     minimumPlayers: 15
     earliestStart: 25
@@ -160,7 +159,7 @@
   components:
   - type: StationEvent
     weight: 3.5
-    earliestStart: 25
+    earliestStart: 30
     reoccurrenceDelay: 40
     minimumPlayers: 30
   - type: VentCrittersRule
@@ -185,7 +184,6 @@
   components:
   - type: StationEvent
     weight: 3
-    duration: 1
     minimumPlayers: 15
     maxOccurrences: 1 #only one of each type of tourist shuttle can spawn
   - type: RuleGrids
@@ -198,7 +196,6 @@
   components:
   - type: StationEvent
     weight: 2
-    duration: 1
     minimumPlayers: 25
     maxOccurrences: 1 #only one of each type of tourist shuttle can spawn
   - type: RuleGrids
@@ -211,7 +208,6 @@
   components:
   - type: StationEvent
     weight: 2
-    duration: 1
     minimumPlayers: 35
     maxOccurrences: 1 #only one of each type of tourist shuttle can spawn
   - type: RuleGrids
@@ -227,7 +223,6 @@
     weight: 1
     reoccurrenceDelay: 5
     earliestStart: 1
-    duration: 1
   - type: BluespaceLockerRuleDefault
 
 - type: entity
@@ -238,7 +233,6 @@
     weight: 1
     reoccurrenceDelay: 5
     earliestStart: 1
-    duration: 1
   - type: BluespaceLockerRuleRandom
 
 - type: entity
@@ -249,7 +243,6 @@
     weight: 1
     reoccurrenceDelay: 5
     earliestStart: 1
-    duration: 1
   - type: BluespaceLockerRuleRandomUnrestricted
 
 - type: entityTable
@@ -281,7 +274,6 @@
     startAnnouncement: false
     weight: 1.5
     maxOccurrences: 1 #autolink on signaller will break with multiple butlers
-    duration: null
   - type: AntagLoadProfileRule
   - type: AntagObjectives
     objectives:
@@ -315,7 +307,7 @@
       - MindRoleButler
 
 - type: entityTable
-  id: SleeperlessModerateAntagEventsTable # for paci svs
+  id: SleeperlessModerateAntagEventsTable # for svs
   table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
     children:
     - !type:NestedSelector # DV
@@ -327,8 +319,8 @@
     - id: ZombieOutbreak
     - id: LoneOpsSpawn
     - id: WizardSpawn
-    - id: ChangelingAwakening # imp
-    - id: BountyHunterSpawn # imp
-    - id: ReplicatorSpawn # imp
-    - id: VRexEvent # imp
-    - id: EeepEvent # imp
+    - id: ChangelingAwakening
+    - id: BountyHunterSpawn
+    - id: ReplicatorSpawn
+    - id: VRexEvent
+    - id: EeepEvent

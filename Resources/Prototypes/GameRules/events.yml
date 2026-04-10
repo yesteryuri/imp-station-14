@@ -335,7 +335,7 @@
   id: RevenantSpawn
   components:
   - type: StationEvent
-    weight: 4 #imp 7.5 > 4
+    weight: 5 #imp 7.5 > 5
     duration: 1
     earliestStart: 30 #imp, original 45
     minimumPlayers: 20
@@ -479,11 +479,11 @@
   - type: VentCrittersRule
     entries:
     - id: MobAdultSlimesBlueAngry
-      prob: 0.01998 #imp from 0.02
+      prob: 0.02
     - id: MobAdultSlimesGreenAngry
-      prob: 0.01998 # imp from 0.02
+      prob: 0.02
     - id: MobAdultSlimesYellowAngry
-      prob: 0.01998 # imp from 0.02
+      prob: 0.02
     - id: ReagentSlimeSpawner #imp
       prob: 0.00006
 
@@ -689,7 +689,7 @@
   - type: StationEvent
     #startAudio: #imp
     #  path: /Audio/Announcements/attention.ogg
-    weight: 1 # imp 5 > 1
+    weight: 2 # imp 5 > 2.
     minimumPlayers: 25
     reoccurrenceDelay: 20
   - type: GreytideVirusRule
