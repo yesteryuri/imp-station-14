@@ -1,8 +1,9 @@
 using System.Text.RegularExpressions;
-using Content.Server.Speech.Components;
+using Content.Server._Impstation.Speech.Components;
+using Content.Server.Speech.EntitySystems;
 using Content.Shared.Speech;
 
-namespace Content.Server.Speech.EntitySystems;
+namespace Content.Server._Impstation.Speech.EntitySystems;
 
 public sealed class GrayAccentComponentAccentSystem : EntitySystem
 {
@@ -25,7 +26,7 @@ public sealed class GrayAccentComponentAccentSystem : EntitySystem
         SubscribeLocalEvent<GrayAccentComponent, AccentGetEvent>(OnAccent);
     }
 
-    private void OnAccent(EntityUid uid, GrayAccentComponent component, AccentGetEvent args)
+    private void OnAccent(Entity<GrayAccentComponent> entity, ref AccentGetEvent args)
     {
         var message = args.Message;
 
