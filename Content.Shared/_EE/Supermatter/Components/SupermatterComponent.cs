@@ -125,12 +125,19 @@ public sealed partial class SupermatterComponent : Component
     [DataField]
     public ProtoId<SpeechSoundsPrototype>? StatusCurrentSound;
 
+    //imp sounds start
     [DataField]
     public SoundSpecifier GainParacusiaSound = new SoundPathSpecifier("/Audio/Ambience/ambidanger.ogg");
 
     [DataField]
     public SoundSpecifier GiveParacusiaSound = new SoundPathSpecifier("/Audio/Ambience/ambireebe3.ogg");
 
+    /// <summary>
+    /// The sound collection id fed to the Paracusia Component when looking at the sm unprotected.
+    /// </summary>
+    [DataField]
+    public string ParacusiaCollection = "Paracusia";
+    //imp sounds end
     #endregion
 
     #region Processing

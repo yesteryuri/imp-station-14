@@ -76,3 +76,14 @@
   - /Audio/Voice/Zombie/zombie-2.ogg
   - /Audio/Voice/Zombie/zombie-3.ogg
   - /Audio/Voice/Vox/shriek1.ogg
+
+- type: soundCollection
+  id: Paracusinya
+  files:
+  - /Audio/Items/Toys/meow1.ogg
+  - /Audio/Animals/cat_meow.ogg
+  - /Audio/Animals/cat_meow2.ogg
+  - /Audio/Animals/cat_hiss.ogg
+  - /Audio/_Nyanotrasen/Voice/Felinid/cat_meow1.ogg
+  - /Audio/_Nyanotrasen/Voice/Felinid/cat_meow2.ogg
+  - /Audio/_Nyanotrasen/Voice/Felinid/cat_meow3.ogg

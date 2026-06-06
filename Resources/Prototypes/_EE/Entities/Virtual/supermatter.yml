@@ -8,3 +8,12 @@
     maxSoundDistance: 7
     sounds:
       collection: Paracusia
+
+#imp
+- type: entity
+  id: SupermatterDelamEffectsCat
+  parent: SupermatterDelamEffects
+  components:
+  - type: Paracusia
+    sounds:
+      collection: Paracusinya

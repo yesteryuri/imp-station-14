@@ -12,3 +12,16 @@
     - type: EmitSoundOnSpawn
       sound:
         path: /Audio/Effects/teleport_arrival.ogg
+
+- type: entity
+  parent: Supermatter
+  id: Supermeowter
+  name: supermeowter crystal
+  description: A strangely crystalline and iridescent cat.
+  suffix: cat
+  components:
+    - type: OwOAccent
+    - type: Supermatter
+      delamEffectsPrototype: SupermatterDelamEffectsCat
+      hallucinationRange: 3
+      paracusiaCollection: Paracusinya

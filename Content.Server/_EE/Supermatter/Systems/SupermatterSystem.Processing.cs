@@ -804,7 +804,7 @@ public sealed partial class SupermatterSystem
             // Everyone else gets hallucinations
             // These values match the paracusia disability, since we can't double up on paracusia
             // TODO: change this from paracusia to actual hallucinations whenever those are real
-            var paracusiaSounds = new SoundCollectionSpecifier("Paracusia");
+            var paracusiaSounds = new SoundCollectionSpecifier(sm.ParacusiaCollection); //imp edit
             var paracusiaMinTime = 0.1f;
             var paracusiaMaxTime = 300f;
             var paracusiaDistance = 7f;
