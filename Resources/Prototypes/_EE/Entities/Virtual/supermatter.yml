@@ -11,8 +11,9 @@
 
 #imp
 - type: entity
-  id: SupermatterDelamEffectsCat
   parent: SupermatterDelamEffects
+  id: SupermatterDelamEffectsCat
+  categories: [ HideSpawnMenu ]
   components:
   - type: Paracusia
     sounds:

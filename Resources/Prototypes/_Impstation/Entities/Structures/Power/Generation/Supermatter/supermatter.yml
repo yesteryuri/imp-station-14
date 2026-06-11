@@ -20,6 +20,10 @@
   description: A strangely crystalline and iridescent cat.
   suffix: cat
   components:
+    - type: Sprite
+      sprite: _Impstation/Structures/Power/Generation/Supermatter/supermeowter.rsi
+    - type: Icon
+      sprite: _Impstation/Structures/Power/Generation/Supermatter/supermeowter.rsi
     - type: OwOAccent
     - type: Supermatter
       delamEffectsPrototype: SupermatterDelamEffectsCat

@@ -2,8 +2,8 @@
   id: Felinid
   mapName: 'Felinid'
   mapPath: /Maps/_Impstation/catstation.yml
-  minPlayers: 35
-  maxPlayers: 80
+  minPlayers: 8
+  maxPlayers: 34
   stations:
     Felinid:
       stationProto: StandardNanotrasenStation
@@ -14,60 +14,58 @@
             !type:NanotrasenNameGenerator
             prefixCreator: '06'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/_Impstation/Shuttles/lunaevac.yml
+          emergencyShuttlePath: /Maps/Shuttles/emergency_crimson.yml
         - type: StationCargoShuttle
-          path: /Maps/_Impstation/Shuttles/cargojeep_luna.yml
+          path: /Maps/_Impstation/Shuttles/cargo_felinid.yml
         - type: StationJobs
-          availableJobs: # Total of 68 jobs.
-            # command - 9
+          availableJobs: # Total of 49 jobs roundstart including interns
+            # command - 8
             Captain: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
-            AdministrativeAssistant: [ 1, 1 ]
             ChiefEngineer: [ 1, 1 ]
             ChiefMedicalOfficer: [ 1, 1 ]
             ResearchDirector: [ 1, 1 ]
             HeadOfSecurity: [ 1, 1 ]
             HospitalityDirector: [ 1, 1 ]
             Quartermaster: [ 1, 1 ]
-            # service - 18 incl. service worker
-            Bartender: [ 2, 2 ]
+            # service - 11-12
+            Bartender: [ 1, 1 ]
             Botanist: [ 2, 2 ]
-            Boxer: [ 2, 2 ]
             Chaplain: [ 1, 1 ]
-            Chef: [ 2, 2]
+            Chef: [ 1, 2 ]
             Clown: [ 1, 1 ]
-            Janitor: [ 2, 2 ]
+            Janitor: [ 1, 1 ]
             Librarian: [ 1, 1 ]
             Mime: [ 1, 1 ]
             Musician: [ 1, 1 ]
-            Reporter: [ 2, 2 ]
-            #ServiceWorker: [ 2, 2 ]
-            # engineering - 6
+            Reporter: [ 1, 1 ]
+            # ServiceWorker: [ 1, 1 ] # intentionally excluded. i think it's mapped?
+            # engineering - 5-7
             AtmosphericTechnician: [ 2, 2 ]
-            StationEngineer: [ 3, 3 ]
-            TechnicalAssistant: [ 1, 1 ]
-            # medical - 9
-            Chemist: [ 2, 2 ]
-            MedicalDoctor: [ 3, 3 ]
+            StationEngineer: [ 2, 3 ]
+            TechnicalAssistant: [ 1, 2 ]
+            # medical - 7-8
+            Chemist: [ 1, 2 ]
+            MedicalDoctor: [ 2, 2 ]
             MedicalIntern: [ 2, 2 ]
             Paramedic: [ 1, 1 ]
             Psychologist: [ 1, 1 ]
-            # science - 7
+            # science - 6-8
             Borg: [ 2, 2 ]
-            ResearchAssistant: [ 1, 1 ]
-            Scientist: [ 3, 3 ]
+            ResearchAssistant: [ 1, 2 ]
+            Scientist: [ 2, 3 ]
             StationAi: [ 1, 1 ]
-            # security - 12
-            Brigmedic: [ 1, 1 ]
+            # security - 6-8
+            # Brigmedic: [ 1, 1 ] # intentionally excluded, spawner is mapped
             Detective: [ 1, 1 ]
-            Lawyer: [ 2, 2 ]
-            SecurityCadet: [ 3, 3 ]
-            SecurityOfficer: [ 4, 4 ]
+            Lawyer: [ 1, 1 ]
+            SecurityCadet: [ 1, 2 ]
+            SecurityOfficer: [ 2, 3 ]
             Warden: [ 1, 1 ]
-            # supply - 8
-            CargoTechnician: [ 3, 3 ]
+            # supply - 6-7
+            CargoTechnician: [ 2, 2 ]
             Courier: [ 1, 1 ]
             SalvageSpecialist: [ 2, 2 ]
-            SupplyAssistant: [ 2, 2 ]
+            SupplyAssistant: [ 1, 2 ]
             # civilian
             Passenger: [ -1, -1 ]
