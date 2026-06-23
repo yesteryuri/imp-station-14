@@ -216,7 +216,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: _Impstation/Mobs/Species/Vox/parts.rsi #imp
+    sprite: Mobs/Species/Vox/parts.rsi
 
 - type: entity
   parent: [ OrganBaseTorso, OrganVoxExternal ]
@@ -224,6 +224,7 @@
   components:
   - type: Sprite
     state: torso
+    sprite: _Impstation/Mobs/Species/Vox/parts.rsi #imp
 
 - type: entity
   parent: [ OrganBaseHead, OrganVoxExternal ]

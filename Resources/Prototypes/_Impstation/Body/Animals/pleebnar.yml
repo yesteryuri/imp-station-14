@@ -1,0 +1,75 @@
+- type: entity
+  parent: OrganBase
+  id: OrganPleebnarInternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Impstation/Mobs/Species/Gray/organs.rsi
+  - type: StaticPrice
+    price: 50
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+  - type: FlavorProfile
+    flavors:
+    - cigarettes
+
+- type: entity
+  parent: [ OrganAnimalLungs, OrganPleebnarInternal ]
+  id: OrganPleebnarLungs
+  name: yupp
+
+- type: entity
+  parent: [ OrganAnimalStomach, OrganPleebnarInternal ]
+  id: OrganPleebnarStomach
+  name: sluumi
+
+- type: entity
+  parent: [ OrganAnimalLiver, OrganPleebnarInternal ]
+  id: OrganPleebnarLiver
+  name: grubi
+  components:
+  - type: Metabolizer
+    groups:
+    - id: Alcohol
+      rateModifier: 0.1
+
+- type: entity
+  parent: [ OrganAnimalHeart, OrganPleebnarInternal ]
+  id: OrganPleebnarHeart
+  name: clui
+
+- type: entity
+  parent: [ OrganAnimalKidneys, OrganPleebnarInternal ]
+  id: OrganPleebnarKidneys
+  name: spum
+  components:
+  - type: Sprite
+    layers:
+    - state: kidney-r
+
+- type: entity
+  parent: [ OrganBaseEyes, OrganPleebnarInternal ]
+  id: OrganPleebnarEyes
+  name: shuui
+  description: "Soulful."
+
+- type: entity
+  id: BaseMobPleebnarBody
+  abstract: true
+  components:
+  - type: Body
+  - type: EntityTableContainerFill #TO BE REWORKED BY VISUAL NUBODY
+    containers:
+      body_organs: !type:AllSelector
+        children:
+        - id: OrganPleebnarLungsp
+        - id: OrganPleebnarStomach
+        - id: OrganPleebnarLiver
+        - id: OrganPleebnarHeart
+        - id: OrganPleebnarKidneys
+        - id: OrganPleebnarEyes

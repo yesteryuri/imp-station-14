@@ -8,7 +8,6 @@ using Content.Server.StationEvents;
 using Content.Shared._Impstation.Heretic.Components;
 using Content.Shared.Administration.Systems;
 using Content.Shared.Bed.Cryostorage;
-using Content.Shared.Body.Systems;
 using Content.Shared.Cloning;
 using Content.Shared.Examine;
 using Content.Shared.Gibbing;
@@ -31,6 +30,7 @@ using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using System.Collections.Immutable;
 using System.Linq;
+using Content.Shared.Body;
 
 //this is kind of badly named since we're doing infinite archives stuff now but i dont feel like changing it :)
 
@@ -55,7 +55,7 @@ public sealed class HellWorldSystem : EntitySystem
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly SharedTransformSystem _xform = default!;
     [Dependency] private readonly CloningSystem _cloning = default!;
-    [Dependency] private readonly SharedBodySystem _body = default!;
+    [Dependency] private readonly BodySystem _body = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly SharedJointSystem _jointSystem = default!;
     [Dependency] private readonly AntagSelectionSystem _antag = default!;

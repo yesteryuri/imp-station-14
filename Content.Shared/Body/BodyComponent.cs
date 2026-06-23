@@ -3,7 +3,7 @@ using Robust.Shared.GameStates;
 
 namespace Content.Shared.Body;
 
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState] //imp edit, AutoGenerateComponentState added since ThermalVisibility uses AutoNetworkedField
 [Access(typeof(BodySystem))]
 public sealed partial class BodyComponent : Component
 {

@@ -2,6 +2,7 @@ using Content.Server.Body.Systems;
 using Content.Server.DoAfter;
 using Content.Shared._Impstation.Pleebnar;
 using Content.Shared._Impstation.Pleebnar.Components;
+using Content.Shared.Body;
 using Content.Shared.Body.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Gibbing;

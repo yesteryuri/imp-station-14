@@ -6,7 +6,7 @@
   prototype: MobKodepiia
   sprites: MobKodepiiaSprites
   markingLimits: MobKodepiiaMarkingLimits
-  dollPrototype: MobKodepiiaDummy
+  dollPrototype: AppearanceKodepiia
   skinColoration: Hues
   maleFirstNames: KodepiiaFirst
   femaleFirstNames: KodepiiaFirst

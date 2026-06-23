@@ -7,7 +7,7 @@
   sprites: MobAllulaloSprites
   defaultSkinTone: "#385878"
   markingLimits: MobAllulaloMarkingLimits
-  dollPrototype: MobAllulaloDummy
+  dollPrototype: AppearanceAllulalo
   skinColoration: Hues
   maleFirstNames: AllulaloFirstNames
   femaleFirstNames: AllulaloFirstNames
