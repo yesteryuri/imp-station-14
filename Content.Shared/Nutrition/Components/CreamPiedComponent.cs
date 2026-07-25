@@ -10,7 +10,7 @@ namespace Content.Shared.Nutrition.Components;
 
 /// <summary>
 /// Allows this entity to be hit by banana cream pies.
-/// See <see cref="CreamPieComponent"/>.
+/// See <see cref="CreamPiedComponent"/>.
 /// </summary>
 [Access(typeof(SharedCreamPieSystem))]
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState(raiseAfterAutoHandleState: true)]
