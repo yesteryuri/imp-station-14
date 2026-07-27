@@ -1,13 +1,4 @@
 ﻿Entries:
-- author: honeyed-lemons
-  changes:
-  - message: The RGB wand now properly makes things RGB!
-    type: Fix
-  - message: The Staff of Animation now properly sets damage and health levels.
-    type: Fix
-  id: 2390
-  time: '2025-11-06T12:37:20.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/3541
 - author: sev7ves
   changes:
   - message: Decapoids can use the crusher bolt without dying badly.
@@ -4107,3 +4098,11 @@
   id: 2889
   time: '2026-07-21T01:56:25.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/4511
+- author: meatsmall, mothrii
+  changes:
+  - message: made the multichirp emote sound less harsh and let unisex dionaea use
+      it too
+    type: Tweak
+  id: 2890
+  time: '2026-07-27T09:35:46.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/4515
