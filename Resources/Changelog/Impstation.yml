@@ -1,13 +1,6 @@
 ﻿Entries:
 - author: sev7ves
   changes:
-  - message: Decapoids can use the crusher bolt without dying badly.
-    type: Tweak
-  id: 2391
-  time: '2025-11-06T18:08:13.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/3670
-- author: sev7ves
-  changes:
   - message: allulalo can use holopads now.
     type: Fix
   id: 2392
@@ -4106,3 +4099,10 @@
   id: 2890
   time: '2026-07-27T09:35:46.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/4515
+- author: mkanke-real
+  changes:
+  - message: Added recipe for a vanilla cafe latte
+    type: Add
+  id: 2891
+  time: '2026-07-27T09:46:46.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/4512
