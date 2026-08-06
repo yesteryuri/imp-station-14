@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: Kandiyaki
-  changes:
-  - message: allulalo heretics are no longer forced to have a mansus grasp in their
-      nonexistent second hand when drawing a transmutation rune.
-    type: Fix
-  id: 2393
-  time: '2025-11-07T02:14:14.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/3666
 - author: VeeNomine
   changes:
   - message: 'Law !@#%: Silicon World'
@@ -4107,3 +4099,18 @@
   id: 2892
   time: '2026-08-05T04:21:28.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/4522
+- author: salamanderskies
+  changes:
+  - message: The ghoul briefing text now addresses the summoner by their correct pronouns
+      (but for real this time).
+    type: Fix
+  - message: Ghouls are now unable to attack their summoners in melee.
+    type: Fix
+  - message: Muted ghouls now properly count as ghouls.
+    type: Fix
+  - message: Ghouls are now unable to attack fellow ghouls from the same summoner
+      in melee.
+    type: Tweak
+  id: 2893
+  time: '2026-08-06T12:03:03.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/4526
