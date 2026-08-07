@@ -1,23 +1,4 @@
 ﻿Entries:
-- author: kipdotnet
-  changes:
-  - message: Folding chairs are now a 1x4 in storage.
-    type: Tweak
-  - message: Allulalo now hold 4u of Ethanotoxin, up from 2u. The guidebook has been
-      updated to clarify that they dont have an unlimited amount of it and shouldnt
-      be gnawing their coworkers to death.
-    type: Tweak
-  - message: Fixed Allulalo being able to use computers from the floor.
-    type: Fix
-  - message: The "No Accent" trait now actually works for Allulalo.
-    type: Fix
-  - message: Allulalo sprites should now have significantly less floating pixels.
-    type: Fix
-  - message: Allulalo are now included on the species guidebook page.
-    type: Fix
-  id: 2395
-  time: '2025-11-07T07:28:16.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/3661
 - author: FlippenPage
   changes:
   - message: Conversion Kits have been resprited! And are slightly less jank.
@@ -4114,3 +4095,11 @@
   id: 2894
   time: '2026-08-07T19:21:56.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/4483
+- author: Simul-ad-Astra
+  changes:
+  - message: NT's recently ""acquired"" station, Serpentcrest, is now receiving trials
+      before full introduction into service in the IMP sector.
+    type: Add
+  id: 2895
+  time: '2026-08-07T20:22:37.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/4510
