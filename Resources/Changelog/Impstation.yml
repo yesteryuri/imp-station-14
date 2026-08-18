@@ -1,13 +1,6 @@
 ﻿Entries:
 - author: yesteryuri
   changes:
-  - message: The paperwork belt holds pens, too.
-    type: Add
-  id: 2399
-  time: '2025-11-08T10:44:51.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/3689
-- author: yesteryuri
-  changes:
   - message: A few drink flavors got fixed, make sure to order one of everything to
       check.
     type: Fix
@@ -4103,3 +4096,10 @@
   id: 2898
   time: '2026-08-17T11:53:15.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/4481
+- author: crocodilecarousel
+  changes:
+  - message: Space cleaner restock now includes space cleaner
+    type: Fix
+  id: 2899
+  time: '2026-08-18T12:04:37.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/4548
