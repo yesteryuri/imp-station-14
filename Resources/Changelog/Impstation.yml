@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: VeeNomine, kipdotnet, corrucyst, fancyplanks, symora, zekdelpon, lobsterpaw,
-    chimken135, salorarainriver, toasterblast
-  changes:
-  - message: Tck'ut, the little hall monitor bot that could, has been added.
-    type: Add
-  id: 2401
-  time: '2025-11-08T23:01:09.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/3618
 - author: kipdotnet
   changes:
   - message: Allulalo have footsteps now.
@@ -4102,3 +4094,10 @@
   id: 2900
   time: '2026-08-19T07:48:10.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/4537
+- author: crocodilecarousel
+  changes:
+  - message: Courier cyborg module inhands
+    type: Fix
+  id: 2901
+  time: '2026-08-19T07:53:24.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/4547
