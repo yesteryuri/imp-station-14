@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: yesteryuri
-  changes:
-  - message: A few drink flavors got fixed, make sure to order one of everything to
-      check.
-    type: Fix
-  id: 2400
-  time: '2025-11-08T10:44:28.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/3691
 - author: VeeNomine, kipdotnet, corrucyst, fancyplanks, symora, zekdelpon, lobsterpaw,
     chimken135, salorarainriver, toasterblast
   changes:
@@ -4103,3 +4095,10 @@
   id: 2899
   time: '2026-08-18T12:04:37.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/4548
+- author: meatsmall
+  changes:
+  - message: replaced the super door remote on Reach with a custom door remote
+    type: Fix
+  id: 2900
+  time: '2026-08-19T07:48:10.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/4537
