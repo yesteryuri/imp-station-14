@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: kipdotnet
-  changes:
-  - message: Allulalo have footsteps now.
-    type: Fix
-  id: 2402
-  time: '2025-11-09T00:43:06.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/3693
 - author: DVDPlayerOfDiscordFame
   changes:
   - message: The M1's kinetic bolt now packs a bit more of a punch. The Blaster Cannon,
@@ -4101,3 +4094,10 @@
   id: 2901
   time: '2026-08-19T07:53:24.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/4547
+- author: lobsterpaw
+  changes:
+  - message: The anniversary crate is no longer purchasable.
+    type: Remove
+  id: 2902
+  time: '2026-08-19T08:57:46.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/4531
