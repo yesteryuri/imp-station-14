@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: deltanedas, Elpersonn, mqole
-  changes:
-  - message: The Listening Post's crew monitoring console now shows the station instead
-      of the post.
-    type: Tweak
-  id: 2414
-  time: '2025-11-11T00:58:31.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/3695
 - author: Minerva
   changes:
   - message: Tape recorders can now be controlled using four signal ports corresponding
@@ -4085,3 +4077,10 @@
   id: 2913
   time: '2026-08-25T11:24:21.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/4556
+- author: VeeNomine
+  changes:
+  - message: Added a Talkbox setting to the microphone. Give life back to music!
+    type: Add
+  id: 2914
+  time: '2026-08-25T11:30:58.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/4513
