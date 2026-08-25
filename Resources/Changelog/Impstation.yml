@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: yesteryuri
-  changes:
-  - message: Head revolutionaries have a death rattle in their unionist noggin
-    type: Add
-  id: 2407
-  time: '2025-11-10T09:37:33.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/3552
 - author: yesteryuri, juniwoofs
   changes:
   - message: Added 61 hairstyles for Humans, Dwarves, and Slimes, and 4 hairs(?) for
@@ -4077,3 +4070,11 @@
   id: 2906
   time: '2026-08-25T09:07:52.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/4366
+- author: sev7ves, ATDoop
+  changes:
+  - message: We've received concerning reports of discount dan's customers dying from
+      bizzare animal attacks.
+    type: Add
+  id: 2907
+  time: '2026-08-25T09:13:27.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/4461
