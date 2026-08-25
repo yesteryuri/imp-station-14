@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: Minerva
-  changes:
-  - message: Tape recorders can now be controlled using four signal ports corresponding
-      to their buttons.
-    type: Add
-  id: 2415
-  time: '2025-11-11T00:58:32.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/3695
 - author: Oxdeception
   changes:
   - message: The AAC tablet now has its own typing indicator.
@@ -4084,3 +4076,15 @@
   id: 2914
   time: '2026-08-25T11:30:58.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/4513
+- author: hbuzzbee
+  changes:
+  - message: 'Added classic cocktails: Between the Sheets, Sidecar, Sazerac, Old Fashioned,
+      and Ramos Gin Fizz'
+    type: Add
+  - message: Added Atmos Gin Fizz
+    type: Add
+  - message: Modified normal Gin Fizz to require shaking
+    type: Tweak
+  id: 2915
+  time: '2026-08-25T11:47:59.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/4523
