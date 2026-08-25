@@ -192,7 +192,7 @@
     sprite: Mobs/Species/Vulpkanin/parts.rsi
 
 - type: entity
-  parent: [ OrganBaseTorso, OrganVulpkaninExternal ]
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganVulpkaninExternal ] #imp edit, sexed organ part of partial merge of fix for sexed organs
   id: OrganVulpkaninTorso
 
 - type: entity

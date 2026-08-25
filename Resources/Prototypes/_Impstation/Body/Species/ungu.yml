@@ -237,7 +237,7 @@
   #    state: creampie_ungu
 
 - type: entity
-  parent: OrganBase
+  parent: OrganBaseOrganic
   id: OrganUngu
   suffix: ungu
   abstract: true

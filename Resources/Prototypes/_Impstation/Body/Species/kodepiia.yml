@@ -152,7 +152,7 @@
 
 
 - type: entity
-  parent: OrganBase
+  parent: OrganBaseOrganic
   id: OrganKodepiia
   abstract: true
   suffix: Kodepiia

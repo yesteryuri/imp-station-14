@@ -168,7 +168,7 @@
     sprite: Mobs/Species/Slime/parts.rsi
 
 - type: entity
-  parent: [ OrganBaseTorso, OrganSlimePersonExternal ]
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganSlimePersonExternal ] #imp edit, sexed organ part of partial merge of fix for sexed organs
   id: OrganSlimePersonTorso
 
 - type: entity

@@ -243,7 +243,7 @@
     - StartingGearDecapoidVaporizer
 
 - type: entity
-  parent: OrganBase
+  parent: OrganBaseOrganic
   id: OrganDecapoid
   abstract: true
   suffix: decapoid

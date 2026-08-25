@@ -92,11 +92,11 @@
     sprite: Mobs/Species/Human/parts.rsi
 
 - type: entity
-  parent: [ OrganBaseTorso, OrganHumanExternal ]
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganHumanExternal ] #imp edit, sexed organ part of partial merge of fix for sexed organs
   id: OrganHumanTorso
 
 - type: entity
-  parent: [ OrganBaseHead, OrganHumanExternal ]
+  parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganHumanExternal ] #imp edit, sexed organ part of partial merge of fix for sexed organs
   id: OrganHumanHead
 
 - type: entity

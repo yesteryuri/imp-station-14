@@ -208,7 +208,7 @@
   # imp edit end
 
 - type: entity
-  parent: OrganBase
+  parent: OrganBaseOrganic
   id: OrganAllulalo
   abstract: true
   suffix: Allulalo

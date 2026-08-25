@@ -255,7 +255,7 @@
 
 
 - type: entity
-  parent: OrganBase
+  parent: OrganBaseOrganic
   id: OrganGoblin
   abstract: true
   suffix: Goblin

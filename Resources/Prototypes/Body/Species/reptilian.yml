@@ -152,11 +152,11 @@
     sprite: Mobs/Species/Reptilian/parts.rsi
 
 - type: entity
-  parent: [ OrganBaseTorso, OrganReptilianExternal ]
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganReptilianExternal ] #imp edit, sexed organ part of partial merge of fix for sexed organs
   id: OrganReptilianTorso
 
 - type: entity
-  parent: [ OrganBaseHead, OrganReptilianExternal ]
+  parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganReptilianExternal ] #imp edit, sexed organ part of partial merge of fix for sexed organs
   id: OrganReptilianHead
 
 - type: entity

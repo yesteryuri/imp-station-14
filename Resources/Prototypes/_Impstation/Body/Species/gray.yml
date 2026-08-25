@@ -168,7 +168,7 @@
 
 
 - type: entity
-  parent: OrganBase
+  parent: OrganBaseOrganic
   id: OrganGray
   abstract: true
   suffix: Gray

@@ -276,7 +276,7 @@
 #        - MobLayer
 
 - type: entity
-  parent: OrganBase
+  parent: OrganBaseOrganic
   id: OrganAnomalocarid
   abstract: true
   suffix: Anomalocarid

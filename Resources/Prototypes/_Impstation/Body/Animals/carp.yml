@@ -6,7 +6,7 @@
     metabolizerTypes: [Animal, Thaven]
 
 - type: entity
-  parent: OrganBase
+  parent: OrganBaseOrganic
   id: OrganCarpInternal
   abstract: true
   suffix: Carp
