@@ -268,7 +268,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: _Impstation/Mobs/Species/Visitor/Ants/parts.rsi #imp edit, waiting on proper macro merge to migrate files
+    sprite: _Impstation/Mobs/Species/Visitors/Ants/parts.rsi #imp edit, waiting on proper macro merge to migrate files
   # IMP EDIT START: TO BE ENABLED BY VISUAL NUBODY
   #- type: VisualOrgan
   #  data:

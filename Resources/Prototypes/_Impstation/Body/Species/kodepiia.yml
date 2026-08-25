@@ -335,6 +335,7 @@
 - type: entity
   parent: [ OrganBaseLiver, OrganKodepiiaInternal, OrganKodepiiaMetabolizer ]
   id: OrganKodepiiaLiver
+  components:
   - type: Sprite
     sprite: Mobs/Species/Human/organs.rsi
 

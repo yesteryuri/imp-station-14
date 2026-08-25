@@ -246,6 +246,9 @@
 - type: entity
   parent: [ OrganBaseTongue, OrganMothInternal ]
   id: OrganMothTongue
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/organs.rsi #imp
 
 - type: entity
   parent: [ OrganBaseAppendix, OrganSpriteHumanInternal, OrganMothInternal ]
