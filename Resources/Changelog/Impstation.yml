@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: yesteryuri, juniwoofs
-  changes:
-  - message: Added 61 hairstyles for Humans, Dwarves, and Slimes, and 4 hairs(?) for
-      Kodepiia!
-    type: Add
-  id: 2408
-  time: '2025-11-10T10:03:18.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/3634
 - author: mqole, poeMota, Sh1ntra, whatston3, EckoAurum
   changes:
   - message: Handheld radios have been replaced with HandiComms, now with selectable
@@ -4078,3 +4070,15 @@
   id: 2907
   time: '2026-08-25T09:13:27.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/4461
+- author: coyragon96
+  changes:
+  - message: Added a new Zookeeper reagent for tranq darts and an evil Zookeeper reagent
+      for syndi darts.
+    type: Add
+  - message: Removed Zookeeper shock darts.
+    type: Remove
+  - message: Changed a bunch of small things involving Zookeeper darts/reagents.
+    type: Tweak
+  id: 2908
+  time: '2026-08-25T09:35:37.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/4503
