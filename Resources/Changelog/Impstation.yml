@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: 0vrseer
-  changes:
-  - message: Nukie mice will now wiggle their tails and move their paws.
-    type: Tweak
-  id: 2411
-  time: '2025-11-11T00:58:28.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/3695
 - author: LankLTE
   changes:
   - message: Characters with the 'synthetic' trait will no longer get notified of
@@ -4081,3 +4074,10 @@
   id: 2910
   time: '2026-08-25T09:57:51.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/4532
+- author: MistyNull
+  changes:
+  - message: Added a new lobby art!!
+    type: Add
+  id: 2911
+  time: '2026-08-25T10:18:14.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/4555
