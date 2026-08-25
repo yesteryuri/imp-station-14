@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: LankLTE
-  changes:
-  - message: Characters with the 'synthetic' trait will no longer get notified of
-      Ion Storms. A new event, Synth Storms, has been added instead.
-    type: Tweak
-  id: 2412
-  time: '2025-11-11T00:58:29.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/3695
 - author: Radezolid
   changes:
   - message: Now listening post operatives will spawn with a binary key in their headset.
@@ -4081,3 +4073,15 @@
   id: 2911
   time: '2026-08-25T10:18:14.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/4555
+- author: marsfriend
+  changes:
+  - message: Organic-synthetic interfaces have been recalibrated to accept diona brains.
+      (Including nymphs!)
+    type: Fix
+  - message: Unborgable trait now works for diona.
+    type: Fix
+  - message: Diona nymphs can now multichirp!
+    type: Tweak
+  id: 2912
+  time: '2026-08-25T10:21:42.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/4030
