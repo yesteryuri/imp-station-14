@@ -1,28 +1,4 @@
 ﻿Entries:
-- author: VeeNomine
-  changes:
-  - message: Added more access to specific doors and comms to Tck'ut.
-    type: Add
-  - message: Added a multitool to the Warden's locker. No more Multitool Questing.
-    type: Add
-  - message: Tck'ut now has a cutting, prying, and anchoring tool.
-    type: Add
-  - message: Temporarily removed Tck'ut's forensic chalk.
-    type: Remove
-  - message: Temporarily changed Tck'ut's tickets to not be writable paper.
-    type: Tweak
-  - message: Fixed Tck'ut running out of holo projection charges.
-    type: Fix
-  - message: Tck'ut should no longer be able to remove it's holo projector's battery.
-    type: Fix
-  - message: Tck'ut no longer is a filthy litterer. Its tickets will now despawn after
-      a period of time.
-    type: Fix
-  - message: Tck'ut's holo projection no longer can rotate.
-    type: Fix
-  id: 2406
-  time: '2025-11-10T03:00:18.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/3702
 - author: yesteryuri
   changes:
   - message: Head revolutionaries have a death rattle in their unionist noggin
@@ -4094,3 +4070,10 @@
   id: 2905
   time: '2026-08-24T07:47:36.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/4542
+- author: jkwookee
+  changes:
+  - message: Explosive mines have been uncovered throughout NT stations recently.
+    type: Add
+  id: 2906
+  time: '2026-08-25T09:07:52.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/4366
