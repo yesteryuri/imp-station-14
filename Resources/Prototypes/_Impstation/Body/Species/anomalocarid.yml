@@ -6,8 +6,9 @@
   - type: Sprite
     layers:
     # most of the below is from BaseSpeciesLayers. comments indicate where changes have been made to this order
-    # Torso
+    #'Behind' sprites
     - map: [ "enum.HumanoidVisualLayers.TailBehind" ] # Floof
+    # Torso
     - map: [ "enum.HumanoidVisualLayers.Chest" ]
     # Head
     - map: [ "enum.HumanoidVisualLayers.Head" ]
@@ -27,8 +28,6 @@
     - map: [ "enum.HumanoidVisualLayers.RFoot" ]
     - map: [ "enum.HumanoidVisualLayers.LHand" ]
     - map: [ "enum.HumanoidVisualLayers.RHand" ]
-    # Stuff that goes over the body but below equipment
-    - map: ["enum.HumanoidVisualLayers.Overlay"]
     # More equipment
     - map: [ "gloves" ]
     - map: [ "shoes" ]
@@ -39,8 +38,8 @@
     - map: [ "outerClothing" ]
     - map: [ "enum.HumanoidVisualLayers.TailBehindBackpack" ] # imp
     - map: [ "back" ]
+    - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Floof
     - map: [ "enum.HumanoidVisualLayers.Tail" ] #layered above the back, maybe has very very minor balance implications (hiding guns behind your wings) but i think it's fine.
-    - map: [ "enum.HumanoidVisualLayers.TailOverlay" ] #see above.
     - map: [ "ears" ] #above tail for over-ear headsets specifically. this means they layer over backpacks and outerclothing too, unsure about that right now.
     - map: [ "neck" ]
     - map: [ "suitstorage" ]

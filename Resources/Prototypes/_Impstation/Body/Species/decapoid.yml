@@ -6,6 +6,7 @@
   - type: Sprite
     layers: # Need to redefine the whole order to draw the legs and claw correctly
     # Back Legs
+    - map: [ "enum.HumanoidVisualLayers.TailBehind" ] # Floof
     - map: [ "enum.HumanoidVisualLayers.RFoot" ] # this is the back feet
     - map: [ "enum.HumanoidVisualLayers.RLeg" ] # this is the back legs
 
@@ -32,6 +33,7 @@
     - map: [ "eyes" ]
     - map: [ "belt" ]
     - map: [ "id" ]
+    - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Floof
     - map: [ "back" ]
 
     # Front Legs

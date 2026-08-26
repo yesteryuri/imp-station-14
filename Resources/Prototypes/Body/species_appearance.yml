@@ -4,6 +4,10 @@
   components:
   - type: Sprite
     layers:
+    #'Behind' sprites
+    - map: [ "enum.HumanoidVisualLayers.TailUnderlay" ] # imp
+    - map: [ "enum.HumanoidVisualLayers.TailBehind" ] # Floof
+
     # Torso
     - map: [ "enum.HumanoidVisualLayers.Chest" ]
 
@@ -37,7 +41,9 @@
     - map: [ "belt" ]
     - map: [ "id" ]
     - map: [ "outerClothing" ]
+    - map: [ "enum.HumanoidVisualLayers.TailBehindBackpack" ] # imp
     - map: [ "back" ]
+    - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Floof
     - map: [ "neck" ]
 
     # Stuff that goes in front of equipment
