@@ -218,6 +218,7 @@
     - DoorBumpOpener
     - AnomalyHost
     - CanPilot
+    - RecyclerGibbable
   - type: Hands
     leftHandDisplacement:
       sizeMaps:
