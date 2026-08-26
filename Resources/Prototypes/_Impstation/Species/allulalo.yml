@@ -130,7 +130,7 @@
   id: MobAllulaloLHand
   baseSprite:
     sprite: _Impstation/Mobs/Species/Allulalo/parts.rsi
-    state: hands
+    state: l_hand
 
 - type: humanoidBaseSprite
   id: MobAllulaloLArm

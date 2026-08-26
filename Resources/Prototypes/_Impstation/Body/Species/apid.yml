@@ -130,9 +130,9 @@
     damageModifierSet: Moth
   - type: Speech
     speechVerb: Moth
-    allowedEmotes: ['Chitter', 'Squeak', 'Flap']
+    allowedEmotes: ['Chitter', 'Squeak']
   - type: TypingIndicator
-    proto: apid
+    proto: moth
   - type: Bloodstream
     bloodReferenceSolution:
       reagents:
@@ -150,7 +150,7 @@
       Female: UnisexMoth
       Unsexed: UnisexMoth
   - type: BodyEmotes
-    soundsId: MothBodyEmotes
+    soundsId: GeneralBodyEmotes
 
   - type: MobThresholds
     thresholds:

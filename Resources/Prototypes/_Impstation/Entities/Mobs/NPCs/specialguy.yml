@@ -4,6 +4,7 @@
   - BaseSimpleMob
   - MobCombat
   - MobBloodstream
+  - BaseMobAnimal
   id: MobSpecialGuy
   description: You feel like you're about to get your ass kicked.
   components:
@@ -19,8 +20,6 @@
   - type: RotationVisuals
     defaultRotation: 90
     horizontalRotation: 90
-  - type: Body
-    prototype: Animal
   - type: Damageable
     damageContainer: Biological
   - type: MovementSpeedModifier

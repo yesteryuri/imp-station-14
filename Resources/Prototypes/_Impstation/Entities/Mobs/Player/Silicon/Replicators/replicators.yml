@@ -262,7 +262,6 @@
   - type: Hands
     showInHands: false
     canBeStripped: false
-    showExamine: false
     activeHandId: hand1
     hands:
       hand1:
@@ -320,7 +319,6 @@
   - type: Hands
     showInHands: false
     canBeStripped: false
-    showExamine: false
     activeHandId: hand1
     hands:
       hand1:
@@ -382,7 +380,6 @@
   - type: Hands
     showInHands: false
     canBeStripped: false
-    showExamine: false
     activeHandId: hand1
     hands:
       hand1:
@@ -453,7 +450,6 @@
   - type: Hands
     showInHands: false
     canBeStripped: false
-    showExamine: false
     activeHandId: hand1
     hands:
       hand1:

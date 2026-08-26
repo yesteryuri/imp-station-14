@@ -4,7 +4,7 @@ using Content.Shared.Body;
 using Content.Shared.Species.Components;
 using Content.Shared.Zombies;
 using Robust.Shared.Prototypes;
-using Content.Shared.Body.Systems; // imp unborgable
+using Content.Shared.Body.Components; // imp unborgable
 using Content.Shared.Tag; // imp unborgable
 using Content.Shared.Traits.Assorted; // imp unborgable
 
@@ -15,8 +15,7 @@ public sealed partial class NymphSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
     [Dependency] private readonly MindSystem _mindSystem = default!;
     [Dependency] private readonly ZombieSystem _zombie = default!;
-    [Dependency] private readonly SharedBodySystem _sharedBodySystem = default!; // imp edit for Unborgable
-    [Dependency] private readonly TagSystem _tagSystem = default!; // imp edit for Unborgable
+    [Dependency] private readonly BodySystem _body = default!; // imp edit for Unborgable
 
     private static readonly ProtoId<TagPrototype> Brain = "Brain"; // imp edit for Unborgable
 
@@ -25,6 +24,9 @@ public sealed partial class NymphSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<NymphComponent, OrganGotRemovedEvent>(OnRemovedFromPart);
+
+        SubscribeLocalEvent<BodyComponent, UnborgableDionaRelayNymphEvent>(_body.RelayEvent); // imp edit for Unborgable
+        SubscribeLocalEvent<BrainComponent, BodyRelayedEvent<UnborgableDionaRelayNymphEvent>>(OnRelayUnborgableNymph); // imp edit for Unborgable
     }
 
     private void OnRemovedFromPart(EntityUid uid, NymphComponent comp, ref OrganGotRemovedEvent args)
@@ -47,14 +49,9 @@ public sealed partial class NymphSystem : EntitySystem
         {
             AddComp<UnborgableComponent>(nymph); // Add UnborgableComponent to brain nymph
             // Add UnborgableComponent to brain organ inside the nymph (dropped upon gibbing)
-            foreach (var organ in _sharedBodySystem.GetBodyOrgans(nymph))
-            {
-                if (_tagSystem.HasTag(organ.Id, Brain))
-                {
-                    AddComp<UnborgableComponent>(organ.Id);
-                    break;
-                }
-            }
+
+            var ev = new UnborgableDionaRelayNymphEvent();
+            RaiseLocalEvent(nymph, ref ev);
         }
         // IMP EDIT END - Unborgable trait support
 
@@ -65,4 +62,17 @@ public sealed partial class NymphSystem : EntitySystem
         // Delete the old organ
         QueueDel(uid);
     }
+
+    // IMP EDIT START - Unborgable trait support
+    private void OnRelayUnborgableNymph(Entity<BrainComponent> ent, ref BodyRelayedEvent<UnborgableDionaRelayNymphEvent> args)
+    {
+        AddComp<UnborgableComponent>(ent);
+    }
+
+    /// <summary>
+    /// Raised to relay unborgable component to internal nymphs' brain.
+    /// </summary>
+    [ByRefEvent]
+    public record struct UnborgableDionaRelayNymphEvent;
+    // IMP EDIT END - Unborgable trait support
 }

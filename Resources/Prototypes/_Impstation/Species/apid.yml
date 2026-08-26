@@ -2,7 +2,7 @@
   id: Apid
   name: species-name-apid
   roundStart: false
-  prototype: BaseMobApid
+  prototype: MobApid
   sprites: MobApidSprites
   defaultSkinTone: "#385878"
   markingLimits: MobApidMarkingLimits
