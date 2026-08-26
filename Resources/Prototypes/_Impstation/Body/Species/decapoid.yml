@@ -230,7 +230,8 @@
         sprite: _Impstation/Mobs/Effects/decapoid_brute_damage.rsi #imp edit, waiting on proper macro merge to migrate files
         color: "#162581"
   - type: BlockInjection
-    failurePopup: block-injection-decapoid
+    # Imp. comment this out pending macromerge
+    #failurePopup: block-injection-decapoid
   - type: CanWieldOneHanded
   - type: CarrierOneHand #imp edit, carrying
 

@@ -111,7 +111,7 @@
   name: Urist McAnt
   components:
   - type: Icon
-    sprite: _Impstation/Mobs/Species/Visitor/Ants/parts.rsi #imp edit, waiting on proper macro merge to migrate files
+    sprite: _Impstation/Mobs/Species/Visitors/Ants/parts.rsi #imp edit, waiting on proper macro merge to migrate files
     state: full
   - type: Butcherable
     butcheringType: Spike
@@ -179,10 +179,10 @@
   - type: TooShortForUI
     blacklist:
       components:
-      - TooShortForUiBlacklist
+      - TooShortForUIBlacklist
     whitelist:
       components:
-      - TooShortForUiWhitelist
+      - TooShortForUIWhitelist
   - type: MeleeWeapon
     attackRate: 1
     soundHit:

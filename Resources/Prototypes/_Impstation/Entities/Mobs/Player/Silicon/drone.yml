@@ -171,7 +171,6 @@
   - type: Hands
     showInHands: false
     canBeStripped: false
-    showExamine: false
     activeHandId: hand1
     hands:
       hand1:
@@ -223,9 +222,9 @@
   id: StartingGearDroneTools
   equipment:
     pocket1: trayScannerUnremoveable
-    pocket2: GasAnalyzerUnremoveable
-    pocket3: PinpointerStationUnremoveable
+    pocket2: PinpointerStationUnremoveable
   inhand:
   - OmnitoolUnremoveable
   - WelderExperimentalUnremoveable
   - RCDRechargingCardboardUnremoveable
+  - GasAnalyzerUnremoveable

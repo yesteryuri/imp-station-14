@@ -10,7 +10,7 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: crawling
-    - map: ["enum.CombatModeVisualsVisuals.Combat"]
+    - map: ["enum.CombatModeVisualLayers.Combat"]
       state: standing
       visible: false
       offset: 0, 0.51 # gotta be weirdly specific here
@@ -21,6 +21,7 @@
     doImpactDamage: true
     beginCombatMessage: "evilgorilla-begin-combat-popup"
   - type: CombatModeVisuals
+    sprite: standing
     hideBaseLayer: true
 
 - type: entity

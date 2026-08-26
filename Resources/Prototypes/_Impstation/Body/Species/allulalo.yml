@@ -140,10 +140,10 @@
   - type: TooShortForUI #short fucks
     blacklist:
       components:
-      - TooShortForUiBlacklist
+      - TooShortForUIBlacklist
     whitelist:
       components:
-      - TooShortForUiWhitelist
+      - TooShortForUIWhitelist
   - type: MeleeWeapon #bites you
     soundHit:
       collection: AlienClaw
