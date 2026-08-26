@@ -1,10 +1,10 @@
 - type: entity
   name: THE ULTIMATE BOXER
   parent:
+  - BaseMobAnimal
   - BaseSimpleMob
   - MobCombat
   - MobBloodstream
-  - BaseMobAnimal
   id: MobSpecialGuy
   description: You feel like you're about to get your ass kicked.
   components:

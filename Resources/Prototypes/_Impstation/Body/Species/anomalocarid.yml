@@ -444,6 +444,12 @@
     flavors:
       - sour
       - shrimp
+  - type: SolutionContainerManager #imp edit, needs fixing when solutions refactor is merged. something scary is happening here.
+    solutions:
+      stomach:
+          maxVol: 50
+      food:
+        maxVol: 15
 
 - type: entity
   parent: [ OrganBaseLiver, OrganAnomalocaridInternal, OrganAnimalMetabolizer ]

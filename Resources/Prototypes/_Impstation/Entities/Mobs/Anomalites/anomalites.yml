@@ -9,7 +9,7 @@
 
 # Base Anomalite
 - type: entity
-  parent: [ BaseMob, MobDamageable, MobPolymorphable, MobAtmosExposed, MobCombat, MobBloodstream, MobFlammable, BaseMobAnimal ]
+  parent: [ BaseMobAnimal, BaseMob, MobDamageable, MobPolymorphable, MobAtmosExposed, MobCombat, MobBloodstream, MobFlammable ]
   id: BaseAnomalite
   name: anomalite
   abstract: true

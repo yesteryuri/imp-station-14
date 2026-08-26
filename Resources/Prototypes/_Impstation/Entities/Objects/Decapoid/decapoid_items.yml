@@ -22,7 +22,6 @@
         Structural: 10
     soundHit:
       collection: AlienClaw
-  - type: Unremoveable
   - type: Blocking
     passiveBlockModifier:
       coefficients:

@@ -361,7 +361,7 @@
 # commented out kodepiia stuff is for when i can be fucked to figure out how to make randomsprite work on inhands -mq
 - type: entity
   name: young kodepiia
-  parent: [ MobCombat, SimpleMobBase, MobKodepiia ]
+  parent: [ BaseMobKodeDescendant, MobCombat, SimpleMobBase ]
   id: MobYoungKodepiia
   description: Not quite a not-quite-person.
   components:
