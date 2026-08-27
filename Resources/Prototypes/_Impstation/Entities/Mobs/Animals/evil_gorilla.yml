@@ -21,8 +21,10 @@
     doImpactDamage: true
     beginCombatMessage: "evilgorilla-begin-combat-popup"
   - type: CombatModeVisuals
-    sprite: standing
     hideBaseLayer: true
+    sprite:
+      sprite: _Impstation/Mobs/Animals/evilgorilla.rsi
+      state: standing
 
 - type: entity
   parent: MobEvilGorilla

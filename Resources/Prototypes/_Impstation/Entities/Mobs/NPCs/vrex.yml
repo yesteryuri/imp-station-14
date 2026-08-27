@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ SimpleMobBase, BaseMobAnimal ]
+  parent: [ BaseMobAnimal, SimpleMobBase ]
   id: BaseMobVRex
   name: v-rex
   description: A brown and bear like predator, it eats wild boars. It lumbers around, even FinFin are eaten. It lives in the Tsubu-woods and in the valley. #taken directly from the finfin fanpage, i kinda love it too much to change it. feel free to convince me otherwise.

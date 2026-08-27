@@ -318,6 +318,13 @@
   id: OrganGrayStomach
   name: fuubu
   description: "Looks kind of appetizing."
+  components:
+  - type: SolutionContainerManager #imp edit, needs fixing when solutions refactor is merged. something scary is happening here.
+    solutions:
+      stomach:
+          maxVol: 50
+      food:
+        maxVol: 15
 
 - type: entity
   parent: [ OrganBaseLiver, OrganGrayInternal, OrganGrayMetabolizer ]

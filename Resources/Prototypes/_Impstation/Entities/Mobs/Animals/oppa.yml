@@ -1,7 +1,7 @@
 
 - type: entity
   name: night oppa
-  parent: [ SimpleSpaceMobBase, FlyingMobBase, BaseMobAnimal ]
+  parent: [ BaseMobAnimal, SimpleSpaceMobBase, FlyingMobBase ]
   id: MobNightOppa
   description: A rat-like creature that hibernates in space, often woken from its deep slunger by a profound hunger for station crumbs
   components:
