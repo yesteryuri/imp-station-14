@@ -194,7 +194,7 @@
         Blunt: 0.1 # they can carry heavy objects but can't throw a punch
   - type: Item
     size: Tiny
-    sprite: _Impstation/Mobs/Species/Visitor/Ants/ants_held.rsi #imp edit, waiting on proper macro merge to migrate files
+    sprite: _Impstation/Mobs/Species/Visitors/Ants/ants_held.rsi #imp edit, waiting on proper macro merge to migrate files
     inhandVisuals:
       left:
       - state: inhand-left

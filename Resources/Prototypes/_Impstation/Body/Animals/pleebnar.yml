@@ -19,12 +19,12 @@
     - cigarettes
 
 - type: entity
-  parent: [ OrganAnimalLungs, OrganPleebnarInternal ]
+  parent: [ OrganPleebnarInternal, OrganAnimalLungs ]
   id: OrganPleebnarLungs
   name: yupp
 
 - type: entity
-  parent: [ OrganAnimalStomach, OrganPleebnarInternal ]
+  parent: [ OrganPleebnarInternal, OrganAnimalStomach ]
   id: OrganPleebnarStomach
   name: sluumi
   components:
@@ -36,7 +36,7 @@
         maxVol: 15
 
 - type: entity
-  parent: [ OrganAnimalLiver, OrganPleebnarInternal ]
+  parent: [ OrganPleebnarInternal, OrganAnimalLiver ]
   id: OrganPleebnarLiver
   name: grubi
   components:
@@ -46,12 +46,12 @@
       rateModifier: 0.1
 
 - type: entity
-  parent: [ OrganAnimalHeart, OrganPleebnarInternal ]
+  parent: [ OrganPleebnarInternal, OrganAnimalHeart ]
   id: OrganPleebnarHeart
   name: clui
 
 - type: entity
-  parent: [ OrganAnimalKidneys, OrganPleebnarInternal ]
+  parent: [ OrganPleebnarInternal, OrganAnimalKidneys ]
   id: OrganPleebnarKidneys
   name: spum
   components:
@@ -60,7 +60,7 @@
     - state: kidney-r
 
 - type: entity
-  parent: [ OrganBaseEyes, OrganPleebnarInternal ]
+  parent: [ OrganPleebnarInternal, OrganBaseEyes ]
   id: OrganPleebnarEyes
   name: shuui
   description: "Soulful."
@@ -74,7 +74,7 @@
     containers:
       body_organs: !type:AllSelector
         children:
-        - id: OrganPleebnarLungsp
+        - id: OrganPleebnarLungs
         - id: OrganPleebnarStomach
         - id: OrganPleebnarLiver
         - id: OrganPleebnarHeart
