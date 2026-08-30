@@ -22,6 +22,17 @@
   parent: [ OrganPleebnarInternal, OrganAnimalLungs ]
   id: OrganPleebnarLungs
   name: yupp
+  components:
+  - type: SolutionContainerManager #imp edit, needs fixing when solutions refactor is merged. something scary is happening here. i dont know i dont know i dont know
+    solutions:
+      Lung:
+        maxVol: 100.0
+        canReact: false
+      food: #imp edit, to match contents of OrganBaseOrganic, should be removed after solution refactor
+        maxVol: 20
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 20
 
 - type: entity
   parent: [ OrganPleebnarInternal, OrganAnimalStomach ]

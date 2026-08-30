@@ -84,8 +84,8 @@
         - id: OrganUnguHead
         - id: OrganUnguArmLeft
         - id: OrganUnguArmRight
-        - id: OrganUnguHandLeft
         - id: OrganUnguHandRight
+        - id: OrganUnguHandLeft
         - id: OrganUnguLegLeft
         - id: OrganUnguLegRight
         - id: OrganUnguFootLeft

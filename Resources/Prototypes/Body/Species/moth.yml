@@ -234,12 +234,12 @@
   id: OrganMothFootRight
 
 - type: entity
-  parent: [ OrganBaseBrain, OrganSpriteHumanInternal, OrganMothInternal ]
+  parent: [ OrganMothInternal, OrganBaseBrain, OrganSpriteHumanInternal]
   id: OrganMothBrain
   name: cerebral ganglia #imp edit
 
 - type: entity
-  parent: [ OrganBaseEyes, OrganMothInternal ]
+  parent: [ OrganMothInternal, OrganBaseEyes ]
   id: OrganMothEyes
   name: compound eyes #imp edit
 
@@ -252,23 +252,23 @@
 
 - type: entity
   parent: [ OrganBaseAppendix, OrganSpriteHumanInternal, OrganMothInternal ]
-  id: OrganMothAppendix
+  id: OrganMothAppendix # no special sprites or flavour, sorry
 
 - type: entity
   parent: [ OrganBaseEars, OrganSpriteHumanInternal, OrganMothInternal ]
-  id: OrganMothEars
+  id: OrganMothEars # no special sprites or flavour, sorry
 
 - type: entity
-  parent: [ OrganBaseLungs, OrganMothInternal, OrganMothMetabolizer ]
+  parent: [ OrganMothInternal, OrganBaseLungs, OrganMothMetabolizer ]
   id: OrganMothLungs
   name: air sacs #imp edit
 
 - type: entity
-  parent: [ OrganBaseHeart, OrganMothInternal, OrganAnimalMetabolizer ]
+  parent: [ OrganMothInternal, OrganBaseHeart, OrganAnimalMetabolizer ]
   id: OrganMothHeart
 
 - type: entity
-  parent: [ OrganBaseStomach, OrganMothInternal, OrganMothMetabolizer ]
+  parent: [ OrganMothInternal, OrganBaseStomach, OrganMothMetabolizer ]
   id: OrganMothStomach
   name: moth stomach  #imp edit
   components:
@@ -280,11 +280,11 @@
       - Pill
 
 - type: entity
-  parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganMothInternal, OrganAnimalMetabolizer ]
+  parent: [ OrganMothInternal, OrganBaseLiver, OrganSpriteHumanInternal, OrganAnimalMetabolizer ]
   id: OrganMothLiver
   name: hepatic caecum #imp edit
 
 - type: entity
-  parent: [ OrganBaseKidneys, OrganSpriteHumanInternal, OrganMothInternal, OrganMothMetabolizer ]
+  parent: [ OrganMothInternal, OrganBaseKidneys, OrganSpriteHumanInternal, OrganMothMetabolizer ]
   id: OrganMothKidneys
   name: malpighian tubules #imp edit

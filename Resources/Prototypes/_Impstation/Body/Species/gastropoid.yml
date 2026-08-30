@@ -171,6 +171,11 @@
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Gastropoid
+  - type: DamageVisuals
+    damageOverlayGroups:
+      Brute:
+        sprite: _Impstation/Mobs/Effects/snail_brute_damage.rsi
+        color: "#162581"
   - type: TypingIndicator
     proto: Gastropoid
 
