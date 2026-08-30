@@ -3925,7 +3925,7 @@
 
 - type: entity
   name: hamster
-  parent: [ SimpleMobBase, MobCombat, StripableInventoryBase]
+  parent: [ SimpleMobBase, MobCombat, StripableInventoryBase, MobHamsterSecretStash] #imp edit, added MobHamsterSecretStash
   id: MobHamster
   description: A cute, fluffy, robust hamster.
   components:
@@ -4086,20 +4086,6 @@
   - type: VentCrawler
     enterDelay: 1
   - type: AlwaysRevolutionaryConvertible
-  - type: SecretStash
-    secretStashName: secret-stash-hamster
-    blacklist:
-      tags:
-      - QuantumSpinInverter # grinder problems
-    tryInsertItemSound: /Audio/Effects/Fluids/blood2.ogg
-    tryRemoveItemSound: /Audio/Effects/Fluids/blood1.ogg
-  - type: ToolOpenable
-    openToolQualityNeeded: Slicing
-    closeToolQualityNeeded: Welding
-    name: secret-stash-hamster
-  - type: ContainerContainer
-    containers:
-      stash: !type:ContainerSlot {}
   # imp edit end
 
 - type: entity

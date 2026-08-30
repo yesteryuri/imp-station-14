@@ -1,6 +1,6 @@
 - type: entity
   name: pleebnar
-  parent: [ SimpleMobBase, BaseMobPleebnarBody ] #TODO: cleanup components, most can be inherited from a better mob parent
+  parent: [ BaseMobPleebnarBody, SimpleMobBase ] #TODO: cleanup components, most can be inherited from a better mob parent
   id: MobPleebnar
   description: UNIDENTIFIED PISKUN THING!
   components:

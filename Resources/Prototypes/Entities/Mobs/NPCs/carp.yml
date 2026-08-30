@@ -1,7 +1,7 @@
 - type: entity
   name: space carp
   id: BaseMobCarp
-  parent: [ SimpleSpaceMobBase, FlyingMobBase, MobCombat, BaseMobCarpBody ] #imp edit, added BaseMobCarpBody parent
+  parent: [ BaseMobCarpBody, SimpleSpaceMobBase, FlyingMobBase, MobCombat ] #imp edit, added BaseMobCarpBody parent
   description: It's a space carp.
   abstract: true
   components:
