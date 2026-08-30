@@ -179,16 +179,16 @@
   id: OrganArachnidFootRight
 
 - type: entity
-  parent: [ OrganBaseBrain, OrganSpriteHumanInternal, OrganArachnidInternal ]
+  parent: [ OrganArachnidInternal, OrganBaseBrain, OrganSpriteHumanInternal ]
   name: cerebral ganglia #imp edit
   id: OrganArachnidBrain
 
 - type: entity
-  parent: [ OrganBaseEyes, OrganArachnidInternal ]
+  parent: [ OrganArachnidInternal, OrganBaseEyes ]
   id: OrganArachnidEyes
 
 - type: entity
-  parent: [ OrganBaseTongue, OrganArachnidInternal ]
+  parent: [ OrganArachnidInternal, OrganBaseTongue, ]
   id: OrganArachnidTongue
   components:
   - type: Sprite
@@ -196,16 +196,17 @@
 
 - type: entity
   parent: [ OrganBaseAppendix, OrganSpriteHumanInternal, OrganArachnidInternal ]
-  id: OrganArachnidAppendix
+  id: OrganArachnidAppendix # no special sprites or flavour, sorry
 
 - type: entity
   parent: [ OrganBaseEars, OrganSpriteHumanInternal, OrganArachnidInternal ]
-  id: OrganArachnidEars
+  id: OrganArachnidEars # no special sprites or flavour, sorry
 
 - type: entity
-  parent: [ OrganBaseLungs, OrganArachnidInternal, OrganArachnidMetabolizer ]
+  parent: [ OrganArachnidInternal, OrganBaseLungs, OrganArachnidMetabolizer ]
   id: OrganArachnidLungs
   name: book lungs  #imp edit
+  description: "Filters oxygen from an atmosphere... just less efficiently."  #imp edited from 'but more greedily'
   components: #imp edit, changes average out to consuming 50% more gas than base
   - type: Metabolizer
     updateInterval: 0.5 # imp, twice as often as base
@@ -214,11 +215,12 @@
       rateModifier: 75.0 #imp, 25% less than base
 
 - type: entity
-  parent: [ OrganBaseHeart, OrganArachnidInternal, OrganArachnidMetabolizer ]
+  parent: [ OrganArachnidInternal, OrganBaseHeart, OrganArachnidMetabolizer ]
   id: OrganArachnidHeart
+  description: "A persistent little biological pump made for spiders."  #imp edit to remove 'disgustingly'
 
 - type: entity
-  parent: [ OrganBaseStomach, OrganArachnidInternal, OrganAnimalMetabolizer ]
+  parent: [ OrganArachnidInternal, OrganBaseStomach, OrganAnimalMetabolizer ]
   id: OrganArachnidStomach
   name: arachnid stomach #imp edit
   components: #imp edit, spider food
@@ -229,11 +231,11 @@
     isSpecialDigestibleExclusive: false
 
 - type: entity
-  parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganArachnidInternal, OrganAnimalMetabolizer ]
+  parent: [ OrganArachnidInternal, OrganBaseLiver, OrganSpriteHumanInternal, OrganAnimalMetabolizer ]
   id: OrganArachnidLiver
   name: hepatic caecum  #imp edit
 
 - type: entity
-  parent: [ OrganBaseKidneys, OrganSpriteHumanInternal, OrganArachnidInternal, OrganAnimalMetabolizer ]
+  parent: [ OrganArachnidInternal, OrganBaseKidneys, OrganSpriteHumanInternal, OrganAnimalMetabolizer ]
   id: OrganArachnidKidneys
   name: malpighian tubules  #imp edit

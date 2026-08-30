@@ -266,11 +266,14 @@
   id: OrganVoxFootRight
 
 - type: entity
-  parent: [ OrganBaseBrain, OrganSpriteHumanInternal, OrganVoxInternal ]
+  parent: [ OrganVoxInternal, OrganBaseBrain, OrganSpriteHumanInternal ]
   id: OrganVoxBrain
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/organs.rsi #imp
 
 - type: entity
-  parent: [ OrganBaseEyes, OrganVoxInternal ]
+  parent: [ OrganVoxInternal, OrganBaseEyes, ]
   id: OrganVoxEyes
 
 - type: entity
@@ -286,15 +289,15 @@
   id: OrganVoxEars
 
 - type: entity
-  parent: [ OrganBaseLungs, OrganVoxInternal, OrganVoxMetabolizer ]
+  parent: [ OrganVoxInternal, OrganBaseLungs, OrganVoxMetabolizer ]
   id: OrganVoxLungs
 
 - type: entity
-  parent: [ OrganBaseHeart, OrganVoxInternal, OrganVoxMetabolizer ]
+  parent: [ OrganVoxInternal, OrganBaseHeart, OrganVoxMetabolizer ]
   id: OrganVoxHeart
 
 - type: entity
-  parent: [ OrganBaseStomach, OrganVoxInternal, OrganVoxMetabolizer ]
+  parent: [ OrganVoxInternal, OrganBaseStomach, OrganVoxMetabolizer ]
   id: OrganVoxStomach
   components:
   - type: Stomach
@@ -304,9 +307,9 @@
     isSpecialDigestibleExclusive: false
 
 - type: entity
-  parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganVoxInternal, OrganVoxMetabolizer ]
+  parent: [ OrganVoxInternal, OrganBaseLiver, OrganSpriteHumanInternal, OrganVoxMetabolizer ]
   id: OrganVoxLiver
 
 - type: entity
-  parent: [ OrganBaseKidneys, OrganSpriteHumanInternal, OrganVoxInternal, OrganVoxMetabolizer ]
+  parent: [ OrganVoxInternal, OrganBaseKidneys, OrganSpriteHumanInternal, OrganVoxMetabolizer ]
   id: OrganVoxKidneys
