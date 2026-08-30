@@ -26,8 +26,8 @@
         - id: OrganKodepiiaHead
         - id: OrganKodepiiaLegLeft
         - id: OrganKodepiiaLegRight
-        - id: OrganKodepiiaFootLeft
         - id: OrganKodepiiaFootRight
+        - id: OrganKodepiiaFootLeft
         - id: OrganKodepiiaBrain
         - id: OrganKodepiiaEyes
         - id: OrganKodepiiaTongue
