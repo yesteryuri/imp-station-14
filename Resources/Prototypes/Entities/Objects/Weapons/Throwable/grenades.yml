@@ -24,7 +24,7 @@
 - type: entity
   name: flashbang
   description: THINK FAST, CHUCKLENUTS! #imp
-  parent: [ ImpactGrenadeBase, BaseSecurityContraband ]
+  parent: [  FragileGrenadeBase, TimerGrenadeBase, BaseSecurityContraband ]
   id: GrenadeFlashBang
   components:
   - type: Sprite
