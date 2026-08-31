@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: lobsterpaw
-  changes:
-  - message: Adds a new shuttle to the rare salvage ruins pool!
-    type: Add
-  id: 2420
-  time: '2025-11-11T09:05:58.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/3636
 - author: DVDPlayerOfDiscordFame
   changes:
   - message: The Handheld Criminal Records computer has been removed from the SecLink
@@ -4081,3 +4074,10 @@
   id: 2919
   time: '2026-08-31T15:47:37.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/4572
+- author: crocodilecarousel
+  changes:
+  - message: Liquid frezon tile
+    type: Add
+  id: 2920
+  time: '2026-08-31T16:08:26.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/4568
