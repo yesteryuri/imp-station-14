@@ -1,21 +1,4 @@
 ﻿Entries:
-- author: mqole, Huaqas
-  changes:
-  - message: Dragons, carp, spiders, and zombies now have their own collective mind
-      channels! Use +c, +s, or +z.
-    type: Add
-  - message: You can now see what collective minds you have access to using the character
-      menu.
-    type: Add
-  - message: Paradox clones now inherit access to the collective minds of their original.
-    type: Add
-  - message: Ghosts can now see messages sent using collective minds.
-    type: Fix
-  - message: The Mycorrhizal Gestalt has been renamed to the Mycorrhizae.
-    type: Tweak
-  id: 2419
-  time: '2025-11-11T02:04:21.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/3703
 - author: lobsterpaw
   changes:
   - message: Adds a new shuttle to the rare salvage ruins pool!
@@ -4090,3 +4073,11 @@
   id: 2918
   time: '2026-08-31T02:52:38.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/4581
+- author: mousesweater
+  changes:
+  - message: Swimsuits are REAL. Swim swim! Find them in BeachDrobes when these vending
+      machines are shipped to participating stations!
+    type: Add
+  id: 2919
+  time: '2026-08-31T15:47:37.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/4572
