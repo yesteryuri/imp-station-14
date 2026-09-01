@@ -16,7 +16,7 @@
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/emergency_crimson.yml
         - type: StationCargoShuttle
-          path: /Maps/_Impstation/Shuttles/cargo_felinid.yml
+          path: /Maps/_Impstation/Shuttles/cargo_catstation.yml
         - type: StationJobs
           availableJobs: # Total of 49 jobs roundstart including interns
             # command - 8
