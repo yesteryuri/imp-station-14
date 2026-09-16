@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: FlippenPage
-  changes:
-  - message: handheld sec radios now output messages correctly again.
-    type: Fix
-  id: 2448
-  time: '2025-11-23T09:09:38.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/3748
 - author: honeyed-lemons
   changes:
   - message: Radio channels have been tweaked, even for you dirty unionists.
@@ -4065,3 +4058,10 @@
   id: 2947
   time: '2026-09-16T09:07:11.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/4584
+- author: meatsmall
+  changes:
+  - message: arachnids have re-learned how to hiss
+    type: Fix
+  id: 2948
+  time: '2026-09-16T09:34:52.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/4632
