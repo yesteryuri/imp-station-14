@@ -1,13 +1,4 @@
 ﻿Entries:
-- author: hivehum
-  changes:
-  - message: Nanotrasen is pleased to announce that trade negotiations regarding its
-      supplier of matter bins and capacitors have completed, and new shipments have
-      arrived at all stations.
-    type: Add
-  id: 2477
-  time: '2025-12-11T04:57:13.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/3777
 - author: ATDoop
   changes:
   - message: You can find a weird long toy now.
@@ -4047,3 +4038,11 @@
   id: 2976
   time: '2026-09-27T08:02:21.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/4603
+- author: Squamatic, marsh-meadows
+  changes:
+  - message: Added coldplates, a tool for chemists to gently chill chemicals without
+      watering them down. Ask science for one today!
+    type: Add
+  id: 2977
+  time: '2026-09-27T18:12:45.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/4592
