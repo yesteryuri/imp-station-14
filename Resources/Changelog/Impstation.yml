@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: ATDoop
-  changes:
-  - message: You can find a weird long toy now.
-    type: Add
-  id: 2478
-  time: '2025-12-11T05:28:46.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/3840
 - author: yesteryuri
   changes:
   - message: Doughs and cheese and such have a page in the cooking recipes now
@@ -4046,3 +4039,11 @@
   id: 2977
   time: '2026-09-27T18:12:45.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/4592
+- author: Dizzy-Eevee
+  changes:
+  - message: Empty floor lights no longer accept (and consequentially, fix) broken/burned
+      light bulbs
+    type: Fix
+  id: 2978
+  time: '2026-09-27T18:25:19.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/4619
