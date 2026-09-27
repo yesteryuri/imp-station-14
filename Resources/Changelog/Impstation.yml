@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: coyragon96
-  changes:
-  - message: The ninja's power drain now drains the correct amount of power.
-    type: Fix
-  id: 2476
-  time: '2025-12-11T01:45:10.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/3788
 - author: hivehum
   changes:
   - message: Nanotrasen is pleased to announce that trade negotiations regarding its
@@ -4046,3 +4039,11 @@
   id: 2975
   time: '2026-09-27T07:03:26.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/4662
+- author: Raccoononi
+  changes:
+  - message: 'Two iconic Chinese dishes have been approved for NT''s space station
+      menus: tomato and egg stir fry and mapo tofu.'
+    type: Add
+  id: 2976
+  time: '2026-09-27T08:02:21.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/4603
