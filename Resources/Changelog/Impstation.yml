@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: yesteryuri
-  changes:
-  - message: Doughs and cheese and such have a page in the cooking recipes now
-    type: Add
-  id: 2479
-  time: '2025-12-11T05:36:45.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/3768
 - author: kipdotnet
   changes:
   - message: Ephedrine and Desoxyephedrine now cause you to heat up and gain thirst
@@ -4047,3 +4040,13 @@
   id: 2978
   time: '2026-09-27T18:25:19.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/4619
+- author: Kandiyaki
+  changes:
+  - message: Added a new "Targeted" section to the emote wheel - these emotes will
+      target whatever you were mousing over when you opened the emote wheel!
+    type: Add
+  - message: Three new targeted emotes - Wave At, Look At, and Wink At.
+    type: Add
+  id: 2979
+  time: '2026-09-28T09:19:05.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/4460
