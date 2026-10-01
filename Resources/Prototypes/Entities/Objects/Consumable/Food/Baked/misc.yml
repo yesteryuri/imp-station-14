@@ -53,7 +53,7 @@
     tags:
     - UnguFood
   # macro edit end
-      - Muffin # imp
+    - Muffin # imp
 
 - type: entity
   name: berry muffin
@@ -83,6 +83,8 @@
   - type: Tag
     tags:
     - Fruit
+    - Muffin # imp
+    - UnguFood # Imp
 
 - type: entity
   name: cherry muffin
@@ -110,6 +112,8 @@
   - type: Tag
     tags:
     - Fruit
+    - Muffin # imp
+    - UnguFood # Imp
 
 - type: entity
   name: bluecherry muffin
@@ -122,6 +126,8 @@
   - type: Tag
     tags:
     - Fruit
+    - Muffin # imp
+    - UnguFood # Imp
 
 - type: entity
   name: chocolate muffin
@@ -173,6 +179,8 @@
   - type: Tag
     tags:
     - Fruit
+    - Muffin # imp
+    - UnguFood # Imp
 
 # Buns
 - type: entity
@@ -306,6 +314,7 @@
   - type: Tag
     tags:
     - Fruit
+    - UnguFood # Imp
 
 - type: entity
   name: sugar cookie

@@ -391,9 +391,18 @@
   id: OrganUnguStomach
   description: A lot going on here.
   components:
-  - type: SolutionManager
+  - type: SolutionContainerManager
     solutions:
-    - SolutionStomachUngu
+      stomach:
+        maxVol: 200
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 12
+#  - type: SolutionManager
+#    solutions:
+#    - SolutionStomachUngu
   - type: Stomach
     isSpecialDigestibleExclusive: true
     specialDigestible:
@@ -410,14 +419,14 @@
       - Flower
       - Mushroom
 
-- type: entity
-  parent: SolutionStomach
-  id: SolutionStomachUngu
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Solution
-    solution:
-      maxVol: 200
+#- type: entity
+#  parent: SolutionStomach
+#  id: SolutionStomachUngu
+#  categories: [ HideSpawnMenu ]
+#  components:
+#  - type: Solution
+#    solution:
+#      maxVol: 200
 
 - type: entity
   parent: [ OrganBaseLiver, OrganUnguInternal, OrganHumanMetabolizer ]

@@ -75,7 +75,9 @@
   - type: Tag
     tags:
       - Vaporizer
+      - BreathMask
       - WhitelistChameleon
+      - GasMask
   - type: Clothing
     quickEquip: true
     slots:

@@ -673,16 +673,10 @@
     tags:
     - Pill
     - KodeEdible # macro add
-
-- type: entity
-  abstract: true
-  parent: [SolutionFood, SolutionTiny]
-  id: SolutionPill
-  components:
-  - type: Solution
-    solution:
-      canReact: false
-      maxVol: 20
+  - type: FoodSequenceElement # imp
+    entries:
+      Burger: PillBurger
+      Hotdog: PillBurger
 
 - type: entity
   name: pill canister

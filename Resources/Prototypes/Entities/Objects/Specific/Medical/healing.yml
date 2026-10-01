@@ -222,7 +222,7 @@
 - type: entity
   name: blood pack
   description: Contains a groundbreaking universal blood replacement created by Nanotrasen's advanced medical science.
-  parent: [ BaseHealingItem, SolutionFood ] #macro, add SolutionFood
+  parent: [ BaseHealingItem ]
   id: Bloodpack
   suffix: Full
   components:
@@ -256,15 +256,17 @@
     count: 10
   - type: StackPrice
     price: 10
-# macro start - kodepiia gogurt
-  - type: Edible
+  - type: Edible # macro
     requiresSpecialDigestion: true
-  - type: Solution
-    solution:
-      reagents:
-      - ReagentId: Blood
-        Quantity: 15
-# macro end
+  - type: SolutionContainerManager # imp
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Blood
+          Quantity: 15
+  - type: PluralName # imp
+    nameSomeOf: blood packs
 
 - type: entity
   parent: Bloodpack

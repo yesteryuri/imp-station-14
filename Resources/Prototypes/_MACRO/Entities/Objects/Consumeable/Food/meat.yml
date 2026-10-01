@@ -18,7 +18,7 @@
 
 - type: entity
   name: crispy kodepiia flakes
-  parent: FoodMeatCookedBase
+  parent: FoodMeatBase
   id: FoodMeatKodepiiaCooked
   description: Crackly, salty, and just a little alive.
   components:

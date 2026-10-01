@@ -440,9 +440,6 @@
   # macro edit end
 # Tastes like sweetness, cream cheese.
   # imp edit start
-  - type: Tag
-    tags:
-    - UnguFood
     - Cake
     - Slice
   - type: FlavorProfile
@@ -467,36 +464,7 @@
           Quantity: 1
         - ReagentId: TableSalt
           Quantity: 1
-  # imp edit start
-  - type: Tag
-    tags:
-    - UnguFood
-    - Cake
-    - Slice
-  - type: FlavorProfile
-    flavors:
-    - creamy
-    - cheesy
-    ignoreReagents:
-    - TableSalt
-    - Milk
-    - Vitamin
-    - Nutriment
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 10
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 4
-        - ReagentId: Vitamin
-          Quantity: 1
-        - ReagentId: Milk
-          Quantity: 1
-        - ReagentId: TableSalt
-          Quantity: 1
-  # imp edit end
-# Tastes like sweetness, cream cheese.
+  # imp edit
 
 - type: entity
   name: orange cake
