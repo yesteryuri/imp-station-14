@@ -25,6 +25,7 @@
   name: Ungu
   text: "/ServerInfo/_MACRO/Guidebook/Mobs/Ungu.xml"
 
+- type: guideEntry
   id: Decapoid
   name: Decapoid
   text: "/ServerInfo/_MACRO/Guidebook/Mobs/Decapoid.xml"

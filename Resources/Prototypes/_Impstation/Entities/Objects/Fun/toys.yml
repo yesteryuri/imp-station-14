@@ -46,23 +46,23 @@
     state: plushie_gray
   - type: EmitSoundOnUse
     sound:
-      path: /Audio/_Impstation/Voice/Gray/gray_scream.ogg
+      path: /Audio/_MACRO/Voice/Gray/gray_scream.ogg
   - type: EmitSoundOnLand
     sound:
-      path: /Audio/_Impstation/Voice/Gray/gray_cry.ogg
+      path: /Audio/_MACRO/Voice/Gray/gray_cry.ogg
   - type: EmitSoundOnActivate
     sound:
-      path: /Audio/_Impstation/Voice/Gray/gray_scream.ogg
+      path: /Audio/_MACRO/Voice/Gray/gray_scream.ogg
   - type: EmitSoundOnTrigger
     sound:
-      path: /Audio/_Impstation/Voice/Gray/gray_scream.ogg
+      path: /Audio/_MACRO/Voice/Gray/gray_scream.ogg
   - type: MeleeWeapon
     soundHit:
-      path: /Audio/_Impstation/Voice/Gray/gray_scream.ogg
+      path: /Audio/_MACRO/Voice/Gray/gray_scream.ogg
   - type: Edible
     requiresSpecialDigestion: false
     useSound:
-      path: /Audio/_Impstation/Voice/Gray/gray_scream.ogg
+      path: /Audio/_MACRO/Voice/Gray/gray_scream.ogg
   - type: FlavorProfile
     flavors:
       - radiation
@@ -249,7 +249,7 @@
     state: plushie_decapoid
   - type: EmitSoundOnUse
     sound:
-      path: /Audio/_Impstation/Voice/Decapoid/decapoid_laugh.ogg
+      path: /Audio/_MACRO/Voice/Decapoid/decapoid_laugh.ogg
   - type: MeleeWeapon
     wideAnimationRotation: -90
     damage:
@@ -289,7 +289,7 @@
     state: plushie_snail
   - type: EmitSoundOnUse
     sound:
-      path: /Audio/_Impstation/Voice/Gastropoid/snail_scream.ogg
+      path: /Audio/_MACRO/Voice/Gastropoid/snail_scream.ogg
   - type: Edible
     requiresSpecialDigestion: true
   - type: FlavorProfile
@@ -1246,13 +1246,13 @@
         offset: "0, 0.06"
   - type: EmitSoundOnUse
     sound:
-      path: /Audio/_Impstation/Allulalo/allulalo_say.ogg
+      path: /Audio/_MACRO/Allulalo/allulalo_say.ogg
   - type: EmitSoundOnLand
     sound:
-      path: /Audio/_Impstation/Allulalo/allulalo_chitter.ogg
+      path: /Audio/_MACRO/Allulalo/allulalo_chitter.ogg
   - type: EmitSoundOnCollide
     sound:
-      path: /Audio/_Impstation/Allulalo/allulalo_scream.ogg
+      path: /Audio/_MACRO/Allulalo/allulalo_scream.ogg
 
 - type: entity
   parent: BasePlushie
@@ -1271,13 +1271,13 @@
         - state: plushie_anomalocarid-inhand-right
   - type: EmitSoundOnUse
     sound:
-      path: /Audio/_Impstation/Voice/Anomalocarid/anomalocarid_talk.ogg
+      path: /Audio/_MACRO/Voice/Anomalocarid/anomalocarid_talk.ogg
   - type: EmitSoundOnLand
     sound:
-      path: /Audio/_Impstation/Voice/Anomalocarid/anomalocarid_exclaim.ogg
+      path: /Audio/_MACRO/Voice/Anomalocarid/anomalocarid_exclaim.ogg
   - type: EmitSoundOnCollide
     sound:
-      path: /Audio/_Impstation/Voice/Anomalocarid/anomalocarid_scream.ogg
+      path: /Audio/_MACRO/Voice/Anomalocarid/anomalocarid_scream.ogg
   - type: MultiHandedItem
 
 - type: entity
