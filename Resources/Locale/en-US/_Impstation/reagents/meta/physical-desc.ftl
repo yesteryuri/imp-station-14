@@ -1,6 +1,5 @@
 reagent-physical-desc-unholy = unholy
 reagent-physical-desc-malign = malign
-reagent-physical-desc-shimmering-blood = nacreous
 reagent-physical-desc-appletini = vaguely appletini-ish
 reagent-physical-desc-alive = alive
 reagent-physical-desc-evil = evil

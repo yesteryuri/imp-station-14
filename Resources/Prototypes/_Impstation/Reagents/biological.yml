@@ -39,21 +39,6 @@
   recognizable: true
   physicalDesc: reagent-physical-desc-fizzy
 
-- type: reaction
-  id: AnomalocaridCopperBloodBreakdown
-  source: true
-  requiredMixerCategories:
-  - Centrifuge
-  reactants:
-    AnomalocaridCopperBlood:
-      amount: 20
-  products:
-    TableSalt: 10
-    Copper: 1
-    Sugar: 5
-    Fat: 1
-    EnergyDrink: 3 #there's a reason i promise
-
 - type: reagent
   id: SynthFlesh
   name: reagent-name-synthflesh

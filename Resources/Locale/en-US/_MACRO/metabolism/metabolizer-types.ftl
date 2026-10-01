@@ -7,3 +7,6 @@ metabolizer-type-kodepiia = Kodepiia
 metabolizer-type-allulalo = Allulalo
 
 metabolizer-type-decapoid = Decapoid
+
+metabolizer-type-thaven = Thaven
+

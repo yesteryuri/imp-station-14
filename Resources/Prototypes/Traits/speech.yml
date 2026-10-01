@@ -17,11 +17,11 @@
       accent: scottish
     - type: GrayAccent # macro
     - type: GastropoidAccent # macro
+    - type: ThavenAccent # macro
+    - type: AllulaloAccent # macro
+    - type: AnomalocaridAccent # macro
     # Imp accents below
     - type: DwarfAccent
-    - type: ThavenAccent
-    - type: AllulaloAccent
-    - type: AnomalocaridAccent
 
 # 1 Cost
 

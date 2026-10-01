@@ -55,13 +55,6 @@ flavor-complex-gollylad = chivalrous
 
 flavor-complex-orangecoffee = excitingly acidic
 
-flavor-base-kodepiia = of umami
-
-flavor-complex-thavenflesh = like salt and suffering
-flavor-complex-carpflesh = like alkali and ozone
-flavor-complex-shimmeringblood = sweet and slightly creamy
-flavor-complex-feverdream = like you're losing your mind
-
 flavor-complex-soju = like juice
 
 flavor-complex-breathoffreshair = like artifical air and soda
