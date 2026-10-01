@@ -1,20 +1,4 @@
 ﻿Entries:
-- author: kipdotnet
-  changes:
-  - message: Ephedrine and Desoxyephedrine now cause you to heat up and gain thirst
-      from prolonged use.
-    type: Tweak
-  id: 2480
-  time: '2025-12-11T05:37:08.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/3745
-- author: mqole
-  changes:
-  - message: Hospitality Directors now have access to the Service Job Board! Coordinate
-      an event for your crew, and keep morale high.
-    type: Add
-  id: 2481
-  time: '2025-12-11T18:17:44.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/3377
 - author: FlippenPage
   changes:
   - message: presents use their old texture again
@@ -4050,3 +4034,17 @@
   id: 2979
   time: '2026-09-28T09:19:05.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/4460
+- author: SeeroftheNight
+  changes:
+  - message: Document templates from the document printer have been fixed and improved.
+    type: Fix
+  id: 2980
+  time: '2026-10-01T09:57:42.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/4672
+- author: Toasterblast
+  changes:
+  - message: one of the ointments in burn medkits has been turned into ez-graft. yay!
+    type: Tweak
+  id: 2981
+  time: '2026-10-01T09:58:13.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/4673
