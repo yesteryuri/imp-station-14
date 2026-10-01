@@ -755,15 +755,13 @@
     tags:
     - UnguFood
   # macro edit end
+  # imp edit start
+    - NFButterStick # Frontier
   - type: SliceableFood
     count: 3
     slice: FoodButterSlice
   - type: Extractable # Frontier
     grindableSolutionName: food
-  - type: Tag # Frontier
-    tags:
-    - NFButterStick
-    - UnguFood
   # imp edit end
 
 - type: entity
