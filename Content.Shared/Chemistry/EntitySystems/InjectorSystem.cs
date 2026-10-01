@@ -1,6 +1,7 @@
 using System.Linq;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Body.Components;
+using Content.Shared.Chemisry.Components;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Events;
 using Content.Shared.Chemistry.Prototypes;
@@ -21,7 +22,6 @@ using Content.Shared.Weapons.Melee.Events;
 using JetBrains.Annotations;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
-using Content.Shared._DV.Chemistry.Components; //DeltaV
 
 namespace Content.Shared.Chemistry.EntitySystems;
 

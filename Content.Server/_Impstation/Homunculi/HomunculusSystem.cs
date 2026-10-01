@@ -1,10 +1,8 @@
-using Content.Server.Humanoid;
 using Content.Server._Impstation.Homunculi.Incubator;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Forensics.Components;
-using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid;
 using Content.Shared._Impstation.Homunculi.Components;
 using Content.Shared._Impstation.Homunculi.Incubator.Components;
@@ -12,15 +10,28 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Map;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Runtime.InteropServices;
+using Content.Server.Body;
+using Content.Shared.Body;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._Impstation.Homunculi;
 
 public sealed class HomunculusSystem : EntitySystem
 {
-    [Dependency] private readonly HumanoidProfileSystem _appearance = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly IncubatorSystem _incubator = default!;
+    [Dependency] private VisualBodySystem _visualBody = default!;
+
+    private static readonly HashSet<HumanoidVisualLayers> HomunculiLayers = new ()
+    {
+        HumanoidVisualLayers.Head,
+        HumanoidVisualLayers.Eyes,
+        HumanoidVisualLayers.Snout,
+        HumanoidVisualLayers.HeadSide,
+        HumanoidVisualLayers.HeadTop,
+    };
 
     public bool CreateHomunculiWithDna(Entity<IncubatorComponent?> ent, Entity<SolutionComponent> solution, MapCoordinates mapCoordinates, [NotNullWhen(true)] out EntityUid? homunculus)
     {
@@ -107,62 +118,66 @@ public sealed class HomunculusSystem : EntitySystem
 
     private void SetHomunculusAppearance(List<Entity<HomunculusTypeComponent>> entities, EntityUid homunculi)
     {
-        var markingCategories = new List<MarkingCategories>
-        {
-            MarkingCategories.Head,
-            MarkingCategories.Eyes,
-            MarkingCategories.Snout,
-            MarkingCategories.HeadSide,
-            MarkingCategories.HeadTop,
-        };
-        List<Color> skinColors = [];
-        List<Color> eyeColors = [];
+        // TODO: Could probably just store a (Color,Color,int) instead?
+        var organs = new Dictionary<ProtoId<OrganCategoryPrototype>, List<OrganProfileData>>(HomunculiLayers.Count);
 
         foreach (var urist in entities)
         {
-            if (!TryComp<HumanoidProfileComponent>(urist, out var appearanceComponent))
-                return;
+            if (!_visualBody.TryGatherMarkingsData(urist.Owner, HomunculiLayers, out var datas, out _, out var markings))
+                continue;
 
-            skinColors.Add(appearanceComponent.SkinColor);
-            eyeColors.Add(appearanceComponent.EyeColor);
-            if (urist == entities.First())
+            foreach (var (key, value) in datas)
             {
-                foreach (var markingPair in appearanceComponent.MarkingSet.Markings)
-                {
-                    if (!markingCategories.Contains(markingPair.Key))
-                        continue;
+                ref var list = ref CollectionsMarshal.GetValueRefOrAddDefault(organs, key, out var exists);
+                if (!exists)
+                    list = new ();
 
-                    foreach (var marking in markingPair.Value)
-                    {
-                        _appearance.AddMarking(homunculi, marking.MarkingId, marking.MarkingColors);
-                    }
-                }
+                list?.Add(value);
             }
-        }
-        if (!TryComp<HumanoidProfileComponent>(homunculi, out var homAppearanceComponent))
-            return;
 
-        if (skinColors.Count > 0)
-            homAppearanceComponent.SkinColor =  BlendColors(skinColors);
-        if (skinColors.Count > 0)
-            homAppearanceComponent.EyeColor = BlendColors(eyeColors);
+            if (urist == entities.First())
+                _visualBody.ApplyMarkings(homunculi, markings);
+        }
+
+        // Need to iterate twice so we can blend properly. TODO: Optimize to blend while iterating the first time. Less alloc, less operations!
+        var newData = new Dictionary<ProtoId<OrganCategoryPrototype>, OrganProfileData>(HomunculiLayers.Count);
+        foreach (var (key, value) in organs)
+        {
+            newData[key] = BlendOrgans(value);
+        }
+
+        _visualBody.ApplyProfiles(homunculi, newData);
     }
 
-    private static Color BlendColors(List<Color> colors)
+    private static OrganProfileData BlendOrgans(List<OrganProfileData> organs)
     {
-        var baseColor = Color.Black;
+        if (organs.Count == 0)
+            return new OrganProfileData();
 
-        foreach (var color in colors)
+        var baseSkinColor = Color.Black;
+        var baseEyeColor = Color.Black;
+
+        foreach (var organ in organs)
         {
-            baseColor.R =+ color.R;
-            baseColor.G =+ color.G;
-            baseColor.B =+ color.B;
+            baseSkinColor.R =+ organ.SkinColor.R;
+            baseSkinColor.G =+ organ.SkinColor.G;
+            baseSkinColor.B =+ organ.SkinColor.B;
+            baseEyeColor.R =+ organ.EyeColor.R;
+            baseEyeColor.G =+ organ.EyeColor.G;
+            baseEyeColor.B =+ organ.EyeColor.B;
         }
 
-        baseColor.R /= colors.Count;
-        baseColor.G /= colors.Count;
-        baseColor.B /= colors.Count;
+        baseSkinColor.R /= organs.Count;
+        baseSkinColor.G /= organs.Count;
+        baseSkinColor.B /= organs.Count;
+        baseEyeColor.R /= organs.Count;
+        baseEyeColor.G /= organs.Count;
+        baseEyeColor.B /= organs.Count;
 
-        return baseColor;
+        return new OrganProfileData
+        {
+            EyeColor = baseEyeColor,
+            SkinColor = baseSkinColor
+        };
     }
 }

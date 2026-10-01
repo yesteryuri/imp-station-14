@@ -64,6 +64,7 @@ public sealed class MindlessCloneSystem : EntitySystem
     [Dependency] private readonly StatusEffectsSystem _statusEffect = default!;
     [Dependency] private readonly TagSystem _tagSystem = default!;
     [Dependency] private readonly VisibilitySystem _visibilitySystem = default!;
+    [Dependency] private SharedVisualBodySystem _visualBody = default!;
 
     public override void Initialize()
     {
@@ -331,7 +332,7 @@ public sealed class MindlessCloneSystem : EntitySystem
             || !_prototypeManager.TryIndex(humanoid.Species, out _))
             return false;
 
-        _humanoid.CloneAppearance(original, clone);
+        _visualBody.CopyAppearanceFrom(original, clone);
 
         var componentsToCopy = settings.Components;
 

@@ -7,10 +7,10 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Humanoid;
 
-public sealed class HumanoidProfileSystem : EntitySystem
+public sealed partial class HumanoidProfileSystem : EntitySystem
 {
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
-    [Dependency] private readonly GrammarSystem _grammar = default!;
+    [Dependency] private IPrototypeManager _prototype = default!;
+    [Dependency] private GrammarSystem _grammar = default!;
 
     public override void Initialize()
     {
@@ -35,6 +35,16 @@ public sealed class HumanoidProfileSystem : EntitySystem
             _grammar.SetGender((ent, grammar), profile.Gender);
         }
     }
+
+    // IMPSTATION
+    public void ApplySex(Entity<HumanoidProfileComponent?> ent, Sex sex)
+    {
+        if (!Resolve(ent, ref ent.Comp, false))
+            return;
+
+        ent.Comp.Sex = sex;
+    }
+    // IMPSTATION END
 
     private void OnExamined(Entity<HumanoidProfileComponent> ent, ref ExaminedEvent args)
     {

@@ -12,7 +12,6 @@ using Content.Shared.Eye.Blinding.Systems;
 using Content.Shared.Gibbing;
 using Content.Shared.Heretic;
 using Content.Shared.Heretic.Prototypes;
-using Content.Shared.Humanoid;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Robust.Server.GameObjects;
@@ -39,7 +38,6 @@ public sealed class HellWorldSystem : EntitySystem
 
     [Dependency] private readonly BlindableSystem _blind = default!;
     [Dependency] private readonly EuiManager _euiMan = default!;
-    [Dependency] private readonly HumanoidProfileSystem _humanoid = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly ISharedPlayerManager _playerManager = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
@@ -237,20 +235,25 @@ public sealed class HellWorldSystem : EntitySystem
     private void OnInit(EntityUid ent, HellVictimComponent component, ComponentInit args)
     {
         //TODO: apply this to markings as well
-        if (TryComp<VisualBodyComponent>(ent, out var humanoid)
-        && _visualBody.TryGatherMarkingsData(ent, null, out var profiles, out _, out var markings))
-        {
-            //there's no color saturation methods so you get this garbage instead
-            var skinColor = humanoid.SkinColor;
-            var colorHSV = Color.ToHsv(skinColor);
-            colorHSV.Y /= 4;
-            var newColor = Color.FromHsv(colorHSV);
-            //make them look like they've seen some shit
+        if (!TryComp<VisualBodyComponent>(ent, out var body)
+            || !_visualBody.TryGatherMarkingsData((ent, body), null, out var profiles, out _, out _))
+            return;
 
-            var sacdProfiles = profiles.ToDictionary(pair => pair.Key,
-                pair => pair.Value with { EyeColor = Color.White, SkinColor = newColor });
-            _visualBody.ApplyProfiles(ent, sacdProfiles);
+        //there's no color saturation methods so you get this garbage instead
+        foreach (var (key, profile) in profiles)
+        {
+            var colorHsv = Color.ToHsv(profile.SkinColor);
+            colorHsv.Y /= 4;
+            profiles[key] = new ()
+            {
+                Sex = profile.Sex,
+                EyeColor = Color.White,
+                SkinColor = Color.FromHsv(colorHsv),
+            };
         }
+
+        //make them look like they've seen some shit
+        _visualBody.ApplyProfiles(ent, profiles);
     }
 
     /// <summary>
