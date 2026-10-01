@@ -410,6 +410,8 @@ namespace Content.Server.Administration.Systems
                     Impact = LogImpact.Low
                 });
 
+
+                AddMACROVerbs(args); // MACRO add
                 // Begin Impstation Additions
                 if (TryComp<StrangeMoodsComponent>(args.Target, out var moods))
                 {

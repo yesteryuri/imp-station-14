@@ -739,6 +739,9 @@ public sealed partial class AdminVerbSystem
             args.Verbs.Add(setCapacity);
         }
 
+
+        AddMACROTricks(args); // macro add
+
         // Begin Impstation Additions
         if (TryComp<ItemComponent>(args.Target, out var item))
         {
@@ -967,6 +970,10 @@ public sealed partial class AdminVerbSystem
         SnapJoints = -27,
         MakeMinigun = -28,
         SetBulletAmount = -29,
+        // macro adds
+        AddRandomMood = -30,
+        AddCustomMood = -31,
+        // macro end
         // imp adds
         MakeAnimate = -30,
         MakeInanimate = -31,

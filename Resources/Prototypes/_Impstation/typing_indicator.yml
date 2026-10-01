@@ -1,11 +1,4 @@
 - type: typingIndicator
-  id: anomalocarid
-  spritePath: /Textures/_Impstation/Effects/speech.rsi
-  typingState: anom
-  idleState: anomidle
-  offset: -0.3, 0.6
-
-- type: typingIndicator
   id: lawyerblue
   spritePath: /Textures/_Impstation/Effects/speech.rsi
   typingState: lawyerblue0
@@ -21,5 +14,3 @@
   id: syndibot
   typingState: syndibot0
   idleState: syndibot3
-
-

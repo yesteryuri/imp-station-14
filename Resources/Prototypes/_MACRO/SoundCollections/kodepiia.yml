@@ -193,7 +193,7 @@
 - type: soundCollection
   id: KodepiiaRevs
   files:
-  - /Audio/Weapons/chainsaw_rev.ogg
+  - /Audio/Weapons/chainsaw.ogg
 
 - type: soundCollection
   id: KodepiiaBooms
