@@ -266,7 +266,7 @@ public sealed partial class PolymorphSystem : EntitySystem
         if (configuration.TransferName && TryComp(uid, out MetaDataComponent? targetMeta))
             _metaData.SetEntityName(child, targetMeta.EntityName);
 
-        if (configuration.TransferHumanoidAppearance)
+        if (configuration.TransferHumanoidProfile)
         {
             _visualBody.CopyAppearanceFrom(uid, child);
         }

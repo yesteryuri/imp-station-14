@@ -45,7 +45,7 @@
         - id: OrganMothStomach
         - id: OrganMothLiver
         - id: OrganMothKidneys
-  - type: HumanoidAppearance
+  - type: HumanoidProfile
     species: HomunculusMoth
     markingsDisplacement:
       Head:

@@ -7,7 +7,7 @@ using Robust.Shared.Random; // imp
 
 namespace Content.Server.Humanoid.Systems;
 
-public sealed class RandomHumanoidAppearanceSystem : EntitySystem
+public sealed class RandomHumanoidProfileSystem : EntitySystem
 {
     [Dependency] private readonly HumanoidProfileSystem _humanoidProfile = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
@@ -18,10 +18,10 @@ public sealed class RandomHumanoidAppearanceSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<RandomHumanoidAppearanceComponent, MapInitEvent>(OnMapInit);
+        SubscribeLocalEvent<RandomHumanoidProfileComponent, MapInitEvent>(OnMapInit);
     }
 
-    private void OnMapInit(EntityUid uid, RandomHumanoidAppearanceComponent component, MapInitEvent args)
+    private void OnMapInit(EntityUid uid, RandomHumanoidProfileComponent component, MapInitEvent args)
     {
         // If we have an initial profile/base layer set, do not randomize this humanoid.
         if (!TryComp<HumanoidProfileComponent>(uid, out var humanoid))

@@ -45,7 +45,7 @@
         - id: OrganHumanStomach
         - id: OrganHumanLiver
         - id: OrganHumanKidneys
-  - type: HumanoidAppearance
+  - type: HumanoidProfile
     species: HomunculusHuman
     markingsDisplacement:
       Head:

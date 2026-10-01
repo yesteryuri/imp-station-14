@@ -380,4 +380,4 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: IsDeadIC
-  - type: RandomHumanoidAppearance
+  - type: RandomHumanoidProfile

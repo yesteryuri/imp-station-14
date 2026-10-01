@@ -65,7 +65,6 @@ public abstract partial class SharedConsumeSystem : EntitySystem
         SubscribeLocalEvent<ConsumeActionComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<ConsumeActionComponent, ConsumeEvent>(OnConsumeAction);
         SubscribeLocalEvent<ConsumeActionComponent, ConsumeDoAfterEvent>(OnConsumeDoAfter);
-        SubscribeLocalEvent<ConsumeActionComponent, ComponentStartup>(OnStartup);
 
         Subs.CVar(_config,
             MacroCCVars.ConsumptionGibThreshold,

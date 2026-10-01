@@ -276,7 +276,7 @@ public sealed class MindlessCloneSystem : EntitySystem
     }
 
     /// <summary>
-    /// Gets the nearest entity on the same map with HumanoidAppearanceComponent and a mind.
+    /// Gets the nearest entity on the same map with HumanoidProfileComponent and a mind.
     /// </summary>
     private bool TryGetNearestHumanoid(MapCoordinates coordinates, [NotNullWhen(true)] out EntityUid? target)
     {

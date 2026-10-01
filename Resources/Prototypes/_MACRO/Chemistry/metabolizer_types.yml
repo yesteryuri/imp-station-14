@@ -17,3 +17,8 @@
 - type: metabolizerType
   id: Decapoid
   name: metabolizer-type-decapoid
+
+- type: metabolizerType
+  id: Gray
+  name: metabolizer-type-gray
+

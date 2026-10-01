@@ -128,7 +128,7 @@
         - id: OrganAnomalocaridStomach
         - id: OrganAnomalocaridLiver
         - id: OrganAnomalocaridKidneys
-  - type: HumanoidAppearance
+  - type: HumanoidProfile
   # IMP EDIT END
     species: Anomalocarid
     hideLayersOnEquip: #imp edit, to be reworked by visual nubody

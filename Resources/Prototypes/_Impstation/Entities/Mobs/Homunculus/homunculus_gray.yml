@@ -46,7 +46,7 @@
         - id: OrganGrayStomach
         - id: OrganGrayLiver
         - id: OrganGrayKidneys
-  - type: HumanoidAppearance
+  - type: HumanoidProfile
     species: HomunculusGray
 
 - type: entity

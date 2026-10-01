@@ -668,7 +668,7 @@ public abstract partial class SharedMindSystem : EntitySystem
         var mindQuery = EntityQuery<MindComponent>();
 
         var allHumans = new List<EntityUid>();
-        // HumanoidAppearanceComponent is used to prevent mice, pAIs, etc from being chosen
+        // HumanoidProfileComponent is used to prevent mice, pAIs, etc from being chosen
         var query = EntityQueryEnumerator<MindContainerComponent, MobStateComponent, HumanoidProfileComponent>();
         while (query.MoveNext(out var uid, out var mc, out var mobState, out _))
         {

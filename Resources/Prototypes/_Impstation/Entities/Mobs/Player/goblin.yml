@@ -14,7 +14,7 @@
   - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [GoblinRobeOSP]
-  - type: RandomHumanoidAppearance
+  - type: RandomHumanoidProfile
 
 - type: entity
   parent: MobGoblin
@@ -46,7 +46,7 @@
   - type: Rummager
     rummageLoot: !type:NestedSelector
       tableId: GoblinKnightLoot
-  - type: RandomHumanoidAppearance
+  - type: RandomHumanoidProfile
     randomizeName: false
     hair: GoblinHairA
     hairColor: "#ffdd56"
@@ -71,7 +71,7 @@
   - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [GoblinOSPEVA]
-  - type: RandomHumanoidAppearance
+  - type: RandomHumanoidProfile
 
 - type: entityTable
   id: GoblinKnightLoot

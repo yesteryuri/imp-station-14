@@ -6,7 +6,7 @@
   prototype: MobApid
   defaultSkinTone: "#fcd719"
   dollPrototype: AppearanceApid
-  skinColoration: Hues # this prevents RandomHumanoidAppearance from fucking with their colorscheme too much
+  skinColoration: Hues # this prevents RandomHumanoidProfile from fucking with their colorscheme too much
   maleFirstNames: ApidNamesSoup
   femaleFirstNames: ApidNamesSoup
   lastNames: ApidNames

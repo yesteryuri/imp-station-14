@@ -17,7 +17,7 @@ public sealed class CloneCommand : ToolshedCommand
     private MetaDataSystem? _metadata;
 
     [CommandImplementation("humanoidappearance")]
-    public IEnumerable<EntityUid> HumanoidAppearance([PipedArgument] IEnumerable<EntityUid> targets, EntityUid source, bool rename)
+    public IEnumerable<EntityUid> HumanoidProfile([PipedArgument] IEnumerable<EntityUid> targets, EntityUid source, bool rename)
     {
         _visualBody ??= GetSys<SharedVisualBodySystem>();
         _metadata ??= GetSys<MetaDataSystem>();

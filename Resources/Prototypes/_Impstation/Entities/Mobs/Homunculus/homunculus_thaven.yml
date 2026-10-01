@@ -42,7 +42,7 @@
         - id: OrganThavenStomach
         - id: OrganThavenLiver
         - id: OrganThavenKidneys
-  - type: HumanoidAppearance
+  - type: HumanoidProfile
     species: HomunculusThaven
     markingsDisplacement:
       Head:

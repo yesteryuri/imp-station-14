@@ -68,7 +68,7 @@
           32:
             sprite: _Impstation/Mobs/Species/Goblin/displacement.rsi
             state: suitstorage
-    femaleDisplacements: # piskun HumanoidAppearance
+    femaleDisplacements: # piskun HumanoidProfile
       jumpsuit:
         sizeMaps:
           32:
@@ -154,7 +154,7 @@
         - id: OrganGoblinStomach
         - id: OrganGoblinLiver
         - id: OrganGoblinKidneys
-  - type: HumanoidAppearance
+  - type: HumanoidProfile
   # IMP EDIT END
     species: Goblin
 
