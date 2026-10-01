@@ -10,6 +10,9 @@
   sexes:
   - Unsexed
 
+# TODO: FINISH THIS
+- type: markingsGroup
+
 - type: speciesBaseSprites
   id: MobHomunculusHumanSprites
   sprites:
