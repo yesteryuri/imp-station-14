@@ -5,7 +5,6 @@
   roundStart: true
   prototype: MobGoblin
   dollPrototype: AppearanceGoblin
-  skinColoration: HumanAnimal # Aurora's Song - Replaced with HumanAnimal
   maleFirstNames: NamesGoblinFirstMale
   femaleFirstNames: NamesGoblinFirstFemale
   lastNames: NamesGoblinLast

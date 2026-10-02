@@ -1,11 +1,11 @@
 - type: speechSounds
   id: Anomalocarid
   saySound:
-    path: /Audio/_Impstation/Voice/Anomalocarid/anomalocarid_talk.ogg
+    path: /Audio/_MACRO/Voice/Anomalocarid/anomalocarid_talk.ogg
   askSound:
-    path: /Audio/_Impstation/Voice/Anomalocarid/anomalocarid_ask.ogg
+    path: /Audio/_MACRO/Voice/Anomalocarid/anomalocarid_ask.ogg
   exclaimSound:
-    path: /Audio/_Impstation/Voice/Anomalocarid/anomalocarid_exclaim.ogg
+    path: /Audio/_MACRO/Voice/Anomalocarid/anomalocarid_exclaim.ogg
 
 - type: emoteSounds
   id: UnisexAnomalocarid
@@ -13,13 +13,13 @@
     variation: 0.075
   sounds:
     Scream:
-      path: /Audio/_Impstation/Voice/Anomalocarid/anomalocarid_scream.ogg
+      path: /Audio/_MACRO/Voice/Anomalocarid/anomalocarid_scream.ogg
     Laugh:
-      path: /Audio/_Impstation/Voice/Decapoid/decapoid_laugh.ogg
+      path: /Audio/_MACRO/Voice/Decapoid/decapoid_laugh.ogg
     Sneeze:
       collection: UnisexSneezes
     Cough:
-      path: /Audio/_Impstation/Voice/Decapoid/decapoid_cough.ogg
+      path: /Audio/_MACRO/Voice/Decapoid/decapoid_cough.ogg
     CatMeow:
       collection: CatMeows
     CatHisses:
@@ -29,15 +29,15 @@
     RobotBeep:
       collection: RobotBeeps
     Yawn:
-      path: /Audio/_Impstation/Voice/Decapoid/decapoid_yawn.ogg
+      path: /Audio/_MACRO/Voice/Decapoid/decapoid_yawn.ogg
     Snore:
       collection: Snores
     Sigh:
-      path: /Audio/_Impstation/Voice/Anomalocarid/anomalocarid_sigh.ogg
+      path: /Audio/_MACRO/Voice/Anomalocarid/anomalocarid_sigh.ogg
     Honk:
       collection: BikeHorn
     Crying:
-      path: /Audio/_Impstation/Voice/Anomalocarid/anomalocarid_cry.ogg
+      path: /Audio/_MACRO/Voice/Anomalocarid/anomalocarid_cry.ogg
     Whistle:
       collection: Whistles
     Weh:
@@ -51,12 +51,12 @@
     Chitter:
       path: /Audio/Voice/Arachnid/arachnid_chitter.ogg
     Click:
-      path: /Audio/_Impstation/Voice/Anomalocarid/anomalocarid_clicks.ogg
+      path: /Audio/_MACRO/Voice/Anomalocarid/anomalocarid_clicks.ogg
     Gasp:
-      path: /Audio/_Impstation/Voice/Anomalocarid/anomalocarid_gasp.ogg
+      path: /Audio/_MACRO/Voice/Anomalocarid/anomalocarid_gasp.ogg
     DefaultDeathgasp:
-      path: /Audio/_Impstation/Voice/Anomalocarid/anomalocarid_gasp.ogg
+      path: /Audio/_MACRO/Voice/Anomalocarid/anomalocarid_gasp.ogg
     Bubble:
-      path: /Audio/_Impstation/Voice/Anomalocarid/anomalocarid_bubbles.ogg
+      path: /Audio/_MACRO/Voice/Anomalocarid/anomalocarid_bubbles.ogg
     Pop:
       collection: Pops

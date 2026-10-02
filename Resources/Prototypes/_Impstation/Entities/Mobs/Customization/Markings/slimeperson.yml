@@ -3,8 +3,7 @@
 - type: marking
   id: bubble
   bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [ SlimePerson ]
+  groupWhitelist: [ SlimePerson ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/SlimePerson/chest.rsi
     state: bubble
@@ -12,8 +11,7 @@
 - type: marking
   id: fishbowl
   bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [ SlimePerson ]
+  groupWhitelist: [ SlimePerson ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/SlimePerson/chest.rsi
     state: fishbowl1
@@ -23,8 +21,7 @@
 - type: marking
   id: SlimeBonechest
   bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [ SlimePerson ]
+  groupWhitelist: [ SlimePerson ]
   coloring:
     default:
       type:
@@ -37,8 +34,7 @@
 - type: marking
   id: SlimeCore
   bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [ SlimePerson ]
+  groupWhitelist: [ SlimePerson ]
   followSkinColor: false
   coloring:
     default:
@@ -51,8 +47,7 @@
 - type: marking
   id: SlimeCoreGlowing
   bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [ SlimePerson ]
+  groupWhitelist: [ SlimePerson ]
   followSkinColor: false
   coloring:
     default:
@@ -66,8 +61,7 @@
 - type: marking
   id: SlimeLungs
   bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [ SlimePerson ]
+  groupWhitelist: [ SlimePerson ]
   followSkinColor: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/SlimePerson/chest.rsi
@@ -78,8 +72,7 @@
 - type: marking
   id: FadingStars
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [ SlimePerson ]
+  groupWhitelist: [ SlimePerson ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/SlimePerson/head.rsi
     state: fadingstars1
@@ -92,8 +85,7 @@
 - type: marking
   id: fizz
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [ SlimePerson ]
+  groupWhitelist: [ SlimePerson ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/SlimePerson/head.rsi
     state: fizz
@@ -101,8 +93,7 @@
 - type: marking
   id: SlimeBonehead
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [ SlimePerson ]
+  groupWhitelist: [ SlimePerson ]
   coloring:
     default:
       type:
@@ -115,8 +106,7 @@
 - type: marking
   id: SlimeNose
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [ SlimePerson ]
+  groupWhitelist: [ SlimePerson ]
   forcedColoring: true
   followSkinColor: true
   sprites:
@@ -126,8 +116,7 @@
 - type: marking
   id: SlimeMouth
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [ SlimePerson ]
+  groupWhitelist: [ SlimePerson ]
   followSkinColor: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/SlimePerson/head.rsi
@@ -136,8 +125,7 @@
 - type: marking
   id: SlimeBrain
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [ SlimePerson ]
+  groupWhitelist: [ SlimePerson ]
   followSkinColor: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/SlimePerson/head.rsi
@@ -150,8 +138,7 @@
 - type: marking
   id: SlimeEyesDefault
   bodyPart: Eyes
-  markingCategory: Eyes
-  speciesRestriction: [ SlimePerson ]
+  groupWhitelist: [ SlimePerson ]
   forcedColoring: true
   coloring:
     default:
@@ -164,8 +151,7 @@
 - type: marking
   id: SlimeEyeglow
   bodyPart: Eyes
-  markingCategory: Eyes
-  speciesRestriction: [ SlimePerson ]
+  groupWhitelist: [ SlimePerson ]
   coloring:
     default:
       type:
@@ -179,8 +165,7 @@
 - type: marking
   id: SlimeEyesDroopy
   bodyPart: Eyes
-  markingCategory: Eyes
-  speciesRestriction: [ SlimePerson ]
+  groupWhitelist: [ SlimePerson ]
   coloring:
     default:
       type:
@@ -193,8 +178,7 @@
 - type: marking
   id: SlimeEyesDroopyGlowing
   bodyPart: Eyes
-  markingCategory: Eyes
-  speciesRestriction: [ SlimePerson ]
+  groupWhitelist: [ SlimePerson ]
   coloring:
     default:
       type:
@@ -208,8 +192,7 @@
 - type: marking
   id: SlimeEyesCyclops
   bodyPart: Eyes
-  markingCategory: Eyes
-  speciesRestriction: [ SlimePerson ]
+  groupWhitelist: [ SlimePerson ]
   coloring:
     default:
       type:
@@ -222,8 +205,7 @@
 - type: marking
   id: SlimeEyesCyclopsGlowing
   bodyPart: Eyes
-  markingCategory: Eyes
-  speciesRestriction: [ SlimePerson ]
+  groupWhitelist: [ SlimePerson ]
   coloring:
     default:
       type:
@@ -239,8 +221,7 @@
 - type: marking
   id: SlimeBonearmright
   bodyPart: RArm
-  markingCategory: Arms
-  speciesRestriction: [ SlimePerson ]
+  groupWhitelist: [ SlimePerson ]
   coloring:
     default:
       type:
@@ -255,8 +236,7 @@
 - type: marking
   id: SlimeBonearmleft
   bodyPart: LArm
-  markingCategory: Arms
-  speciesRestriction: [ SlimePerson ]
+  groupWhitelist: [ SlimePerson ]
   coloring:
     default:
       type:
@@ -271,8 +251,7 @@
 - type: marking
   id: SlimeBonelegright
   bodyPart: RLeg
-  markingCategory: Legs
-  speciesRestriction: [ SlimePerson ]
+  groupWhitelist: [ SlimePerson ]
   coloring:
     default:
       type:
@@ -287,8 +266,7 @@
 - type: marking
   id: SlimeBonelegleft
   bodyPart: LLeg
-  markingCategory: Legs
-  speciesRestriction: [ SlimePerson ]
+  groupWhitelist: [ SlimePerson ]
   coloring:
     default:
       type:
@@ -307,8 +285,7 @@
 - type: marking
   id: SlimeBonefootleft
   bodyPart: LFoot
-  markingCategory: Legs
-  speciesRestriction: [ SlimePerson ]
+  groupWhitelist: [ SlimePerson ]
   coloring:
     default:
       type:
@@ -323,8 +300,7 @@
 - type: marking
   id: SlimeBonefootright
   bodyPart: RFoot
-  markingCategory: Legs
-  speciesRestriction: [ SlimePerson ]
+  groupWhitelist: [ SlimePerson ]
   coloring:
     default:
       type:
@@ -339,8 +315,7 @@
 - type: marking
   id: SlimeBonehandleft
   bodyPart: LHand
-  markingCategory: Arms
-  speciesRestriction: [ SlimePerson ]
+  groupWhitelist: [ SlimePerson ]
   coloring:
     default:
       type:
@@ -355,8 +330,7 @@
 - type: marking
   id: SlimeBonehandright
   bodyPart: RHand
-  markingCategory: Arms
-  speciesRestriction: [ SlimePerson ]
+  groupWhitelist: [ SlimePerson ]
   coloring:
     default:
       type:
