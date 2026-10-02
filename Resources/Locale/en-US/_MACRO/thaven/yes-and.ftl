@@ -97,8 +97,8 @@ thaven-mood-voxsymp-desc = To demonstrate your allyship with the Vox, you must b
 thaven-mood-item-good-name = Collector
 thaven-mood-item-good-desc = {$item} are endlessly fascinating to you. You must collect as many as you can, and ensure others treat them with appropriate respect.
 
-thaven-mood-smoker-name = Smoker
-thaven-mood-smoker-desc = You are hopelessly addicted to nicotine. If you're not actively smoking, you experience withdrawal symptoms.
+thaven-mood-brand-devotee-name = Brand Devotee
+thaven-mood-brand-devotee-misc = You have an unshakable loyalty to your favorite brand, {$brand}.  Everyone needs to know how good their products are.
 
 thaven-mood-eye-for-eye-name = Eye For An Eye
 thaven-mood-eye-for-eye-desc = Retribution should be proportional.

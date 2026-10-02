@@ -87,13 +87,6 @@
     spawned:
     - id: FoodMeatHuman
       amount: 5
-  # imp edit start
-  - type: HomunculusType
-    homunculusType: HomunculusHuman
-    recipe:
-      SynthFlesh: 20
-      Saline: 20
-  # imp edit end
 
 - type: entity
   parent: OrganBase

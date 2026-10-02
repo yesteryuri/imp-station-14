@@ -197,11 +197,6 @@
       275: 0.8
       250: 0.7
   # imp edit start
-  - type: HomunculusType
-    homunculusType: HomunculusMoth
-    recipe:
-      SynthFlesh: 20
-      Saline: 20
   - type: Fixtures #needed to be redefined from BaseSpeciesMob to reduce density
     fixtures: # TODO: This needs a second fixture just for mob collisions.
       fix1:

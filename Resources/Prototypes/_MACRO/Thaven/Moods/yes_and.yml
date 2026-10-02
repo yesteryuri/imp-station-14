@@ -31,7 +31,7 @@
     - Barefoot
     - Hospitable
     - VoxSymp
-    - Smoker
+#    - Smoker # imp remove
     - EyeForEye
     - Optimist
     - ItemGood
@@ -41,6 +41,7 @@
     - Centrist
     - SpeechRestriction
     - Clownfan
+    - BrandDevotee # imp add
 
 # You are extremely possessive of your property. Refuse to relinquish it, and if it is misplaced or stolen, it must be retrieved at all costs.
 - type: strangeMood
@@ -264,13 +265,13 @@
 #    - ItemBad
 
 # Smoker: You are hopelessly addicted to cigarettes. You must be smoking one at all times.
-- type: strangeMood
-  id: Smoker
-  moodName: thaven-mood-smoker-name
-  moodDesc: thaven-mood-smoker-desc
-  conflicts:
-    - DisapproveOfDrugs
-    - NonSmoker
+#- type: strangeMood
+#  id: Smoker
+#  moodName: thaven-mood-smoker-name
+#  moodDesc: thaven-mood-smoker-desc
+#  conflicts:
+#    - DisapproveOfDrugs
+#    - NonSmoker
 
 # Eye For An Eye: You must treat every living being the way that it treats you.
 - type: strangeMood
@@ -345,3 +346,15 @@
 #  moodDesc: thaven-mood-color-good-desc
 #  conflicts:
 #    - ColorBad
+
+# Brand Devotee: You have an unshakable loyalty to your favorite brand, [BRANDS]. Everyone needs to know how good their products are.
+# imp add
+- type: strangeMood
+  id: BrandDevotee
+  moodName: thaven-mood-brand-devotee-name
+  moodDesc: thaven-mood-brand-devotee-misc
+  moodVars:
+    brand: Brands
+  conflicts:
+  - Centrist
+  - YesMan
