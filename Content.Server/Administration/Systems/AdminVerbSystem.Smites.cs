@@ -6,7 +6,6 @@ using Content.Server.Body.Systems;
 using Content.Server.Electrocution;
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.GhostKick;
-using Content.Client.Nutrition.EntitySystems; // imp edit
 using Content.Server.Physics.Components;
 using Content.Server.Pointing.Components;
 using Content.Server.Polymorph.Systems;
@@ -61,6 +60,7 @@ using Robust.Shared.Spawners;
 using Robust.Shared.Utility;
 using Timer = Robust.Shared.Timing.Timer;
 using Content.Server.Resist; //imp
+using Content.Server.Nutrition.EntitySystems; // imp edit
 
 namespace Content.Server.Administration.Systems;
 
