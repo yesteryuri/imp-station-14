@@ -1,12 +1,11 @@
 using Content.Shared.Alert;
 using Content.Shared.Atmos;
 using Content.Shared.Damage;
-using Content.Shared.FixedPoint;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._Impstation.Anomalocarid;
+namespace Content.Shared._MACRO.Species;
 
 /// <summary>
 ///     Component which allows an entity to accumulate heat over time.
@@ -17,7 +16,6 @@ namespace Content.Shared._Impstation.Anomalocarid;
 [AutoGenerateComponentState]
 public sealed partial class HeatVentComponent : Component
 {
-
     /// <summary>
     ///     True when the entity gains a mind.
     /// </summary>
@@ -92,7 +90,7 @@ public sealed partial class HeatVentComponent : Component
     [DataField]
     public DamageSpecifier HeatDamage = new()
     {
-        DamageDict = new Dictionary<string, FixedPoint2>
+        DamageDict = new()
         {
             {"Heat", 3},
             {"Blunt", 1.5},
@@ -139,7 +137,7 @@ public sealed partial class HeatVentComponent : Component
     ///     Sound to play when vent heat doafter completes.
     /// </summary>
     [DataField]
-    public SoundSpecifier VentSound = new SoundPathSpecifier("/Audio/_Impstation/Anomalocarids/pressure_release.ogg");
+    public SoundSpecifier VentSound = new SoundPathSpecifier("/Audio/_MACRO/Effects/pressure_release.ogg");
 
     /// <summary>
     ///     Sound to play when vent heat doafter completes.

@@ -26,3 +26,7 @@
   id: Thaven
   name: metabolizer-type-thaven
 
+- type: metabolizerType
+  id: Anomalocarid
+  name: metabolizer-type-anomalocarid
+

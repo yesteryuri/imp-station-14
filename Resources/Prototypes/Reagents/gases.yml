@@ -16,7 +16,7 @@
       - !type:Oxygenate
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Human, Animal, Rat, Plant, Apid, Thaven ] #Macrocosm, add Apid, Thaven
+          type: [ Human, Animal, Rat, Plant, Apid, Thaven, Anomalocarid ] #Macrocosm, add Apid, Thaven, Anomalocarid
       # Convert Oxygen into CO2.
       - !type:ModifyLungGas
         conditions:
@@ -47,7 +47,7 @@
       - !type:Oxygenate
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Human, Animal, Rat, Plant, Arachnid, Moth, Apid, Thaven ] #Macrocosm, add Apid, Thaven
+          type: [ Human, Animal, Rat, Plant, Arachnid, Moth, Apid, Thaven, Anomalocarid ] #Macrocosm, add Apid, Thaven
       # Convert Oxygen into CO2.
       - !type:ModifyLungGas
         conditions:

@@ -10,3 +10,5 @@ metabolizer-type-decapoid = Decapoid
 
 metabolizer-type-thaven = Thaven
 
+metabolizer-type-anomalocarid = Anomalocarid
+

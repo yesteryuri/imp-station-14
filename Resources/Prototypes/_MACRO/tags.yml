@@ -17,3 +17,6 @@
 
 - type: Tag
   id: Vaporizer # SpeechRequiresEquipment whitelist on MobDecapoid.
+
+- type: Tag
+  id: AnomalocaridClaw # Used to allow Anomalocarid's melee weapon to break rocks.
