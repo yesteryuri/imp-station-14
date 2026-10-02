@@ -63,7 +63,7 @@
         - type: MothAccent
         - type: ReplacementAccent
           accent: dwarf
-        - type: SnalienAccent
+        - type: GastropoidAccent # imp edit
         - type: GrayAccent
         - type: DwarfAccent
         - type: NoContractionsAccent

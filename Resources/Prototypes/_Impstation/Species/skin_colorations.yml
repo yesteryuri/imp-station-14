@@ -1,5 +1,0 @@
-- type: skinColoration
-  id: AnomalocaridToned
-  strategy: !type:ClampedHsvColoration
-    saturation: [0, 0.8]
-    value: [.2, 1]

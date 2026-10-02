@@ -9,7 +9,7 @@
 
 - type: emoteSounds
   id: UnisexKodepiia
-  voiceSelectorName: humanoid-profile-editor-voice-neutral
+#  voiceSelectorName: humanoid-profile-editor-voice-neutral # imp hasn't got this yet
   params:
     variation: 0.125
   sounds:
@@ -33,20 +33,20 @@
       collection: KodepiiaHisses
     CatMeow:
       collection: KodepiiaMeows
-    KodeBoom:
+    Boom:
       collection: KodepiiaBooms
     KodeRing:
       collection: KodepiiaRings
     KodeHonk:
       collection: KodepiiaHonks
-      params:
-        volume: -5
+      params: # Frontier
+        volume: -5 # Frontier
     KodePew:
       collection: KodepiiaPews
     KodeBang:
       collection: KodepiiaBangs
-      params:
-        volume: -5
+      params: # Frontier
+        volume: -5 # Frontier
     KodeBeep:
       collection: KodepiiaBeeps
     Yawn:
@@ -55,26 +55,20 @@
       collection: KodepiiaSnores
     KodeRev:
       collection: KodepiiaRevs
-      params:
-        volume: -5
+      params: # Frontier
+        volume: -5 # Frontier
     Click:
       collection: KodepiiaClicks
     Chitter:
       collection: KodepiiaChitter
     Squeak:
       collection: KodepiiaSqueak
+    Caw:
+      collection: KodepiiaCaws
     Chirp:
       collection: KodepiiaChirps
     Snarl:
-      collection: VulpkaninSnarls
-    Howl:
-      collection: VulpkaninHowls
-    Bark:
-      collection: VulpkaninBarks
-    Growl:
-      collection: VulpkaninGrowls
-    Whine:
-      collection: VulpkaninWhines
+      collection: KodepiiaSnarls
     Honk:
       collection: KodepiiaHonks
     Weh:
@@ -87,6 +81,20 @@
       collection: KodepiiaDeathgasp
     Squish:
       collection: Squishes
+# imp add start
+    Bubble:
+      collection: Bubbles
+    Pop:
+      collection: Pops
+    Coo:
+      collection: VoxCoo
+      params:
+        volume: -7
+    Wuhey:
+      collection: Wuhey
+    Ungh:
+      collection: Ungh
+# imp add end
 
 - type: speechVerb
   id: Kodepiia
