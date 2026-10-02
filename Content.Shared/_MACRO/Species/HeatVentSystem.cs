@@ -130,7 +130,7 @@ public sealed class HeatVentSystem : EntitySystem
             Temperature = Math.Clamp(gasTemp, ent.Comp.GasTempMin, ent.Comp.GasTempMax)
         };
 
-        _atmos.MergeTileMixture((ent, Transform(ent)), tileMix, excite: true);
+//        _atmos.MergeTileMixture((ent, Transform(ent)), tileMix, excite: true);
 
         _audio.PlayPredicted(ent.Comp.VentSound, ent, ent);
         _popup.PopupPredicted(Loc.GetString(ent.Comp.VentDoAfterPopup, ("target", ent)), ent, ent);

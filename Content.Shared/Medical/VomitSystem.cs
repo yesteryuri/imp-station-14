@@ -32,6 +32,7 @@ public sealed partial class VomitSystem : EntitySystem
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private SharedPuddleSystem _puddle = default!;
     [Dependency] private SharedSolutionContainerSystem _solutionContainer = default!;
+    [Dependency] private IPrototypeManager _protoMan = default!;/// imp add
 
     public override void Initialize()
     {
@@ -58,7 +59,7 @@ public sealed partial class VomitSystem : EntitySystem
             return;
 
         // Empty stomach solution into the new vomit solution
-        args.Args.Sol.AddSolution(sol, ProtoMan);
+        args.Args.Sol.AddSolution(sol, _protoMan);
         sol.RemoveAllSolution();
 
         // Remind the stomach that it's empty.
@@ -124,7 +125,7 @@ public sealed partial class VomitSystem : EntitySystem
                 if (vomitChemstreamAmount != null)
                 {
                     vomitChemstreamAmount.ScaleSolution(newChemMultiplier); // MACRO ChemMultiplier -> newChemMultiplier
-                    solution.AddSolution(vomitChemstreamAmount, ProtoMan);
+                    solution.AddSolution(vomitChemstreamAmount, _protoMan);
                     vomitAmount -= (float)vomitChemstreamAmount.Volume;
                 }
             }

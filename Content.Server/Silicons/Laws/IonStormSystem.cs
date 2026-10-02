@@ -52,15 +52,6 @@ public sealed class IonStormSystem : EntitySystem
     private static readonly ProtoId<DatasetPrototype> Drinks = "IonStormDrinks";
     private static readonly ProtoId<DatasetPrototype> Foods = "IonStormFoods";
 
-    // imp add start
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<SiliconLawBoundComponent, IonStormEvent>(IonStormTarget);
-    }
-    // imp add end
-
     /// <summary>
     /// Randomly alters the laws of an individual silicon.
     /// </summary>

@@ -6,7 +6,7 @@ using Content.Server.Body.Systems;
 using Content.Server.Electrocution;
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.GhostKick;
-using Content.Server.Nutrition.EntitySystems;
+using Content.Client.Nutrition.EntitySystems; // imp edit
 using Content.Server.Physics.Components;
 using Content.Server.Pointing.Components;
 using Content.Server.Polymorph.Systems;

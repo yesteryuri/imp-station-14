@@ -36,8 +36,8 @@ using Robust.Shared.Physics.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
-using Content.Server._Impstation.StrangeMoods.Eui; // imp
-using Content.Shared._Impstation.StrangeMoods; // imp
+using Content.Server._MACRO.StrangeMoods.Eui; // imp
+using Content.Shared._MACRO.StrangeMoods; // imp
 using Content.Server.Revenant.Components; // imp
 using Content.Server.Revenant.EntitySystems; // imp
 using Content.Shared.Item; // imp
@@ -977,8 +977,6 @@ public sealed partial class AdminVerbSystem
         // imp adds
         MakeAnimate = -30,
         MakeInanimate = -31,
-        AddRandomMood = -32,
-        AddCustomMood = -33,
         // imp end
     }
 }
