@@ -13,7 +13,7 @@
   id: Pets
   values:
     - Pun Pun the Monkey
-    - Alexander the Pig
+    - VILE SHITPIG the SHITPIG # imp edit < Alexander the Pig
     - Hamlet the Hamster
     - Shiva the Spider
     - Ian the Corgi
@@ -25,6 +25,7 @@
     - Willow the Kangaroo
     - Smile the Slime
     - Tropico the Crab
+    - Major the Spacebear # imp add
 
 - type: dataset
   id: Rooms
@@ -87,6 +88,11 @@
     - Bungo Curry
     - Salty Sweet Miso Cola Soup
     - Bread Dog
+    # imp below
+    - Gray Plush
+    - Camel's Soup
+    - Toddler Rings Stew
+    - Heart Carpaccio
 
 - type: dataset
   id: Holidays
@@ -99,6 +105,7 @@
     - Clownsmas
     - Intergalactic Hug A Robot Day
     - Labor Day
+    - Teo First Contact Day # imp add
     - Fall of the Twin Trees Day
     - Yum Yum's Birthday
     - NT Corporate Mindfulness Day
@@ -166,6 +173,7 @@
     - Alliterate
     - ThirdPerson
     - TitleCase
+    - GreySpeak # imp add
 
 - type: dataset
   id: ThavenWords

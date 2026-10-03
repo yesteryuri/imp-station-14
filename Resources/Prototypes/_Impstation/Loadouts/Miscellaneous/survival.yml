@@ -64,15 +64,6 @@
     - BoxSurvivalKodepiia
 
 - type: loadout
-  id: EmergencyWheat
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: Cow
-  storage:
-    back:
-    - BoxSurvivalUngu
-
-- type: loadout
   id: EmergencyDiscount
   effects:
   - !type:GroupLoadoutEffect
@@ -90,15 +81,6 @@
   storage:
     back:
     - BoxHugKodepiia
-
-- type: loadout
-  id: EmergencyWheatClown
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: Cow
-  storage:
-    back:
-    - BoxHugUngu
 
 - type: loadout
   id: EmergencyDiscountClown
@@ -120,15 +102,6 @@
     - BoxMimeKodepiia
 
 - type: loadout
-  id: EmergencyWheatMime
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: Cow
-  storage:
-    back:
-    - BoxMimeUngu
-
-- type: loadout
   id: EmergencyDiscountMime
   effects:
   - !type:GroupLoadoutEffect
@@ -146,15 +119,6 @@
   storage:
     back:
     - BoxSurvivalEngineeringKodepiia
-
-- type: loadout
-  id: EmergencyWheatExtended
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: Cow
-  storage:
-    back:
-    - BoxSurvivalEngineeringUngu
 
 - type: loadout
   id: EmergencyDiscountExtended
@@ -231,15 +195,6 @@
     - BoxSurvivalMedicalKodepiia
 
 - type: loadout
-  id: EmergencyWheatMedical
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: Cow
-  storage:
-    back:
-    - BoxSurvivalMedicalUngu
-
-- type: loadout
   id: EmergencyDiscountMedical
   effects:
   - !type:GroupLoadoutEffect
@@ -266,15 +221,6 @@
   storage:
     back:
     - BoxSurvivalSecurityKodepiia
-
-- type: loadout
-  id: EmergencyWheatSecurity
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: Cow
-  storage:
-    back:
-    - BoxSurvivalSecurityUngu
 
 - type: loadout
   id: EmergencyDiscountSecurity
@@ -349,15 +295,6 @@
   storage:
     back:
     - BoxSurvivalSyndicateKodepiia
-
-- type: loadout
-  id: EmergencyWheatSyndicate
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: Cow
-  storage:
-    back:
-    - BoxSurvivalSyndicateUngu
 
 - type: loadout
   id: EmergencyDiscountSyndicate
@@ -487,14 +424,6 @@
     proto: Carnivorous
   equipment:
     suitstorage: OxygenTankFilled
-    
-- type: loadout
-  id: LoadoutSpeciesEVAUngu
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: Cow
-  equipment:
-    suitstorage: OxygenTankFilled
 
 - type: loadout
   id: LoadoutSpeciesEVADiscount
@@ -509,14 +438,6 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: Carnivorous
-  equipment:
-    pocket1: DoubleEmergencyOxygenTankFilled
-    
-- type: loadout
-  id: LoadoutSpeciesPocketDoubleOxygenUngu
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: Cow
   equipment:
     pocket1: DoubleEmergencyOxygenTankFilled
 
