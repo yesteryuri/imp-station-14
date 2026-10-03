@@ -694,7 +694,6 @@
   bodyPart: Tail
   groupWhitelist: [ Vox ]
   forcedColoring: true
-  followSkinColor: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/Vox/tail.rsi
     state: colorable
@@ -704,7 +703,10 @@
   bodyPart: Tail
   groupWhitelist: [ Vox ]
   forcedColoring: true
-  followSkinColor: true
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
   sprites:
   - sprite: _Impstation/Mobs/Customization/Vox/tail.rsi
     state: balled
@@ -783,7 +785,6 @@
   bodyPart: Tail
   groupWhitelist: [ Vox ]
   forcedColoring: true
-  followSkinColor: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/Vox/tail.rsi
     state: split

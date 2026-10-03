@@ -32,7 +32,7 @@
 - type: marking
   id: ChestBackstabbed
   bodyPart: Chest
-  groupWhitelist: [ Human, Dwarf, Reptilian, SlimePerson, Thaven ]
+  groupWhitelist: [ Human, Dwarf, Reptilian, Slime, Thaven ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/chest.rsi
     state: backstabbed
@@ -40,7 +40,7 @@
 - type: marking
   id: ChestCutHere
   bodyPart: Chest
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime ]
   coloring:
     default:
       type:
@@ -53,7 +53,7 @@
 - type: marking
   id: ChestHeavyTattoos
   bodyPart: Chest
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime ]
   coloring:
     default:
       type:
@@ -70,7 +70,7 @@
 - type: marking
   id: ChestNecklace
   bodyPart: Chest
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime ]
   coloring:
     default:
       type:
@@ -83,7 +83,7 @@
 - type: marking
   id: ChestStar
   bodyPart: Chest
-  groupWhitelist: [ Human, Arachnid, Dwarf, Gray, Reptilian, SlimePerson, Thaven ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Gray, Reptilian, Slime, Thaven ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/chest.rsi
     state: star
@@ -91,7 +91,7 @@
 - type: marking
   id: ChestTwistingLeft
   bodyPart: Chest
-  groupWhitelist: [ Human, Dwarf, Reptilian, SlimePerson, Thaven ]
+  groupWhitelist: [ Human, Dwarf, Reptilian, Slime, Thaven ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/chest.rsi
     state: twistingleft
@@ -99,7 +99,7 @@
 - type: marking
   id: ChestTwistingRight
   bodyPart: Chest
-  groupWhitelist: [ Human, Dwarf, Reptilian, SlimePerson, Thaven ]
+  groupWhitelist: [ Human, Dwarf, Reptilian, Slime, Thaven ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/chest.rsi
     state: twistingright
@@ -107,8 +107,7 @@
 - type: marking
   id: HumanoidAbs
   bodyPart: Chest
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson ]
-  followSkinColor: true
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/chest.rsi
     state: muscular
@@ -142,7 +141,7 @@
 - type: marking
   id: TattooAnchor
   bodyPart: Chest
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson, Thaven ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime, Thaven ]
   coloring:
     default:
       type:
@@ -155,7 +154,7 @@
 - type: marking
   id: TattooCode1
   bodyPart: Chest
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson, Thaven ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime, Thaven ]
   coloring:
     default:
       type:
@@ -168,7 +167,7 @@
 - type: marking
   id: TattooCode2
   bodyPart: Chest
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson, Thaven ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime, Thaven ]
   coloring:
     default:
       type:
@@ -181,7 +180,7 @@
 - type: marking
   id: TattooCode3
   bodyPart: Chest
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson, Thaven ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime, Thaven ]
   coloring:
     default:
       type:
@@ -194,7 +193,7 @@
 - type: marking
   id: TattooDragon
   bodyPart: Chest
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson, Thaven ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime, Thaven ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/chest.rsi
     state: dragontattoo1
@@ -204,7 +203,7 @@
 - type: marking
   id: TattooNanotrasenChest
   bodyPart: Chest
-  groupWhitelist: [ Human, Dwarf, SlimePerson ]
+  groupWhitelist: [ Human, Dwarf, Slime ]
   coloring:
     default:
       type:
@@ -217,7 +216,7 @@
 - type: marking
   id: TorsoIncision
   bodyPart: Chest
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson, Thaven ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime, Thaven ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/chest.rsi
     state: incision
@@ -225,7 +224,7 @@
 - type: marking
   id: TattooVinesHumanoid
   bodyPart: Chest
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime ]
   coloring:
     default:
       type:
@@ -292,7 +291,7 @@
 - type: marking
   id: HeadHeavyTattoos
   bodyPart: Head
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime ]
   coloring:
     default:
       type:
@@ -307,7 +306,7 @@
 - type: marking
   id: HeadTwisting
   bodyPart: Head
-  groupWhitelist: [ Human, Dwarf, SlimePerson ]
+  groupWhitelist: [ Human, Dwarf, Slime ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/head.rsi
     state: twisting
@@ -315,7 +314,7 @@
 - type: marking
   id: HeadTwistingFlipped
   bodyPart: Head
-  groupWhitelist: [ Human, Dwarf, SlimePerson ]
+  groupWhitelist: [ Human, Dwarf, Slime ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/head.rsi
     state: twistingflipped
@@ -323,7 +322,7 @@
 - type: marking
   id: HumanoidEyebags
   bodyPart: Head
-  groupWhitelist: [ Human, Dwarf, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Dwarf, Reptilian, Slime ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/head.rsi
     state: eyebags
@@ -331,7 +330,7 @@
 - type: marking
   id: SmileScars
   bodyPart: Head
-  groupWhitelist: [ Human, Dwarf, SlimePerson ]
+  groupWhitelist: [ Human, Dwarf, Slime ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/head.rsi
     state: smile
@@ -381,7 +380,7 @@
 - type: marking
   id: Shadow
   bodyPart: Head
-  groupWhitelist: [ Human, Dwarf, SlimePerson ]
+  groupWhitelist: [ Human, Dwarf, Slime ]
   forcedColoring: true
   coloring:
     default:
@@ -414,7 +413,7 @@
 - type: marking
   id: ArmDollJointsTattooRight
   bodyPart: RArm
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime ]
   coloring:
     default:
       type:
@@ -427,7 +426,7 @@
 - type: marking
   id: ArmHeavyTattoosRight
   bodyPart: RArm
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime ]
   coloring:
     default:
       type:
@@ -442,7 +441,7 @@
 - type: marking
   id: ArmProstheticRight
   bodyPart: RArm
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson, Thaven ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime, Thaven ]
   coloring:
     default:
       type:
@@ -455,7 +454,7 @@
 - type: marking
   id: ArmTwistingRight
   bodyPart: RArm
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson, Thaven ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime, Thaven ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/rarm.rsi
     state: twisting
@@ -463,8 +462,7 @@
 - type: marking
   id: TattooCode4
   bodyPart: RArm
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson, Thaven ]
-  followSkinColor: false
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime, Thaven ]
   forcedColoring: false
   coloring:
     default:
@@ -478,8 +476,7 @@
 - type: marking
   id: TattooCode5
   bodyPart: RArm
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson, Thaven ]
-  followSkinColor: false
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime, Thaven ]
   forcedColoring: false
   coloring:
     default:
@@ -493,8 +490,7 @@
 - type: marking
   id: TattooHeartR
   bodyPart: RArm
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson, Thaven ]
-  followSkinColor: false
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime, Thaven ]
   forcedColoring: false
   coloring:
     default:
@@ -524,7 +520,7 @@
 - type: marking
   id: ArmDollJointsTattooLeft
   bodyPart: LArm
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime ]
   coloring:
     default:
       type:
@@ -537,7 +533,7 @@
 - type: marking
   id: ArmHeavyTattoosLeft
   bodyPart: LArm
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime ]
   coloring:
     default:
       type:
@@ -552,7 +548,7 @@
 - type: marking
   id: ArmProstheticLeft
   bodyPart: LArm
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson, Thaven ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime, Thaven ]
   coloring:
     default:
       type:
@@ -565,7 +561,7 @@
 - type: marking
   id: ArmTwistingLeft
   bodyPart: LArm
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson, Thaven ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime, Thaven ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/larm.rsi
     state: twisting
@@ -573,8 +569,7 @@
 - type: marking
   id: TattooHeartL
   bodyPart: LArm
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson, Thaven ]
-  followSkinColor: false
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime, Thaven ]
   forcedColoring: false
   coloring:
     default:
@@ -604,7 +599,7 @@
 - type: marking
   id: LegDollJointsTattooRight
   bodyPart: RLeg
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime ]
   coloring:
     default:
       type:
@@ -617,7 +612,7 @@
 - type: marking
   id: LegHeavyTattoosRight
   bodyPart: RLeg
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime ]
   coloring:
     default:
       type:
@@ -632,7 +627,7 @@
 - type: marking
   id: LegProstheticRight
   bodyPart: RLeg
-  groupWhitelist: [ Human, Arachnid, Dwarf, SlimePerson, Thaven ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Slime, Thaven ]
   coloring:
     default:
       type:
@@ -645,7 +640,7 @@
 - type: marking
   id: LegTwistingRight
   bodyPart: RLeg
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson, Thaven ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime, Thaven ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/rleg.rsi
     state: twisting
@@ -669,7 +664,7 @@
 - type: marking
   id: LegDollJointsTattooLeft
   bodyPart: LLeg
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime ]
   coloring:
     default:
       type:
@@ -682,7 +677,7 @@
 - type: marking
   id: LegHeavyTattoosLeft
   bodyPart: LLeg
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime ]
   coloring:
     default:
       type:
@@ -697,7 +692,7 @@
 - type: marking
   id: LegProstheticLeft
   bodyPart: LLeg
-  groupWhitelist: [ Human, Arachnid, Dwarf, SlimePerson, Thaven ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Slime, Thaven ]
   coloring:
     default:
       type:
@@ -710,7 +705,7 @@
 - type: marking
   id: LegTwistingLeft
   bodyPart: LLeg
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson, Thaven ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime, Thaven ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/lleg.rsi
     state: twisting
@@ -734,7 +729,7 @@
 - type: marking
   id: UnderwearLowriders
   bodyPart: UndergarmentBottom
-  groupWhitelist: [ Human, Arachnid, Diona, Dwarf, Moth, SlimePerson ]
+  groupWhitelist: [ Human, Arachnid, Diona, Dwarf, Moth, Slime ]
   coloring:
     default:
       type:
@@ -747,7 +742,7 @@
 - type: marking
   id: UnderwearTanga
   bodyPart: UndergarmentBottom
-  groupWhitelist: [ Human, Arachnid, Diona, Dwarf, Moth, SlimePerson ]
+  groupWhitelist: [ Human, Arachnid, Diona, Dwarf, Moth, Slime ]
   coloring:
     default:
       type:
@@ -762,7 +757,7 @@
 - type: marking
   id: UndergarmentTopBinderF
   bodyPart: UndergarmentTop
-  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, Slime ]
   sexRestriction: [ Female ]
   coloring:
     default:
@@ -775,7 +770,7 @@
 - type: marking
   id: UndergarmentTopBinderU
   bodyPart: UndergarmentTop
-  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, Slime ]
   sexRestriction: [ Unsexed ]
   coloring:
     default:
@@ -788,7 +783,7 @@
 - type: marking
   id: UndergarmentTopTanktopF
   bodyPart: UndergarmentTop
-  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, Slime ]
   sexRestriction: [ Female ]
   coloring:
     default:
@@ -801,7 +796,7 @@
 - type: marking
   id: UndergarmentTopTanktopU
   bodyPart: UndergarmentTop
-  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, Slime ]
   sexRestriction: [ Unsexed ]
   coloring:
     default:
@@ -814,7 +809,7 @@
 - type: marking
   id: UndershirtBraSportsF
   bodyPart: UndergarmentTop
-  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, Slime ]
   sexRestriction: [ Female ]
   coloring:
     default:
@@ -828,7 +823,7 @@
 - type: marking
   id: UndershirtBraSportsU
   bodyPart: UndergarmentTop
-  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, Slime ]
   sexRestriction: [ Unsexed ]
   coloring:
     default:
@@ -842,7 +837,7 @@
 - type: marking
   id: UndershirtBraStrapless
   bodyPart: UndergarmentTop
-  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, Slime ]
   sexRestriction: [ Male ]
   coloring:
     default:
@@ -856,7 +851,7 @@
 - type: marking
   id: UndershirtBraStraplessF
   bodyPart: UndergarmentTop
-  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, Slime ]
   sexRestriction: [ Female ]
   coloring:
     default:
@@ -870,7 +865,7 @@
 - type: marking
   id: UndershirtBraStraplessU
   bodyPart: UndergarmentTop
-  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, Slime ]
   sexRestriction: [ Unsexed ]
   coloring:
     default:
@@ -884,7 +879,7 @@
 - type: marking
   id: UndershirtDefault
   bodyPart: UndergarmentTop
-  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, Slime ]
   sexRestriction: [ Male ]
   coloring:
     default:
@@ -898,7 +893,7 @@
 - type: marking
   id: UndershirtDefaultF
   bodyPart: UndergarmentTop
-  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, Slime ]
   sexRestriction: [ Female ]
   coloring:
     default:
@@ -912,7 +907,7 @@
 - type: marking
   id: UndershirtDefaultU
   bodyPart: UndergarmentTop
-  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, Slime ]
   sexRestriction: [ Unsexed ]
   coloring:
     default:
@@ -926,7 +921,7 @@
 - type: marking
   id: UndershirtGrossSleeveless
   bodyPart: UndergarmentTop
-  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, Slime ]
   sexRestriction: [ Male ]
   coloring:
     default:
@@ -940,7 +935,7 @@
 - type: marking
   id: UndershirtGrossSleevelessF
   bodyPart: UndergarmentTop
-  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, Slime ]
   sexRestriction: [ Female ]
   coloring:
     default:
@@ -954,7 +949,7 @@
 - type: marking
   id: UndershirtGrossSleevelessU
   bodyPart: UndergarmentTop
-  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, Slime ]
   sexRestriction: [ Unsexed ]
   coloring:
     default:
@@ -968,7 +963,7 @@
 - type: marking
   id: UndershirtNanotrasen
   bodyPart: UndergarmentTop
-  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, Slime ]
   sexRestriction: [ Male ]
   coloring:
     default:
@@ -982,7 +977,7 @@
 - type: marking
   id: UndershirtNanotrasenF
   bodyPart: UndergarmentTop
-  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, Slime ]
   sexRestriction: [ Female ]
   coloring:
     default:
@@ -996,7 +991,7 @@
 - type: marking
   id: UndershirtNanotrasenU
   bodyPart: UndergarmentTop
-  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, Slime ]
   sexRestriction: [ Unsexed ]
   coloring:
     default:
@@ -1010,7 +1005,7 @@
 - type: marking
   id: UndershirtRolled
   bodyPart: UndergarmentTop
-  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, Slime ]
   sexRestriction: [ Male ]
   coloring:
     default:
@@ -1024,7 +1019,7 @@
 - type: marking
   id: UndershirtRolledF
   bodyPart: UndergarmentTop
-  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, Slime ]
   sexRestriction: [ Female ]
   coloring:
     default:
@@ -1038,7 +1033,7 @@
 - type: marking
   id: UndershirtRolledU
   bodyPart: UndergarmentTop
-  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Diona, Dwarf, Moth, Reptilian, Slime ]
   sexRestriction: [ Unsexed ]
   coloring:
     default:
@@ -1054,7 +1049,7 @@
 - type: marking
   id: FootDollJointsTattooLeft
   bodyPart: LFoot
-  groupWhitelist: [ Human, Arachnid, Dwarf, SlimePerson ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Slime ]
   coloring:
     default:
       type:
@@ -1067,7 +1062,7 @@
 - type: marking
   id: FootHeavyTattoosLeft
   bodyPart: LFoot
-  groupWhitelist: [ Human, Arachnid, Dwarf, SlimePerson ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Slime ]
   coloring:
     default:
       type:
@@ -1082,7 +1077,7 @@
 - type: marking
   id: FootProstheticLeft
   bodyPart: LFoot
-  groupWhitelist: [ Human, Arachnid, Dwarf, SlimePerson, Thaven ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Slime, Thaven ]
   coloring:
     default:
       type:
@@ -1097,7 +1092,7 @@
 - type: marking
   id: FootDollJointsTattooRight
   bodyPart: RFoot
-  groupWhitelist: [ Human, Arachnid, Dwarf, SlimePerson ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Slime ]
   coloring:
     default:
       type:
@@ -1110,7 +1105,7 @@
 - type: marking
   id: FootHeavyTattoosRight
   bodyPart: RFoot
-  groupWhitelist: [ Human, Arachnid, Dwarf, SlimePerson ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Slime ]
   coloring:
     default:
       type:
@@ -1125,7 +1120,7 @@
 - type: marking
   id: FootProstheticRight
   bodyPart: RFoot
-  groupWhitelist: [ Human, Arachnid, Dwarf, SlimePerson, Thaven ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Slime, Thaven ]
   coloring:
     default:
       type:
@@ -1140,7 +1135,7 @@
 - type: marking
   id: HandBraceletLeft
   bodyPart: LHand
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime ]
   coloring:
     default:
       type:
@@ -1153,7 +1148,7 @@
 - type: marking
   id: HandDollJointsTattooLeft
   bodyPart: LHand
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime ]
   coloring:
     default:
       type:
@@ -1166,7 +1161,7 @@
 - type: marking
   id: HandHeavyTattoosLeft
   bodyPart: LHand
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime ]
   coloring:
     default:
       type:
@@ -1181,7 +1176,7 @@
 - type: marking
   id: HandProstheticLeft
   bodyPart: LHand
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson, Thaven ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime, Thaven ]
   coloring:
     default:
       type:
@@ -1194,7 +1189,7 @@
 - type: marking
   id: HandRingsLeft
   bodyPart: LHand
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime ]
   coloring:
     default:
       type:
@@ -1209,7 +1204,7 @@
 - type: marking
   id: HandTwistingLeft
   bodyPart: LHand
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson, Thaven ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime, Thaven ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/lhand.rsi
     state: twisting
@@ -1233,7 +1228,7 @@
 - type: marking
   id: HandBraceletRight
   bodyPart: RHand
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime ]
   coloring:
     default:
       type:
@@ -1246,7 +1241,7 @@
 - type: marking
   id: HandDollJointsTattooRight
   bodyPart: RHand
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime ]
   coloring:
     default:
       type:
@@ -1259,7 +1254,7 @@
 - type: marking
   id: HandHeavyTattoosRight
   bodyPart: RHand
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime ]
   coloring:
     default:
       type:
@@ -1274,7 +1269,7 @@
 - type: marking
   id: HandProstheticRight
   bodyPart: RHand
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson, Thaven ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime, Thaven ]
   coloring:
     default:
       type:
@@ -1287,7 +1282,7 @@
 - type: marking
   id: HandRingsRight
   bodyPart: RHand
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime ]
   coloring:
     default:
       type:
@@ -1302,7 +1297,7 @@
 - type: marking
   id: HandTwistingRight
   bodyPart: RHand
-  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, SlimePerson, Thaven ]
+  groupWhitelist: [ Human, Arachnid, Dwarf, Reptilian, Slime, Thaven ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/rhand.rsi
     state: twisting
@@ -1454,7 +1449,7 @@
 - type: marking
   id: HumanHairSpikyPonytailLong
   bodyPart: Hair
-  groupWhitelist: [ Human, Dwarf, SlimePerson ]
+  groupWhitelist: [ Human, Dwarf, Slime ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/hair.rsi
     state: spikyponytaillong
@@ -1469,7 +1464,7 @@
 - type: marking
   id: MessyPonytail
   bodyPart: Hair
-  groupWhitelist: [ Human, Dwarf, SlimePerson ]
+  groupWhitelist: [ Human, Dwarf, Slime ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/hair.rsi
     state: messyponytail
@@ -1477,7 +1472,7 @@
 - type: marking
   id: Niqab
   bodyPart: Hair
-  groupWhitelist: [ Human, Dwarf, SlimePerson ]
+  groupWhitelist: [ Human, Dwarf, Slime ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/hair.rsi
     state: niqab
@@ -1790,7 +1785,7 @@
 - type: marking
   id: HeadEarrings
   bodyPart: HeadSide
-  groupWhitelist: [ Human, Dwarf, SlimePerson ]
+  groupWhitelist: [ Human, Dwarf, Slime ]
   coloring:
     default:
       type:
@@ -1805,7 +1800,7 @@
 - type: marking
   id: HeadEarringsDrop
   bodyPart: HeadSide
-  groupWhitelist: [ Human, Dwarf, SlimePerson ]
+  groupWhitelist: [ Human, Dwarf, Slime ]
   coloring:
     default:
       type:
@@ -1820,7 +1815,7 @@
 - type: marking
   id: HeadEarringsWeights
   bodyPart: HeadSide
-  groupWhitelist: [ Human, Dwarf, SlimePerson ]
+  groupWhitelist: [ Human, Dwarf, Slime ]
   coloring:
     default:
       type:

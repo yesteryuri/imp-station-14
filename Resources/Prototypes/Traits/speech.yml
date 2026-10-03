@@ -13,8 +13,8 @@
     removes:
     - type: LizardAccent
     - type: MothAccent
-    - type: ReplacementAccent
-      accent: scottish
+    #- type: ReplacementAccent  #imp edit, dwarves have their own accent
+    #  accent: scottish
     - type: GrayAccent # macro
     - type: GastropoidAccent # macro
     - type: ThavenAccent # macro

@@ -73,8 +73,8 @@
   sprites:
   - sprite: _MACRO/Mobs/Customization/Thaven/chest.rsi
     state: spinechill
-  shaders:
-    spinechill: unshaded
+  #shaders:
+  #  spinechill: unshaded
 
 - type: marking
   id: ThavenSpines

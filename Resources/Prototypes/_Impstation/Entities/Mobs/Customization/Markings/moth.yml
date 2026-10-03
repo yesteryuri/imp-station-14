@@ -87,7 +87,7 @@
   sprites:
   - sprite: _Impstation/Mobs/Customization/Moth/chest.rsi
     state: glow
-  shader: unshaded
+  #shader: unshaded
 
 - type: marking
   id: TorsoIncisionMoth
@@ -167,7 +167,7 @@
   sprites:
   - sprite: _Impstation/Mobs/Customization/Moth/head.rsi
     state: glow
-  shader: unshaded
+  #shader: unshaded
 
 - type: marking
   id: MothSlashLeft
@@ -231,7 +231,6 @@
   id: MouthpartsFulgoridae
   bodyPart: Snout
   groupWhitelist: [ Moth ]
-  followSkinColor: true
   forcedColoring: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/Moth/snout.rsi
@@ -241,7 +240,6 @@
   id: MouthpartsFulgoridaeUpturned
   bodyPart: Snout
   groupWhitelist: [ Moth ]
-  followSkinColor: true
   forcedColoring: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/Moth/snout.rsi
@@ -251,7 +249,6 @@
   id: MouthpartsHymenoptera
   bodyPart: Snout
   groupWhitelist: [ Moth ]
-  followSkinColor: true
   forcedColoring: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/Moth/snout.rsi
@@ -261,7 +258,6 @@
   id: MouthpartsHymenopteraLarge
   bodyPart: Snout
   groupWhitelist: [ Moth ]
-  followSkinColor: true
   forcedColoring: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/Moth/snout.rsi
@@ -297,7 +293,6 @@
   id: MouthpartsSchistocerca
   bodyPart: Snout
   groupWhitelist: [ Moth ]
-  followSkinColor: true
   forcedColoring: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/Moth/snout.rsi
@@ -565,7 +560,6 @@
   bodyPart: HeadSide
   groupWhitelist: [ Moth ]
   forcedColoring: true
-  followSkinColor: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/Moth/headside.rsi
     state: blunt
@@ -575,7 +569,6 @@
   bodyPart: HeadSide
   groupWhitelist: [ Moth ]
   forcedColoring: true
-  followSkinColor: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/Moth/headside.rsi
     state: daisy
@@ -585,7 +578,6 @@
   bodyPart: HeadSide
   groupWhitelist: [ Moth ]
   forcedColoring: true
-  followSkinColor: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/Moth/headside.rsi
     state: heart
@@ -595,7 +587,6 @@
   bodyPart: HeadSide
   groupWhitelist: [ Moth ]
   forcedColoring: true
-  followSkinColor: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/Moth/headside.rsi
     state: horn
@@ -605,7 +596,6 @@
   bodyPart: HeadSide
   groupWhitelist: [ Moth ]
   forcedColoring: true
-  followSkinColor: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/Moth/headside.rsi
     state: smallspike
@@ -617,7 +607,6 @@
   bodyPart: HeadTop
   groupWhitelist: [ Moth ]
   forcedColoring: true
-  followSkinColor: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/Moth/headtop.rsi
     state: beetlehorn1
@@ -627,7 +616,6 @@
   bodyPart: HeadTop
   groupWhitelist: [ Moth ]
   forcedColoring: true
-  followSkinColor: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/Moth/headtop.rsi
     state: beetlehorn2
@@ -639,7 +627,7 @@
   sprites:
   - sprite: _Impstation/Mobs/Customization/Moth/headtop.rsi
     state: glowantenna
-  shader: unshaded
+  #shader: unshaded
 
 - type: marking
   id: AntennaCockroach

@@ -1,7 +1,7 @@
 - type: marking
   id: TattooHiveChest
   bodyPart: Chest
-  groupWhitelist: [Human, Dwarf, SlimePerson] # imp edit, add dwarf and slimes
+  groupWhitelist: [Human, Dwarf, Slime] # imp edit, add dwarf and slimes
   coloring:
     default:
       type:
@@ -14,7 +14,7 @@
 - type: marking
   id: TattooNightlingChest
   bodyPart: Chest
-  groupWhitelist: [Human, Dwarf, SlimePerson] # imp edit, add dwarf and slimes
+  groupWhitelist: [Human, Dwarf, Slime] # imp edit, add dwarf and slimes
   coloring:
     default:
       type:

@@ -1,3 +1,8 @@
+# imp edit start
+- type: markingsGroup
+  parent: [ Undergarments, Human ]
+  id: Dwarf
+
 - type: entity
   parent: AppearanceHuman
   id: AppearanceDwarf

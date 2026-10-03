@@ -19,14 +19,17 @@
     - Moth
     - Reptilian
     - Vulpkanin
-    # macro below
+    # macro and imp adds below (all are necessary adds for visitor species random trait)
     - Allulalo
     - Anomalocarid
     - Ant
     - Apid
     - Gray
     - Gastropoid
+    - Gingerbread
+    - Goblin
     - Kodepiia
+    - Skeleton
     - Thaven
     - Ungu
     - Ovinia
@@ -88,10 +91,19 @@
     - Human
     - Reptilian
     - Vulpkanin
-    # macro below
-    - Gray
+    # macro and imp adds below (all are necessary adds for visitor species random trait)
+    - Allulalo
+    - Anomalocarid
+    - Ant
     - Apid
+    - Gray
     - Gastropoid
+    - Gingerbread
+    - Goblin
+    - Kodepiia
+    - Skeleton
+    - Thaven
+    - Ungu
     - Ovinia
 
 - type: loadoutEffectGroup
